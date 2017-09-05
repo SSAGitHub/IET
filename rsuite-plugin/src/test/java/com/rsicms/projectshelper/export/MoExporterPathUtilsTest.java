@@ -67,6 +67,7 @@ public class MoExporterPathUtilsTest {
 		when(moToExport.getDisplayName()).thenReturn("chapter 41");
 		
 		String defaultExportPath = MoExporterPathUtils.getDefaultExportPath(moToExport,  exportContext);
+		
 		assertEquals("chapter_41.xml", defaultExportPath);
 	}
 	

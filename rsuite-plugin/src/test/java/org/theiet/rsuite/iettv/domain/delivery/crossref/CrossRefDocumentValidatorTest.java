@@ -14,6 +14,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import com.reallysi.rsuite.api.RSuiteException;
+import com.rsicms.test.TestHelper;
 
 public class CrossRefDocumentValidatorTest {
 
@@ -27,20 +28,21 @@ public class CrossRefDocumentValidatorTest {
 	@Test
 	public void pass_validation_for_valid_document() throws IOException,
 			RSuiteException {
-		String filePath = "test/data/iettv/crossRef/cross_ref_valid.xml";
+		
 
-		String document = FileUtils.readFileToString(new File(filePath));
+		String document = TestHelper.getTestResourceAsString(getClass(), "cross_ref_valid.xml");
+		
 		CrossRefDocumentValidationResult result = CrossRefDocumentValidator.validateCrossRefDocument(document,
 				entityResolver);		
+		
+		System.out.println(result.getValidationErrorMessages());
 		Assert.assertTrue(result.isValid());
 	}
 
 	@Test
 	public void fail_validation_for_invalid_document() throws IOException,
 			RSuiteException {
-		String filePath = "test/data/iettv/crossRef/cross_ref_invalid.xml";
-
-		String document = FileUtils.readFileToString(new File(filePath));
+		String document = TestHelper.getTestResourceAsString(getClass(), "cross_ref_invalid.xml");
 
 		CrossRefDocumentValidationResult result = CrossRefDocumentValidator.validateCrossRefDocument(document,
 				entityResolver);	
@@ -56,7 +58,7 @@ public class CrossRefDocumentValidatorTest {
 					throws SAXException, IOException {
 
 				String basename = FilenameUtils.getName(systemId);
-				File file = new File("WebContent/doctypes/crossref", basename);
+				File file = new File("src/main/resources/WebContent/doctypes/crossref", basename);
 
 				InputSource inputSource = new InputSource(new FileReader(file));
 				return inputSource;
