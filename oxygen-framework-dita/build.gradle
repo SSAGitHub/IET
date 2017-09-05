@@ -1,3 +1,5 @@
+import java.util.regex.Pattern.Dollar
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
@@ -15,16 +17,12 @@ repositories {
 	}
 }
 
-configurations {  
-    extraLibs
+configurations {   extraLibs }
 
-	
-}
-
-dependencies {	
-    compile 'commons-io:commons-io:1.4'	
-    compile 'com.oxygenxml:oxygen:15.2'
-	compile 'log4j:log4j:1.2.14' 
+dependencies {
+	compile 'commons-io:commons-io:1.4'
+	compile 'com.oxygenxml:oxygen:15.2'
+	compile 'log4j:log4j:1.2.14'
 	compile 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-api:RS4.0.7_oxy15.2-v1.5.15qa7'
 	compile 'com.rsicms.oxygen.frameworks:dita:1.0.0'
 
@@ -34,48 +32,71 @@ dependencies {
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
-//create a fat jar
-task fatJar(type: Jar) {
-	manifest {
-        attributes 'Implementation-Title': 'Oxygen Integration'      	
-    }
-    baseName = project.name + '-all'
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    with jar
+
+jar.baseName = 'iet-o2-framework-dita'
+
+
+
+task createCustomFramework(dependsOn: jar, type: Copy) {
+	from {
+		configurations.extraLibs.files.each {
+			from( zipTree(it) )
+		}
+		// Don't include the actual archives themselves
+		null
+	}
+
+	from ('src/framework-resources') {into('dita')}
+
+	from (jar.outputs.files) { into('dita') }
+
+	into file('build/framework')
 }
 
 
+task frameworksZip(dependsOn: createCustomFramework, type: Zip) {
+	from ('build/framework')
+	archiveName 'frameworks.zip'
+}
 
-jar {
-    
-	version = null
-	
-	into('/')
-	configurations.extraLibs.filter { it.toString().endsWith(".zip") }.each{
-    from zipTree(it)
-    
-    manifest {
-        attributes 'Implementation-Title': 'Oxygen Integration'    
-        attributes 'Permissions' : 'all-permissions'				
+task frameworksZipJar(dependsOn: frameworksZip, type: Jar) {
+
+	manifest {
+		attributes 'Implementation-Title': 'Oxygen Integration'
+		attributes 'Permissions' : 'all-permissions'
 		attributes 'Application-Name' : 'value="IET Rsuite Oxygen Integration'
-	    attributes 'Codebase' :'*' 					
-		attributes 'Application-Library-Allowable-Codebase' :'*' 
-		attributes 'Built-By' : System.getProperty('user.name') 
-		attributes 'Built-JDK': System.getProperty('java.version')	
+		attributes 'Codebase' :'*'
+		attributes 'Application-Library-Allowable-Codebase' :'*'
 		attributes 'Specification-Title' : 'Oxygen Iet customization Plugin'
 		attributes 'Specification-Vendor':'RSI Conent Solution'
 		attributes 'Implementation-Version': new Date()
-		attributes 'Implementation-Vendor':'RSI Content Solution'  	
-    }
+		attributes 'Implementation-Vendor':'RSI Content Solution'
+	}
+
+	from (frameworksZip.outputs.files)
 }
 
+
+
+task signJar (dependsOn: frameworksZipJar) {
+
+	doLast{
+		new File('build/signed').mkdirs();
+
+		def props = new Properties();
+		file("../oxygen-common/oxygen.properties").withInputStream { props.load(it) }
+
+		ant.signjar(destDir: 'build/signed', jar: "build/libs/*.jar",
+		alias: props.'oxygen.keystore.alias',
+		storetype: props.'oxygen.keystore.type',
+		keystore: "../oxygen-common/keystores/rsi_code_cert.p12",
+		storepass: props.'oxygen.keystore.pass')
+	}
 }
 
-task zip(dependsOn: jar, type: Zip) {
-    from { configurations.runtime.allArtifacts.files }
-    archiveName 'frameworks.zip'
+task createFramework (dependsOn: signJar) {
+	
 }
-
 
 
 
