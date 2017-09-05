@@ -1,11 +1,12 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'maven'
 
 
 repositories {
 	mavenCentral()
 
-	
+
 	maven {
 		url "http://nexus.theiet.org/nexus/content/groups/public"
 		credentials {
@@ -16,48 +17,37 @@ repositories {
 }
 
 configurations {
-    all {resolutionStrategy.cacheChangingModulesFor 0, 'seconds'}
+	all {resolutionStrategy.cacheChangingModulesFor 0, 'seconds'}
 	rsuitePlugins
 	pluginJars{ transitive = false }
 
 	testCompile { transitive = false }
-
-	schemas
 }
 
 dependencies {
 
-	compile 'commons-io:commons-io:1.4'
-    
 	compile 'com.rsicms:rsuite-api:4.1.17'
+	compile 'log4j:log4j:1-2.15'
+	compile 'commons-lang:commons-lang:2.4'
+
+
+	compile 'commons-io:commons-io:1.4'
+
+
 	compile 'com.rsicms:rsuite-tools-zip:20090327'
 	compile 'com.rsicms:jbpm-rsuite:20090317'
-	rsuitePlugins 'com.rsicms:rsuite-tools-groovy:20130208'
-	rsuitePlugins 'com.rsicms:rsuite-zip-uploader-plugin:1.1'
-	rsuitePlugins 'com.rsicms:rsuite-zip-downloader-plugin:1.1'
-	rsuitePlugins 'com.rsicms:rsuite-lmd-editor-plugin:4.0.0.qa161_v1_20130927'
-	rsuitePlugins 'com.rsicms:rsuite-dita-support-plugin:4.0.0.qa161_v1_20130927'
+
 	compile 'net.sf.saxon:Saxon-HE:9.1.0.7'
 	compile 'net.sf.saxon:saxon9-s9api:9.1.0.7'
 	compile 'net.sf.saxon:saxon9-xpath:9.1.0.7'
 	compile 'net.sf.saxon:saxon9-dom:9.1.0.7'
-//	pluginJars 'dita-ot.org:dita-ot:1.6.3'
-//	pluginJars 'com.rsicms:rsuite-toolkit-plugins:4.0.0'
-//	pluginJars 'com.rsicms.dita4publishers:dita4publishers-toolkit-plugins:0.9.19RC12Issue139'
-//	pluginJars 'com.rsicms.dita4publishers:dita4publishers-rsuite-plugin:0.9.19RC12Issue139'
-//	rsuitePlugins 'com.rsicms.dita4publishers:dita4publishers-rsuite-plugin:0.9.19RC12Issue139'
-//	rsuitePlugins 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-plugin: RS4.0.7_oxy15.2-v1.5.15qa7.1'
-//	rsuitePlugins 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-dita:4.0.7_oxy_15.2_o2_plugin_v1.5.15qa1'
-//	rsuitePlugins 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-dita-plugin:4.0.7_oxy_15.2_o2_plugin_v1.5.15qa1.1'
-//	rsuitePlugins 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-onix-plugin:4.0.0_oxy_14.2_v1.0.1'
-//	rsuitePlugins 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-jats-plugin:4.0.16_oxy_15.2_v1.1.1'
-//	rsuitePlugins 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-jats:4.0.16_oxy_15.2_v1.1'
+
 	compile 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-api:RS4.0.7_oxy15.2-v1.5.15qa7'
 	compile 'com.oxygenxml:oxygen:15.2'
 
 
-	compile 'log4j:log4j:1-2.15'
-	compile 'commons-lang:commons-lang:2.4'
+
+
 	compile 'commons-logging:commons-logging:1.1'
 	compile 'commons-net:commons-net:1.4.1'
 	compile 'hibernate:hibernate:3'
@@ -66,37 +56,35 @@ dependencies {
 	compile 'net.sourceforge.jeuclid:jeuclid-fop:3.1.9'
 	compile 'net.sourceforge.jeuclid:jeuclid-core:3.1.9'
 
-//	pluginJars 'org.apache.xmlgraphics:batik-transcoder:1.7'
-//	pluginJars 'org.apache.xmlgraphics:batik-bridge:1.7'
-//	pluginJars 'org.apache.xmlgraphics:batik-svggen:1.7'
+	//	pluginJars 'org.apache.xmlgraphics:batik-transcoder:1.7'
+	//	pluginJars 'org.apache.xmlgraphics:batik-bridge:1.7'
+	//	pluginJars 'org.apache.xmlgraphics:batik-svggen:1.7'
 
-	pluginJars 'commons-io:commons-io:1.4'
-	pluginJars 'joda-time:joda-time:2.1'
-	
+	//pluginJars 'commons-io:commons-io:1.4'
+	//pluginJars 'joda-time:joda-time:2.1'
+
 	compile 'org.json:org.json:2.0'
 	compile 'org.apache.pdfbox:pdfbox:1.8.0'
 	compile 'commons-fileupload:commons-fileupload:1.2.1'
 
-	testCompile 'junit:junit:4.11'
-	testCompile 'org.mockito:mockito-core:1.9.5'
-	testCompile 'org.hamcrest:hamcrest-all:1.3'
-	testCompile 'org.powermock:powermock-mockito-release-full:1.5.4'
-	testCompile 'xerces:xercesImpl:2.11.0'
-	
-	
+		testCompile 'junit:junit:4.11'
+		testCompile 'org.mockito:mockito-core:1.9.5'
+		testCompile 'org.hamcrest:hamcrest-all:1.3'
+		testCompile 'org.powermock:powermock-mockito-release-full:1.5.4'
+		testCompile 'xerces:xercesImpl:2.11.0'
+		testCompile 'log4j:log4j:1-2.15'
+
+
 }
 
 jar {
 	version = null
-	from('src/main') 
-	exclude ("xslt/**")
-	from('src/main') 
-	exclude ("java/**")
-	from('src/main') 
-	exclude ("resources/**")
 
-	from(configurations.pluginJars) 
-	{
-        into '/'
+	from('src/main') {
+		exclude ("java/**")
+		exclude ("resources/**")
 	}
+
+
+	from(configurations.pluginJars) { into '/' }
 }
