@@ -1,5 +1,5 @@
 apply plugin: 'java'
-
+apply from: '../oxygen-common/oxygen.gradle'
 
 repositories {
 	mavenCentral()
@@ -24,3 +24,10 @@ dependencies {
 	compile 'oxygen:oxygen:15.2'
 }
 
+jar.baseName = 'iet-oxygen'
+
+
+
+
+task createOxygenIntegration (dependsOn: signJar) {
+}

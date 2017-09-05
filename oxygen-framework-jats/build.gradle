@@ -3,6 +3,7 @@ import java.util.regex.Pattern.Dollar
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
+apply from: '../oxygen-common/oxygen.gradle'
 
 
 repositories {
@@ -78,21 +79,7 @@ task frameworksZipJar(dependsOn: frameworksZip, type: Jar) {
 
 
 
-task signJar (dependsOn: frameworksZipJar) {
-
-	doLast{
-		new File('build/signed').mkdirs();
-
-		def props = new Properties();
-		file("../oxygen-common/oxygen.properties").withInputStream { props.load(it) }
-
-		ant.signjar(destDir: 'build/signed', jar: "build/libs/*.jar",
-		alias: props.'oxygen.keystore.alias',
-		storetype: props.'oxygen.keystore.type',
-		keystore: "../oxygen-common/keystores/rsi_code_cert.p12",
-		storepass: props.'oxygen.keystore.pass')
-	}
-}
+signJar.dependsOn frameworksZipJar
 
 task createFramework (dependsOn: signJar) {
 }
