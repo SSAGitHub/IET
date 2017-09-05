@@ -1,0 +1,16 @@
+Dear ${contactFirstName}, 
+
+I have uploaded to your ftp site my marked up corrections for the proofs of the following:
+
+	${bookTitle} ${authorFullName}
+
+Points to note are:
+
+	${additionalText}
+
+Please provide an updated proof. 
+
+Please let me know if you have any queries. 
+
+Kind regards,
+${productionController}

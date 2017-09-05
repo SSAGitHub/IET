@@ -1,0 +1,41 @@
+<ul class="issueAssingArticles">
+
+<ul class="assignArticleSelection">
+    <li class="assignArticleSelection">
+      {{view RSuite.IetRadioButton name='filter' id='filter_all' selectionBinding='view.list.filterBy' value='all' checked='checked'}}
+      <label class="button" for="filter_all">All articles</label>
+    </li>
+    <li class="assignArticleSelection">
+      {{view RSuite.IetRadioButton name='filter' id='standard_article_only' selectionBinding='view.list.filterBy' value='standard_article_only'}}
+      <label class="button" for="standard_article_only">Standard articles</label>
+    </li>
+    <li class="assignArticleSelection">
+      {{view RSuite.IetRadioButton name='filter' id='filter_special_issue' selectionBinding='view.list.filterBy' value='special_issue_only'}}
+      <label class="button" for="filter_special_issue">Special issue articles</label>
+    </li>
+</ul>
+
+<table id="articlesTable" class="assignArticle">	
+	 <thead>
+        <tr>
+        	<th></th>
+			<th id="articleId"  {{action 'sortBy' target=view.list}}>Article ID</th>
+			<th id="articleType"  {{action 'sortBy' target=view.list}}>Type</th>			
+			<th id="typesetPages" {{action 'sortBy' target=view.list}}>Paper pages</th>
+			<th id="specialTitle"  {{action 'sortBy' target=view.list}}>Special title</th>
+         </tr>
+        </thead>
+	<tbody>
+ 		{{#each article in view.list.filterArticles}}
+        <tr>
+        	<td><input type="checkbox" name="articles" {{bindAttr value="article.moId"}}></td>
+            <td>{{article.articleId}}</td>
+            <td>{{article.articleType}}</td>
+            <td>{{article.typesetPages}}</td>
+            <td>{{article.specialTitle}}</td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+       
+</ul>

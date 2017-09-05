@@ -1,0 +1,26 @@
+<!-- =============================================================
+      IET Index Entry Domain
+     
+     Defines specialization of <sectiondiv> for specifying index entries.
+     
+     Copyright (c) 2013 IET
+     ============================================================= -->
+
+<!-- ============================================================= -->
+<!--             IET indexEntry DOMAIN ENTITIES                -->
+<!-- ============================================================= -->
+
+<!ENTITY % indexEntry-d-sectiondiv
+   "indexEntry"
+>
+
+<!ENTITY   indexEntryTopic-d-att     
+  "(topic indexEntry-d)"
+>
+
+<!ENTITY   indexEntryMap-d-att     
+  "no-indexEntry-in-map"
+>
+
+
+<!-- ================== End IET indexEntry Domain Entities ============ -->

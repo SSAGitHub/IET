@@ -1,0 +1,72 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.2" name="IET Manuscript Ingestion">
+  <start-state name="StartNode">
+    <transition name="" to="Check for zip file" />
+  </start-state>
+  <node name="Check for zip file">
+    <action class="com.reallysi.service.workflow.ingestion.action.FileNamePatternMatchActionHandler">
+      <regex>.*\.zip</regex>
+      <failDetail>Not a zip file</failDetail>
+    </action>
+    <transition name="" to="Fail test?" />
+  </node>
+  <decision name="Fail test?" expression="#{EXCEPTION_OCCUR=='true'}">
+    <transition name="true" to="Review file type error" />
+    <transition name="false" to="Unzip" />
+  </decision>
+  <node name="Unzip">
+    <action class="com.reallysi.service.workflow.ingestion.action.UnzipActionHandler" />
+    <transition name="" to="Load package" />
+  </node>
+  <task-node name="Review file type error">
+    <task name="Review file type erro" description="File #{rsuiteSourceFilePath} supplied to hot folder #{rsuiteHotFolderPath} is not a zip">
+      <assignment pooled-actors="JournalEditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation" />
+    </task>
+    <transition name="" to="EndNode" />
+  </task-node>
+  <node name="Load package">
+    <action class="org.theiet.rsuite.journals.actionhandlers.ManuscriptCentralIngestion" />
+    <transition name="" to="Load error?" />
+  </node>
+  <decision name="Load error?" expression="#{EXCEPTION_OCCUR=='true'}">
+    <transition name="true" to="Review load error" />
+    <transition name="false" to="Send package to typesetter" />
+  </decision>
+  <task-node name="Review load error">
+    <task name="Review load error" description="#{failDetail}">
+      <assignment pooled-actors="JournalEditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="" to="EndNode" />
+		<transition to="Send package to typesetter" name="Send package to typesetter"></transition>
+  </task-node>
+  <node name="Send package to typesetter">
+    <action class="org.theiet.rsuite.journals.actionhandlers.FtpPackageToTypesetter" />
+    <transition name="" to="Ftp error?" />
+  </node>
+  <decision name="Ftp error?" expression="#{EXCEPTION_OCCUR=='true'}">
+    <transition name="true" to="Review Ftp error" />
+    <transition name="false" to="EndNode" />
+  </decision>
+  <task-node name="Review Ftp error">
+    <task name="Review Ftp error" description="#{failDetail}">
+      <assignment pooled-actors="JournalEditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="" to="Clear Ftp exception" />
+  </task-node>
+  <end-state name="EndNode">
+  	<event type="node-enter">
+			<action
+				class="com.rsicms.projectshelper.workflow.actionhandlers.WorkflowCleanUpActionHandler" />
+		</event>
+  </end-state>
+  <node name="Clear Ftp exception">
+    <action class="com.reallysi.rsuite.system.workflow.actions.ClearExceptionStatus" />
+    <transition name="" to="Send package to typesetter" />
+  </node>
+</process-definition>

@@ -1,0 +1,24 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.2" name="IET Retrofit Pubtrack Books">
+  <start-state name="StartNode">
+    <transition name="" to="Get pId" />
+  </start-state>
+  <node name="Retrofit pubtrack">
+    <action class="org.theiet.rsuite.actionhandlers.IetPubtrackRetrofitBooks" />
+    <transition name="" to="Review results" />
+  </node>
+  <end-state name="EndNode" />
+  <node name="Get pId">
+    <action class="com.reallysi.rsuite.system.workflow.actions.SetDynamicValuesToVariablesActionHandler">
+      <variableNames>pId</variableNames>
+      <items>pId</items>
+    </action>
+    <transition name="" to="Retrofit pubtrack" />
+  </node>
+  <task-node name="Review results">
+    <task name="Review reults" description="Review results for #{pId}">
+      <assignment pooled-actors="RSuiteAdministrator" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation" />
+    </task>
+    <transition name="" to="EndNode" />
+  </task-node>
+</process-definition>

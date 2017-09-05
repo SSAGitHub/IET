@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:r="http://www.rsuitecms.com/rsuite/ns/metadata" elementFormDefault="qualified">
+
+	<xs:import schemaLocation="../rsuiteIdAttDomain/xsd/rsuiteIdAttDomain.xsd" namespace="http://www.rsuitecms.com/rsuite/ns/metadata"/>	
+
+    <!--video-->
+    <xs:element name="Video">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="HomePageVideo" minOccurs="0"/>
+                <xs:element ref="VideoNumber" minOccurs="0"/>  
+                <xs:element ref="VideoStatus"/>
+                <xs:element ref="VideoURL"/>
+                <xs:element ref="VideoType" minOccurs="0"/>
+                <xs:element ref="VideoSource" minOccurs="0"/>
+                <xs:element ref="CreationInfo"/>
+                <xs:element ref="ModifiedInfo" minOccurs="0"/>
+                <xs:element ref="BasicInfo"/>
+                <xs:element ref="AdvanceInfo" minOccurs="0"/>
+                <xs:element ref="KeyWordInfo" minOccurs="0"/>
+                <xs:element ref="Attachments" minOccurs="0"/>
+                <xs:element ref="Speakers" minOccurs="0"/>
+                <xs:element ref="ClientInfo" minOccurs="0"/>
+                <xs:element ref="ProductionInfo" minOccurs="0"/>
+                <xs:element ref="UploadVideo" minOccurs="0"/>
+                <xs:element ref="PublishInfo" minOccurs="0"/>
+                <xs:element ref="Events" minOccurs="0"/>
+                <xs:element ref="SeriesList" minOccurs="0"/>
+                <xs:element ref="VideoInspec" minOccurs="0"/>
+                <xs:element ref="IETTV-Inspec" minOccurs="0"/>
+                <xs:element ref="IETDigitalLibrary" minOccurs="0"/>
+                <xs:element ref="InspecAbstract" minOccurs="0"/>
+            </xs:all>
+            <xs:attribute name="ID" type="xs:string"/>
+            <xs:attributeGroup ref="r:rsuiteid"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- creation info -->
+    <xs:element name="CreationInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Date"/>
+                <xs:element ref="Person" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- modifiedInfo -->
+    <xs:element name="ModifiedInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Date"/>
+                <xs:element ref="Person" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- basicinfo -->
+    <xs:element name="BasicInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Title"/>
+                <xs:element ref="VideoCategory" minOccurs="0"/>
+                <xs:element ref="Abstract" minOccurs="0"/>
+                <xs:element ref="ShortDescription" minOccurs="0"/>
+                <xs:element ref="VideoCreatedDate" minOccurs="0"/>
+                <xs:element ref="ChannelMapping"/>
+                <xs:element ref="PricingDetails" minOccurs="0"/>
+                <xs:element ref="PromoDetails" minOccurs="0"/>
+                <xs:element ref="CopyrightDetails" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- Advanceinfo -->
+    <xs:element name="AdvanceInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="LocationDetails" minOccurs="0"/>
+                <xs:element ref="PermissionDetails" minOccurs="0"/>
+                <xs:element ref="Subtitles" minOccurs="0"/>
+                <xs:element ref="Transcripts" minOccurs="0"/>
+                <xs:element ref="Syndication" minOccurs="0"/>
+                <xs:element ref="Advert" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- keywordinfo -->
+    <xs:element name="KeyWordInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ChannelKeywordList"/>
+                <xs:element ref="CustomKeywordList" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- attachments -->
+    <xs:element name="Attachments">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Attachment" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="SponserDetails" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- speakers -->
+    <xs:element name="Speakers">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="Person" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- clientinfo -->
+    <xs:element name="ClientInfo">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="Clients" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- Clients (added) -->
+    <xs:element name="Clients">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Client" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- productioninfo -->
+    <xs:element name="ProductionInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Person" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- UploadVideo-->
+    <xs:element name="UploadVideo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="File" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- Publishinfo -->
+    <xs:element name="PublishInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="VideoPublish" minOccurs="0"/>
+                <xs:element ref="LivePublish" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Events -->
+    <xs:element name="Events">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Event" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Series -->
+    <xs:element name="SeriesList">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Series" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- VideoInspec -->
+    <xs:element name="VideoInspec">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Kwd-Group" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element ref="Inspec"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string"/>
+            <xs:attributeGroup ref="r:rsuiteid"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- kwd-group -->
+    <xs:element name="Kwd-Group">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Kwd" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Compound-Kwd" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="kwd-group-type" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- compound kwd -->
+    <xs:element name="Compound-Kwd">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Compound-Kwd-Part" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- compound-kwd-part -->
+    <xs:element name="Compound-Kwd-Part">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="content-type" type="xs:string"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- IETTV-Inspec -->
+    <xs:element name="IETTV-Inspec">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="kwd-group" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element ref="Inspec"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- kwd-group -->
+    <xs:element name="kwd-group">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="kwd" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="compound-kwd" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="kwd-group-type" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- compound kwd -->
+    <xs:element name="compound-kwd">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="compound-kwd-part" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- compound-kwd-part -->
+    <xs:element name="compound-kwd-part">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="content-type" type="xs:string"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <!--Inspec-->
+    <xs:element name="Inspec">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="AccessionNumber" minOccurs="0"/>
+                <xs:element ref="AccessionNumberForPublishedArticle" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- IETDigitallibrary -->
+    <xs:element name="IETDigitalLibrary">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="EventNo"/>
+                <xs:element ref="DOI" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!--Person-->
+    <xs:element name="Person">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Title" minOccurs="0"/>
+                <xs:element ref="Name"/>
+                <xs:element ref="PostNominal" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="PhoneNo" minOccurs="0"/>
+                <xs:element ref="MobileNo" minOccurs="0"/>
+                <xs:element ref="Affiliations" minOccurs="0"/>
+                <xs:element ref="Organization" minOccurs="0"/>
+                <xs:element ref="JobTitle" minOccurs="0"/>
+                <xs:element ref="EmailID" minOccurs="0"/>
+				<xs:element ref="Website" minOccurs="0"/>
+                <xs:element ref="FileName" minOccurs="0"/>
+                <xs:element ref="FilePath" minOccurs="0"/>
+                <xs:element ref="Biography" minOccurs="0"/>
+                <xs:element ref="Description" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string" use="required"/>
+            <xs:attribute name="type" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- Organization -->
+    <xs:element name="Organization">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="OrganizationName"/>
+                <xs:element ref="Department" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="Description" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="Address" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="Website" minOccurs="0"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- department -->
+    <xs:element name="Department">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="DepartmentName"/>
+                <xs:element ref="ResponsiblePerson" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- affiliation -->
+    <xs:element name="Affiliation">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Organization"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- address -->
+    <xs:element name="Address">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Addr-Line" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Postcode" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="City" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="State" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="Country" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="Phone" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Fax" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="Email" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="URL" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!--Name-->
+    <xs:element name="Name">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Given-Name" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element ref="Surname" minOccurs="0"/>
+                <xs:element ref="Suffix" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- location -->
+    <xs:element name="Location">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="LocationName"/>
+                <xs:element ref="LocationDate" minOccurs="0"/>
+                <xs:element ref="LocationDescription" minOccurs="0"/>
+                <xs:element ref="Address" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- file -->
+    <xs:element name="File">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="MediaType"/>
+                <xs:element ref="Duration" minOccurs="0"/>
+                <xs:element ref="UploadStatus" minOccurs="0"/>
+                <xs:element ref="FileName" minOccurs="0"/>
+                <xs:element ref="FilePath" minOccurs="0"/>
+                <xs:element ref="UploadDate" minOccurs="0"/>
+                <xs:element ref="Size" minOccurs="0"/>
+                <xs:element ref="Format" minOccurs="0"/>
+                <xs:element ref="ThumbnailFilepath" minOccurs="0"/>
+                <xs:element ref="NotificationCount" minOccurs="0"/>
+              
+              <xs:element ref="URL" minOccurs="0"/>
+                <xs:element ref="Person" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="ftpUpload" type="AT_1" use="required"/>
+            <xs:attribute name="streamID" type="xs:string" use="required"/>
+            <xs:attribute name="active" type="AT_1" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <!--event-->
+    <xs:element name="Event">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="EventName"/>
+                <xs:element ref="Location"/>
+                <xs:element ref="Venue"/>
+                <xs:element ref="Room" minOccurs="0"/>
+                <xs:element ref="StartDate"/>
+                <xs:element ref="StartTime" minOccurs="0"/>
+                <xs:element ref="EndDate"/>
+                <xs:element ref="EndTime" minOccurs="0"/>
+                <xs:element ref="Session" minOccurs="0"/>
+                <xs:element ref="DisplayQA" minOccurs="0"/>
+                <xs:element ref="DisplayPolling" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- added the below elements -->
+    <xs:element name="DisplayQA" type="xs:string"/>
+    <xs:element name="DisplayPolling" type="xs:string"/>
+    <!--HomePageVideo  -->
+    <xs:element name="HomePageVideo">
+        <xs:complexType>
+            <xs:attribute name="status" type="AT_1" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- VideoStatus -->
+    <xs:element name="VideoStatus">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Draft"/>
+                <xs:enumeration value="Withdrawn"/>
+                <xs:enumeration value="Published"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <!-- videotype -->
+    <xs:element name="VideoType">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="NonPromo"/>
+                <xs:enumeration value="Promo"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <!--venue-->
+    <xs:element name="Venue">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="ID" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- room -->
+    <xs:element name="Room">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="ID" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- PromoDetails -->
+    <xs:element name="PromoDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Countdown" minOccurs="0"/>
+                <xs:element ref="PromoVideo" minOccurs="0"/>
+                <xs:element ref="FileName" minOccurs="0"/>
+                <xs:element ref="FilePath" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <!--client-->
+    <xs:element name="Client">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Department" minOccurs="0"/>
+                <xs:element ref="Organization" minOccurs="0"/>
+                <xs:element ref="ContactInfo" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="AT_104" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <!--Period-->
+    <xs:element name="Period">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="ID" type="xs:string" use="required"/>
+                    <xs:attribute name="type" type="xs:string" use="required"/>
+                    <xs:attribute name="value" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- Player -->
+    <xs:element name="Player">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="ID" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- series -->
+    <xs:element name="Series">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="SeriesName"/>
+                <xs:element ref="Description"/>
+				        <xs:element ref="IconImage" minOccurs="0"/>
+                <xs:element ref="SeriesCreatedDate" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- source -->
+    <xs:element name="Source">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="ID" type="xs:string" use="required"/>
+                    <xs:attribute name="active" type="AT_1"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- adverts -->
+    <xs:element name="Advert">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="AdvertName"/>
+                <xs:element ref="PrerollFileName" minOccurs="0"/>
+                <xs:element ref="PostrollFileName" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string" use="required"/>
+            <xs:attribute name="use" type="AT_1" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ChannelKeywordList">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Channel" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CustomKeywordList">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="CustomKeyword" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- channel -->
+    <xs:element name="Channel">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="Category" minOccurs="0"/>
+                <xs:element ref="ChannelName"/>
+                <xs:element ref="DOI" minOccurs="0"/>
+                <xs:element ref="URL" minOccurs="0"/>
+                <xs:element ref="KeywordList" minOccurs="0"/>
+            </xs:all>
+            <xs:attribute name="ID" type="xs:string" use="required"/>
+            <xs:attribute name="default" type="xs:boolean"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- default keyword -->
+    <xs:element name="DefaultKeyword">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="ID" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- keyword -->
+    <xs:element name="CustomKeyword">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="ID" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- pricing -->
+    <xs:element name="PricingDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="UploadPrice"/>
+                <xs:element ref="Price" minOccurs="0"/>
+                <xs:element ref="DiscountList" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+            <xs:attribute name="ID" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- session -->
+    <xs:element name="Session">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="ID" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- category -->
+    <xs:element name="Category">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="ID" type="xs:string"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- Discountlist -->
+    <xs:element name="DiscountList">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Discount" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- discount -->
+    <xs:element name="Discount">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="level" type="AT_32" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!--<FileName fileType="custom" mediaType="Image">C:\DefaultImage.png</FileName>-->
+    <xs:element name="FileName">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="type">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="custom"/>
+                                <xs:enumeration value="default"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="mediaType" type="xs:string"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- keywords -->
+    <xs:element name="KeywordList">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="DefaultKeyword" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- subtitle -->
+    <xs:element name="Subtitle">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="Language"/>
+                <xs:element ref="Text"/>
+                <xs:element ref="DownloadLink"/>
+                <xs:element ref="FileName" minOccurs="0"/>
+                <xs:element ref="FilePath"/>
+                <xs:element ref="CreatedDate"/>
+            </xs:sequence>
+            <xs:attribute name="active" type="AT_1"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- countdown -->
+    <xs:element name="Countdown">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Date"/>
+                <xs:element ref="Time"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- mediatype -->
+    <xs:element name="MediaType">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Live"/>
+                <xs:enumeration value="Video"/>
+                <xs:enumeration value="VIDEO"/>
+                <xs:enumeration value="video"/>
+                <xs:enumeration value="LIVE"/>
+                <xs:enumeration value="live"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <!-- subtitles -->
+    <xs:element name="Subtitles">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Subtitle" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- attachment -->
+    <xs:element name="Attachment">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="AttachmentName"/>
+                <xs:element ref="FileName"/>
+                <xs:element ref="UploadDate"/>
+                <xs:element ref="UploadTime"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string"/>
+            <xs:attribute name="active" type="AT_1"/>
+        </xs:complexType>
+    </xs:element>
+  <!-- SponserDetails -->
+  <xs:element name="SponserDetails">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:element ref="URL"/>
+        <xs:element ref="FileName"/>
+      </xs:sequence>     
+    </xs:complexType>
+  </xs:element>
+    <!-- Permission -->
+    <xs:element name="PermissionDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Permission" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="VideoThumbnailImage" minOccurs="0"/>
+                <xs:element ref="URL" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- permission -->
+    <xs:element name="Permission">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="Player" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string"/>
+            <xs:attribute name="status" type="AT_1"/>
+            <xs:attribute name="embed" type="AT_1"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- promovideo -->
+    <xs:element name="PromoVideo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="PromoTitle"/>
+                <xs:element ref="Streamid"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- transcript -->
+    <xs:element name="Transcript">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="Language"/>
+                <xs:element ref="Text"/>
+                <xs:element ref="DownloadLink" minOccurs="0"/>
+                <xs:element ref="FileName" minOccurs="0"/>
+                <xs:element ref="FilePath" minOccurs="0"/>
+                <xs:element ref="CreatedDate"/>
+            </xs:sequence>
+            <xs:attribute name="active" type="AT_1"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- contactinfo -->
+    <xs:element name="ContactInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Person" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- livepublish -->
+    <xs:element name="LivePublish">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="LiveRecordStartDate"/>
+                <xs:element ref="LiveRecordStartTime" minOccurs="0"/>
+                <xs:element ref="LiveFinalStartDate"/>
+                <xs:element ref="LiveFinalStartTime" minOccurs="0"/>
+                <xs:element ref="LiveFinalExpiryDate"/>
+                <xs:element ref="LiveFinalExpiryTime" minOccurs="0"/>
+                <xs:element ref="URL" minOccurs="0"/>
+                <xs:element ref="DOI" minOccurs="0"/>
+                <xs:element ref="BackupURL" minOccurs="0"/>
+                <xs:element ref="StreamName" minOccurs="0"/>
+                <xs:element ref="LiveEntryID" minOccurs="0"/>
+                <xs:element ref="UserName"/>
+                <xs:element ref="Password"/>
+                <xs:element ref="BitrateList"/>
+            </xs:sequence>
+            <xs:attribute name="active" type="AT_1" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- Bitratelist -->
+    <xs:element name="BitrateList">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Bitrate" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<!--Bitrate-->
+	<xs:element name="Bitrate">
+		<xs:complexType>
+           <xs:sequence>
+               <xs:element ref="Rate" minOccurs="0"/>
+               <xs:element ref="Width" minOccurs="0"/>
+               <xs:element ref="Height" minOccurs="0"/>
+           </xs:sequence>
+       </xs:complexType>
+	</xs:element>
+    <!-- syndication -->
+    <xs:element name="Syndication">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Source" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- transcripts -->
+    <xs:element name="Transcripts">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Transcript" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!--Price-->
+    <xs:element name="Price">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Period" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- videocategory -->
+    <!-- <xs:element name="VideoCategory">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="conference"/>
+                <xs:enumeration value="event"/>
+                <xs:enumeration value="keynote"/>
+                <xs:enumeration value="interview"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>-->
+    <xs:element name="VideoCategory" type="xs:string"/>
+    <!-- Affiliations -->
+    <xs:element name="Affiliations">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Affiliation" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- authorizedby -->
+    <xs:element name="AuthorizedBy">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Name"/>
+                <xs:element ref="EmailID"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <!--VideoPublish  -->
+    <xs:element name="VideoPublish">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="RecordStartDate"/>
+                <xs:element ref="RecordStartTime"/>
+                <xs:element ref="FinalStartDate"/>
+                <xs:element ref="FinalStartTime"/>
+                <xs:element ref="FinalExpiryDate"/>
+                <xs:element ref="FinalExpiryTime"/>
+                <xs:element ref="URL" minOccurs="0"/>
+                <xs:element ref="DOI" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="active" type="AT_1" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- authorization -->
+    <xs:element name="Authorizations">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Authorization" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Description" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Authorization">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="AuthorizedBy"/>
+                <xs:element ref="FileTitle" minOccurs="0"/>
+                <xs:element ref="FileName" minOccurs="0"/>
+                <xs:element ref="FilePath" minOccurs="0"/>
+                <xs:element ref="Description" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- copyrightfile -->
+    <xs:element name="CopyrightFile">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="FileTitle"/>
+                <xs:element ref="FileName"/>
+                <xs:element ref="FilePath"/>
+                <xs:element ref="Description"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- channelmapping -->
+    <xs:element name="ChannelMapping">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Channel" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- copyrightfiles -->
+    <xs:element name="CopyrightFiles">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="CopyrightFile" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- locationdetails -->
+    <xs:element name="LocationDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Location" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- copyrightdetails -->
+    <xs:element name="CopyrightDetails">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="CopyrightFiles" minOccurs="0"/>
+                <xs:element ref="Authorizations" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="publish" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- simple type declaration -->
+    <xs:simpleType name="AT_1">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+            <xs:enumeration value="Yes"/>
+            <xs:enumeration value="No"/>
+            <xs:enumeration value="YES"/>
+            <xs:enumeration value="NO"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AT_32">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Channel"/>
+            <xs:enumeration value="Member"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AT_104">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Internal"/>
+            <xs:enumeration value="External"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- declaration -->
+    <xs:element name="Kwd" type="xs:string"/>
+    <xs:element name="kwd" type="xs:string"/>
+    <xs:element name="DOI" type="xs:string"/>
+    <xs:element name="ThumbnailFilepath" type="xs:string"/>
+    <xs:element name="AttachmentName" type="xs:string"/>
+    <xs:element name="Fax" type="xs:string"/>
+    <xs:element name="DepartmentName" type="xs:string"/>
+    <xs:element name="EmailID" type="xs:string"/>
+    <xs:element name="CreatedDate" type="xs:dateTime"/>
+    <xs:element name="Description" type="xs:string"/>
+    <xs:element name="CommentName" type="xs:string"/>
+    <xs:element name="UploadTime" type="xs:time"/>
+    <xs:element name="SeriesName" type="xs:string"/>
+    <xs:element name="EventName" type="xs:string"/>
+    <xs:element name="FileTitle" type="xs:string"/>
+    <xs:element name="URL" type="xs:anyURI"/>
+    <xs:element name="City" type="xs:string"/>
+    <xs:element name="Date" type="xs:dateTime"/>
+    <xs:element name="Size" type="xs:string"/>
+    <xs:element name="Text" type="xs:string"/>
+    <xs:element name="Time" type="xs:time"/>
+    <xs:element name="Email" type="xs:string"/>
+    <xs:element name="Notes" type="xs:string"/>
+    <xs:element name="Phone" type="xs:string"/>
+    <xs:element name="Suffix" type="xs:string"/>
+    <xs:element name="PhoneNo" type="xs:string"/>
+    <xs:element name="FilePath" type="xs:string"/>
+    <xs:element name="JobTitle" type="xs:string"/>
+    <xs:element name="MobileNo" type="xs:string"/>
+    <xs:element name="Postcode" type="xs:string"/>
+    <xs:element name="State" type="xs:string"/>
+    <xs:element name="Title" type="xs:string"/>
+    <xs:element name="Country" type="xs:string"/>
+    <xs:element name="EndDate" type="xs:dateTime"/>
+    <xs:element name="EndTime" type="xs:string"/>
+    <xs:element name="LocationDescription" type="xs:string"/>
+    <xs:element name="Duration" type="xs:time"/>
+    <xs:element name="LiveDate" type="xs:dateTime"/>
+    <xs:element name="LiveTime" type="xs:time"/>
+    <xs:element name="Biography" type="xs:string"/>
+    <xs:element name="OrganizationName" type="xs:string"/>
+    <xs:element name="ShortDescription" type="xs:string"/>
+    <xs:element name="VideoCreatedDate" type="xs:dateTime"/>
+    <xs:element name="ResponsiblePerson" type="xs:string"/>
+    <xs:element name="Streamid" type="xs:string"/>
+    <xs:element name="Surname" type="xs:string"/>
+    <xs:element name="Abstract" type="xs:string"/>
+    <xs:element name="Addr-Line" type="xs:string"/>
+    <xs:element name="VideoCreatedBy" type="xs:string"/>
+    <xs:element name="FinalExpiryDate" type="xs:dateTime"/>
+    <xs:element name="FinalExpiryTime" type="xs:time"/>
+    <xs:element name="AccessionNumber" type="xs:string"/>
+    <xs:element name="Given-Name" type="xs:string"/>
+    <xs:element name="ModifiedBy" type="xs:string"/>
+    <xs:element name="RecordStartDate" type="xs:dateTime"/>
+    <xs:element name="RecordStartTime" type="xs:time"/>
+    <xs:element name="VideoModifiedBy" type="xs:string"/>
+    <xs:element name="FinalStartDate" type="xs:dateTime"/>
+    <xs:element name="FinalStartTime" type="xs:time"/>
+    <xs:element name="PromoTitle" type="xs:string"/>
+    <xs:element name="AccessionNumberForPublishedArticle" type="xs:string"/>
+    <xs:element name="PostNominal" type="xs:string"/>
+    <xs:element name="UploadDate" type="xs:dateTime"/>
+    <xs:element name="PrerollFileName" type="xs:string"/>
+    <xs:element name="PostrollFileName" type="xs:string"/>
+    <xs:element name="EventNo" type="xs:string"/>
+    <xs:element name="LocationName" type="xs:string"/>
+    <xs:element name="Format" type="xs:string"/>
+    <xs:element name="LocationDate" type="xs:string"/>
+    <xs:element name="DownloadLink" type="xs:anyURI"/>
+    <xs:element name="Language" type="xs:string"/>
+    <xs:element name="CreatedBy" type="xs:string"/>
+    <xs:element name="StartDate" type="xs:dateTime"/>
+    <xs:element name="StartTime" type="xs:string"/>
+    <xs:element name="UploadPrice" type="xs:string"/>
+    <xs:element name="ChannelName" type="xs:string"/>
+    <xs:element name="BackupURL" type="xs:string"/>
+    <xs:element name="StreamName" type="xs:string"/>
+    <xs:element name="LiveEntryID" type="xs:string"/>
+    <xs:element name="UserName" type="xs:string"/>
+    <xs:element name="Password" type="xs:string"/>
+    <xs:element name="PrimaryURL" type="xs:anyURI"/>
+    <xs:element name="ModifiedDate" type="xs:dateTime"/>
+    <xs:element name="LiveRecordStartDate" type="xs:dateTime"/>
+    <xs:element name="LiveRecordStartTime" type="xs:time"/>
+    <xs:element name="LiveFinalStartDate" type="xs:dateTime"/>
+    <xs:element name="LiveFinalStartTime" type="xs:time"/>
+    <xs:element name="LiveFinalExpiryDate" type="xs:dateTime"/>
+    <xs:element name="LiveFinalExpiryTime" type="xs:time"/>
+    <xs:element name="AdvertName" type="xs:string"/>
+    <xs:element name="Website" type="xs:string"/>
+	  <xs:element name="Rate" type="xs:string"/>
+    <xs:element name="Width" type="xs:string"/>
+    <xs:element name="Height" type="xs:string"/>
+	  <xs:element name="IconImage" type="xs:string"/>
+    <xs:element name="VideoThumbnailImage" type="xs:string"/>
+    <xs:element name="SeriesCreatedDate" type="xs:dateTime"/>
+    <xs:element name="VideoNumber" type="xs:string"/>
+    <xs:element name="UploadStatus" type="xs:string"/>
+    <xs:element name="NotificationCount" type="xs:int"/>
+    <xs:element name="VideoURL" type="xs:string"/>
+    <xs:element name="VideoSource" type="xs:string"/>
+    <xs:element name="InspecAbstract" type="xs:string"/>
+</xs:schema>

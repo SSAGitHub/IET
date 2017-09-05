@@ -1,0 +1,289 @@
+<Video xsi:noNamespaceSchemaLocation="\Upload\iet_tv.xsd" ID="7136" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <HomePageVideo status="yes" />
+  <VideoNumber>569</VideoNumber>
+  <VideoStatus>Published</VideoStatus>
+  <VideoURL>https://tv.theiet.org/?videoid=569</VideoURL>
+  <VideoType>NonPromo</VideoType>
+  <VideoSource>Internal</VideoSource>
+  <CreationInfo>
+    <Date>2015-03-04T13:44:37.4098</Date>
+    <Person ID="0">
+      <Name>
+        <Given-Name>Initial</Given-Name>
+        <Surname>Upload</Surname>
+        <Suffix />
+      </Name>
+      <EmailID />
+    </Person>
+  </CreationInfo>
+  <ModifiedInfo>
+    <Date>2015-03-04T13:44:37.4098</Date>
+    <Person ID="0">
+      <Name>
+        <Given-Name />
+        <Surname />
+        <Suffix />
+      </Name>
+      <EmailID />
+    </Person>
+  </ModifiedInfo>
+  <Speakers>
+    <Person ID="0">
+      <Title />
+      <Name>
+        <Given-Name>Robert</Given-Name>
+        <Surname>Bright</Surname>
+        <Suffix />
+      </Name>
+      <PhoneNo />
+      <MobileNo />
+      <Affiliations>
+        <Affiliation ID="">
+          <Organization>
+            <OrganizationName>Smiths Aerospace</OrganizationName>
+            <Department>
+              <DepartmentName />
+            </Department>
+            <Address>
+              <Addr-Line />
+              <Postcode />
+              <City />
+              <State />
+              <Country>UK</Country>
+              <Phone />
+              <Fax />
+              <Email />
+              <URL />
+            </Address>
+          </Organization>
+        </Affiliation>
+      </Affiliations>
+      <JobTitle>Eco-Design Manager</JobTitle>
+      <FileName>Images/SpeakerDefault.jpg$</FileName>
+      <FilePath />
+      <Biography />
+    </Person>
+  </Speakers>
+  <ProductionInfo />
+  <BasicInfo>
+    <Title>Smiths Group Eco-Design Demonstrator Projects</Title>
+    <VideoCategory>Conference</VideoCategory>
+    <Abstract>This presentation outlines Smiths Aerospace's approach to eco-design and experiences to date, including several case studies.</Abstract>
+    <ShortDescription>Presentation from Beyond WEEE: Unsustainable Product Design and How to Avoid It 
+Speaker: Robert Bright, Eco-Design Manager, Smiths Aerospace</ShortDescription>
+    <VideoCreatedDate>2005-11-29T00:00:00.0000</VideoCreatedDate>
+    <ChannelMapping>
+      <Channel default="true" ID="6">
+        <ChannelName>Manufacturing</ChannelName>
+        <Category ID="0" />
+        <DOI />
+        <URL />
+      </Channel>
+    </ChannelMapping>
+    <PricingDetails type="Subscription" ID="1">
+      <UploadPrice>0</UploadPrice>
+    </PricingDetails>
+    <PromoDetails type="default">
+      <Countdown>
+        <Date>1900-01-01T00:00:00.0000</Date>
+        <Time>00:00:00.0000</Time>
+      </Countdown>
+      <PromoVideo ID="0">
+        <PromoTitle />
+        <Streamid>0</Streamid>
+      </PromoVideo>
+      <FileName type="default" mediaType="image" />
+      <FilePath>/Upload/video_7136/PromoImage/</FilePath>
+    </PromoDetails>
+    <CopyrightDetails publish="true">
+      <CopyrightFiles />
+      <Authorizations>
+        <Authorization>
+          <AuthorizedBy ID="54">
+            <Name>
+              <Given-Name>Mark</Given-Name>
+              <Surname>Reynard</Surname>
+              <Suffix />
+            </Name>
+            <EmailID>MReynard@theiet.org</EmailID>
+          </AuthorizedBy>
+          <FileName>IET_Test_Image.jpg</FileName>
+          <FilePath>/Upload/video_7136/Attachments/</FilePath>
+        </Authorization>
+        <Description>This video has been uploaded manually</Description>
+      </Authorizations>
+    </CopyrightDetails>
+  </BasicInfo>
+  <Events>
+    <Event ID="2966">
+      <EventName>IEE Seminar on Beyond WEEE: Unsustainable Product Design and How to Avoid It</EventName>
+      <Location ID="46">
+        <LocationName>Savoy Place</LocationName>
+        <LocationDate />
+        <LocationDescription />
+        <Address>
+          <Addr-Line />
+          <Postcode />
+          <City>London</City>
+          <State />
+          <Country>United Kingdom</Country>
+          <Phone />
+          <Fax />
+          <Email />
+          <URL />
+        </Address>
+      </Location>
+      <Venue ID="2042">IETTV_Venue</Venue>
+      <Room ID="2057">IETTV_Room</Room>
+      <StartDate>2005-11-29T00:00:00.0000</StartDate>
+      <StartTime>00:01</StartTime>
+      <EndDate>2005-11-29T00:00:00.0000</EndDate>
+      <EndTime>23:59</EndTime>
+      <Session ID="2966">IET Session</Session>
+      <DisplayQA>no</DisplayQA>
+      <DisplayPolling>no</DisplayPolling>
+    </Event>
+  </Events>
+  <AdvanceInfo>
+    <LocationDetails />
+    <PermissionDetails>
+      <Permission type="AllowDownload" status="no" />
+      <Permission type="HideRecord" status="no" />
+      <Permission type="QAAnswered" status="no" />
+      <Permission type="ShowComments" status="no" />
+      <Permission type="ShowRating" status="no" />
+      <Permission type="UsePlayer" status="no" />
+      <Permission type="Discoverable" status="no" />
+      <Permission embed="yes" />
+    </PermissionDetails>
+    <Subtitles />
+    <Transcripts />
+    <Syndication />
+    <Advert use="no" ID="">
+      <AdvertName />
+      <PrerollFileName />
+      <PostrollFileName />
+    </Advert>
+  </AdvanceInfo>
+  <ClientInfo />
+  <UploadVideo>
+    <File ftpUpload="No" streamID="0_18zqf9ib" active="Yes">
+      <MediaType>VIDEO</MediaType>
+      <Duration>00:28:34</Duration>
+      <UploadStatus />
+      <FileName>7136.mp4</FileName>
+      <UploadDate>1900-01-01T00:00:00.0000</UploadDate>
+      <Size />
+      <Format>mp4</Format>
+      <ThumbnailFilepath />
+      <NotificationCount>0</NotificationCount>
+      <URL>http://open.http.mmp.streamuk.com/p/2000439/sp/200043900/thumbnail/entry_id/0_18zqf9ib/version/0</URL>
+      <Person ID="0">
+        <Name>
+          <Given-Name>Initial</Given-Name>
+          <Surname>Upload</Surname>
+          <Suffix />
+        </Name>
+        <EmailID />
+      </Person>
+    </File>
+  </UploadVideo>
+  <SeriesList />
+  <PublishInfo>
+    <VideoPublish active="yes">
+      <RecordStartDate>1900-01-01T00:00:00.0000</RecordStartDate>
+      <RecordStartTime>00:00:00.0000</RecordStartTime>
+      <FinalStartDate>2005-11-29T00:00:00.0000</FinalStartDate>
+      <FinalStartTime>00:00:00.0000</FinalStartTime>
+      <FinalExpiryDate>1900-01-01T00:00:00.0000</FinalExpiryDate>
+      <FinalExpiryTime>00:00:00.0000</FinalExpiryTime>
+      <URL>http://tv.theiet.org/technology/manu/799.cfm</URL>
+      <DOI>10.1049/iet-tv.49.799</DOI>
+    </VideoPublish>
+    <LivePublish active="no">
+      <LiveRecordStartDate>1900-01-01T00:00:00.0000</LiveRecordStartDate>
+      <LiveRecordStartTime>00:00:00.0000</LiveRecordStartTime>
+      <LiveFinalStartDate>1900-01-01T00:00:00.0000</LiveFinalStartDate>
+      <LiveFinalStartTime>00:00:00.0000</LiveFinalStartTime>
+      <LiveFinalExpiryDate>1900-01-01T00:00:00.0000</LiveFinalExpiryDate>
+      <LiveFinalExpiryTime>00:00:00.0000</LiveFinalExpiryTime>
+      <URL />
+      <BackupURL />
+      <StreamName />
+      <UserName />
+      <Password />
+      <BitrateList>
+        <Bitrate>
+          <Rate />
+          <Width />
+          <Height />
+        </Bitrate>
+        <Bitrate>
+          <Rate />
+          <Width />
+          <Height />
+        </Bitrate>
+        <Bitrate>
+          <Rate />
+          <Width />
+          <Height />
+        </Bitrate>
+      </BitrateList>
+    </LivePublish>
+  </PublishInfo>
+  <Attachments />
+  <VideoInspec>
+    <Kwd-Group kwd-group-type="Inspec">
+      <Kwd>aerospace engineering</Kwd>
+      <Kwd>aerospace industry</Kwd>
+      <Kwd>design for disassembly</Kwd>
+      <Kwd>design for environment</Kwd>
+      <Kwd>product design</Kwd>
+      <Kwd>WEEE Directive</Kwd>
+    </Kwd-Group>
+    <Kwd-Group kwd-group-type="uncontrolled">
+      <Kwd>eco-design demonstrator projects</Kwd>
+      <Kwd>product design</Kwd>
+      <Kwd>Smiths Aerospace</Kwd>
+      <Kwd>unsustainable product design</Kwd>
+      <Kwd>WEEE</Kwd>
+    </Kwd-Group>
+    <Kwd-Group kwd-group-type="Inspec-class">
+      <Compound-Kwd>
+        <Compound-Kwd-Part content-type="code">B0140</Compound-Kwd-Part>
+        <Compound-Kwd-Part content-type="text">Administration and management</Compound-Kwd-Part>
+      </Compound-Kwd>
+      <Compound-Kwd>
+        <Compound-Kwd-Part content-type="code">B0170C</Compound-Kwd-Part>
+        <Compound-Kwd-Part content-type="text">Project and design engineering</Compound-Kwd-Part>
+      </Compound-Kwd>
+      <Compound-Kwd>
+        <Compound-Kwd-Part content-type="code">B0170Q</Compound-Kwd-Part>
+        <Compound-Kwd-Part content-type="text">Environmental factors</Compound-Kwd-Part>
+      </Compound-Kwd>
+      <Compound-Kwd>
+        <Compound-Kwd-Part content-type="code">B7610</Compound-Kwd-Part>
+        <Compound-Kwd-Part content-type="text">General aspects of aircraft, space vehicles and satellites</Compound-Kwd-Part>
+      </Compound-Kwd>
+      <Compound-Kwd>
+        <Compound-Kwd-Part content-type="code">E0230</Compound-Kwd-Part>
+        <Compound-Kwd-Part content-type="text">Environmental issues</Compound-Kwd-Part>
+      </Compound-Kwd>
+      <Compound-Kwd>
+        <Compound-Kwd-Part content-type="code">E1400</Compound-Kwd-Part>
+        <Compound-Kwd-Part content-type="text">Design</Compound-Kwd-Part>
+      </Compound-Kwd>
+      <Compound-Kwd>
+        <Compound-Kwd-Part content-type="code">E3650C</Compound-Kwd-Part>
+        <Compound-Kwd-Part content-type="text">Aerospace industry</Compound-Kwd-Part>
+      </Compound-Kwd>
+    </Kwd-Group>
+    <Inspec>
+      <AccessionNumber>11704305</AccessionNumber>
+    </Inspec>
+  </VideoInspec>
+  <IETDigitalLibrary>
+    <EventNo>2005/11148</EventNo>
+    <DOI />
+  </IETDigitalLibrary>
+</Video>

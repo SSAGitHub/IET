@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"          
+  prefer="public">
+
+
+  <public publicId="urn:pubid:org.iet:doctypes:dita:dtd:guide_notemap"
+    uri="guide_notemap.dtd"
+  />
+  <system systemId="urn:pubid:org.iet:doctypes:dita:dtd:guide_notemap:guide_notemap.dtd"
+    uri="guide_notemap.dtd"
+  />
+  
+  <!--  Versions without :dtd for consistency with topic public IDs.Doh! -->
+  <public publicId="urn:pubid:org.iet:doctypes:dita:guide_notemap"
+    uri="guide_notemap.dtd"
+  />
+  <system systemId="urn:pubid:org.iet:doctypes:dita:guide_notemap:guide_notemap.dtd"
+    uri="guide_notemap.dtd"
+  />
+  
+  <public publicId="urn:pubid:org.iet:modules:dtd:guide_notemap"
+    uri="guide_notemap.mod"
+  />
+  <system systemId="urn:pubid:org.iet:modules:dtd:guide_notemap:guide_notemap.mod"
+    uri="guide_notemap.mod"
+  />
+  
+  <public publicId="urn:pubid:org.iet:entities:dtd:guide_notemap"
+    uri="guide_notemap.ent"
+  />
+  <system systemId="urn:pubid:org.iet:entities:dtd:guide_notemap:guide_notemap.ent"
+    uri="guide_notemap.ent"
+  />
+  
+</catalog>

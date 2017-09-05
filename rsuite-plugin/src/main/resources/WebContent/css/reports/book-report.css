@@ -1,0 +1,19 @@
+.published {
+	background-color: #82FA58;
+}
+
+.inproduction {
+	background-color: grey;
+}
+
+.manuscript_received {
+	background-color: orange;
+}
+
+.contracted {
+	background-color: white;
+}
+
+.default {
+	background-color: yellow;	
+}

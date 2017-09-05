@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rsuite-lmd-configurations columns="3">
+  <!-- common group -->
+  <lmd-group name="book-common"></lmd-group>
+  <!-- Default group - without name-->
+  <lmd-group extends="book-common">
+    <lmd-configuration name="doi">
+      <displayName>DOI</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="approval_status">
+      <displayName>Approval status</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="book-part-type">
+      <displayName>Book part type</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="issn">
+      <displayName>Issn</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="author_full_name">
+      <displayName>Author full name</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="project_classification">
+      <displayName>Project classification</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="mt_classification">
+      <displayName>MT classification</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="inspec_code">
+      <displayName>Inpsec code</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="iet_taxonomy">
+      <displayName>IET taxonomy</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="pubtitle">
+      <displayName>Title</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="xml_id" display="false" />
+    <lmd-configuration name="caType" display="false" />
+    <lmd-configuration name="inspec_text">
+      <displayName>Inspec text</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="product_type">
+      <displayName>Test label</displayName>
+    </lmd-configuration>
+  </lmd-group>
+  
+   <lmd-group name="onix" columns="3" sort="no">
+
+      <lmd-configuration name="onix_ready">
+      	<displayName>Is ready to publish</displayName>
+      	<input-type>select</input-type>
+      <data-type>yesNo</data-type>    
+    </lmd-configuration>
+   
+      <lmd-configuration name="onix_recipient" mulitvalue="true">
+      	<displayName>Onix recipient</displayName>
+      	<input-type>select</input-type>
+      	<data-type>onixRecipientDataType</data-type>    
+    </lmd-configuration>
+
+      <lmd-configuration name="product_format" mulitvalue="true">
+      	<displayName>Product formats</displayName>
+      	<input-type>select</input-type>
+      	<data-type>onixProductFormatDataType</data-type>    
+    </lmd-configuration>    
+    
+   
+   </lmd-group>
+  <lmd-group name="book" columns="3" sort="no">
+    <lmd-configuration name="product_code">
+      <displayName>Product Code</displayName>      
+      <col>1</col>
+      <read-only value="true" />
+    </lmd-configuration>
+    <lmd-configuration name="e_product_code">
+      <displayName>E-Product Code</displayName>
+      <col>1</col>
+      <read-only value="true" />
+    </lmd-configuration>
+    <lmd-configuration name="isbn">
+      <displayName>ISBN</displayName>
+      <col>1</col>
+      <read-only value="true" />
+    </lmd-configuration>
+    <lmd-configuration name="e_isbn">
+      <displayName>E-ISBN</displayName>
+      <col>1</col>
+      <read-only value="true" />
+    </lmd-configuration>
+    <lmd-configuration name="contract_signed_date">
+      <displayName>Contract signed date (yyyy-mm-dd)</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <col>1</col>
+    </lmd-configuration>
+    <lmd-configuration name="author_first_name">
+      <displayName>Principle Author First Name</displayName>
+      <col>2</col>
+      <read-only value="true" />
+    </lmd-configuration>
+    <lmd-configuration name="author_surname">
+      <displayName>Principle Author Surname</displayName>
+      <col>2</col>
+      <read-only value="true" />
+    </lmd-configuration>
+    <lmd-configuration name="additional_authors" mulitvalue="true">
+      <displayName>Additional Authors</displayName>
+      <col>2</col>
+      <read-only value="true" />
+    </lmd-configuration>
+    <lmd-configuration name="book_title">
+      <displayName>Full Title</displayName>
+      <col>2</col>
+      <read-only value="true" />
+    </lmd-configuration>
+    <lmd-configuration name="book_title_short">
+      <displayName>Short Form Of Title</displayName>
+      <col>2</col>
+    </lmd-configuration>
+    <lmd-configuration name="book_series_name">
+      <displayName>Topic</displayName>
+      <!-- input-type>select</input-type  -->
+      <!--  data-type>bookTopicDataType</data-type -->
+      <col>2</col>
+      <read-only value="true" />
+    </lmd-configuration>
+    <lmd-configuration name="editorial_assistant">
+      <displayName>Editorial Assistant</displayName>
+      <input-type>select</input-type>
+      <data-type>bookEditorialAssistantDataType</data-type>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="typesetter">
+      <displayName>Typesetter</displayName>
+      <input-type>select</input-type>
+      <data-type>bookTypesetterDataType</data-type>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="production_controller">
+      <displayName>Production controller</displayName>
+      <input-type>select</input-type>
+      <data-type>bookProductionControllerDataType</data-type>
+      <col>3</col>
+    </lmd-configuration>
+  </lmd-group>
+  <lmd-group name="book-addtional" columns="4" sort="no">
+    <lmd-configuration name="doi">
+      <displayName>DOI</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="price_pound">
+      <displayName>Current List price (&#194;&#163;)</displayName>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="price_dollar">
+      <displayName>Current List Price ($)</displayName>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="commissioning_editor">
+      <displayName>Commissioning editor</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="pub_date_catalogue">
+      <displayName>Pub date in current catalogue</displayName>
+      <regex>^\d{4}$</regex>
+    </lmd-configuration>
+    <lmd-configuration name="replacement">
+      <displayName>Replacement?</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="extent">
+      <displayName>Extent</displayName>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="trim_size">
+      <displayName>Trim size</displayName>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="format">
+      <displayName>Format</displayName>
+      <read-only value="true" />
+    </lmd-configuration>
+    <lmd-configuration name="work_order">
+      <displayName>Work order</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="initial_print_run">
+      <displayName>Initial Print run</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="initial_reorder_level">
+      <displayName>Initial Re-order level</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="stage_due_complete">
+      <displayName>Stage due to complete</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+    </lmd-configuration>
+    <lmd-configuration name="proposal_presentation_date">
+      <displayName>Proposal presentation date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+    </lmd-configuration>
+    <lmd-configuration name="contracted_ts_delivery_date">
+      <displayName>Contracted TS delivery date valid</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+    </lmd-configuration>
+    <lmd-configuration name="actual_ts_delivery_date">
+      <displayName>Actual TS delivery date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+    </lmd-configuration>
+    <lmd-configuration name="reforecast_pub_date">
+      <displayName>Reforecast pub date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="actual_pub_date">
+      <displayName>Actual pub date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="notes">
+      <displayName>Notes</displayName>
+      <input-type>textarea</input-type>
+    </lmd-configuration>
+    <lmd-configuration name="printer">
+      <displayName>Printer</displayName>
+      <input-type>select</input-type>
+      <data-type>bookPrinterDataType</data-type>
+    </lmd-configuration>
+  </lmd-group>
+  <lmd-group name="standards-book" columns="3" sort="no">
+    <lmd-configuration name="product_code">
+      <displayName>Product Code</displayName>
+      <col>1</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="e_product_code">
+      <displayName>E-Product Code</displayName>
+      <col>1</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="isbn">
+      <displayName>ISBN</displayName>
+      <col>1</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="e_isbn">
+      <displayName>E-ISBN</displayName>
+      <col>1</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="corporate_contributor" >
+      <displayName>Corporate contributor</displayName>
+      <col>2</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="book_title">
+      <displayName>Edition Full Title</displayName>
+      <col>2</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="book_edition_short">
+      <displayName>Short Form Of Edition</displayName>
+      <col>2</col>
+    </lmd-configuration>
+	<lmd-configuration name="publication_dependency" mulitvalue="true">
+		<displayName>Depends on (e-product code)</displayName>
+		<col>2</col>
+	</lmd-configuration>    
+    <lmd-configuration name="iet_author">
+      <displayName>IET Author</displayName>
+      <input-type>select</input-type>
+      <data-type>standardsBookAuthorDataType</data-type>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="production_controller">
+      <displayName>Production controller</displayName>
+      <input-type>select</input-type>
+      <data-type>standardsBookProductionControllerDataType</data-type>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="iet_owner">
+      <displayName>IET Owner</displayName>
+      <input-type>select</input-type>
+      <data-type>standardsBookOwnerDataType</data-type>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="icml_transformation">
+      <displayName>ICML Transformation</displayName>
+      <input-type>select</input-type>
+      <data-type>standardsBookICMLTransformationDataType</data-type>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="pdf_transformation">
+      <displayName>PDF Transformation</displayName>
+      <input-type>select</input-type>
+      <data-type>standardsBookPDFTransformationDataType</data-type>
+      <col>3</col>
+    </lmd-configuration>
+  </lmd-group>
+  <lmd-group name="standards-book-addtional" columns="4" sort="no">
+    <lmd-configuration name="doi">
+      <displayName>DOI</displayName>
+      <col>1</col>
+    </lmd-configuration>
+    <lmd-configuration name="pub_date_catalogue">
+      <displayName>Pub date in current catalogue</displayName>
+      <col>1</col>
+      <regex>^\d{4}$</regex>
+    </lmd-configuration>
+    <lmd-configuration name="format">
+      <displayName>Format</displayName>      
+      <col>1</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="stage_due_complete">
+      <displayName>Stage due to complete</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <col>1</col>
+    </lmd-configuration>
+    <lmd-configuration name="reforecast_pub_date">
+      <displayName>Reforecast pub date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <col>1</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="price_pound">
+      <displayName>Current List price (&#194;&#163;)</displayName>
+      <col>2</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="work_order">
+      <displayName>Work order</displayName>
+      <col>2</col>
+    </lmd-configuration>
+    <lmd-configuration name="proposal_presentation_date">
+      <displayName>Proposal presentation date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <col>2</col>
+    </lmd-configuration>
+    <lmd-configuration name="actual_pub_date">
+      <displayName>Actual pub date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <col>2</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="price_dollar">
+      <displayName>Current List Price ($)</displayName>
+      <col>3</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="extent">
+      <displayName>Extent</displayName>
+      <col>3</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="initial_print_run">
+      <displayName>Initial Print run</displayName>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="contracted_ts_delivery_date">
+      <displayName>Contracted TS delivery date valid</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="notes">
+      <displayName>Notes</displayName>
+      <input-type>textarea</input-type>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="trim_size">
+      <displayName>Trim size</displayName>
+      <col>4</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+    <lmd-configuration name="initial_reorder_level">
+      <displayName>Initial Re-order level</displayName>
+      <col>4</col>
+    </lmd-configuration>
+    <lmd-configuration name="actual_ts_delivery_date">
+      <displayName>Actual TS delivery date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <col>4</col>
+    </lmd-configuration>
+    <lmd-configuration name="printer">
+      <displayName>Printer</displayName>
+      <input-type>select</input-type>
+      <data-type>standardsBookPrinterDataType</data-type>
+      <col>4</col>
+    </lmd-configuration>
+  </lmd-group>
+  <lmd-group name="journal">
+    <lmd-configuration name="journal_code">
+      <displayName>Journal Code</displayName>
+      <read-only value="true" />
+    </lmd-configuration>
+    <lmd-configuration name="journal_email">
+      <displayName>Journal Email</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="typesetter">
+      <displayName>Typesetter</displayName>
+      <input-type>select</input-type>
+      <data-type>typesetterDataType</data-type>
+    </lmd-configuration>
+    <lmd-configuration name="production_controller">
+      <displayName>Production controller</displayName>
+      <input-type>select</input-type>
+      <data-type>journalProductionControllerDataType</data-type>
+    </lmd-configuration>
+    <lmd-configuration name="editorial_assistant">
+      <displayName>Editorial Assistant</displayName>
+      <input-type>select</input-type>
+      <data-type>journalEditorialAssistantDataType</data-type>
+    </lmd-configuration>
+    <lmd-configuration name="typesetter">
+      <displayName>Typesetter</displayName>
+      <input-type>select</input-type>
+      <data-type>typesetterDataType</data-type>
+    </lmd-configuration>
+    <lmd-configuration name="inspec_classifier">
+      <displayName>Inspec Classifier</displayName>
+      <input-type>select</input-type>
+      <data-type>journalInspecClassifierDataType</data-type>
+    </lmd-configuration>
+    <lmd-configuration name="journal_issue_printer">
+      <displayName>Journal Issue Printer</displayName>
+      <input-type>select</input-type>
+      <data-type>journalIssuePrinterDataType</data-type>
+    </lmd-configuration>
+    <lmd-configuration name="journal_generation_type">
+      <displayName>Workflow Generation Type</displayName>
+      <input-type>select</input-type>
+      <data-type>journalGenerationTypeDataType</data-type>
+    </lmd-configuration>      
+  </lmd-group>
+  <lmd-group name="article" columns="3" sort="no">
+    <lmd-configuration name="article_title">
+      <displayName>Article Title</displayName>
+      <input-type>textarea</input-type>
+      <col>1</col>
+    </lmd-configuration>
+    <lmd-configuration name="author_first_name">
+      <displayName>Author First Name</displayName>
+      <col>1</col>
+    </lmd-configuration>
+    <lmd-configuration name="doi">
+      <displayName>DOI</displayName>
+      <col>1</col>
+    </lmd-configuration>
+    <lmd-configuration name="export_date">
+      <displayName>Export Date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <col>1</col>
+    </lmd-configuration>
+    <!-- note UK spelling -->
+    <lmd-configuration name="licence_type">
+      <displayName>Licence Type</displayName>
+      <input-type>select</input-type>
+      <data-type>licenceDatatype</data-type>
+      <col>1</col>
+    </lmd-configuration>
+    <lmd-configuration name="submission_type">
+      <displayName>Submission Type</displayName>
+      <input-type>select</input-type>
+      <data-type>submissionDatatype</data-type>
+      <col>1</col>
+    </lmd-configuration>
+	<lmd-configuration name="print_published_date">
+      <displayName>Print Published Date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <read-only value="true" />
+      <col>1</col>
+    </lmd-configuration>
+    <lmd-configuration name="category_code">
+      <displayName>Category Code</displayName>
+      <col>1</col>
+    </lmd-configuration>
+    <!-- yes/no -->
+    <lmd-configuration name="supplementary_material">
+      <displayName>Supplementary Material</displayName>
+      <input-type>select</input-type>
+      <data-type>yesNo</data-type>
+      <col>1</col>
+    </lmd-configuration>
+    <lmd-configuration name="article_type">
+      <displayName>Article Type</displayName>
+      <col>2</col>
+    </lmd-configuration>
+	<lmd-configuration name="author_surname">
+      <displayName>Author Surname</displayName>
+      <col>2</col>
+    </lmd-configuration>
+    <lmd-configuration name="submitted_date">
+      <displayName>Submitted Date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <col>2</col>
+    </lmd-configuration>
+    <lmd-configuration name="category">
+      <displayName>Category</displayName>
+      <col>2</col>
+    </lmd-configuration>
+    <!-- yes/no -->
+    <lmd-configuration name="open_access">
+      <displayName>Open Access</displayName>
+      <input-type>select</input-type>
+      <data-type>yesNo</data-type>
+      <col>2</col>
+    </lmd-configuration>
+    <lmd-configuration name="typeset_pages">
+      <displayName>Typeset Pages</displayName>
+      <col>2</col>
+    </lmd-configuration>
+    <lmd-configuration name="display_article_notes_icon">
+      <displayName>Display notes icon</displayName>
+      <input-type>select</input-type>
+      <data-type>yesNo</data-type>
+      <col>2</col>
+    </lmd-configuration>
+    <lmd-configuration name="issue_code">
+      <displayName>Print Journal Issue</displayName>
+      <read-only value="true" />
+      <col>2</col>
+    </lmd-configuration>
+    <lmd-configuration name="article_notes">
+      <displayName>Notes</displayName>
+      <input-type>textarea</input-type>
+      <col>2</col>
+    </lmd-configuration>
+	 <lmd-configuration name="author_institution">
+      <displayName>Author Institution</displayName>
+      <col>3</col>
+    </lmd-configuration>
+     <lmd-configuration name="author_country">
+      <displayName>Author Country</displayName>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="author_salutation">
+      <displayName>Author Salutation</displayName>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="author_email">
+      <displayName>Author Email</displayName>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="decision_date">
+      <displayName>Decision Date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <col>3</col>
+    </lmd-configuration>
+    <!-- yes/no -->
+    <lmd-configuration name="is_special_issue">
+      <displayName>Special issue</displayName>
+      <input-type>select</input-type>
+      <data-type>yesNo</data-type>
+      <col>3</col>
+    </lmd-configuration>
+    <!-- yes/no -->
+    <lmd-configuration name="inspec_required">
+      <displayName>Inspec required</displayName>
+      <input-type>select</input-type>
+      <data-type>yesNo</data-type>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="online_published_date">
+      <displayName>Online Published Date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <col>3</col>
+    </lmd-configuration>
+    <lmd-configuration name="special_issue_title">
+      <displayName>Special title</displayName>
+      <input-type>textarea</input-type>
+      <col>3</col>
+    </lmd-configuration>
+  <lmd-configuration name="pre_published_date">
+      <displayName>Pre Published Date</displayName>
+      <regex>^\d{4}-\d{2}-\d{2}$</regex>
+      <col>1</col>
+    </lmd-configuration>
+  </lmd-group>
+  <lmd-group name="issue" sort="no">
+    <lmd-configuration name="cover_date">
+      <displayName>Cover date</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="total_pagination">
+      <displayName>Total Pagination</displayName>
+    </lmd-configuration>
+    <!-- yes/no -->
+    <lmd-configuration name="is_special_issue">
+      <displayName>Special issue</displayName>
+      <input-type>select</input-type>
+      <data-type>yesNo</data-type>
+    </lmd-configuration>
+    <lmd-configuration name="issue_title">
+      <displayName>Issue Title</displayName>
+      <input-type>textarea</input-type>
+    </lmd-configuration>
+    <lmd-configuration name="inside_front_cover">
+      <displayName>Inside Front Cover</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="prelims">
+      <displayName>Prelims</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="inside_back_cover">
+      <displayName>Inside Back Cover</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="first_numbered_page">
+      <displayName>First Numbered Page</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="last_numbered_page">
+      <displayName>Last Numbered Page</displayName>
+    </lmd-configuration>
+    <lmd-configuration name="advert_pages">
+      <displayName>Advert Pages</displayName>
+    </lmd-configuration>
+  </lmd-group>
+  
+  <lmd-group name="onix-recipient" columns="1" sort="no">
+    <lmd-configuration name="product_format" mulitvalue="true">
+      	<displayName>Product Format</displayName>
+      	<input-type>select</input-type>
+      	<data-type>onixProductFormatDataType</data-type>
+      	<col>1</col>    
+    </lmd-configuration>
+    <lmd-configuration name="onix_book_vendor">
+      <displayName>Book Vendor</displayName>
+      <input-type>select</input-type>
+      <data-type>onixBookVendorDataType</data-type>
+      <col>2</col>
+    </lmd-configuration>
+   </lmd-group>
+  
+    <lmd-group name="onix-configuration-type" columns="1" sort="no">
+  <lmd-configuration name="onix_configuration_type">
+      	<displayName>Configuration Type</displayName>
+      	<input-type>select</input-type>
+      	<data-type>onixConfigurationDataType</data-type>    
+    </lmd-configuration>    
+   </lmd-group>
+  
+  
+  <lmd-group name="iettv_domain" columns="3" sort="no">
+
+      <lmd-configuration name="iettv_parent_doi">
+      	<displayName>Parent Doi</displayName>
+    </lmd-configuration>
+    
+    <lmd-configuration name="iettv_registrant_name">
+      	<displayName>Registrant</displayName>
+    </lmd-configuration>
+
+    <lmd-configuration name="iettv_portal_administrator">
+      	<displayName>Portal Administrator</displayName>
+    </lmd-configuration>
+    
+    <lmd-configuration name="iettv_email">
+      	<displayName>Email</displayName>
+    </lmd-configuration>
+    
+   </lmd-group>
+</rsuite-lmd-configurations>

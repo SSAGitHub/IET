@@ -1,0 +1,180 @@
+<regulation>
+	<body>
+		<d4p_display-equation class="+ topic/fig     d4p-math-d/d4p_display-equation ">
+			<p class="- topic/p ">
+				<i class="+ topic/ph hi-d/i ">
+					<b class="+ topic/ph hi-d/b ">Replace	this:__</b>
+				</i>
+				<d4p_MathML class="+ topic/foreign d4p-math-d/d4p_MathML ">
+					<m:math xmlns:m="http://www.w3.org/1998/Math/MathML" display="block">
+						<m:mrow>
+							<m:msub>
+								<m:mrow>
+									<m:mtext mathcolor="red">C</m:mtext>
+								</m:mrow>
+								<m:mrow>
+									<m:mtext mathcolor="red">h</m:mtext>
+								</m:mrow>
+							</m:msub>
+							<m:mo mathcolor="red">=</m:mo>
+							<m:msqrt>
+								<m:mrow>
+									<m:mfrac>
+										<m:mrow>
+											<m:msup>
+												<m:mrow>
+													<m:msub>
+														<m:mrow>
+															<m:mtext mathcolor="red">I</m:mtext>
+														</m:mrow>
+														<m:mrow>
+															<m:mtext mathcolor="red">f</m:mtext>
+														</m:mrow>
+													</m:msub>
+												</m:mrow>
+												<m:mrow>
+													<m:mn mathcolor="red">2</m:mn>
+												</m:mrow>
+											</m:msup>
+											<m:mo mathcolor="red">+</m:mo>
+											<m:msup>
+												<m:mrow>
+													<m:msub>
+														<m:mrow>
+															<m:mtext mathcolor="red">I</m:mtext>
+														</m:mrow>
+														<m:mrow>
+															<m:mtext mathcolor="red">h</m:mtext>
+															<m:mn mathcolor="red">5</m:mn>
+														</m:mrow>
+													</m:msub>
+												</m:mrow>
+												<m:mrow>
+													<m:mn mathcolor="red">2</m:mn>
+												</m:mrow>
+											</m:msup>
+											<m:mo mathcolor="red">+</m:mo>
+											<m:mo mathcolor="red">...</m:mo>
+											<m:mo mathcolor="red">+</m:mo>
+											<m:msup>
+												<m:mrow>
+													<m:msub>
+														<m:mrow>
+															<m:mtext mathcolor="red">I</m:mtext>
+														</m:mrow>
+														<m:mrow>
+															<m:mtext mathcolor="red">hn</m:mtext>
+														</m:mrow>
+													</m:msub>
+												</m:mrow>
+												<m:mrow>
+													<m:mn mathcolor="red">2</m:mn>
+												</m:mrow>
+											</m:msup>
+										</m:mrow>
+										<m:mrow>
+											<m:msup>
+												<m:mrow>
+													<m:msub>
+														<m:mrow>
+															<m:mtext mathcolor="red">I</m:mtext>
+														</m:mrow>
+														<m:mrow>
+															<m:mtext mathcolor="red">f</m:mtext>
+														</m:mrow>
+													</m:msub>
+												</m:mrow>
+												<m:mrow>
+													<m:mn mathcolor="red">2</m:mn>
+												</m:mrow>
+											</m:msup>
+										</m:mrow>
+									</m:mfrac>
+								</m:mrow>
+							</m:msqrt>
+							<m:mo>⁢</m:mo>
+						</m:mrow>
+					</m:math>
+				</d4p_MathML>
+				<b class="+ topic/ph hi-d/b ">
+				</b>
+				<i class="+ topic/ph hi-d/i ">
+					<b class="+ topic/ph hi-d/b ">__with this:__</b>
+				</i>
+				<d4p_MathML class="+ topic/foreign d4p-math-d/d4p_MathML ">
+					<m:math xmlns:m="http://www.w3.org/1998/Math/MathML" display="block">
+						<m:mrow>
+							<m:msub>
+								<m:mrow>
+									<m:mtext mathcolor="green">C</m:mtext>
+								</m:mrow>
+								<m:mrow>
+									<m:mtext mathcolor="green">h</m:mtext>
+								</m:mrow>
+							</m:msub>
+							<m:mo mathcolor="green">=</m:mo>
+							<m:msqrt>
+								<m:mrow>
+									<m:mfrac>
+										<m:mrow>
+											<m:msup>
+												<m:mrow>
+													<m:msub>
+														<m:mrow>
+															<m:mtext mathcolor="green">I</m:mtext>
+														</m:mrow>
+														<m:mrow>
+															<m:mtext mathcolor="green">f</m:mtext>
+														</m:mrow>
+													</m:msub>
+												</m:mrow>
+												<m:mrow>
+													<m:mn mathcolor="green">2</m:mn>
+												</m:mrow>
+											</m:msup>
+											<m:mo mathcolor="green">+</m:mo>
+											<m:mo mathcolor="green">...</m:mo>
+											<m:mo mathcolor="green">+</m:mo>
+											<m:msup>
+												<m:mrow>
+													<m:msub>
+														<m:mrow>
+															<m:mtext mathcolor="green">I</m:mtext>
+														</m:mrow>
+														<m:mrow>
+															<m:mtext mathcolor="green">hn</m:mtext>
+														</m:mrow>
+													</m:msub>
+												</m:mrow>
+												<m:mrow>
+													<m:mn mathcolor="green">2</m:mn>
+												</m:mrow>
+											</m:msup>
+										</m:mrow>
+										<m:mrow>
+											<m:msup>
+												<m:mrow>
+													<m:msub>
+														<m:mrow>
+															<m:mtext mathcolor="green">I</m:mtext>
+														</m:mrow>
+														<m:mrow>
+															<m:mtext mathcolor="green">f</m:mtext>
+														</m:mrow>
+													</m:msub>
+												</m:mrow>
+												<m:mrow>
+													<m:mn mathcolor="green">2</m:mn>
+												</m:mrow>
+											</m:msup>
+										</m:mrow>
+									</m:mfrac>
+								</m:mrow>
+							</m:msqrt>
+						</m:mrow>
+					</m:math>
+				</d4p_MathML>
+			</p>
+		</d4p_display-equation>
+	</body>
+</regulation>

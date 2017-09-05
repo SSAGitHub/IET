@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =====================================
+     RSuite-specific element types used for
+     holding manageable object metadata 
+     ===================================== -->
+     
+<!ENTITY % rsuite_namespace_declarations
+ '
+   xmlns:RSUITE
+    CDATA
+    #FIXED "http://www.reallysi.com"
+ '
+>
+
+<!ENTITY % RSuiteMetadata
+  "RSUITE:METADATA?"
+>
+
+
+<!ENTITY % rsuitecms_metadata_namespace_declarations
+ '
+   xmlns:r
+    CDATA
+    #FIXED "http://www.rsuitecms.com/rsuite/ns/metadata"
+ '
+>
+
+<!ENTITY % rsuiteIdAtt-d-attribute
+  "%rsuitecms_metadata_namespace_declarations;
+   r:rsuiteId CDATA
+    #IMPLIED"
+> 
+ <!-- End of declaration set -->

@@ -1,0 +1,9 @@
+Dear ${contactFirstName},
+
+Please find attached a PO for printing of ${bookTitle}. The text and cover PDFs have been uploaded to your FTP site in the ${ftpTargetFolder}/${ftpFileName}
+
+${additionalText}
+
+Best wishes, 
+${productionController}
+

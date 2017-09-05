@@ -1,0 +1,1 @@
+Issue ${issue_code} final article generation successful

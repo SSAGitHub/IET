@@ -1,0 +1,22 @@
+<body>
+	<d4p_display-equation>
+		<d4p_MathML>
+			<m:math xmlns:m="http://www.w3.org/1998/Math/MathML" display="block">
+				<m:mrow>
+					<m:mtext>F</m:mtext>
+					<m:mo>+</m:mo>
+					<m:mfrac>
+						<m:mrow>
+							<m:mn>1</m:mn>
+						</m:mrow>
+						<m:mrow>
+							<m:msqrt>
+								<m:mtext>n</m:mtext>
+							</m:msqrt>
+						</m:mrow>
+					</m:mfrac>
+				</m:mrow>
+			</m:math>
+		</d4p_MathML>
+	</d4p_display-equation>
+</body>		

@@ -1,0 +1,29 @@
+<oxygenConfiguration>
+
+	<configuration name="defaultTagView">
+		<value>No tags</value>
+	</configuration>
+	
+	<configuration name="defaultViewVisibility">
+		<value>outline</value>		
+	</configuration>
+
+	<authorComponentProperty name="code.insight.show.annotations.tooltip"
+		type="boolean" value="false" />
+
+	<authorComponentProperty name="track.changes.initial.state"
+		type="integer" value="1" />			
+		
+	<mathFlow editorLicenseKey="MFSD201-000941-Q3GRZ"  />
+	
+	<!-- LICENSE_DEVELOPMENT_PLACEHOLDER -->
+	 
+	<!--   licenseServer url="" user="" password="" / -->
+	
+		<!--subMoPolicy openPolicy="parentTopicMo">
+		<topicSubMoList>
+			<topicSubMo>regulation</topicSubMo>
+			<topicSubMo>topic</topicSubMo>
+		</topicSubMoList>		
+	</subMoPolicy -->
+</oxygenConfiguration>

@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?><ONIXMessage xmlns="http://ns.editeur.org/onix/3.0/reference" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" release="3.0" xsi:noNamespaceSchemaLocation="ONIX_BookProduct_3.0_reference_IET.xsd" >
+    <Header>
+        <Sender>
+            <SenderName>The Institution of Engineering and Technology</SenderName>
+            <ContactName>Neil Dennis, tel. +44 (0)1438 765552</ContactName>
+            <EmailAddress>onix@theiet.org</EmailAddress>
+        </Sender>
+        <Addressee>            
+            <AddresseeName>Dummy AddresseeName</AddresseeName>
+            <ContactName>Dummy ContactName</ContactName>
+            <EmailAddress>Dummy@EmailAddress.com</EmailAddress>
+        </Addressee>
+        <MessageNumber>1</MessageNumber>
+        <SentDateTime>20140110</SentDateTime>
+    </Header>
+   
+    <Product>  
+        <RecordReference productFormat="print">org.theiet.onix.0001</RecordReference>
+        <RecordReference>test011</RecordReference>
+        <RecordReference productFormat="digital">org.theiet.onix.e0001</RecordReference>
+ 
+        <NotificationType>03</NotificationType>
+  
+        <RecordSourceType>01</RecordSourceType>
+        <RecordSourceName>The Institution of Engineering and Technology</RecordSourceName>
+        <ProductIdentifier productFormat="print">
+            <ProductIDType>03</ProductIDType>     
+            <IDValue>2332345445</IDValue>
+            <!-- ID Value: Enter Print ISBN (do not include hyphens or spaces) -->
+        </ProductIdentifier>
+        <ProductIdentifier productFormat="print">
+            <ProductIDType>15</ProductIDType>
+            <IDValue>2332345445</IDValue>
+            <!-- ID Value: Enter Print ISBN (do not include hyphens or spaces) -->
+        </ProductIdentifier> 
+        <ProductIdentifier productFormat="digital">
+            <ProductIDType>03</ProductIDType>     
+            <IDValue>45345345</IDValue>
+            <!-- ID Value: Enter E-ISBN (do not include hyphens or spaces) -->
+        </ProductIdentifier>   
+        <ProductIdentifier productFormat="digital">
+            <ProductIDType>15</ProductIDType>
+            <IDValue>45345345</IDValue>
+            <!-- ID Value: Enter E-ISBN (do not include hyphens or spaces) -->    
+        </ProductIdentifier>
+        <Barcode productFormat="print">
+            <BarcodeType>02</BarcodeType>
+            <PositionOnProduct>01</PositionOnProduct>
+        </Barcode>
+        <DescriptiveDetail>
+            <ProductComposition>00</ProductComposition>
+            <ProductForm productFormat="print">BB</ProductForm>
+            <!-- Product Form (Print): Enter Format of print product using relevant Code from the dropdown that starts with B*-->
+            <ProductForm productFormat="digital">EB</ProductForm>
+            <!-- Product Form (Digital): Enter Format of digital product using relevant Code from the dropdown that starts with E* (this will usually be EB)--> 
+            <ProductFormDetail productFormat="digital">E107</ProductFormDetail>
+            <PrimaryContentType productFormat="digital">10</PrimaryContentType>
+            <Measure productFormat="print">
+                <MeasureType>01</MeasureType>
+                <Measurement>234</Measurement>
+                <!-- Measurement: Enter Trim size height -->
+                <MeasureUnitCode>mm</MeasureUnitCode>
+                <!-- Measure Unit Code: Select measurement type from dropdown, will usually be 'mm' -->
+            </Measure>
+            <Measure productFormat="print">
+                <MeasureType>02</MeasureType>
+                <Measurement>156</Measurement>
+                <!-- Measurement: Enter Trim size width -->
+                <MeasureUnitCode>mm</MeasureUnitCode>
+                <!-- Measure Unit Code: Select measurement type from dropdown, will usually be 'mm' -->
+            </Measure>
+            <CountryOfManufacture productFormat="print">GB</CountryOfManufacture>
+            <!-- Country Of Manufacture:
+                 Use 'GB' for IET books
+                 Use 'US' for SciTech books -->
+            <EpubTechnicalProtection productFormat="digital">00</EpubTechnicalProtection>
+            <Collection>
+                <CollectionType>10</CollectionType>
+                <TitleDetail>
+                    <TitleType>01</TitleType>
+                    <TitleElement>
+                        <TitleElementLevel>02</TitleElementLevel>
+                        <TitleText>Enter Topic (Book series)</TitleText>
+                        <!-- Title Text: Enter Topic (Book series). Choose from one of the following:
+                            Materials, Circuits and Devices
+                            Control, Robotics and Sensors
+                            Electromagnetics and Radar
+                            History and Management of Technology
+                            Production, Design and Manufacturing
+                            Energy Engineering
+                            Computing and Networks
+                            Telecommunications
+                            Healthcare Technologies
+                            Security
+                            Transportation
+                            Civil Engineering
+                        -->
+                    </TitleElement>
+                </TitleDetail>
+            </Collection>
+            <TitleDetail>
+                <TitleType>01</TitleType>
+                <TitleElement>
+                    <TitleElementLevel>01</TitleElementLevel>
+                    <TitleText textcase="02">Sample</TitleText>                    
+                    <Subtitle>subtitle</Subtitle>                    
+                    <!-- Title Text: Enter Product/Book title.
+                        If Product/Book contains a subtitle, structure the title in Text view as follows:             
+                        <TitleText textcase="02">Product/Book title (enter using Title Case)</TitleText>
+                        <Subtitle textcase="01">Subtitle (enter using Sentence case)</Subtitle>
+                    -->
+                </TitleElement>
+            </TitleDetail>
+            <Contributor>
+                <SequenceNumber>1</SequenceNumber>
+                <!-- Sequence Number: this indicates the order in which multiple contributor names should be presented. '1' will always be the 
+                Principle Author -->
+                <ContributorRole>A01</ContributorRole>
+                <CorporateName>Test name</CorporateName>
+            </Contributor>    
+           
+            
+            <!-- This blank Contributor composite can be used for additional contributors:
+                
+            <Contributor>
+                <SequenceNumber></SequenceNumber> 
+                <ContributorRole></ContributorRole>
+                <NamesBeforeKey>**First names(s) and/or initial(s)**</NamesBeforeKey>
+                <KeyNames>**Surname**</KeyNames>
+                <ProfessionalAffiliation>
+                    <ProfessionalPosition>**Position**</ProfessionalPosition>
+                    <Affiliation>**Contributor Affiliation**</Affiliation>
+                </ProfessionalAffiliation>
+                <BiographicalNote textformat="05"><p>Enter Contributor biography</p></BiographicalNote>
+            </Contributor> 
+            -->
+            
+            <EditionNumber>2</EditionNumber>
+            <!-- Notes for the Edition:
+                 1: For products that have no edition, use the <NoEdition/> indicator (already set)
+                 2: For Products that have an Edition number, remove <NoEdition/> and use the <EditionNumber> element instead: 
+                 Eg: For a 2nd Edition, use <EditionNumber>2</EditionNumber>  -->
+            <Language>
+                <LanguageRole>01</LanguageRole>
+                <LanguageCode>eng</LanguageCode>
+            </Language>
+            <Extent>
+                <ExtentType>11</ExtentType>
+                <ExtentValue>9999</ExtentValue>
+                <!-- Extent Value: Enter the number of pages (all Roman and Arabic page numbers) for the product -->
+                <ExtentUnit>03</ExtentUnit>
+            </Extent>           
+            <Subject>
+                <MainSubject/>
+                <SubjectSchemeIdentifier>12</SubjectSchemeIdentifier>
+                <SubjectSchemeVersion>2.1</SubjectSchemeVersion>
+                <SubjectCode>BIC Code</SubjectCode>
+                <!-- Subject Code: Enter relevant BIC Code for product -->
+            </Subject>
+            <Subject>
+                <MainSubject/>
+                <SubjectSchemeIdentifier>10</SubjectSchemeIdentifier> 
+                <SubjectSchemeVersion>2012</SubjectSchemeVersion> 
+                <SubjectCode>BISAC Code</SubjectCode>
+                <!-- Subject Code: Enter relevant BISAC Code for product -->
+            </Subject>
+            <Audience>
+                <AudienceCodeType>01</AudienceCodeType>
+                <AudienceCodeValue>05</AudienceCodeValue>
+            </Audience>
+            <Audience>
+                <AudienceCodeType>01</AudienceCodeType>
+                <AudienceCodeValue>06</AudienceCodeValue>
+            </Audience>
+        </DescriptiveDetail>
+        <CollateralDetail>
+            <TextContent>
+                <TextType>02</TextType>
+                <ContentAudience>00</ContentAudience>
+                <Text textformat="05"><p>Enter Short description</p></Text>
+                <!-- Text: Enter the short description (350 characters, 40 words approx) -->
+            </TextContent>
+            <TextContent>
+                <TextType>03</TextType>
+                <ContentAudience>00</ContentAudience>
+                <Text textformat="05"><p>Enter Description</p></Text>
+                <!-- Text: Enter the description -->
+            </TextContent>
+            <TextContent>
+                <TextType>04</TextType>  
+                <ContentAudience>00</ContentAudience>   
+                <Text textformat="05"><ul>
+                        <li>Chapter 1 title</li>
+                        <li>Chapter 2 title</li>
+                        <li>Chapter 3 title</li>
+                    </ul></Text>
+                <!-- Text: Enter the contents -->
+            </TextContent>
+        </CollateralDetail>
+        <PublishingDetail>
+            <Imprint>
+                <ImprintName>The Institution of Engineering and Technology</ImprintName>
+                <!-- Imprint Name:
+                     Use 'The Institution of Engineering and Technology' for IET Books
+                     Use 'SciTech Publishing' for SciTech books -->
+            </Imprint>
+            <Publisher>
+                <PublishingRole>01</PublishingRole>
+                <PublisherName>The Institution of Engineering and Technology</PublisherName>
+                <Website>
+                    <WebsiteRole>01</WebsiteRole>
+                    <WebsiteLink>http://www.theiet.org/</WebsiteLink>
+                </Website>
+            </Publisher>
+            <CityOfPublication>Stevenage</CityOfPublication>
+            <!-- City of publication: 
+                 Use 'Stevenage' for IET books
+                 Use 'Edison' for SciTech books -->
+            <CountryOfPublication>GB</CountryOfPublication>
+            <!-- Country of publication:
+                 Use 'GB' for IET books
+                 Use 'US' for SciTech books -->
+            <ProductContact>
+                <ProductContactRole>02</ProductContactRole>
+                <ProductContactName>Institution of Engineering and Technology Books</ProductContactName>
+                <ContactName>Alex Fox, tel +44 (0)1438 767655</ContactName>
+                <EmailAddress>books@theiet.org</EmailAddress>
+            </ProductContact>
+            <CopyrightStatement>
+                <CopyrightYear dateformat="05">Copyright year</CopyrightYear>
+                <!-- Copyright Year: Enter copyright year (format: yyyy) -->
+            </CopyrightStatement>
+            <SalesRights>
+                <SalesRightsType>01</SalesRightsType> 
+                <Territory>
+                    <RegionsIncluded>WORLD</RegionsIncluded>   
+                    <CountriesExcluded>CU IR KP MM SD SY</CountriesExcluded>
+                </Territory>
+            </SalesRights>
+            <ROWSalesRightsType>01</ROWSalesRightsType>
+        </PublishingDetail>
+        <RelatedMaterial>
+            <RelatedProduct productFormat="print">
+                <ProductRelationCode>06</ProductRelationCode>
+                <ProductIdentifier>
+                    <ProductIDType>03</ProductIDType>
+                    <IDValue>E-IBSN</IDValue>
+                    <!-- ID Value: Enter E-ISBN (do not include hyphens or spaces) -->
+                </ProductIdentifier>
+                <ProductIdentifier>
+                    <ProductIDType>15</ProductIDType>
+                    <IDValue>E-IBSN</IDValue>
+                    <!-- ID Value: Enter E-ISBN (do not include hyphens or spaces) -->
+                </ProductIdentifier>
+            </RelatedProduct>
+            <RelatedProduct productFormat="digital">
+                <ProductRelationCode>13</ProductRelationCode> 
+                <ProductRelationCode>06</ProductRelationCode>   
+                <ProductIdentifier>
+                    <ProductIDType>03</ProductIDType>
+                    <IDValue>Print ISBN</IDValue>
+                    <!-- ID Value: Enter Print ISBN (do not include hyphens or spaces) -->
+                </ProductIdentifier>
+                <ProductIdentifier>
+                    <ProductIDType>15</ProductIDType>
+                    <IDValue>Print ISBN</IDValue>
+                    <!-- ID Value: Enter Print ISBN (do not include hyphens or spaces) -->
+                </ProductIdentifier>
+            </RelatedProduct>
+        </RelatedMaterial>    
+        <ProductSupply productFormat="print">
+            <!-- NOTE: Product Supply 1: Print product, supplied by IET throughout the World, except The Americas -->
+            <Market>
+                <Territory>
+                    <RegionsIncluded>WORLD</RegionsIncluded>
+                    <CountriesExcluded>AG AI AN AR AW BB BM BO BR BS BZ CA CL CO CR CU DM DO EC GD GF GP GT GY HN IR HT JM KN KP KY LC MM MQ MS MX NI PA PE PR PY SD SR SV SY TT US UY VC VE VG VI</CountriesExcluded>
+                </Territory>
+            </Market>
+            <MarketPublishingDetail>
+                <MarketPublishingStatus>04</MarketPublishingStatus>
+                <!-- Market Publishing Status: Select from dropdown: 
+                    Use 02 for Forthcoming
+                    Use 04 for Published/available
+                    Use 07 for Out of print -->
+                <MarketDate>
+                    <MarketDateRole>01</MarketDateRole>
+                    <Date dateformat="00">Publication date</Date>
+                    <!-- Date: Enter Publication date (format: YYYYMMDD). Use date in 'Reforecast pub date' -->
+                </MarketDate>
+            </MarketPublishingDetail>
+            <SupplyDetail>
+                <Supplier>
+                    <SupplierRole>09</SupplierRole>    
+                    <SupplierName>The Institution of Engineering and Technology</SupplierName>
+                    <TelephoneNumber>+44 (0)1438 767328</TelephoneNumber>
+                    <FaxNumber>+44 (0)1438 767375</FaxNumber>
+                    <EmailAddress>books@theiet.org</EmailAddress>     
+                </Supplier>
+                <ProductAvailability>20</ProductAvailability>
+                <!-- Product Availability: Select the Product Availability from the dropdown for the print product as supplied by IET:
+                     Use 10 for Not yet available
+                     Use 20 for Available/published
+                     Use 42 for Out of Print (Not available, other format available) 
+                -->
+                <SupplyDate>
+                    <SupplyDateRole>08</SupplyDateRole>
+                    <Date dateformat="00">Publication date</Date>
+                    <!-- Date: Enter Publication date (format: YYYYMMDD). Use date in 'Reforecast pub date' -->
+                </SupplyDate>
+                <Price> 
+                    <PriceType>01</PriceType>
+                    <PriceAmount>0.00</PriceAmount>
+                    <!-- PriceAmount: Enter £ price (replace 0.00 with £ list price) -->
+                    <CurrencyCode>GBP</CurrencyCode>
+                    <Territory>
+                        <RegionsIncluded>WORLD</RegionsIncluded>
+                        <CountriesExcluded>AG AI AN AR AW BB BM BO BR BS BZ CA CL CO CR CU DM DO EC GB GD GF GP GT GY HN HT IR JM KN KP KY LC MM MQ MS MX NI PA PE PR PY SD SR SV SY TT US UY VC VE VG VI</CountriesExcluded>
+                    </Territory>
+                </Price>
+                <Price>
+                    <PriceType>02</PriceType>
+                    <PriceAmount>0.00</PriceAmount>
+                    <!-- PriceAmount: Enter £ price (replace 0.00 with £ list price) -->
+                    <Tax>
+                        <TaxType>01</TaxType>
+                        <TaxRateCode>Z</TaxRateCode>
+                        <TaxRatePercent>0</TaxRatePercent>
+                        <TaxableAmount>0.00</TaxableAmount>
+                        <!-- TaxableAmount: Enter £ price (replace 0.00 with £ list price) -->
+                        <TaxAmount>0</TaxAmount>
+                    </Tax>
+                    <CurrencyCode>GBP</CurrencyCode>
+                    <Territory>
+                        <CountriesIncluded>GB</CountriesIncluded>
+                    </Territory>
+                </Price>
+            </SupplyDetail>
+        </ProductSupply>
+        <ProductSupply productFormat="print">
+            <!-- NOTE: Product Supply 2: Print product, supplied by Stylus for The Americas -->
+            <Market>
+                <Territory>
+                    <CountriesIncluded>AG AI AN AR AW BB BM BO BR BS BZ CA CL CO CR DM DO EC GD GF GP GT GY HN HT JM KN KY LC MQ MS MX NI PA PE 
+                        PR PY SR SV TT US UY VC VE VG VI</CountriesIncluded>
+                </Territory>
+            </Market>
+            <MarketPublishingDetail>
+                <PublisherRepresentative>
+                    <AgentRole>05</AgentRole>
+                    <AgentName>Stylus Publishing</AgentName>
+                    <Website>
+                        <WebsiteRole>33</WebsiteRole>
+                        <WebsiteLink>http://www.styluspub.com/Books/Features.aspx</WebsiteLink>
+                    </Website>
+                </PublisherRepresentative>
+                <MarketPublishingStatus>04</MarketPublishingStatus>
+                <!-- MarketPublishing Status: Select from dropdown: 
+                    Use 02 for Forthcoming
+                    Use 04 for Published/available
+                    Use 07 for Out of print -->
+                <MarketDate>
+                    <MarketDateRole>01</MarketDateRole>
+                    <Date dateformat="00">Publication date</Date>
+                    <!-- Date: Enter Publication date (format: YYYYMMDD). Use date in 'Reforecast pub date' -->
+                </MarketDate>
+            </MarketPublishingDetail>
+            <SupplyDetail>
+                <Supplier>
+                    <SupplierRole>10</SupplierRole>
+                    <SupplierName>Stylus Publishing</SupplierName>
+                    <TelephoneNumber>001 703 661 1581</TelephoneNumber>
+                    <FaxNumber>001 703 661 1501</FaxNumber>
+                    <EmailAddress>StylusMail@PressWarehouse.com</EmailAddress>
+                </Supplier>
+                <ProductAvailability>20</ProductAvailability>
+                <!-- Product Availability: Select the Product Availability from the dropdown for the print product as supplied by Stylus for the Americas:
+                     Use 10 for Not yet available
+                     Use 20 for Available/published
+                     Use 42 for Out of Print (Not available, other format available) 
+                -->
+                <SupplyDate>
+                    <SupplyDateRole>08</SupplyDateRole>
+                    <Date dateformat="00">Publication date</Date>
+                    <!-- Date: Enter Publication date (format: YYYYMMDD). Use date in 'Reforecast pub date' -->
+                </SupplyDate>
+                <Price>
+                    <PriceType>01</PriceType>
+                    <PriceAmount>0.00</PriceAmount>
+                    <!-- PriceAmount: Enter $ price (replace 0.00 with $ list price) -->
+                    <CurrencyCode>USD</CurrencyCode>
+                </Price>
+            </SupplyDetail>
+        </ProductSupply> 
+        <ProductSupply productFormat="digital">
+            <!-- NOTE: Product Supply 3: Digital product, supplied by IET (via IET Digital Library) worldwide -->
+            <Market>
+                <Territory>
+                    <RegionsIncluded>WORLD</RegionsIncluded> 
+                    <CountriesExcluded>CU IR KP MM SD SY</CountriesExcluded>
+                </Territory>
+            </Market>
+            <MarketPublishingDetail>
+                <MarketPublishingStatus>04</MarketPublishingStatus>
+                <!-- Market Publishing Status: Select from dropdown: 
+                    Use 02 for Forthcoming
+                    Use 04 for Published/available
+                    Use 07 for Out of print -->
+                <MarketDate>
+                    <MarketDateRole>01</MarketDateRole>
+                    <Date dateformat="00">Publication date</Date>
+                    <!-- Date: Enter Publication date (format: YYYYMMDD). Use date in 'Reforecast pub date' -->
+                </MarketDate>
+            </MarketPublishingDetail>
+            <SupplyDetail>
+                <Supplier>
+                    <SupplierRole>09</SupplierRole>
+                    <SupplierName>The Institution of Engineering and Technology</SupplierName>
+                    <TelephoneNumber>+44 (0)1438 767328</TelephoneNumber>
+                    <FaxNumber>+44 (0)1438 767375</FaxNumber>
+                    <EmailAddress>books@theiet.org</EmailAddress>
+                    <Website>
+                        <WebsiteRole>18</WebsiteRole>
+                        <!-- WebsiteRole: If eBook is available on IDL, change this value from '18' to '29'  -->
+                        <WebsiteLink>http://digital-library.theiet.org/content/books</WebsiteLink>
+                        <!-- WebsiteLink: If eBook is available on IDL, replace this URL with the book specific URL -->
+                    </Website>   
+                </Supplier>
+                <ProductAvailability>20</ProductAvailability>
+                <!-- Product Availability: Select the Product Availability from the dropdown for the digital product as supplied by IET Digital Library:
+                     Use 10 for Not yet available
+                     Use 20 for Available/published
+                     -->
+                <SupplyDate>
+                    <SupplyDateRole>08</SupplyDateRole>
+                    <Date dateformat="00">Publication date</Date>
+                    <!-- Date: Enter Publication date (format: YYYYMMDD). Use date in 'Reforecast pub date' -->
+                </SupplyDate>
+                <Price>
+                    <PriceType>02</PriceType>
+                    <PriceAmount>0.00</PriceAmount>
+                    <!-- PriceAmount: Enter £ price (replace 0.00 with £ list price) -->
+                    <Tax>
+                        <TaxType>01</TaxType>
+                        <TaxRateCode>S</TaxRateCode>   
+                        <TaxRatePercent>20</TaxRatePercent>
+                        <TaxableAmount>0.00</TaxableAmount>
+                        <!-- TaxableAmount: Enter £ price (replace 0.00 with £ list price) -->
+                        <TaxAmount>0.00</TaxAmount>
+                        <!-- TaxAmount: This is 20% of the £ price -->
+                    </Tax>
+                    <CurrencyCode>GBP</CurrencyCode>
+                    <Territory>
+                        <CountriesIncluded>GB</CountriesIncluded>
+                    </Territory>
+                </Price>
+                <Price>
+                    <PriceType>01</PriceType>
+                    <PriceAmount>0.00</PriceAmount>
+                    <!-- PriceAmount: Enter $ price (replace 0.00 with $ list price) -->
+                    <CurrencyCode>USD</CurrencyCode>
+                    <Territory>
+                        <RegionsIncluded>WORLD</RegionsIncluded>
+                        <CountriesExcluded>CU GB IR KP MM SD SY</CountriesExcluded>
+                    </Territory>
+                </Price>         
+            </SupplyDetail>
+        </ProductSupply>     
+    </Product>
+</ONIXMessage>

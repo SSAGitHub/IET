@@ -1,0 +1,35 @@
+<regulation>
+	<p>
+		<d4p_MathML class="+ topic/foreign d4p-math-d/d4p_MathML ">
+			<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+				<m:msub>
+					<m:mtext>I</m:mtext>
+					<m:mtext>t</m:mtext>
+				</m:msub>
+				<m:mo>≥</m:mo>
+				<m:mfrac>
+					<m:mrow>
+						<m:msub>
+							<m:mtext>I</m:mtext>
+							<m:mtext>n</m:mtext>
+						</m:msub>
+					</m:mrow>
+					<m:mrow>
+						<m:msub>
+							<m:mtext>C</m:mtext>
+							<m:mtext>a</m:mtext>
+						</m:msub>
+						<m:msub>
+							<m:mtext>C</m:mtext>
+							<m:mtext>g</m:mtext>
+						</m:msub>
+						<m:mo>×</m:mo>
+						<m:mn>0.86</m:mn>
+					</m:mrow>
+				</m:mfrac>
+			</m:math>
+		</d4p_MathML>
+		(where circuits of the group are assumed to be liable to
+		simultaneous overload)
+	</p>
+</regulation>

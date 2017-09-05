@@ -1,0 +1,1 @@
+Requesting Issue PDF File for ${JournalName}/${IssueDetails}  (Make-up)

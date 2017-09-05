@@ -1,0 +1,54 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.2" name="IET INSPEC Ingestion">
+  <start-state name="StartNode">
+    <transition name="" to="Check for Zip file" />
+  </start-state>
+  <node name="Check for Zip file">
+    <action class="com.reallysi.service.workflow.ingestion.action.FileNamePatternMatchActionHandler">
+      <regex>.*\.zip</regex>
+      <failDetail>Not a zip file</failDetail>
+    </action>
+    <transition name="" to="Check Ingestion file" />
+  </node>
+  <decision name="Check Ingestion file" expression="#{EXCEPTION_OCCUR=='true'}">
+    <transition name="Skip processing" to="EndNode" >
+    	<condition>#{skip == 'true'}</condition>    	
+    </transition>
+    
+    <transition name="Review invalid file error" to="Review invalid file error" >
+    	<condition>#{EXCEPTION_OCCUR=='true'}</condition>
+    </transition>
+
+    <transition name="false" to="Unzip" />    
+  </decision>
+  <end-state name="EndNode" />
+  <task-node name="Review INSPEC load failure">
+    <task name="Review INSPEC load failure" description="#{failDetail}">
+      <assignment pooled-actors="JournalEditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="" to="EndNode" />
+  </task-node>
+  <task-node name="Review invalid file error">
+    <task name="Review invalid file error" description="File #{rsuiteSourceFilePath} supplied to hot folder #{rsuiteHotFolderPath} is not a zip">
+      <assignment pooled-actors="JournalEditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="" to="EndNode" />
+  </task-node>
+  <node name="Load INSPEC">
+    <action class="org.theiet.rsuite.journals.actionhandlers.InspecIngestion" />
+    <transition name="" to="INSPEC failure" />
+  </node>
+  <decision name="INSPEC failure" expression="#{EXCEPTION_OCCUR=='true'}">
+    <transition name="true" to="Review INSPEC load failure" />
+    <transition name="false" to="EndNode" />
+  </decision>
+  <node name="Unzip">
+    <action class="com.reallysi.service.workflow.ingestion.action.UnzipActionHandler" />
+    <transition name="" to="Load INSPEC" />
+  </node>
+</process-definition>

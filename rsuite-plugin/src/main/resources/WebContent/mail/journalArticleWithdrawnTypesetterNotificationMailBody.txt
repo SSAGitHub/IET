@@ -1,0 +1,11 @@
+${ManuscriptID} 
+
+${PaperTitle}
+
+The above paper has been withdrawn from production in ${JournalName}, the production process for the paper can be stopped. 
+
+Regards,
+
+${EditorialAssistantName}
+ 
+IET ${JournalName}

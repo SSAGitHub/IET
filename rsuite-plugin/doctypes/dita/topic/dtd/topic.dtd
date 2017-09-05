@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- =============================================================
+     Local shell for generic topic.
+     
+     Copyright (c) 2013 RSI Content Solutions
+     ============================================================= -->
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ENTITY DECLARATIONS                 -->
+<!-- ============================================================= -->
+
+<!ENTITY % commonDomainIntegrations-dec
+  PUBLIC "urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations:entities"
+         "commonDomainIntegrations.ent"
+>%commonDomainIntegrations-dec;
+
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ATTRIBUTE DECLARATIONS              -->
+<!-- ============================================================= -->
+
+<!ENTITY % rsuiteIdAttDomain
+  PUBLIC "urn:www.rsuite.com:domains:rsuite_id_att:entities" 
+         "rsuiteIdAttDomain.ent"
+>%rsuiteIdAttDomain;
+
+<!-- ============================================================= -->
+<!--                    DOMAIN EXTENSIONS                          -->
+<!-- ============================================================= -->
+<!--                    One for each extended base element, with
+                        the name of the domain(s) in which the
+                        extension was declared                     -->
+                        
+<!ENTITY % commonDomainEntityIntegrations-dec
+  PUBLIC "urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations:integrationEntities"
+         "commonDomainEntityIntegrations.ent"
+>%commonDomainEntityIntegrations-dec;
+
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ATTRIBUTE EXTENSIONS                -->
+<!-- ============================================================= -->
+<!ENTITY % props-attribute-extensions  ""                            >
+<!ENTITY % base-attribute-extensions   ""                            >
+
+
+<!-- ============================================================= -->
+<!--                    TOPIC NESTING OVERRIDE                     -->
+<!-- ============================================================= -->
+
+<!--                    Redefine the infotype entity to exclude 
+                        other topic types and disallow nesting     -->
+<!ENTITY % topic-info-types 
+                        "topic
+                         "          
+                                                    >
+
+<!-- ============================================================= -->
+<!--                    DOMAINS ATTRIBUTE OVERRIDE                 -->
+<!-- ============================================================= -->
+<!--                    Must be declared ahead of the DTDs, which
+                        puts @domains first in order               -->
+
+
+
+<!-- ============================================================= -->
+<!--                    TOPIC ELEMENT INTEGRATION                  -->
+<!-- ============================================================= -->
+
+<!--                    Embed topic to get generic elements        -->
+<!ENTITY % topic-type   PUBLIC 
+"-//OASIS//ELEMENTS DITA Topic//EN" 
+"topic.mod"                                                          >
+%topic-type;
+
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ELEMENT INTEGRATION                 -->
+<!-- ============================================================= -->
+
+<!ENTITY % commonDomainIntegrations
+  PUBLIC "urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations"
+         "common/cDomainIntegrations.mod"
+>%commonDomainIntegrations;
+
+
+
+<!-- ================== End DITA Topic DTD  ====================== -->

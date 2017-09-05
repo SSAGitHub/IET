@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"          
+  prefer="public">
+  
+  <public publicId="urn:pubid:org.iet:entities:dtd:dita:cite_marginDomain:entities"
+    uri="cite_marginDomain.ent"
+  />
+  <system systemId="urn:pubid:org.iet:entities:dtd:pubmap:dita:cite_marginDomain.ent"
+    uri="cite_marginDomain.ent"
+  />
+  
+  <public publicId="urn:pubid:org.iet:modules:dita:modules:cite_marginDomain"
+    uri="cite_marginDomain.mod"
+  />
+  <system systemId="urn:pubid:org.iet:modules:dtd:pubmap:dita:cite_marginDomain.mod"
+    uri="cite_marginDomain.mod"
+  />
+  
+</catalog>

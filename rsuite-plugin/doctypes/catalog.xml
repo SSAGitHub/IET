@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <nextCatalog catalog="jats/catalog-jats-v1.xml"/>
+  <nextCatalog catalog="jats/catalog-jats-v0.xml"/>
+  <nextCatalog catalog="nlm_v3/catalog.xml"/>  
+  <nextCatalog catalog="rsuiteIdAttDomain/catalog.xml"/>
+</catalog>

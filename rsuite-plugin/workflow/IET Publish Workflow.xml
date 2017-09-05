@@ -1,0 +1,79 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.1" name="IET Publish Workflow">
+	<start-state name="StartNode">
+		<transition name="" to="Export Content" />
+	</start-state>
+
+	<decision name="Export Content">
+		<event type="node-enter">
+			<action class="com.rsicms.projectshelper.publish.workflow.actionhandlers.ExportContentActionHandler" />
+		</event>
+
+		<transition to="Generate Output" name="Generate Output" />
+		<transition to="Review Output Generation Fail" name="Review Output Generation Fail">
+			<condition>#{EXCEPTION_OCCUR == 'true'}</condition>
+			<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler" />
+		</transition>
+	</decision>
+
+	<decision name="Generate Output">
+		<event type="node-enter">
+			<action class="com.rsicms.projectshelper.publish.workflow.actionhandlers.GenerateOutputActionHandler" />
+		</event>
+
+		<transition to="Upload Output" name="Upload Output" />
+		<transition to="Review Output Generation Fail" name="Review Output Generation Fail">
+			<condition>#{EXCEPTION_OCCUR == 'true'}</condition>
+			<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler" />
+		</transition>
+	</decision>
+
+	<decision name="Upload Output">
+		<event type="node-enter">
+			<action class="com.rsicms.projectshelper.publish.workflow.actionhandlers.UploadGeneratedOutputActionHandler" />
+		</event>
+
+		<transition to="Send Notification" name="Send Notification" />
+		<transition to="Review Output Generation Fail" name="Review Output Generation Fail">
+			<condition>#{EXCEPTION_OCCUR == 'true'}</condition>
+			<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler" />
+		</transition>
+	</decision>
+	
+	<decision name="Send Notification">
+		<event type="node-enter">
+			<action class="com.rsicms.projectshelper.publish.workflow.actionhandlers.SendNotificationActionHandler" />
+		</event>
+
+		<transition to="EndNode" name="EndNode" />
+		<transition to="Review Output Generation Fail" name="Review Output Generation Fail">
+			<condition>#{EXCEPTION_OCCUR == 'true'}</condition>
+			<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler" />
+		</transition>
+	</decision>
+	
+	<task-node name="Review Output Generation Fail">
+		<task name="Review Output Generation Fail" description="#{failDetail}">
+			<event type="task-create">
+				<action class="com.reallysi.rsuite.system.workflow.actions.taskcreate.AssignTaskToUserFromVariable" />
+			</event>
+			<assignment pooled-actors="RSuiteAdministrator" />
+			<controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+
+				<variable name="rsuite contents" access="read,,required" />
+			</controller>
+			<event type="node-leave">
+				<action class="com.reallysi.rsuite.system.workflow.actions.ClearExceptionStatus" />
+			</event>
+		</task>
+		<transition name="Done" to="EndNode" />
+	</task-node>
+	
+	<end-state name="EndNode">
+		<event type="node-enter">
+			<action
+				class="com.rsicms.projectshelper.publish.workflow.actionhandlers.PublishWorkflowCleanUpActionHandler" />
+		</event>
+	</end-state>
+
+
+</process-definition>

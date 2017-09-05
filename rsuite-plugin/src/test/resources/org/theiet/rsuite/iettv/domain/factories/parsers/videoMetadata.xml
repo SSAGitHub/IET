@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Video ID="0b95f4d9-3e6b-4eed-836d-008d8c55f7ce"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="iet_tv.xsd">
+  <HomePageVideo status="yes"/>
+  <VideoNumber>111</VideoNumber>
+  <VideoStatus>Published</VideoStatus>
+  <VideoType>NonPromo</VideoType>
+  <CreationInfo>
+    <Date>2015-01-12T15:51:23.3735</Date>
+    <Person ID="11">
+      <Name>
+        <Given-Name>sagar</Given-Name>
+        <Surname>chauhan</Surname>
+        <Suffix>
+        </Suffix>
+      </Name>
+    </Person>
+  </CreationInfo>
+  <ModifiedInfo>
+    <Date>2015-01-12T15:51:23.3735</Date>
+    <Person ID="11">
+      <Name>
+        <Given-Name>sagar</Given-Name>
+        <Surname>chauhan</Surname>
+        <Suffix>
+        </Suffix>
+      </Name>
+    </Person>
+  </ModifiedInfo>
+  <Speakers/>
+  <ProductionInfo>
+    <Person ID="11">
+      <Name>
+        <Given-Name>sagar</Given-Name>
+        <Surname>chauhan</Surname>
+        <Suffix>
+        </Suffix>
+      </Name>
+    </Person>
+  </ProductionInfo>
+  <BasicInfo>
+    <Title>Coupling spin waves to circuit through PEEC</Title>
+    <VideoCategory>keynote</VideoCategory>
+    <Abstract>&lt;p&gt;The generation of magnetostatic spin waves in magnetic nanostructures can be obtained by using inductive input antennas having different geometries, e.g. a coplanar waveguide (CWG) or a transmission line. The induced spin waves are manipulated in the magn&lt;/p&gt;
+</Abstract>
+    <ShortDescription>From: CEM 2014, 31 March - 1 April 2014, Session 3: Algorithms and formulations, London</ShortDescription>
+    <ChannelMapping>
+      <Channel default="true" ID="1">
+        <ChannelName>Communications</ChannelName>
+        <Category ID="0">Sample category</Category>
+      </Channel>
+      <Channel ID="2">
+        <ChannelName>IT</ChannelName>
+        <Category ID="1">
+        </Category>
+      </Channel>
+    </ChannelMapping>
+    <PricingDetails type="Free">
+      <UploadPrice>0</UploadPrice>
+      <Price>
+        <Period ID="2" type="sampleType" value="124"/>
+      </Price>
+      <DiscountList>
+        <Discount level="Channel"/>
+      </DiscountList>
+    </PricingDetails>
+    <PromoDetails type="default">
+      <Countdown>
+        <Date>1900-01-01T00:00:00.0000</Date>
+        <Time>00:00:00.0000</Time>
+      </Countdown>
+      <PromoVideo ID="0">
+        <PromoTitle>
+        </PromoTitle>
+        <Streamid>0</Streamid>
+      </PromoVideo>
+      <FileName type="default" mediaType="image">
+      </FileName>
+      <FilePath>\Upload\video_0b95f4d9-3e6b-4eed-836d-008d8c55f7ce\PromoImage\</FilePath>
+    </PromoDetails>
+    <CopyrightDetails>
+      <CopyrightFiles>
+        <CopyrightFile>
+          <FileTitle>Title</FileTitle>
+          <FilePath>Copyright/xx</FilePath>
+          <FileName>Copyright.txt</FileName>
+          <Description>Test</Description>
+        </CopyrightFile>
+      </CopyrightFiles>
+      <Authorization>
+        <AuthorizedBy ID="11">
+          <Name>
+            <Given-Name>sagar</Given-Name>
+            <Surname>chauhan</Surname>
+            <Suffix>
+            </Suffix>
+          </Name>
+          <EmailID>sagar.chauhan@northgate-is.com</EmailID>
+        </AuthorizedBy>
+        <FileTitle>Sample title</FileTitle>
+        <FilePath>\Upload\video_0b95f4d9-3e6b-4eed-836d-008d8c55f7ce\Attachments\</FilePath>
+        <FileName>Luxurious-Penthouses-With-A-Rooftop-Terrace-1.jpg</FileName>
+        <Description>sc</Description>
+      </Authorization>
+    </CopyrightDetails>
+  </BasicInfo>
+  <AdvanceInfo>
+    <PermissionDetails>
+      <Permission type="AllowDownload" status="no"/>
+      <Permission type="HideRecord" status="no"/>
+      <Permission type="QAAnswered" status="no"/>
+      <Permission type="ShowComments" status="no"/>
+      <Permission type="ShowRating" status="no"/>
+      <Permission type="UsePlayer" status="no"/>
+      <Permission type="Discoverable" status="no"/>
+      <Permission embed="yes"/>
+    </PermissionDetails>
+    <LocationDetails>
+      <Location ID="2">
+        <LocationName>Location Name</LocationName>
+      </Location>
+    </LocationDetails>
+    <Subtitles>
+      <Subtitle/>
+    </Subtitles>
+    <Transcripts>
+      <Transcript> </Transcript>
+    </Transcripts>
+    <Syndication>
+      <Source ID="2"/>
+    </Syndication>
+
+    <Advert ID="33" use="yes">
+      <AdvertName>
+      </AdvertName>
+      <PrerollFileName>
+        </PrerollFileName>
+      <PostrollFileName>
+        </PostrollFileName>
+    </Advert>
+  </AdvanceInfo>
+  <ClientInfo/>
+  <UploadVideo>
+    <File ftpUpload="no" streamID="0_nx1d7pmr" active="yes">
+      <MediaType>Video</MediaType>
+      <Duration>00:00:00</Duration>
+      <FileName>jove-82-51094.mp4</FileName>
+      <FilePath>\Upload\video_0b95f4d9-3e6b-4eed-836d-008d8c55f7ce\VideoUpload\</FilePath>
+      <UploadDate>2015-01-12T15:51:23.3852</UploadDate>
+      <Size>
+      </Size>
+      <Format>mp4</Format>
+      <ThumbnailFilepath/>
+      <URL>http://open.http.mmp.streamuk.com/p/2000439/sp/200043900/thumbnail/entry_id/0_nx1d7pmr/version/0</URL>
+    </File>
+  </UploadVideo>
+  <SeriesList>
+    <Series ID="2">
+      <SeriesName>Sample Series Nae</SeriesName>
+      <Description>Description</Description>
+    </Series>
+  </SeriesList>
+  <PublishInfo>
+    <VideoPublish active="yes">
+      <RecordStartDate>1900-01-01T00:00:00.0000</RecordStartDate>
+      <RecordStartTime>00:00:00.0000</RecordStartTime>
+      <FinalStartDate>2015-01-12T15:05:00.0000</FinalStartDate>
+      <FinalStartTime>15:05:00.0000</FinalStartTime>
+      <FinalExpiryDate>1900-01-01T00:00:00.0000</FinalExpiryDate>
+      <FinalExpiryTime>00:00:00.0000</FinalExpiryTime>
+      <URL>http://sample.url.com</URL>
+    </VideoPublish>
+    <LivePublish active="no">
+      <LiveRecordStartDate>1999-01-01T00:00:00.0000</LiveRecordStartDate>
+      <LiveRecordStartTime>09:00:00</LiveRecordStartTime>
+      <LiveFinalStartDate>1999-01-01T00:00:00.0000</LiveFinalStartDate>
+      <LiveFinalStartTime>09:00:00</LiveFinalStartTime>
+      <LiveFinalExpiryDate>1999-01-01T00:00:00.0000</LiveFinalExpiryDate>
+      <LiveFinalExpiryTime>09:00:00</LiveFinalExpiryTime>
+      <URL> </URL>
+      <BackupURL>
+      </BackupURL>
+      <StreamName>
+      </StreamName>
+      <UserName>
+      </UserName>
+      <Password>
+      </Password>
+      <BitrateList>
+        <Bitrate>
+          <Rate>0</Rate>
+          <Width>0</Width>
+          <Height>0</Height>
+        </Bitrate>
+        <Bitrate>
+          <Rate>0</Rate>
+          <Width>0</Width>
+          <Height>0</Height>
+        </Bitrate>
+        <Bitrate>
+          <Rate>0</Rate>
+          <Width>0</Width>
+          <Height>0</Height>
+        </Bitrate>
+      </BitrateList>
+    </LivePublish>
+  </PublishInfo>
+  <Attachments>
+    <Attachment ID="0">
+      <AttachmentName>IET.tv- Access Control -Individuals</AttachmentName>
+      <FileName>IET.tv- Access Control -Individuals.pdf</FileName>
+      <UploadDate>2015-01-12T15:24:58.1717</UploadDate>
+      <UploadTime>15:24:58.1717</UploadTime>
+    </Attachment>
+    <Attachment ID="0">
+      <AttachmentName>IET tv to be Access Control and charging structure</AttachmentName>
+      <FileName>IET tv to be Access Control and charging structure.xlsx</FileName>
+      <UploadDate>2015-01-12T15:25:48.0648</UploadDate>
+      <UploadTime>15:25:48.0648</UploadTime>
+    </Attachment>
+    <Attachment ID="0">
+      <AttachmentName>1541302114923</AttachmentName>
+      <FileName>1541302114923.pdf</FileName>
+      <UploadDate>2015-01-12T15:37:58.6353</UploadDate>
+      <UploadTime>15:37:58.6353</UploadTime>
+    </Attachment>
+  </Attachments>
+</Video>

@@ -1,0 +1,57 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.2" name="IET TV Video Record Inspec Ingestion">
+  <start-state name="StartNode">
+		<transition to="Load Inspec" name="Load Inspec"></transition>
+	</start-state>
+
+	<decision name="Load Inspec">
+		<event type="node-enter">
+			<action class="org.theiet.rsuite.iettv.actionhandlers.inspec.LoadVideoInspecActionHandler" />
+		</event>
+
+		<transition to="Merge Inspec" name="Merge Inspec"/>
+
+		<transition to="Review Inspec Load Failure" name="Review Inspec Load Failure">			
+			<condition>#{EXCEPTION_OCCUR == 'true'}</condition>
+			<action	class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler" />
+		</transition>
+		
+	</decision>
+
+	<task-node name="Review Inspec Load Failure">
+		<task name="Review Inspec Load Failure" description="Review Inspec Load Failure. #{failDetail}">
+			<assignment pooled-actors="IetTvAdministrator" />
+			<controller
+				class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>		
+		</task>
+		<transition to="EndNode" name="End workflow"></transition>
+	</task-node>
+
+	<decision name="Merge Inspec">
+		<event type="node-enter">
+			<action class="org.theiet.rsuite.iettv.actionhandlers.inspec.MergeVideoInspecActionHandler" />
+		</event>
+
+		<transition to="EndNode" name="End workflow"/>
+		
+		<transition to="Review Inspec Merge Failure" name="Review Inspec Merge Failure">
+			<condition>#{EXCEPTION_OCCUR == 'true'}</condition>
+			<action	class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler" />
+		</transition>
+
+	</decision>
+	
+	<task-node name="Review Inspec Merge Failure">
+		<task name="Review Inspec Merge Failure" description="Review Inspec Merge Failure. #{failDetail}">
+			<assignment pooled-actors="IetTvAdministrator" />
+			<controller
+				class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>		
+		</task>
+		<transition to="EndNode" name="End workflow"></transition>
+	</task-node>
+
+	<end-state name="EndNode"></end-state>
+</process-definition>

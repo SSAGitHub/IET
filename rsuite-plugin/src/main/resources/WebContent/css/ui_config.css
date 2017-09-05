@@ -1,0 +1,46 @@
+/* 
+ * CSS for configuring and customizing the main UI
+ */
+.additionalText {
+	height: 350px;
+	width: 450px;
+	box-sizing: border-box;
+	margin-bottom: 5px;
+}
+
+.ietEmailAdditionalText {
+	width: 420px;
+}
+
+.article_title {
+	width: 350px;
+	
+}
+
+.special_issue_title{
+	width: 350px;
+}
+
+.tree .books .icon {
+	background-image: url('../images/folder.gif');
+}
+
+.tree .book .icon {
+	background-image: url('../images/book.png');
+}
+
+.tree .journals .icon {
+	background-image: url('../images/journals.png');
+}
+
+.tree .journal .icon {
+	background-image: url('../images/journal-icon.png');
+}
+
+.tree .article .icon {
+	background-image: url('../images/Paper-48.png');
+}
+
+#header {
+	background-image: url(../images/IET-Logo-no-strapline.gif);
+}

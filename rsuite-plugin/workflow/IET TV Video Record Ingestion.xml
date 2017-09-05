@@ -1,0 +1,43 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.1"
+	name="IET TV Video Record Ingestion">
+	<start-state name="StartNode">
+		<transition to="Ingest Video Record Package"></transition>
+	</start-state>
+	<decision name="Ingest Video Record Package">
+		<event type="node-enter">
+			<action
+				class="org.theiet.rsuite.iettv.actionhandlers.insgestion.IngestVideoRecordPackageActionHandler" />
+		</event>
+		
+		<transition to="Deliver Video Record IET.tv Production" name="Deliver Video Record IET.tv Production" />
+			
+		<transition to="Review Video Record Ingestion fail" name="Review Video Record Ingestion fail">
+			<condition>#{EXCEPTION_OCCUR == 'true'}</condition>
+			<action
+				class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler" />
+		</transition>
+	</decision>
+	<task-node name="Review Video Record Ingestion fail">
+		<task name="Review Video Record Ingestion fail"
+			description="Video Record ingestion has failed. #{failDetail}">
+			<assignment pooled-actors="IetTvAdministrator" />
+			<controller
+				class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>
+		</task>
+		<transition to="EndNode" name="End workflow" />
+	</task-node>
+
+	<node name="Deliver Video Record IET.tv Production">
+		<action
+			class="org.theiet.rsuite.iettv.actionhandlers.insgestion.StartVideoRecordDeliveryToIetTvProductionActionHandler" />
+		<transition to="EndNode" name="End workflow" />
+	</node>
+	<end-state name="EndNode">
+		<event type="node-enter">
+			<action
+				class="com.rsicms.projectshelper.workflow.actionhandlers.WorkflowCleanUpActionHandler" />
+		</event>
+	</end-state>
+</process-definition>

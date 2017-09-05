@@ -1,0 +1,65 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.2" name="IET Prepare Book">
+  <start-state name="StartNode">
+    <transition name="" to="Set book variables" />
+  </start-state>
+  <task-node name="Prepare book">
+    <task name="Prepare book" description="#{id} prepare book">
+      <event type="task-create">
+        <action class="org.theiet.rsuite.journals.actionhandlers.AssignTaskToEa" />
+      </event>
+      <assignment pooled-actors="ProductionController" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="Release book" to="Complete pub track process" />
+    <transition name="Request update from ea" to="Log update request" />
+  </task-node>
+  <node name="Set book variables">
+    <action class="org.theiet.rsuite.actionhandlers.InitiateBooks" />
+    <transition name="" to="Prepare book" />
+  </node>
+  <task-node name="Update book files">
+    <task name="Update book files" description="Update book file for #{id}">
+      <event type="task-create">
+        <action class="org.theiet.rsuite.journals.actionhandlers.AssignTaskToEa" />
+      </event>
+      <assignment pooled-actors="EditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="Provide update" to="Log update" />
+  </task-node>
+  <node name="Complete pub track process">
+    <action class="org.theiet.rsuite.actionhandlers.ClosePubtrackProcess">
+      <processId>${id}</processId>
+      <productName>BOOK</productName>
+    </action>
+    <transition name="" to="Get date" />
+  </node>
+  <end-state name="EndNode" />
+  <node name="Log update request">
+    <action class="org.theiet.rsuite.actionhandlers.LogToPubtrack">
+      <event>REQUEST_UPDATE</event>
+    </action>
+    <transition name="" to="Update book files" />
+  </node>
+  <node name="Log update">
+    <action class="org.theiet.rsuite.actionhandlers.LogToPubtrack">
+      <event>UPDATE</event>
+    </action>
+    <transition name="" to="Prepare book" />
+  </node>
+  <node name="Get date">
+    <action class="org.theiet.rsuite.actionhandlers.SetUKDateVariable" />
+    <transition name="" to="Set date" />
+  </node>
+  <node name="Set date">
+    <action class="com.reallysi.service.workflow.ingestion.action.AddLayeredMetadataActionHandler">
+      <metadataName>print_published_date</metadataName>
+      <metadataValue>${dateString}</metadataValue>
+    </action>
+    <transition name="" to="EndNode" />
+  </node>
+</process-definition>

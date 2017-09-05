@@ -1,0 +1,41 @@
+<WorkflowProcess>
+	<Activities>
+		<Activity id="1" type="START_NODE" name="StartNode"
+			xCoordinate="15" yCoordinate="16" width="80" height="30" />
+		<Activity id="2" type="TASK_NODE" name="Prepare onix validation"
+			xCoordinate="17" yCoordinate="115" width="80" height="30" />
+		<Activity id="3" type="NODE" name="Validate" xCoordinate="18"
+			yCoordinate="215" width="80" height="30" />
+		<Activity id="4" type="DECISION_NODE" name="Validation failed?"
+			xCoordinate="189" yCoordinate="14" width="80" height="30" />
+		<Activity id="5" type="TASK_NODE" name="Review validation error"
+			xCoordinate="19" yCoordinate="308" width="80" height="30" />
+		<Activity id="6" type="NODE" name="Deliver onix to ftp"
+			xCoordinate="191" yCoordinate="121" width="80" height="30" />
+		<Activity id="7" type="DECISION_NODE" name="Delivery Failed?"
+			xCoordinate="193" yCoordinate="212" width="80" height="30" />
+		<Activity id="8" type="TASK_NODE" name="Review delivery error"
+			xCoordinate="194" yCoordinate="304" width="80" height="30" />
+		<Activity id="9" type="NODE" name="Clear delivery exception"
+			xCoordinate="405" yCoordinate="212" width="80" height="30" />
+		<Activity id="10" type="DECISION_NODE" name="Valid onix file?" 
+			xCoordinate="21" yCoordinate="405" width="80" height="30" />
+		<Activity id="11" type="END_NODE" name="EndNode" xCoordinate="21"
+			yCoordinate="405" width="80" height="30" />
+	</Activities>
+	<Transitions>
+		<Transition id="12" name="" from="1" to="2" />
+		<Transition id="13" name="" from="2" to="3" />
+		<Transition id="14" name="" from="3" to="4" />
+		<Transition id="15" name="" from="4" to="5" />
+		<Transition id="16" name="" from="4" to="6" />
+		<Transition id="17" name="" from="5" to="3" />
+		<Transition id="18" name="" from="6" to="7" />
+		<Transition id="19" name="" from="7" to="10" />
+		<Transition id="20" name="" from="7" to="8" />
+		<Transition id="21" name="" from="8" to="9" />
+		<Transition id="22" name="" from="9" to="6" />
+		<Transition id="23" name="" from="10" to="11" />
+		<Transition id="24" name="" from="10" to="3" />
+	</Transitions>
+</WorkflowProcess>

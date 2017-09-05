@@ -1,0 +1,9 @@
+
+Book publishing generation has successfully finished.
+Please, follow the link(s) below to see the book(s) preview on your browser:
+
+${display_name_file_link_list}
+
+Regards,
+
+${mail_from}

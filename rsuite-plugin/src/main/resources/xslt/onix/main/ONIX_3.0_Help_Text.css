@@ -1,0 +1,14 @@
+*[productFormat="print"] {background-color: #98AFC7;}
+
+*[productFormat="digital"] {background-color: #FFF8DC;}
+
+RecordReference[productFormat='print']:after {
+   content: oxy_label(text, "(Print): Replace **** with Product Code", color, "blue");                            
+   font-weight: bold;
+   }
+
+RecordReference[productFormat='digital']:after {
+   content: oxy_label(text, "(Digital): Replace **** with E-Product Code", color, "blue");                            
+   font-weight: bold;
+   }
+

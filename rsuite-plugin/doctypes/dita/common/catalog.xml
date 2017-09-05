@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"          
+  prefer="public">    					
+  <public publicId="urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations"
+    uri="commonDomainIntegrations.mod"
+  />
+  <system systemId="urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations.mod"
+    uri="commonDomainIntegrations.mod"
+  />
+
+  <public publicId="urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations:entities"
+    uri="commonDomainIntegrations.ent"
+  />
+  <system systemId="urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations.ent"
+    uri="commonDomainIntegrations.ent"
+  />
+  
+  <public publicId="urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations:integrationEntities"
+    uri="commonDomainEntityIntegrations.ent"
+  />
+  <system systemId="urn:pubid:org.iet:doctypes:dita:modules:commonDomainEntityIntegrations.ent"
+    uri="commonDomainEntityIntegrations.ent"
+  />
+  
+  
+
+</catalog>  

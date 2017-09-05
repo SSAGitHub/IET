@@ -1,0 +1,38 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.1"
+	name="IET TV Video Record Production Delivery">
+	<start-state name="StartNode">
+		<transition to="Deliver To Iet.tv Production"></transition>
+	</start-state>
+	<decision name="Deliver To Iet.tv Production">
+		<event type="node-enter">
+			<action
+				class="org.theiet.rsuite.iettv.actionhandlers.delivery.production.DeliverVideoRecordToIetTvProductionActionHandler" />
+		</event>
+		
+		<transition to="EndNode" name="End workflow" />
+			
+		<transition to="Review Iet.tv Production Delivery Fail" name="Review Iet.tv Production Delivery Fail">
+			<condition>#{EXCEPTION_OCCUR == 'true'}</condition>
+			<action
+				class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler" />
+		</transition>
+	</decision>
+	<task-node name="Review Iet.tv Production Delivery Fail">
+		<task name="Review Iet.tv Production Delivery Fail"
+			description="Video Record delivery to Iet.tv production has failed. #{failDetail}">
+			<assignment pooled-actors="IetTvAdministrator" />
+			<controller
+				class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>
+		</task>
+		<transition to="EndNode" name="End workflow" />
+	</task-node>
+	
+	<end-state name="EndNode">
+		<event type="node-enter">
+			<action
+				class="com.rsicms.projectshelper.workflow.actionhandlers.WorkflowCleanUpActionHandler" />
+		</event>
+	</end-state>
+</process-definition>

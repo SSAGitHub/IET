@@ -1,0 +1,17 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.2" name="IET Batch Issue Delivery">
+  <start-state name="StartNode">
+    <transition name="" to="Deliver back issues" />
+  </start-state>
+  <node name="Deliver back issues">
+    <action class="org.theiet.rsuite.journals.actionhandlers.BatchDeliverIssue" />
+    <transition name="" to="Review results" />
+  </node>
+  <task-node name="Review results">
+    <task name="Review results batch issue delivery" description="#{result}">
+      <assignment pooled-actors="RSuiteAdministrator" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation" />
+    </task>
+    <transition name="" to="EndNode" />
+  </task-node>
+  <end-state name="EndNode" />
+</process-definition>

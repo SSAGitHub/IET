@@ -1,0 +1,19 @@
+
+Please find attached all of the information required regarding the following IET issue
+
+
+${JournalName}/${IssueDetails} 
+ 
+Please make up this issue and upload the issue PDF file via FTP for approval.
+ 
+ 
+The running order for the papers in this issue are detailed below.
+ 
+  
+${ListOfPapers}
+ 
+Many Thanks
+
+${EditorialAssistantName}
+ 
+IET ${JournalName}

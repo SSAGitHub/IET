@@ -1,0 +1,79 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.2" name="IET Prepare Issue">
+  <start-state name="StartNode">
+    <transition name="" to="Prepare issue" />
+  </start-state>
+  <task-node name="Prepare issue">
+    <task name="Prepare issue" description="#{product} #{id} prepare issue">
+      <event type="task-create">
+        <action class="org.theiet.rsuite.journals.actionhandlers.AssignTaskToEa" />
+      </event>
+      <assignment pooled-actors="ProductionController" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="Release" to="Merge inspec for each article" />
+  </task-node>
+  <end-state name="EndNode" />
+  <node name="Merge inspec for each article">
+    <action class="org.theiet.rsuite.journals.actionhandlers.InspecMergeFromIssue" />
+    <transition name="" to="Inspec merge failure?" />
+  </node>
+  <node name="Deliver issue to digital library">
+    <action class="org.theiet.rsuite.journals.actionhandlers.DeliverIssueToDigitalLibrary" />
+    <transition name="" to="Delivery failed?" />
+  </node>
+  <decision name="Delivery failed?" expression="#{EXCEPTION_OCCUR=='true'}">
+    <transition name="true" to="Review delivery error" />
+    <transition name="false" to="EndNode" />
+  </decision>
+  <node name="Clear DL exception">
+    <action class="com.reallysi.rsuite.system.workflow.actions.ClearExceptionStatus" />
+    <transition name="" to="Deliver issue to digital library" />
+  </node>
+  <task-node name="Review delivery error">
+    <task name="Review delivery error" description="#{failDetail}">
+      <assignment pooled-actors="ProductionController" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="" to="Clear DL exception" />
+  </task-node>
+  <decision name="Inspec merge failure?" expression="#{EXCEPTION_OCCUR=='true'}">
+    <transition name="true" to="Review merge error" />
+    <transition name="false" to="Send issue to inspec" />
+  </decision>
+  <task-node name="Review merge error">
+    <task name="Review merge error" description="#{failDetail}">
+      <assignment pooled-actors="RSuiteAdministrator" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="" to="Clear inspec merge exception" />
+  </task-node>
+  <node name="Clear inspec merge exception">
+    <action class="com.reallysi.rsuite.system.workflow.actions.ClearExceptionStatus" />
+    <transition name="" to="Merge inspec for each article" />
+  </node>
+  <node name="Send issue to inspec">
+    <action class="org.theiet.rsuite.journals.actionhandlers.SendToInspecFromIssue" />
+    <transition name="" to="Inspec send failure?" />
+  </node>
+  <node name="Clear inspec send exception">
+  	<action class="com.reallysi.rsuite.system.workflow.actions.ClearExceptionStatus" />
+    <transition name="" to="Send issue to inspec" />
+  </node>
+  <task-node name="Review send error">
+    <task name="Review send error" description="#{failDetail}">
+      <assignment pooled-actors="RSuiteAdministrator" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation" />
+    </task>
+    <transition name="" to="Clear inspec send exception" />
+  </task-node>
+  <decision name="Inspec send failure?" expression="#{EXCEPTION_OCCUR=='true'}">
+    <transition name="false" to="Deliver issue to digital library" />
+    <transition name="true" to="Review send error" />
+  </decision>
+</process-definition>

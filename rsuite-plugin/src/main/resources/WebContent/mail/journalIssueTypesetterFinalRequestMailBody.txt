@@ -1,0 +1,14 @@
+The Issue PDF file has now been approved.
+ 
+
+Please forward all files to the Printer and upload all online final issue files via FTP
+
+
+${JournalName}/${IssueDetails} 
+ 
+ 
+Many Thanks
+
+${EditorialAssistantName}
+ 
+IET ${JournalName}

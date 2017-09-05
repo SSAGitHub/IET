@@ -1,0 +1,25 @@
+Dear ${CorrespondingAuthorSalutation} ${CorrespondingAuthorSurname},
+
+
+
+${ManuscriptID} 
+
+
+
+${PaperTitle}
+
+
+Please find attached a PDF of the final corrected version of your paper. This should be used in conjunction with our pre- and post-print policy (http://digital-library.theiet.org/files/pre_postprint_policy.pdf). If your paper is open access please refer to the terms of your chosen license agreement.
+
+Your paper is now awaiting assignment to an issue and will be published as soon as possible. Please note that no further changes can now be made.
+
+Yours sincerely,
+
+
+
+${EditorialAssistantName}
+ 
+
+IET 
+
+${JournalName}

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- =============================================================
+     IET Index Topic Type
+     
+     Represents a centralized index within a publication.
+     
+     Specialized from topic
+     
+     Copyright (c) 2013 IET
+     ============================================================= -->
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ENTITY DECLARATIONS                 -->
+<!-- ============================================================= -->
+
+<!ENTITY % commonDomainIntegrations-dec
+  PUBLIC "urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations:entities"
+         "commonDomainIntegrations.ent"
+>%commonDomainIntegrations-dec;
+
+<!ENTITY % indexEntry-d-dec  
+   PUBLIC "urn:pubid:org.iet:entities:dtd:dita:indexEntryDomain:entities"
+   "indexEntryDomain.ent"                                                
+>
+%indexEntry-d-dec;
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ATTRIBUTE DECLARATIONS              -->
+<!-- ============================================================= -->
+
+<!ENTITY % rsuiteIdAttDomain
+  PUBLIC "urn:www.rsuite.com:domains:rsuite_id_att:entities" 
+         "rsuiteIdAttDomain.ent"
+>%rsuiteIdAttDomain;
+
+<!-- ============================================================= -->
+<!--                    DOMAIN EXTENSIONS                          -->
+<!-- ============================================================= -->
+<!--                    One for each extended base element, with
+                        the name of the domain(s) in which the
+                        extension was declared                     -->
+
+<!ENTITY % sectiondiv
+    "sectiondiv |
+    %indexEntry-d-sectiondiv;
+    ">
+
+
+<!ENTITY % commonDomainEntityIntegrations-dec
+  PUBLIC "urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations:integrationEntities"
+         "commonDomainEntityIntegrations.ent"
+>%commonDomainEntityIntegrations-dec;
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ATTRIBUTE EXTENSIONS                -->
+<!-- ============================================================= -->
+<!ENTITY % props-attribute-extensions  ""                            >
+<!ENTITY % base-attribute-extensions   ""                            >
+
+
+<!-- ============================================================= -->
+<!--                    TOPIC NESTING OVERRIDE                     -->
+<!-- ============================================================= -->
+
+<!--                    Redefine the infotype entity to exclude 
+                        other topic types and disallow nesting     -->
+<!ENTITY % index-info-types 
+                        "no-index-nesting"          
+                                                    >
+                                                    
+<!ENTITY % info-types
+  "%index-info-types;
+  "
+>                                                    
+
+<!-- ============================================================= -->
+<!--                    DOMAINS ATTRIBUTE OVERRIDE                 -->
+<!-- ============================================================= -->
+<!--                    Must be declared ahead of the DTDs, which
+                        puts @domains first in order               -->
+
+<!ENTITY included-domains 
+    "&hi-d-att; 
+     &ut-d-att;
+     &formatting-d-att;
+     &indexEntryTopic-d-att;
+    "                
+ >
+
+
+<!-- ============================================================= -->
+<!--                    TOPIC ELEMENT INTEGRATION                  -->
+<!-- ============================================================= -->
+
+<!--                    Embed topic to get generic elements        -->
+
+<!ENTITY % topic-type   PUBLIC 
+"-//OASIS//ELEMENTS DITA Topic//EN" 
+"topic.mod"                                                          >
+%topic-type;
+
+
+<!ENTITY % index-typemod PUBLIC 
+"urn:pubid:org.iet:modules:index" 
+"index.mod"                                                        >                                                     
+%index-typemod;
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ELEMENT INTEGRATION                 -->
+<!-- ============================================================= -->
+
+<!ENTITY % commonDomainIntegrations
+ PUBLIC "urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations"
+         "commonDomainIntegrations.mod"
+>%commonDomainIntegrations;
+
+<!ENTITY % indexEntryDomainIntegration
+ PUBLIC "urn:pubid:org.iet:modules:dita:modules:indexEntryDomain"
+         "indexEntryDomain.mod"
+>%indexEntryDomainIntegration;
+
+
+<!-- ================== End DITA Topic DTD  ====================== -->

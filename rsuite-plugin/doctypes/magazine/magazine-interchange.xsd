@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+  
+ <xs:annotation>
+   <xs:documentation>
+     <h2>Magazine Interchange Schema</h2>
+     <p>This schema is a trivial schema used to simply enable
+     ingestion of otherwise DTD-less IET magazine XML into
+     RSuite.</p>
+   </xs:documentation>
+ </xs:annotation>
+
+ <xs:element name="document">
+   <xs:complexType>
+     <xs:sequence>
+       <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##any" processContents="skip"/>
+     </xs:sequence>
+     <xs:anyAttribute namespace="##any" processContents="skip"/>
+   </xs:complexType>
+ </xs:element>
+</xs:schema>

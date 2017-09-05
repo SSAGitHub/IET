@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Styles xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="7.5">
+  <RootCharacterStyleGroup Self="rootCharacterStyleGroup">
+    <CharacterStyle Self="CharacterStyle/$ID/[No character style]" Name="$ID/[No character style]">
+      <Properties>
+        <BasedOn type="string">$ID/[No character style]</BasedOn>
+      </Properties>
+    </CharacterStyle>
+    <CharacterStyle Self="CharacterStyle/MM_FRSTWO" Name="MM_FRSTWO">
+      <Properties>
+        <BasedOn type="string">$ID/[No character style]</BasedOn>
+      </Properties>
+    </CharacterStyle>
+    <CharacterStyle Self="CharacterStyle/MM_BOLD Char" Name="MM_BOLD Char">
+      <Properties>
+        <BasedOn type="string">$ID/[No character style]</BasedOn>
+      </Properties>
+    </CharacterStyle>
+    <CharacterStyle Self="CharacterStyle/MMITALChar" Name="MMITALChar">
+      <Properties>
+        <BasedOn type="string">$ID/[No character style]</BasedOn>
+      </Properties>
+    </CharacterStyle>
+    <CharacterStyle Self="CharacterStyle/MM_UNDER Char" Name="MM_UNDER Char">
+      <Properties>
+        <BasedOn type="string">$ID/[No character style]</BasedOn>
+      </Properties>
+    </CharacterStyle>
+    <CharacterStyle Self="CharacterStyle/MM_SUB Char" Name="MM_SUB Char">
+      <Properties>
+        <BasedOn type="string">$ID/[No character style]</BasedOn>
+      </Properties>
+    </CharacterStyle>
+    <CharacterStyle Self="CharacterStyle/MM_SUPER Char" Name="MM_SUPER Char">
+      <Properties>
+        <BasedOn type="string">$ID/[No character style]</BasedOn>
+      </Properties>
+    </CharacterStyle>
+  </RootCharacterStyleGroup>
+  <RootParagraphStyleGroup Self="rootParagraphStyleGroup">
+    <ParagraphStyle Self="ParagraphStyle/ct" Name="ct">
+      <Properties>
+        <BasedOn type="string">$ID/[No paragraph style]</BasedOn>
+      </Properties>
+    </ParagraphStyle>
+    <ParagraphStyle Self="ParagraphStyle/tx" Name="tx">
+      <Properties>
+        <BasedOn type="string">$ID/[No paragraph style]</BasedOn>
+      </Properties>
+    </ParagraphStyle>
+    <ParagraphStyle Self="ParagraphStyle/MM_PGH" Name="MM_PGH">
+      <Properties>
+        <BasedOn type="string">$ID/[No paragraph style]</BasedOn>
+      </Properties>
+    </ParagraphStyle>
+    <ParagraphStyle Self="ParagraphStyle/MM_PGHINDENT" Name="MM_PGHINDENT">
+      <Properties>
+        <BasedOn type="string">$ID/[No paragraph style]</BasedOn>
+      </Properties>
+    </ParagraphStyle>
+    <ParagraphStyle Self="ParagraphStyle/MM_SBHD" Name="MM_SBHD">
+      <Properties>
+        <BasedOn type="string">$ID/[No paragraph style]</BasedOn>
+      </Properties>
+    </ParagraphStyle>
+    <ParagraphStyle Self="ParagraphStyle/MM_NL" Name="MM_NL">
+      <Properties>
+        <BasedOn type="string">$ID/[No paragraph style]</BasedOn>
+      </Properties>
+    </ParagraphStyle>
+    <ParagraphStyle Self="ParagraphStyle/MM_PQ" Name="MM_PQ">
+      <Properties>
+        <BasedOn type="string">$ID/[No paragraph style]</BasedOn>
+      </Properties>
+    </ParagraphStyle>
+    <ParagraphStyle Self="ParagraphStyle/MM_REF" Name="MM_REF">
+      <Properties>
+        <BasedOn type="string">$ID/[No paragraph style]</BasedOn>
+      </Properties>
+    </ParagraphStyle>
+  </RootParagraphStyleGroup>
+</idPkg:Styles>

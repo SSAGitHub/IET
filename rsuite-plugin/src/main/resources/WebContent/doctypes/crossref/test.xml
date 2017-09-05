@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doi_batch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.crossref.org/schema/4.3.6" version="4.3.6"
+    xsi:schemaLocation="crossref4.3.06.xsd">
+    <head>
+        <doi_batch_id>IET-tv_Components_2015_1</doi_batch_id>    
+            <timestamp>2015070307100808</timestamp>     <depositor>       <depositor_name>Sue
+                Portwood</depositor_name>       <email_address>info@iet.tv</email_address>    
+        </depositor>     <registrant>IET</registrant></head>
+    <body>     <sa_component parent_doi="10.1049/iet-tv">       <component_list>         <component
+                    parent_relation="isPartOf">           <contributors>             <person_name
+                            sequence="first" contributor_role="author">              
+                                <given_name>David</given_name><surname>Wood</surname>            
+                        </person_name>           </contributors>           <description>Wireless NOT
+                        disrupted</description>           <format mime_type="multipart/mixed"/>
+                              <doi_data>             <doi>10.1049/iet-tv.vn.6995</doi>            
+                            <resource>https://iettv-uat.theiet.org/?videoid=6995</resource>
+                                  </doi_data>         </component>       </component_list>    
+        </sa_component></body>
+</doi_batch>
