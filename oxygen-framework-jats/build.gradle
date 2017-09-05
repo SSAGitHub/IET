@@ -1,0 +1,79 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+
+repositories {
+	mavenCentral()
+
+	maven {
+		url "http://nexus.theiet.org/nexus/content/groups/public"
+		credentials {
+			username ietMavenUser
+			password ietMavenPassword
+		}
+	}
+}
+
+configurations {  
+    rsuitePlugins
+
+	
+}
+
+dependencies {	   
+    compile 'com.oxygenxml:oxygen:15.2'
+	compile 'log4j:log4j:1.2.14' 
+	compile 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-api:RS4.0.7_oxy15.2-v1.5.15qa7'
+	rsuitePlugins 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-jats:4.0.16_oxy_15.2_v1.1'
+}
+
+
+
+ 	
+jar {
+    
+	version = null
+	
+	into('/')
+	configurations.rsuitePlugins.filter { it.toString().endsWith(".zip") }.each{
+    from zipTree(it)
+    
+    manifest {
+        attributes 'Implementation-Title': 'Oxygen Integration'    
+        attributes 'Permissions' : 'all-permissions'				
+		attributes 'Application-Name' : 'value="IET Rsuite Oxygen Integration'
+	    attributes 'Codebase' :'*' 					
+		attributes 'Application-Library-Allowable-Codebase' :'*' 
+		attributes 'Built-By' : System.getProperty('user.name') 
+		attributes 'Built-JDK': System.getProperty('java.version')	
+		attributes 'Specification-Title' : 'Oxygen Iet customization Plugin'
+		attributes 'Specification-Vendor':'RSI Conent Solution'
+		attributes 'Implementation-Version': new Date()
+		attributes 'Implementation-Vendor':'RSI Content Solution'  	
+    }
+}
+
+}
+
+task zip(dependsOn: jar, type: Zip) {
+    from { configurations.runtime.allArtifacts.files }
+    archiveName 'frameworks.zip'
+}
+
+	
+	
+
+		
+	
+	
+
+		
+
+	
+	
+	
+
+	
+}
+

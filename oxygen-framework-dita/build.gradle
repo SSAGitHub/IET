@@ -1,0 +1,87 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+
+repositories {
+	mavenCentral()
+
+	maven {
+		url "http://nexus.theiet.org/nexus/content/groups/public"
+		credentials {
+			username ietMavenUser
+			password ietMavenPassword
+		}
+	}
+}
+
+configurations {  
+    extraLibs
+
+	
+}
+
+dependencies {	
+    compile 'commons-io:commons-io:1.4'	
+    compile 'com.oxygenxml:oxygen:15.2'
+	compile 'log4j:log4j:1.2.14' 
+	compile 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-api:RS4.0.7_oxy15.2-v1.5.15qa7'
+	compile 'com.rsicms.oxygen.frameworks:dita:1.0.0'
+
+	extraLibs 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-dita:4.0.7_oxy_15.2_o2_plugin_v1.5.15qa1'
+}
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+//create a fat jar
+task fatJar(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'Oxygen Integration'      	
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+
+
+jar {
+    
+	version = null
+	
+	into('/')
+	configurations.extraLibs.filter { it.toString().endsWith(".zip") }.each{
+    from zipTree(it)
+    
+    manifest {
+        attributes 'Implementation-Title': 'Oxygen Integration'    
+        attributes 'Permissions' : 'all-permissions'				
+		attributes 'Application-Name' : 'value="IET Rsuite Oxygen Integration'
+	    attributes 'Codebase' :'*' 					
+		attributes 'Application-Library-Allowable-Codebase' :'*' 
+		attributes 'Built-By' : System.getProperty('user.name') 
+		attributes 'Built-JDK': System.getProperty('java.version')	
+		attributes 'Specification-Title' : 'Oxygen Iet customization Plugin'
+		attributes 'Specification-Vendor':'RSI Conent Solution'
+		attributes 'Implementation-Version': new Date()
+		attributes 'Implementation-Vendor':'RSI Content Solution'  	
+    }
+}
+
+}
+
+task zip(dependsOn: jar, type: Zip) {
+    from { configurations.runtime.allArtifacts.files }
+    archiveName 'frameworks.zip'
+}
+
+
+
+
+
+
+
+
+
+
