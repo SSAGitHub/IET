@@ -1,0 +1,1 @@
+Issue ${issue_code} proof generation successful

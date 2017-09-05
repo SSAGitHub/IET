@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+  <!-- the root catalog of the IET plugin -->
+  <nextCatalog catalog="chapter/catalog.xml"/>
+  <nextCatalog catalog="cite_marginDomain/catalog.xml"/>
+  <nextCatalog catalog="common/catalog.xml"/>
+  <nextCatalog catalog="d4pCover/catalog.xml"/>  
+  <nextCatalog catalog="index/catalog.xml"/>    
+  <nextCatalog catalog="indexEntryDomain/catalog.xml"/>  
+  <nextCatalog catalog="guide_notemap/catalog.xml"/>
+  <nextCatalog catalog="part/catalog.xml"/>  
+  <nextCatalog catalog="regmap/catalog.xml"/>
+  <nextCatalog catalog="regnumDomain/catalog.xml"/>
+  <nextCatalog catalog="regulation/catalog.xml"/>
+  <nextCatalog catalog="topic/catalog.xml"/>  
+</catalog>

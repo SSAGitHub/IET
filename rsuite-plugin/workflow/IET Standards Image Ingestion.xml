@@ -1,0 +1,49 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.2" name="IET Standards Image Ingestion">
+
+	<start-state name="StartNode">
+		<transition name="" to="Unzip" />
+	</start-state>
+	
+	<end-state name="EndNode" />
+	
+	<decision name="Unzip">
+		<event type="node-enter">
+			<action class="org.theiet.rsuite.standards.actionhandlers.UnzipBookImagesActionHandler" />
+		</event>
+		<transition to="Import Images" name="succeeded" />
+		<transition to="Review Failed Import" name="failed">
+			<condition>#{EXCEPTION_OCCUR=='true'}</condition>
+     		<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler"/>
+		</transition>
+	</decision>
+	
+	<decision name="Import Images">
+		<event type="node-enter">
+			<action class="org.theiet.rsuite.standards.actionhandlers.IngestBookImagesActionHandler" />
+		</event>
+		<transition to="Remove Temp Dir" name="succeeded" />
+		<transition to="Review Failed Import" name="failed">
+			<condition>#{EXCEPTION_OCCUR=='true'}</condition>
+     		<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler"/>
+		</transition>		
+	</decision>
+	
+	<task-node name="Review Failed Import">
+		<task name="Review Failed Import" description="#{failDetail}">
+			<event type="task-create">
+				<action class="com.reallysi.rsuite.system.workflow.actions.taskcreate.AssignTaskToUserFromVariable" />
+			</event>
+			<assignment pooled-actors="RSuiteUser" />
+			<controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,,required" />
+			</controller>
+		</task>
+		<transition name="Done" to="Remove Temp Dir" />
+	</task-node>
+
+	<node name="Remove Temp Dir">
+		<action class="org.theiet.rsuite.actionhandlers.WorkflowTempDirectoryRemovalActionHandler"/>
+		<transition to="EndNode"></transition>
+	</node>
+
+</process-definition>

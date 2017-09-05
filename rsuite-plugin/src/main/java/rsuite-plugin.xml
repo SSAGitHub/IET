@@ -1,0 +1,2661 @@
+<rsuite-plugin id="iet" version="@VERSION@">
+  <lifecycleListener type="org.theiet.rsuite.PluginActivator" />
+  <extensionProvider id="rsuite.WebService">
+    <staticWebService root="/iet" path="/WebContent" />
+    <remoteApiDefinition description="Copy Results to Clipboard"
+    handler="org.theiet.rsuite.webservice.CopyResultsToClipboardWebService"
+    id="iet:copyResultsToClipboard" />
+   <remoteApiDefinition id="iet.remote.error.resource.downloader"
+    handler="org.theiet.rsuite.webservice.ErrorResourceDownloaderWebService"
+    description="Error Resource Downloader" />
+    
+    
+    <!-- COMMON -->
+     <remoteApiDefinition id="iet.download"
+    handler="org.theiet.rsuite.webservice.download.DownloadWebService"
+    description="Custom iet download action." />
+    
+    <!-- JOURNALS -->
+    
+    <remoteApiDefinition id="iet.create.journal.corrections"
+    handler="org.theiet.rsuite.journals.webservice.CreateCorrectionsSubfolder"
+    description="Creates a new corrections subfolder." />
+    <remoteApiDefinition id="iet.journal.send.author.email"
+    handler="org.theiet.rsuite.journals.webservice.SendAuthorEmailFromEditorialAssistant"
+    description="Send an email to Author from editorial assistant." />
+    <remoteApiDefinition description="Reassign Editoral Assistant"
+    handler="org.theiet.rsuite.journals.webservice.ReassignEa"
+    id="iet.journals.reassign.ea" />
+    <remoteApiDefinition description="Test File Upload"
+    handler="test.theiet.rsuite.journals.webservice.ExtensionHelperTestService"
+    id="fileload" />
+    <remoteApiDefinition description="Clear awaiting author"
+    handler="org.theiet.rsuite.journals.webservice.ClearAwaitingAuthorStatus"
+    id="iet.journals.clearawaitingauthor" />
+    <remoteApiDefinition id="iet.createNewBook"
+    handler="org.theiet.rsuite.books.webservice.CreateBookPublicationWebService"
+    description="Creates a new content assembly structure for a book within the context of a folder or content assembly." />
+    <remoteApiDefinition id="iet.journals.sendemail"
+    handler="org.theiet.rsuite.journals.webservice.SendEmailForReviewWebService"
+    description="Sends email." />
+    <remoteApiDefinition id="iet.journals.send.update.request.typesetter"
+    handler="org.theiet.rsuite.journals.webservice.SendUpdateRequestToTypesetterWebService"
+    description="Sends update request to typesetter." />
+    <remoteApiDefinition id="iet.journals.send.final.request.typesetter"
+    handler="org.theiet.rsuite.journals.webservice.SendFinalRequestToTypesetterWebService"
+    description="Sends final request to typesetter." />
+    <remoteApiDefinition id="iet.journals.deliver.article"
+    handler="org.theiet.rsuite.journals.webservice.DeliveryArticleWebService"
+    description="Deliver article to digital library." />
+    <remoteApiDefinition id="iet.journals.assign.articles"
+    handler="org.theiet.rsuite.journals.webservice.AssignArticles"
+    description="Assigns articles to issue." />
+    <remoteApiDefinition id="iet.journals.get.available.articles"
+    handler="org.theiet.rsuite.journals.webservice.journal.JournalAvailableArticlesWebService"
+    description="Gets articles availbe for the issue assignment." />    
+    <remoteApiDefinition id="iet.journals.unassign.article"
+    handler="org.theiet.rsuite.journals.webservice.UnassignArticle"
+    description="Unassigns articles from issue." />
+    <remoteApiDefinition id="iet.journals.create.new.journal"
+    handler="org.theiet.rsuite.journals.webservice.CreateNewJournalWebService"
+    description="Create a new issue." />
+    <remoteApiDefinition id="iet.journals.create.new.issue"
+    handler="org.theiet.rsuite.journals.webservice.issue.CreateNewIssueWebService"
+    description="Create a new issue." />
+    <remoteApiDefinition id="iet.journals.deliver.issue"
+    handler="org.theiet.rsuite.journals.webservice.issue.DeliveryIssueWebService"
+    description="Deliver issue to digital library." />
+    <remoteApiDefinition id="iet.journals.issue.send.request.typesetter"
+    handler="org.theiet.rsuite.journals.webservice.issue.SendIssueRequestToTypesetterWebService"
+    description="Send issue request to typesetter." />
+    <remoteApiDefinition id="iet.journals.issue.send.final.typesetter"
+    handler="org.theiet.rsuite.journals.webservice.issue.SendIssueFinalRequestToTypesetterWebService"
+    description="Send issue final request to typesetter." />
+    <remoteApiDefinition id="iet.journals.withdraw.article"
+    handler="org.theiet.rsuite.journals.webservice.WithdrawArticleWebService"
+    description="Withdraw an article." />    
+
+    <remoteApiDefinition id="iet.journals.publish.article"
+    handler="org.theiet.rsuite.journals.webservice.publish.PublishPdfFromArticleWebService"
+    description="Publish an article to PDF." />    
+
+    <remoteApiDefinition id="iet.journals.issue.generate.proof.pdf"
+    handler="org.theiet.rsuite.journals.webservice.issue.GenerateIssueProofPdfWebService"
+    description="Generate issue proof PDF." />
+    
+    <remoteApiDefinition id="iet.journals.issue.generate.final.articles.pdf"
+    handler="org.theiet.rsuite.journals.webservice.issue.GenerateFinalIssueArticlesPdfWebService"
+    description="Generate final issue articles PDF." />    
+    
+    
+    <!-- ACADEMIC BOOKS -->
+    <remoteApiDefinition id="iet.book.send.request.typesetter"
+    handler="org.theiet.rsuite.books.webservice.SendRequestToTypesetterWebService"
+    description="Send book request to typesetter." />
+    <remoteApiDefinition id="iet.create.book.corrections"
+    handler="org.theiet.rsuite.books.webservice.CreateBookCorrectionsSubfolderWebService"
+    description="Creates a new corrections subfolder." />
+    <remoteApiDefinition id="iet.book.send.proof.corrections.typesetter"
+    handler="org.theiet.rsuite.books.webservice.SendProofCorrectionsToTypesetterWebService"
+    description="Send proof corrections to typesetter." />
+    <remoteApiDefinition id="iet.book.mark.print.file"
+    handler="org.theiet.rsuite.books.webservice.CreateReferenceInPrintFilesAssembly"
+    description="Copy object to print files assembly." />
+    <remoteApiDefinition id="iet.book.mark.print.file.ca"
+    handler="org.theiet.rsuite.books.webservice.CreateReferenceInPrintFilesAssemblyCa"
+    description="Copy objects in CA to print files assembly." />
+    <remoteApiDefinition id="iet.book.send.final.request.typesetter"
+    handler="org.theiet.rsuite.books.webservice.SendFinalRequestToTypesetterWebService"
+    description="Send final request to typesetter" />
+    <remoteApiDefinition id="iet.book.send.request.printer"
+    handler="org.theiet.rsuite.books.webservice.SendPrinterRequestWebService"
+    description="Send request to printer" />
+    <remoteApiDefinition id="iet.book.send.book.metadata"
+    handler="org.theiet.rsuite.books.webservice.ExtractAndSendBookMetadata"
+    description="Send book metadata" />
+    <remoteApiDefinition id="iet.book.contextmenuitem.startbookworkflow"
+    handler="org.theiet.rsuite.books.webservice.StartBookWorkflow"
+    description="Start book workflow" />
+    
+    
+    <!-- STANDARDS -->
+    <remoteApiDefinition description="Create book edition"
+    handler="org.theiet.rsuite.standards.webservices.CreateBookEditionWebService"
+    id="iet.standards.book.createEdition" />
+
+    <remoteApiDefinition description="Create book"
+    handler="org.theiet.rsuite.standards.webservices.CreateBookWebService"
+    id="iet.standards.book.createBook" />
+
+    <remoteApiDefinition description="Create pdf preview with OT"
+    handler="org.theiet.rsuite.standards.webservices.publish.PublishPdfWithOtWebService"
+    id="org.theiet.rsuite.standards.webservices.create.pdf.ditaOT" />
+    <remoteApiDefinition description="Create IMCL outpout"
+    handler="org.theiet.rsuite.standards.webservices.publish.PublishIcmlFromRegulationWebService"
+    id="org.theiet.rsuite.standards.webservices.create.icml" />
+    <remoteApiDefinition description="Add template"
+    handler="org.theiet.rsuite.standards.webservices.AddMoFromTemplateWebService"
+    id="iet.standards.books.add.mo.from.template" />
+    <remoteApiDefinition id="iet.standards.books.send.book.metadata"
+    handler="org.theiet.rsuite.standards.webservices.StandardsSendBookMetadata"
+    description="Send book metadata" />
+    
+   <remoteApiDefinition description="Copy Book Edition Content"
+    handler="org.theiet.rsuite.standards.webservices.CopyBookEditionContentWebService"
+    id="iet.standards.books.copy.book.edition.content" />
+    
+   <remoteApiDefinition id="iet.standards.books.send.reject.book.edition"
+    handler="org.theiet.rsuite.standards.webservices.StandardsRejectBookEditionWebService"
+    description="Rejects book edition" />
+
+    <remoteApiDefinition id="iet.standards.publish.download.exported.files"
+    handler="org.theiet.rsuite.standards.webservices.publish.PublishDownloadExportedFilesWebService"
+    description="Download exported files from RSuit used for output process" />
+    						 
+    <remoteApiDefinition id="iet.standards.books.deliver.esp"
+    handler="org.theiet.rsuite.standards.webservices.export.ESPPlatformDeliveryWebService"
+    description="Deliver the book edition to the ESP platform" />    
+    
+    <!--  ONIX -->
+        <remoteApiDefinition id="iet.onix.start.onix.delivery.workflow"
+    handler="org.theiet.rsuite.onix.webservice.OnixStartDeliveryWorkflowWebService"
+    description="Start Onix delivery workflow for all vendors" />
+    
+    <remoteApiDefinition id="iet.onix.remote.create.onix.recipient"
+    handler="org.theiet.rsuite.onix.webservice.CreateOnixRecipientWebService"
+    description="Onix proof of concept" />
+    
+      <!--  IET.tv -->
+    <remoteApiDefinition id="iet.iettv.start.inspec.delivery.workflow"
+    handler="org.theiet.rsuite.iettv.webservices.DeliverVideoForInsecWebService"
+    description="Start Iet.tv inspec delivery workflow" />
+    
+    <remoteApiDefinition id="iet.iettv.start.production.delivery.workflow"
+    handler="org.theiet.rsuite.iettv.webservices.DeliverVideoToIetTvProductionWebService"
+    description="Start Iet.tv production delivery workflow" />
+
+    <remoteApiDefinition id="iet.iettv.crossref.create.document"
+    handler="org.theiet.rsuite.iettv.webservices.crossref.CreateCrossRefWebService"
+    description="Creates CrossRef Document" />
+
+    <remoteApiDefinition id="iet.iettv.crossref.deliver.document"
+    handler="org.theiet.rsuite.iettv.webservices.crossref.DeliverCrossRefWebService"
+    description="Deliver CrossRef Document" />        
+
+    <!--  MaintenanceWS List of Maintenance web services -->
+    <remoteApiDefinition id="iet.maintenance.iet917"
+    handler="org.theiet.maintenance.webservice.Iet917"
+    description="Maintenance web service for iet917" />
+    <remoteApiDefinition id="iet.maintenance.iet356"
+    handler="org.theiet.maintenance.webservice.Iet356"
+    description="Maintenance web service for iet356" />
+    <remoteApiDefinition id="iet.maintenance.iet468"
+    handler="org.theiet.maintenance.webservice.Iet468"
+    description="Maintenance web service for IET 468" />
+    
+    <remoteApiDefinition id="iet.maintenance.iet493"
+    handler="org.theiet.maintenance.webservice.Iet493"
+    description="Maintenance web service for IET 493" />
+    
+        <remoteApiDefinition id="iet.maintenance.iet724"
+    handler="org.theiet.maintenance.webservice.Iet724"
+    description="Maintenance web service for IET 724" />
+    
+     <remoteApiDefinition id="iet.maintenance.iet726"
+    handler="org.theiet.maintenance.webservice.Iet726"
+    description="Maintenance web service for IET 726" />
+    
+    <remoteApiDefinition description="Maintenance web service for iet763" handler="org.theiet.maintenance.webservice.Iet763" id="iet.maintenance.iet763"/>
+       
+    <!-- MAINTANENCE -->
+    <remoteApiDefinition description="Maintenance web service for articlePubtrackAddObjectId" handler="org.theiet.maintenance.webservice.ArticlePubtrackAddObjectId" id="iet.maintenance.articlepubtrackaddobjectid"/>
+    
+  	<!-- PROJECT HELPER -->
+  	    <remoteApiDefinition description="Clear publication history"
+    handler="com.rsicms.projectshelper.publish.storage.webservice.ClearPublicationHistoryWebService"
+    id="projects.helper.webservices.clear.publication.history" />
+    
+    <remoteApiDefinition description="Remove obsolete output containers"
+    handler="com.rsicms.projectshelper.publish.storage.webservice.RemoveObsoleteOutputContainersWebService"
+    id="projects.helper.webservices.remove.obsolete.output.containers" />
+    
+    <remoteApiDefinition description="Mark output result as permanent"
+    handler="com.rsicms.projectshelper.publish.storage.webservice.MarkOutputResultAsPermanentWebService"
+    id="projects.helper.webservices.mark.output.result.as.permanent" />
+
+	<remoteApiDefinition description="Mark output result as temporary"
+    handler="com.rsicms.projectshelper.publish.storage.webservice.MarkOutputResultAsTemporaryWebService"
+    id="projects.helper.webservices.mark.output.result.as.temporary" />
+    
+     <remoteApiDefinition id="projects.helper.webservices.output.locator"
+    handler="com.rsicms.projectshelper.publish.storage.webservice.OutputCaLocatorWebService"
+    description="Locates output container for given MO" />  
+
+     <remoteApiDefinition id="projects.helper.publish.download.files"
+    handler="com.rsicms.projectshelper.publish.webservice.PublishDownloadFilesWebService"
+    description="Downloads workflow files" />
+    
+  </extensionProvider>
+  <extensionProvider id="rsuite.ContextMenu">
+  
+  <!-- contextMenuRuleSet name="edition.editoxygen.jar.app">
+			<menuItemList>
+				<menuItem>
+					<type>action</type>
+					<actionName>rsuite:invokeWebservice</actionName>
+					<label>Download Oxygen launcher</label>
+					<property name="remoteApiName" value="rsuite.oxygen.launch.launcher.jar.generator" />
+					<property name="useTransport" value="iframe" />					 					
+				</menuItem>
+			</menuItemList>
+			<ruleList>				
+			</ruleList>
+		</contextMenuRuleSet -->
+  
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.clearawaitingauthor">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Clear awaiting author</label>
+          <property name="remoteApiName"
+          value="iet.journals.clearawaitingauthor" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include lmdValue awaiting_author_comments</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.create.corrections.subfolder">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Create Corrections Subfolder...</label>
+          <property name="formId"
+          value="iet.create.book.corrections" />
+          <!-- reuse form -->
+          <property name="remoteApiName"
+          value="iet.create.journal.corrections" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType authorCorrections</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.books.startworkflow">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Start books workflow</label>
+          <property name="remoteApiName"
+          value="iet.book.contextmenuitem.startbookworkflow" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType book</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.books.mark.print.file">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET Books: Copy to Print Files</label>
+          <property name="remoteApiName"
+          value="iet.book.mark.print.file" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include nodeType mo,mononxml</rule>
+        <rule>include role BookProductionController,BookEditorialAssistant,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.books.mark.print.file.ca">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET Books: Copy to Print Files</label>
+          <property name="remoteApiName"
+          value="iet.book.mark.print.file.ca" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include nodeType ca</rule>
+        <rule>include caType finalFiles</rule>
+        <rule>include role BookProductionController,BookEditorialAssistant</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+   <contextMenuRuleSet name="iet.contextmenuitem.journals.assign.articles2">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:iet:issue:assign:articles</actionName>
+          <label>IET: Assign articles</label>	
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType issue</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.unassign.article">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Unassign article</label>
+          <property name="remoteApiName"
+          value="iet.journals.unassign.article" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType article</rule>
+        <rule>include lmdValue assigned</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.send.update.request.typesetter">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Send update request to typesetter</label>
+          <property name="remoteApiName"
+          value="iet.journals.send.update.request.typesetter" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType authorCorrections</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.send.final.request.typesetter">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Send final request to typesetter</label>
+          <property name="remoteApiName"
+          value="iet.journals.send.final.request.typesetter" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType article</rule>
+        <rule>exclude lmdValue status=withdrawn</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.sentemail">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET Journals: Send to Author for Review...</label>
+          <property name="remoteApiName"
+          value="iet.journals.sendemail" />
+          <property name="formId"
+          value="iet.journals.form.sentemail" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include nodeType mo,mononxml</rule>
+        <rule>include role JournalEditorialAssistant,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.edit-article-layered-metadata">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:editMetaData</actionName>
+          <label>IET: Edit/View Article Metadata...</label>
+          <property name="formId"
+          value="rsicms.rsuite.editLayeredMetadata" />
+          <property name="formParams.groupName" value="article" />
+          <property name="dialogOptions.height" value="600" />
+          <property name="dialogOptions.width" value="1100" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType article</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.article.deliver.to.digitallibrary">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Deliver Article to Digital Library. .
+          .</label>
+          <property name="remoteApiName"
+          value="iet.journals.deliver.article" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType article</rule>
+        <rule>include role RSuiteAdministrator</rule>
+        <rule>exclude lmdValue status=withdrawn</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.article.withdraw">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Withdraw Article
+          .</label>
+          <property name="remoteApiName"
+          value="iet.journals.withdraw.article" />          
+          <property name="formId" value="iet.journals.withdraw.article" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType article</rule>
+        <rule>include role RSuiteAdministrator</rule>
+        <rule>exclude lmdValue status=withdrawn</rule>
+        <rule>exclude lmdValue online_published_date</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+     <contextMenuRuleSet name="iet.contextmenuitem.journals.article.proof.publish">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Journals: Generate Proof PDF From Article
+          .</label>
+          <property name="remoteApiName"
+          value="iet.journals.publish.article" />
+          <property name="showProgressMeter" value="true" />
+          <property name="rsuite:path" value="Generate outputs" />
+          <property name="rsuite:icon" value="pdf" />
+          <property name="serviceParams.type" value="proof"/>
+        </menuItem>
+      </menuItemList>
+      <ruleList>        
+        <rule>include role JournalEditorialAssistant,RSuiteAdministrator</rule>
+        <rule>include nodeType mo</rule>
+        <rule>include elementType article</rule>               
+      </ruleList>
+    </contextMenuRuleSet>
+    
+     <contextMenuRuleSet name="iet.contextmenuitem.journals.article.final.publish">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Journals: Generate Final PDF From Article
+          .</label>
+          <property name="remoteApiName"
+          value="iet.journals.publish.article" />
+          <property name="showProgressMeter" value="true" />
+          <property name="rsuite:path" value="Generate outputs" />
+          <property name="rsuite:icon" value="pdf" />
+          <property name="serviceParams.type" value="final"/>          
+        </menuItem>
+      </menuItemList>
+      <ruleList>        
+        <rule>include role JournalEditorialAssistant,RSuiteAdministrator</rule>
+        <rule>include nodeType mo</rule>
+        <rule>include elementType article</rule>               
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.article.send.email.author.from.ea">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Send E-mail to author from EA...</label>
+          <property name="formId" value="ietEmailAdditionalTextwithAttachment" />
+          <property name="remoteApiName" value="iet.journal.send.author.email" />
+          <property name="dialogOptions.height" value="510" />
+          <property name="dialogOptions.width" value="475" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType article</rule>
+        <rule>exclude lmdValue status=withdrawn</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.reassign.ea">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Reassign Editoral Assistant... (Admin
+          Only)</label>
+          <property name="formId"
+          value="iet.journals.form.reassign.ea" />
+          <property name="remoteApiName"
+          value="iet.journals.reassign.ea" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType journal</rule>
+        <rule>include role RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.create.new.journal">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Create a new Journal...</label>
+          <property name="remoteApiName"
+          value="iet.journals.create.new.journal" />
+          <property name="formId"
+          value="iet.journals.form.create.new.journal" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType journals</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.edit-journal-layered-metadata">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:editMetaData</actionName>
+          <label>IET: Edit/View Journal Metadata...</label>
+          <property name="formId"
+          value="rsicms.rsuite.editLayeredMetadata" />
+          <property name="formParams.groupName" value="journal" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType journal</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.edit-issue-layered-metadata">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:editMetaData</actionName>
+          <label>IET: Edit/View Issue Metadata...</label>
+          <property name="formId"
+          value="rsicms.rsuite.editLayeredMetadata" />
+          <property name="formParams.groupName" value="issue" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType issue</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.create.new.issue">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Create a new Issue</label>
+          <property name="formId"
+          value="iet.journals.form.create.new.issue" />
+          <property name="remoteApiName"
+          value="iet.journals.create.new.issue" />
+          <property name="showProgressMeter" value="true" />
+          <property name="dialogOptions.height" value="300" />
+          <property name="dialogOptions.width" value="300" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType journal</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.issue.send.request.typesetter">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Send request to typesetter</label>
+          <property name="remoteApiName"
+          value="iet.journals.issue.send.request.typesetter" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType issue</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.issue.send.final.request.typesetter">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Send final request to typesetter</label>
+          <property name="remoteApiName"
+          value="iet.journals.issue.send.final.typesetter" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType issue</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+     <contextMenuRuleSet name="iet.contextmenuitem.journals.issue.generate.proof.pdf">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Generate proof PDF</label>
+          <property name="remoteApiName"
+          value="iet.journals.issue.generate.proof.pdf" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType issue</rule>
+        <rule>include role JournalEditorialAssistant,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.issue.generate.final.articles.pdf">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Generate final issue article PDFs</label>
+          <property name="remoteApiName"
+          value="iet.journals.issue.generate.final.articles.pdf" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType issue</rule>
+        <rule>include role JournalEditorialAssistant,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.journals.issue.deliver.to.digitallibrary">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Deliver to Digital Library. . .</label>
+          <property name="remoteApiName"
+          value="iet.journals.deliver.issue" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType issue</rule>
+        <rule>include role RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+   <contextMenuRuleSet name="iet.journals.clean.up.publication.history">
+    <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Clear history</label>
+          <property name="rsuite:icon" value="plugin/iet/images/cleanup.png" />
+          <property name="remoteApiName" value="projects.helper.webservices.clear.publication.history" />
+          <property name="formId" value="iet.standards.webservices.clear.publication.history" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType outputHistory</rule>
+        <rule>include role RSuiteAdministrator</rule>              
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <!-- BOOKS -->
+    <contextMenuRuleSet name="iet.contextmenuitem.books.create.new.book">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Create Book...</label>
+          <property name="formId" value="iet.createNewBook" />
+          <property name="remoteApiName"
+          value="iet.createNewBook" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType booksCA</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.books.typesetter.request">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Send To Typesetter...</label>
+          <property name="formId" value="ietEmailAdditionalText" />
+          <property name="remoteApiName"
+          value="iet.book.send.request.typesetter" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType typescript</rule>
+        <rule>include role BookProductionController</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.books.edit-book-layered-metadata">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:editMetaData</actionName>
+          <label>IET: Edit/View Book Metadata...</label>
+          <property name="formId"
+          value="rsicms.rsuite.editLayeredMetadata" />
+          <property name="formParams.groupName" value="book" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType book</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.books.edit-additional-book-layered-metadata">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:editMetaData</actionName>
+          <label>IET: Edit/View Additional Book Metadata...</label>
+          <property name="formId"
+          value="rsicms.rsuite.editLayeredMetadata" />
+          <property name="formParams.groupName"
+          value="book-addtional" />
+          <property name="dialogOptions.height" value="500" />
+          <property name="dialogOptions.width" value="850" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType book</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.books.typesetter.final.request">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Send Final Request To Typesetter...</label>
+          <property name="formId" value="ietEmailAdditionalText" />
+          <property name="remoteApiName"
+          value="iet.book.send.final.request.typesetter" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType book</rule>
+        <rule>include role BookProductionController</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.books.send.metadata.firsttime">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Send Book Metadata ...</label>
+          <property name="remoteApiName"
+          value="iet.book.send.book.metadata" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType book</rule>
+        <rule>include lmdValue book_metadata_sent=no</rule>
+        <!--                            <rule>include role BookProductionController</rule>-->
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.books.send.metadata.update">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Send Book Metadata ...</label>
+          <property name="formId" value="ietEmailAdditionalText" />
+          <property name="remoteApiName"
+          value="iet.book.send.book.metadata" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType book</rule>
+        <rule>include lmdValue book_metadata_sent=yes</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.books.create.corrections.subfolder">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Create Corrections Subfolder...</label>
+          <property name="formId"
+          value="iet.create.book.corrections" />
+          <property name="remoteApiName"
+          value="iet.create.book.corrections" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType bookCorrections</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.books.send.corrections.to.typesetter">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Send Proof Corrections To
+          Typesetter...</label>
+          <property name="formId" value="ietEmailAdditionalText" />
+          <property name="remoteApiName"
+          value="iet.book.send.proof.corrections.typesetter" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType bookCorrections</rule>
+        <rule>include role BookProductionController</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    <contextMenuRuleSet name="iet.contextmenuitem.books.printer.request">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Send To Printer...</label>
+          <property name="formId" value="ietEmailAdditionalText" />
+          <property name="remoteApiName"
+          value="iet.book.send.request.printer" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType printFiles</rule>
+        <rule>include role BookProductionController</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <!-- ONIX -->
+     <contextMenuRuleSet name="iet.contextmenuitem.onix.metadata">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:editMetaData</actionName>
+          <label>IET: Onix Metadata...</label>
+          <property name="formId"
+          value="rsicms.rsuite.editLayeredMetadata" />
+          <property name="formParams.groupName"
+          value="onix" />
+          <property name="dialogOptions.height" value="500" />
+          <property name="dialogOptions.width" value="850" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType book,standardsBookEdition</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <!-- STANDARDS  -->
+    <contextMenuRuleSet name="iet.contextmenuitem.standards.book.createBook">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Standards: Create Book</label>
+          <property name="formId"
+          value="iet.standards.form.book.createBook" />
+          <property name="remoteApiName"
+          value="iet.standards.book.createBook" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType standardsBookGroup</rule>
+        <rule>include role StandardsBookAuthor,StandardsBookProductionController,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.standards.book.createBookEdition">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Standards: Create Book Edition</label>
+          <property name="formId"
+          value="iet.standards.form.book.createEdition" />
+          <property name="remoteApiName"
+          value="iet.standards.book.createEdition" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType standardsBook</rule>
+        <rule>include role StandardsBookAuthor,StandardsBookProductionController,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.standards.books.edit-book-layered-metadata">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:editMetaData</actionName>
+          <label>Standards: Edit/View Book Edition
+          Metadata...</label>
+          <property name="formId"
+          value="rsicms.rsuite.editLayeredMetadata" />
+          <property name="formParams.groupName"
+          value="standards-book" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType standardsBookEdition</rule>
+        <rule>exclude lmdValue book_status=rejected</rule>
+        <rule>include role StandardsBookAuthor,StandardsBookProductionController,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.standards.books.edit-additional-book-layered-metadata">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:editMetaData</actionName>
+          <label>Standards: Edit/View Additional Book Edition
+          Metadata...</label>
+          <property name="formId"
+          value="rsicms.rsuite.editLayeredMetadata" />
+          <property name="formParams.groupName"
+          value="standards-book-addtional" />
+          <property name="dialogOptions.height" value="500" />
+          <property name="dialogOptions.width" value="950" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType standardsBookEdition</rule>
+        <rule>exclude lmdValue book_status=rejected</rule>
+        <rule>include role StandardsBookAuthor,StandardsBookProductionController,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.standards.books.add.from.template">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Standards: Add new MO from template...</label>
+          <property name="remoteApiName"
+          value="iet.standards.books.add.mo.from.template" />
+          <property name="formId"
+          value="iet.standards.books.form.add.mo.from.template" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType standardsTypescript</rule>
+        <rule>include role StandardsBookAuthor,StandardsBookProductionController,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.standards.copy.book.edition.content">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Standards: Copy Book Edition Content...</label>
+          <property name="remoteApiName"
+          value="iet.standards.books.copy.book.edition.content" />
+          <property name="formId"
+          value="iet.standards.books.copy.book.edition.content" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType standardsBookEdition</rule>
+        <rule>include lmdValue book_status=initialized</rule>        
+        <rule>include role StandardsBookAuthor,StandardsBookProductionController,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.standards.books.send.metadata">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Standards: Send Book Metadata...</label>
+          <property name="remoteApiName"
+          value="iet.standards.books.send.book.metadata" />
+          <property name="formId" value="ietEmailAdditionalText" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+      	<rule>include role StandardsBookAuthor,StandardsBookProductionController,RSuiteAdministrator</rule>
+        <rule>include caType standardsBookEdition</rule>
+        <rule>exclude lmdValue book_status=rejected</rule>        
+      </ruleList>
+    </contextMenuRuleSet>
+
+    <contextMenuRuleSet name="iet.contextmenuitem.standards.books.reject.book.edition.editoxygen">
+			<menuItemList>
+				<menuItem>
+					<type>action</type>
+					<actionName>oxygen:launch</actionName>
+					<label>Edit with oXygen</label>
+				</menuItem>
+			</menuItemList>
+			<ruleList>
+				<rule>include nodeType mo</rule>
+				<rule>exclude isFrozenReference</rule>				
+			</ruleList>
+		</contextMenuRuleSet>    
+    
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.standards.books.reject.book.edition">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Standards: Reject Book Edition...</label>
+          <property name="remoteApiName"
+          value="iet.standards.books.send.reject.book.edition" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+      	<rule>exclude lmdValue book_status=rejected</rule>
+        <rule>include caType standardsBookEdition</rule>
+        <rule>include role StandardsBookProductionController,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    
+    <contextMenuRuleSet name="iet.standards.ditaot.generate.pdf">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Generate PDF using Open Toolkit</label>
+          <property name="rsuite:path" value="Generate outputs" />
+          <property name="rsuite:group" value="dita" />
+          <property name="rsuite:icon" value="pdf" />
+          <property name="remoteApiName"
+          value="org.theiet.rsuite.standards.webservices.create.pdf.ditaOT" />
+          <property name="serviceParams.changeTracking" value="false"/>
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include nodeType mo</rule>
+        <rule>include role StandardsBookAuthor,StandardsBookProductionController,RSuiteAdministrator</rule>
+        <rule>exclude elementType article,article-meta</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+     <contextMenuRuleSet name="iet.standards.ditaot.generate.pdf.ct">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Generate PDF with Change Tracking using Open Toolkit</label>
+          <property name="rsuite:path" value="Generate outputs" />
+          <property name="rsuite:group" value="dita" />
+          <property name="rsuite:icon" value="pdf" />
+          <property name="remoteApiName"
+          value="org.theiet.rsuite.standards.webservices.create.pdf.ditaOT" />
+          <property name="serviceParams.changeTracking" value="true"/>
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include nodeType mo</rule>
+        <rule>include role StandardsBookAuthor,StandardsBookProductionController,RSuiteAdministrator</rule>
+        <rule>exclude elementType article,article-meta</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.standards.generate.icml">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Generate ICML</label>
+          <property name="rsuite:path" value="Generate outputs" />
+          <property name="rsuite:group" value="dita" />
+          <property name="rsuite:icon" value="adobeIncopy" />
+          <property name="remoteApiName"
+          value="org.theiet.rsuite.standards.webservices.create.icml" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include nodeType mo</rule>
+        <rule>include role StandardsBookProductionController,RSuiteAdministrator</rule>
+        <rule>exclude elementType article,article-meta</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+
+	<contextMenuRuleSet name="iet.standards.clean.up.publication.history">
+    <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Clear history</label>
+          <property name="rsuite:icon" value="plugin/iet/images/cleanup.png" />
+          <property name="remoteApiName" value="projects.helper.webservices.clear.publication.history" />
+          <property name="formId" value="iet.standards.webservices.clear.publication.history" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType standardsPublishHistory</rule>
+        <rule>include role StandardsBookAuthor,StandardsBookProductionController,RSuiteAdministrator</rule>              
+      </ruleList>
+    </contextMenuRuleSet>
+    
+      <contextMenuRuleSet name="iet.standards.export.esp">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Standards: Deliver to ESP</label>
+          <property name="remoteApiName"
+          value="iet.standards.books.deliver.esp" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType standardsBookEdition</rule>
+        <rule>include role StandardsBookProductionController,RSuiteAdministrator</rule>        
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    
+    
+    <!-- ONIX -->
+    <contextMenuRuleSet name="iet.onix.poc.menu">
+
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Start Onix Delivery Workflow</label>
+          <property name="remoteApiName"
+          value="iet.onix.start.onix.delivery.workflow" />
+          <property name="useTransport" value="iframe" />                    
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType onixConfigurations</rule>
+        <rule>include role OnixAdministrator,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+
+    <contextMenuRuleSet name="iet.onix.edit.view.onix.configurations">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Start Onix Delivery Workflow</label>
+          <property name="remoteApiName"
+          value="iet.onix.start.onix.delivery.workflow" />
+          <property name="useTransport" value="iframe" />
+          <property name="serviceParams.oneVendorMode" value="true" />                    
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+		<rule>include caType onixRecipient</rule>
+		<rule>include role OnixAdministrator,RSuiteAdministrator</rule>		
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.onix.create.onix.recipient">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET: Create Onix Recipient</label>
+          <property name="formId" value="iet.onix.form.create.onix.recipient" />
+          <property name="remoteApiName" value="iet.onix.remote.create.onix.recipient" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType onixConfigurations</rule>
+        <rule>include role OnixAdministrator,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.onix.edit.view.onix.configurations">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:editMetaData</actionName>
+          <label>IET: Edit/View Onix configurations...</label>
+          <property name="formId" value="rsicms.rsuite.editLayeredMetadata" />
+          <property name="formParams.groupName" value="onix-recipient" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+		<rule>include caType onixRecipient</rule>
+		<rule>include role OnixAdministrator,RSuiteAdministrator</rule>		
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.onix.edit.view.onix.configurations.mo">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:editMetaData</actionName>
+          <label>IET: Edit/View Onix configurations...</label>
+          <property name="formId" value="rsicms.rsuite.editLayeredMetadata" />
+          <property name="formParams.groupName" value="onix-configuration-type" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+		<rule>include elementType {http://ns.editeur.org/onix/3.0/reference}:ONIXMessage</rule>
+		<rule>include role OnixAdministrator,RSuiteAdministrator</rule>		
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <!-- IET.tv context menus -->
+    <contextMenuRuleSet name="iet.iettv.menu.start.inspec.delivery.workflow">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET TV: Send to Inspec</label>          
+          <property name="remoteApiName" value="iet.iettv.start.inspec.delivery.workflow" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType iettv_video_record</rule>
+        <rule>include role IetTvAdministrator,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.iettv.menu.start.production.delivery.workflow">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET TV: Send to Iet.tv Production</label>          
+          <property name="remoteApiName" value="iet.iettv.start.production.delivery.workflow" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType iettv_video_record</rule>
+        <rule>include role IetTvAdministrator,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.iettv.menu.crossref.create.document">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET TV: Create CrossRef Document</label>          
+          <property name="remoteApiName" value="iet.iettv.crossref.create.document" />
+          <property name="rsuite:group" value="CrossRef" />
+          <property name="useTransport" value="iframe" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType iettv_video_record</rule>
+        <rule>include role IetTvAdministrator,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.iettv.menu.crossref.delivr.document">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>IET TV: Deliver CrossRef Document</label>          
+          <property name="remoteApiName" value="iet.iettv.crossref.deliver.document" />
+          <property name="rsuite:group" value="CrossRef" />
+          <property name="useTransport" value="iframe" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType iettv_video_record</rule>
+        <rule>include role IetTvAdministrator,RSuiteAdministrator</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+        <contextMenuRuleSet name="iet.iettv.menu.lmd.edit">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:editMetaData</actionName>
+          <label>IET: Edit/View metadata...</label>
+          <property name="formId" value="rsicms.rsuite.editLayeredMetadata" />
+          <property name="formParams.groupName" value="iettv_domain" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+		<rule>include caType iettv</rule>
+		<rule>include role IetTvAdministrator,RSuiteAdministrator</rule>		
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    
+    <!-- COMMON -->
+    	<contextMenuRuleSet name="iet.publication.result.mark.as.permanent">
+    <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Mark as permanent</label>
+          <property name="remoteApiName" value="projects.helper.webservices.mark.output.result.as.permanent" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include nodeType mononxml</rule>
+        <rule>include lmdValue is_removable_publication_result=yes</rule>
+        <rule>exclude lmdValue is_removable_publication_result=no</rule>
+        <rule>include role StandardsBookAuthor,StandardsBookProductionController,RSuiteAdministrator</rule>              
+      </ruleList>
+    </contextMenuRuleSet>
+    
+   <contextMenuRuleSet name="iet.publication.result.mark.as.temporary">
+    <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Mark as temporary</label>
+          <property name="remoteApiName" value="projects.helper.webservices.mark.output.result.as.temporary" />
+          <property name="showProgressMeter" value="true" />
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include nodeType mononxml</rule>
+        <rule>include lmdValue is_removable_publication_result=no</rule>
+        <rule>include role StandardsBookAuthor,StandardsBookProductionController,RSuiteAdministrator</rule>              
+      </ruleList>
+    </contextMenuRuleSet>
+    
+     <contextMenuRuleSet name="iet.remove.obsolete.output.containers">
+    <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:invokeWebservice</actionName>
+          <label>Remove obsolete output containers</label>
+          <property name="rsuite:icon" value="plugin/iet/images/cleanup.png" />
+          <property name="remoteApiName" value="projects.helper.webservices.remove.obsolete.output.containers" />
+          <property name="rsuite:group" value="admin" />          
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include caType outputs</rule>
+        <rule>include role RSuiteAdministrator</rule>              
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    <contextMenuRuleSet name="iet.contextmenuitem.show.output.container">
+      <menuItemList>
+        <menuItem>
+          <type>action</type>
+          <actionName>rsuite:iet:show:output</actionName>
+          <label>Show Output Container...</label>          
+        </menuItem>
+      </menuItemList>
+      <ruleList>
+        <rule>include lmdValue has_output=yes</rule>
+      </ruleList>
+    </contextMenuRuleSet>
+    
+    
+  </extensionProvider>
+  <extensionProvider id="rsuite.Forms">
+    <datatypeDefinition name="yesNo" label="Yes/No"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.datatype.BooleanTypeProvider" />
+    </datatypeDefinition>
+    <datatypeDefinition name="typesetterDataType"
+    label="Type setter user list" formControlType="select"
+    baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.datatype.TypesetterProvider" />
+    </datatypeDefinition>
+    <datatypeDefinition name="journalDataType" label="Journal list"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.datatype.JournalProvider" />
+    </datatypeDefinition>
+    <datatypeDefinition name="archivedJournalDataType" label="Archived Journal list"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.datatype.ArchiveJournalProvider" />
+    </datatypeDefinition>    
+    <datatypeDefinition name="journalInspecClassifierDataType"
+    label="Inspec Classifier user list" formControlType="select"
+    baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.datatype.JournalInspecClassifierProvider" />
+    </datatypeDefinition>
+    <datatypeDefinition name="bookTypesetterDataType"
+    label="Book Type setter user list" formControlType="select"
+    baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.datatype.BookTypesetterProvider" />
+    </datatypeDefinition>
+    <datatypeDefinition name="journalProductionControllerDataType"
+    label="Production Controller user list"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.datatype.JournalProductionControllerProvider" />
+    </datatypeDefinition>
+    <datatypeDefinition name="journalWorkflowTypeDataType"
+    label="Journal workflow type list"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.journals.datatype.JournalWorkflowTypeControllerProvider" />
+    </datatypeDefinition>
+    <datatypeDefinition name="journalGenerationTypeDataType"
+    label="Journal generation type list"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.journals.datatype.JournalGenerationTypeControllerProvider" />
+    </datatypeDefinition>
+    <datatypeDefinition name="journalEditorialAssistantDataType"
+    label="Editorial Assistant user list" formControlType="select"
+    baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.datatype.JournalEditorialAssitantProvider" />
+    </datatypeDefinition>
+   <datatypeDefinition name="journalIssuePrinterDataType"
+    label="Journal issue printer user list" formControlType="select"
+    baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.journals.datatype.JournalIssuePrinterProvider" />
+    </datatypeDefinition>    
+    <datatypeDefinition name="bookProductionControllerDataType"
+    label="Book Production Controller user list"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.datatype.BookProductionControllerProvider" />
+    </datatypeDefinition>
+    <datatypeDefinition name="bookEditorialAssistantDataType"
+    label="Book Editorial Assistant user list"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.datatype.BookEditorialAssitantProvider" />
+    </datatypeDefinition>
+    <datatypeDefinition name="bookPrinterDataType"
+    label="Book Printer user list" formControlType="select"
+    baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.datatype.BookPrinterProvider" />
+    </datatypeDefinition>
+    <datatypeDefinition name="bookFormatDataType"
+    label="Book Format data type list" formControlType="select"
+    baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.datatype.BookFormatProvider" />
+    </datatypeDefinition>
+    <datatypeDefinition name="bookTopicDataType"
+    label="Book topic data type list" formControlType="select"
+    baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.datatype.BookTopicTypeProvider" />
+    </datatypeDefinition>
+    
+    <datatypeDefinition name="standardsBookOwnerDataType"
+    label="Standards Book Owner user list"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.standards.datatype.StandardsBookOwnerProvider" />
+    </datatypeDefinition>
+
+    <datatypeDefinition name="standardsBookAuthorDataType"
+    label="Standards Book Author user list"
+    formControlType="select" baseType="string" description="">    							   				                    
+      <optionListProvider handler="org.theiet.rsuite.standards.datatype.StandardsBookAuthorProvider" />
+    </datatypeDefinition>
+
+    <datatypeDefinition name="standardsBookICMLTransformationDataType"
+    label="Standards Book ICML TransformationDataType"
+    formControlType="select" baseType="string" description="">    							   				                    
+      <optionListProvider handler="org.theiet.rsuite.standards.datatype.StandardsBookICMLTransformationProvider" />
+    </datatypeDefinition>
+    
+    <datatypeDefinition name="standardsBookPDFTransformationDataType"
+    label="Standards Book PDF TransformationDataType"
+    formControlType="select" baseType="string" description="">    							   				                    
+      <optionListProvider handler="org.theiet.rsuite.standards.datatype.StandardsBookPDFTransformationProvider" />
+    </datatypeDefinition>
+
+    <datatypeDefinition name="standardsBookProductionControllerDataType"
+    label="Standards Book Production Controller user list"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.standards.datatype.StandardsBookProductionControllerProvider" />
+    </datatypeDefinition>
+    
+    <datatypeDefinition name="onixProductFormatDataType"
+    label="Onix Product Format Data Type"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.onix.datatype.OnixProductFormatProvider" />
+    </datatypeDefinition>
+
+	<datatypeDefinition name="onixConfigurationDataType"
+    label="Onix Configuration Data Type"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.onix.datatype.OnixConfigurationProvider" />
+    </datatypeDefinition>
+
+    <datatypeDefinition name="onixRecipientDataType"
+    label="Onix Recipient Names Currently Used"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.onix.datatype.OnixRecipientProvider" />
+     </datatypeDefinition>
+     
+     <datatypeDefinition name="onixBookVendorDataType"
+    label="Onix Book Vendor"
+    formControlType="select" baseType="string" description="">
+      <optionListProvider handler="org.theiet.rsuite.onix.datatype.OnixBookVendorProvider" />
+    </datatypeDefinition>
+    
+    <!-- note UK spelling -->
+    <datatypeDefinition name="licenceDatatype"
+    label="Licence data type" formControlType="select"
+    baseType="string">
+      <optionList>
+        <option value="IET" label="IET" />
+        <option value="Other" label="Other" />
+        <option value="CC-BY" label="CC-BY" />
+        <option value="CC-BY-ND" label="CC-BY-ND" />
+        <option value="CC-BY-NC" label="CC-BY-NC" />
+        <option value="CC-BY-NC-ND" label="CC-BY-NC-ND" />
+      </optionList>
+    </datatypeDefinition>
+    
+    <datatypeDefinition name="submissionDatatype"
+    label="Submission data type" formControlType="select"
+    baseType="string">
+      <optionList>
+        <option value="Transfer" label="Transfer" />
+        <option value="Direct" label="Direct" />
+      </optionList>
+    </datatypeDefinition>
+    
+        <formDefinition id="iet.journals.withdraw.article" label="Withdraw Article"
+    		description="Withdraw Article">
+      <instructions>Are you sure you want to withdraw the article?</instructions>
+     </formDefinition>
+
+	<formDefinition id="iet.standards.webservices.clear.publication.history" label="Clear Publication History"
+    		description="Clear Publication History">
+      <instructions>Are you sure you want to clear publication history?</instructions>
+     </formDefinition>
+
+    <formDefinition id="iet.createNewBook" label="Create New Book"
+    description="Creates a new book">
+      <instructions>Specify the details of the new
+      book:</instructions>
+      <paramList>
+        <param>
+          <col>1</col>
+          <name>product_code</name>
+          <label>Product Code:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+        <param>
+          <col>1</col>
+          <name>e_product_code</name>
+          <label>E-Product Code:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+        <param>
+          <col>1</col>
+          <name>isbn</name>
+          <label>ISBN:</label>
+          <formControlType>text</formControlType>
+        </param>
+        <param>
+          <col>1</col>
+          <name>e_isbn</name>
+          <label>E-ISBN:</label>
+          <formControlType>text</formControlType>
+        </param>
+        <param>
+          <col>1</col>
+          <name>contract_signed_date</name>
+          <label>Contract signed date (yyyy-mm-dd):</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          regex="^\d{4}-\d{2}-\d{2}$" />
+        </param>
+        <param>
+          <col>2</col>
+          <name>author_first_name</name>
+          <label>Principle Author First Name:</label>
+          <formControlType>text</formControlType>
+        </param>
+        <param>
+          <col>2</col>
+          <name>author_surname</name>
+          <label>Principle Author Surname:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+        <param>
+          <col>2</col>
+          <name>bookTitle</name>
+          <label>Title:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+        <param>
+          <col>2</col>
+          <name>bookSubtitle</name>
+          <label>Subtitle:</label>
+          <formControlType>text</formControlType>
+        </param>
+        <param>
+          <col>2</col>
+          <name>editionNumber</name>
+          <label>Edition Number:</label>
+          <formControlType>text</formControlType>
+          <validation required="true" regex="[0-9]*" errorMessage="You must enter a number."/>
+        </param>
+        <param>
+          <col>2</col>
+          <name>book_title_short</name>
+          <label>Short form of title:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+        <param>
+          <col>2</col>
+          <name>book_series_name</name>
+          <label>Topic:</label>
+          <formControlType>select</formControlType>
+          <datatype name="bookTopicDataType" />
+        </param>
+        <param>
+          <col>3</col>
+          <name>editorial_assistant</name>
+          <label>Editorial Assistant:</label>
+          <formControlType>select</formControlType>
+          <datatype name="bookEditorialAssistantDataType" />
+        </param>
+        <param>
+          <col>3</col>
+          <name>typesetter</name>
+          <label>Typesetter:</label>
+          <formControlType>select</formControlType>
+          <datatype name="bookTypesetterDataType" />
+        </param>
+        <param>
+          <col>3</col>
+          <name>production_controller</name>
+          <label>Production Controller:</label>
+          <formControlType>select</formControlType>
+          <datatype name="bookProductionControllerDataType" />
+        </param>
+      </paramList>
+    </formDefinition>
+    <formDefinition id="iet.create.book.corrections"
+    label="Create corrections subfolder"
+    description="Creates a new corrections subfolder">
+      <instructions>Specify the folder name:</instructions>
+      <paramList>
+        <param>
+          <col>1</col>
+          <name>name</name>
+          <label>Name:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+      </paramList>
+    </formDefinition>
+    <formDefinition id="ietEmailAdditionalText"
+    label="Additional email text"
+    description="Form for an additional email text">
+      <paramList>
+        <param>
+          <col>1</col>
+          <name>additionalText</name>
+          <label>Additional email text:</label>
+          <formControlType>textarea</formControlType>
+        </param>
+      </paramList>
+    </formDefinition>
+    <formDefinition id="ietEmailAdditionalTextwithAttachment"
+    label="Additional email text with attachment"
+    description="Form for an additional email text with attachment">
+      <paramList>
+        <param>
+          <col>1</col>
+          <name>additionalText</name>
+          <label>Additional email text:</label>
+          <formControlType>textarea</formControlType>
+        </param>
+        <param>
+          <col>1</col>
+          <name>attachedFile</name>
+          <label>Attachment:</label>
+          <formControlType>file</formControlType>
+        </param>
+      </paramList>
+    </formDefinition>    
+    <formDefinition description="Send journal email"
+    id="iet.journals.form.sentemail" label="Send email"
+    handler="org.theiet.rsuite.journals.advisors.form.SentEmailFormAdvisor">
+
+      <instructions />
+      <paramList>
+        <param>
+          <label>Author E-mail Address</label>
+          <name>emailAddress</name>
+          <validation required="true"
+          errorMessage="Value is required." />
+        </param>
+      </paramList>
+    </formDefinition>
+    <formDefinition description="File chooser" id="filechooser"
+    label="Select file">
+      <paramList>
+        <param>
+          <name>fileName</name>
+          <label>Select File</label>
+          <formControlType>file</formControlType>
+        </param>
+      </paramList>
+    </formDefinition>
+    
+    <formDefinition id="iet.journals.form.reassign.ea"
+    label="Reassign Editorial Assistant"
+    description="Reassign Editorial Assistant">
+      <instructions>Select editorial assistant</instructions>
+      <paramList>
+        <param>
+          <name>eauserid</name>
+          <formControlType>select</formControlType>
+          <datatype name="journalEditorialAssistantDataType" />
+        </param>
+      </paramList>
+    </formDefinition>
+    <formDefinition id="iet.journals.form.create.new.issue"
+    label="Create new Issue"
+    handler="org.theiet.rsuite.advisors.form.PublicationMetadataFormLoadAdvisor"
+    description="Creates a new book">
+      <instructions>Specify the details of the new
+      issue:</instructions>
+      <paramList>
+        <param>
+          <col>1</col>
+          <name>year</name>
+          <label>Year:</label>
+          <formControlType>text</formControlType>
+          <validation required="true" regex="[0-9]+"
+          errorMessage="You must enter a number." />
+        </param>
+        <param>
+          <col>1</col>
+          <name>volume</name>
+          <label>Volume:</label>
+          <formControlType>text</formControlType>
+          <validation required="true" regex="[0-9]+"
+          errorMessage="You must enter a number." />
+        </param>
+        <param>
+          <col>1</col>
+          <name>issue</name>
+          <label>Issue number:</label>
+          <formControlType>text</formControlType>
+          <validation required="true" regex="[0-9]+"
+          errorMessage="You must enter a number." />
+        </param>
+      </paramList>
+    </formDefinition>
+    <formDefinition id="iet.journals.form.create.new.journal"
+    label="Create New Journal" description="Creates a new journal">
+      <instructions>Specify the details of the new
+      journal:</instructions>
+      <paramList>
+        <param>
+          <col>1</col>
+          <name>journalCode</name>
+          <label>Journal Code:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+        <param>
+          <col>2</col>
+          <name>journalName</name>
+          <label>Display name:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+        <param>
+          <col>3</col>
+          <name>journalEmail</name>
+          <label>Jounal Email:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+        <param>
+          <col>1</col>
+          <name>editorialAssistant</name>
+          <label>Editorial Assistant:</label>
+          <formControlType>select</formControlType>
+          <datatype name="journalEditorialAssistantDataType" />
+        </param>
+        <param>
+          <col>2</col>
+          <name>producationController</name>
+          <label>Production Controller:</label>
+          <formControlType>select</formControlType>
+          <datatype name="journalProductionControllerDataType" />
+        </param>
+       	<param>
+          <col>3</col>
+          <name>journal_worflow_type</name>
+          <label>Workflow type:</label>
+          <formControlType>select</formControlType>
+          <datatype name="journalWorkflowTypeDataType" />
+        </param>
+        <param>
+          <col>1</col>
+          <name>typesetter</name>
+          <label>Typesetter:</label>
+          <formControlType>select</formControlType>
+          <datatype name="typesetterDataType" />
+        </param>
+        <param>
+          <col>2</col>
+          <name>inpsecClassifier</name>
+          <label>Inpsec Classifier:</label>
+          <formControlType>select</formControlType>
+          <datatype name="journalInspecClassifierDataType" />
+        </param>
+        <param>
+          <col>3</col>
+          <name>add_prefix_digital_library_delivery</name>
+          <label>Add IET prefix for Digital Library delivery:</label>
+          <formControlType>select</formControlType>
+          <datatype name="yesNo" />
+        </param>
+      </paramList>
+    </formDefinition>
+    <formDefinition id="iet.standards.form.book.createBook"
+    label="Create Book" description="Create a new book">
+      <instructions>Specify the details of the new
+      book:</instructions>
+      <paramList>
+        <param>
+          <col>1</col>
+          <name>bookName</name>
+          <label>Book name:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+        <param>
+          <col>1</col>
+          <name>book_title_short</name>
+          <label>Short form of title:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+      </paramList>
+    </formDefinition>
+    <formDefinition id="iet.standards.form.book.createEdition"
+    label="Create Book Edition"
+    description="Create a book edition">
+      <instructions>Specify the details of the new book
+      edition:</instructions>
+      <paramList>
+        <param>
+          <col>1</col>
+          <name>lmd_product_code</name>
+          <label>Product Code:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+        <param>
+          <col>1</col>
+          <name>lmd_e_product_code</name>
+          <label>E-Product Code:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+        <param>
+          <col>1</col>
+          <name>lmd_isbn</name>
+          <label>ISBN:</label>
+          <formControlType>text</formControlType>
+        </param>
+        <param>
+          <col>1</col>
+          <name>lmd_e_isbn</name>
+          <label>E-ISBN:</label>
+          <formControlType>text</formControlType>
+        </param>
+        <param>
+          <col>2</col>
+          <name>bookTitle</name>
+          <label>Title:</label>
+          <formControlType>text</formControlType>
+          <validation required="true"
+          errorMessage="This input field is required." />
+        </param>
+        <param>
+          <col>2</col>
+          <name>bookSubtitle</name>
+          <label>Subtitle:</label>
+          <formControlType>text</formControlType>          
+        </param>
+        <param>
+          <col>2</col>
+          <name>editionNumber</name>
+          <label>Edition number:</label>
+          <formControlType>text</formControlType>
+		   <validation required="true" regex="[0-9]*" errorMessage="You must enter a number."/>
+        </param>        
+        <param>
+          <col>2</col>
+          <name>lmd_additional_authors</name>
+          <label>Additional Authors</label>
+          <formControlType>text</formControlType>
+          <allowMultiple>true</allowMultiple>
+        </param>
+        <param>
+          <col>3</col>
+          <name>lmd_iet_author</name>
+          <label>IET Author:</label>
+          <formControlType>select</formControlType>
+          <datatype name="standardsBookAuthorDataType" />          				  
+        </param>
+        <param>
+          <col>3</col>
+          <name>lmd_production_controller</name>
+          <label>Production Controller:</label>
+          <formControlType>select</formControlType>
+          <datatype name="standardsBookProductionControllerDataType" />
+        </param>
+        <param>
+          <col>3</col>
+          <name>lmd_iet_owner</name>
+          <label>IET Owner:</label>
+          <formControlType>select</formControlType>
+          <datatype name="standardsBookOwnerDataType" />
+        </param>
+        <param>
+          <col>3</col>
+          <name>lmd_icml_transformation</name>
+          <label>ICML Transformation:</label>
+          <formControlType>select</formControlType>
+          <datatype name="standardsBookICMLTransformationDataType" />          				  
+        </param>
+        <param>
+          <col>3</col>
+          <name>lmd_pdf_transformation</name>
+          <label>PDF Transformation:</label>
+          <formControlType>select</formControlType>
+          <datatype name="standardsBookPDFTransformationDataType" />          				  
+        </param>
+      </paramList>
+    </formDefinition>
+    
+    <formDefinition id="iet.onix.form.create.onix.recipient"
+    label="Create Onix Recipient" description="Creation of a new Onix Recipient">
+      <instructions>Specify the details of the new onix recipient:</instructions>
+      <paramList>
+        <param>
+          <col>1</col>
+          <name>onix_recipient</name>
+          <label>Recipient name:</label>
+          <formControlType>text</formControlType>
+          <validation required="true" errorMessage="This input field is required." />
+        </param>
+        <param>
+          <col>1</col>
+          <name>product_format</name>
+          <label>Product Format:</label>
+          <formControlType>select</formControlType>
+          <allowMultiple>true</allowMultiple>
+          <datatype name="onixProductFormatDataType" />
+        </param>
+        <param>
+          <col>2</col>
+          <name>onix_book_vendor</name>
+          <label>Book Vendor:</label>
+          <formControlType>select</formControlType>
+          <datatype name="onixBookVendorDataType" />
+        </param>
+      </paramList>
+    </formDefinition>
+    
+    <formDefinition description="Add an available template"
+    id="iet.standards.books.form.add.mo.from.template"
+    handler="org.theiet.rsuite.standards.advisors.form.AddMoFromTemplateFormAdvisor"
+    label="Add a new MO from an available template" />
+    
+   <formDefinition description="Copy Book Edition Content"
+    id="iet.standards.books.copy.book.edition.content"
+    handler="org.theiet.rsuite.standards.advisors.form.CopyBookEditionFormAdvisor"
+    label="Copy Book Edition Content" />
+  </extensionProvider>
+  <extensionProvider id="rsuite.Workflow">
+    <!-- event handers -->
+    <actionHandler type="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler"
+    description="Clear exception" />    
+    <actionHandler type="org.theiet.rsuite.journals.actionhandlers.AssignTaskToEa"
+    description="Assign task for editorial assistant" />
+    <!-- Special action handlers (one-offs) -->
+    <actionHandler label="IET Bulk Create Books"
+    type="org.theiet.rsuite.actionhandlers.BatchCreateBooks"
+    description="Bulk Create Books" />
+    <actionHandler label="IET Bulk Create Books"
+    type="org.theiet.rsuite.actionhandlers.BatchCreateBooks"
+    description="Bulk Create Books" />
+    <actionHandler label="IET Retrofit Pubtrack"
+    type="org.theiet.rsuite.actionhandlers.IetPubtrackRetrofit"
+    description="Retrofit Pubtrack" />
+    <actionHandler label="IET Retrofit Pubtrack Books"
+    type="org.theiet.rsuite.actionhandlers.IetPubtrackRetrofitBooks"
+    description="Retrofit Pubtrack Books" />
+    <!-- regular action handlers -->
+    <actionHandler label="IET Check Ingestion File"
+    type="org.theiet.rsuite.journals.actionhandlers.IngestionFileCheck"
+    description="Checks if ingestion file should be skipped" />
+    <actionHandler label="IET Manuscript Load"
+    type="org.theiet.rsuite.journals.actionhandlers.ManuscriptCentralIngestion"
+    description="Journal ingestion from Manuscript Central" />
+    <actionHandler label="IET INSPEC Merge"
+    type="org.theiet.rsuite.journals.actionhandlers.InspecMerge"
+    description="Merge INSPEC classification" />
+    <actionHandler label="IET INSPEC Merge From Issue"
+    type="org.theiet.rsuite.journals.actionhandlers.InspecMergeFromIssue"
+    description="Merge INSPEC classification from issue" />
+    <actionHandler label="IET Typesetter Load"
+    type="org.theiet.rsuite.journals.actionhandlers.TypesetterIngestion"
+    description="Add typesetter files to article" />
+    <actionHandler label="IET Send to Typesetter"
+    type="org.theiet.rsuite.journals.actionhandlers.FtpPackageToTypesetter"
+    description="Send copy of Manuscript Central package to typesetter" />
+    <actionHandler label="IET INSPEC Load"
+    type="org.theiet.rsuite.journals.actionhandlers.InspecIngestion"
+    description="Ingest XML from INSPEC" />
+    <actionHandler label="IET Issue Load"
+    type="org.theiet.rsuite.journals.actionhandlers.IssueIngestion"
+    description="Ingest issue" />
+    <actionHandler label="IET Send to INSPEC"
+    type="org.theiet.rsuite.journals.actionhandlers.SendToInspec"
+    description="Send proof and XML to INSPEC" />
+    <actionHandler label="IET Send to INSPEC From Issue"
+    type="org.theiet.rsuite.journals.actionhandlers.SendToInspecFromIssue"
+    description="Send proof and XML to INSPEC from Issue" />
+    <actionHandler label="IET Set Book variables"
+    type="org.theiet.rsuite.actionhandlers.InitiateBooks"
+    description="Set book variables" />
+    <actionHandler label="IET Set End Issue Metadata"
+    type="org.theiet.rsuite.journals.actionhandlers.SetEndIssueLMD"
+    description="Set end issue metadata" />
+    <actionHandler label="IET Deliver Article to Digital Library"
+    type="org.theiet.rsuite.journals.actionhandlers.DeliverArticleToDigitalLibrary"
+    description="Deliver Article to Digital Library" />
+    <actionHandler label="IET Batch Deliver Article to Digital Library"
+    type="org.theiet.rsuite.journals.actionhandlers.BatchDeliverArticle"
+    description="Batch Deliver Article to Digital Library" />
+    <actionHandler label="IET Deliver Issue to Digital Library"
+    type="org.theiet.rsuite.journals.actionhandlers.DeliverIssueToDigitalLibrary"
+    description="Deliver Issue to Digital Library" />
+    <actionHandler label="IET Batch Deliver Issue to Digital Library"
+    type="org.theiet.rsuite.journals.actionhandlers.BatchDeliverIssue"
+    description="Batch Deliver Issue to Digital Library" />
+    <actionHandler label="IET Set Date String Variable"
+    type="org.theiet.rsuite.actionhandlers.SetUKDateVariable"
+    description="Set date in IET format" />
+    <actionHandler label="IET Create Onix File"
+    type="org.theiet.rsuite.onix.actionhandlers.CreateOnixFileActionHandler"
+    description="Create Onix File" />
+    <actionHandler label="Start Onix File Validation"
+    type="org.theiet.rsuite.onix.actionhandlers.StartOnixFileValidationActionHandler"
+    description="Start Onix File Validation" />
+    <actionHandler label="IET Deliver Onix File To FTP"
+    type="org.theiet.rsuite.onix.actionhandlers.DeliverOnixFileToFTPActionHandler"
+    description="Deliver Onix File To FTP" />
+        <actionHandler label="IET Persist Onix File In RSuite"
+    type="org.theiet.rsuite.onix.actionhandlers.PersistOnixDeliveryActionHandler"
+    description="IET Persist Onix File In RSuite" />
+    <actionHandler label="IET Log to Pubtrack"
+    type="org.theiet.rsuite.actionhandlers.LogToPubtrack">
+      <variableList>
+        <variable>
+          <name>event</name>
+        </variable>
+      </variableList>
+    </actionHandler>
+    <actionHandler label="IET Complete Pubtrack Process"
+    type="org.theiet.rsuite.actionhandlers.ClosePubtrackProcess">
+      <variableList>
+        <variable>
+          <name>processId</name>
+        </variable>
+        <variable>
+          <name>productName</name>
+        </variable>
+      </variableList>
+    </actionHandler>
+    <actionHandler label="Import Book Files"
+    type="org.theiet.rsuite.actionhandlers.ImportBookFiles"
+    description="Import files for a specific book">
+      <variableList>
+        <variable>
+          <name>taskNodeToSignal</name>
+        </variable>
+        <variable>
+          <name>taskTransition</name>
+        </variable>
+      </variableList>
+    </actionHandler>
+    <actionHandler label="IET Ingestion Completed"
+    type="org.theiet.rsuite.journals.actionhandlers.IngestionCompleted"
+    description="Ingestion Completed" />
+    <!-- STANDARDS Action handlers -->
+    <actionHandler label="Workflow Temp Directory Removal"
+    type="org.theiet.rsuite.actionhandlers.WorkflowTempDirectoryRemovalActionHandler"
+    description="Workflow Temp Directory Removal"></actionHandler>
+    <actionHandler label="Unzip Book Images package"
+    type="org.theiet.rsuite.standards.actionhandlers.UnzipBookImagesActionHandler"
+    description="Unzip Book Images package"></actionHandler>
+    <actionHandler label="Ingest Book Images"
+    type="org.theiet.rsuite.standards.actionhandlers.IngestBookImagesActionHandler"
+    description="Ingest Book Images"/>        
+    <actionHandler label="Get Ingested Zip MO"
+    type="org.theiet.rsuite.standards.actionhandlers.UnzipMOToWorkflowFileObject"
+    description="Get Ingested Zip MO"></actionHandler>
+    <actionHandler label="Map Importer"
+    type="org.theiet.rsuite.standards.actionhandlers.MapImporterActionHandler"
+    description="Import Dita Map into RSuite"></actionHandler>
+    <actionHandler label="Dita Exporter"
+    type="org.theiet.rsuite.standards.actionhandlers.publish.DitaExporter"
+    description="Export dita content for generting output">
+    </actionHandler>
+    <actionHandler label="Publish action handler"
+    type="org.theiet.rsuite.standards.actionhandlers.publish.PublishActionHandler"
+    description="Workflow task responsible for generating output file/files">
+    </actionHandler>
+    <actionHandler label="Output uploader"
+    type="org.theiet.rsuite.standards.actionhandlers.publish.OutputUploaderActionHandler"
+    description="Upload generted output to rsuites">
+    </actionHandler>
+    <actionHandler label="Send email notification"
+    type="org.theiet.rsuite.standards.actionhandlers.publish.SendPublishingEmailNotificationActionHandler"
+    description="Send publishing email notification">
+    </actionHandler>
+    <actionHandler label="End state cleanup"
+    type="org.theiet.rsuite.standards.actionhandlers.publish.EndStateCleanupEvent"
+    description="End state cleanup"></actionHandler>
+    <actionHandler label="Archives Publication"
+    type="org.theiet.rsuite.standards.actionhandlers.ArchivePublicationActionHandler"
+    description="Archives publication - eg book edition">
+    </actionHandler>
+    
+    <actionHandler label="Export For ESP Delivery"
+    type="org.theiet.rsuite.standards.actionhandlers.esp.ESPExportBookEditionForDeliveryActionHandler"
+    description="Export For ESP Delivery">
+    </actionHandler>
+    
+    <actionHandler label="Deliver to ESP"
+    type="org.theiet.rsuite.standards.actionhandlers.esp.ESPDeliveryActionHandler"
+    description="Deliver to ESP">
+    </actionHandler>
+    
+    <!-- IET.TV -->
+    <actionHandler label="Ingest Video Record Package"
+    type="org.theiet.rsuite.iettv.actionhandlers.insgestion.IngestVideoRecordPackageActionHandler"
+    description="Ingests Video Record from the IET.tv editing system" />
+
+    <actionHandler label="Starts Video Record Delivery to IETtv Production"
+    type="org.theiet.rsuite.iettv.actionhandlers.insgestion.StartVideoRecordDeliveryToIetTvProductionActionHandler"    	  										
+    description="Deliver to IETtv Production" />    
+
+    <actionHandler label="Deliver Video Record to IETtv Production"
+    type="org.theiet.rsuite.iettv.actionhandlers.delivery.production.DeliverVideoRecordToIetTvProductionActionHandler"    	  										
+    description="Deliver Video Record to IETtv Production" />
+
+    <actionHandler label="Deliver Video Record for Inspec"
+    type="org.theiet.rsuite.iettv.actionhandlers.inspec.DeliverVideoRecordPackageForInspecActionHandler"    	  										
+    description="Deliver Video Record for Inspec" />    
+
+    <actionHandler label="Generate Video Record PDF for Inspec"
+    type="org.theiet.rsuite.iettv.actionhandlers.inspec.GenerateVideoRecordPdfActionHandler"    	  										
+    description="Generate Video Record PDF for Inspec" />
+    
+    
+    <actionHandler label="Ingest Video Metadata from Inspec"
+    type="org.theiet.rsuite.iettv.actionhandlers.inspec.LoadVideoInspecActionHandler"    	  										
+    description="Ingest Video Metadata from Inspec" />
+
+    <actionHandler label="Merge Video Inspec"
+    type="org.theiet.rsuite.iettv.actionhandlers.inspec.MergeVideoInspecActionHandler"    	  										
+    description="Merge Video Inspec" />    
+    
+
+    <actionHandler label="IET.TV CrossRef Create Document"
+    type="org.theiet.rsuite.iettv.actionhandlers.delivery.crossref.CreateCrossRefActionHandler"    	  										
+    description="IET.TV CrossRef Create Document" />        
+
+    <actionHandler label="IET.TV CrossRef Validate Document"
+    type="org.theiet.rsuite.iettv.actionhandlers.delivery.crossref.ValidateCrossRefActionHandler"    	  										
+    description="IET.TV CrossRef Validate Document" />
+    
+        <actionHandler label="IET.TV CrossRef Send Document"
+    type="org.theiet.rsuite.iettv.actionhandlers.delivery.crossref.SendCrossRefActionHandler"    	  										
+    description="IET.TV CrossRef Send Document" />    
+    
+    
+    <!-- PROJECT HELPER -->
+    <actionHandler label="Move workflow folder to trash"
+    type="com.rsicms.projectshelper.workflow.actionhandlers.WorkflowCleanUpActionHandler"
+    description="Move workflow folder to trash">
+    </actionHandler>
+    
+    <actionHandler label="Move publish workflow data to the trash folder"
+    type="com.rsicms.projectshelper.publish.workflow.actionhandlers.PublishWorkflowCleanUpActionHandler"
+    description="Move publish workflow data to the trash folder">
+    </actionHandler>
+    
+   <actionHandler label="Export content for output generation"
+    type="com.rsicms.projectshelper.publish.workflow.actionhandlers.ExportContentActionHandler" />
+   <actionHandler label="Generate output"
+    type="com.rsicms.projectshelper.publish.workflow.actionhandlers.GenerateOutputActionHandler" />
+    
+   <actionHandler label="Upload generated output to RSuite"
+    type="com.rsicms.projectshelper.publish.workflow.actionhandlers.UploadGeneratedOutputActionHandler" />
+    
+   <actionHandler label="Send notification email for publish workflow"
+    type="com.rsicms.projectshelper.publish.workflow.actionhandlers.SendNotificationActionHandler" />  
+    
+    
+    <taskUIConfiguration scope="roles,user">
+      <inboxRowsPerPage>20</inboxRowsPerPage>
+      <inboxColumnList>
+        <column name="taskId" label="ID" />
+        <column name="name" label="Task" />
+        <column name="product" label="Product" />
+        <column name="id" label="Product Id" />
+        <column name="description" label="Description" />
+        <column name="dtCreated" label="Start Date" />
+        <column name="actorId" label="Assignee" />
+        <column name="roles" label="Assigned Role" />
+      </inboxColumnList>
+      <inboxFilterList>
+        <filter name="name" label="Task name" />
+        <filter name="product" label="Product" />
+        <filter name="id" label="Product Id" />
+        <filter name="description" label="Description" />
+        <filter name="roles" label="Assigned Role" />
+      </inboxFilterList>
+    </taskUIConfiguration>
+    <taskUIConfiguration scope="manager">
+      <inboxRowsPerPage>20</inboxRowsPerPage>
+      <inboxColumnList>
+        <column label="ID" name="taskId" />
+        <column label="Task" name="name" />
+        <column name="product" label="Product" />
+        <column name="id" label="Product Id" />
+        <column label="Description" name="description" />
+        <column label="Start Date" name="dtCreated" />
+        <column label="Assignee" name="actorId" />
+        <column label="Assigned Role" name="roles" />
+      </inboxColumnList>
+      <inboxFilterList>
+        <filter name="name" label="Task name" />
+        <filter name="product" label="Product" />
+        <filter name="id" label="Product Id" />
+        <filter name="description" label="Description" />
+        <filter name="roles" label="Assigned Role" />
+      </inboxFilterList>
+    </taskUIConfiguration>
+  </extensionProvider>
+  <extensionProvider id="rsuite.TransformationProvider">
+    <transformationProvider name="preview"
+    type="org.theiet.rsuite.journals.transforms.IETTransformationProvider" />
+  </extensionProvider>
+  <extensionProvider id="rsuite.UI">
+    <styleInclude src="/iet/css/ui_config.css" />
+    <styleInclude src="/iet/css/issue_assign_article.css" />    
+    <styleInclude src="/iet/css/ca-types.less" />
+    <scriptInclude src="/iet/scripts/modify-actions.js" />
+    <scriptInclude src="/iet/scripts/custom-actions.js" />      
+    <scriptInclude src="/iet/scripts/output-action.js" />
+    <scriptInclude src="/iet/scripts/issue-assign-articles-action.js" />    
+    <contentDisplayAdvisor id="iet.books.contentDisplayAdvisor"
+    type="org.theiet.rsuite.advisors.display.IetContentDisplayAdvisor" />
+  </extensionProvider>
+  <extensionProvider id="rsuite.Search">
+    <searchFieldDefinition name="classifications"
+    type="lmd-name-value">
+      <description>Find article by classifications</description>
+      <datatype>classifications</datatype>
+      <componentList>
+        <component>
+          <lmdName>classifications</lmdName>
+        </component>
+      </componentList>
+    </searchFieldDefinition>
+    <searchFieldDefinition name="journalcodes"
+    type="lmd-name-value">
+      <description>Find articles by journal code</description>
+      <datatype>journalcodes</datatype>
+      <componentList>
+        <component>
+          <lmdName>journal_code</lmdName>
+        </component>
+      </componentList>
+    </searchFieldDefinition>
+    <searchFormDefinition id="iet.classification.search"
+    label="Article Search"
+    description="Search for publications based on classification, title, or author">
+
+      <instructions>Form instructions</instructions>
+      <searchHandlerConfiguration>
+        <searchConfig name="excludeContentAssemblyObjects"
+        value="false" />
+        <paramConfig param="classifications"
+        searchField="classifications" />
+        <paramConfig param="journalcode"
+        searchField="journalcodes" />
+      </searchHandlerConfiguration>
+      <paramList>
+        <param>
+          <col>1</col>
+          <name>journalcode</name>
+          <label>Journal</label>
+          <datatype name="field:journalcodes" />
+          <formControlType>select</formControlType>
+          <optionList>
+            <option value="" label="Any" />
+          </optionList>
+        </param>
+        <param>
+          <col>1</col>
+          <name>classifications</name>
+          <label>Classifications</label>
+          <datatype name="field:classifications" />
+          <formControlType>multiselect</formControlType>
+        </param>
+      </paramList>
+    </searchFormDefinition>
+  </extensionProvider>
+  <extensionProvider id="rsuite.Reporting">
+    <reportDefinition description="IET Published Issue Report"
+    handler="org.theiet.rsuite.reporting.PublishedIssueReport"
+    id="org.theiet.rsuite.article.report"
+    label="IET Published Issue Report">
+      <paramList>
+        <param>
+          <name>start</name>
+          <label>Start Date</label>
+          <col>1</col>
+          <formControlType>datepicker</formControlType>
+        </param>
+        <param>
+          <name>end</name>
+          <label>End Date</label>
+          <col>2</col>
+          <formControlType>datepicker</formControlType>
+        </param>
+        <param>
+          <name>JOURNAL_CODE</name>
+          <label>Journal</label>
+          <formControlType>select</formControlType>
+          <datatype name="journalDataType" />
+        </param>
+        <param>
+          <name>exclusions</name>
+          <label>Exclusions</label>
+          <formControlType>multiselect</formControlType>
+          <datatype name="field:article-type" />
+          <col>2</col>
+        </param>
+        <param>
+          <name>YEAR</name>
+          <label>Year</label>
+        </param>
+        <param>
+          <name>VOLUME_NUMBER</name>
+          <label>Volume number</label>
+        </param>
+        <param>
+          <name>ISSUE_NUMBER</name>
+          <label>Issue number</label>
+        </param>
+      </paramList>
+    </reportDefinition>
+    <reportDefinition description="IET Books Report"
+    handler="org.theiet.rsuite.reporting.BooksReport"
+    id="org.theiet.rsuite.books.report" label="IET Books Report" />
+    <reportDefinition description="IET Article Report"
+    handler="org.theiet.rsuite.reporting.ArticleWipReport"
+    id="org.theiet.rsuite.article.wip.report"
+    label="IET Article Report">
+      <paramList>
+        <param>
+          <name>startDate</name>
+          <label>Start Date</label>
+          <formControlType>datepicker</formControlType>
+        </param>
+        <param>
+          <name>endDate</name>
+          <label>End Date</label>
+          <formControlType>datepicker</formControlType>
+        </param>
+        <param>
+          <name>status</name>
+          <label>Article status</label>
+          <formControlType>radiobutton</formControlType>
+          <optionList>
+            <option value="complete" label="Complete" />
+            <option value="wip" label="In Process" />
+            <option value="all" label="All" />
+          </optionList>
+        </param>
+        <param>
+          <name>filter</name>
+          <label>Filters:</label>
+          <formControlType>checkbox</formControlType>
+          <optionList>
+            <option value="is_special_issue"
+            label="Special issue" />
+            <option value="open_access" label="Open access" />
+            <option value="inspec_required"
+            label="Inspec required" />
+          </optionList>
+        </param>
+        <param>
+          <!-- Keeping Ids for now based on desire for multiselect
+                                        which is not working. Code has some comments -->
+          <name>journalCaId</name>
+          <label>Journal</label>
+          <formControlType>select</formControlType>
+          <datatype name="journalDataType" />
+        </param>
+        <param>
+          <name>articleid</name>
+          <label>Article Id (use % for wildcard)</label>
+        </param>
+      </paramList>
+    </reportDefinition>
+    <reportDefinition description="IET Article Summary Report"
+    handler="org.theiet.rsuite.reporting.ArticleWipOneLineReport"
+    id="org.theiet.rsuite.article.wip.reportoneline"
+    label="IET Article Summary Report">
+      <paramList>
+        <param>
+          <name>startDate</name>
+          <label>Start Date</label>
+          <formControlType>datepicker</formControlType>
+        </param>
+        <param>
+          <name>endDate</name>
+          <label>End Date</label>
+          <formControlType>datepicker</formControlType>
+        </param>
+        <param>
+          <name>status</name>
+          <label>Article status</label>
+          <formControlType>radiobutton</formControlType>
+          <optionList>
+            <option value="complete" label="Complete" />
+            <option value="wip" label="In Process" />
+            <option value="all" label="All" />
+          </optionList>
+        </param>
+        <param>
+          <name>filter</name>
+          <label>Filters:</label>
+          <formControlType>checkbox</formControlType>
+          <optionList>
+            <option value="is_special_issue"
+            label="Special issue" />
+            <option value="open_access" label="Open access" />
+            <option value="inspec_required"
+            label="Inspec required" />
+          </optionList>
+        </param>
+        <param>
+          <name>issueCode</name>
+          <label>Issue Code (use % for wildcard)</label>
+          <formControlType>text</formControlType>
+        </param>
+        <param>
+          <!-- Keeping Ids for now based on desire for multiselect
+                                        which is not working. Code has some comments -->
+          <name>journalCaId</name>
+          <label>Journal</label>
+          <formControlType>select</formControlType>
+          <datatype name="journalDataType" />
+        </param>
+        <param>
+          <name>articleid</name>
+          <label>Article Id (use % for wildcard)</label>
+        </param>
+      </paramList>
+    </reportDefinition>
+    <reportDefinition description="IET Archive Journal Report"
+    handler="org.theiet.rsuite.reporting.JOEReport"
+    id="org.theiet.rsuite.joe.report"
+    label="IET Archive Journal Report">
+      <paramList>
+        <param>
+          <name>start</name>
+          <label>Start Date</label>
+          <col>1</col>
+          <formControlType>datepicker</formControlType>
+          <validation required="true" errorMessage="This input field is required." />
+        </param>
+        <param>
+          <name>journalCaId</name>
+          <label>Journal</label>
+          <col>1</col>
+          <formControlType>select</formControlType>
+          <datatype name="archivedJournalDataType"/>
+        </param>
+        <param>
+          <name>end</name>
+          <label>End Date</label>
+          <col>2</col>
+          <formControlType>datepicker</formControlType>
+          <validation required="true" errorMessage="This input field is required." />
+        </param>
+        <param>
+          <name>exclusions</name>
+          <label>Exclusions</label>
+          <formControlType>multiselect</formControlType>
+          <datatype name="field:article-type" />
+          <col>2</col>
+        </param>
+      </paramList>
+    </reportDefinition>
+    <reportDefinition description="IET E-First Report"
+    handler="org.theiet.rsuite.reporting.EFirstReport"
+    id="org.theiet.rsuite.efist.report"
+    label="IET E-First Report">
+      <paramList>
+        <param>
+          <name>start</name>
+          <label>Start Date</label>
+          <col>1</col>
+          <formControlType>datepicker</formControlType>
+          <validation required="true" errorMessage="This input field is required." />
+        </param>
+        <param>
+          <name>end</name>
+          <label>End Date</label>
+          <col>2</col>
+          <formControlType>datepicker</formControlType>
+          <validation required="true" errorMessage="This input field is required." />
+        </param>
+        <param>
+          <name>filter</name>
+          <label>Filters:</label>
+          <formControlType>checkbox</formControlType>
+          <optionList>
+            <option value="is_special_issue" label="Special issue" />
+            <option value="open_access" label="Open access" />
+          </optionList>
+        </param>
+         <param>
+          <name>JOURNAL_CODE</name>
+          <label>Journal</label>
+          <formControlType>select</formControlType>
+          <datatype name="journalDataType" />
+        </param>
+        <param>
+          <name>exclusions</name>
+          <label>Exclusions</label>
+          <formControlType>multiselect</formControlType>
+          <datatype name="field:article-type" />
+          <col>2</col>
+        </param>
+      </paramList>
+    </reportDefinition>
+  </extensionProvider>
+  <extensionProvider id="rsuite.EventBus">
+    <eventHandler type="org.theiet.rsuite.standards.eventhandlers.HotContainerManagerEventHandler"
+    includeRegex="object.contentassembly.objectattached" />
+    <!--  eventHandler type="org.theiet.rsuite.eventhandlers.ContainerPermissionManagerEventHandler"/  -->
+    <eventHandler type="org.theiet.rsuite.onix.eventhandlers.OnixLmdSyncEventHandler"/>
+    <eventHandler type="org.theiet.rsuite.eventhandlers.ContentDisplayHandler"/>
+  </extensionProvider>
+  <extensionProvider id="rsuite.ManagedObjectAdvisor">
+    <managedObjectAdvisor type="org.theiet.rsuite.advisors.AliasSettingManagedObjectAdvisor" />
+  </extensionProvider>
+</rsuite-plugin>

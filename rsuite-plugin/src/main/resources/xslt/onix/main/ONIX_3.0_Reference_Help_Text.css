@@ -1,0 +1,18 @@
+*[productFormat="print"] {background-color: #98AFC7;}
+
+*[productFormat="digital"] {background-color: #FFF8DC;}
+
+RecordReference[productFormat='print']:after {
+   content: oxy_label(text, "(Print): Replace **** with Product Code", color, "blue");                            
+   font-weight: bold;
+   }
+
+RecordReference[productFormat='digital']:after {
+   content: oxy_label(text, "(Digital): Replace **** with E-Product Code", color, "blue");                            
+   font-weight: bold;
+   }
+
+Product NotificationType:after {
+   content: oxy_label(text, "\A   (Workflow status): Select from dropdown:\A     Use 02 from for 'Forthcoming' products \A     Use 03 for 'Published/available' products", color, "blue");                            
+   font-weight: bold;
+   }

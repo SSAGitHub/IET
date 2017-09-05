@@ -1,0 +1,133 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.2" name="IET Typesetter Ingestion">
+  <start-state name="StartNode">
+    <transition name="" to="Parse file name" />
+  </start-state>
+  <node name="Parse file name">
+    <action class="com.reallysi.service.workflow.ingestion.action.FileParseActionHandler">
+      <regex>(ARTICLE|ISSUE|BOOK)-(.*)(\.zip)</regex>
+      <parameters>filename;product;id;ext</parameters>
+      <useGlobalContext>true</useGlobalContext>
+    </action>
+    <transition name="" to="Ingestion file check" />
+  </node>
+  
+  <decision name="Ingestion file check">
+  	<event type="node-enter">
+  		<action class="org.theiet.rsuite.journals.actionhandlers.IngestionFileCheck" />
+  	</event>
+  	
+  	<transition name="Skip processing" to="Previous EndNode" >
+    	<condition>#{skip == 'true'}</condition>    	
+    </transition>
+    
+    <transition name="Review filename error" to="Review filename error" >
+    	<condition>#{EXCEPTION_OCCUR=='true'}</condition>
+    	<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler"/>
+    </transition>
+
+    <transition name="Load article typesetter files" to="Load article typesetter files" >
+    	<condition>#{product == 'ARTICLE'}</condition>
+    </transition>
+    
+    <transition name="Load typesetter files" to="Load typesetter files" >
+    	<condition>#{product == 'BOOK' || product == 'ISSUE'}</condition>
+    </transition>
+    
+  </decision>
+  <task-node name="Review filename error">
+    <task name="Review filename error" description="File #{rsuiteSourceFilePath} supplied to hot folder #{rsuiteHotFolderPath} did not satisfy naming conventions">
+      <assignment pooled-actors="JournalEditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation" />
+    </task>
+    <transition name="" to="Previous EndNode" />
+  </task-node>
+  <node name="Load article typesetter files">
+    <action class="org.theiet.rsuite.journals.actionhandlers.TypesetterIngestion" />
+    <transition name="" to="Article load error?" />
+  </node>
+  <decision name="Article load error?" expression="#{EXCEPTION_OCCUR=='true'}">
+    <transition name="true" to="Review article error" />
+    <transition name="false" to="Review article proofs" />
+  </decision>
+  <task-node name="Review article error">
+    <task name="Review article error" description="#{failDetail}">
+      <assignment pooled-actors="JournalEditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation" />
+    </task>
+    <transition name="" to="Previous EndNode" />
+  </task-node>
+  <task-node name="Review article proofs">
+    <task name="Review article proofs" description="#{product} #{articleId} #{typesetter_update_type}">
+      <event type="task-create">
+        <action class="org.theiet.rsuite.journals.actionhandlers.AssignTaskToEa" />
+      </event>
+      <assignment pooled-actors="JournalEditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="" to="First typesetter submission?" />
+  </task-node>
+  <node name="Send to INSPEC">
+    <action class="org.theiet.rsuite.journals.actionhandlers.SendToInspec" />
+    <transition name="" to="INSPEC Error?" />
+  </node>
+  <decision name="INSPEC Error?" expression="#{EXCEPTION_OCCUR=='true'}">
+    <transition name="false" to="Previous EndNode" />
+    <transition name="true" to="Review inspec error" >
+    	<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler"/>
+    </transition>
+  </decision>
+  <decision name="First typesetter submission?" expression="#{firstTypesetterSubmission=='yes'}">
+    <transition name="true" to="Send to INSPEC" />
+    <transition name="false" to="Previous EndNode" />
+  </decision>
+  <node name="Load typesetter files">
+    <action class="org.theiet.rsuite.journals.actionhandlers.IssueIngestion" />
+    <transition name="" to="Load error?" />
+  </node>
+  <decision name="Load error?" expression="#{EXCEPTION_OCCUR=='true'}">
+    <transition name="true" to="Review load error" />
+    <transition name="false" to="Review files" />
+  </decision>
+  <task-node name="Review load error">
+    <task name="Review load error" description="#{failDetail}">
+      <assignment pooled-actors="JournalEditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="" to="Previous EndNode" />
+  </task-node>
+  <task-node name="Review files">
+    <task name="Review files" description="#{id} #{typesetter_update_type}">
+      <event type="task-create">
+        <action class="org.theiet.rsuite.journals.actionhandlers.AssignTaskToEa" />
+      </event>
+      <assignment pooled-actors="JournalEditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="" to="Previous EndNode" />
+  </task-node>
+  <task-node name="Review inspec error">
+    <task name="Review inspec error" description="#{failDetail}">
+      <assignment pooled-actors="RSuiteAdministrator" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="" to="Send to INSPEC" />
+  </task-node>
+  <node name="Previous EndNode">
+    <action class="org.theiet.rsuite.journals.actionhandlers.IngestionCompleted" />
+    <transition name="" to="EndNode" />
+  </node>
+  <end-state name="EndNode">
+  	<event type="node-enter">
+		<action
+			class="com.rsicms.projectshelper.workflow.actionhandlers.WorkflowCleanUpActionHandler" />
+	</event>
+  </end-state>
+</process-definition>

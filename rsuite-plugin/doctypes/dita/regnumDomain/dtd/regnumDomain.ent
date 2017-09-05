@@ -1,0 +1,28 @@
+<!-- =============================================================
+      IET Regulation Number Domain
+     
+     Defines specialization of data for specifying regulation numbers
+     in iet-regulation content.
+     
+     Copyright (c) 2013 IET
+     ============================================================= -->
+
+<!-- ============================================================= -->
+<!--             IET Regulation Number DOMAIN ENTITIES                -->
+<!-- ============================================================= -->
+
+<!ENTITY % regnum-d-data
+   "regnum
+   "
+>
+
+<!ENTITY   regnumTopic-d-att     
+  "(topic d4p_enumBase-d regnum-d)"
+>
+
+<!ENTITY   regnumMap-d-att     
+  "(map d4p_enumBase-d regnum-d)"
+>
+
+
+<!-- ================== End IET Regulation Number Domain Entities ============ -->

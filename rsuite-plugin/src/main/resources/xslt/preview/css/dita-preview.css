@@ -1,0 +1,82 @@
+/* Default preview CSS for use with DITA preview
+*/
+      body { 
+      font-family: Verdana, Helvetica, sans-serif;
+      font-size: 10pt;
+      }
+      
+      h1, h2, h3, h4 {
+      font-family: Verdana, Helvetica, sans-serif;
+      color: blue;
+      }
+      
+      .keyword {
+      font-weight: bold;
+      }
+      
+      .table-of-contents {
+      font-size: 9pt;
+      display: none;
+      width: 300px;
+      float: left;
+      border: solid blue 1px;
+      padding-right: 6px;
+      padding-left: 6px;
+      padding-bottom: 6px;
+      margin-right: 6px;
+      }
+      
+      .main-flow {
+      display: block;
+      }
+      
+      .draft-comment {
+      border: solid green 1pt; 
+      padding: 6pt; 
+      background-color: #00F900;      
+      }
+      
+      .codeblock {
+      background-color: #C0C0C0;
+      }
+      
+      /*
+       * ========== DITA Learning Domain (questions and answers) ====================
+       */
+      
+      p.correctResponse {
+        color: green;
+      }
+      
+      .lcAnswerOption2 {
+         text-indent: -24px;
+         margin-left: 24px;
+      }
+       
+      div.lcFeedback2, div.feedback {
+        font-family: Times, serif;
+        text-indent: 0;
+        display: block;
+        margin: 4px;
+        margin-left: 24px;
+        width: 80%;
+        border: 1pt solid blue;
+        background-color: yellow;
+        
+      }
+      
+      .feedback-label {
+        font-weight: bold;
+        font-style: italic;        
+      }
+
+       div.story {
+        padding:2px 30px 5px 30px;
+        color: rgb(0, 135, 137);
+      }
+
+       div.story div.title{
+        font-weight: bold;
+      }
+
+/* End of stylehsheet */

@@ -1,0 +1,10 @@
+${ManuscriptID} 
+${PaperTitle}
+ 
+This article will be published online in advance of the print version.  Please prepare all online files and upload them to the specified FTP folder.
+ 
+Best Regards
+ 
+${EditorialAssistantName}
+ 
+IET ${JournalName}

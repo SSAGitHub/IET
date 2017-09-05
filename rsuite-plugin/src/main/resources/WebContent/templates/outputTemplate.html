@@ -1,0 +1,11 @@
+<ul class="briefcase">
+	{{#each mo in view.model.objects}}
+		<li class="briefcase-item">
+			<table>
+				<tr>
+					<td>{{view RSuite.view.BriefcaseManagedObject managedObjectIdBinding="mo" droppable=false}}</td>
+				</tr>
+			</table>
+		</li>
+	{{/each}}
+</ul>

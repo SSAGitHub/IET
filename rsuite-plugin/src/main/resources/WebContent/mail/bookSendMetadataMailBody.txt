@@ -1,0 +1,13 @@
+Dear All,
+
+Please find attached the books metadata (new product form) for 
+
+Product Code: ${product_code}
+Full title:   ${book_title}
+Author: ${author_first_name} ${author_surname}
+
+${additionalText}
+
+Regards,
+
+${mail_from}

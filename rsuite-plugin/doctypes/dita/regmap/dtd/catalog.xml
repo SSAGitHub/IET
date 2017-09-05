@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"          
+  prefer="public">
+
+
+  <public publicId="urn:pubid:org.iet:doctypes:dita:dtd:regmap"
+    uri="regmap.dtd"
+  />
+  <system systemId="urn:pubid:org.iet:doctypes:dita:dtd:regmap:regmap.dtd"
+    uri="regmap.dtd"
+  />
+  
+  <!--  Versions without :dtd for consistency with topic public IDs.Doh! -->
+  <public publicId="urn:pubid:org.iet:doctypes:dita:regmap"
+    uri="regmap.dtd"
+  />
+  <system systemId="urn:pubid:org.iet:doctypes:dita:regmap:regmap.dtd"
+    uri="regmap.dtd"
+  />
+  
+  <public publicId="urn:pubid:org.iet:modules:dtd:regmap"
+    uri="regmap.mod"
+  />
+  <system systemId="urn:pubid:org.iet:modules:dtd:regmap:regmap.mod"
+    uri="regmap.mod"
+  />
+  
+  <public publicId="urn:pubid:org.iet:entities:dtd:regmap"
+    uri="regmap.ent"
+  />
+  <system systemId="urn:pubid:org.iet:entities:dtd:regmap:regmap.ent"
+    uri="regmap.ent"
+  />
+  
+</catalog>

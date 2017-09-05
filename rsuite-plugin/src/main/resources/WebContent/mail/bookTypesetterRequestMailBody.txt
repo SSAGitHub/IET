@@ -1,0 +1,12 @@
+Dear ${contactFirstName},
+
+I have got a book from our ${seriesName} series called ${bookTitle} (${productCode}) that I would like ${companyName} to manage through copyediting, typesetting, proofreading, correcting and indexing. The typescript has been uploaded to your FTP site. I hope I've covered most points below but please let me know if anything is unclear.
+
+${additionalText}
+
+Once you have evaluated the typescript and cast-off to give an approximate extent please can you provide an estimate of how much you think this project will cost. Please can you also put together a realistic schedule and give me a run-down of how you see the project progressing. 
+
+I would ideally like to have print-ready PDFs by ${deadline}.
+
+Best wishes,
+${productionController}

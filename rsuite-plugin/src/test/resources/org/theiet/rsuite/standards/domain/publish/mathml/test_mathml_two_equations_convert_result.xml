@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regulation>
+	<body>		
+			<p class="- topic/p ">
+				<i class="+ topic/ph hi-d/i ">
+					<b class="+ topic/ph hi-d/b ">Replace	this:__</b>
+				</i>
+				<image href="equation_1.pdf" class="- topic/image "></image>
+				<b class="+ topic/ph hi-d/b ">
+				</b>
+				<i class="+ topic/ph hi-d/i ">
+					<b class="+ topic/ph hi-d/b ">__with this:__</b>
+				</i>
+				<image href="equation_2.pdf" class="- topic/image "></image>
+			</p>		
+	</body>
+</regulation>

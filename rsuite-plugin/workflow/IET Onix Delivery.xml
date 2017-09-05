@@ -1,0 +1,117 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.2" name="IET Onix Delivery">
+  
+  <start-state name="StartNode">
+    <transition to="Create onix file" name=""></transition>
+  </start-state>
+  
+  <task-node name="Review validation exception">
+    <task name="Review validation exception" description="Validation process has failed for #{recipientName}. #{failDetail}">
+      <assignment pooled-actors="OnixAdministrator" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+		<transition to="Validate"></transition>
+		<transition name="Terminate process" to="EndNode" />
+  </task-node>  
+  
+  
+  <task-node name="Review validation error">
+		<task name="Review validation error" description="Invalid onix file for #{recipientName}, download error package from #{errorResourceReference}">
+      		<assignment pooled-actors="OnixAdministrator" />
+      		<controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        	<variable name="rsuite contents" access="read,write,required" />
+      		</controller>
+    	</task>
+		<transition name="Recrate Onix file" to="Create onix file" />
+		<transition name="Terminate process" to="EndNode" />
+	</task-node>
+
+	<decision name="Create onix file">
+		<event type="node-enter">
+			<action class="org.theiet.rsuite.onix.actionhandlers.CreateOnixFileActionHandler" />
+		</event>
+		<transition to="Validate" name="to Validate" />
+		<transition to="Review creation exception" name="Review creation exception">
+			<condition>#{EXCEPTION_OCCUR=='true'}</condition>
+    		<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler"/>			
+		</transition>		
+	</decision>
+
+	
+	<decision name="Validate">
+		<event type="node-enter">
+			<action class="org.theiet.rsuite.onix.actionhandlers.StartOnixFileValidationActionHandler" />
+		</event>
+		<transition to="Review validation error" name="Review validation error" />
+		<transition to="Review validation exception" name="Review validation exception">
+			<condition>#{EXCEPTION_OCCUR=='true'}</condition>
+    		<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler"/>			
+		</transition>
+		<transition to="Deliver onix result" name="Deliver onix result">
+			<condition>#{validOnixFile=='true'}</condition>    				
+		</transition>
+	</decision>
+
+	<task-node name="Review creation exception">
+		<task name="Review creation exception" description="Unable to create ONIX file for #{recipientName}. #{failDetail}">
+			<assignment pooled-actors="OnixAdministrator" />
+      		<controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        	<variable name="rsuite contents" access="read,write,required" />
+        </controller>
+    	</task>
+		<transition to="EndNode" name="Terminate process"/>
+		<transition to="Create onix file" name="Re-Create onix file"></transition>
+	</task-node>
+	
+	
+ <decision name="Deliver onix result">
+		<event type="node-enter">
+			<action class="org.theiet.rsuite.onix.actionhandlers.DeliverOnixFileToFTPActionHandler" />
+		</event>
+		<transition to="Persist Onix in RSuite" name="Persist Onix in RSuite" />
+		<transition to="Review delivery error" name="Review delivery error">
+			<condition>#{EXCEPTION_OCCUR=='true'}</condition>
+    		<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler"/>			
+		</transition>
+	</decision>
+
+
+
+  <task-node name="Review delivery error">
+    <task name="Review delivery error" description="Unable to deliver ONIX for #{recipientName}. #{failDetail}">
+      <assignment pooled-actors="OnixAdministrator" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+		<transition to="EndNode" name="Terminate process"></transition>
+		<transition to="Deliver onix result" name="Redeliver onix result"></transition>
+  </task-node>
+
+	<decision name="Persist Onix in RSuite">
+		<event type="node-enter">
+			<action class="org.theiet.rsuite.onix.actionhandlers.PersistOnixDeliveryActionHandler" />
+		</event>
+		<transition to="EndNode" name="Terminate process" />
+		<transition to="Review persist error" name="Review persist error">
+			<condition>#{EXCEPTION_OCCUR=='true'}</condition>
+    		<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler"/>			
+		</transition>
+	</decision>
+
+  <task-node name="Review persist error">
+    <task name="Review persist error" description="Unable to store ONIX for #{recipientName} in RSuite. #{failDetail}">
+      <assignment pooled-actors="OnixAdministrator" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+		<transition to="EndNode" name="Terminate process"></transition>
+		<transition to="Persist Onix in RSuite" name="Persist Onix in RSuite"></transition>
+  </task-node>
+	
+
+  <end-state name="EndNode" />
+
+</process-definition>

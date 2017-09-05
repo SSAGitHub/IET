@@ -1,0 +1,82 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.1" name="IET TV Video Record CrossRef Delivery">
+	<start-state name="StartNode">
+		<transition to="Generate CrossRef Document"></transition>
+	</start-state>
+
+	<decision name="Generate CrossRef Document">
+		<event type="node-enter">
+			<action class="org.theiet.rsuite.iettv.actionhandlers.delivery.crossref.CreateCrossRefActionHandler" />
+		</event>
+
+		<transition to="Validate CrossRef Document" name="to Validate CrossRef Document"/>
+
+		<transition to="Review Generation CrossRef Document Fail">
+			<condition>#{EXCEPTION_OCCUR == 'true'}</condition>
+			<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler" />
+		</transition>
+		
+	</decision>
+
+	<task-node name="Review Generation CrossRef Document Fail">
+		<task name="Review Generation Fail" description="CrossRef generation has failed. #{failDetail}">
+			<assignment pooled-actors="IetTvAdministrator" />
+			<controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>
+		</task>
+		<transition to="EndNode" name="End workflow" />
+	</task-node>
+	<decision name="Validate CrossRef Document">
+
+		<event type="node-enter">
+			<action class="org.theiet.rsuite.iettv.actionhandlers.delivery.crossref.ValidateCrossRefActionHandler" />
+		</event>
+
+		<transition to="Send CrossRef Document" />
+
+		<transition to="Review Validation CrossRef Document Fail" name="to Review Validation CrossRef Document Fail">
+			<condition>#{EXCEPTION_OCCUR == 'true'}</condition>
+			<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler" />
+		</transition>
+	</decision>
+
+	<task-node name="Review Validation CrossRef Document Fail">
+		<task name="Review Validation Fail" description="CrossRef Validation has failed. #{failDetail}">
+			<assignment pooled-actors="IetTvAdministrator" />
+			<controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>
+		</task>
+		<transition to="EndNode" name="End workflow" />
+	</task-node>
+
+	<decision name="Send CrossRef Document">
+
+		<event type="node-enter">
+			<action class="org.theiet.rsuite.iettv.actionhandlers.delivery.crossref.SendCrossRefActionHandler" />
+		</event>
+
+		<transition to="EndNode" name="to EndNode" />
+
+		<transition to="Review Send CrossRef Document Fail">
+			<condition>#{EXCEPTION_OCCUR == 'true'}</condition>
+			<action class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler" />
+		</transition>		
+	</decision>
+
+	<task-node name="Review Send CrossRef Document Fail">
+		<task name="Review Send Fail" description="Sending CrossRef has failed. #{failDetail}">
+			<assignment pooled-actors="IetTvAdministrator" />
+			<controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>
+		</task>
+		<transition to="EndNode"></transition>
+	</task-node>
+
+	<end-state name="EndNode">
+		<event type="node-enter">
+			<action class="com.rsicms.projectshelper.workflow.actionhandlers.WorkflowCleanUpActionHandler" />
+		</event>
+	</end-state>
+</process-definition>

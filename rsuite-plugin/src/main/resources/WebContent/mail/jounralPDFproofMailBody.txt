@@ -1,0 +1,37 @@
+Dear ${CorrespondingAuthorSalutation} ${CorrespondingAuthorSurname},
+ 
+ 
+ 
+Please find attached the PDF proof of your accepted paper ${ManuscriptID} entitled ${PaperTitle}
+ 
+ 
+ 
+Please check the proof carefully and reply to this email within 2 days attaching a Word or PDF file listing only the essential changes required. If we do not hear from you within 2 days your paper may be withdrawn from publication, so you should respond to this email even if there are no corrections to make.
+
+Please bear in mind the following:
+
+• Do not send amended source files as the typesetter cannot use these for corrections
+• Be aware that corrections should be limited ideally to 1 page
+• Make sure you answer all typesetter queries (found at the end of the proof)
+• When requesting corrections please try to be as specific as possible when detailing the change including the location of each individual change
+• If you do not have any corrections, please inform us of this so we can move on with production on your paper
+
+This is the only opportunity you will have for making corrections to your paper so please make sure you check your paper carefully and list all of the essential changes. Once the corrections have been carried out you will receive a complimentary copy and this is the final version of your paper.
+
+When requesting corrections please be aware that:
+
+• Co-authors cannot be added to a paper
+• Results cannot be modified unless an error has been introduced during typesetting
+• If changes are required to figures please supply a new figure file
+• New references cannot be added at this stage
+ 
+ 
+ 
+ 
+Yours Sincerely
+ 
+ 
+ 
+${EditorialAssistantName}
+ 
+IET ${JournalName}

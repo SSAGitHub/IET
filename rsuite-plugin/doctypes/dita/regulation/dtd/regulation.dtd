@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- =============================================================
+     IET Regulation Topic Type
+     
+     Represents a regulation (chapter level construct) within a publication.
+     
+     Specialized from D4P chapter
+     
+     Copyright (c) 2013 IET
+
+     ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ENTITY DECLARATIONS                 -->
+<!-- ============================================================= -->
+
+<!ENTITY % commonDomainIntegrations-dec
+  PUBLIC "urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations:entities"
+         "commonDomainIntegrations.ent"
+>%commonDomainIntegrations-dec;
+
+<!ENTITY % regnum-d-dec  
+   PUBLIC "urn:pubid:org.iet:entities:dtd:dita:regnumDomain:entities"
+   "regnumDomain.ent"                                                
+>
+%regnum-d-dec;
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ATTRIBUTE DECLARATIONS              -->
+<!-- ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!--                    DOMAIN EXTENSIONS                          -->
+<!-- ============================================================= -->
+<!--                    One for each extended base element, with
+                        the name of the domain(s) in which the
+                        extension was declared                     -->
+                        
+<!ENTITY % data
+  "data     | 
+   %regnum-d-data;
+  "                   
+>
+
+
+<!ENTITY % commonDomainEntityIntegrations-dec
+  PUBLIC "urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations:integrationEntities"
+         "commonDomainEntityIntegrations.ent"
+>%commonDomainEntityIntegrations-dec;
+
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ATTRIBUTE EXTENSIONS                -->
+<!-- ============================================================= -->
+<!ENTITY % props-attribute-extensions  ""                            >
+<!ENTITY % base-attribute-extensions   ""                            >
+
+
+<!-- ============================================================= -->
+<!--                    TOPIC NESTING OVERRIDE                     -->
+<!-- ============================================================= -->
+
+<!--                    Redefine the infotype entity to exclude 
+                        other topic types and allow nesting     -->
+<!ENTITY % regulation-info-types 
+  "regulation
+  "
+>
+
+<!ENTITY % info-types
+  "%regulation-info-types;
+  "
+>
+
+<!-- ============================================================= -->
+<!--                    DOMAINS ATTRIBUTE OVERRIDE                 -->
+<!-- ============================================================= -->
+<!--                    Must be declared ahead of the DTDs, which
+                        puts @domains first in order               -->
+
+<!ENTITY included-domains 
+    "&hi-d-att; 
+     &ut-d-att;
+     &formatting-d-att;
+     &regnumTopic-d-att;
+    "                
+ >
+
+
+<!-- ============================================================= -->
+<!--                    TOPIC ELEMENT INTEGRATION                  -->
+<!-- ============================================================= -->
+
+<!--                    Embed topic to get generic elements        -->
+<!ENTITY % topic-type   PUBLIC 
+"-//OASIS//ELEMENTS DITA Topic//EN" 
+"topic.mod"                                                          >
+%topic-type;
+
+
+<!ENTITY % chapter-typemod 
+                        PUBLIC 
+"urn:pubid:dita4publishers.sourceforge.net:modules:chapter" 
+"chapter.mod"                                                        >                                                     
+%chapter-typemod;
+
+<!ENTITY % regulation-typemod 
+                        PUBLIC 
+"urn:pubid:dita4publishers.sourceforge.net:modules:regulation" 
+"regulation.mod"                                                        >                                                     
+%regulation-typemod;
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ELEMENT INTEGRATION                 -->
+<!-- ============================================================= -->
+
+<!ENTITY % commonDomainIntegrations
+  PUBLIC "urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations"
+         "commonDomainIntegrations.mod"
+>%commonDomainIntegrations;
+
+<!ENTITY % regnum-d-def
+   PUBLIC "urn:pubid:org.iet:modules:dita:modules:regnumDomain"
+   "regnumDomain.mod"                                                
+>
+%regnum-d-def;  

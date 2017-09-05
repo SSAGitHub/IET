@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- =============================================================
+     IET Guidance Note Chapter Topic Type Module
+     
+     Represents a chapter within a Guidance Note book.
+     
+     Specializes from topic
+     
+     Copyright (c) 2013 IET
+
+     ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ENTITY DECLARATIONS                 -->
+<!-- ============================================================= -->
+
+<!ENTITY % commonDomainIntegrations-dec
+  PUBLIC "urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations:entities"
+         "commonDomainIntegrations.ent"
+>%commonDomainIntegrations-dec;
+
+<!ENTITY % cite_margin-d-dec  
+   PUBLIC "urn:pubid:org.iet:entities:dtd:dita:cite_marginDomain:entities"
+   "cite_marginDomain.ent"                                                
+>
+%cite_margin-d-dec;  
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ATTRIBUTE DECLARATIONS              -->
+<!-- ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!--                    DOMAIN EXTENSIONS                          -->
+<!-- ============================================================= -->
+<!--                    One for each extended base element, with
+                        the name of the domain(s) in which the
+                        extension was declared                     -->
+                        
+<!ENTITY % p
+  "p     | 
+   %d4p_formatting-d-p;     | 
+   %d4p_math-d-p; |
+   %d4p_simplebib-d-p; |
+   %d4p_pubcontent-d-p; |
+   %cite_margin-d-p;
+  "                   
+>
+                        
+<!ENTITY % commonDomainEntityIntegrations-dec
+  PUBLIC "urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations:integrationEntities"
+         "commonDomainEntityIntegrations.ent"
+>%commonDomainEntityIntegrations-dec;
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ATTRIBUTE EXTENSIONS                -->
+<!-- ============================================================= -->
+<!ENTITY % props-attribute-extensions  ""                            >
+<!ENTITY % base-attribute-extensions   ""                            >
+
+
+<!-- ============================================================= -->
+<!--                    TOPIC NESTING OVERRIDE                     -->
+<!-- ============================================================= -->
+
+<!--                    Redefine the infotype entity to exclude 
+                        other topic types and disallow nesting     -->
+<!ENTITY % chapter-info-types 
+  "division |
+   subsection |
+   sidebar
+  "
+>
+
+<!ENTITY % subsection-info-types 
+  "division |
+   subsection |
+   sidebar
+  "
+>
+
+<!ENTITY % info-types
+  "%chapter-info-types;
+  "
+>
+
+<!-- ============================================================= -->
+<!--                    DOMAINS ATTRIBUTE OVERRIDE                 -->
+<!-- ============================================================= -->
+<!--                    Must be declared ahead of the DTDs, which
+                        puts @domains first in order               -->
+
+<!ENTITY included-domains 
+   "&cite_margin-d-att; 
+   "                
+>
+
+
+<!-- NOTE: These are provided in the common domain entity integrations module. -->
+
+<!-- ============================================================= -->
+<!--                    TOPIC ELEMENT INTEGRATION                  -->
+<!-- ============================================================= -->
+
+<!--                    Embed topic to get generic elements        -->
+<!ENTITY % topic-type   PUBLIC 
+"-//OASIS//ELEMENTS DITA Topic//EN" 
+"topic.mod"                                                          >
+%topic-type;
+
+
+<!ENTITY % chapter-typemod 
+                        PUBLIC 
+"urn:pubid:dita4publishers.sourceforge.net:modules:chapter" 
+"chapter.mod"                                                        >                                                     
+%chapter-typemod;
+
+<!ENTITY % division-typemod 
+                        PUBLIC 
+"urn:pubid:dita4publishers.sourceforge.net:modules:division" 
+"division.mod"                                                        
+>                                                     
+%division-typemod;
+
+
+<!ENTITY % subsection-typemod 
+                        PUBLIC 
+"urn:pubid:dita4publishers.sourceforge.net:modules:subsection" 
+"subsection.mod"                                                        
+>                                                     
+%subsection-typemod;
+
+<!ENTITY % sidebar-typemod 
+                        PUBLIC 
+"urn:pubid:dita4publishers.sourceforge.net:modules:sidebar" 
+"sidebar.mod"                                                        >                                                     
+%sidebar-typemod;
+
+
+
+<!-- ============================================================= -->
+<!--                    DOMAIN ELEMENT INTEGRATION                 -->
+<!-- ============================================================= -->
+
+<!ENTITY % commonDomainIntegrations
+  PUBLIC "urn:pubid:org.iet:doctypes:dita:modules:commonDomainIntegrations"
+         "commonDomainIntegrations.mod"
+>%commonDomainIntegrations;
+
+<!ENTITY % cite_margin-d-def
+   PUBLIC "urn:pubid:org.iet:modules:dita:modules:cite_marginDomain"
+   "cite_marginDomain.mod"                                                
+>
+%cite_margin-d-def;  
+
+<!-- ================== End Chapter DTD  ==================== -->

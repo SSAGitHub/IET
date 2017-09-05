@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"          
+  prefer="public">  
+  <public publicId="urn:pubid:org.iet:doctypes:dita:index"
+    uri="index.dtd"
+  />
+  <system systemId="urn:pubid:org.iet:doctypes:dita:index.dtd"
+          uri="index.dtd"
+  />  
+  
+  <public publicId="urn:pubid:org.iet:modules:index"
+    uri="index.mod"
+  />
+  <system systemId="urn:pubid:org.iet:modules:index.mod"
+    uri="index.mod"
+  />
+  
+  
+</catalog>  

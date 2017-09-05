@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result xmlns:r="http://www.rsuitecms.com/rsuite/ns/metadata">
+  <moRevisionInfo>107887_2.0</moRevisionInfo>
+  <caDetails>
+    <caInfos>
+      <ci id="107749">Part 2</ci>
+      <ci id="101">Typescript</ci>
+    </caInfos>
+  </caDetails>
+  <t>
+  <ca id="101">
+    <ca id="107749">
+      <mf h="107796" i="107885"/>
+      <mf h="107798" i="107887"/>
+      <mf h="107807" i="107889"/>
+      <mf h="107884" i="107891"/>
+    </ca>
+  </ca>
+  </t>
+</result>

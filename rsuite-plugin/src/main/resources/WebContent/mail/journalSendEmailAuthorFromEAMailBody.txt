@@ -1,0 +1,13 @@
+Dear ${CorrespondingAuthorSalutation} ${CorrespondingAuthorSurname},
+
+${ManuscriptID} 
+
+${PaperTitle}
+
+${additionalText}
+
+Yours sincerely, 
+
+${EditorialAssistantName}
+
+IET ${JournalName}

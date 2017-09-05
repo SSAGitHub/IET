@@ -1,0 +1,15 @@
+Please find attached all of the information regarding the following IET issue
+
+
+${JournalName}/${IssueDetails} 
+ 
+The papers included in this issue are detailed below:
+ 
+  
+${ListOfPapers}
+ 
+Many Thanks
+
+${EditorialAssistantName}
+ 
+IET ${JournalName}

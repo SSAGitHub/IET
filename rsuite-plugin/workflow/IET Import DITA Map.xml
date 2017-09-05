@@ -1,0 +1,45 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.1" name="IET Import DITA Map">
+  <start-state name="StartNode">
+    <transition name="" to="Unzip" />
+  </start-state>
+  <end-state name="EndNode" />
+
+  <node name="Unzip">
+    <action class="com.reallysi.service.workflow.ingestion.action.UnzipActionHandler" />
+    <transition name="" to="Import Map" />
+  </node>
+
+  <node name="Import Map">
+    <action class="org.theiet.rsuite.standards.actionhandlers.MapImporterActionHandler">
+      <mapFileName>${baseFileName}.ditamap</mapFileName>
+      <parentBrowseTreeFolder>Import</parentBrowseTreeFolder>
+      <parentCaNode>Imported Maps</parentCaNode>
+    </action>
+    <transition name="" to="Import Failed?" />
+  </node>
+
+  <decision name="Import Failed?" expression="#{EXCEPTION_OCCUR==true}">
+    <transition name="false" to="Check Imported Map" />
+    <transition name="true" to="Import Failed" />
+  </decision>
+  <task-node name="Check Imported Map">
+    <task name="Check Imported Map" description="Map #{fullFileName} imported.">
+      <assignment pooled-actors="RSuiteUser" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="Done" to="EndNode" />
+  </task-node>
+  <task-node name="Import Failed">
+    <task name="Import Failed" 
+    description="Import of map #{fullFileName} failed: #{exceptionMessage}
+                   &lt;br/&gt;See validation report &lt;a href='/rsuite/rest/v1/report/generated/#{validationReportId}?skey=RSUITE-SESSION-KEY' target='_xformReport'&gt;#{validationReportFileName}&lt;a/&gt;">
+      <assignment pooled-actors="RSuiteUser" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="fullFileName" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="Done" to="EndNode" />
+  </task-node>
+</process-definition>

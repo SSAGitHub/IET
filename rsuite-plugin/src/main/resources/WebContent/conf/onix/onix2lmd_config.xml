@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<onix2lmd>
+	<entry lmdName="product_code">
+		<xpath>substring-after(/*/onix:Product/onix:RecordReference[@productFormat="print"],'org.theiet.onix.')
+		</xpath>
+		<xpath>substring-after(/*/onix:Product/onix:RecordReference[1],'org.theiet.onix.')
+		</xpath>
+	</entry>
+
+	<entry lmdName="e_product_code">
+		<xpath>substring-after(/*/onix:Product/onix:RecordReference[@productFormat="digital"],'org.theiet.onix.')
+		</xpath>
+	</entry>
+
+	<entry lmdName="isbn">
+		<xpath>/*/onix:Product/onix:ProductIdentifier[@productFormat="print"][1]/onix:IDValue
+		</xpath>
+	</entry>
+
+	<entry lmdName="e_isbn">
+		<xpath>/*/onix:Product/onix:ProductIdentifier[@productFormat="digital"][1]/onix:IDValue
+		</xpath>
+	</entry>
+
+	<entry lmdName="author_first_name">
+		<xpath>/*/onix:Product/onix:DescriptiveDetail/onix:Contributor[onix:SequenceNumber
+			= 1]/onix:NamesBeforeKey
+		</xpath>
+	</entry>
+
+	<entry lmdName="author_surname">
+		<xpath>/*/onix:Product/onix:DescriptiveDetail/onix:Contributor[onix:SequenceNumber
+			= 1]/onix:KeyNames
+		</xpath>
+	</entry>
+	
+	<entry lmdName="corporate_contributor">
+		<xpath>/*/onix:Product/onix:DescriptiveDetail/onix:Contributor[onix:SequenceNumber
+			= 1]/onix:CorporateName
+		</xpath>
+	</entry>
+
+	<entry lmdName="additional_authors" multivalue="true">
+		<xpath>/*/onix:Product/onix:DescriptiveDetail/onix:Contributor[onix:SequenceNumber
+			> 1]/concat(onix:NamesBeforeKey, ' ',onix:KeyNames)
+		</xpath>
+	</entry>
+
+	<entry lmdName="book_series_name">
+		<xpath>/*/onix:Product/onix:DescriptiveDetail/onix:Collection/onix:TitleDetail/onix:TitleElement/onix:TitleText
+		</xpath>
+	</entry>
+
+	<entry lmdName="reforecast_pub_date">
+		<xpath>replace(/*/onix:Product[onix:NotificationType = '02']/onix:ProductSupply[1]/onix:MarketPublishingDetail/onix:MarketDate/onix:Date,  "([0-9]{4})([0-9]{2})([0-9]{2})", "$1-$2-$3")
+		</xpath>
+	</entry>
+
+	<entry lmdName="actual_pub_date">
+		<xpath>replace(/*/onix:Product[onix:NotificationType = '03']/onix:ProductSupply[1]/onix:MarketPublishingDetail/onix:MarketDate/onix:Date,  "([0-9]{4})([0-9]{2})([0-9]{2})", "$1-$2-$3")
+		</xpath>
+	</entry>
+
+
+	<entry lmdName="book_title">
+		<xpath>concat(//onix:TitleElement[onix:TitleElementLevel/text() =
+			"01"]/concat(onix:TitleText/text(),';;; ', onix:Subtitle), ';;; ',
+			//onix:EditionNumber/text())
+		</xpath>
+	</entry>
+
+	<entry lmdName="price_pound">
+		<xpath>/*/onix:Product/onix:ProductSupply/onix:SupplyDetail/onix:Price[onix:CurrencyCode
+			= 'GBP']/onix:PriceAmount
+		</xpath>
+	</entry>
+
+	<entry lmdName="price_dollar">
+		<xpath>/*/onix:Product/onix:ProductSupply/onix:SupplyDetail/onix:Price[onix:CurrencyCode
+			= 'USD']/onix:PriceAmount
+		</xpath>
+	</entry>
+
+	<entry lmdName="extent">
+		<xpath>/*/onix:Product/onix:DescriptiveDetail/onix:Extent/onix:ExtentValue
+		</xpath>
+	</entry>
+
+	<entry lmdName="format">
+		<xpath>/*/onix:Product/onix:DescriptiveDetail/onix:ProductForm[@productFormat='print']
+		</xpath>
+	</entry>
+
+
+	<entry lmdName="trim_size">
+		<xpath>concat( /*/onix:Product/onix:DescriptiveDetail/onix:Measure[onix:MeasureType =
+			'01']/onix:Measurement, '*',
+			/*/onix:Product/onix:DescriptiveDetail/onix:Measure[onix:MeasureType = '02']/onix:Measurement)
+		</xpath>
+	</entry>
+
+</onix2lmd>

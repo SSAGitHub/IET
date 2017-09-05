@@ -1,0 +1,25 @@
+<!-- =============================================================
+     IET Citation Margin Domain
+     
+     Defines specialization of data for specifying margin citations
+     in IET Guidanace Note content.
+     
+     Copyright (c) 2013 IET
+     ============================================================= -->
+
+<!-- ============================================================= -->
+<!--             IET Citation Margin DOMAIN ENTITIES                -->
+<!-- ============================================================= -->
+
+<!ENTITY % cite_margin-d-p
+   "cite_margin
+   "
+>
+
+<!ENTITY   cite_marginTopic-d-att     
+  "(topic cite_margin-d)"
+>
+
+
+
+<!-- ================== End Citation Margin Domain Entities ============ -->

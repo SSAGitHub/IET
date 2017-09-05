@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"          
+  prefer="public">
+  
+  <public publicId="urn:pubid:org.iet:entities:dtd:dita:regnumDomain:entities"
+    uri="regnumDomain.ent"
+  />
+  <system systemId="urn:pubid:org.iet:entities:dtd:pubmap:dita:regnumDomain.ent"
+    uri="regnumDomain.ent"
+  />
+  
+  <public publicId="urn:pubid:org.iet:modules:dita:modules:regnumDomain"
+    uri="regnumDomain.mod"
+  />
+  <system systemId="urn:pubid:org.iet:modules:dtd:pubmap:dita:regnumDomain.mod"
+    uri="regnumDomain.mod"
+  />
+  
+</catalog>

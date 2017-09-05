@@ -1,0 +1,9 @@
+
+Issue proof publishing generation has successfully finished.
+Please, follow the link(s) below to see the issue preview on your browser:
+
+${display_name_file_link_list}
+
+Regards,
+
+RSuite

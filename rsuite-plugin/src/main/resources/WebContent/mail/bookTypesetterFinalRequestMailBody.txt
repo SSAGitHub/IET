@@ -1,0 +1,12 @@
+Dear ${contactFirstName}, 
+
+I have uploaded to your ftp site my final corrections for the following title:
+
+	${bookTitle} ${authorFullName} 
+
+Please send me the printer files as soon as possible. 
+
+${additionalText}
+
+Kind regards,
+${productionController}

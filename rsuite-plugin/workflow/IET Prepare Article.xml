@@ -1,0 +1,67 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.2" name="IET Prepare Article">
+  <start-state name="StartNode">
+    <transition name="" to="Set product" />
+  </start-state>
+  <task-node name="Prepare article">
+    <task name="Prepare article" description="#{articleId} prepare article">
+      <event type="task-create">
+        <action class="org.theiet.rsuite.journals.actionhandlers.AssignTaskToEa" />
+      </event>
+      <assignment pooled-actors="JournalEditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="Merge and complete" to="Merge classification" />
+  </task-node>
+  <node name="Merge classification">
+    <action class="org.theiet.rsuite.journals.actionhandlers.InspecMerge" />
+    <transition name="" to="Merge failed?" />
+  </node>
+  <end-state name="EndNode" />
+  <decision name="Merge failed?" expression="#{EXCEPTION_OCCUR=='true'}">
+    <transition name="true" to="Review merge classification error" />
+    <transition name="false" to="Deliver to Digital Library" />
+  </decision>
+  <task-node name="Review merge classification error">
+    <task name="Review merge classification error" description="#{failDetail}">
+      <assignment pooled-actors="JournalEditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="" to="Clear exception" />
+  </task-node>
+  <node name="Clear exception">
+    <action class="com.reallysi.rsuite.system.workflow.actions.ClearExceptionStatus" />
+    <transition name="" to="Merge classification" />
+  </node>
+  <node name="Set product">
+    <action class="com.reallysi.rsuite.system.workflow.actions.SetGlobalVariablesActionHandler">
+      <variableNames>product</variableNames>
+      <values>ARTICLE</values>
+    </action>
+    <transition name="" to="Prepare article" />
+  </node>
+  <node name="Deliver to Digital Library">
+    <action class="org.theiet.rsuite.journals.actionhandlers.DeliverArticleToDigitalLibrary" />
+    <transition name="" to="Delivery Failed?" />
+  </node>
+  <decision name="Delivery Failed?" expression="#{EXCEPTION_OCCUR=='true'}">
+    <transition name="true" to="Review delivery error" />
+    <transition name="false" to="EndNode" />
+  </decision>
+  <task-node name="Review delivery error">
+    <task name="Review delivery error" description="#{failDetail}">
+      <assignment pooled-actors="JournalEditorialAssistant" />
+      <controller class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+        <variable name="rsuite contents" access="read,write,required" />
+      </controller>
+    </task>
+    <transition name="" to="Clear delivery exception" />
+  </task-node>
+  <node name="Clear delivery exception">
+    <action class="com.reallysi.rsuite.system.workflow.actions.ClearExceptionStatus" />
+    <transition name="" to="Deliver to Digital Library" />
+  </node>
+</process-definition>

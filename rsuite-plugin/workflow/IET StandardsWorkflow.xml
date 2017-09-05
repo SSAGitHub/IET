@@ -1,0 +1,127 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.2"
+	name="IET Standards Workflow">
+
+	<swimlane name="Standards Book Production Controller">
+		<assignment pooled-actors="StandardsBookProductionController" />
+	</swimlane>
+
+	<swimlane name="Standards Author">
+		<assignment pooled-actors="StandardsBookAuthor" />
+	</swimlane>
+
+	<start-state name="StartNode">
+		<transition to="PrepareBook"></transition>
+	</start-state>
+
+	<task-node name="PrepareBook">
+		<task name="Prepare Book" description="Prepare book">
+			<event type="task-create">
+				<action
+					class="com.reallysi.rsuite.system.workflow.actions.taskcreate.AssignTaskToUserFromVariable">
+					<actorNamingVariable>author</actorNamingVariable>
+				</action>
+			</event>
+			<controller
+				class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>
+		</task>
+		<transition to="ForkProcess" name="Make up book and Deliver Eproducts"></transition>
+	</task-node>
+
+	<fork name="ForkProcess">
+		<transition to="MakeUpBook" name="Make-up Book"></transition>
+		<transition to="DeliverEproducts" name="Deliver e-products"></transition>
+	</fork>
+
+	<task-node name="MakeUpBook">
+		<task name="Make-up Book" description="Make-up Book">
+			<event type="task-create">
+				<action
+					class="com.reallysi.rsuite.system.workflow.actions.taskcreate.AssignTaskToUserFromVariable">
+					<actorNamingVariable>productionController</actorNamingVariable>
+				</action>
+			</event>
+			<controller
+				class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>
+		</task>
+		<transition to="CheckIndesingProof" name="Check InDesign Proof"></transition>
+	</task-node>
+
+
+	<task-node name="DeliverEproducts">
+		<task name="Deliver e-products" description="Deliver e-products">
+			<event type="task-create">
+				<action
+					class="com.reallysi.rsuite.system.workflow.actions.taskcreate.AssignTaskToUserFromVariable">
+					<actorNamingVariable>productionController</actorNamingVariable>
+				</action>
+			</event>
+			<controller
+				class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>
+		</task>
+		<transition to="join1" name="Done"></transition>
+	</task-node>
+
+
+
+	<task-node name="CheckIndesingProof">
+		<task name="Check InDesign Proof" description="Check InDesign Proof">
+			<event type="task-create">
+				<action
+					class="com.reallysi.rsuite.system.workflow.actions.taskcreate.AssignTaskToUserFromVariable">
+					<actorNamingVariable>author</actorNamingVariable>
+				</action>
+			</event>
+			<controller
+				class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>
+		</task>
+		<transition to="PassForPress" name="Pass for press"></transition>
+		<transition to="CorrectAndReSupply" name="Correct and re-supply"></transition>
+	</task-node>
+
+	<task-node name="CorrectAndReSupply">
+		<task name="Correct and re-supply" description="Correct and re-supply">
+			<event type="task-create">
+				<action
+					class="com.reallysi.rsuite.system.workflow.actions.taskcreate.AssignTaskToUserFromVariable">
+					<actorNamingVariable>productionController</actorNamingVariable>
+				</action>
+			</event>
+			<controller
+				class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>
+		</task>
+		<transition to="CheckIndesingProof" name="Check InDesign Proof"></transition>
+	</task-node>
+	<task-node name="PassForPress">
+		<task name="Pass for press" description="Pass for press">
+			<event type="task-create">
+				<action
+					class="com.reallysi.rsuite.system.workflow.actions.taskcreate.AssignTaskToUserFromVariable">
+					<actorNamingVariable>productionController</actorNamingVariable>
+				</action>
+			</event>
+			<controller
+				class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>
+		</task>
+		<transition to="join1" name="Done"></transition>
+	</task-node>
+
+	<join name="join1">
+		<transition to="EndNode" name="Finish"></transition>
+	</join>
+
+	<end-state name="EndNode">
+	</end-state>
+
+</process-definition>

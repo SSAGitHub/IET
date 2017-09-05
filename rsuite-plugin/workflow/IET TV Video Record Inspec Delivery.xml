@@ -1,0 +1,66 @@
+<process-definition xmlns="urn:jbpm.org:jpdl-3.1"
+	name="IET TV Video Record Inspec Delivery">
+	<start-state name="StartNode">
+		<transition to="Generate Video Record PDF"></transition>
+	</start-state>
+	<decision name="Generate Video Record PDF">
+		<event type="node-enter">
+			<action
+				class="org.theiet.rsuite.iettv.actionhandlers.inspec.GenerateVideoRecordPdfActionHandler" />
+		</event>
+		
+		<transition to="Deliver to IDEA" name="Deliver Video Record IET.tv Production" />
+			
+		<transition to="Review PDF Generation Fail" name="Review PDF Generation Fail">
+			<condition>#{EXCEPTION_OCCUR == 'true'}</condition>
+			<action
+				class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler" />
+		</transition>
+	</decision>
+	<task-node name="Review PDF Generation Fail">
+		<task name="Review PDF Generation Fail"
+			description="Video Record PDF generation has failed. #{failDetail}">
+			<assignment pooled-actors="IetTvAdministrator" />
+			<controller
+				class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>
+		</task>
+		<transition to="EndNode" name="End workflow" />
+	</task-node>
+
+
+	<decision name="Deliver to IDEA">
+		<event type="node-enter">
+			<action
+				class="org.theiet.rsuite.iettv.actionhandlers.inspec.DeliverVideoRecordPackageForInspecActionHandler" />
+		</event>
+		
+		<transition to="EndNode" name="End workflow" />
+			
+		<transition to="Review IDEA Delivery Fail" name="Review IDEA Delivery Fail">
+			<condition>#{EXCEPTION_OCCUR == 'true'}</condition>
+			<action
+				class="org.theiet.rsuite.actionhandlers.ClearExcpetionAbstractActionHandler" />
+		</transition>
+	</decision>
+	
+	<task-node name="Review IDEA Delivery Fail">
+		<task name="Review IDEA Delivery Fail"
+			description="Delivery to IDEA has failed. #{failDetail}">
+			<assignment pooled-actors="IetTvAdministrator" />
+			<controller
+				class="com.reallysi.rsuite.system.workflow.RSuiteJbpmTaskControllerDelegation">
+				<variable name="rsuite contents" access="read,write,required" />
+			</controller>
+		</task>
+		<transition to="EndNode" name="End workflow" />
+	</task-node>
+	
+	<end-state name="EndNode">
+		<event type="node-enter">
+			<action
+				class="com.rsicms.projectshelper.workflow.actionhandlers.WorkflowCleanUpActionHandler" />
+		</event>
+	</end-state>
+</process-definition>

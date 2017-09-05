@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!--                    HEADER                                     -->
+<!-- ============================================================= -->
+<!--  MODULE:    IET DITA for Publishers guide_notemap Entity             -->
+<!--  VERSION:   1.2                                               -->
+<!--  DATE:      July 2013                                         -->
+<!--                                                               -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!--                    PUBLIC DOCUMENT TYPE DEFINITION            -->
+<!--                    TYPICAL INVOCATION                         -->
+<!--                                                               -->
+<!--  Refer to this file by the following public identifier or an 
+      appropriate system identifier 
+PUBLIC "urn:pubid:org.iet/entities/dtd/guide_notemap"
+      Delivered as file "guide_notemap.ent"                               -->
+
+<!-- ============================================================= -->
+<!-- SYSTEM:     Darwin Information Typing Architecture (DITA)     -->
+<!--                                                               -->
+<!-- PURPOSE:    Declaring the domain entity for concept topics    -->
+<!--                                                               -->
+<!-- ORIGINAL CREATION DATE:                                       -->
+<!--             July  2009                                        -->
+<!--                                                               -->
+<!--             (C) Copyright 2009 DITA For Publishers            -->
+<!--             All Rights Reserved.                              -->
+<!--                                                               -->
+<!--  UPDATES:                                                     -->
+<!-- ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!--                    guide_notemap ENTITIES                           -->
+<!-- ============================================================= -->
+
+<!ENTITY guide_notemap-att     
+  "(map pubmap guide_notemap)"
+>
+
+
+<!-- ================== End Concept Entities ===================== -->
