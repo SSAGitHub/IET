@@ -1,0 +1,46 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+repositories {
+	mavenCentral()
+
+	ivy {
+		url "http://ivy.reallysi.com/ivy-repo/"
+		layout "pattern", { artifact "[organisation]/[module]/[artifact]-[revision].[ext]" }
+	}
+
+	maven {
+		url "http://nexus.theiet.org/nexus/content/groups/public"
+		credentials {
+			username ietMavenUser
+			password ietMavenPassword
+		}
+	}
+}
+
+dependencies {	
+    compile 'commons-io:commons-io:1.4'	
+    compile 'oxygen:oxygen:15.2'
+	compile 'log4j:log4j:1.2.14' 
+	compile 'rsi:rsuite-oxygen-applet-integration-api:RS4.0.7_oxy15.2-v1.5.15qa7'
+	
+
+	
+	
+	
+	
+
+		
+	
+	
+
+		
+
+	
+	
+	
+
+	
+}
+

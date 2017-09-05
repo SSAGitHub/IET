@@ -1,5 +1,7 @@
 package com.rsicms.rsuite.oxygen.iet.applet.extension.framework.dita;
 
+import com.rsicms.rsuite.oxygen.iet.applet.extension.framework.dita.IetDITAUniqueAttributesRecognizer;
+
 import ro.sync.ecss.extensions.api.AuthorExtensionStateListener;
 import ro.sync.ecss.extensions.api.UniqueAttributesRecognizer;
 import ro.sync.ecss.extensions.api.content.ClipboardFragmentProcessor;

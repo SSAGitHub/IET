@@ -9,6 +9,7 @@ import com.rsicms.rsuite.editors.oxygen.applet.common.references.InsertReference
 import com.rsicms.rsuite.editors.oxygen.applet.common.references.LookupMethod;
 import com.rsicms.rsuite.editors.oxygen.applet.components.OxygenDocument;
 import com.rsicms.rsuite.editors.oxygen.applet.extension.operations.InsertReferenceOperation;
+import com.rsicms.rsuite.oxygen.iet.applet.extension.framework.dita.operation.InsertCrossReference;
 			 			 
 public class InsertConrefOperation extends InsertReferenceOperation {
 
