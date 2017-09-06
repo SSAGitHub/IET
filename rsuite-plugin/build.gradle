@@ -1,7 +1,58 @@
+import org.apache.tools.ant.filters.*
+import com.github.zafarkhaja.semver.Version
+import java.util.regex.Matcher
+import static String.format
+
+buildscript {
+	repositories { mavenCentral()        }
+
+	dependencies { classpath 'net.saliman:gradle-cobertura-plugin:2.2.4' }
+}
+
+plugins {
+	id 'pl.allegro.tech.build.axion-release' version '1.5.0'
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
 
+scmVersion {
+	tag {
+	  prefix = 'ver'
+	  initialVersion = {config, position -> '1.0.0' }
+	}
+
+	branchVersionIncrementer = [
+	  'master.*' : "incrementMinor",
+	  'release.*' : { context -> if (context.currentVersion.preReleaseVersion) {
+		  Matcher matcher = context.currentVersion.preReleaseVersion =~ /^(.*?)(\d+)$/
+		  if (matcher.matches()) {
+			  long nextNumber = Long.parseLong(matcher.group(2)) + 1
+			  String nextNumberPadded = format("%0" + matcher.group(2).length() + "d", nextNumber);
+			  String nextPreReleaseVersion = matcher.group(1) + nextNumberPadded
+	  
+			  return new Version.Builder()
+					  .setNormalVersion(context.currentVersion.normalVersion)
+					  .setPreReleaseVersion(nextPreReleaseVersion)
+					  .build();
+		  }
+	  }
+	  return context.currentVersion.incrementMinorVersion()
+	  
+	  },
+	  
+	  'hotfix.*' : "incrementPatch",
+	  'development.*' : "incrementMinor"
+	  ]
+
+	repository {
+			customKey = project.file(ietReleaseKeyFile)
+			directory = project.file('../')
+	}
+}
+
+project.version = scmVersion.version
 
 repositories {
 	mavenCentral()
@@ -18,7 +69,7 @@ repositories {
 
  configurations {
 	all {resolutionStrategy.cacheChangingModulesFor 0, 'seconds'}
-	rsuitePlugins
+	rsuitePlugin
 	pluginJars{ transitive = false }
 
 	testCompile
@@ -72,7 +123,9 @@ dependencies {
 
 }
 
+
 jar {
+	baseName = rootProject.name
 	version = null
 
 	from('src/main') {
@@ -87,3 +140,40 @@ jar {
 	from (project(':oxygen-framework-jats').createFramework.outputs.files)  { into('/WebContent/oxygen') }
 } 
 
+task buildPluginPackage(dependsOn: [	
+	'jar'
+], type: Zip) {
+
+	baseName = rootProject.name
+	from('setup') {
+		include '**/*'
+		into('setup')
+	}
+
+	from(configurations.runtime.allArtifacts.files) { into('plugin') }
+
+	from('.') { include('deploy.gradle') }
+}
+
+artifacts { rsuitePlugin buildPluginPackage }
+
+
+task deploy(type: Upload, dependsOn: buildPluginPackage)  {
+	description = "MAIN TASK - creates package and uploads to the maven repository"
+	configuration = configurations.rsuitePlugin
+
+	repositories {
+		mavenDeployer {
+			repository(url: "http://nexus.theiet.org/nexus/content/repositories/releases") {
+				authentication(userName: ietMavenUser, password: ietMavenPassword)
+			}
+
+			snapshotRepository(url: 'http://nexus.theiet.org/nexus/content/repositories/snapshots') {
+				authentication(userName: ietMavenUser, password: ietMavenPassword);
+			}
+			pom.groupId = "org.iet"
+		}
+	}
+}
+
+defaultTasks 'deploy'
