@@ -177,3 +177,5 @@ task deploy(type: Upload, dependsOn: buildPluginPackage)  {
 }
 
 defaultTasks 'deploy'
+
+task wrapper(type: Wrapper) { gradleVersion = '2.5' }
