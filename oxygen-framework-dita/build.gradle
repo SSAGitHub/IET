@@ -81,7 +81,7 @@ task frameworksZipJar(dependsOn: frameworksZip, type: Jar) {
 signJar.dependsOn frameworksZipJar
 
 task createFramework (dependsOn: signJar) {
-	
+	outputs.files file("build/signed/${project.name}.jar")	
 }
 
 

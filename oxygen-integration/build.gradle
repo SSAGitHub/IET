@@ -29,5 +29,6 @@ jar.baseName = 'iet-oxygen'
 
 
 
-task createOxygenIntegration (dependsOn: signJar) {
+task createOxygenIntegration (dependsOn: ['jar', 'signJar']) {
+	outputs.files file("build/signed/${jar.baseName}.jar")
 }

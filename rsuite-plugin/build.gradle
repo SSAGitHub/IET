@@ -16,7 +16,7 @@ repositories {
 	}
 }
 
-configurations {
+ configurations {
 	all {resolutionStrategy.cacheChangingModulesFor 0, 'seconds'}
 	rsuitePlugins
 	pluginJars{ transitive = false }
@@ -56,12 +56,7 @@ dependencies {
 	compile 'net.sourceforge.jeuclid:jeuclid-fop:3.1.9'
 	compile 'net.sourceforge.jeuclid:jeuclid-core:3.1.9'
 
-	//	pluginJars 'org.apache.xmlgraphics:batik-transcoder:1.7'
-	//	pluginJars 'org.apache.xmlgraphics:batik-bridge:1.7'
-	//	pluginJars 'org.apache.xmlgraphics:batik-svggen:1.7'
-
-	//pluginJars 'commons-io:commons-io:1.4'
-	//pluginJars 'joda-time:joda-time:2.1'
+	pluginJars 'joda-time:joda-time:2.1'
 
 	compile 'org.json:org.json:2.0'
 	compile 'org.apache.pdfbox:pdfbox:1.8.0'
@@ -85,6 +80,10 @@ jar {
 		exclude ("resources/**")
 	}
 
-
 	from(configurations.pluginJars) { into '/' }
-}
+	
+	from (project(':oxygen-integration').createOxygenIntegration.outputs.files) { into('/WebContent/oxygen') }
+	from (project(':oxygen-framework-dita').createFramework.outputs.files)  { into('/WebContent/oxygen') }
+	from (project(':oxygen-framework-jats').createFramework.outputs.files)  { into('/WebContent/oxygen') }
+} 
+
