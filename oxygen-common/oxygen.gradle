@@ -1,7 +1,7 @@
 task signJar () {
 
 	doLast{
-		new File('build/signed').mkdirs();
+		new File('${buildDir}/signed').mkdirs();
 
 		def props = new Properties();
 		file("../oxygen-common/oxygen.properties").withInputStream { props.load(it) }
