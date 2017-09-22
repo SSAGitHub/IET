@@ -1,0 +1,1914 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:r="http://www.rsuitecms.com/rsuite/ns/metadata"
+    xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" article-type="research-article"
+    dtd-version="1.0" r:rsuiteId="640761" xml:lang="en">
+    <front>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">IET-COM</journal-id>
+            <journal-title-group>
+                <journal-title>IET Communications</journal-title>
+                <abbrev-journal-title>IET Commun.</abbrev-journal-title>
+            </journal-title-group>
+            <issn pub-type="ppub">1751-8628</issn>
+            <issn pub-type="epub">1751-8636</issn>
+            <publisher>
+                <publisher-name>The Institution of Engineering and Technology</publisher-name>
+            </publisher>
+        </journal-meta>
+        <article-meta r:rsuiteId="1216910">
+            <article-id pub-id-type="doi">10.1049/iet-com.2012.0348</article-id>
+            <article-id pub-id-type="publisher-id">IET-COM.2012.0348</article-id>
+            <article-id pub-id-type="manuscript">COM.2012.0348.R2</article-id>
+            <title-group>
+                <article-title>Physical-layer transceiving techniques on data-aided orthogonal
+                    frequency-division multiplexing towards seamless service on vehicular
+                    communications</article-title>
+            </title-group>
+            <contrib-group>
+                <contrib contrib-type="author">
+                    <name name-style="western">
+                        <surname>Lin</surname>
+                        <given-names>Chi-Sheng</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="af1"/>
+                </contrib>
+                <contrib contrib-type="author" corresp="yes">
+                    <name name-style="western">
+                        <surname>Lin</surname>
+                        <given-names>Jia-Chin</given-names>
+                    </name>
+                    <email>jiachin@ieee.org</email>
+                    <xref ref-type="aff" rid="af1"/>
+                </contrib>
+            </contrib-group>
+            <aff id="af1"><addr-line>Department of Communication Engineering</addr-line>,
+                    <institution>National Central University</institution>, <addr-line>Jhongda Road
+                    300</addr-line>, <addr-line>Jhongli</addr-line>, <addr-line>Taoyuan
+                    32001</addr-line>, <country>Taiwan</country></aff>
+            <pub-date pub-type="ppub">
+                <day>21</day>
+                <month>5</month>
+                <year>2013</year>
+            </pub-date>
+            <volume>7</volume>
+            <issue>8</issue>
+            <fpage seq="1">721</fpage>
+            <lpage>730</lpage>
+            <history>
+                <date date-type="received">
+                    <day>14</day>
+                    <month>6</month>
+                    <year>2012</year>
+                </date>
+                <date date-type="rev-recd">
+                    <day>16</day>
+                    <month>1</month>
+                    <year>2013</year>
+                </date>
+                <date date-type="accepted">
+                    <day>2</day>
+                    <month>3</month>
+                    <year>2013</year>
+                </date>
+            </history>
+            <permissions>
+                <copyright-statement>© The Institution of Engineering and
+                    Technology</copyright-statement>
+                <copyright-year>2013</copyright-year>
+            </permissions>
+            <abstract>
+                <p>Frequency error, non-ideal channel estimation (CE) and inefficient seamless road
+                    side unit (RSU) service are critical issues occurring in conventional systems
+                    that are completely specified by current IEEE 802.11p standards. This study
+                    investigates novel techniques for achieving accurate frequency offset
+                    compensation and effective CE and RSU selection for handover in
+                    signal-overlapping areas. Recently, communications using data-aided orthogonal
+                    frequency-division multiplexing (DA-OFDM), such as pseudo-random-postfix OFDM
+                    and time-domain-synchronous OFDM (TDS-OFDM), have been actively studied because
+                    of their higher effectiveness, efficiency and better transmission quality. This
+                    study consists of three parts: (i) derivation of the maximum likelihood
+                    estimation for DA-OFDM, (ii) design of an accurate RSU selection scheme and
+                    (iii) implementation of a superior TD CE technique. Performance comparisons
+                    between the conventional and the proposed techniques are conducted through
+                    comprehensive computer simulations.</p>
+            </abstract>
+            <kwd-group kwd-group-type="Inspec">
+                <kwd>channel estimation</kwd>
+                <kwd>maximum likelihood estimation</kwd>
+                <kwd>mobile radio</kwd>
+                <kwd>OFDM modulation</kwd>
+                <kwd>radio transceivers</kwd>
+                <kwd>telecommunication services</kwd>
+                <kwd>wireless LAN</kwd>
+            </kwd-group>
+            <kwd-group kwd-group-type="uncontrolled">
+                <kwd>comprehensive computer simulations</kwd>
+                <kwd>TD CE technique</kwd>
+                <kwd>maximum likelihood estimation</kwd>
+                <kwd>transmission quality</kwd>
+                <kwd>TDS-OFDM</kwd>
+                <kwd>time-domain-synchronous OFDM</kwd>
+                <kwd>pseudorandom-postfix OFDM</kwd>
+                <kwd>DA-OFDM</kwd>
+                <kwd>signal-overlapping areas</kwd>
+                <kwd>handover</kwd>
+                <kwd>frequency offset compensation</kwd>
+                <kwd>IEEE 802.11 standards</kwd>
+                <kwd>nonideal channel estimation</kwd>
+                <kwd>RSU service</kwd>
+                <kwd>seamless road side unit service</kwd>
+                <kwd>vehicular communications</kwd>
+                <kwd>data-aided orthogonal frequency-division multiplexing</kwd>
+                <kwd>physical-layer transceiving techniques</kwd>
+            </kwd-group>
+            <kwd-group kwd-group-type="Inspec">
+                <kwd>channel estimation</kwd>
+                <kwd>maximum likelihood estimation</kwd>
+                <kwd>mobile radio</kwd>
+                <kwd>OFDM modulation</kwd>
+                <kwd>radio transceivers</kwd>
+                <kwd>telecommunication services</kwd>
+                <kwd>wireless LAN</kwd>
+            </kwd-group>
+            <kwd-group kwd-group-type="uncontrolled">
+                <kwd>comprehensive computer simulations</kwd>
+                <kwd>TD CE technique</kwd>
+                <kwd>maximum likelihood estimation</kwd>
+                <kwd>transmission quality</kwd>
+                <kwd>TDS-OFDM</kwd>
+                <kwd>time-domain-synchronous OFDM</kwd>
+                <kwd>pseudorandom-postfix OFDM</kwd>
+                <kwd>DA-OFDM</kwd>
+                <kwd>signal-overlapping areas</kwd>
+                <kwd>handover</kwd>
+                <kwd>frequency offset compensation</kwd>
+                <kwd>IEEE 802.11 standards</kwd>
+                <kwd>nonideal channel estimation</kwd>
+                <kwd>RSU service</kwd>
+                <kwd>seamless road side unit service</kwd>
+                <kwd>vehicular communications</kwd>
+                <kwd>data-aided orthogonal frequency-division multiplexing</kwd>
+                <kwd>physical-layer transceiving techniques</kwd>
+            </kwd-group>
+            <kwd-group kwd-group-type="Inspec-class">
+                <compound-kwd>
+                    <compound-kwd-part content-type="code">B0240Z</compound-kwd-part>
+                    <compound-kwd-part content-type="text">Other topics in
+                        statistics</compound-kwd-part>
+                </compound-kwd>
+                <compound-kwd>
+                    <compound-kwd-part content-type="code">B6120</compound-kwd-part>
+                    <compound-kwd-part content-type="text">Modulation and coding
+                        methods</compound-kwd-part>
+                </compound-kwd>
+                <compound-kwd>
+                    <compound-kwd-part content-type="code">B6150D</compound-kwd-part>
+                    <compound-kwd-part content-type="text">Communication channel equalisation and
+                        identification</compound-kwd-part>
+                </compound-kwd>
+                <compound-kwd>
+                    <compound-kwd-part content-type="code">B6250F</compound-kwd-part>
+                    <compound-kwd-part content-type="text">Mobile radio systems</compound-kwd-part>
+                </compound-kwd>
+            </kwd-group>
+        </article-meta>
+    </front>
+    <body>
+        <sec id="s1">
+            <label>1</label>
+            <title>Introduction</title>
+            <sec id="s1a">
+                <label>1.1</label>
+                <title>Intelligent transportation system (ITS) history and its application</title>
+                <p>ITS applications have generally been classified into three main categories in
+                    terms of their functionalities: safety, efficiency and comfort/value-added
+                    applications. These applications are well classified in [<xref ref-type="bibr"
+                        rid="C1">1</xref>]. As the markets for telematics and the need for
+                    safety-related applications have expanded significantly in recent years,
+                    automotive electronics are becoming more and more important. Advanced wireless
+                    communication technology actually grows momentum to ITS realisations.</p>
+                <p>The most famous vehicular communication related projects around the world are
+                    also described in [<xref ref-type="bibr" rid="C2">2</xref>]. Most of these
+                    research projects are part of the vehicular <italic>ad-hoc</italic> network
+                    (VANET). These research projects use conventional IEEE 802.11a systems to study
+                    the emulation environments.</p>
+                <p>The dedicated short range communication (DSRC) band occupies 75 MHz in the
+                    5.850–5.925 GHz range. It was regulated by the Federal Communications Commission
+                    (FCC) in the United States to improve traveller safety, decrease the possibility
+                    of traffic congestion, to facilitate the reduction of air pollution and to help
+                    conserve vital fossil fuels [<xref ref-type="bibr" rid="C3">3</xref>]. The DSRC
+                    communication modes can be divided into two types: vehicle to infrastructure
+                    (V2I) and vehicle to vehicle (V2V). The entire DSRC spectrum is equally
+                    partitioned into seven channels, each with a 10 MHz bandwidth. There are four
+                    service channels (SCHs), one control channel (CCH) and two special-usage
+                    channels. DSRC is capable of exchanging data at a high rate between either a
+                    mobile or a stationary vehicle where an on-board unit (OBU) is located and
+                    stationary road side units (RSUs) mounted on structures along roadways or
+                    through hand-held devices.</p>
+            </sec>
+            <sec id="s1b">
+                <label>1.2</label>
+                <title>Orthogonal frequency-division multiplexing (OFDM)-based ITS system</title>
+                <p>To date, the first standardised vehicular communication standard is IEEE 802.11p
+                        [<xref ref-type="bibr" rid="C4">4</xref>]. IEEE 802.11p forms the wireless
+                    access standard in wireless access in vehicular environments (WAVE) in
+                    conjunction with the IEEE 1609.x and is a new variant of the IEEE 802.11 family.
+                    The IEEE 802.11p physical (PHY) layer and medium access control (MAC) layer
+                    specifications are based on the IEEE 802.11a, and it is used as the framework
+                    for DSRC to support inter-vehicle communication and ITS applications. In IEEE
+                    802.11p, the SCHs, which are SCHs created for the purpose of avoiding or
+                    mitigating vehicle accidents and are also capable of real-time multimedia
+                    communications, operate at approximately 5.8 GHz. These ITS applications are
+                    usually reserved for the vehicle-to-infrastructure (V2I/I2V) communication mode.
+                    The parameters employed in the IEEE 802.11p are listed in Table <xref
+                        ref-type="table" rid="TB1">1</xref>. The IEEE 802.11p adopts the same PHY as
+                    the IEEE 802.11a, with the only exception being that a 10 MHz channel bandwidth
+                    is used in IEEE 802.11p. The challenges faced by an IEEE 802.11p system include
+                    wider coverage of operation, high-speed vehicles and extreme multipath
+                    environments. WAVE/DSRC is described in great detail in [<xref ref-type="bibr"
+                        rid="C5">5</xref>]. <table-wrap id="TB1" orientation="portrait"
+                        position="float">
+                        <label>Table 1</label>
+                        <caption><p>Parameters in IEEE 802.11p PHY Spec</p></caption>
+                        <table frame="hsides">
+                            <colgroup span="1">
+                                <col align="left" span="1"/>
+                                <col align="center" span="1"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th align="left" colspan="1" rowspan="1">Parameter</th>
+                                    <th align="center" colspan="1" rowspan="1">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="1" rowspan="1">bandwidth</td>
+                                    <td colspan="1" rowspan="1">10 MHz</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">FFT size</td>
+                                    <td colspan="1" rowspan="1">64</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">data subcarriers</td>
+                                    <td colspan="1" rowspan="1">48</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">pilot subcarriers</td>
+                                    <td colspan="1" rowspan="1">4</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">total subcarriers</td>
+                                    <td colspan="1" rowspan="1">52</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">modulation types</td>
+                                    <td colspan="1" rowspan="1">BPSK, QPSK, 16-QAM, 64-QAM</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">GI duration</td>
+                                    <td colspan="1" rowspan="1">1.6 μs (6.4/4)</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">symbol interval</td>
+                                    <td colspan="1" rowspan="1">8.0 μs (6.4 + 1.6)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </table-wrap></p>
+                <p>Although IEEE 802.11p has already been standardised, there is no national-level
+                    standard announced to follow it. Many researchers studies addressed how to
+                    improve it or to propose new standards. In our previous field-trial research
+                        [<xref ref-type="bibr" rid="C6">6</xref>], packet loss is up to the level of
+                    30% in high-speed V2I scenarios. Therefore a new system specification is highly
+                    desired. On the other hand, the most recent trend is to support vehicular
+                    communication networks with the assistance from mobile communication
+                    networks.</p>
+            </sec>
+            <sec id="s1c">
+                <label>1.3</label>
+                <title>Issues and related works</title>
+                <p>In general, vehicular communication is very similar to mobile/cellular
+                    communication. The high-speed movement, large-scale service area and centralised
+                    control system are common to both scenarios. The ultimate goal for both
+                    mobile/cellular and vehicular communication is to build a large-scale service
+                    environment. In these conditions, vehicular communication designers could learn
+                    from the experiences of mobile communication designers. However, there are at
+                    least three main differences between vehicular communications and
+                    general-purpose mobile/cellular communications: for example, (i)
+                    machine-to-machine communications; (ii) recursive and specific data transmission
+                    (for a finite and small set of instructions); and (iii) requirements of
+                    low-complexity and high-stability transceiving algorithms. During the literature
+                    survey and analysis, two open issues were identified: the imperfect transceiver
+                    design in the current standard and the inefficient handover procedure.</p>
+                <p>The most comprehensive and complete standard for vehicular communication
+                    currently is IEEE 802.11p. However, not only is the current IEEE 802.11p
+                    inefficient at providing accurate channel estimation (CE) in a severely
+                    frequency-selective fading environment because of insufficient pilot density,
+                    but it also lacks rapid, effective PHY-layer handover schemes to help
+                    soft-handover in high mobility.</p>
+                <p>The transceiver design in the conventional IEEE 802.11p standard adopts a
+                    comb-type pilot to prevent the fading channel. Although a comb-type pilot
+                    arrangement can effectively combat fast fading effects, the pilot density in
+                    IEEE 802.11p is definitely insufficient to perform accurate CE in environments
+                    with long delay spreads. Therefore severe frequency selectivity becomes a
+                    troublesome issue [<xref ref-type="bibr" rid="C7">7</xref>]. On a severely
+                    multipath-faded channel, deep fades may occur between two neighbouring pilots.
+                    Although linear interpolation is applied in the frequency domain, which is
+                    considered to be the most popular method in an OFDM system, linear interpolation
+                    cannot accurately filter the data subchannel weights from these distantly
+                    separated pilots. Therefore the pilot density defined in the current IEEE
+                    802.11p may be adequate in a line-of-sight (LOS) V2V scenario, but it is still
+                    insufficient in rich-scattering V2I or I2V environments.</p>
+                <p>To solve the pilot density insufficiency problem occurring in the current
+                    standard and to figure out the direction of the future national or international
+                    standard, several previous studies utilised midambles to assist the originally
+                    employed preambles for enhancing CE performance [<xref ref-type="bibr" rid="C8"
+                        >8</xref>]. In these studies, the midambles worked like block-type pilots,
+                    which have previously been thoroughly investigated [<xref ref-type="bibr"
+                        rid="C8">8</xref>]. However, the use of midambles can improve CE, although
+                    transmission throughput is sacrificed. Based on the above reasoning, effective
+                    compensation for multipath effects is highly desired. To enhance CE performance
+                    in an OFDM communication, the use of pseudo-random-postfix OFDM (PRP-OFDM)
+                    communications [<xref ref-type="bibr" rid="C9">9</xref>] and time-domain
+                    synchronous OFDM (TDS-OFDM) communications [<xref ref-type="bibr" rid="C10"
+                        >10</xref>], which arrange pseudo-random sequences into original guard
+                    intervals, has been proposed. These data-aided OFDMs (DA-OFDMs) are practical
+                    and also popularly employed in consumer products, such as in the Chinese digital
+                    terrestrial multimedia broadcast system transmission standard [<xref
+                        ref-type="bibr" rid="C10">10</xref>]. Our prior work has also applied these
+                    techniques to mobile OFDM communications [<xref ref-type="bibr" rid="C11"
+                        >11</xref>, <xref ref-type="bibr" rid="C12">12</xref>]. All of these
+                    previous studies employed pseudo-random sequences to perform TD CE. In addition,
+                    a TD CE method has been investigated for the application of the PRP-OFDM
+                    technique to the IEEE 802.11p applications [<xref ref-type="bibr" rid="C11"
+                        >11</xref>, <xref ref-type="bibr" rid="C12">12</xref>].</p>
+                <p>In contrast, TDS-OFDM technology is primarily applied in the digital broadcasting
+                    applications. Therefore it usually occupies a much wider band and employs a long
+                    training sequence (i.e. two PN sequences in self-prefix and postfix) to cascade
+                    to the OFDM symbol prefix. Although this design works well on wireless digital
+                    television broadcasting, these designs are definitely not suitable on a DSRC
+                    band that is much narrower than the wireless digital television band. This is
+                    the main reason why a vehicular communication-specific DA-OFDM has been
+                    designed.</p>
+                <p>The longer time required for currently existing handover procedures is another
+                    drawback, which renders them extremely difficult to utilise in safety-related
+                    applications. The IEEE 802.11a standard originally worked in an indoor
+                    environment where no cellular structure exists; thus, most relevant handover
+                    research is derived directly from conventional IEEE 802.11 techniques. The main
+                    approach of these studies is based on mobile Internet protocol (mobile IP) or
+                    cellular IP. However, mobile IP or cellular IP research is often aimed at data
+                    transmission or multimedia communications. As a result, very few high-mobility
+                    effects have been seriously considered. The handover procedure has been well
+                    illustrated in [<xref ref-type="bibr" rid="C13">13</xref>]. Meanwhile, a
+                    seamless communication service solution that can reduce the handover latency has
+                    also been proposed. The simulation in this paper is based on the transceiver
+                    works in an ideal condition, which can recognise the succeeding RSU
+                    instantaneously during the handover procedure; likewise the synchronisation and
+                    CE work perfectly.</p>
+                <p>In practice, a handover procedure consists of the following three steps:
+                    scanning, authentication and association. Most of the relevant research
+                    regarding handover in vehicular communication scenarios focuses on upper-layer
+                    authentication and association functions, such as [<xref ref-type="bibr"
+                        rid="C14">14</xref>, <xref ref-type="bibr" rid="C15">15</xref>]. Unlike in
+                    mobile communications (e.g. third-generation partnership project (3GPP)
+                    long-term evolution (LTE)-A or mobile WiMAX), no previous work considered sector
+                    search (name derived from LTE-A), ranging (named from WiMAX) or handover
+                    procedures on the PHY transmission layer of the IEEE 802.11. Therefore currently
+                    rapid handover is still difficult to achieve. Apparently, rapid handover is
+                    highly desired for current vehicular communications because they are built
+                    according to IEEE 802.11 PHY.</p>
+                <p>A convincing experimental testbed for the IEEE 802.11 handover was proposed
+                    previously in [<xref ref-type="bibr" rid="C15">15</xref>]. In this research, the
+                    proposed handover method works on the MAC layer. The PHY scanning for a beacon
+                    is only used for estimating the signal strength from candidate access points
+                    surrounding the given mobile station (MS). Therefore in this scheme, the
+                    pre-handover procedure cannot be conducted. Subsequently, pre-handover was shown
+                    to function in the method proposed in [<xref ref-type="bibr" rid="C16"
+                    >16</xref>]. However, this method also conducted handover on the upper
+                    layers.</p>
+                <p>In [<xref ref-type="bibr" rid="C17">17</xref>], an MAC protocol improvement for
+                    video streaming applications over VANETs is described. The RSU network topology
+                    of the simulation scenario is not continuous. If the PHY handover (especially
+                    soft-handover) technique is good enough, the application of the MAC protocol can
+                    be extended, improving the performance. In [<xref ref-type="bibr" rid="C18"
+                        >18</xref>], a large-scale VANET scenario has been discussed. Several ideas
+                    in MAC that are addressed in [<xref ref-type="bibr" rid="C18">18</xref>], such
+                    as time synchronisation and decreasing the packet collisions, can be used to
+                    complement the proposed method in this paper. Moreover, Wu and Weng [<xref
+                        ref-type="bibr" rid="C14">14</xref>] proposed a new idea in which MS can
+                    obtain the RSUs location information with assistance from global positioning
+                    service (GPS) systems. The MS can begin to process the pre-handover at the
+                    pre-setup positions.</p>
+                <p>In view of the above concerns, the IEEE 802.11p frame structure has to be
+                    modified very slightly to significantly improve the PHY handover effectiveness
+                    of the IEEE 802.11p for the primary purpose of achieving a sufficiently rapid
+                    handover.</p>
+                <p>To solve the rapid handover and pre-handover issues, a somewhat classic research
+                    topic, synchronisation must be taken into account herein. In the current IEEE
+                    802.11p standard, a short preamble can synchronise the receiving symbols through
+                    a series of training sequences. The synchronisation techniques used in
+                    communication systems have been developed for decades. One of the most useful
+                    and accurate methods for estimating timing and frequency offsets is the
+                    maximum-likelihood estimation (MLE). van de Beek <italic>et al</italic>. [<xref
+                        ref-type="bibr" rid="C19">19</xref>] proposed an efficient
+                    maximum-likelihood (ML) joint estimator of timing and frequency offsets by using
+                    a cyclic prefix (CP) in the data-frame. In general, a residual timing offset
+                    within the inter-symbol interference (ISI)-free range does not influence or
+                    degrade the system performance, but a frequency offset does. Therefore adequate
+                    timing synchronisation is easy to achieve [<xref ref-type="bibr" rid="C19"
+                        >19</xref>]. The positioning techniques, such as the time-of-arrival method,
+                    require precise synchronisation between the transmitter and the receiver. In
+                    contrast, the RSU selection can also support vehicle localisation. In [<xref
+                        ref-type="bibr" rid="C20">20</xref>, <xref ref-type="bibr" rid="C21"
+                        >21</xref>], the vehicle location management methods have been addressed.
+                    However, these methods require knowledge of high-level packet data or GPS
+                    information. The RSU selection method proposed in this paper can help the OBU
+                    obtain location information from a few cooperative RSUs.</p>
+            </sec>
+            <sec id="s1d">
+                <label>1.4</label>
+                <title>Contribution</title>
+                <p>In this paper, a practical IEEE 802.11p-like vehicular DA-OFDM transceiver
+                    architecture is proposed and thoroughly studied. This novel OFDM architecture
+                    for vehicular communication can accomplish better performance in synchronisation
+                    and CE than conventional CP OFDM systems. A modified ML estimation method that
+                    can use be applied on DA-OFDM has been addressed. Besides, a TD CE method that
+                    can work well in the overlap area is studied thoroughly, and a complete
+                    transceiver with the assistance from the proposed TD CE is verified in this
+                    paper. In addition, a novel, efficient PHY RSU selection scheme is proposed and
+                    thoroughly investigated in this paper. The proposed PHY RSU selection is based
+                    on the handover concepts employed in cellular communications in order to support
+                    high mobility. The proposed RSU selection can achieve remarkable improvements on
+                    a predictive handover mechanism, and it allows the OBUs to recognise which RSUs
+                    could provide satisfactory services.</p>
+                <p>These benefits will improve the transceiver performance, and stable transmission
+                    and faster handover and location services can also be realised based on the
+                    proposed techniques. In data transmission in high-speed trains [<xref
+                        ref-type="bibr" rid="C22">22</xref>], for example, the PHY improvement in
+                    this paper can enhance the MAC algorithm proposed in [<xref ref-type="bibr"
+                        rid="C22">22</xref>]. Tunnel safety communication, radio data system-traffic
+                    message channel (RDS-TMC) and real-time vehicle/driver monitoring are some
+                    examples of the possible applications. Moreover, cellular-vehicle communication
+                    is a very important future research topic that can be studied based on the
+                    achievements presented in this paper.</p>
+                <p>Section 2 of this paper briefly describes the operating scenario and system
+                    structure under scrutiny. In Section 3, the proposed RSU selection and
+                    synchronisation methods are explained. In Section 4, comparative computer
+                    simulations of IEEE 802.11p communications are presented. Finally, relevant
+                    comparisons and concluding remarks are presented in Section 5.</p>
+            </sec>
+        </sec>
+        <sec id="s2">
+            <label>2</label>
+            <title>Operating scenario and transceiver structure</title>
+            <sec id="s2a">
+                <label>2.1</label>
+                <title>RSU topology</title>
+                <p>The RSU topology adopted here is the mesh topology, which is illustrated in Fig.
+                        <xref ref-type="fig" rid="F1">1</xref>. Usually, a wireless band is
+                    partitioned into many channels, which are then exclusively allocated to
+                    individual cells such that each cell does not own channels whose spectra do not
+                    overlap with those of any other cell. The co-channel interference during sector
+                    search in a cellular network can therefore be assumed to be negligible.
+                    Unfortunately, an RSU could occasionally occupy the same channel band,
+                    particularly in a metropolitan setting with complex transportation systems, thus
+                    causing overcrowding of the radio spectra. WAVE service advertisement (WSA)
+                    works to provide the notifications of the services the RSU serves and what
+                    SCH(s) they are provided on (MAC layer) to users. Therefore WSAs from two
+                    neighbour RSUs are quite similar. To prevent mutual interference between two
+                    RSUs, time-division duplex is a well-developed idea that can be used to solve
+                    this problem. Meanwhile, the WSA is not the only message being sent in the CCH;
+                    there are several different control signals being sent after periodic WSAs. From
+                    this sequence, each WSA transmission interleaves with a WSA period, as shown in
+                    Fig. <xref ref-type="fig" rid="F1">1</xref><italic>a</italic>, to satisfy most
+                    conditions. However, in some special conditions in which the street patterns are
+                    complex, more time slots are needed to separate the signals from different RSUs,
+                    as shown in Fig. <xref ref-type="fig" rid="F1">1</xref><italic>b</italic>. <fig
+                        id="F1" orientation="portrait" position="float">
+                        <label>Fig. 1</label>
+                        <caption><p>RSU topology and their transmission interleaving</p>
+                            <p><italic>a</italic> Classified by 2</p>
+                            <p><italic>b</italic> Classified by 4</p></caption>
+                        <graphic orientation="portrait" position="float"
+                            xlink:href="IET-COM.2012.0348.01.tif"/>
+                    </fig></p>
+                <p>In previous studies [<xref ref-type="bibr" rid="C9">9</xref>, <xref
+                        ref-type="bibr" rid="C10">10</xref>, <xref ref-type="bibr" rid="C23"
+                        >23</xref>], different training sequences have been adopted to improve the
+                    CE performance. In fact, there are many good training sequence candidates that
+                    have good correction properties. In this paper, the Gold-sequence is adopted
+                    because it is popular and well known. Therefore each RSU employs a specific
+                    Gold-sequence as the prefix when the symbols are transmitted. The sequence is
+                    assigned according to Table <xref ref-type="table" rid="TB2">2</xref>. The
+                    Gold-sequence has similar properties to the PN-sequence, and it can aid in RSU
+                    selection and handover, as mentioned in the previous section. <table-wrap
+                        id="TB2" orientation="portrait" position="float">
+                        <label>Table 2</label>
+                        <caption><p>Gold sequence used on RSUs</p></caption>
+                        <table frame="hsides">
+                            <colgroup span="1">
+                                <col align="left" span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                                <col align="char" char="." span="1"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th align="center" colspan="1" rowspan="1">No.</th>
+                                    <th align="center" colspan="16" rowspan="1">Gold sequence</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">2</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">3</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">4</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                    <td colspan="1" rowspan="1">−1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </table-wrap></p>
+            </sec>
+            <sec id="s2b">
+                <label>2.2</label>
+                <title>RSU selection and handover</title>
+                <p>High-mobility must be inherently taken into consideration for mobile
+                    communications but not for wireless local area networks (WLANs), for example,
+                    IEEE 802.11 a/b/g, for which, the common PHY is also exploited in IEEE 802.11p
+                    for vehicular communications. When IEEE 802.11p operates in the outdoor
+                    environment, the RSU selection and the handover must become significantly
+                    crucial issues as the result of high mobility and multiple RSUs, which were not
+                    taken into consideration for a WLAN. A usual handover process often consists of
+                    three steps: scanning, authentication and association. After the scanning
+                    process is completed by a MS or a vehicle, three sets of identification codes
+                    should be classified. They are called the active set, the candidate set and the
+                    neighbour (or monitored) set. The active set is also the service providing set
+                    at the current time. Signal-to-interference ratio (SIR) is often an effective
+                    indicator that is exploited for handover decisions, cell reselections and a few
+                    other PHY procedures and is therefore used as a coverage indicator for a given
+                    cell. SIR can be represented as
+                        <italic>E</italic><sub>c</sub>/<italic>I</italic><sub>0</sub>, where
+                        <italic>E</italic><sub>c</sub> is the energy contained in one chip of the
+                    signal and <italic>I</italic><sub>0</sub> is the total effective interference
+                    with interference power spectrum density in the band. If
+                        <italic>E</italic><sub>c</sub>/<italic>I</italic><sub>0</sub> of any signal
+                    from other RSUs is detected higher than that required for serving as an
+                    effective ID code in the active set, the RSU will be classified to be a
+                    candidate set. If the
+                        <italic>E</italic><sub>c</sub>/<italic>I</italic><sub>0</sub> of any signal
+                    from other RSUs is lower than the required value set for serving as an ID code
+                    in the active set, the corresponding RSUs will be classified as a neighbour
+                    set.</p>
+                <p>In 3GPP LTE specifications, when user equipment (UE) moves between two cells,
+                    backward or predictive handover is used. In this type of handover, the source
+                    cell determines the target cell based on the measurement report and then, it
+                    queries the target cell whether it owns sufficient resources to serve the UE.
+                    Meanwhile, the target cell begins to prepare radio resources before the source
+                    cell handovers the UE to the target cell itself. As in mobile communications,
+                    the WAVE network also has a similar design. The CCH broadcasts WSA messages
+                    periodically and broadcasts urgent short messages occasionally. Therefore the
+                    OBU may receive WSA messages from different RSUs at the same time. When the OBU
+                    separates the received mixed signals, it can identify the WSA message with the
+                    highest power as being from the current RSU and the one with the second highest
+                    power as being from a candidate RSU. This procedure is called RSU selection.</p>
+                <p>Although an OBU has a current candidate RSU, the data flow is transmitted via the
+                    SCHs. Simultaneously, the CCH is still transmitting WSA messages periodically
+                    and transmitting urgent short messages occasionally. Meanwhile, synchronisation,
+                    CE and equalisation are conducted in order to reduce channel impairments. When
+                    the OBU enters a common area belonging to two serving RSUs, the handover
+                    procedure is processed successively. Handover information is currently packed
+                    into WSA message packets from the RSU to the OBU. This conventional arrangement
+                    means that an OBU cannot process an active handover or pre-synchronise to a
+                    successive RSU. Fortunately, if the DA-OFDM proposed here is employed with the
+                    assistance from training sequences arranged as symbol prefixes, the OBU can
+                    easily adopt these different training sequences to conduct active handover or
+                    pre-synchronisation.</p>
+            </sec>
+            <sec id="s2c">
+                <label>2.3</label>
+                <title>Transceiver structure</title>
+                <p>A DA-OFDM transceiver architecture is depicted in Fig. <xref ref-type="fig"
+                        rid="F2">2</xref>. As the ordinary OFDM tranceiver, the resultant signal at
+                    the modulator output is
+                        <bold><italic>S</italic></bold><italic><sub>m</sub></italic><sub>,<italic>N</italic></sub>.
+                    The optional signal mapping schemes, such as binary phase-shift keying (BPSK),
+                    quadrature phase-shift keying (QPSK), 16-QAM, and 64-QAM, are utilised in the
+                    transmission unit.
+                            <bold><italic>x</italic></bold><italic><sub>m</sub></italic><sub>,<italic>N</italic></sub>
+                    is the modulation output of the source data stream
+                        <bold><italic>S</italic></bold><italic><sub>m</sub></italic><sub>,<italic>N</italic></sub>
+                    by an inverse discrete Fourier transform block modulation. The comb-type pilot
+                    symbols are inserted onto the given subcarriers for CE, which are located on the
+                    − 21st, − 7th, 7th and 21st subcarriers. <fig id="F2" orientation="portrait"
+                        position="float">
+                        <label>Fig. 2</label>
+                        <caption><p>Proposed (uncoded) DA-OFDM transceiver structure</p></caption>
+                        <graphic orientation="portrait" position="float"
+                            xlink:href="IET-COM.2012.0348.02.tif"/>
+                    </fig></p>
+                <p>In Fig. <xref ref-type="fig" rid="F3">3</xref>, the symbol structure is depicted
+                    in detail. The preamble employed in the proposed technique is the same as that
+                    in the current IEEE 802.11p standard. Short preambles are used for time
+                    synchronisation and coarse CE. Long preambles are used for fine CE. It is thus
+                    assumed that the initial channel state can be estimated well after the
+                    preambles. However, the channel state may change with time. Therefore each
+                    symbol has to update the channel state and compensate for a timing and frequency
+                    offset iteratively on time. The transceiver design proposed in this paper will
+                    focus on synchronisation and CE on a symbol-by-symbol basis. The symbols after
+                    the preamble are a data symbol stream. The guard interval (GI) in the data
+                    symbol stream that is shown in Fig. <xref ref-type="fig" rid="F3">3</xref> is
+                    designed to prevent inter-symbol interference (ISI). Usually, the GI in the data
+                    symbol stream is inserted in a CP; however, in DA-OFDM, training sequences
+                            <bold><italic>p</italic></bold><italic><sub>L</sub></italic> are
+                    inserted as the prefix of each OFDM symbol. The Gold-sequence serves both as the
+                    RSU ID code and as the pre-synchronisation sequence, and it is assigned as shown
+                    in Table <xref ref-type="table" rid="TB2">2</xref>. <fig id="F3"
+                        orientation="portrait" position="float">
+                        <label>Fig. 3</label>
+                        <caption><p>Transmission symbol structure</p></caption>
+                        <graphic orientation="portrait" position="float"
+                            xlink:href="IET-COM.2012.0348.03.tif"/>
+                    </fig></p>
+                <p>This will be described in further detail in the following section. At the
+                    receiving end, after the carrier frequency and the timing offset
+                    synchronisation, the compensated signal is estimated to determine the channel
+                    condition and to enable the equaliser to succeed. Then, the prefix is removed
+                    and the signal is fed into the block demodulator based on discrete Fourier
+                    transform (DFT).</p>
+                <p>As mentioned in the first section, the impact of channel interference on vehicle
+                    communications fluctuates rapidly and unpredictably. As a result, the fading
+                    channel is referred to as a rapidly time-varying channel. Path loss is a
+                    large-scale fading, which comes from the strength of the radio signal getting
+                    weak. Path loss and shadowing effects are typically dealt with by automatic
+                    power control or diversity techniques. A propagation conveying LOS is often
+                    modelled as a Rician distribution, whereas a non-LOS is often modelled as a
+                    Rayleigh distribution model. In addition, the system performance evaluation in
+                    this paper adopts a small-scale fading model that was measured and characterised
+                    by the IEEE 802.11 working group at the Georgia Institute of Technology [<xref
+                        ref-type="bibr" rid="C24">24</xref>]. The environmental parameters used in
+                    this paper are listed in Table <xref ref-type="table" rid="TB3">3</xref>. Of
+                    course, these small-scale fading models can be used to represent multipath
+                    fading effects but do not include path loss or shadowing effects. <table-wrap
+                        id="TB3" orientation="portrait" position="float">
+                        <label>Table 3</label>
+                        <caption><p>Channel tap power (dB) for simulation</p></caption>
+                        <table frame="hsides">
+                            <colgroup span="1">
+                                <col align="left" span="1"/>
+                                <col align="center" span="1"/>
+                                <col align="center" span="1"/>
+                                <col align="center" span="1"/>
+                                <col align="center" span="1"/>
+                                <col align="center" span="1"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th align="left" colspan="1" rowspan="1">Tap</th>
+                                    <th align="center" colspan="1" rowspan="1">Time, ns</th>
+                                    <th align="center" colspan="1" rowspan="1">Urban Canyon (120
+                                        km/h)</th>
+                                    <th align="center" colspan="1" rowspan="1">Expressway (140
+                                        km/h)</th>
+                                    <th align="center" colspan="1" rowspan="1">Suburban street (120
+                                        km/h)</th>
+                                    <th align="center" colspan="1" rowspan="1">Doppler spectrum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="1" rowspan="1">1</td>
+                                    <td colspan="1" rowspan="1">0</td>
+                                    <td colspan="1" rowspan="1">0.0, Rician <italic>K</italic> = 7.5
+                                        dB</td>
+                                    <td colspan="1" rowspan="1">0.0, Rician <italic>K</italic> = −
+                                        5.3 dB</td>
+                                    <td colspan="1" rowspan="1">0.0, Rician <italic>K</italic> = 3.3
+                                        dB</td>
+                                    <td colspan="1" rowspan="1">Clark</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">2</td>
+                                    <td colspan="1" rowspan="1">100</td>
+                                    <td colspan="1" rowspan="1">− 11.5, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">− 9.3, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">− 9.3, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">Clark</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">3</td>
+                                    <td colspan="1" rowspan="1">200</td>
+                                    <td colspan="1" rowspan="1">− 19.0, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">− 20.3, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">− 14.0, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">Clark</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">4</td>
+                                    <td colspan="1" rowspan="1">300</td>
+                                    <td colspan="1" rowspan="1">− 25.6, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">− 21.3, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">− 18.0, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">Clark</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">5</td>
+                                    <td colspan="1" rowspan="1">400</td>
+                                    <td colspan="1" rowspan="1">0</td>
+                                    <td colspan="1" rowspan="1">− 28.8, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">− 19.4, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">Clark</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">6</td>
+                                    <td colspan="1" rowspan="1">500</td>
+                                    <td colspan="1" rowspan="1">− 28.1, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">0</td>
+                                    <td colspan="1" rowspan="1">− 24.9, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">Clark</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">7</td>
+                                    <td colspan="1" rowspan="1">600</td>
+                                    <td colspan="1" rowspan="1">0</td>
+                                    <td colspan="1" rowspan="1">0</td>
+                                    <td colspan="1" rowspan="1">− 27.5, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">Clark</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" rowspan="1">8</td>
+                                    <td colspan="1" rowspan="1">700</td>
+                                    <td colspan="1" rowspan="1">0</td>
+                                    <td colspan="1" rowspan="1">0</td>
+                                    <td colspan="1" rowspan="1">− 29.8, Rayleigh</td>
+                                    <td colspan="1" rowspan="1">Clark</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </table-wrap></p>
+            </sec>
+        </sec>
+        <sec id="s3">
+            <label>3</label>
+            <title>Proposed technique</title>
+            <sec id="s3a">
+                <label>3.1</label>
+                <title>Synchronisation</title>
+                <p>In the current IEEE 802.11p standard, the timing offset can be estimated by
+                    transmitting a series of training sequences in a short preamble. By several
+                    conventional methods [<xref ref-type="bibr" rid="C19">19</xref>, <xref
+                        ref-type="bibr" rid="C25">25</xref>, <xref ref-type="bibr" rid="C26"
+                        >26</xref>], the timing offset can be recovered well. In fact, in the OFDM
+                    system, a time offset usually cannot significantly change the received signal
+                    quality if the right timing instant still falls in the ISI-free region.
+                    Inherently, a carrier frequency offset (CFO) leads to inter-carrier interference
+                    (ICI) and it can thus significantly degrade performance on signal detection.</p>
+                <p>The CFO in the OFDM system not only attenuates the amplitude of the receiving
+                    signal but also leads to ICI, which can destroy the orthogonality of the
+                    subcarriers [<xref ref-type="bibr" rid="C26">26</xref>]. van de Beek <italic>et
+                        al</italic>. also proposed a useful ML estimation method for
+                    synchronisation. The conventional Beek's method uses the tail data to process ML
+                    algorithm with CP. However, the DA-OFDM has no embedded CP. DA-OFDM is also
+                    different with TDS-OFDM. Unlike TDS-OFDM, DA-OFDM cannot use its long training
+                    sequence being inserted in the prefix to process synchronisation. In this
+                    circumstance, the modified Beekôs ML estimation is proposed. In this method, a
+                    redundancy buffer is needed. Although the proposed method needs more memory than
+                    the conventional standard, the remarkable improvement on performance is
+                    worth.</p>
+                <p>Based on [<xref ref-type="bibr" rid="C19">19</xref>], the modified MLE
+                    formulation for DA-OFDM could be formulated as follows: the prefix of the
+                    on-time symbol <italic>r</italic>(<italic>k</italic>) and the prefix in next
+                    symbol <italic>r</italic>(<italic>k</italic> + <italic>N</italic> +
+                        <italic>L</italic>) shown in Fig. <xref ref-type="fig" rid="F4">4</xref> can
+                    be formulated as <disp-formula id="UM1"><alternatives><tex-math notation="TeX"
+                                >$$r\lpar k\rpar = a_k {\rm e}^{{\rm j}2\pi \Delta f\lpar k\rpar T_s
+                                } $$</tex-math><mml:math overflow="scroll"><mml:mi>r</mml:mi><mml:mo
+                                    stretchy="false">(</mml:mo><mml:mi>k</mml:mi><mml:mo
+                                    stretchy="false"
+                                        >)</mml:mo><mml:mo>=</mml:mo><mml:msub><mml:mi>a</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:msup><mml:mrow><mml:mi
+                                            mathvariant="normal"
+                                                >e</mml:mi></mml:mrow><mml:mrow><mml:mrow><mml:mi
+                                                mathvariant="normal"
+                                            >j</mml:mi></mml:mrow><mml:mn>2</mml:mn><mml:mi>π</mml:mi><mml:mi
+                                            mathvariant="normal">Δ</mml:mi><mml:mi>f</mml:mi><mml:mo
+                                            stretchy="false">(</mml:mo><mml:mi>k</mml:mi><mml:mo
+                                            stretchy="false"
+                                                >)</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mi>s</mml:mi></mml:msub></mml:mrow></mml:msup></mml:math>
+                            <graphic orientation="portrait" position="float"
+                                xlink:href="IET-COM.2012.0348.UM1.gif"
+                        /></alternatives></disp-formula>
+                    <fig id="F4" orientation="portrait" position="float">
+                        <label>Fig. 4</label>
+                        <caption><p>Structure of OFDM signal</p></caption>
+                        <graphic orientation="portrait" position="float"
+                            xlink:href="IET-COM.2012.0348.04.tif"/>
+                    </fig></p>
+                <p>and <disp-formula id="UM2"><alternatives><tex-math notation="TeX">$$r\lpar k + N
+                                + L\rpar = a_{k + N + L} {\rm e}^{{\rm j}2\pi \Delta f\lpar k + N +
+                                L\rpar T_s } $$</tex-math><mml:math overflow="scroll"
+                                    ><mml:mi>r</mml:mi><mml:mo stretchy="false"
+                                    >(</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>N</mml:mi><mml:mo>+</mml:mo><mml:mi>L</mml:mi><mml:mo
+                                    stretchy="false"
+                                        >)</mml:mo><mml:mo>=</mml:mo><mml:msub><mml:mi>a</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>N</mml:mi><mml:mo>+</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:msup><mml:mrow><mml:mi
+                                            mathvariant="normal"
+                                                >e</mml:mi></mml:mrow><mml:mrow><mml:mrow><mml:mi
+                                                mathvariant="normal"
+                                            >j</mml:mi></mml:mrow><mml:mn>2</mml:mn><mml:mi>π</mml:mi><mml:mi
+                                            mathvariant="normal">Δ</mml:mi><mml:mi>f</mml:mi><mml:mo
+                                            stretchy="false"
+                                            >(</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>N</mml:mi><mml:mo>+</mml:mo><mml:mi>L</mml:mi><mml:mo
+                                            stretchy="false"
+                                                >)</mml:mo><mml:msub><mml:mi>T</mml:mi><mml:mi>s</mml:mi></mml:msub></mml:mrow></mml:msup></mml:math>
+                            <graphic orientation="portrait" position="float"
+                                xlink:href="IET-COM.2012.0348.UM2.gif"
+                        /></alternatives></disp-formula>where <italic>N</italic> is the fast Fourier
+                    transform (FFT) size and <italic>L</italic> is the prefix length. <disp-formula
+                        id="M1">
+                        <label>(1)</label><alternatives><tex-math notation="TeX">$$\eqalign{\gamma
+                                _k &amp; = \left\{{a_k {\rm e}^{{\rm j}2\pi \varepsilon \lpar
+                                k/N\rpar } } \right\}^{\ast} a_{k + N + L} {\rm e}^{{\rm j}2\pi
+                                \varepsilon \lpar \lpar k + N + L\rpar /\lpar N\rpar \rpar } \cr
+                                &amp; = a_k^{\ast} a_{k + N + L} {\rm e}^{{\rm j}2\pi \varepsilon
+                                \lpar NL/\lpar N\rpar \rpar }}\eqno\lpar
+                                1\rpar$$</tex-math><mml:math overflow="scroll"><mml:mtable
+                                    columnalign="right left" columnspacing="thickmathspace"
+                                    rowspacing=".5em"
+                                                  ><mml:mtr><mml:mtd><mml:msub><mml:mi>γ</mml:mi><mml:mi>k</mml:mi></mml:msub></mml:mtd><mml:mtd><mml:mo>=</mml:mo><mml:msup><mml:mfenced
+                                                  close="}" open="{"
+                                                  ><mml:mrow><mml:msub><mml:mi>a</mml:mi><mml:mi>k</mml:mi></mml:msub><mml:msup><mml:mrow><mml:mi
+                                                  mathvariant="normal"
+                                                  >e</mml:mi></mml:mrow><mml:mrow><mml:mrow><mml:mi
+                                                  mathvariant="normal"
+                                                  >j</mml:mi></mml:mrow><mml:mn>2</mml:mn><mml:mi>π</mml:mi><mml:mi>ε</mml:mi><mml:mo
+                                                  stretchy="false"
+                                                  >(</mml:mo><mml:mi>k</mml:mi><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:mi>N</mml:mi><mml:mo
+                                                  stretchy="false"
+                                                  >)</mml:mo></mml:mrow></mml:msup></mml:mrow></mml:mfenced><mml:mrow><mml:mo>∗</mml:mo></mml:mrow></mml:msup><mml:msub><mml:mi>a</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>N</mml:mi><mml:mo>+</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:msup><mml:mrow><mml:mi
+                                                  mathvariant="normal"
+                                                  >e</mml:mi></mml:mrow><mml:mrow><mml:mrow><mml:mi
+                                                  mathvariant="normal"
+                                                  >j</mml:mi></mml:mrow><mml:mn>2</mml:mn><mml:mi>π</mml:mi><mml:mi>ε</mml:mi><mml:mo
+                                                  stretchy="false">(</mml:mo><mml:mo
+                                                  stretchy="false"
+                                                  >(</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>N</mml:mi><mml:mo>+</mml:mo><mml:mi>L</mml:mi><mml:mo
+                                                  stretchy="false"
+                                                  >)</mml:mo><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:mo
+                                                  stretchy="false"
+                                                  >(</mml:mo><mml:mi>N</mml:mi><mml:mo
+                                                  stretchy="false">)</mml:mo><mml:mo
+                                                  stretchy="false"
+                                            >)</mml:mo></mml:mrow></mml:msup></mml:mtd></mml:mtr><mml:mtr><mml:mtd/><mml:mtd><mml:mo>=</mml:mo><mml:msubsup><mml:mi>a</mml:mi><mml:mi>k</mml:mi><mml:mrow><mml:mo>∗</mml:mo></mml:mrow></mml:msubsup><mml:msub><mml:mi>a</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>N</mml:mi><mml:mo>+</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:msup><mml:mrow><mml:mi
+                                                  mathvariant="normal"
+                                                  >e</mml:mi></mml:mrow><mml:mrow><mml:mrow><mml:mi
+                                                  mathvariant="normal"
+                                                  >j</mml:mi></mml:mrow><mml:mn>2</mml:mn><mml:mi>π</mml:mi><mml:mi>ε</mml:mi><mml:mo
+                                                  stretchy="false"
+                                                  >(</mml:mo><mml:mi>N</mml:mi><mml:mi>L</mml:mi><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:mo
+                                                  stretchy="false"
+                                                  >(</mml:mo><mml:mi>N</mml:mi><mml:mo
+                                                  stretchy="false">)</mml:mo><mml:mo
+                                                  stretchy="false"
+                                            >)</mml:mo></mml:mrow></mml:msup></mml:mtd></mml:mtr></mml:mtable></mml:math>
+                            <graphic orientation="portrait" position="float"
+                                xlink:href="IET-COM.2012.0348.M1.gif"
+                        /></alternatives></disp-formula>where, the frequency offset
+                        <italic>ε</italic> = Δ<italic>fT<sub>s</sub></italic> and <disp-formula
+                        id="M2">
+                        <label>(2)</label><alternatives><tex-math notation="TeX">$$\hat \varepsilon
+                                = \displaystyle{N \over {N + L}}\displaystyle{1 \over {2\pi }}{\tan
+                                }^{ - 1} \displaystyle{{\mathop{\rm Im}\nolimits_ {\left\{{\gamma
+                                _k^{\ast} \gamma _{k + N + L} } \right\}}} \over {\mathop{\rm
+                                Re}\nolimits_ {\left\{{\gamma _k^{\ast} \gamma _{k + N + L} }
+                                \right\}}}}\eqno\lpar 2\rpar $$</tex-math><mml:math
+                                overflow="scroll"><mml:mrow><mml:mover><mml:mi>ε</mml:mi><mml:mo
+                                            stretchy="false"
+                                    >^</mml:mo></mml:mover></mml:mrow><mml:mo>=</mml:mo><mml:mstyle><mml:mrow><mml:mfrac><mml:mi>N</mml:mi><mml:mrow><mml:mi>N</mml:mi><mml:mo>+</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:mfrac></mml:mrow><mml:mstyle><mml:mrow><mml:mfrac><mml:mn>1</mml:mn><mml:mrow><mml:mn>2</mml:mn><mml:mi>π</mml:mi></mml:mrow></mml:mfrac></mml:mrow><mml:msup><mml:mrow><mml:mi>tan</mml:mi></mml:mrow><mml:mrow><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup><mml:mstyle><mml:mrow><mml:mfrac><mml:mrow><mml:msub><mml:mrow><mml:mrow><mml:mi>Im</mml:mi></mml:mrow></mml:mrow><mml:mfenced
+                                                  close="}" open="{"
+                                                  ><mml:mrow><mml:msubsup><mml:mi>γ</mml:mi><mml:mi>k</mml:mi><mml:mrow><mml:mo>∗</mml:mo></mml:mrow></mml:msubsup><mml:msub><mml:mi>γ</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>N</mml:mi><mml:mo>+</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mfenced></mml:msub></mml:mrow><mml:mrow><mml:msub><mml:mrow><mml:mrow><mml:mi>Re</mml:mi></mml:mrow></mml:mrow><mml:mfenced
+                                                  close="}" open="{"
+                                                  ><mml:mrow><mml:msubsup><mml:mi>γ</mml:mi><mml:mi>k</mml:mi><mml:mrow><mml:mo>∗</mml:mo></mml:mrow></mml:msubsup><mml:msub><mml:mi>γ</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>N</mml:mi><mml:mo>+</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mfenced></mml:msub></mml:mrow></mml:mfrac></mml:mrow></mml:mstyle></mml:mstyle></mml:mstyle></mml:math>
+                            <graphic orientation="portrait" position="float"
+                                xlink:href="IET-COM.2012.0348.M2.gif"
+                        /></alternatives></disp-formula></p>
+            </sec>
+            <sec id="s3b">
+                <label>3.2</label>
+                <title>Channel estimation</title>
+                <p>Specified in the current IEEE 802.11p standard, four pilots are allocated in an
+                    OFDM block and they are exploited for the sake of CE. The four pilots are
+                    retained in the proposed technique. Thus, conventional CE methods (e.g. linear
+                    interpolation) must still be used. Sometimes, a conventional CE method will
+                    adopt a channel tracking method to enhance performance. The channel tracking
+                    method proposed previously [<xref ref-type="bibr" rid="C27">27</xref>] used the
+                    FD channel state information which was estimated in the preamble to be the
+                    reference states and uses pilots to measure the difference between the on-time
+                    channel states and the reference states. The reference states can then be
+                    modified to match the on-time channel states. This scheme could reduce the
+                    inaccuracy of linear interpolation.</p>
+                <p>The proposed CE method is based on our previous research [<xref ref-type="bibr"
+                        rid="C11">11</xref>, <xref ref-type="bibr" rid="C12">12</xref>]. The main
+                    idea of our proposed method is TD CE, which is used to analyse the received
+                    training sequence to obtain the channel impulse response (CIR). As shown in Fig.
+                        <xref ref-type="fig" rid="F2">2</xref>, the <italic>m</italic>th receive
+                    vector <bold><italic>r</italic></bold> is the combination of the prefix vector
+                            <bold><italic>r</italic></bold><italic><sub>m</sub></italic><sub>,<italic>L</italic></sub>,
+                    and the data stream vector
+                        <bold><italic>r</italic></bold><italic><sub>m</sub></italic><sub>,<italic>N</italic></sub>.
+                    As shown in Fig. <xref ref-type="fig" rid="F2">2</xref>, <italic>L</italic> is
+                    the length of the prefix and <italic>N</italic> is the length of the FFT size.
+                    Therefore we can derive the receive vector
+                            <bold><italic>r</italic></bold><italic><sub>m</sub></italic> as
+                        <disp-formula id="UM3"><alternatives><tex-math notation="TeX">$${\bi r}_m =
+                                {\bi r}_{m\comma L} + {\bi r}_{m\comma N} $$</tex-math><mml:math
+                                overflow="scroll"><mml:msub><mml:mrow><mml:mi
+                                            mathvariant="bold-italic"
+                                        >r</mml:mi></mml:mrow><mml:mi>m</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mrow><mml:mi
+                                            mathvariant="bold-italic"
+                                            >r</mml:mi></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mrow><mml:mi
+                                            mathvariant="bold-italic"
+                                            >r</mml:mi></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub></mml:math>
+                            <graphic orientation="portrait" position="float"
+                                xlink:href="IET-COM.2012.0348.UM3.gif"
+                        /></alternatives></disp-formula>and the prefix vector
+                            <bold><italic>r</italic></bold><italic><sub>m</sub></italic><sub>,<italic>L</italic></sub>
+                    as <disp-formula id="UM4"><alternatives><tex-math notation="TeX">$${\bi
+                                r}_{m\comma L} = {\bi p}_L {\bi h}_m + {\bi w}_m
+                                $$</tex-math><mml:math overflow="scroll"><mml:msub><mml:mrow><mml:mi
+                                            mathvariant="bold-italic"
+                                            >r</mml:mi></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mrow><mml:mi
+                                            mathvariant="bold-italic"
+                                        >p</mml:mi></mml:mrow><mml:mi>L</mml:mi></mml:msub><mml:msub><mml:mrow><mml:mi
+                                            mathvariant="bold-italic"
+                                        >h</mml:mi></mml:mrow><mml:mi>m</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mrow><mml:mi
+                                            mathvariant="bold-italic"
+                                        >w</mml:mi></mml:mrow><mml:mi>m</mml:mi></mml:msub></mml:math>
+                            <graphic orientation="portrait" position="float"
+                                xlink:href="IET-COM.2012.0348.UM4.gif"
+                        /></alternatives></disp-formula>where
+                            <bold><italic>p</italic></bold><italic><sub>L</sub></italic> is the
+                    transmitted prefix, <bold><italic>h</italic></bold><italic><sub>m</sub></italic>
+                    is the CIR at the <italic>m</italic>th symbol and
+                        <bold><italic>w</italic></bold><italic><sub>m</sub></italic> is the additive
+                    white Gaussian noise (AWGN) vector whose elements have common variance of
+                                <inline-formula><alternatives><tex-math notation="TeX">$\sigma _n^2
+                                $</tex-math><mml:math overflow="scroll"
+                                        ><mml:msubsup><mml:mi>σ</mml:mi><mml:mi>n</mml:mi><mml:mn>2</mml:mn></mml:msubsup></mml:math><inline-graphic
+                                xlink:href="IET-COM.2012.0348.IM1.gif"
+                        /></alternatives></inline-formula>. In the TD least-squares (LS) estimation
+                    method adopted here, <bold><italic>M</italic></bold> results from the training
+                    sequence conveyed in the prefix,
+                            <bold><italic>p</italic></bold><italic><sub>L</sub></italic>, written as
+                        <disp-formula id="UM5"><alternatives><tex-math notation="TeX">$${\bi p}_L =
+                                \left[{\matrix{ {\,p_1 } &amp; {\,p_2 } &amp; \cdots &amp; {\,p_{L -
+                                1} } &amp; {\,p_L } \cr } } \right]^{\rm T} $$</tex-math><mml:math
+                                overflow="scroll"><mml:msub><mml:mrow><mml:mi
+                                            mathvariant="bold-italic"
+                                        >p</mml:mi></mml:mrow><mml:mi>L</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:msup><mml:mfenced
+                                        close="]" open="["><mml:mrow><mml:mtable columnspacing="1em"
+                                                rowspacing="4pt"
+                                                  ><mml:mtr><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mo>⋯</mml:mo></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mi>L</mml:mi></mml:msub></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mfenced><mml:mrow><mml:mi
+                                            mathvariant="normal"
+                                >T</mml:mi></mml:mrow></mml:msup></mml:math>
+                            <graphic orientation="portrait" position="float"
+                                xlink:href="IET-COM.2012.0348.UM5.gif"
+                        /></alternatives></disp-formula>and the matrix
+                        <bold><italic>M</italic></bold> can be described as <disp-formula id="UM6"
+                                ><alternatives><tex-math notation="TeX">$${\bi M} = \left[{\matrix{
+                                {\,p_1 } &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \cr {\,p_2 }
+                                &amp; {\,p_1 } &amp; 0 &amp; {} &amp; 0 &amp; 0 \cr {\,p_3 } &amp;
+                                {\,p_2 } &amp; {\,p_1 } &amp; {} &amp; 0 &amp; 0 \cr {\,p_4 } &amp;
+                                {\,p_3 } &amp; {\,p_2 } &amp; {} &amp; 0 &amp; 0 \cr \vdots &amp;
+                                \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; 0 \cr {\,p_{L -
+                                1} } &amp; {\,p_{L - 2} } &amp; {\,p_{L - 3} } &amp; {} &amp;
+                                {\,p_{L - \lpar \lpar L/2\rpar - 2\rpar } } &amp; \vdots \cr {\,p_L
+                                } &amp; {\,p_{L - 1} } &amp; {\,p_{L - 2} } &amp; {} &amp; {\,p_{L -
+                                \lpar \lpar L/2\rpar - 1\rpar } } &amp; {\,p_{L - \lpar L/2\rpar } }
+                                \cr } } \right]$$</tex-math><mml:math overflow="scroll"
+                                        ><mml:mrow><mml:mi mathvariant="bold-italic"
+                                    >M</mml:mi></mml:mrow><mml:mo>=</mml:mo><mml:mfenced close="]"
+                                    open="["><mml:mrow><mml:mtable columnspacing="1em"
+                                            rowspacing="4pt"><mml:mtr><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mo>⋯</mml:mo></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mrow/></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mn>3</mml:mn></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow/></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mn>4</mml:mn></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mn>3</mml:mn></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow/></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mo>⋮</mml:mo></mml:mtd><mml:mtd><mml:mo>⋮</mml:mo></mml:mtd><mml:mtd><mml:mo>⋮</mml:mo></mml:mtd><mml:mtd><mml:mo>⋱</mml:mo></mml:mtd><mml:mtd><mml:mo>⋮</mml:mo></mml:mtd><mml:mtd><mml:mn>0</mml:mn></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>−</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>−</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow/></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>−</mml:mo><mml:mo
+                                                  stretchy="false">(</mml:mo><mml:mo
+                                                  stretchy="false"
+                                                  >(</mml:mo><mml:mi>L</mml:mi><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:mn>2</mml:mn><mml:mo
+                                                  stretchy="false"
+                                                  >)</mml:mo><mml:mo>−</mml:mo><mml:mn>2</mml:mn><mml:mo
+                                                  stretchy="false"
+                                                  >)</mml:mo></mml:mrow></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mo>⋮</mml:mo></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mi>L</mml:mi></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>−</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow/></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>−</mml:mo><mml:mo
+                                                  stretchy="false">(</mml:mo><mml:mo
+                                                  stretchy="false"
+                                                  >(</mml:mo><mml:mi>L</mml:mi><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:mn>2</mml:mn><mml:mo
+                                                  stretchy="false"
+                                                  >)</mml:mo><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo
+                                                  stretchy="false"
+                                                  >)</mml:mo></mml:mrow></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mspace
+                                                  width="thinmathspace"
+                                                  /><mml:msub><mml:mi>p</mml:mi><mml:mrow><mml:mi>L</mml:mi><mml:mo>−</mml:mo><mml:mo
+                                                  stretchy="false"
+                                                  >(</mml:mo><mml:mi>L</mml:mi><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:mn>2</mml:mn><mml:mo
+                                                  stretchy="false"
+                                                  >)</mml:mo></mml:mrow></mml:msub></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mfenced></mml:math>
+                            <graphic orientation="portrait" position="float"
+                                xlink:href="IET-COM.2012.0348.UM6.gif"
+                        /></alternatives></disp-formula>By using an LS algorithm, the estimated
+                    time-domain CIR, <inline-formula><alternatives><tex-math notation="TeX"
+                                >$\widehat{\bi h}_{m\comma L} $</tex-math><mml:math
+                                overflow="scroll"><mml:msub><mml:mrow><mml:mover><mml:mi
+                                                mathvariant="bold-italic"
+                                                >h</mml:mi><mml:mo>^</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub></mml:math><inline-graphic
+                                xlink:href="IET-COM.2012.0348.IM2.gif"
+                        /></alternatives></inline-formula>, can be written as <disp-formula id="UM7"
+                                ><alternatives><tex-math notation="TeX">$$\widehat{\bi h}_{m\comma
+                                L} = \left[{\lpar {\bi M}^{\rm H} {\bi M}\rpar ^{ - 1} {\bi M}^{\rm
+                                H} } \right]{\bi r}_{m\comma L} $$</tex-math><mml:math
+                                overflow="scroll"><mml:msub><mml:mrow><mml:mover><mml:mi
+                                                mathvariant="bold-italic"
+                                                >h</mml:mi><mml:mo>^</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mfenced
+                                    close="]" open="["><mml:mrow><mml:mo stretchy="false"
+                                                  >(</mml:mo><mml:msup><mml:mrow><mml:mi
+                                                  mathvariant="bold-italic"
+                                                  >M</mml:mi></mml:mrow><mml:mrow><mml:mi
+                                                  mathvariant="normal"
+                                            >H</mml:mi></mml:mrow></mml:msup><mml:mrow><mml:mi
+                                                mathvariant="bold-italic"
+                                                >M</mml:mi></mml:mrow><mml:msup><mml:mo
+                                                stretchy="false"
+                                                  >)</mml:mo><mml:mrow><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup><mml:msup><mml:mrow><mml:mi
+                                                  mathvariant="bold-italic"
+                                                  >M</mml:mi></mml:mrow><mml:mrow><mml:mi
+                                                  mathvariant="normal"
+                                            >H</mml:mi></mml:mrow></mml:msup></mml:mrow></mml:mfenced><mml:msub><mml:mrow><mml:mi
+                                            mathvariant="bold-italic"
+                                            >r</mml:mi></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub></mml:math>
+                            <graphic orientation="portrait" position="float"
+                                xlink:href="IET-COM.2012.0348.UM7.gif"
+                        /></alternatives></disp-formula>To reduce ICI resulting from multipath
+                    fading and timing errors, the overlap-add (OLA) method is employed to maintain
+                    orthogonality among subcarriers [<xref ref-type="bibr" rid="C23">23</xref>].
+                    After OLA, the symbols can be expressed as <disp-formula id="UM8"
+                                ><alternatives><tex-math notation="TeX">$${\bi r^{\prime}}_{m\comma
+                                N} = {\bi r}_{m\comma N} + \left[{\matrix{ {{\bi r}_{m + 1\comma
+                                L}^{\rm T} } &amp; {{\bf 0}_{N - L + 1} } \cr } } \right]^{\rm T}
+                                $$</tex-math><mml:math overflow="scroll"
+                                                ><mml:msub><mml:mrow><mml:msup><mml:mi
+                                                mathvariant="bold-italic"
+                                                  >r</mml:mi><mml:mrow><mml:mi mathvariant="normal"
+                                                  >′</mml:mi></mml:mrow></mml:msup></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mrow><mml:mi
+                                            mathvariant="bold-italic"
+                                            >r</mml:mi></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msup><mml:mfenced
+                                        close="]" open="["><mml:mrow><mml:mtable columnspacing="1em"
+                                                rowspacing="4pt"
+                                                  ><mml:mtr><mml:mtd><mml:mrow><mml:msubsup><mml:mrow><mml:mi
+                                                  mathvariant="bold-italic"
+                                                  >r</mml:mi></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>L</mml:mi></mml:mrow><mml:mrow><mml:mi
+                                                  mathvariant="normal"
+                                                  >T</mml:mi></mml:mrow></mml:msubsup></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:msub><mml:mrow><mml:mn
+                                                  mathvariant="bold"
+                                                  >0</mml:mn></mml:mrow><mml:mrow><mml:mi>N</mml:mi><mml:mo>−</mml:mo><mml:mi>L</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mfenced><mml:mrow><mml:mi
+                                            mathvariant="normal"
+                                >T</mml:mi></mml:mrow></mml:msup></mml:math>
+                            <graphic orientation="portrait" position="float"
+                                xlink:href="IET-COM.2012.0348.UM8.gif"
+                        /></alternatives></disp-formula>However, an extra inter-block interference
+                    (IBI), contained in <inline-formula><alternatives><tex-math notation="TeX"
+                                >$\left[{\matrix{ {{\bi r}_{m + 1}^{\rm T} } &amp; {{\bf 0}_{N - L +
+                                1} } \cr } } \right]^{\rm T} $</tex-math><mml:math overflow="scroll"
+                                        ><mml:msup><mml:mfenced close="]" open="["
+                                                ><mml:mrow><mml:mtable columnspacing="1em"
+                                                rowspacing="4pt"
+                                                  ><mml:mtr><mml:mtd><mml:mrow><mml:msubsup><mml:mrow><mml:mi
+                                                  mathvariant="bold-italic"
+                                                  >r</mml:mi></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi
+                                                  mathvariant="normal"
+                                                  >T</mml:mi></mml:mrow></mml:msubsup></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:msub><mml:mrow><mml:mn
+                                                  mathvariant="bold"
+                                                  >0</mml:mn></mml:mrow><mml:mrow><mml:mi>N</mml:mi><mml:mo>−</mml:mo><mml:mi>L</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mfenced><mml:mrow><mml:mi
+                                            mathvariant="normal"
+                                >T</mml:mi></mml:mrow></mml:msup></mml:math><inline-graphic
+                                xlink:href="IET-COM.2012.0348.IM3.gif"
+                        /></alternatives></inline-formula>, is inevitably introduced by the
+                    aforementioned OLA process. Therefore the IBI must be removed by means of the
+                    following self-interference-cancellation (SIC) method because it can be
+                    regenerated by the knowledge of pre-determined training sequence. Accordingly,
+                    the proposed technique employs the pre-DFT TD samples after OLA with SIC, that
+                    is <disp-formula id="UM9"><alternatives><tex-math notation="TeX">$${\bi
+                                r^{\prime \prime}}_{m\comma N} = \left\{{\matrix{ {{\bi
+                                r^{\prime}}_{m\comma N} - \sum\limits_{i = 1}^n \widehat{\bi
+                                h}_{m\comma i} {\bi p}_{L\comma n - i} } &amp; {n = 1\comma \;
+                                2\comma \; \ldots \comma \; \displaystyle{L \over 2}} \cr {{\bi
+                                r^{\prime}}_{m\comma N} } &amp; {n = \displaystyle{L \over 2} +
+                                1\comma \; \ldots \comma \; N} \cr } } \right.$$</tex-math><mml:math
+                                overflow="scroll"><mml:msub><mml:mrow><mml:msup><mml:mi
+                                                mathvariant="bold-italic"
+                                                  >r</mml:mi><mml:mrow><mml:mi mathvariant="normal"
+                                                  >′′</mml:mi></mml:mrow></mml:msup></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mfenced
+                                    close="" open="{"><mml:mrow><mml:mtable columnspacing="1em"
+                                            rowspacing="4pt"
+                                                  ><mml:mtr><mml:mtd><mml:mrow><mml:msub><mml:mrow><mml:msup><mml:mi
+                                                  mathvariant="bold-italic"
+                                                  >r</mml:mi><mml:mrow><mml:mi mathvariant="normal"
+                                                  >′</mml:mi></mml:mrow></mml:msup></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:munderover><mml:mo
+                                                  movablelimits="false"
+                                                  >∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>n</mml:mi></mml:munderover><mml:msub><mml:mrow><mml:mover><mml:mi
+                                                  mathvariant="bold-italic"
+                                                  >h</mml:mi><mml:mo>^</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>i</mml:mi></mml:mrow></mml:msub><mml:msub><mml:mrow><mml:mi
+                                                  mathvariant="bold-italic"
+                                                  >p</mml:mi></mml:mrow><mml:mrow><mml:mi>L</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi><mml:mo>−</mml:mo><mml:mi>i</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mi>n</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mo>…</mml:mo><mml:mo>,</mml:mo><mml:mstyle><mml:mrow><mml:mfrac><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:mfrac></mml:mrow></mml:mstyle></mml:mrow></mml:mtd></mml:mtr><mml:mtr><mml:mtd><mml:mrow><mml:msub><mml:mrow><mml:msup><mml:mi
+                                                  mathvariant="bold-italic"
+                                                  >r</mml:mi><mml:mrow><mml:mi mathvariant="normal"
+                                                  >′</mml:mi></mml:mrow></mml:msup></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mtd><mml:mtd><mml:mrow><mml:mi>n</mml:mi><mml:mo>=</mml:mo><mml:mstyle><mml:mrow><mml:mfrac><mml:mi>L</mml:mi><mml:mn>2</mml:mn></mml:mfrac></mml:mrow><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mo>…</mml:mo><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mstyle></mml:mrow></mml:mtd></mml:mtr></mml:mtable></mml:mrow></mml:mfenced></mml:math>
+                            <graphic orientation="portrait" position="float"
+                                xlink:href="IET-COM.2012.0348.UM9.gif"
+                        /></alternatives></disp-formula>Thus, the compensate received signal in
+                    frequency form <inline-formula><alternatives><tex-math notation="TeX">${\bi
+                                R}_{m,N} = {\rm DFT}\left\{ {{\bi r}_{m,N} }
+                                \right\}$</tex-math><mml:math overflow="scroll"
+                                            ><mml:msub><mml:mrow><mml:mi mathvariant="bold-italic"
+                                            >R</mml:mi></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mi
+                                        mathvariant="normal">DFT</mml:mi></mml:mrow><mml:mfenced
+                                    close="}" open="{"><mml:mrow><mml:msub><mml:mrow><mml:mi
+                                                  mathvariant="bold-italic"
+                                                  >r</mml:mi></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mfenced></mml:math><inline-graphic
+                                xlink:href="IET-COM.2012.0348.IM4.gif"
+                        /></alternatives></inline-formula>. Then, the frequency-domain channel
+                    transfer function, <inline-formula><alternatives><tex-math notation="TeX"
+                                >$\hat{\bi H}_{m,N}$</tex-math><mml:math overflow="scroll"
+                                                ><mml:msub><mml:mrow><mml:mover><mml:mi
+                                                mathvariant="bold-italic">H</mml:mi><mml:mo
+                                                stretchy="false"
+                                            >^</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub></mml:math><inline-graphic
+                                xlink:href="IET-COM.2012.0348.IM5.gif"
+                        /></alternatives></inline-formula>, for equalisation can be obtained by
+                    transforming <inline-formula><alternatives><tex-math notation="TeX"
+                                >$\widehat{\bi h}_{m,N} = \left[ {\widehat{\bi h}_{m,1} \ldots
+                                \widehat{\bi h}_{m,L} 0 \ldots 0} \right]$</tex-math><mml:math
+                                overflow="scroll"><mml:msub><mml:mrow><mml:mover><mml:mi
+                                                mathvariant="bold-italic"
+                                                >h</mml:mi><mml:mo>^</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mfenced
+                                    close="]" open="["
+                                                  ><mml:mrow><mml:msub><mml:mrow><mml:mover><mml:mi
+                                                  mathvariant="bold-italic"
+                                                  >h</mml:mi><mml:mo>^</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>…</mml:mo><mml:msub><mml:mrow><mml:mover><mml:mi
+                                                  mathvariant="bold-italic"
+                                                  >h</mml:mi><mml:mo>^</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>L</mml:mi></mml:mrow></mml:msub><mml:mn>0</mml:mn><mml:mo>…</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mfenced></mml:math><inline-graphic
+                                xlink:href="IET-COM.2012.0348.IM6.gif"
+                        /></alternatives></inline-formula>, that is <disp-formula id="UM10"
+                                ><alternatives><tex-math notation="TeX">$$\hat{\bi H}_{m\comma N} =
+                                {\rm DFT}\left\{{\hat{\bi h}_{m\comma N} }
+                                \right\}$$</tex-math><mml:math overflow="scroll"
+                                                ><mml:msub><mml:mrow><mml:mover><mml:mi
+                                                mathvariant="bold-italic">H</mml:mi><mml:mo
+                                                stretchy="false"
+                                            >^</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mi
+                                        mathvariant="normal">DFT</mml:mi></mml:mrow><mml:mfenced
+                                    close="}" open="{"
+                                                  ><mml:mrow><mml:msub><mml:mrow><mml:mover><mml:mi
+                                                  mathvariant="bold-italic">h</mml:mi><mml:mo
+                                                  stretchy="false"
+                                                  >^</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mfenced></mml:math>
+                            <graphic orientation="portrait" position="float"
+                                xlink:href="IET-COM.2012.0348.UM10.gif"
+                        /></alternatives></disp-formula>Therefore the output data sequence can be
+                    equalised by using <disp-formula id="UM11"><alternatives><tex-math
+                                notation="TeX">$$\tilde{\bi S}_{m\comma N} = {\bi R}_{m\comma N}
+                                /\hat{\bi H}_{m\comma N} $$</tex-math><mml:math overflow="scroll"
+                                                ><mml:msub><mml:mrow><mml:mover><mml:mi
+                                                mathvariant="bold-italic">S</mml:mi><mml:mo
+                                                stretchy="false"
+                                            >~</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mrow><mml:mi
+                                            mathvariant="bold-italic"
+                                            >R</mml:mi></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo>/</mml:mo></mml:mrow><mml:msub><mml:mrow><mml:mover><mml:mi
+                                                mathvariant="bold-italic">H</mml:mi><mml:mo
+                                                stretchy="false"
+                                            >^</mml:mo></mml:mover></mml:mrow><mml:mrow><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>N</mml:mi></mml:mrow></mml:msub></mml:math>
+                            <graphic orientation="portrait" position="float"
+                                xlink:href="IET-COM.2012.0348.UM11.gif"
+                        /></alternatives></disp-formula>The LS algorithm is a practical algorithm
+                    that can be adopted for real-time deployment. By taking advantage of the fact
+                    that
+                        (<bold><italic>M</italic></bold><sup>H</sup><bold><italic>M</italic></bold>)<sup>−
+                        1</sup><bold><italic>M</italic></bold><sup>H</sup> can be pre-calculated and
+                    pre-stored, the complexity of the TD LS channel estimator may be less than the
+                    FD comb-type pilot interpolation.</p>
+            </sec>
+            <sec id="s3c">
+                <label>3.3</label>
+                <title>RSU selection</title>
+                <p>The DA-OFDM can be adopted to enhance rapid RSU identification (ID). The
+                    Gold-sequence inserted in the prefix also works as RSU ID; then, by detecting
+                    and analysing the receiving symbols, the OBU can scan all candidate RSUs in an
+                    overlapped area. This procedure is similar to cell/sector search in
+                    mobile/cellular communications, such as LTE-A or WiMAX-2. In this paper, we
+                    focus on how an OBU can use a training sequence to determine which RSU is the
+                    main service provider and which RSU is the most likely candidate to be the next
+                    service provider. This particular RSU candidate scanning procedure can be called
+                    RSU selection. Once an OBU confirms the following RSU, the OBU can also realise
+                    its location, then use the information to update the information which is
+                    generated from [<xref ref-type="bibr" rid="C20">20</xref>, <xref ref-type="bibr"
+                        rid="C21">21</xref>].</p>
+                <p>As shown in Fig. <xref ref-type="fig" rid="F5">5</xref>, when a vehicle enters
+                    into an overlapping area, it will sense a signal that is a combination of the
+                    signals coming from RSU 1 and RSU 2. Point <italic>A</italic> is the threshold
+                    at which the signal strength can be detected by the OBU. Point
+                        <italic>B</italic> is the action point to start handover. As a result, the
+                    RSU selection should be completed between points <italic>A</italic> and
+                        <italic>B</italic>. <fig id="F5" orientation="portrait" position="float">
+                        <label>Fig. 5</label>
+                        <caption><p>RSU selection (schematic diagram)</p></caption>
+                        <graphic orientation="portrait" position="float"
+                            xlink:href="IET-COM.2012.0348.05.tif"/>
+                    </fig></p>
+                <p>The RSU selection method is first addressed in this paper and has not been
+                    applied to vehicular communication networks yet. Therefore we have to evaluate
+                    the probability of a false decision for this new scheme. The decision scheme is
+                    described as follows:</p>
+                <p>First, the synchronisation procedure is assumed to be well processed. Then, the
+                    OBU will buffer a WSA packet with several data symbols.</p>
+                <p>Second, <italic>n</italic> symbols are cumulated and normalised to be a reference
+                    symbol unit. This procedure results in noise reduction. This procedure is
+                    repeated to obtain <italic>k</italic> reference symbol units.</p>
+                <p>Finally, based on Fig. <xref ref-type="fig" rid="F1">1</xref>, there might be
+                    three candidate RSUs that use different RSU IDs. After the MLE procedure, three
+                    different values of <italic>γ<sub>k</sub></italic> will be obtained. By ordering
+                    these estimates of <italic>γ<sub>k</sub></italic>, the most probable sequence
+                    adopted by the successive RSUs can be realised. Obviously, more accuracy could
+                    be obtained for <italic>k</italic> values greater than unity.</p>
+                <p>The RSU selection algorithm is described by the pseudocode in Algorithm 1 (see
+                    Fig. <xref ref-type="fig" rid="F6">6</xref>). <fig id="F6"
+                        orientation="portrait" position="float">
+                        <label>Fig. 6</label>
+                        <caption><p>Algorithm 1: RSU selection</p></caption>
+                        <graphic orientation="portrait" position="float"
+                            xlink:href="IET-COM.2012.0348.06.tif"/>
+                    </fig></p>
+            </sec>
+        </sec>
+        <sec id="s4">
+            <label>4</label>
+            <title>Simulation and discussion</title>
+            <p>Three simulations were conducted and presented in this paper: the probability of a
+                false decision during RSU selection, MSE for synchronisation and bit error rate
+                (BER) for CE. Simulation parameters for the IEEE 802.11p standard are listed in
+                Table <xref ref-type="table" rid="TB1">1</xref>, and the Gold-sequence used in the
+                proposed DA-OFDM is listed in Table <xref ref-type="table" rid="TB3">3</xref>. Table
+                    <xref ref-type="table" rid="TB3">3</xref> lists the channel conditions. The
+                simulation scenario for RSU selection is performed as a vehicle through one RSU to
+                another. Moreover, there are three possible target service areas that are controlled
+                by three different RSUs. These three RSUs all broadcast their own signal. The
+                simulation scenario for synchronisation and CE involves testing the performance of
+                the transceiver. In this scenario, the OBU transceiver will receive symbol streams
+                from the RSU.</p>
+            <p>During RSU selection, the procedure will accumulate <italic>n</italic> symbols,
+                normalise them to be a reference symbol unit and use reference symbol units to
+                determine the candidate RSU. Therefore the evaluation metric is the probability of a
+                false decision for different <italic>n</italic> and <italic>k</italic>;
+                    <italic>n</italic> = 10 and <italic>k</italic> = 1, 4. The path loss model
+                adopted for this simulation is a log-normal distributed model.</p>
+            <p>For synchronisation, the frequency offset was set in this simulation at 20 ppm of the
+                carrier frequency. The evaluation metric was the mean-square error (MSE). The
+                synchronisation techniques compared in this paper are the conventional MLE method,
+                which was proposed in [<xref ref-type="bibr" rid="C19">19</xref>], and our proposed
+                method. In the conventional MLE method, the CP was used to obtain the phase shift.
+                In our proposed method, the DA prefix was used to estimate the phase shift.</p>
+            <p>For the comparison of CE techniques, this paper compared the BER performances of the
+                conventional CP-OFDM and the proposed technique using different signal-to-noise
+                ratio (SNRs) under the same channel conditions. The modulation type was QPSK and the
+                packet length was two preambles (a short preamble and long preamble) with either 25
+                data symbols. The speeds and environments tested in the paper were 120 km/h to
+                represent urban and rural environments and 140 km/h to represent the expressway
+                    [<xref ref-type="bibr" rid="C24">24</xref>]. All simulations were transmitted
+                for 10 s. The CE techniques compared in this paper were conventional methods using a
+                pilot with linear interpolation. The proposed method will use our proposed TD LS CE
+                technique. Simultaneously, the CE performance in the overlap area was also
+                evaluated. Assuming that the overlap area between two RSUs is 1 m long, we observe
+                the CE performance from the point a vehicle enters the overlap area to the handover
+                point. Within this area, the OBU in the vehicle receives signals from both RSUs. In
+                this simulation, the path loss is defined using a log-distance model, and the two
+                RSUs transmit interactively.</p>
+            <p>Shown in Fig. <xref ref-type="fig" rid="F7">7</xref> are the rates of false decisions
+                on different SNR values. It can be observed that the performance of the proposed RSU
+                selection was evaluated. Lower rates of false decisions will help the OBU catch the
+                following RSU with improved accuracy. The OBU can also synchronise the following RSU
+                signal before a handover, which enables a soft-handover. Even at very low SNRs, the
+                false decision probability was still lower than 10<sup>− 2</sup>. If the reference
+                symbol units <italic>k</italic> is increased from 1 to 4, the improvement in
+                performance will also be higher. This is because the channel condition is sometimes
+                really severe for a short period, while multiple time decisions are used to avoid an
+                occasional misjudgment. <fig id="F7" orientation="portrait" position="float">
+                    <label>Fig. 7</label>
+                    <caption><p>False decision probability by using DA prefix</p></caption>
+                    <graphic orientation="portrait" position="float"
+                        xlink:href="IET-COM.2012.0348.07.tif"/>
+                </fig></p>
+            <p> Fig. <xref ref-type="fig" rid="F8">8</xref> shows the MSEs obtained using the
+                proposed technique and conventional technique compared here. It was observed that
+                the proposed method resulted in a remarkable improvement. Compared with the
+                conventional MLE, the MSEs showed that the proposed method had more than a 40–50%
+                improvement in synchronisation. This improvement results from the inclusion of
+                training sequences in the DA-OFDM which is better than the use of CPs. This result
+                also proves that the DA-OFDM is a practical architecture for vehicular communication
+                networks. In addition, the proposed MLE and conventional MLE are actually similar,
+                and therefore it enables the existing transceiver unit to adapt easily to the new
+                design. <fig id="F8" orientation="portrait" position="float">
+                    <label>Fig. 8</label>
+                    <caption><p>Normalised MSE of different synchronisation techniques</p></caption>
+                    <graphic orientation="portrait" position="float"
+                        xlink:href="IET-COM.2012.0348.08.tif"/>
+                </fig></p>
+            <p>As shown in Fig. <xref ref-type="fig" rid="F9">9</xref>, comparisons of CE techniques
+                also suggest that the proposed method can recover a rapidly fluctuating fading
+                channel. Furthermore, the proposed method is approximately 30% better than the
+                conventional methods. Based on the previous three simulation results, we believe
+                that the proposed transceiver can be one of the strong candidates in next-generation
+                vehicular communication systems, especially because it confirms that the proposed
+                technique can afford safety-related ITS applications. <fig id="F9"
+                    orientation="portrait" position="float">
+                    <label>Fig. 9</label>
+                    <caption><p>BER of different channel estimation techniques</p></caption>
+                    <graphic orientation="portrait" position="float"
+                        xlink:href="IET-COM.2012.0348.09.tif"/>
+                </fig></p>
+            <p> Fig. <xref ref-type="fig" rid="F10">10</xref> shows the transmission status of the
+                conventional and the proposed method in the overlap area. The effective transmission
+                status of the proposed method is more stable than that of the conventional method.
+                Developing a more stable transmission condition during the handover process is a
+                basic requirement for approaching seamless transmission. Although the proposed
+                method requires more memory than the conventional standard to buffer the training
+                sequence, the remarkable improvement in performance is worth the cost. The
+                performance was benchmarked with the MATLAB tic-toc method, and multiple simulation
+                times were averaged to minimise statistical deviations. The proposed DA-OFDM will
+                increase the computation time by 0.85% over the conventional CP-OFDM. <fig id="F10"
+                    orientation="portrait" position="float">
+                    <label>Fig. 10</label>
+                    <caption><p>Jitter of effective transmission amount different channel estimation
+                            techniques in overlap area (SNR = 10)</p></caption>
+                    <graphic orientation="portrait" position="float"
+                        xlink:href="IET-COM.2012.0348.10.tif"/>
+                </fig></p>
+        </sec>
+        <sec id="s5">
+            <label>5</label>
+            <title>Conclusion</title>
+            <p>This paper proposed a practical DA-OFDM transceiver for vehicular communications. In
+                addition, a new RSU selection technique was studied. An overall design of the
+                transceiver structure, which can be adopted in current IEEE 802.11p specifications,
+                was investigated. The proposed technique assisted from the Gold-sequence as a prefix
+                exhibits more precise estimations and therefore can achieve lower error
+                probabilities. This paper is focused on transceiving techniques, and so all the
+                simulations are based on one vehicle to one RSU and one vehicle to multiple RSUs.
+                The multi-vehicle and large data simulation should be adopted as the simulation
+                scenario for real and practical applications. In our survey, RDS-TMC is a good
+                simulation scenario. The advantages of the proposed technique have been verified by
+                means of extensive computer simulations.</p>
+        </sec>
+    </body>
+    <back>
+        <ack>
+            <label>6</label>
+            <title>Acknowledgment</title>
+            <p>This work was supported by the National Science Council, Taiwan, under Contract no.
+                NSC 100-2221-E-008-049-MY3.</p>
+        </ack>
+        <ref-list>
+            <label>7</label>
+            <title>References</title>
+            <ref id="C1">
+                <label>1</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Dar</surname><given-names>K.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Bakhouya</surname><given-names>M.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Gaber</surname><given-names>J.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Wack</surname><given-names>M.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Lorenz</surname><given-names>P.</given-names></string-name></person-group>:
+                        ‘<article-title>Wireless communication technologies for ITS
+                        applications</article-title>’, <source>IEEE Commun. Mag.</source>,
+                        <year>2010</year>, <volume>48</volume>, (<issue>5</issue>), pp.
+                        <fpage>156</fpage>–<lpage>162</lpage> (doi: <elocation-id content-type="doi"
+                        >10.1109/MCOM.2010.5458377</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C2">
+                <label>2</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Papadimitratos</surname><given-names>P.</given-names></string-name><string-name
+                            name-style="western"><surname>La
+                                Fortelle</surname><given-names>A.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Evenssen</surname><given-names>K.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Brignolo</surname><given-names>R.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Cosenza</surname><given-names>S.</given-names></string-name></person-group>:
+                        ‘<article-title>Vehicular communication systems: enabling technologies,
+                        applications, and future outlook on intelligent
+                        transportation</article-title>’, <source>IEEE Commun. Mag.</source>,
+                        <year>2009</year>, <volume>47</volume>, (<issue>11</issue>), pp.
+                        <fpage>84</fpage>–<lpage>95</lpage> (doi: <elocation-id content-type="doi"
+                        >10.1109/MCOM.2009.5307471</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C3">
+                <label>3</label>
+                <mixed-citation publication-type="std">
+                    <comment>‘FCC Report and Order 06-110: Amendment of the Commissions Rules
+                        Regarding Dedicated Short-Range Communication Services in the 5.850–5.925
+                        GHz Band’. FCC Report and Order, July 20, 2006</comment>
+                </mixed-citation>
+            </ref>
+            <ref id="C4">
+                <label>4</label>
+                <mixed-citation publication-type="std">
+                    <comment>‘IEEE Standard for Information Technology-Telecommunications and
+                        Information Exchange Between Systems-Local and Metropolitan Area
+                        Networks-Specific Requirements – Part 11: Wireless LAN Medium Access Control
+                        (MAC) and Physical Layer (PHY) Specifications’. IEEE Std 802.11-2007
+                        (Revision of IEEE Std 802.11-1999), 12 June 2007, pp. 1–1076</comment>
+                </mixed-citation>
+            </ref>
+            <ref id="C5">
+                <label>5</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Uzcategui</surname><given-names>R.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Acosta-Marum</surname><given-names>G.</given-names></string-name></person-group>:
+                        ‘<article-title>Wave: a tutorial</article-title>’, <source>IEEE Commun.
+                        Mag.</source>, <year>2009</year>, <volume>47</volume>, (<issue>5</issue>),
+                    pp. <fpage>126</fpage>–<lpage>133</lpage> (doi: <elocation-id content-type="doi"
+                        >10.1109/MCOM.2009.4939288</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C6">
+                <label>6</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Lin</surname><given-names>J.-C.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Lin</surname><given-names>C.-S.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Liang</surname><given-names>C.-N.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Chen</surname><given-names>B.-C.</given-names></string-name></person-group>:
+                        ‘<article-title>Wireless communication performance based on IEEE 802.11p R2V
+                        field trials</article-title>’, <source>IEEE Commun. Mag.</source>,
+                        <year>2012</year>, <volume>50</volume>, (<issue>5</issue>), pp.
+                        <fpage>184</fpage>–<lpage>191</lpage> (doi: <elocation-id content-type="doi"
+                        >10.1109/MCOM.2012.6194401</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C7">
+                <label>7</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Kiokes</surname><given-names>G.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Amditis</surname><given-names>A.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Uzunoglu</surname><given-names>N.K.</given-names></string-name></person-group>:
+                        ‘<article-title>Simulation-based performance analysis and improvement of
+                        orthogonal frequency division multiplexing – 802.11p system for vehicular
+                        communications</article-title>’, <source>IET ITS.</source>,
+                        <year>2009</year>, <volume>3</volume>, (<issue>4</issue>), pp.
+                        <fpage>429</fpage>–<lpage>436</lpage></mixed-citation>
+            </ref>
+            <ref id="C8">
+                <label>8</label>
+                <mixed-citation publication-type="conf-paper"><person-group
+                        person-group-type="author"><string-name name-style="western"
+                                ><surname>Kim</surname><given-names>S.I.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Oh</surname><given-names>H.S.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Choi</surname><given-names>H.K.</given-names></string-name></person-group>:
+                        ‘<article-title>Mid-amble aided OFDM performance analysis in high mobility
+                        vehicular channel</article-title>’. <conf-name>Proc. 2008 IEEE Intelligent
+                        Vehicles Symp.</conf-name>, <conf-date>June 4–6, 2008</conf-date>, pp.
+                        <fpage>751</fpage>–<lpage>754</lpage></mixed-citation>
+            </ref>
+            <ref id="C9">
+                <label>9</label>
+                <mixed-citation publication-type="conf-paper"><person-group
+                        person-group-type="author"><string-name name-style="western"
+                                ><surname>Muck</surname><given-names>M.</given-names></string-name><string-name
+                            name-style="western"><surname>de
+                                Courville</surname><given-names>M.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Debbah</surname><given-names>M.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Duhamel</surname><given-names>P.</given-names></string-name></person-group>:
+                        ‘<article-title>A pseudo random postfix OFDM modulator and inherent channel
+                        estimation techniques</article-title>’. <conf-name>Proc. IEEE Global
+                        Telecommunications Conf.</conf-name>, <conf-date>December 2003</conf-date>,
+                    vol. <volume>4</volume>, pp.
+                    <fpage>2380</fpage>–<lpage>2384</lpage></mixed-citation>
+            </ref>
+            <ref id="C10">
+                <label>10</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Wang</surname><given-names>J.-T.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Song</surname><given-names>J.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Wang</surname><given-names>J.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Pan</surname><given-names>C.-Y.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Yang</surname><given-names>Z.-X.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Yang</surname><given-names>L.</given-names></string-name></person-group>:
+                        ‘<article-title>A general SFN structure with transmit diversity for TDS-OFDM
+                        system</article-title>’, <source>IEEE Trans. Broadcast.</source>,
+                        <year>2006</year>, <volume>52</volume>, (<issue>2</issue>), pp.
+                        <fpage>245</fpage>–<lpage>251</lpage> (doi: <elocation-id content-type="doi"
+                        >10.1109/TBC.2006.872988</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C11">
+                <label>11</label>
+                <mixed-citation publication-type="conf-paper"><person-group
+                        person-group-type="author"><string-name name-style="western"
+                                ><surname>Lin</surname><given-names>C.-S.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Sun</surname><given-names>C.-K.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Lin</surname><given-names>J.-C.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Chen</surname><given-names>B.-C.</given-names></string-name></person-group>:
+                        ‘<article-title>Performance evaluations of channel estimations in IEEE
+                        802.11p environments</article-title>’. <conf-name>Proc. Int. Conf. on Ultra
+                        Modern Telecommunications and Workshops, 2009</conf-name>,
+                        <conf-date>October 2009</conf-date>, pp.
+                    <fpage>1</fpage>–<lpage>5</lpage></mixed-citation>
+            </ref>
+            <ref id="C12">
+                <label>12</label>
+                <mixed-citation publication-type="conf-paper"><person-group
+                        person-group-type="author"><string-name name-style="western"
+                                ><surname>Lin</surname><given-names>C.-S.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Lin</surname><given-names>J.-C.</given-names></string-name></person-group>:
+                        ‘<article-title>Novel channel estimation techniques in IEEE 802.11p
+                        environments</article-title>’. <conf-name>Proc. Vehicular Technology Conf.
+                        Spring</conf-name>, <conf-date>May 2010</conf-date>, pp.
+                        <fpage>1</fpage>–<lpage>5</lpage></mixed-citation>
+            </ref>
+            <ref id="C13">
+                <label>13</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Chung</surname><given-names>J.-M.</given-names></string-name><string-name
+                            name-style="western"
+                            ><surname>Kim</surname><given-names>M.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Park</surname><given-names>Y.-S.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Choi</surname><given-names>M.</given-names></string-name><string-name
+                            name-style="western"
+                            ><surname>Lee</surname><given-names>S.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Oh</surname><given-names>H.S.</given-names></string-name></person-group>:
+                        ‘<article-title>Time Coordinated V2I Communications and Handover for WAVE
+                        Networks</article-title>’, <source>IEEE J. Sel. Areas Commun.</source>,
+                        <year>2011</year>, <volume>29</volume>, (<issue>3</issue>), pp.
+                        <fpage>545</fpage>–<lpage>558</lpage> (doi: <elocation-id content-type="doi"
+                        >10.1109/JSAC.2011.110305</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C14">
+                <label>14</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Wu</surname><given-names>T.-Y.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Weng</surname><given-names>W.-F.</given-names></string-name>:
+                        ‘</person-group>
+                    <article-title>Reducing handoff delay of wireless access in vehicular
+                        environments by artificial neural network-based geographical
+                        fingerprint’</article-title>, <source>IET Commun.</source>,
+                        <year>2011</year>, <volume>5</volume>, (<issue>4</issue>), pp.
+                        <fpage>542</fpage>–<lpage>553</lpage> (doi: <elocation-id content-type="doi"
+                        >10.1049/iet-com.2010.0195</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C15">
+                <label>15</label>
+                <mixed-citation publication-type="conf-paper"><person-group
+                        person-group-type="author"><string-name name-style="western"
+                                ><surname>Tarte</surname><given-names>Y.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Amanna</surname><given-names>A.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Okwudiafor</surname><given-names>C.</given-names></string-name></person-group>:
+                        ‘<article-title>Experimental testbed for investigating IEEE 802.11 handoff
+                        in vehicular environment</article-title>’. <conf-name>Proc. IEEE Southeast
+                        Con.</conf-name>, <conf-date>March 2010</conf-date>, pp.
+                        <fpage>222</fpage>–<lpage>225</lpage></mixed-citation>
+            </ref>
+            <ref id="C16">
+                <label>16</label>
+                <mixed-citation publication-type="conf-paper"><person-group
+                        person-group-type="author"><string-name name-style="western"
+                                ><surname>Chen</surname><given-names>Y.-S.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Cheng</surname><given-names>C.-H.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Hsu</surname><given-names>C.-S.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Chiu</surname><given-names>G.-M.</given-names></string-name></person-group>:
+                        ‘<article-title>Network mobility protocol for vehicular ad hoc
+                        networks</article-title>’. <conf-name>Proc. Wireless Communications and
+                        Networking Conf., 2009</conf-name>, <conf-date>April 2009</conf-date>, pp.
+                        <fpage>1</fpage>–<lpage>6</lpage></mixed-citation>
+            </ref>
+            <ref id="C17">
+                <label>17</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Asefi</surname><given-names>M.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Mark</surname><given-names>J.W.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Shen</surname><given-names>X.</given-names></string-name></person-group>:
+                        ‘<article-title>A mobility-aware and quality-driven retransmission limit
+                        adaptation scheme for video streaming over VANETs</article-title>’,
+                        <source>IEEE Trans. Wirel. Commun.</source>, <year>2012</year>,
+                        <volume>11</volume>, (<issue>5</issue>), pp.
+                        <fpage>1817</fpage>–<lpage>1827</lpage> (doi: <elocation-id
+                        content-type="doi"
+                    >10.1109/TWC.2012.030812.111064</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C18">
+                <label>18</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Han</surname><given-names>C.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Dianati</surname><given-names>M.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Tafazolli</surname><given-names>R.</given-names></string-name><string-name
+                            name-style="western"
+                            ><surname>Liu</surname><given-names>X.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Shen</surname><given-names>X.</given-names></string-name></person-group>:
+                        ‘<article-title>A novel distributed asynchronous multichannel MAC scheme for
+                        large-scale vehicular ad hoc networks</article-title>’, <source>IEEE Trans.
+                        Veh. Technol.</source>, <year>2012</year>, <volume>61</volume>,
+                        (<issue>7</issue>), pp. <fpage>3125</fpage>–<lpage>3138</lpage> (doi:
+                        <elocation-id content-type="doi"
+                    >10.1109/TVT.2012.2205596</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C19">
+                <label>19</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"><surname>van de
+                                Beek</surname><given-names>J.J.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Sandell</surname><given-names>M.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Borjesson</surname><given-names>P.O.</given-names></string-name></person-group>:
+                        ‘<article-title>ML estimation of time and frequency offset in OFDM
+                        systems</article-title>’, <source>IEEE Trans. Signal Process.</source>,
+                        <year>1997</year>, <volume>45</volume>, (<issue>7</issue>), pp.
+                        <fpage>1800</fpage>–<lpage>1805</lpage> (doi: <elocation-id
+                        content-type="doi">10.1109/78.599949</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C20">
+                <label>20</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Saleet</surname><given-names>H.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Basir</surname><given-names>O.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Langar</surname><given-names>R.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Boutaba</surname><given-names>R.</given-names></string-name></person-group>:
+                        ‘<article-title>Region-based location-service-management protocol for
+                        VANETs</article-title>’, <source>IEEE Trans. Veh. Technol.</source>,
+                        <year>2010</year>, <volume>59</volume>, (<issue>2</issue>), pp.
+                        <fpage>917</fpage>–<lpage>930</lpage> (doi: <elocation-id content-type="doi"
+                        >10.1109/TVT.2009.2033079</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C21">
+                <label>21</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Dao</surname><given-names>T.-S.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Leung</surname><given-names>K.Y.K.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Clark</surname><given-names>C.M.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Huissoon</surname><given-names>J.P.</given-names></string-name></person-group>:
+                        ‘<article-title>Markov-based lane positioning using intervehicle
+                        communication</article-title>’, <source>IEEE Trans. Intell. Transp.
+                        Syst.</source>, <year>2007</year>, <volume>8</volume>, (<issue>4</issue>),
+                    pp. <fpage>641</fpage>–<lpage>650</lpage> (doi: <elocation-id content-type="doi"
+                        >10.1109/TITS.2007.908574</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C22">
+                <label>22</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Liang</surname><given-names>H.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Zhuang</surname><given-names>W.</given-names></string-name></person-group>:
+                        ‘<article-title>Efficient on-demand data service delivery to high-speed
+                        trains in cellular/infostation integrated networks</article-title>’,
+                        <source>IEEE J. Sel. Areas Commun.</source>, <year>2012</year>,
+                        <volume>30</volume>, (<issue>4</issue>), pp.
+                        <fpage>780</fpage>–<lpage>791</lpage> (doi: <elocation-id content-type="doi"
+                        >10.1109/JSAC.2012.120512</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C23">
+                <label>23</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Lin</surname><given-names>J.-C.</given-names></string-name></person-group>:
+                        ‘<article-title>Channel estimation assisted by postfixed pseudo-noise
+                        sequences padded with zero samples for mobile orthogonal frequency-division
+                        multiplexing communications</article-title>’, <source>IET Commun.</source>,
+                        <year>2009</year>, <volume>3</volume>, (<issue>4</issue>), pp.
+                        <fpage>561</fpage>–<lpage>570</lpage> (doi: <elocation-id content-type="doi"
+                        >10.1049/iet-com.2008.0089</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C24">
+                <label>24</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Acosta-Marum</surname><given-names>G.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Ingram</surname><given-names>M.</given-names></string-name></person-group>:
+                        ‘<article-title>Six time- and frequency- selective empirical channel models
+                        for vehicular wireless LANs</article-title>’, <source>IEEE Veh. Technol.
+                        Mag.</source>, <year>2007</year>, <volume>2</volume>, (<issue>4</issue>),
+                    pp. <fpage>4</fpage>–<lpage>11</lpage> (doi: <elocation-id content-type="doi"
+                        >10.1109/MVT.2008.917435</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C25">
+                <label>25</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Schmidl</surname><given-names>T.M.</given-names></string-name><string-name
+                            name-style="western"
+                                ><surname>Cox</surname><given-names>D.C.</given-names></string-name></person-group>:
+                        ‘<article-title>Robust frequency and timing synchronization for
+                        OFDM</article-title>’, <source>IEEE Trans. Commun.</source>,
+                        <year>1997</year>, <volume>45</volume>, (<issue>12</issue>), pp.
+                        <fpage>1613</fpage>–<lpage>1621</lpage> (doi: <elocation-id
+                        content-type="doi">10.1109/26.650240</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C26">
+                <label>26</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Moose</surname><given-names>P.H.</given-names></string-name></person-group>:
+                        ‘<article-title>A technique for orthogonal frequency division multiplexing
+                        frequency offset correction</article-title>’, <source>IEEE Trans.
+                        Commun.</source>, <year>1994</year>, <volume>42</volume>,
+                    (<issue>10</issue>), pp. <fpage>2908</fpage>–<lpage>2914</lpage> (doi:
+                        <elocation-id content-type="doi"
+                    >10.1109/26.328961</elocation-id>)</mixed-citation>
+            </ref>
+            <ref id="C27">
+                <label>27</label>
+                <mixed-citation publication-type="book"><person-group person-group-type="author"
+                            ><string-name name-style="western"
+                                ><surname>Diniz</surname><given-names>P.</given-names></string-name></person-group>:
+                        ‘<source>Adaptive filtering algorithms and practical
+                    implementation</source>’ (<publisher-name>Kluwer Academic</publisher-name>,
+                        <publisher-loc>Norwell, Mass, USA</publisher-loc>,
+                    <year>2002</year>)</mixed-citation>
+            </ref>
+        </ref-list>
+    </back>
+</article>

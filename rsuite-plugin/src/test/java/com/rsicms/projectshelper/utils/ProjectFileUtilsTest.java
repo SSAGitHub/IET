@@ -13,7 +13,7 @@ public class ProjectFileUtilsTest {
         String exportPath = "images/InlineReaderImage/wreg_fig557.2_am3_1.png";
         
         String relativePath = ProjectFileUtils.computeRelativePath(contextPath, exportPath);
-        assertEquals("../images/InlineReaderImage/wreg_fig557.2_am3_1.png", relativePath);
+        assertEquals("..\\images\\InlineReaderImage\\wreg_fig557.2_am3_1.png", relativePath);
     }
 
 }

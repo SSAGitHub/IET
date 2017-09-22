@@ -41,9 +41,11 @@ public class MoExporterPathUtilsTest {
 		aliases[0] = new Alias("chapter41", "basename");
 		
 		when(moToExport.getAliases()).thenReturn(aliases);
+		when(moToExport.getDisplayName()).thenReturn("chapter41");
+		
 		
 		String defaultExportPath = MoExporterPathUtils.getDefaultExportPath(moToExport, exportContext);
-		assertEquals("chapter41.xml", defaultExportPath);
+		assertEquals("chapter41", defaultExportPath);
 	}
 
 	@Test
@@ -53,10 +55,8 @@ public class MoExporterPathUtilsTest {
 		
 		when(moToExport.getDisplayName()).thenReturn("chapter41");
 		
-		
-		
 		String defaultExportPath = MoExporterPathUtils.getDefaultExportPath(moToExport, exportContext);
-		assertEquals("chapter41.xml", defaultExportPath);
+		assertEquals("chapter41", defaultExportPath);
 	}
 	
 	@Test
@@ -68,7 +68,7 @@ public class MoExporterPathUtilsTest {
 		
 		String defaultExportPath = MoExporterPathUtils.getDefaultExportPath(moToExport,  exportContext);
 		
-		assertEquals("chapter_41.xml", defaultExportPath);
+		assertEquals("chapter_41", defaultExportPath);
 	}
 	
 	@Test

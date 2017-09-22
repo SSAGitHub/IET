@@ -27,7 +27,7 @@ public class InspecMergeTest {
 
 	@Test
 	public void testInspecMerge() throws Exception{
-		File dataFolder = new File("test/data/");
+		File dataFolder = new File("src/test/resources/org/theiet/rsuite/data");
 		
 		final String dataFolderPath = dataFolder.getAbsolutePath();
 		
@@ -73,7 +73,7 @@ public class InspecMergeTest {
 			throws ParserConfigurationException {
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		
-		final String jatsDtdFolderPath = new File("doctypes/jats/jats-publishing-dtd-1.0").getAbsolutePath();
+		final String jatsDtdFolderPath = new File("setup/doctypes/jats/jats-publishing-dtd-1.0").getAbsolutePath();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 		dBuilder.setEntityResolver(new EntityResolver() {
 			
@@ -81,8 +81,8 @@ public class InspecMergeTest {
 			public InputSource resolveEntity(String publicId, String systemId)
 					throws SAXException, IOException {
 				
-				systemId = systemId.replace(dataFolderPath, jatsDtdFolderPath);
-				return new InputSource(systemId);
+				//systemId = systemId.replace(dataFolderPath, jatsDtdFolderPath);
+				return new InputSource(jatsDtdFolderPath);
 			}
 		});
 		return dBuilder;

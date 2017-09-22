@@ -18,7 +18,7 @@ public class Onix2LmdMappingStub extends Onix2LmdMapping {
 	
 		InputStream is = null;
 		try {
-			is = new FileInputStream(new File("WebContent/conf/onix/onix2lmd_config.xml"));
+			is = new FileInputStream(new File("src/main/resources/WebContent/conf/onix/onix2lmd_config.xml"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

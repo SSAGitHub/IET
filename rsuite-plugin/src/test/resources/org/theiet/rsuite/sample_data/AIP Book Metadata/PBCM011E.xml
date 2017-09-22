@@ -1,0 +1,1294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE ebook PUBLIC "-//AIP//DTD XML Book Setup Module 1.0//EN" "AIPbookxml1.dtd">
+<ebook xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <book-metadata>
+    <book-identifiers>
+      <bookid>PBCM011E</bookid>
+      <doi>10.1049/PBCM011E</doi>
+      <isbn13>9780863410949</isbn13>
+      <isbn-eb>9781849193559</isbn-eb>
+      <customerid>
+        <identifier-name>IET</identifier-name>
+        <identifier-value>PBCM0110</identifier-value>
+      </customerid>
+      <iet-subs>PC</iet-subs>
+    </book-identifiers>
+    <titlegrp>
+      <title>Advances in Command, Control and Communication Systems</title>
+      <search-title>Advances in Command, Control and Communication Systems</search-title>
+    </titlegrp>
+    <pubinfo>
+      <numpages>424</numpages>
+      <publication-date day="01" month="01" year="1987"></publication-date>
+      <publisher-group>
+        <ownerid>IET</ownerid>
+        <publisher>Institution of Engineering and Technology</publisher>
+      </publisher-group>
+      <cpyrt>
+        <cpyrtdate date="1987"/>
+        <cpyrtholder>Institution of Engineering and Technology</cpyrtholder>
+        <cpyrtstmt>All rights reserved. No part of this publication may be reproduced or distributed in any form or by any means without written permission of the  publisher</cpyrtstmt>
+      </cpyrt>
+      <price-model type="book-chapter"/>
+    </pubinfo>
+    <editorgrp>
+      <book-editor>
+        <fname>C.</fname><middlename>J.</middlename><surname>Harris</surname>
+        <fullname>C. J. Harris</fullname>
+      </book-editor>
+      <aff>
+        <orgname>Department of Aeronautics and Astronautics, Southampton University</orgname>, <city>Southampton</city>, <state>Hants</state> <postcode>SO9 5NH</postcode>, <country>UK</country>
+      </aff>
+      <book-editor>
+        <fname>I.</fname><surname>White</surname>
+        <fullname>I. White</fullname>
+      </book-editor>
+      <aff>
+        <orgname>Admiralty Research Establishment MOD (PE)</orgname>, <city>Portsdown</city>, <state>Portsmouth</state> <postcode>PO6 4AA</postcode>, <country>UK</country>
+      </aff>
+    </editorgrp>
+    <pubdesc>
+      <p>This book describes some of the developments in Command, Control and Communication systems.</p>
+    </pubdesc>
+    <abstract>
+      <p>This book describes some of the developments in Command, Control and Communication (C<emph type="superior">3</emph>) systems. The topics cover the design of large real-time man-machine systems, which are now a vital area of intensive scientific and financial investment. C<emph type="superior">3</emph> systems are for complex resource management and planning, and although this has a predominantly military connotation, similar systems are now developing in civil sector applications, public utilities and banking. Topics discussed include the design and structure of C<emph type="superior">3</emph> systems, databases, standards, the man-machine interface and advanced processing including the sensor data fusion and artificial intelligence.</p>
+    </abstract>
+    <vocabs>
+      <classification-codes source="Inspec-class">
+        <compound-classification-code><compound-classification-code-part type="code">B0100</compound-classification-code-part><compound-classification-code-part type="text">General electrical engineering topics</compound-classification-code-part></compound-classification-code>
+      </classification-codes>
+      <keywords source="Inspec">
+        <keyword source="Inspec">artificial intelligence</keyword>
+        <keyword source="Inspec">command and control systems</keyword>
+        <keyword source="Inspec">man-machine systems</keyword>
+        <keyword source="Inspec">sensor fusion</keyword>
+        <keyword source="Inspec">user interfaces</keyword>
+      </keywords>
+      <keywords source="uncontrolled">
+        <keyword source="uncontrolled">command, control and communication system</keyword>
+        <keyword source="uncontrolled">C3 system</keyword>
+        <keyword source="uncontrolled">real-time man-machine systems</keyword>
+        <keyword source="uncontrolled">financial investment</keyword>
+        <keyword source="uncontrolled">scientific investment</keyword>
+        <keyword source="uncontrolled">resource management</keyword>
+        <keyword source="uncontrolled">resource planning</keyword>
+        <keyword source="uncontrolled">military connotation</keyword>
+        <keyword source="uncontrolled">public utilities</keyword>
+        <keyword source="uncontrolled">banking</keyword>
+        <keyword source="uncontrolled">man-machine interface</keyword>
+        <keyword source="uncontrolled">sensor data fusion</keyword>
+        <keyword source="uncontrolled">artificial intelligence</keyword>
+      </keywords>
+      <tia>artificial intelligence, command and control systems, man-machine systems, sensor fusion, user interfaces</tia>
+      <booktype>Professional Applications of Computing</booktype>
+    </vocabs>
+  </book-metadata>
+  <body>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_frontmatter</content-item-id>
+          <doi>10.1049/PBCM011E_fm</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Front Matter</title>
+          <search-title>Front Matter</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>front matter</content-item-type>
+          <bookseq>1</bookseq>
+          <section-head level="1">Preface</section-head>
+          <section-head level="1">Acknowledgments</section-head>
+          <section-head level="1">List of contributors</section-head>
+        </content-item-pubinfo>
+        <funding-grp><access type="free"/></funding-grp>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch1</content-item-id>
+          <doi>10.1049/PBCM011E_ch1</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>The future for command systems</title>
+          <search-title>The future for command systems</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>2</bookseq>
+          <item-num>1</item-num>
+          <section-head level="1">1.1 Background</section-head>
+          <section-head level="1">1.2 The problems of C<emph type="superior">3</emph>I</section-head>
+          <section-head level="2">1.2.1 Basic considerations</section-head>
+          <section-head level="2">1.2.2 The theory of command and control</section-head>
+          <section-head level="2">1.2.3 Informational chaos</section-head>
+          <section-head level="2">1.2.4 Technological revolution</section-head>
+          <section-head level="2">1.2.5 Organisational chaos</section-head>
+          <section-head level="1">1.3 The route towards a solution</section-head>
+          <section-head level="2">1.3.1 Strategy</section-head>
+          <section-head level="2">1.3.2 Analysis and specification methods</section-head>
+          <section-head level="2">1.3.3 Descriptive methods</section-head>
+          <section-head level="2">1.3.4 Application of prototyping</section-head>
+          <section-head level="2">1.3.5 Application of standards to aid interoperability</section-head>
+          <section-head level="2">1.3.6 Implementation strategy</section-head>
+          <section-head level="1">1.4 The technology for the future</section-head>
+          <section-head level="2">1.4.1 Introduction</section-head>
+          <section-head level="2">1.4.2 Command system functionality</section-head>
+          <section-head level="2">1.4.3 Hardware</section-head>
+          <section-head level="2">1.4.4 Software</section-head>
+          <section-head level="2">1.4.5 Man-machine interface</section-head>
+          <section-head level="2">1.4.6 Knowledge-based systems</section-head>
+          <section-head level="1">1.5 Concluding comments</section-head>
+          <section-head level="1">1.6 References</section-head>
+          <fpage>1</fpage>
+          <lpage>16</lpage>
+          <numpages>16</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>Command, control and communications (C<emph type="superior">3</emph>) or, as it is frequently referred to, command, control, communications and intelligence (C<emph type="superior">3</emph>I) is the management infrastructure for defense and war. It is intrinsically a diverse range of activities, incorporating a complex mixture of personnel and man-made systems. At present, we do not properly understand many aspects of either man or his systems, and yet we rely on both to sustain peace and, if necessary, to efficiently conduct war. Current C<emph type="superior">3</emph>I is frequently characterised by high cost, poor functionality, poor decision support, inflexible architectures, and high through-life costs. Although technology is clearly going to provide faster computers with much larger memories, and better displays and MMI, the reduction of software costs and provision for the planned evolution of systems are features that will only come from direct effort within the C<emph type="superior">3</emph>I community itself. The tasks of specifying functions and ensuring that they are achievable and effective requires sound design, analysis and prototyping as the foundation of any major C<emph type="superior">3</emph>I system procurement. Many of the features I have outlined will provide this foundation.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">C7465</compound-classification-code-part><compound-classification-code-part type="text">Military engineering computing</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">command and control systems</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">command systems</keyword>
+            <keyword source="uncontrolled">command control communications and intelligence</keyword>
+            <keyword source="uncontrolled">C<emph type="superior">3</emph>I community</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch2-1</content-item-id>
+          <doi>10.1049/PBCM011E_ch2.1</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>The C-process: a model of command</title>
+          <search-title>The C-process: a model of command</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>3</bookseq>
+          <item-num>2.1</item-num>
+          <supertitle1>Design and structure of C<emph type="superior">3</emph> systems</supertitle1>
+          <section-head level="1">2.1.1 Introduction</section-head>
+          <section-head level="1">2.1.2 The need for a model of command</section-head>
+          <section-head level="1">2.1.3 The overall command system</section-head>
+          <section-head level="1">2.1.4 Development of the C-process model</section-head>
+          <section-head level="1">2.1.5 The basic proposal assessment loop</section-head>
+          <section-head level="1">2.1.6 Hierarchic control</section-head>
+          <section-head level="1">2.1.7 Complex command</section-head>
+          <section-head level="1">2.1.8 World state space interpretation of command</section-head>
+          <section-head level="1">2.1.9 Distributed command and co-ordination</section-head>
+          <section-head level="1">2.1.10 Command message set</section-head>
+          <section-head level="1">2.1.11 The C-process as a basis for design</section-head>
+          <section-head level="1">2.1.12 Conclusions</section-head>
+          <section-head level="1">2.1.13 References</section-head>
+          <fpage>19</fpage>
+          <lpage>49</lpage>
+          <numpages>31</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>D.</fname><middlename>G.</middlename><surname>Galley</surname>
+            <fullname>D. G. Galley</fullname>
+          </author>
+          <aff>
+            <orgname>Systems Designers International</orgname>, <city>Farnborough</city>, <state>Hants</state> <postcode>GUM 6DQ</postcode>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>The model development described in this chapter was completed in 1983. Since then the C-process has been successfully employed in a functionalist approach to the design of an experimental command subsystem called the C-station. A simulation of the C-station has been implemented which provides basic C-station features appropriate to antisubmarine warfare (ASW) command. Current developments are aimed at enhancing this basic prototype to incorporate a fuller set of C-station facilities.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">C3375</compound-classification-code-part><compound-classification-code-part type="text">Military control systems</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">command and control systems</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">C-process model</keyword>
+            <keyword source="uncontrolled">antisubmarine warfare</keyword>
+            <keyword source="uncontrolled">command subsystem</keyword>
+            <keyword source="uncontrolled">C-station simulation</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch2-2</content-item-id>
+          <doi>10.1049/PBCM011E_ch2.2</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>MOSAIC: concepts for the future deployment of air power in European NATO</title>
+          <search-title>MOSAIC: concepts for the future deployment of air power in European NATO</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>4</bookseq>
+          <item-num>2.2</item-num>
+          <supertitle1>Design and structure of C<emph type="superior">3</emph> systems</supertitle1>
+          <section-head level="2">2.2.1 Introduction</section-head>
+          <section-head level="2">2.2.2 The changing European military scene</section-head>
+          <section-head level="2">2.2.3 Air power in context</section-head>
+          <section-head level="2">2.2.4 The threat facing air command and control</section-head>
+          <section-head level="2">2.2.5 Air command and control deficiencies</section-head>
+          <section-head level="2">2.2.6 Introduction to MOSAIC</section-head>
+          <section-head level="2">2.2.7 Expanding the MOSAIC concepts</section-head>
+          <section-head level="2">2.2.8 Implementing MOSAIC</section-head>
+          <section-head level="2">2.2.9 MOSAIC strengths and weaknesses</section-head>
+          <section-head level="2">2.2.10 MOSAIC in action</section-head>
+          <section-head level="2">2.2.11 Conclusions</section-head>
+          <fpage>50</fpage>
+          <lpage>83</lpage>
+          <numpages>34</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>D.</fname><middlename>K.</middlename><surname>Hitchins</surname>
+            <fullname>D. K. Hitchins</fullname>
+          </author>
+          <aff>
+            <orgname>Easams Ltd</orgname>, <city>Camberley</city>, <state>Surrey</state> <postcode>GUI6 5EX</postcode>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>This chapter introduces three interlocking concepts which together present a radical option to current air power deployment conventions, which is consistent with threat and technology trends and which at the same time addresses some present day shortcomings. These so-called MOSAIC concepts emphasise survivability and 'movability' as the key issues; integration of offence and defence is seen as a fundamental part of survivability, since neither perfect defence nor perfect offence is a viable military stance.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">C3360L</compound-classification-code-part><compound-classification-code-part type="text">Aerospace control</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">command and control systems</keyword>
+            <keyword source="Inspec">defence industry</keyword>
+            <keyword source="Inspec">military systems</keyword>
+            <keyword source="Inspec">missile control</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">MOSAIC</keyword>
+            <keyword source="uncontrolled">air power deployment</keyword>
+            <keyword source="uncontrolled">European NATO</keyword>
+            <keyword source="uncontrolled">survivability issue</keyword>
+            <keyword source="uncontrolled">movability issue</keyword>
+            <keyword source="uncontrolled">military</keyword>
+            <keyword source="uncontrolled">air command and control system</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch2-3</content-item-id>
+          <doi>10.1049/PBCM011E_ch2.3</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>C<emph type="superior">3</emph> effectiveness studies</title>
+          <search-title>C3 effectiveness studies</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>5</bookseq>
+          <item-num>2.3</item-num>
+          <supertitle1>Design and structure of C<emph type="superior">3</emph> systems</supertitle1>
+          <section-head level="2">2.3.1 Introduction</section-head>
+          <section-head level="2">2.3.2 Effectiveness</section-head>
+          <section-head level="2">2.3.3 Information flows</section-head>
+          <section-head level="2">2.3.4 Transition planning</section-head>
+          <section-head level="2">2.3.5 Concluding remarks</section-head>
+          <section-head level="2">2.3.6 References</section-head>
+          <fpage>84</fpage>
+          <lpage>104</lpage>
+          <numpages>21</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>G.</fname><middlename>H.</middlename><surname>Lammers</surname>
+            <fullname>G. H. Lammers</fullname>
+          </author>
+          <aff>
+            <orgname>Plessey Defence Systems</orgname>, <city>Christchurch</city>, <state>Dorset</state> <postcode>BH23 4JE</postcode>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>The design of large-scale C<emph type="superior">3</emph> systems has in the past relied heavily on expert judgement and intuition with considerable emphasis on improving individual component elements in the existing system. This contribution reviews a flexible and effective method for the study of such systems. The method allows significant achievements to be made in a relatively short time, primarily by maintaining a system-wide over view while taking account of the interrelationships of component elements. In this work a review of the system dynamics modelling technique illustrates the general applicability of the technique to the study of C<emph type="superior">3</emph> systems. Specific aspects of effectiveness are then discussed, leading to the application of system dynamics the study of information flows and the analysis of transitioning problems. In seeking to improve existing command and control systems or design new ones, it is essential to consider the global implications of any specific changes to the system and to compare the relative impact of alternative designs on the effective ness of the overall system. The system dynamics modelling technique, through the medium of the influence diagram, provides the means of discussing and analysing such problems in a structural and logical way, ensuring as far as possible that the final system is able to perform its intended task effectively through careful planning.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">C3375</compound-classification-code-part><compound-classification-code-part type="text">Military control systems</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">command and control systems</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">C<emph type="superior">3</emph> effectiveness</keyword>
+            <keyword source="uncontrolled">C<emph type="superior">3</emph> systems</keyword>
+            <keyword source="uncontrolled">system dynamics modelling technique</keyword>
+            <keyword source="uncontrolled">command-and-control systems</keyword>
+            <keyword source="uncontrolled">influence diagram</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch3-1</content-item-id>
+          <doi>10.1049/PBCM011E_ch3.1</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Spatial database management for command and control</title>
+          <search-title>Spatial database management for command and control</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>6</bookseq>
+          <item-num>3.1</item-num>
+          <supertitle1>Databases for C<emph type="superior">3</emph> systems</supertitle1>
+          <section-head level="1">3.1.1 Introduction</section-head>
+          <section-head level="1">3.1.2 Background</section-head>
+          <section-head level="1">3.1.3 ISIS: the goal</section-head>
+          <section-head level="1">3.1.4 SDBMS-1: a demonstration prototype</section-head>
+          <section-head level="1">3.1.5 Ongoing and future work</section-head>
+          <section-head level="1">3.1.6 Concluding remarks</section-head>
+          <section-head level="1">3.1.7 References</section-head>
+          <fpage>107</fpage>
+          <lpage>128</lpage>
+          <numpages>22</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>C.</fname><middlename>A.</middlename><surname>McCann</surname>
+            <fullname>C. A. McCann</fullname>
+          </author>
+          <aff>
+            <orgname>Defence and Civil Institute of Environmental Medicine</orgname>, <city>Toronto</city>, <state>ON</state> <postcode>M3M 3B9</postcode>, <country>Canada</country>
+          </aff>
+          <author>
+            <fname>M.</fname><middlename>M.</middlename><surname>Taylor</surname>
+            <fullname>M. M. Taylor</fullname>
+          </author>
+          <aff>
+            <orgname>Defence and Civil Institute of Environmental Medicine</orgname>, <city>Toronto</city>, <state>ON</state> <postcode>M3M 3B9</postcode>, <country>Canada</country>
+          </aff>
+          <author>
+            <fname>M.</fname><middlename>I.</middlename><surname>Tuori</surname>
+            <fullname>M. I. Tuori</fullname>
+          </author>
+          <aff>
+            <orgname>Defence and Civil Institute of Environmental Medicine</orgname>, <city>Toronto</city>, <state>ON</state> <postcode>M3M 3B9</postcode>, <country>Canada</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>The overall goals of the ISIS project remain well beyond our capability. Neverthe less SDBMS-1 demonstrates that some of these goals are attainable with today's technology, and provides us with an experimental environment in which to study their impact on military planning for command and control. We are convinced that robust, usable spatial information systems for command and control are possible only if their designers and developers are aware of the evolving principles of human-computer interaction. Although improvements in hardware are essential, they must be coupled with a better understanding of the problem-solving skills and requirements of the planner.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">C7465</compound-classification-code-part><compound-classification-code-part type="text">Military engineering computing</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">command and control systems</keyword>
+            <keyword source="Inspec">visual databases</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">spatial database management</keyword>
+            <keyword source="uncontrolled">command and control</keyword>
+            <keyword source="uncontrolled">ISIS project</keyword>
+            <keyword source="uncontrolled">military planning</keyword>
+            <keyword source="uncontrolled">spatial information systems</keyword>
+            <keyword source="uncontrolled">human-computer interaction</keyword>
+            <keyword source="uncontrolled">problem-solving skills</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch3-2</content-item-id>
+          <doi>10.1049/PBCM011E_ch3.2</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Systems design and data management problems in the utilisation of local area network architectures</title>
+          <search-title>Systems design and data management problems in the utilisation of local area network architectures</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>7</bookseq>
+          <item-num>3.2</item-num>
+          <supertitle1>Databases for C<emph type="superior">3</emph> systems</supertitle1>
+          <section-head level="1">3.2.1 Introduction</section-head>
+          <section-head level="1">3.2.2 Historical development</section-head>
+          <section-head level="1">3.2.3 Introduction of a local area network</section-head>
+          <section-head level="1">3.2.4 Distributed system architecture</section-head>
+          <section-head level="1">3.2.5 The combat system design process</section-head>
+          <section-head level="1">3.2.6 Future development</section-head>
+          <section-head level="1">3.2.7 Distributed database management</section-head>
+          <section-head level="1">3.2.8 Maintaining the integrity of distributed data</section-head>
+          <section-head level="1">3.2.9 Performance</section-head>
+          <section-head level="1">3.2.10 Standards</section-head>
+          <section-head level="1">3.2.11 Data definition</section-head>
+          <section-head level="1">3.2.12 ADDAM (area distributed data management system)</section-head>
+          <section-head level="1">3.2.13 Conclusions</section-head>
+          <section-head level="1">3.2.14 References</section-head>
+          <fpage>129</fpage>
+          <lpage>156</lpage>
+          <numpages>28</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>A.</fname><middlename>S.</middlename><surname>Cheeseman</surname>
+            <fullname>A. S. Cheeseman</fullname>
+          </author>
+          <aff>
+            <orgname>Software Sciences Ltd</orgname>, <city>Farnborough</city>, <state>Hants</state> <postcode>GUI4 7NB</postcode>, <country>UK</country>
+          </aff>
+          <author>
+            <fname>R.</fname><middlename>H.</middlename><surname>Catt</surname>
+            <fullname>R. H. Catt</fullname>
+          </author>
+          <aff>
+            <orgname>Software Sciences Ltd</orgname>, <city>Farnborough</city>, <state>Hants</state> <postcode>GUI4 7NB</postcode>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>In this chapter data management and system design of local area network is discussed.The local area network has brought enormous opportunities to the C<emph type="superior">3</emph>I designer. It allows him to design flexible and modular systems which can be more accommodating of change and enhancement than systems of the past, and which can also exhibit a much greater reliability than was previously possible. By its very nature, a system incorporating a local area network can continue to function even though some of its nodes have failed.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B7930</compound-classification-code-part><compound-classification-code-part type="text">Military communications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">command and control systems</keyword>
+            <keyword source="Inspec">computer network management</keyword>
+            <keyword source="Inspec">computer network reliability</keyword>
+            <keyword source="Inspec">local area networks</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">data management problems</keyword>
+            <keyword source="uncontrolled">local area network architectures</keyword>
+            <keyword source="uncontrolled">C<emph type="superior">3</emph>I designer</keyword>
+            <keyword source="uncontrolled">modular system design</keyword>
+            <keyword source="uncontrolled">flexible system design</keyword>
+            <keyword source="uncontrolled">local area network reliability</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch4-1</content-item-id>
+          <doi>10.1049/PBCM011E_ch4.1</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Packet radio: a survivable communications system for the forward area</title>
+          <search-title>Packet radio: a survivable communications system for the forward area</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>8</bookseq>
+          <item-num>4.1</item-num>
+          <supertitle1>Communications</supertitle1>
+          <section-head level="1">4.1.1 Introduction</section-head>
+          <section-head level="1">4.1.2 Basic concepts</section-head>
+          <section-head level="1">4.1.3 User services</section-head>
+          <section-head level="1">4.1.4 Channel access, routing and network control</section-head>
+          <section-head level="1">4.1.5 Performance</section-head>
+          <section-head level="1">4.1.6 Signal processing requirements and architecture</section-head>
+          <section-head level="1">4.1.7 Experiences with prototype equipment</section-head>
+          <section-head level="1">4.1.8 Conclusions</section-head>
+          <section-head level="1">4.1.9 References</section-head>
+          <fpage>159</fpage>
+          <lpage>182</lpage>
+          <numpages>24</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>B.</fname><middlename>H.</middlename><surname>Davies</surname>
+            <fullname>B. H. Davies</fullname>
+          </author>
+          <aff>
+            <orgname>Royal Signals and Radar Establishment MOD (PE)</orgname>, <city>Great Malvern</city>, <state>Worcs</state> <postcode>WR14 3PS</postcode>, <country>UK</country>
+          </aff>
+          <author>
+            <fname>T.</fname><middlename>R.</middlename><surname>Davies</surname>
+            <fullname>T. R. Davies</fullname>
+          </author>
+          <aff>
+            <orgname>Royal Signals and Radar Establishment MOD (PE)</orgname>, <city>Great Malvern</city>, <state>Worcs</state> <postcode>WR14 3PS</postcode>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>This chapter has described the first iteration of system design and development for a narrowband PR system. The results at all stages have been particularly encouraging. In the second iteration, which is based on a commercial procurement of a 25-station unit of suitable size, weight and power consumption, further refinement and field evaluation of the distributed algorithms will be made.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6250</compound-classification-code-part><compound-classification-code-part type="text">Radio links and equipment</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">iterative methods</keyword>
+            <keyword source="Inspec">packet radio networks</keyword>
+            <keyword source="Inspec">telecommunication network reliability</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">packet radio</keyword>
+            <keyword source="uncontrolled">survivable communication system</keyword>
+            <keyword source="uncontrolled">system design iteration</keyword>
+            <keyword source="uncontrolled">narrowband PR system</keyword>
+            <keyword source="uncontrolled">25-station unit</keyword>
+            <keyword source="uncontrolled">power consumption</keyword>
+            <keyword source="uncontrolled">field evaluation</keyword>
+            <keyword source="uncontrolled">distributed algorithms</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch4-2</content-item-id>
+          <doi>10.1049/PBCM011E_ch4.2</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>C<emph type="superior">2</emph> communications for the tactical area: the Ptarmigan packet switched network design and development proving</title>
+          <search-title>C2 communications for the tactical area: the Ptarmigan packet switched network design and development proving</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>9</bookseq>
+          <item-num>4.2</item-num>
+          <supertitle1>Communications</supertitle1>
+          <section-head level="1">4.2.1 Introduction</section-head>
+          <section-head level="1">4.2.2 The design philosophy</section-head>
+          <section-head level="1">4.2.3 The tactical environment</section-head>
+          <section-head level="1">4.2.4 Packet switching overlay on Ptarmigan</section-head>
+          <section-head level="1">4.2.5 Network characteristics</section-head>
+          <section-head level="1">4.2.6 The protocols</section-head>
+          <section-head level="1">4.2.7 Network management</section-head>
+          <section-head level="1">4.2.8 The need to prove</section-head>
+          <section-head level="1">4.2.9 Test tools</section-head>
+          <section-head level="1">4.2.10 Ptarmigan packet switched network model</section-head>
+          <section-head level="1">4.2.11 Status</section-head>
+          <section-head level="1">4.2.12 References</section-head>
+          <fpage>184</fpage>
+          <lpage>208</lpage>
+          <numpages>25</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>C.</fname><middlename>S.</middlename><surname>Warren</surname>
+            <fullname>C. S. Warren</fullname>
+          </author>
+          <aff>
+            <orgname>Plessey Defence Systems</orgname>, <city>Christchurch</city>, <state>Dorset</state> <postcode>BH23 4JE</postcode>, <country>UK</country>
+          </aff>
+          <author>
+            <fname>S.</fname><middlename>G.</middlename><surname>Wells</surname>
+            <fullname>S. G. Wells</fullname>
+          </author>
+          <aff>
+            <orgname>Plessey Defence Systems</orgname>, <city>Christchurch</city>, <state>Dorset</state> <postcode>BH23 4JE</postcode>, <country>UK</country>
+          </aff>
+          <author>
+            <fname>J.</fname><middlename>R.</middlename><surname>Bartlett</surname>
+            <fullname>J. R. Bartlett</fullname>
+          </author>
+          <aff>
+            <orgname>Plessey Defence Systems</orgname>, <city>Christchurch</city>, <state>Dorset</state> <postcode>BH23 4JE</postcode>, <country>UK</country>
+          </aff>
+          <author>
+            <fname>B.</fname><middlename>J.</middlename><surname>Symons</surname>
+            <fullname>B. J. Symons</fullname>
+          </author>
+          <aff>
+            <orgname>Plessey Defence Systems</orgname>, <city>Christchurch</city>, <state>Dorset</state> <postcode>BH23 4JE</postcode>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>The concepts of C<emph type="superior">3</emph> in tactical warfare have existed for many centuries and the need for effective communications to achieve responsive command and control is well appreciated.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B7930</compound-classification-code-part><compound-classification-code-part type="text">Military communications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">command and control systems</keyword>
+            <keyword source="Inspec">military communication</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">C2 communications</keyword>
+            <keyword source="uncontrolled">tactical area</keyword>
+            <keyword source="uncontrolled">Ptarmigan packet switched network design</keyword>
+            <keyword source="uncontrolled">development proving</keyword>
+            <keyword source="uncontrolled">command, control and communication systems</keyword>
+            <keyword source="uncontrolled">tactical warfare</keyword>
+            <keyword source="uncontrolled">responsive command and control</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch5-1</content-item-id>
+          <doi>10.1049/PBCM011E_ch5.1</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>International standards in military communications</title>
+          <search-title>International standards in military communications</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>10</bookseq>
+          <item-num>5.1</item-num>
+          <supertitle1>Standards</supertitle1>
+          <section-head level="1">5.1.1 Introduction</section-head>
+          <section-head level="1">5.1.2 Open systems interconnection and the ISO reference model</section-head>
+          <section-head level="1">5.1.3 Military requirements</section-head>
+          <section-head level="1">5.1.4 Gateway Issues</section-head>
+          <section-head level="1">5.1.5 Initiatives</section-head>
+          <section-head level="1">5.1.6 Summary</section-head>
+          <section-head level="1">5.1.7 Appendix A: Standards bodies</section-head>
+          <section-head level="1">5.1.8 Appendix B: The seven layers of the ISO reference model</section-head>
+          <section-head level="1">5.1.9 References</section-head>
+          <fpage>211</fpage>
+          <lpage>222</lpage>
+          <numpages>12</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>D.</fname><middlename>F.</middlename><surname>Bird</surname>
+            <fullname>D. F. Bird</fullname>
+          </author>
+          <aff>
+            <orgname>Systems Division, Linwood Scientific Development</orgname>, <city>London</city>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>With the introduction of computer-based systems in the field of command, control and communications, a vastly increased flow of information is observed within and between the services, both nationally and internationally. This stems from the need to co-ordinate activities between different role cells, command centres, countries and so on. The result is an urgent requirement for the exchange of data between systems each of which operates under the control of a different organisation. Such organisations function according to diverse procedures.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B7930</compound-classification-code-part><compound-classification-code-part type="text">Military communications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">command and control systems</keyword>
+            <keyword source="Inspec">military communication</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">international standards</keyword>
+            <keyword source="uncontrolled">military communications</keyword>
+            <keyword source="uncontrolled">computer-based systems</keyword>
+            <keyword source="uncontrolled">command-control-and-communications</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch5-2</content-item-id>
+          <doi>10.1049/PBCM011E_ch5.2</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>C<emph type="superior">3</emph>I and the upper layers of the OSI</title>
+          <search-title>C3I and the upper layers of the OSI</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>11</bookseq>
+          <item-num>5.2</item-num>
+          <supertitle1>Standards</supertitle1>
+          <section-head level="1">5.2.1 Introduction</section-head>
+          <section-head level="1">5.2.2 The military use of standards</section-head>
+          <section-head level="1">5.2.3 Military requirements</section-head>
+          <section-head level="1">5.2.4 Structure of the upper layers</section-head>
+          <section-head level="1">5.2.5 Session layer</section-head>
+          <section-head level="1">5.2.6 Presentation layer and abstract syntax notations</section-head>
+          <section-head level="1">5.2.7 Application layer standards</section-head>
+          <section-head level="1">5.2.8 Conclusions</section-head>
+          <fpage>223</fpage>
+          <lpage>237</lpage>
+          <numpages>15</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>H.</fname><middlename>J.</middlename><surname>Pearson</surname>
+            <fullname>H. J. Pearson</fullname>
+          </author>
+          <aff>
+            <orgname>Smiths Associates Consulting Systems Engineers Ltd</orgname>, <city>Cobham</city>, <state>Surrey</state>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>A broad range of civilian OSI application standards is emerging which are potential candidates for use in military C<emph type="superior">3</emph>I systems. The long term benefits of being able to use civilian standards in military C<emph type="superior">3</emph>I systems are such as to make it sensible to continue the process. This chapter develops some of themes in the context of the upper-layer standards. It also discusses the structure of the standards making up these layers of the architecture and their relevance to military C<emph type="superior">3</emph>I systems.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B7930</compound-classification-code-part><compound-classification-code-part type="text">Military communications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">command and control systems</keyword>
+            <keyword source="Inspec">military systems</keyword>
+            <keyword source="Inspec">open systems</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">OSI application standard</keyword>
+            <keyword source="uncontrolled">military C<emph type="superior">3</emph>I system</keyword>
+            <keyword source="uncontrolled">civilian standard</keyword>
+            <keyword source="uncontrolled">upper layer standard</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch5-3</content-item-id>
+          <doi>10.1049/PBCM011E_ch5.3</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Security in military OSI networks</title>
+          <search-title>Security in military OSI networks</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>12</bookseq>
+          <item-num>5.3</item-num>
+          <supertitle1>Standards</supertitle1>
+          <section-head level="2">5.3.1 Introduction</section-head>
+          <section-head level="2">5.3.2 Types of security protection</section-head>
+          <section-head level="2">5.3.3 Architecture - placement of security services</section-head>
+          <section-head level="2">5.3.4 Non-OSI aspects</section-head>
+          <section-head level="2">5.3.5 System security</section-head>
+          <section-head level="2">5.3.6 Protocol enhancements</section-head>
+          <section-head level="2">5.3.7 Securing military systems</section-head>
+          <section-head level="2">5.3.8 Conclusions</section-head>
+          <section-head level="2">5.3.9 References</section-head>
+          <fpage>238</fpage>
+          <lpage>246</lpage>
+          <numpages>9</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>T.</fname><surname>Knowles</surname>
+            <fullname>T. Knowles</fullname>
+          </author>
+          <aff>
+            <orgname>CAP Scientific</orgname>, <city>New Maiden</city>, <state>Surrey</state>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>Many military computer systems hold classified information and must be protected from attack. When connected to communications networks these computers will be exposed to potential threats from a very wide population, especially when the networks are interconnected to public switched networks. The technology to communicate with and gain access to these computers is now available in high street shops, and there is a growing band of expert 'hackers' who possess and share expert knowledge of computer systems in order to break in to computer systems for fun. Part of this work has been an extension of the OSI reference model to incorporate security features as a precursor to enhancing OSI protocols. The ultimate aim is to ensure that open systems can be made secure without deviating from published ISO standards.It has been shown that the ISO OSI security addendum to the reference model addresses all aspects of current military security policies where they impact on computer communications. It also addresses issues of concern which are not currently covered by national or NATO security policies.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B7930</compound-classification-code-part><compound-classification-code-part type="text">Military communications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">computer network security</keyword>
+            <keyword source="Inspec">military communication</keyword>
+            <keyword source="Inspec">military computing</keyword>
+            <keyword source="Inspec">open systems</keyword>
+            <keyword source="Inspec">protocols</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">military OSI networks</keyword>
+            <keyword source="uncontrolled">military computer systems</keyword>
+            <keyword source="uncontrolled">communications networks</keyword>
+            <keyword source="uncontrolled">public switched networks</keyword>
+            <keyword source="uncontrolled">computer systems</keyword>
+            <keyword source="uncontrolled">OSI reference model</keyword>
+            <keyword source="uncontrolled">OSI protocols</keyword>
+            <keyword source="uncontrolled">ISO standards</keyword>
+            <keyword source="uncontrolled">ISO OSI security addendum</keyword>
+            <keyword source="uncontrolled">NATO security policies</keyword>
+            <keyword source="uncontrolled">military security policies</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch5-4</content-item-id>
+          <doi>10.1049/PBCM011E_ch5.4</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Standards for naval systems</title>
+          <search-title>Standards for naval systems</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>13</bookseq>
+          <item-num>5.4</item-num>
+          <supertitle1>Standards</supertitle1>
+          <section-head level="1">5.4.1 Introduction</section-head>
+          <section-head level="1">5.4.2 Background</section-head>
+          <section-head level="1">5.4.3 Constructing a system</section-head>
+          <section-head level="1">5.4.4 Framework for standards</section-head>
+          <section-head level="1">5.4.5 Choosing a local area network</section-head>
+          <section-head level="1">5.4.6 Network/transport layer interface</section-head>
+          <section-head level="1">5.4.7 Presentation layer</section-head>
+          <section-head level="1">5.4.8 Application (and other) layers</section-head>
+          <section-head level="1">5.4.9 Other areas of standardisation</section-head>
+          <section-head level="1">5.4.10 Status and conclusions</section-head>
+          <section-head level="1">5.4.11 References</section-head>
+          <fpage>247</fpage>
+          <lpage>262</lpage>
+          <numpages>16</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>J.</fname><middlename>S.</middlename><surname>Hill</surname>
+            <fullname>J. S. Hill</fullname>
+          </author>
+          <aff>
+            <orgname>Admiralty Research Establishment MOD (PE)</orgname>, <city>Portsdown</city>, <state>Portsmouth</state> <postcode>PO6 4AA</postcode>, <country>UK</country>
+          </aff>
+          <author>
+            <fname>F.</fname><middlename>A.</middlename><surname>Richards</surname>
+            <fullname>F. A. Richards</fullname>
+          </author>
+          <aff>
+            <orgname>Admiralty Research Establishment MOD (PE)</orgname>, <city>Portsdown</city>, <state>Portsmouth</state> <postcode>PO6 4AA</postcode>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>All three naval engineering standards discussed here have been formally issued. The use of the OSI model as a discipline for constructing the standards has been an interesting experience. The OSI definitions have been lacking in some areas, especially in the handling of recipient-selected broadcast messages. Nor do they offer any assistance in supporting time reference between member systems. Some difficulty was also encountered in maintaining a clean distinction between the layers, as will be appreciated by anyone reading the standards. Nevertheless, the use of the reference model was an invaluable aid in the work of the study group.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B7930</compound-classification-code-part><compound-classification-code-part type="text">Military communications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">local area networks</keyword>
+            <keyword source="Inspec">military communication</keyword>
+            <keyword source="Inspec">military vehicles</keyword>
+            <keyword source="Inspec">naval engineering</keyword>
+            <keyword source="Inspec">standards</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">naval system standards</keyword>
+            <keyword source="uncontrolled">naval engineering standards</keyword>
+            <keyword source="uncontrolled">OSI model</keyword>
+            <keyword source="uncontrolled">OSI definition</keyword>
+            <keyword source="uncontrolled">recipient-selected broadcast message</keyword>
+            <keyword source="uncontrolled">time reference</keyword>
+            <keyword source="uncontrolled">member system</keyword>
+            <keyword source="uncontrolled">reference model</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch6-1</content-item-id>
+          <doi>10.1049/PBCM011E_ch6.1</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Man-machine aspects of command and control</title>
+          <search-title>Man-machine aspects of command and control</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>14</bookseq>
+          <item-num>6.1</item-num>
+          <supertitle1>The man-machine interface</supertitle1>
+          <section-head level="1">6.1.1 Introduction</section-head>
+          <section-head level="1">6.1.2 The commander</section-head>
+          <section-head level="1">6.1.3 The picture builders</section-head>
+          <section-head level="1">6.1.4 Decision aiding</section-head>
+          <section-head level="1">6.1.5 The contribution from psychology</section-head>
+          <section-head level="1">6.1.6 Conclusion</section-head>
+          <section-head level="1">6.1.7 References</section-head>
+          <fpage>265</fpage>
+          <lpage>278</lpage>
+          <numpages>14</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>W.</fname><middlename>T.</middlename><surname>Singleton</surname>
+            <fullname>W. T. Singleton</fullname>
+          </author>
+          <aff>
+            <orgname>Department of Applied Psychology, Aston University</orgname>, <city>Birmingham</city>, <postcode>B4 7ET</postcode>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>Technologically, the engineers have recently developed more and more elaborate ways of transmitting, storing, manipulating and presenting information. Information technology has become a separate profession and has developed its own objectives and standards. The human operator appears in command and control systems at the end, the beginning and sometimes at various intermediate stages. The commander at the end is central to the whole business because he is the primary reason for the existence of the system. He uses it to provide information which enables him to make decisions about dispositions and actions. The design of man-machine interfaces is always critical for the reason already mentioned, namely that the interface must facilitate communication between components with fundamentally different characteristics. The human operator side is highly flexible, adaptable by the use of training techniques and easily reprogrammable in terms of revised instructions, but nevertheless there are fundamental limitations in sensory and motor performance and in information handling.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B7930</compound-classification-code-part><compound-classification-code-part type="text">Military communications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">command and control systems</keyword>
+            <keyword source="Inspec">decision making</keyword>
+            <keyword source="Inspec">man-machine systems</keyword>
+            <keyword source="Inspec">user interfaces</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">command and control system</keyword>
+            <keyword source="uncontrolled">man-machine interface</keyword>
+            <keyword source="uncontrolled">information technology</keyword>
+            <keyword source="uncontrolled">information handling</keyword>
+            <keyword source="uncontrolled">decision making</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch6-2</content-item-id>
+          <doi>10.1049/PBCM011E_ch6.2</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>An engineering standard for a systematic approach to the design of user-computer interfaces</title>
+          <search-title>An engineering standard for a systematic approach to the design of user-computer interfaces</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>15</bookseq>
+          <item-num>6.2</item-num>
+          <supertitle1>The man-machine interface</supertitle1>
+          <section-head level="1">6.2.1 Introduction</section-head>
+          <section-head level="1">6.2.2 Inputs to systems design</section-head>
+          <section-head level="1">6.2.3 Tasks</section-head>
+          <section-head level="1">6.2.4 User-computer interfaces</section-head>
+          <section-head level="1">6.2.5 Interface cognitive models</section-head>
+          <section-head level="1">6.2.6 Interface languages</section-head>
+          <section-head level="1">6.2.7 Interface devices</section-head>
+          <section-head level="1">6.2.8 Outputs from systems design</section-head>
+          <section-head level="1">6.2.9 Final comments</section-head>
+          <section-head level="1">6.2.10 References</section-head>
+          <fpage>263</fpage>
+          <lpage>304</lpage>
+          <numpages>42</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>A.</fname><surname>Gardner</surname>
+            <fullname>A. Gardner</fullname>
+          </author>
+          <aff>
+            <orgname>HUSAT Research Centre, Loughborough University</orgname>, <city>Loughborough</city>, <state>Leics</state> <postcode>LEI 1 1RG</postcode>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>User-centred design is a methodology for creating user-computer systems which give effective performance and are acceptable to users. These two goals are inter related since effective performance helps to make systems more acceptable to users (especially when their lives might depend on it) and acceptability to users helps to make systems more effective. The standard gives advice on systems design directed at both goals. The goals are not treated separately.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">C6110</compound-classification-code-part><compound-classification-code-part type="text">Systems analysis and programming</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">user centred design</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">user centred design</keyword>
+            <keyword source="uncontrolled">user computer system</keyword>
+            <keyword source="uncontrolled">system design</keyword>
+            <keyword source="uncontrolled">user computer interface</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch7-1</content-item-id>
+          <doi>10.1049/PBCM011E_ch7.1</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Expert systems in C<emph type="superior">2</emph> systems</title>
+          <search-title>Expert systems in C2 systems</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>16</bookseq>
+          <item-num>7.1</item-num>
+          <supertitle1>Advanced processing</supertitle1>
+          <section-head level="1">7.1.1 Introduction</section-head>
+          <section-head level="1">7.1.2 C<emph type="superior">2</emph> complexity and artificial intelligence</section-head>
+          <section-head level="1">7.1.3 Knowledge-based systems in C<emph type="superior">2</emph> systems</section-head>
+          <section-head level="1">7.1.4 A prototype structure for an overall knowledge-based C<emph type="superior">2</emph> system</section-head>
+          <section-head level="1">7.1.5 Alternative approaches to C<emph type="superior">2</emph> architecture</section-head>
+          <section-head level="1">7.1.6 References</section-head>
+          <section-head level="1">7.1.7 Bibliography</section-head>
+          <fpage>307</fpage>
+          <lpage>320</lpage>
+          <numpages>14</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>C.</fname><middlename>J.</middlename><surname>Harris</surname>
+            <fullname>C. J. Harris</fullname>
+          </author>
+          <aff>
+            <orgname>Department of Aeronautics and Astronautics, Southampton University</orgname>, <city>Southampton</city>, <state>Hants</state> <postcode>SO9 5NH</postcode>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>In 1979 the US Department of Defense sponsored a series of command and control (C<emph type="superior">2</emph>) colloquia which concluded that there is no adequate foundation for a theory of C<emph type="superior">2</emph> and hence no principles for overall system design and evaluation (see also Chapter 1). Despite the massive investment by NATO in C<emph type="superior">2</emph> systems research development and implementation in the intervening period, a fundamental metho dology for the design of C<emph type="superior">2</emph> has not emerged. This is not surprising, since high-level C<emph type="superior">2</emph> systems are essentially an extension of basic human decision processes by means of procedures, organisations, equipments, situation assessment (threat assessment) and resource allocation. C<emph type="superior">2</emph> systems are among the largest and most complex real time resource management systems known to man; their effectiveness is severely limited by lack of speed, data saturation and the cognitive limits of the human decision maker.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">C3375</compound-classification-code-part><compound-classification-code-part type="text">Military control systems</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">command and control systems</keyword>
+            <keyword source="Inspec">decision making</keyword>
+            <keyword source="Inspec">expert systems</keyword>
+            <keyword source="Inspec">military equipment</keyword>
+            <keyword source="Inspec">resource allocation</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">expert systems</keyword>
+            <keyword source="uncontrolled">C<emph type="superior">2</emph> systems</keyword>
+            <keyword source="uncontrolled">US Department of Defense</keyword>
+            <keyword source="uncontrolled">command and control colloquia</keyword>
+            <keyword source="uncontrolled">overall system design</keyword>
+            <keyword source="uncontrolled">NATO</keyword>
+            <keyword source="uncontrolled">research development</keyword>
+            <keyword source="uncontrolled">human decision processes</keyword>
+            <keyword source="uncontrolled">organisations</keyword>
+            <keyword source="uncontrolled">equipments</keyword>
+            <keyword source="uncontrolled">situation assessment</keyword>
+            <keyword source="uncontrolled">resource allocation</keyword>
+            <keyword source="uncontrolled">resource management systems</keyword>
+            <keyword source="uncontrolled">data saturation</keyword>
+            <keyword source="uncontrolled">cognitive limits</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch7-2</content-item-id>
+          <doi>10.1049/PBCM011E_ch7.2</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Some aspects of data fusion</title>
+          <search-title>Some aspects of data fusion</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>17</bookseq>
+          <item-num>7.2</item-num>
+          <supertitle1>Advanced processing</supertitle1>
+          <section-head level="1">7.2.1 Introduction</section-head>
+          <section-head level="1">7.2.2 Positional information</section-head>
+          <section-head level="1">7.2.3 Identity information</section-head>
+          <section-head level="1">7.2.4 Behaviour</section-head>
+          <section-head level="1">7.2.5 Conclusion</section-head>
+          <section-head level="1">7.2.6 References</section-head>
+          <fpage>321</fpage>
+          <lpage>328</lpage>
+          <numpages>8</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>G.</fname><middlename>B.</middlename><surname>Wilson</surname>
+            <fullname>G. B. Wilson</fullname>
+          </author>
+          <aff>
+            <orgname>Ferranti Computer Systems Ltd</orgname>, <city>Bracknell</city>, <state>Berkshire</state> <postcode>RG12 1PA</postcode>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>At the beginning of this contribution it was suggested that 'data fusion' was a term which could be misleading when used in relation to C<emph type="superior">2</emph> systems. A number of different processes have been discussed which are necessary in such systems to enable the user to determine the position, identity and behaviour of objects in this area of interest. In short, they are necessary for him to work out what is happening when his information comes from a variety of sources, some of which may be imprecise, intermittent or even contradictory. The differences between such processes as correlation which establishes that two sets of data refer to the same object, and fusion which combines data which have already been correlated, are important because of the different logical and computational approaches necessary. However, the interrelationship of these processes in the overall operation of a C<emph type="superior">2</emph> system is also important in the progression from data collection by sensors through picture compilation and situation assessment to threat evaluation. A study of current systems and those projected for the near future suggests that whereas a large degree of automation has been applied to the correlation process, although not always with complete success, the same cannot be said of the other processes. Identification of non-cooperating platforms remains a key problem area in picture compilation, and the difficult problems of automatic identity processing have been discussed above. Behavioural analysis, situation assessment and threat evaluation are still almost entirely manual processes al though the pace of modern warfare places increasing loads on the operator and, as mentioned above, in some cases it has been necessary to automate, albeit using very simplistic criteria. The operator load in these vital processes makes it essential to provide automated assistance that is accurate, consistent and reliable. Development of such assistance requires a clear understanding of the precise nature of the various re levant processes and the differences between them.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">C3375</compound-classification-code-part><compound-classification-code-part type="text">Military control systems</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">command and control systems</keyword>
+            <keyword source="Inspec">control engineering computing</keyword>
+            <keyword source="Inspec">sensor fusion</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">data fusion</keyword>
+            <keyword source="uncontrolled">command-control-and-communication systems</keyword>
+            <keyword source="uncontrolled">C<emph type="superior">2</emph> systems</keyword>
+            <keyword source="uncontrolled">data collection</keyword>
+            <keyword source="uncontrolled">picture compilation</keyword>
+            <keyword source="uncontrolled">situation assessment</keyword>
+            <keyword source="uncontrolled">threat evaluation</keyword>
+            <keyword source="uncontrolled">behavioural analysis</keyword>
+            <keyword source="uncontrolled">automatic identity processing</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch7-3</content-item-id>
+          <doi>10.1049/PBCM011E_ch7.3</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>An AI approach to data fusion and situation assessment</title>
+          <search-title>An AI approach to data fusion and situation assessment</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>18</bookseq>
+          <item-num>7.3</item-num>
+          <supertitle1>Advanced processing</supertitle1>
+          <section-head level="1">7.3.1 Introduction</section-head>
+          <section-head level="1">7.3.2 Multisensor data fusion</section-head>
+          <section-head level="1">7.3.3 Expert system approach</section-head>
+          <section-head level="1">7.3.4 Multisensor data fusion experiment: stage 1 demonstrator</section-head>
+          <section-head level="1">7.3.5 Stage 1 demonstrator: results</section-head>
+          <section-head level="1">7.3.6 Multiplatform data fusion</section-head>
+          <section-head level="1">7.3.7 Parameter estimation - or combination of evidence</section-head>
+          <section-head level="1">7.3.8 Situation assessment</section-head>
+          <section-head level="1">7.3.9 Artificial intelligence machines for multisensor data fusion</section-head>
+          <section-head level="1">7.3.10 Conclusions and future work</section-head>
+          <section-head level="1">7.3.11 References</section-head>
+          <fpage>339</fpage>
+          <lpage>377</lpage>
+          <numpages>39</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>W.</fname><middlename>L.</middlename><surname>Lakin</surname>
+            <fullname>W. L. Lakin</fullname>
+          </author>
+          <aff>
+            <orgname>Admiralty Research Establishment MOD (PE)</orgname>, <city>Portsdown</city>, <state>Portsmouth</state> <postcode>PO6 4AA</postcode>, <country>UK</country>
+          </aff>
+          <author>
+            <fname>J.</fname><middlename>A.</middlename><surname>Miles</surname>
+            <fullname>J. A. Miles</fullname>
+          </author>
+          <aff>
+            <orgname>Admiralty Research Establishment MOD (PE)</orgname>, <city>Portsdown</city>, <state>Portsmouth</state> <postcode>PO6 4AA</postcode>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>This contribution describes our research programme at ARE to introduce knowledge-based systems to problems in command and control. Although we are most interested in applications for the Royal Navy, the fundamental requirements are common to most command and control systems and we hope the generality of the concepts will be apparent. The purpose of command and control is to achieve some desired objectives using available resources to best effect. Because these resources usually involve many individuals, both men and machines, a considerable amount of communication and information handling, including intelligence, must take place hence C<emph type="superior">3</emph>I. The reason for the complexity of C<emph type="superior">3</emph>I systems is that they have to tackle very large problems in a complex unpredictable environment. It is these characteristics which generate the need for so much human skill, judgment and intuition and which have caused computers to make such little inroad into the more intellectual processes in command and control. With the arrival of expert systems, however, there is renewed enthusiasm to encapsulate human expertise in computer software, and C<emph type="superior">3</emph>I is an obvious field for attention.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">C3360J</compound-classification-code-part><compound-classification-code-part type="text">Marine system control</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">artificial intelligence</keyword>
+            <keyword source="Inspec">command and control systems</keyword>
+            <keyword source="Inspec">knowledge based systems</keyword>
+            <keyword source="Inspec">naval engineering</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">AI approach</keyword>
+            <keyword source="uncontrolled">data fusion</keyword>
+            <keyword source="uncontrolled">situation assessment</keyword>
+            <keyword source="uncontrolled">knowledge-based system</keyword>
+            <keyword source="uncontrolled">Royal Navy</keyword>
+            <keyword source="uncontrolled">command and control system</keyword>
+            <keyword source="uncontrolled">communication handling</keyword>
+            <keyword source="uncontrolled">information handling</keyword>
+            <keyword source="uncontrolled">intelligence</keyword>
+            <keyword source="uncontrolled">complex unpredictable environment</keyword>
+            <keyword source="uncontrolled">intellectual process</keyword>
+            <keyword source="uncontrolled">expert system</keyword>
+            <keyword source="uncontrolled">computer software</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_ch7-4</content-item-id>
+          <doi>10.1049/PBCM011E_ch7.4</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Air defence threat assessment</title>
+          <search-title>Air defence threat assessment</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>19</bookseq>
+          <item-num>7.4</item-num>
+          <supertitle1>Advanced processing</supertitle1>
+          <section-head level="1">7.4.1 Introduction</section-head>
+          <section-head level="1">7.4.2 The problem</section-head>
+          <section-head level="1">7.4.3 Analysis of the problem</section-head>
+          <section-head level="1">7.4.4 Approach taken</section-head>
+          <section-head level="1">7.4.5 Current status</section-head>
+          <section-head level="1">7.4.6 Summary and conclusions</section-head>
+          <section-head level="1">7.4.7 References</section-head>
+          <fpage>378</fpage>
+          <lpage>397</lpage>
+          <numpages>20</numpages>
+        </content-item-pubinfo>
+        <authgrp>
+          <author>
+            <fname>S.</fname><surname>Middleton</surname>
+            <fullname>S. Middleton</fullname>
+          </author>
+          <aff>
+            <orgname>Royal Signals and Radar Establishment MOD (PE)</orgname>, <city>Great Malvern</city>, <state>Worcs</state> <postcode>WR14 3PS</postcode>, <country>UK</country>
+          </aff>
+        </authgrp>
+        <abstract>
+          <p>This chapter has described the approach taken in building an expert system for air defence threat assessment. The nature of this problem has required the development of a new programming language called BLOBS. A prototype version of the threat assessment expert system has been built using this framework with some success but contains only a subset of the rules that will be required in the full system. The nature of the threat assessment task is such that experts have difficulty in verbalising certain parts of their knowledge. This is likely to mean that gaps will exist even in future versions of the system. This contributes to our basic view that initial use of the system is more likely to be as an adviser rather than as an autonomous system.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">C7465</compound-classification-code-part><compound-classification-code-part type="text">Military engineering computing</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">defence industry</keyword>
+            <keyword source="Inspec">expert systems</keyword>
+            <keyword source="Inspec">military computing</keyword>
+            <keyword source="Inspec">programming languages</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">air defence threat assessment</keyword>
+            <keyword source="uncontrolled">expert system</keyword>
+            <keyword source="uncontrolled">programming language</keyword>
+            <keyword source="uncontrolled">BLOBS</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBCM011E_backmatter</content-item-id>
+          <doi>10.1049/PBCM011E_bm</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Back Matter</title>
+          <search-title>Back Matter</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>back matter</content-item-type>
+          <bookseq>20</bookseq>
+          <section-head level="1">Index</section-head>
+          <fpage>398</fpage>
+        </content-item-pubinfo>
+        <funding-grp><access type="free"/></funding-grp>
+      </content-item-metadata>
+    </content-item>
+  </body>
+</ebook>

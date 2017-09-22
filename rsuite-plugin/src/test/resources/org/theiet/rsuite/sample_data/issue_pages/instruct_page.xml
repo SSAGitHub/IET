@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "../../../DTD/JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" article-type="research-article"
+    dtd-version="1.0" xml:lang="en" specific-use="instruct_page">
+    <front>
+        <journal-meta>
+            <journal-id/>
+            <issn/>
+        </journal-meta>
+        <article-meta>
+            <title-group>
+                <article-title>instruct page</article-title>
+            </title-group>
+            <pub-date>
+                <year/>
+            </pub-date>
+        </article-meta>
+    </front>
+    <body>
+        <sec specific-use="issue-page-title">
+            <title>www.ietdl.org/IET-CDT</title>
+        </sec>
+        <sec>
+            <title>Instructions to contributors</title>
+            <p><italic>IET Power Electronics</italic> is published 12 times a year by the Institution of Engineering
+                and Technology. All papers are subject to rigorous peer review and the decision to
+                publish is based on the reviewers' comments. Papers should include a comprehensive,
+                up-to-date literature review and the experimental results presented should
+                demonstrate a significant advance over the current state of the art.</p>
+        </sec>
+        <sec>
+            <title>Aims and scope</title>
+            <p><italic>IET Power Electronics</italic> aims to attract original research papers, short communications,
+                review articles and power electronics related educational studies. The scope covers
+                applications and technologies in the field of power electronics with special focus
+                on cost-effective, efficient, power dense, environmentally friendly and robust
+                solutions, which includes:</p>
+            <sec>
+                <title>Applications:</title>
+                <p>Electric drives/generators, renewable energy, industrial and consumable
+                    applications (including lighting, welding, heating, sub-sea applications,
+                    drilling and others), medical and military apparatus, utility applications,
+                    transport and space application, energy harvesting, telecommunications, energy
+                    storage management systems, home appliances.</p>
+            </sec>
+            <sec>
+                <title>Technologies:</title>
+                <p><bold>Circuits:</bold> All type of converter topologies for low and high power
+                    applications including but not limited to: inverter, rectifier, dc/dc converter,
+                    power supplies, UPS, ac/ac converter, resonant converter, high frequency
+                    converter, hybrid converter, multilevel converter, power factor correction
+                    circuits and other advanced topologies.</p>
+                <p><bold>Components and Materials:</bold> Switching devices and their control,
+                    inductors, sensors, transformers, capacitors, resistors, thermal management,
+                    filters, fuses and protection elements and other novel low-cost efficient
+                    components/materials</p>
+                <p><bold>Control:</bold> Techniques for controlling, analysing, modelling and/or
+                    simulation of power electronics circuits and complete power electronics
+                    systems.</p>
+                <p><bold>Design/Manufacturing/Testing:</bold> New multi-domain modelling, assembling
+                    and packaging technologies, advanced testing techniques.</p>
+                <p><bold>Environmental Impact:</bold> Electromagnetic interference (EMI) reduction
+                    techniques, electromagnetic compatibility (EMC), limiting acoustic noise and
+                    vibration, recycling techniques, use of non-rare material.</p>
+                <p><bold>Education:</bold> Teaching methods, programme and course design, use of
+                    technology in power electronics teaching, virtual laboratory and elearning and
+                    fields within the scope of interest.</p>
+            </sec>
+        </sec>
+        <sec>
+            <title>Manuscript submission</title>
+            <p>All submissions to <italic>IET Power Electronics</italic> must be uploaded via our online submission
+                system at: <ext-link>http://mc.manuscriptcentral.com/iet-pel</ext-link> Hard copy
+                submissions cannot be accepted. Original papers should be submitted as a single file
+                that includes all figures and tables. Upon submission of your revised paper you will
+                be asked to include all source files ready for production. If the paper is intended
+                for a specific Special Issue, please make this clear when uploading your paper.</p>
+            <p>Submitted papers should follow the guidelines outlined in our Author Guide:
+                <ext-link>http://digital-library.theiet.org/journals/author-guide.</ext-link>
+                This includes adhering to our IET Research Journal's length policy found here:
+                <ext-link>http://digital-library.theiet.org/files/research_journals_length_policy.pdf.</ext-link>
+                If a paper does not meet all of the requirements it will be unsubmitted, before
+                review, and changes will be required.</p>
+        </sec>
+        <sec>
+            <title>Subscription Information and Pricing</title>
+            <p>To find out how to subscribe to <italic>IET Power Electronics</italic> or to see current pricing,
+                please visit: www.ietdl.org/catalogue or contact us: sales@theiet.org.</p>
+        </sec>
+        <sec>
+            <title>IET Digital Library</title>
+            <p>IET Research Journals are available online through the IET Digital Library. Features
+                include: "e-first" article publishing; browsable table of contents for all IET
+                publications; cross-journal searching of bibliographic records (by title, keyword,
+                issue date and author name); links to related and cited articles COUNTER-compliant
+                usage statistics; table of contents alerting service, pay-per-view and document
+                delivery. For further details, please visit
+                <ext-link>http://www.ietdl.org</ext-link></p>
+        </sec>
+        <sec>
+            <title>Copyright and Copying</title>
+            <p>This publication is copyright under the Berne Convention and the Universal Copyright
+                Convention. All rights reserved. Apart from any copying under the UK Copyright,
+                Designs and Patents Act, 1988, whereby a single copy of this article may be supplied
+                under certain conditions, for the purposes of research or private study, by a
+                library of a class prescribed by The Copyright (Librarians and Archivists) (Copying
+                of Copyright Material) Regulations 1989:SI 1989/1212, no part of this publication
+                may be reproduced, stored in a retrieval system or transmitted in any form or by any
+                means without the prior permission of the copyright owners. Permission is, however,
+                not required to copy abstracts of individual contributions on condition that a full
+                reference to the source is shown. Authorisation to photocopy items for internal or
+                personal use, or for the internal or personal use of specific clients, is granted by
+                the IET for libraries and other users registered with the Copyright Clearance Center
+                Transactional Reporting Service, provided that the base fee of $30.00 per copy is
+                paid directly to the Copyright Clearance Center Inc., 222 Rosewood Drive, Danvers,
+                MA 01923, USA (1755-4535/15 $30.00). This consent does not extend to other kinds of
+                copying for general distribution, for advertising or promotional purposes, for
+                creating new collective works, or for resale. Multiple copying of the contents of
+                this publication without permission is always illegal.</p>
+            <p>The Institution of Engineering and Technology is not as a body responsible for the
+                opinions expressed by individual authors in <italic>IET Power Electronics</italic>.</p>
+            <p>The Institution of Engineering and Technology is a member of the Association of
+                Learned and Professional Society Publishers.</p>
+            <p>Typeset by: Techset Composition India (P) Ltd, Bangalore and Chennai, India</p>
+            <p>Printed by: Berforts Group Ltd, Stevenage, United Kingdom</p>
+            <p>Product code: PJPGVF06</p>
+            <p>&#xa9; 2015: The Institution of Engineering and Technology</p>
+            <p>The Institution of Engineering and Technology is registered as a Charity in England
+                &amp; Wales (no 211014) and Scotland (no SC038698)</p>
+        </sec>
+    </body>
+</article>

@@ -90,22 +90,21 @@ public class MathMlConverterTest implements StandardsBooksConstans, PublishWorkf
     }
 	
 	@Test
-    public void test_convertMathMlInXMLContent_InlineMathMl() throws Exception {
-        
-        MathMlImageGeneratorTestable imageGeneratorMock = new MathMlImageGeneratorTestable(null, getMathMlEntryProcessorParameters());       
-        MathMlConventer mathMlConventer = new MathMlConventer(imageGeneratorMock);
+	public void test_convertMathMlInXMLContent_InlineMathMl() throws Exception {
 
-        String testFileName = "test_mathml_inline.xml";
-        
-        String convertedXML = convertTestFile(mathMlConventer, testFileName);
+		MathMlImageGeneratorTestable imageGeneratorMock = new MathMlImageGeneratorTestable(
+				null, getMathMlEntryProcessorParameters());
+		MathMlConventer mathMlConventer = new MathMlConventer(
+				imageGeneratorMock);
 
-        String expectedXML = getResultFileConent("test_mathml_inline_convert_result.xml");
+		String testFileName = "test_mathml_inline.xml";
 
-      
-        assertEquals(
-                expectedXML,
-                convertedXML);
-    }
+		String convertedXML = convertTestFile(mathMlConventer, testFileName);
+
+		String expectedXML = getResultFileConent("test_mathml_inline_convert_result.xml");
+
+		assertEquals(expectedXML, convertedXML);
+	}
 	
 	@Test
     public void test_convertMathMlInXMLContent_twoEquationsInOneD4pDisplayEquation() throws Exception {

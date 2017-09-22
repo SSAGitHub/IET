@@ -50,8 +50,8 @@ public class ESPDeliveryTest {
 		String deliveryPath = ESPDelivery.getDeliveryPath(
 				userPropertiesCatalog, new File("/tmp"), espUserId);
 		deliveryPath = FilenameUtils.separatorsToUnix(deliveryPath);
-
-		assertEquals("/tmp/espDelivery", deliveryPath);
+       
+		assertEquals("/tmp/espDelivery", deliveryPath.substring(deliveryPath.lastIndexOf(":")+1));
 
 	}
 

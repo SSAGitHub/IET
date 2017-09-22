@@ -1,0 +1,1457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v0.4 20110131//EN" "dtd/JATS-journalpublishing0.dtd">
+<article article-type="research-article" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">COM</journal-id>
+            <journal-title-group>
+                <journal-title>Communications</journal-title>
+            </journal-title-group>
+            <issn pub-type="ppub">1751-8628</issn>
+            <issn pub-type="epub">1751-8636</issn>
+            <publisher>
+                <publisher-name>The Institution of Engineering and Technology</publisher-name>
+            </publisher>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="doi">10.1049/iet-com.2011.0419</article-id>
+            <article-id pub-id-type="publisher-id">COM20110419</article-id>
+            <article-categories>
+                <subj-group subj-group-type="heading">
+                    <subject>Article</subject>
+                </subj-group>
+            </article-categories>
+            <title-group>
+                <article-title>Efficient broadcasting using packet history in mobile <italic>ad
+                        hoc</italic> networks</article-title>
+            </title-group>
+            <contrib-group>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Agathos</surname>
+                        <given-names>S.</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="af1">1</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                    <name>
+                        <surname>Papapetrou</surname>
+                        <given-names>E.</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="af1">1</xref>
+                    <xref ref-type="corresp" rid="cor1"/>
+                </contrib>
+            </contrib-group>
+            <aff id="af1">
+                <label>1</label>
+                <addr-line>Department of Computer Science, University of Ioannina, Dourouti Campus,
+                    Ioannina 45110, Greece</addr-line>
+            </aff>
+            <author-notes>
+                <corresp id="cor1">
+                    <italic>E-mail:</italic>
+                    <email>epap@eng.auth.gr</email>
+                </corresp>
+            </author-notes>
+            <pub-date pub-type="ppub">
+                <day>1</day>
+                <month>December</month>
+                <year>2011</year>
+            </pub-date>
+            <volume>0</volume>
+            <issue>0</issue>
+            <fpage>1</fpage>
+            <lpage>10</lpage>
+            <history>
+                <date date-type="received">
+                    <day>3</day>
+                    <month>4</month>
+                    <year>2010</year>
+                </date>
+                <date date-type="rev-recd">
+                    <day>1</day>
+                    <month>8</month>
+                    <year>2011</year>
+                </date>
+            </history>
+            <permissions>
+                <copyright-statement>&copy; The Institution of Engineering and
+                    Technology</copyright-statement>
+                <copyright-year>2011</copyright-year>
+            </permissions>
+            <abstract>
+                <p>Broadcasting is a key component of several networking mechanisms in mobile
+                        <italic>ad hoc</italic> networks. However, its traditional implementation
+                    suffers from resource consumption caused by message redundancy. Several
+                    efficient algorithms have been proposed to tackle this problem. Among them, the
+                    class of algorithms that construct on-demand a connected dominating set, known
+                    as dominant pruning, yields an improved performance. Dominant pruning algorithms
+                    capitalise on neighbourhood information and the previous hop of the broadcast
+                    message in order to minimise the set of nodes that forward a message. The
+                    proposed algorithm makes the observation that all the nodes, visited by a
+                    broadcast message, may be exploited in order to minimise the cost of
+                    broadcasting. The analysis of the proposed algorithm as well as extensive
+                    simulation results confirm the rationale behind the proposed approach and prove
+                    the performance gains.</p>
+            </abstract>
+        </article-meta>
+    </front>
+    <body>
+        <sec id="s1">
+            <label>1</label>
+            <title>Introduction</title>
+            <p>Nowadays the use of wireless mobile <italic>ad hoc</italic> networks (MANETs) for
+                supporting temporary communication needs has been spread in various application
+                scenarios. However, protocols used in wired networks cannot be ported in wireless
+                networks due to mobility and the nature of wireless transmission. In wired networks,
+                topology remains constant whereas in wireless mobile networks nodes can move to any
+                direction producing topology variations. As a result, communication is hard or even
+                impossible to be established. Many wireless networking protocols use broadcasting
+                for adapting to topology variations. For example, many routing [<xref
+                    ref-type="bibr" rid="COM20110419C1">1</xref>] and multicast [<xref
+                    ref-type="bibr" rid="COM20110419C2">2</xref>] algorithms use network layer
+                broadcasting in order to discover a new route or send a route invalidation message.
+                Therefore a cost-effective broadcasting mechanism is required. Flooding is the most
+                popular technique for reliable broadcasting because of its simple implementation.
+                However, a study of pure flooding brought to surface the broadcast storm problem
+                    [<xref ref-type="bibr" rid="COM20110419C3">3</xref>] and made clear that the
+                limited bandwidth and energy resources necessitate the design of efficient
+                communication protocols.</p>
+            <p>Several research groups have dealt with efficient broadcasting. The proposed
+                algorithms can be classified into three categories: (a) heuristic, (b) cluster-based
+                and (c) minimum connected dominating set (CDS) approximations. The objective of all
+                schemes is to eliminate redundant transmissions by minimising the set of nodes that
+                forward packets. Heuristic schemes [<xref ref-type="bibr" rid="COM20110419C3"
+                    >3</xref>&ndash;<xref ref-type="bibr" rid="COM20110419C9">9</xref>] utilise
+                probabilistic parameters that depend mainly on topology-based criteria in order to
+                determine the nodes allowed to forward packets. The drawback of heuristic algorithms
+                is the difficulty in fine-tuning the probabilistic parameters [<xref ref-type="bibr"
+                    rid="COM20110419C10">10</xref>] in order to guarantee message delivery even to
+                poorly connected networks. In cluster-based schemes [<xref ref-type="bibr"
+                    rid="COM20110419C11">11</xref>], broadcasting is performed by cluster heads and
+                gateway nodes. More specifically, cluster heads are responsible for delivering
+                packets inside clusters, whereas gateways propagate packets between clusters.
+                However, in this approach, cluster heads and gateways become points of congestion.
+                As a result, cluster-based broadcasting may not fit with some applications. For
+                example, when flooding is used as part of an on-demand routing protocol, congestion
+                points should be avoided. Furthermore, clusters are susceptible to mobility;
+                therefore their maintenance induces increased cost.</p>
+            <p>Another approach is to use a CDS for broadcasting [<xref ref-type="bibr"
+                    rid="COM20110419C12">12</xref>&ndash;<xref ref-type="bibr" rid="COM20110419C25"
+                    >25</xref>]. The idea is to permit only nodes that belong to the CDS to forward
+                packets. The objective is to reduce the size of the calculated CDS in order to
+                achieve optimal transmission overhead. The CDS may be constructed on a proactive
+                    [<xref ref-type="bibr" rid="COM20110419C12">12</xref>&ndash;<xref
+                    ref-type="bibr" rid="COM20110419C14">14</xref>, <xref ref-type="bibr"
+                    rid="COM20110419C17">17</xref>, <xref ref-type="bibr" rid="COM20110419C18"
+                    >18</xref>] or reactive (on-demand) fashion [<xref ref-type="bibr"
+                    rid="COM20110419C19">19</xref>&ndash;<xref ref-type="bibr" rid="COM20110419C23"
+                    >23</xref>] or may be based on global positioning satellite (GPS) information
+                    [<xref ref-type="bibr" rid="COM20110419C24">24</xref>, <xref ref-type="bibr"
+                    rid="COM20110419C25">25</xref>]. Hybrid approaches that combine heuristic and
+                CDS-based approaches have also been proposed [<xref ref-type="bibr"
+                    rid="COM20110419C26">26</xref>]. Recent works include CDS-based approaches that
+                incorporate network-coding [<xref ref-type="bibr" rid="COM20110419C27">27</xref>]
+                and directional antennas [<xref ref-type="bibr" rid="COM20110419C28">28</xref>]. In
+                this paper, we focus on the subclass of algorithms that construct a CDS on an
+                on-demand basis, known as dominant pruning (DP). This class of algorithms has been
+                identified to provide a flexible and low overhead solution [<xref ref-type="bibr"
+                    rid="COM20110419C29">29</xref>]. In DP, each node <italic>v</italic>, receiving
+                a broadcast message from node <italic>u</italic>, determines a CDS valid for its
+                2-hop neighbourhood by electing 1-hop neighbours that are allowed to forward the
+                message. The election is carried out by a pruning process that exploits the
+                neighbourhood of nodes <italic>v</italic> and <italic>u</italic> in order to
+                minimise the calculated CDS [<xref ref-type="bibr" rid="COM20110419C20">20</xref>,
+                    <xref ref-type="bibr" rid="COM20110419C21">21</xref>]. The approach is based on
+                the observation that the neighbours of <italic>u</italic> should not be considered
+                because they have already received the message.</p>
+            <p>Although the DP approach has been proved to be effective, using only the
+                neighbourhood of the previous hop node clearly provides an underestimation of the
+                nodes that have already received the message. Providing a better estimation should
+                result in performance improvement. In this paper, we make the observation that the
+                set of nodes visited by a message in its travel from the source node to a node
+                    <italic>v</italic> provides a good basis for estimating the nodes that have
+                already received this message. Therefore the set of these nodes may be utilised by
+                the pruning process in order to minimise the constructed CDS. The proposed
+                algorithm, called history-based 2-hop dominant pruning (H2DP), exploits the
+                neighbourhood of each node visited by a broadcast message in order to ameliorate
+                broadcasting. We provide an analysis of H2DP that justifies our approach while an
+                extensive simulation study confirms its improved performance compared to total
+                dominant pruning (TDP), partial dominant pruning (PDP) [<xref ref-type="bibr"
+                    rid="COM20110419C21">21</xref>] and DP [<xref ref-type="bibr"
+                    rid="COM20110419C20">20</xref>] protocols, which are the most representative of
+                the DP category and yield the best performance. Finally, we propose an optimisation
+                of H2DP, called history-based dominant pruning (HDP), which is tailored for sparse
+                and highly mobile networks.</p>
+            <p>The rest of this paper is organised as follows. In Section 2, we provide useful
+                notation and briefly describe DP. Then, in Section 3, H2DP is delineated while its
+                complexity analysis is presented and discussed. In Section 4, we describe the model
+                used in the simulation study, while in Section 5 simulation results are presented
+                and discussed. The optimisation of H2DP for sparse highly mobile networks is
+                presented in Section 6. Finally, in Section 7 useful conclusions are drawn.</p>
+        </sec>
+        <sec id="s2">
+            <label>2</label>
+            <title>Preliminaries</title>
+            <p>H2DP falls into the category of DP algorithms. Therefore before delineating its
+                operation, we formulate the problem of DP. To this end, the following notation is
+                employed: <list list-type="bullet">
+                    <list-item><p><italic>N</italic>(<italic>u</italic>) denotes the set of nodes
+                            that lie 1-hop away from node <italic>u</italic>, including
+                                <italic>u</italic> itself, and is called the 1-hop neighbourhood of
+                                <italic>u</italic>.</p></list-item>
+                    <list-item><p><italic>N</italic>(<italic>N</italic>(<italic>u</italic>)) denotes
+                            the 2-hop neighbourhood of node <italic>u</italic>, that is, the set of
+                            nodes that lie within two hops from node <italic>u</italic>. Clearly,
+                                <italic>N</italic>(<italic>u</italic>)&sube;<italic>N</italic>(<italic>N</italic>(<italic>u</italic>)).</p></list-item>
+                </list></p>
+            <p>In DP, each node <italic>v</italic> maintains knowledge about
+                    <italic>N</italic>(<italic>N</italic>(<italic>v</italic>)) by exchanging with
+                its neighbours periodic hello messages that contain 1-hop neighbourhood information.
+                In order to forward a broadcast message, node <italic>v</italic> calculates a subset
+                of <italic>N</italic>(<italic>v</italic>), called the forwarding set, and piggybacks
+                it on the message. <list list-type="order">
+                    <list-item><p><italic>N</italic>(<italic>u</italic>) denotes the set of nodes
+                            that lie 1-hop away from node <italic>u</italic>, including
+                                <italic>u</italic> itself, and is called the 1-hop neighbourhood of
+                                <italic>u</italic>.</p></list-item>
+                    <list-item><p><italic>N</italic>(<italic>N</italic>(<italic>u</italic>)) denotes
+                            the 2-hop neighbourhood of node <italic>u</italic>, that is, the set of
+                            nodes that lie within two hops from node <italic>u</italic>. Clearly,
+                                <italic>N</italic>(<italic>u</italic>)&sube;<italic>N</italic>(<italic>N</italic>(<italic>u</italic>)).</p></list-item>
+                </list>
+                <statement><label>Definition 1: Forwarding set of node v (Fw(v))</label><p>The
+                        subset of <italic>N</italic>(<italic>v</italic>) consists of neighbours that
+                        are allowed to forward a message.</p></statement></p>
+            <p>In DP&apos;s approach, <italic>Fw</italic>(<italic>v</italic>) is a CDS of the graph
+                    <italic>N</italic>(<italic>N</italic>(<italic>v</italic>)), therefore all nodes
+                in <italic>N</italic>(<italic>N</italic>(<italic>v</italic>)) will receive the
+                message after it is forwarded by all nodes in
+                <italic>Fw</italic>(<italic>v</italic>). Each node
+                    <italic>w</italic>&isin;<italic>Fw</italic>(<italic>v</italic>), after receiving
+                the message, repeats the procedure. The CDS for the entire network consists of the
+                forwarding sets computed locally by each node. The algorithm terminates either when
+                    <italic>w</italic>&notin;<italic>Fw</italic>(<italic>v</italic>) or when node
+                    <italic>w</italic>&isin;<italic>Fw</italic>(<italic>v</italic>) but a
+                termination criterion is met. Two termination criteria have been proposed [<xref
+                    ref-type="bibr" rid="COM20110419C21">21</xref>], namely relayed&sol;unrelayed
+                and marked&sol;unmarked. The latter specifies that node <italic>w</italic> should
+                not forward the message if all nodes in <italic>N</italic>(<italic>w</italic>) have
+                already received it, whereas the former mandates that node <italic>w</italic>
+                forwards a message only once. In this paper we will focus on the
+                relayed&sol;unrelayed criterion since it provides a low-cost implementation compared
+                to the marked&sol;unmarked criterion [<xref ref-type="bibr" rid="COM20110419C21"
+                    >21</xref>]. <list list-type="alpha-lower">
+                    <list-item><p><italic>N</italic>(<italic>u</italic>) denotes the set of nodes
+                            that lie 1-hop away from node <italic>u</italic>, including
+                                <italic>u</italic> itself, and is called the 1-hop neighbourhood of
+                                <italic>u</italic>.</p></list-item>
+                    <list-item><p><italic>N</italic>(<italic>N</italic>(<italic>u</italic>)) denotes
+                            the 2-hop neighbourhood of node <italic>u</italic>, that is, the set of
+                            nodes that lie within two hops from node <italic>u</italic>. Clearly,
+                                <italic>N</italic>(<italic>u</italic>)&sube;<italic>N</italic>(<italic>N</italic>(<italic>u</italic>)).</p></list-item>
+                </list></p>
+            <p>The calculation of <italic>Fw</italic>(<italic>v</italic>) at node
+                <italic>v</italic>, for a packet coming from node <italic>u</italic>, involves two
+                sets, namely <italic>B</italic>(<italic>v</italic>) and
+                    <italic>U</italic>(<italic>v</italic>). <list list-type="alpha-upper">
+                    <list-item><p><italic>N</italic>(<italic>u</italic>) denotes the set of nodes
+                            that lie 1-hop away from node <italic>u</italic>, including
+                                <italic>u</italic> itself, and is called the 1-hop neighbourhood of
+                                <italic>u</italic>.</p></list-item>
+                    <list-item><p><italic>N</italic>(<italic>N</italic>(<italic>u</italic>)) denotes
+                            the 2-hop neighbourhood of node <italic>u</italic>, that is, the set of
+                            nodes that lie within two hops from node <italic>u</italic>. Clearly,
+                                <italic>N</italic>(<italic>u</italic>)&sube;<italic>N</italic>(<italic>N</italic>(<italic>u</italic>)).</p></list-item>
+                </list></p>
+            <statement>
+                <label>Definition 2: Broadcast candidate set of node v (B(v))</label>
+                <p>A subset of <italic>N</italic>(<italic>v</italic>) consists of nodes that are
+                    candidates for forwarding a message.</p>
+            </statement>
+            <statement>
+                <label>Definition 3: Universal set of node v (U(v))</label>
+                <p>A subset of <italic>N</italic>(<italic>N</italic>(<italic>v</italic>)) comprising
+                    nodes that should receive the broadcast message after it is forwarded by all
+                    nodes in <italic>Fw</italic>(<italic>v</italic>). The term universal refers to
+                    the vicinity of <italic>v</italic> and not to the entire network.</p>
+            </statement>
+            <p>The set <italic>B</italic>(<italic>v</italic>) can be seen as a set of sets if each
+                node <italic>w</italic>&isin;<italic>B</italic>(<italic>v</italic>) is replaced by
+                    <italic>N</italic>(<italic>w</italic>)&cap;<italic>U</italic>(<italic>v</italic>).
+                In this respect, the calculation of <italic>Fw</italic>(<italic>v</italic>) can be
+                formulated as a set cover problem, the minimisation version of which is known to be
+                NP-hard [<xref ref-type="bibr" rid="COM20110419C30">30</xref>]. The greedy set cover
+                (GSC) algorithm can be used to produce <italic>Fw</italic>(<italic>v</italic>). GSC
+                is a well-known polynomial time algorithm [<xref ref-type="bibr"
+                    rid="COM20110419C30">30</xref>, <xref ref-type="bibr" rid="COM20110419C31"
+                    >31</xref>] that adopts a greedy approach in order to provide an approximation
+                of the optimal solution. Although all DP algorithms adopt GSC, they take a different
+                approach in calculating <italic>B</italic>(<italic>v</italic>) and
+                    <italic>U</italic>(<italic>v</italic>). This is because the performance of GSC
+                in terms of <italic>Fw</italic>(<italic>v</italic>) minimisation and time complexity
+                depends on the size of <italic>B</italic>(<italic>v</italic>) and
+                    <italic>U</italic>(<italic>v</italic>). The most representative algorithms are
+                as follows: <list list-type="bullet">
+                    <list-item><p>dominant pruning (DP) [<xref ref-type="bibr" rid="COM20110419C20"
+                                >20</xref>], in which
+                                <italic>U</italic>(<italic>v</italic>)&equals;<italic>N</italic>(<italic>N</italic>(<italic>v</italic>))&minus;<italic>N</italic>(<italic>u</italic>);</p></list-item>
+                    <list-item><p>partial dominant pruning (PDP) [<xref ref-type="bibr"
+                                rid="COM20110419C21">21</xref>], where
+                                <italic>U</italic>(<italic>v</italic>)&equals;<italic>N</italic>(<italic>N</italic>(<italic>v</italic>))&minus;(<italic>N</italic>(<italic>v</italic>)&cap;<italic>N</italic>(<italic>u</italic>));</p></list-item>
+                    <list-item><p>total dominant pruning (TDP) [<xref ref-type="bibr"
+                                rid="COM20110419C21">21</xref>] with
+                                <italic>U</italic>(<italic>v</italic>)&equals;<italic>N</italic>(<italic>N</italic>(<italic>v</italic>))&minus;<italic>N</italic>(<italic>N</italic>(<italic>u</italic>)).</p></list-item>
+                </list>
+                <disp-quote><p>At the same time,
+                            <italic>B</italic>(<italic>v</italic>)&equals;<italic>N</italic>(<italic>v</italic>)&minus;<italic>N</italic>(<italic>u</italic>),
+                        for all schemes. TDP defines the smallest
+                            <italic>U</italic>(<italic>v</italic>) set, therefore minimises the
+                        number of elected forward nodes while having the smallest time requirements.
+                        In Section 3.1, we will provide more insight on the performance of DP
+                        schemes.</p></disp-quote></p>
+        </sec>
+        <sec id="s3">
+            <label>3</label>
+            <title>History-based H2DP</title>
+            <p>H2DP falls into the category of algorithms that construct on-demand an approximation
+                of a minimum CDS by utilising the DP approach. Moreover, H2DP introduces the concept
+                of packet history. Let us consider the case that a packet <italic>p</italic> is
+                received by a node <italic>v</italic> after being transmitted by node
+                    <italic>u</italic>. The term packet is used to refer to a copy of a broadcast
+                message. However, in some parts the terms packet and message are used
+                interchangeably. The packet history consists of the nodes that have already received
+                    <italic>p</italic>. More specifically, the history
+                        <italic>H</italic><sup><italic>v</italic></sup>(<italic>p</italic>) is
+                defined as: <list list-type="roman-lower">
+                    <list-item><p><italic>N</italic>(<italic>u</italic>) denotes the set of nodes
+                            that lie 1-hop away from node <italic>u</italic>, including
+                                <italic>u</italic> itself, and is called the 1-hop neighbourhood of
+                                <italic>u</italic>.</p></list-item>
+                    <list-item><p><italic>N</italic>(<italic>N</italic>(<italic>u</italic>)) denotes
+                            the 2-hop neighbourhood of node <italic>u</italic>, that is, the set of
+                            nodes that lie within two hops from node <italic>u</italic>. Clearly,
+                                <italic>N</italic>(<italic>u</italic>)&sube;<italic>N</italic>(<italic>N</italic>(<italic>u</italic>)).</p></list-item>
+                </list>
+                <list list-type="roman-upper">
+                    <list-item><p><italic>N</italic>(<italic>u</italic>) denotes the set of nodes
+                            that lie 1-hop away from node <italic>u</italic>, including
+                                <italic>u</italic> itself, and is called the 1-hop neighbourhood of
+                                <italic>u</italic>.</p></list-item>
+                    <list-item><p><italic>N</italic>(<italic>N</italic>(<italic>u</italic>)) denotes
+                            the 2-hop neighbourhood of node <italic>u</italic>, that is, the set of
+                            nodes that lie within two hops from node <italic>u</italic>. Clearly,
+                                <italic>N</italic>(<italic>u</italic>)&sube;<italic>N</italic>(<italic>N</italic>(<italic>u</italic>)).</p></list-item>
+                </list>
+                <list list-type="simple">
+                    <list-item><p><italic>N</italic>(<italic>u</italic>) denotes the set of nodes
+                            that lie 1-hop away from node <italic>u</italic>, including
+                                <italic>u</italic> itself, and is called the 1-hop neighbourhood of
+                                <italic>u</italic>.</p></list-item>
+                    <list-item><p><italic>N</italic>(<italic>N</italic>(<italic>u</italic>)) denotes
+                            the 2-hop neighbourhood of node <italic>u</italic>, that is, the set of
+                            nodes that lie within two hops from node <italic>u</italic>. Clearly,
+                                <italic>N</italic>(<italic>u</italic>)&sube;<italic>N</italic>(<italic>N</italic>(<italic>u</italic>)).</p></list-item>
+                </list></p>
+            <statement>
+                <label>Definition 4: Packet history H<sup>v</sup>(p)</label>
+                <p>The set of nodes that have received packet <italic>p</italic> in its travel along
+                        <italic>p</italic><sup><italic>v</italic></sup>(<italic>p</italic>) while
+                    the packet route
+                        <italic>p</italic><sup><italic>v</italic></sup>(<italic>p</italic>) is
+                    defined as:</p>
+            </statement>
+            <statement>
+                <label>Definition 5: Packet route pv(p)</label>
+                <p>The set of forward nodes that packet <italic>p</italic> has visited from the
+                    source node <italic>s</italic> to node <italic>v</italic>, including
+                        <italic>v</italic>.</p>
+            </statement>
+            <p>According to H2DP&apos;s approach, reducing the size of the universal set
+                    <italic>U</italic>(<italic>v</italic>) holds a central role in minimising the
+                number of elected forwarding nodes and therefore in alleviating the cost of
+                broadcasting. To this end, H2DP makes the observation that
+                    <italic>U</italic>(<italic>v</italic>) may contain nodes that have already
+                received <italic>p</italic> (i.e. they belong to the packet&apos;s history),
+                therefore such nodes may be eliminated from <italic>U</italic>(<italic>v</italic>).
+                More specifically, upon reception of <italic>p</italic> coming from node
+                    <italic>u</italic>, <italic>v</italic> examines the forwarding list
+                    <italic>Fw</italic>(<italic>u</italic>) which is piggybacked on
+                    <italic>p</italic>&apos;s header. If
+                    <italic>v</italic>&notin;<italic>Fw</italic>(<italic>u</italic>) then the packet
+                is discarded. Otherwise, <italic>v</italic> calculates
+                    <italic>B</italic>(<italic>v</italic>)&equals;<italic>N</italic>(<italic>v</italic>)&minus;<italic>N</italic>(<italic>u</italic>)
+                and <disp-formula id="COM20110419M1">
+                    <tex-math notation="TeX"
+                        ><![CDATA[$$U\lpar v\rpar =N\lpar N\lpar v\rpar \rpar - H^u \lpar p\rpar \eqno (1)$$]]></tex-math>
+                    <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM20110419M1"/>
+                </disp-formula> and constructs <italic>Fw</italic>(<italic>v</italic>) by utilising
+                GSC. In the special case that <italic>v</italic> is the source node
+                    <italic>s</italic>,
+                    <italic>B</italic>(<italic>s</italic>)&equals;<italic>N</italic>(<italic>s</italic>)
+                and
+                    <italic>U</italic>(<italic>s</italic>)&equals;<italic>N</italic>(<italic>N</italic>(<italic>s</italic>)).
+                Determining the nodes in packet history is clearly very important for the
+                performance of H2DP. The simplest approach is to consider only the nodes in
+                    <italic>P</italic><sup><italic>u</italic></sup>(<italic>p</italic>), that is,
+                    <italic>H</italic><sup><italic>u</italic></sup>(<italic>p</italic>)&equals;<italic>P</italic><sup><italic>u</italic></sup>(<italic>p</italic>).
+                This approach has been proposed in the literature of non-dominant pruning schemes
+                    [<xref ref-type="bibr" rid="COM20110419C32">32</xref>] on the basis that only
+                those nodes are proved to have received <italic>p</italic>. However, this approach
+                provides an underestimation of the nodes that have actually received the packet and
+                has a negligible impact on reducing <italic>U</italic>(<italic>v</italic>) since
+                usually
+                    &verbar;<italic>P</italic><sup><italic>u</italic></sup>(<italic>p</italic>)&verbar;&equals;&verbar;<italic>U</italic>(<italic>v</italic>)&verbar;.
+                On the other hand, H2DP makes the observation that each node <italic>w</italic> in
+                    <italic>P</italic><sup><italic>u</italic></sup>(<italic>p</italic>) is a
+                forwarding node. Therefore all nodes in
+                    <italic>N</italic>(<italic>N</italic>(<italic>w</italic>)) have been scheduled
+                to receive the packet by the execution of the algorithm at <italic>w</italic>.
+                Consequently, in H2DP <disp-formula id="COM20110419M2">
+                    <tex-math notation="TeX"
+                        ><![CDATA[$$H^u \lpar p\rpar =\bigcup\limits_{\forall w \in P^u \lpar p\rpar } N\lpar N\lpar w\rpar \rpar \eqno(2)$$]]></tex-math>
+                    <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM20110419M2"/>
+                </disp-formula></p>
+            <p>After calculating <italic>Fw</italic>(<italic>v</italic>), node <italic>v</italic>
+                updates packet history <disp-formula id="COM20110419M3">
+                    <tex-math notation="TeX"
+                        ><![CDATA[$$H^v \lpar p\rpar =H^u \lpar p\rpar \cup N\lpar N\lpar v\rpar \rpar \eqno(3)$$]]></tex-math>
+                    <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM20110419M3"/>
+                </disp-formula> and piggybacks <italic>Fw</italic>(<italic>v</italic>) and
+                    <italic>H</italic><sup><italic>v</italic></sup>(<italic>p</italic>) on the
+                packet&apos;s header. The algorithm terminates either when <italic>p</italic> has
+                been forwarded by <italic>v</italic> in the past or when
+                    <italic>v</italic>&notin;<italic>Fw</italic>(<italic>u</italic>).</p>
+            <p>The concept of history in H2DP and its impact on the determination of
+                    <italic>U</italic>(<italic>v</italic>) is depicted in Fig.&nbsp;<xref
+                    ref-type="fig" rid="COM20110419F1">1</xref><italic>a</italic>. In H2DP, node
+                    <italic>v</italic> makes the assumption that, given a node
+                    <italic>w</italic>&isin;<italic>P</italic><sup><italic>u</italic></sup>(<italic>p</italic>),
+                all nodes in <italic>N</italic>(<italic>N</italic>(<italic>w</italic>)) have
+                received packet <italic>p</italic>. This is the same assumption as the one made by
+                TDP if <italic>w</italic> is the previous hop node (Fig.&nbsp;<xref ref-type="fig"
+                    rid="COM20110419F1">1</xref><italic>b</italic>). However, H2DP results in a
+                smaller universal set <italic>U</italic>(<italic>v</italic>) because it makes the
+                aforementioned assumption
+                        &forall;<italic>w</italic>&isin;<italic>P</italic><sup><italic>u</italic></sup>(<italic>p</italic>).
+                The correctness of H2DP&apos;s approach can be proved by the following theorem:</p>
+            <fig id="COM20110419F1">
+                <label>Figure 1</label>
+                <caption>
+                    <p>
+                        <italic>Illustrations</italic>
+                    </p>
+                    <p><italic>a</italic> H2DP</p>
+                    <p><italic>b</italic> TDP</p>
+                    <p>When executed at a node <italic>v</italic>. Arrows indicate the path followed
+                        by the broadcast message</p>
+                </caption>
+                <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM2011041901"/>
+            </fig>
+            <p>
+                <statement>
+                    <label>Theorem 1</label>
+                    <p>If a node
+                            <italic>w</italic>&isin;<italic>N</italic>(<italic>N</italic>(<italic>v</italic>))
+                        and
+                            <italic>w</italic>&isin;<italic>H</italic><sup><italic>u</italic></sup>(<italic>p</italic>)
+                        then <italic>w</italic> can be excluded from
+                            <italic>U</italic>(<italic>v</italic>).</p>
+                </statement>
+                <statement>
+                    <label>Proof</label>
+                    <p>Since node
+                            <italic>w</italic>&isin;<italic>H</italic><sup><italic>u</italic></sup>(<italic>p</italic>)
+                        this means that there exists a node
+                            <italic>f</italic>&isin;<italic>P</italic><sup><italic>u</italic></sup>(<italic>p</italic>)
+                        for which <italic>w</italic>&isin;<italic>N</italic>(<italic>f</italic>) or
+                            <italic>w</italic>&isin;<italic>N</italic>(<italic>N</italic>(<italic>f</italic>)).
+                        In the first case the transmission by <italic>f</italic>, which is a forward
+                        node, delivers the packet to <italic>w</italic>. In the second case,
+                            <italic>f</italic> has elected a forwarder for covering
+                            <italic>w</italic> therefore <italic>w</italic> receives the packet
+                        after the transmission by this forwarder. In the special case that
+                            <italic>f</italic> is the previous hop node
+                            (<italic>f</italic>&equals;<italic>u</italic>) and node
+                            <italic>v</italic> is elected as the forwarder for covering
+                            <italic>w</italic> this means that
+                            <italic>w</italic>&isin;<italic>N</italic>(<italic>v</italic>),
+                        therefore the transmission by <italic>v</italic> delivers the message to
+                            <italic>w</italic>. If the termination criterion at <italic>v</italic>
+                        has already been met (<italic>v</italic> has already forwarded
+                            <italic>p</italic>) this means that all nodes in
+                            <italic>N</italic>(<italic>v</italic>) (including <italic>w</italic>)
+                        have already received the packet.&emsp;&emsp;&emsp;&squ;</p>
+                </statement>
+            </p>
+            <p>In the following, it will be shown that reducing
+                    <italic>U</italic>(<italic>v</italic>) allows H2DP to minimise the number of
+                nodes that need to forward a message while at the same time the algorithm is
+                executed in a smaller amount of time. Both of these characteristics are very
+                important in the energy constrained context of a MANET. Moreover, reducing the
+                number of transmissions economises on scarce network resources, such as bandwidth,
+                and alleviates contention and&sol;or congestion on the wireless medium.</p>
+        </sec>
+        <sec id="s3b">
+            <label>3.1</label>
+            <title>Complexity analysis</title>
+            <p>All DP algorithms, including H2DP, rely on GSC to implement the forwarder selection
+                process. GSC provides an approximation of the optimal solution since the set cover
+                problem is known to be NP-hard [<xref ref-type="bibr" rid="COM20110419C30"
+                >30</xref>]. Consequently, all algorithms inherit the approximation nature of GSC.
+                However, the performance and time complexity of each DP scheme depends on the sets
+                    <italic>B</italic> and <italic>U</italic> that each algorithm provides as input
+                to GSC. In the following, we analyse the performance of H2DP when executed at a node
+                    <italic>v</italic> and compare it with other DP schemes.</p>
+            <p><italic>Time complexity:</italic> GSC is a polynomial time algorithm known to run in
+                time [<xref ref-type="bibr" rid="COM20110419C30">30</xref>] <disp-formula
+                    id="COM20110419M4">
+                    <tex-math notation="TeX"
+                        ><![CDATA[$$O\lpar \vert U\lpar v\rpar \vert \vert B\lpar v\rpar \vert \min \lcub \vert U\lpar v\rpar \vert \comma \; \vert B\lpar v\rpar \vert \rcub \rpar \eqno(4)$$]]></tex-math>
+                    <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM20110419M4"/>
+                </disp-formula></p>
+            <p>However, a linear time implementation is possible [<xref ref-type="bibr"
+                    rid="COM20110419C30">30</xref>, <xref ref-type="bibr" rid="COM20110419C31"
+                    >31</xref>] that runs in time <disp-formula id="COM20110419M5">
+                    <tex-math notation="TeX"
+                        ><![CDATA[$$O\left({\sum\limits_{\forall v_i \in B\lpar v\rpar } \vert N\lpar v_i \rpar \cap U\lpar v\rpar \vert } \right)\eqno(5)$$]]></tex-math>
+                    <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM20110419M5"/>
+                </disp-formula>
+                <statement><label>Theorem 2</label><p>H2DP has an improved time complexity compared
+                        to TDP, PDP and DP.</p></statement>
+                <statement><label>Proof</label><p>Let us define by
+                            <italic>U</italic><sup>H</sup>(<italic>v</italic>) and
+                            <italic>U</italic><sup>T</sup>(<italic>v</italic>) the universal sets
+                        for H2DP and TDP, respectively. In the following, we will use the
+                        superscripts H, T, P and D to indicate that the referenced quantity refers
+                        to H2DP, TDP, PDP and DP, respectively. It is clear from (1) that
+                            <italic>U</italic><sup>H</sup>(<italic>v</italic>)&sube;<italic>U</italic><sup>T</sup>(<italic>v</italic>)
+                        because
+                            <italic>N</italic>(<italic>N</italic>(<italic>u</italic>))&sube;<italic>H</italic><sup><italic>u</italic></sup>(<italic>p</italic>).
+                        Since <italic>B</italic>(<italic>v</italic>) is common for both schemes
+                            <disp-formula id="COM20110419M6">
+                            <tex-math notation="TeX"
+                                ><![CDATA[$$\lpar N\lpar v_i \rpar \cap U^H \lpar v\rpar \rpar \subseteq \lpar N\lpar v_i \rpar \cap U^T \lpar v\rpar \rpar \comma \; \quad \forall v_i \in B\lpar v\rpar \eqno(6)$$]]></tex-math>
+                            <graphic xmlns:xlink="http://www.w3.org/1999/xlink"
+                                xlink:href="COM20110419M6"/>
+                        </disp-formula></p></statement></p>
+            <p>Therefore
+                    &verbar;(<italic>N</italic>(<italic>v</italic><sub><italic>i</italic></sub>)&cap;<italic>U</italic><sup>H</sup>(<italic>v</italic>))&verbar;&le;&verbar;(<italic>N</italic>(<italic>v</italic><sub><italic>i</italic></sub>)&cap;<italic>U</italic><sup>T</sup>(<italic>v</italic>))&verbar;,
+                    &forall;<italic>v</italic><sub><italic>i</italic></sub>&isin;<italic>B</italic>(<italic>v</italic>)
+                and based on (5) it is clear that the time complexity of H2DP is better than that of
+                TDP. Similarly, it can be proved that H2DP has an improved time complexity compared
+                to PDP and DP.&emsp;&emsp;&emsp;&squ;</p>
+            <p><italic>Forwarding complexity:</italic> The cost of broadcasting is related to the
+                number of elected forwarding nodes. GSC is used for the election process, providing
+                an approximation of the optimal solution with an approximation factor &rho; known to
+                be [<xref ref-type="bibr" rid="COM20110419C30">30</xref>] <disp-formula
+                    id="COM20110419M7">
+                    <tex-math notation="TeX"
+                        ><![CDATA[$$\rho=H\lpar \max \lcub \vert N\lpar v_i \rpar \cap U\lpar v\rpar \vert \colon \forall v_i \in B\lpar v\rpar \rcub \rpar \eqno(7)$$]]></tex-math>
+                    <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM20110419M7"/>
+                </disp-formula> where <inline-formula><tex-math notation="TeX"
+                        ><![CDATA[$H\lpar k\rpar =\Sigma _{i=1}^k \lpar 1/i\rpar $]]></tex-math><inline-graphic
+                        xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM20110419IM1"
+                    /></inline-formula>. Since <inline-formula><tex-math notation="TeX"
+                        ><![CDATA[$\Sigma _{i=1}^k \lpar 1/i\rpar \leq \ln \lpar k+1\rpar $]]></tex-math><inline-graphic
+                        xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM20110419IM2"
+                    /></inline-formula> and
+                        &verbar;<italic>N</italic>(<italic>v</italic><sub><italic>i</italic></sub>)&cap;<italic>U</italic>(<italic>v</italic>)&verbar;&le;&verbar;<italic>U</italic>(<italic>v</italic>)&verbar;,
+                    &forall;<italic>v</italic><sub><italic>i</italic></sub>&isin;<italic>B</italic>(<italic>v</italic>),
+                the approximation factor &rho; can also be expressed as [<xref ref-type="bibr"
+                    rid="COM20110419C30">30</xref>] <disp-formula id="COM20110419M8">
+                    <tex-math notation="TeX"
+                        ><![CDATA[$$\rho=\ln \lpar \vert U\lpar v\rpar \vert +1\rpar \eqno(8)$$]]></tex-math>
+                    <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM20110419M8"/>
+                </disp-formula></p>
+            <p>Equations (<xref ref-type="disp-formula" rid="COM20110419M7">7</xref>) and (<xref
+                    ref-type="disp-formula" rid="COM20110419M8">8</xref>) prove that the performance
+                of each DP scheme at node <italic>v</italic> depends on the determination of
+                    <italic>B</italic>(<italic>v</italic>) and
+                <italic>U</italic>(<italic>v</italic>). <statement><label>Theorem 3</label><p>The
+                        approximation factor &rho;<sup>H</sup> of H2DP is better or equal to the
+                        approximation factor &rho;<sup>T</sup> of TDP.</p></statement>
+                <statement><label>Proof</label><p>In the case that node <italic>v</italic> is the
+                        source node <italic>s</italic> or
+                            <italic>v</italic>&isin;<italic>N</italic>(<italic>s</italic>),
+                            <italic>U</italic>(<italic>s</italic>) is the same for both schemes.
+                        More specifically,
+                            <italic>U</italic><sup>H</sup>(<italic>s</italic>)&equals;<italic>U</italic><sup>T</sup>(<italic>s</italic>)&equals;<italic>N</italic>(<italic>N</italic>(<italic>s</italic>)),
+                        whereas
+                            <italic>U</italic><sup>H</sup>(<italic>v</italic>)&equals;<italic>U</italic><sup>T</sup>(<italic>v</italic>)&equals;<italic>N</italic>(<italic>N</italic>(<italic>v</italic>))&minus;<italic>N</italic>(<italic>N</italic>(<italic>s</italic>)),
+                            &forall;&ne;<italic>s</italic>&isin;<italic>N</italic>(<italic>s</italic>).
+                        Consequently, according to (7), the approximation factor for both schemes is
+                        the same. On the contrary, when the DP algorithm is executed at any node
+                            <italic>v</italic>&notin;<italic>N</italic>(<italic>s</italic>) for a
+                        packet <italic>p</italic> received from node <italic>u</italic> then
+                            <disp-formula id="COM20110419M9">
+                            <tex-math notation="TeX"
+                                ><![CDATA[$$\eqalign{U^{\rm H} \lpar v\rpar & =N\lpar N\lpar v\rpar \rpar - H^u \lpar p\rpar \cr & \subseteq N\lpar N\lpar v\rpar \rpar - N\lpar N\lpar u\rpar \rpar =U^{\rm T} \lpar v\rpar } \eqno(9)$$]]></tex-math>
+                            <graphic xmlns:xlink="http://www.w3.org/1999/xlink"
+                                xlink:href="COM20110419M9"/>
+                        </disp-formula></p></statement></p>
+            <p>Consequently,
+                    &verbar;<italic>U</italic><sup>H</sup>(<italic>v</italic>)&verbar;&le;&verbar;<italic>U</italic><sup>T</sup>(<italic>v</italic>)&verbar;
+                and according to (7) &rho;<sup>H</sup>&le;&rho;<sup>T</sup>. Similarly, it can also
+                be proved that H2DP exhibits a better approximation factor than that of PDP and
+                DP.&emsp;&emsp;&emsp;&squ;</p>
+        </sec>
+        <sec id="s3c">
+            <label>3.2</label>
+            <title>Representation of packet history and neighbourhood information</title>
+            <p>The method used for representing the packet history is a key performance factor of
+                H2DP. The reason is twofold. On the one hand, the history size affects the packet
+                size. The simulation study presented in the following confirms that even if a raw
+                representation method is used (i.e. each node is represented by its address), H2DP
+                produces packets of reasonable size even for large networks. However, reducing the
+                packet size is a challenging objective, which should be combined with the
+                alleviation of computational overheads related to operations on the packet history
+                and&sol;or the universal set such as search, addition and deletion. Equations (<xref
+                    ref-type="disp-formula" rid="COM20110419M1">1</xref>)&ndash;(<xref
+                    ref-type="disp-formula" rid="COM20110419M3">3</xref>) indicate that a node is
+                frequently involved in such operations. For example, suppose that a node
+                    <italic>v</italic> receives a packet <italic>p</italic> from node
+                    <italic>u</italic>. The calculation of <italic>U</italic>(<italic>v</italic>)
+                involves searching whether each node
+                    <italic>w</italic>&isin;<italic>N</italic>(<italic>N</italic>(<italic>v</italic>))
+                is a member of <italic>H</italic><sup><italic>u</italic></sup>(<italic>p</italic>).
+                Such computational overheads also exist in all other DP schemes but have never been
+                addressed.</p>
+            <p>It is clear that a more elaborate representation method for packet history and
+                possibly for neighbourhood information should provide size minimisation as well as
+                fast search, addition and deletion operations. To this end, we propose the use of
+                bit arrays or bit vectors. Bit arrays are the simplest way to implement direct
+                addressing [<xref ref-type="bibr" rid="COM20110419C30">30</xref>] in which
+                dictionary operations are executed in <italic>O</italic>(1) time. In our
+                implementation, a bit vector of size <italic>S</italic> may be used to represent a
+                set of <italic>S</italic> nodes. A bit set to 1 indicates that a node is a member of
+                the set. The network addressing scheme, for example, IP addressing, may be used to
+                provide one-to-one mapping of node addresses to bit vector indexes. This mapping can
+                be predefined if all possible members of the set are known. It is clear that all
+                network nodes may be members of a packet history. Therefore in order to use bit
+                vectors, the size of the vector <italic>S</italic> should be equal to the maximum
+                network size, that is, <italic>S</italic>&equals;<italic>N</italic>. This results in
+                a requirement of <italic>N</italic> bits for a network of <italic>N</italic> nodes.
+                For a 200-node network, the required history size is 25 bytes which is rather small;
+                only a set of six nodes could be represented with the same amount of bytes if IP
+                addressing is assumed and the whole address is stored. Therefore bit arrays may also
+                provide efficient compression of packet history.</p>
+        </sec>
+        <sec id="s4">
+            <label>4</label>
+            <title>Simulation environment</title>
+            <sec id="s4a">
+                <label>4.1</label>
+                <title>Set up and methodology</title>
+                <p>The performance of H2DP is assessed through comparison with TDP, PDP and DP
+                    algorithms which are known to yield the best performance in the DP class of
+                    algorithms. In broadcast algorithms, like those investigated in this paper,
+                    simulating realistic network conditions is of great importance. This is because
+                    packets are transmitted through MAC layer broadcasts, therefore packet
+                    collisions result in packet drops. Collisions also have an impact on hello
+                    messages and therefore affect the accuracy of the neighbourhood information.
+                    Furthermore, congestion may also result in packet losses and&sol;or delay. In
+                    this work, we used the medium access control of IEEE 802.11, provided in the CMU
+                    extension of ns2 [<xref ref-type="bibr" rid="COM20110419C33">33</xref>], in
+                    order to approximate realistic network conditions. Moreover, we used
+                    configurations of high mobility in order to assess the resilience of the
+                    algorithms to stale neighbourhood information. All presented results were
+                    obtained as average values over 20 independent simulation runs. The simulation
+                    time for each run was 900&emsp14;s. The confidence level for all reported
+                    results is 95&percnt;. The simulation parameters are summarised in
+                        Table&nbsp;<xref ref-type="table" rid="COM20110419TB1">1</xref>.</p>
+                <table-wrap id="COM20110419TB1" position="float">
+                    <label>
+                        <bold>Table&nbsp;1</bold>
+                    </label>
+                    <caption>
+                        <p>Simulation parameters</p>
+                    </caption>
+                    <table frame="hsides" rules="groups">
+                        <colgroup>
+                            <col align="left"/>
+                            <col align="center"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th align="left"/>
+                                <th align="center"/>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>simulation time</td>
+                                <td>900&emsp14;s</td>
+                            </tr>
+                            <tr>
+                                <td>number of trials</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>confidence level</td>
+                                <td>95&percnt;</td>
+                            </tr>
+                            <tr>
+                                <td>number of nodes (<italic>N</italic>)</td>
+                                <td>50&ndash;200</td>
+                            </tr>
+                            <tr>
+                                <td>maximum speed</td>
+                                <td>1&ndash;20&emsp14;m&sol;s</td>
+                            </tr>
+                            <tr>
+                                <td>pause time in RW</td>
+                                <td>0&emsp14;s</td>
+                            </tr>
+                            <tr>
+                                <td>transmission range (<italic>R</italic>)</td>
+                                <td>250&emsp14;m</td>
+                            </tr>
+                            <tr>
+                                <td>bandwidth</td>
+                                <td>2&emsp14;Mb&sol;s</td>
+                            </tr>
+                            <tr>
+                                <td>broadcast sessions</td>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>broadcast rate (&lambda;)</td>
+                                <td>0.1&ndash;2&emsp14;pkts&sol;s</td>
+                            </tr>
+                            <tr>
+                                <td>message size</td>
+                                <td>256&emsp14;bytes</td>
+                            </tr>
+                            <tr>
+                                <td>hello interval
+                                    (<italic>t</italic><sub><italic>H</italic></sub>)</td>
+                                <td>0.5&ndash;5&emsp14;s</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </table-wrap>
+            </sec>
+            <sec id="s4b">
+                <label>4.2</label>
+                <title>Network model</title>
+                <p>The network consists of <italic>N</italic> nodes that roam in a square area. The
+                    transmission range of each node is set to <italic>R</italic>&equals;250&emsp14;m
+                    while the nominal bitrate is set to 2&emsp14;Mb&sol;s. Mobility scenarios have
+                    been produced using the well-known random waypoint (RW) algorithm and the
+                    perfect simulation model [<xref ref-type="bibr" rid="COM20110419C34">34</xref>]
+                    in order to avoid transient artefacts in nodes&rsquo; movement. We consider a
+                    &lsquo;sparse&rsquo; and a &lsquo;dense&rsquo; network topology. The
+                    &lsquo;sparse&rsquo; topology corresponds to a low-density network in which a
+                    node has only one neighbour in the worst case while the average number of
+                    neighbours is 15. On the other hand, in the &lsquo;dense&rsquo; network topology
+                    the node density is twice the density of the &lsquo;sparse&rsquo; topology, that
+                    is, the average number of neighbours is 30. In order to control the node density
+                    and produce &lsquo;sparse&rsquo; and &lsquo;dense&rsquo; topologies, we used
+                    square roaming areas of different size depending on the number of nodes
+                        <italic>N</italic>. The actual size of the roaming area is derived through
+                    the node distribution proposed for the RW algorithm in [<xref ref-type="bibr"
+                        rid="COM20110419C35">35</xref>] and the calculation of node degree is
+                    proposed in [<xref ref-type="bibr" rid="COM20110419C36">36</xref>].</p>
+            </sec>
+            <sec id="s4c">
+                <label>4.3</label>
+                <title>Packet generation</title>
+                <p>Thirty broadcast sessions are considered in total, each one stemming from a
+                    different source node. Each session periodically produces broadcast messages at
+                    a rate &lambda;. The size of each broadcast message has been set to 256
+                    bytes.</p>
+            </sec>
+            <sec id="s4d">
+                <label>4.4</label>
+                <title>Algorithm-specific parameters</title>
+                <p>Each node maintains 2-hop neighbourhood information by periodically exchanging
+                    hello messages with an interval of
+                        <italic>t</italic><sub><italic>H</italic></sub> seconds. A neighbour is
+                    removed if a hello message has not been received within
+                            2<italic>t</italic><sub><italic>H</italic></sub> seconds since the last
+                    update. An important issue related to broadcast schemes is the jittering
+                    required for avoiding collisions of duplicate packets [<xref ref-type="bibr"
+                        rid="COM20110419C29">29</xref>]. In order to have a fair comparison of all
+                    algorithms, we chose a random jittering scheme with the maximum jitter set to
+                    0.1&emsp14;s. Regarding history representation, the optimisation presented in
+                    Section 3.2 has not been used in order to capture the worst-case performance of
+                    H2DP. Instead, we used 4&emsp14;bytes for representing a node in the forwarding
+                    set or in the packet history. This size is sufficient for storing addresses even
+                    if an IP-based addressing scheme is considered.</p>
+            </sec>
+        </sec>
+        <sec id="s5">
+            <label>5</label>
+            <title>Simulation study and analysis</title>
+            <p>In the first experiment, we evaluate the performance of H2DP against the network size
+                in dense and sparse networks under low mobility (1&emsp14;m&sol;s) and traffic load
+                (0.2&emsp14;pkts&sol;s). Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F2">2</xref>
+                illustrates the number of forward nodes, that is, the average number of nodes that
+                forward a broadcast message, for all the investigated algorithms. H2DP outperforms
+                all other schemes for all network sizes in both the dense and the sparse topologies.
+                H2DP&apos;s performance in small networks (less than 75 nodes) is almost equivalent
+                to that of TDP (and PDP), especially in the case of dense networks. The reason is
+                that most nodes are within two hops from the source node <italic>s</italic>. As a
+                result, H2DP works mainly in the first hop, therefore the history of a packet
+                    <italic>p</italic> at a node
+                    <italic>v</italic>&isin;<italic>N</italic>(<italic>s</italic>) consists only of
+                    <italic>N</italic>(<italic>N</italic>(<italic>s</italic>)), that is,
+                    <italic>H</italic><sup><italic>s</italic></sup>(<italic>p</italic>)&equiv;<italic>N</italic>(<italic>N</italic>(<italic>s</italic>)).
+                In this case, according to (1), the operation of H2DP is identical to that of TDP
+                and close to the operation of PDP. When the network size increases, many nodes are
+                located more than one hop away from <italic>s</italic>, that is, a route
+                    <italic>P</italic><sup><italic>v</italic></sup>(<italic>p</italic>) to a node
+                    <italic>v</italic> contains more hops on average. Therefore according to (2),
+                the packet history is populated by more nodes. Consequently,
+                    <italic>U</italic>(<italic>v</italic>) is effectively reduced and the
+                approximation factor of GSC improves (see (7)), resulting in reduced forwarding
+                sets. On the other hand, the improvement of TDP and PDP compared to DP is smaller
+                than that of H2DP and remains approximately the same for all network sizes. This can
+                be ascribed to the strategy of both algorithms to only take advantage of the
+                previous hop <italic>u</italic> in order to minimise the universal set at node
+                    <italic>v</italic> (TDP only uses
+                    <italic>N</italic>(<italic>N</italic>(<italic>u</italic>)) whereas PDP utilises
+                    <italic>N</italic>(<italic>N</italic>(<italic>v</italic>)&cap;<italic>N</italic>(<italic>u</italic>))).
+                This strategy cannot take advantage of the longer paths that a packet travels as the
+                network size increases. TDP reduces forward nodes by &sim;22&percnt; compared to DP;
+                PDP improves by &sim;14&percnt; whereas H2DP manages a gain up to &sim;46&percnt;.
+                The improvement compared to DP is less intense for all schemes in the sparse
+                topology (&sim;26, &sim;14 and &sim;10&percnt; for H2DP, TDP and PDP, respectively)
+                due to the reduced neighbourhood size.</p>
+            <fig id="COM20110419F2">
+                <label>Figure 2</label>
+                <caption>
+                    <p><italic>Number of forward nodes against network size (1&emsp14;m&sol;s,
+                            0.2&emsp14;pkts&sol;s,
+                            t<sub>H</sub>&equals;2&emsp14;s)</italic>#<italic>a</italic> Dense
+                        topology</p>
+                    <p><italic>b</italic> Sparse topology</p>
+                </caption>
+                <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM2011041902"/>
+            </fig>
+            <p>It must be noted that the tradeoff for the improvement witnessed in TDP, PDP and H2DP
+                with respect to DP is the increased computational and space requirements due to the
+                extensive use of 2-hop neighbourhood information. However, the representation method
+                proposed in Section 3.2 may be used in order to effectively alleviate the space as
+                well as the computational requirements related to the use of 2-hop
+                neighbourhood.</p>
+            <p>Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F3">3</xref> depicts the delivery
+                ratio, that is, the percentage of network nodes that receive a broadcast message.
+                This metric is of great importance in contention-based and mobile networks. All
+                schemes present a high delivery ratio near to 100&percnt; for small dense networks
+                    (Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F3">3</xref><italic>a</italic>).
+                However, in large dense networks there is a rapid performance degradation because of
+                congestion and packet collisions. Since the packet generation rate is relatively low
+                (only 0.2&emsp14;pkts&sol;s), congestion is the result of packet redundancy produced
+                by the algorithms. This is confirmed by Fig.&nbsp;<xref ref-type="fig"
+                    rid="COM20110419F4">4</xref> where the packets received per node, that is, the
+                average number of duplicate packets of a broadcast message received by a node, is
+                illustrated. Indeed, more duplicate packets are produced for large dense networks
+                since there are more forwarding nodes (Fig.&nbsp;<xref ref-type="fig"
+                    rid="COM20110419F2">2</xref><italic>a</italic>) and more disjoint paths through
+                which packet duplicates may reach a node. In small networks, both H2DP and TDP
+                achieve better delivery ratio compared to DP since both protocols minimise
+                congestion. On the contrary, in large networks TDP fails to reduce congestion to the
+                same extent as H2DP does (Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F5"
+                    >5</xref>). The same applies to DP and PDP; however, their increased packet
+                redundancy compensates for packet losses due to congestion and results in a slower
+                degradation of the delivery ratio compared to TDP. However, this is not enough to
+                outperform H2DP which effectively reduces network load even for large networks and
+                achieves the highest delivery ratio. Similar performance characteristics are
+                witnessed for sparse networks. However, differences are smoothed out since the
+                reduced connectivity induces less congestion for all schemes. Finally, concerning
+                    Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F4">4</xref>, we should point out
+                that packet redundancy is related to the node&apos;s energy consumption since packet
+                reception and processing involves an energy cost. Consequently, Fig.&nbsp;<xref
+                    ref-type="fig" rid="COM20110419F4">4</xref> reveals another advantage of
+                H2DP.</p>
+            <fig id="COM20110419F3">
+                <label>Figure 3</label>
+                <caption>
+                    <p><italic>Delivery ratio against network size (1&emsp14;m&sol;s,
+                            0.2&emsp14;pkts&sol;s,
+                            t<sub>H</sub>&equals;2&emsp14;s)</italic>#<italic>a</italic> Dense
+                        topology</p>
+                    <p><italic>b</italic> Sparse topology</p>
+                </caption>
+                <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM2011041903"/>
+            </fig>
+            <fig id="COM20110419F4">
+                <label>Figure 4</label>
+                <caption>
+                    <p>
+                        <italic>Number of packets per node against network size for both dense and
+                            sparse topologies</italic>
+                    </p>
+                </caption>
+                <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM2011041904"/>
+            </fig>
+            <fig id="COM20110419F5">
+                <label>Figure 5</label>
+                <caption>
+                    <p><italic>Performance against network size (1&emsp14;m&sol;s,
+                            0.2&emsp14;pkts&sol;s,
+                            t<sub>H</sub>&equals;2&emsp14;s)</italic>#<italic>a</italic> Mean
+                        delay</p>
+                    <p><italic>b</italic> Normalised byte overhead</p>
+                </caption>
+                <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM2011041905"/>
+            </fig>
+            <p>Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F5">5</xref><italic>a</italic>
+                illustrates mean delay, that is, the average delay involved in receiving a broadcast
+                message, which is another important performance metric. In dense networks, H2DP
+                induces smaller delays by minimising the number of duplicate packets. This
+                minimisation has a twofold impact; on the one hand alleviates congestion and
+                therefore smaller queuing delays occur, while on the other hand medium access delay
+                is minimised as a result of less contention. The increasing trend of delay with
+                respect to network size is ascribed to the increasing number of hops involved in a
+                broadcast. As a result, longer delays are evident in sparse networks where paths
+                consist of more hops due to the reduced connectivity. In this case, the performance
+                of all schemes is similar since delay is dominated by the number of hops.</p>
+            <p>Finally, in Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F5"
+                    >5</xref><italic>b</italic> we present the normalised byte overhead, that is,
+                the average number of bytes transmitted in the network during the broadcast of a
+                message. This metric evaluates the impact of piggybacking the history on the
+                packet&apos;s header. Surprisingly, H2DP induces less bytes in the dense topology
+                scenario while its performance is close to the other schemes in sparse networks.
+                Bear in mind that the presented results represent the worst-case scenario for H2DP
+                since the optimisation for packet history representation, proposed in Section 3.2,
+                has not been used. Instead, we used 4&emsp14;bytes for each address piggybacked on
+                the packet&apos;s header. The significantly reduced number of transmissions
+                    (Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F2">2</xref>) justifies
+                H2DP&apos;s performance. Although packets of more bytes are created, the overall
+                balance is positive. It should be pointed out that, in contention-based networks,
+                the bandwidth is consumed by the access delay which is dominant compared to the
+                transmission delay. Keeping in mind that access delay depends on the number of
+                packet transmissions and transmission delay depends on the packet size, it is clear
+                that minimising the number of transmissions has a greater impact on bandwidth
+                savings.</p>
+            <sec id="s5a">
+                <label>5.1</label>
+                <title>Resilience to mobility</title>
+                <p>It is important for schemes that use neighbourhood information, such as DP, to
+                    evaluate their resilience to high mobility. Therefore in this section, we will
+                    investigate the impact of (a) node mobility and (b) hello interval, that is, the
+                    rate at which topology information is refreshed.</p>
+                <sec id="s5a1">
+                    <label>5.1.1</label>
+                    <title>Impact of mobility</title>
+                    <p>In Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F6"
+                            >6</xref><italic>a</italic> the delivery ratio for all algorithms is
+                        presented against node mobility for sparse and dense networks. In sparse
+                        networks, mobility severely affects all algorithms since neighbourhood
+                        information quickly becomes stale. The impact of mobility is greater in TDP
+                        and H2DP. More specifically, although H2DP is superior to DP (by
+                        &sim;0.4&percnt;) when mobility is low, its performance lacks
+                        &sim;0.4&percnt; when mobility is 20&emsp14;m&sol;s. Similar performance is
+                        witnessed for TDP. This behaviour is ascribed to the fact that 2-hop
+                        neighbourhood information, which has an increased invalidation rate compared
+                        to 1-hop neighbourhood, is used to minimise
+                            <italic>U</italic>(<italic>v</italic>). However, in dense networks, H2DP
+                        preserves its advantage over all algorithms through the entire mobility
+                        range. In this case, although the neighbourhood information is invalidated,
+                        the increased node connectivity provides multiple paths (path diversity)
+                        that enable all algorithms to efficiently deliver the broadcast message.
+                        These results indicate that algorithms utilising 2-hop neighbourhood may
+                        become less efficient in sparse networks of increased mobility
+                        (&gt;20&emsp14;m&sol;s) such as VANETs. In Section 6, we propose an
+                        optimised version of H2DP that presents increased resilience to
+                        mobility.</p>
+                    <fig id="COM20110419F6">
+                        <label>Figure 6</label>
+                        <caption>
+                            <p><italic>Delivery ratio against mobility and hello
+                                    interval</italic>#<italic>a</italic> Mobility (100 nodes,
+                                0.2&emsp14;pkts&sol;s,
+                                    <italic>t</italic><sub><italic>H</italic></sub>&equals;2&emsp14;s)</p>
+                            <p><italic>b</italic> Hello interval (20&emsp14;m&sol;s, 100 nodes,
+                                0.2&emsp14;pkts&sol;s) for dense and sparse networks</p>
+                        </caption>
+                        <graphic xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xlink:href="COM2011041906"/>
+                    </fig>
+                </sec>
+                <sec id="s5a2">
+                    <label>5.1.2</label>
+                    <title>Impact of hello interval</title>
+                    <p>The impact of mobility depends on the refresh rate of neighbourhood
+                        information, that is, the hello interval. A short hello interval provides
+                        the means for dealing with performance degradation in highly mobile
+                        networks. In Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F5"
+                            >5</xref><italic>b</italic>, the delivery ratio is presented against the
+                        hello interval for all algorithms in networks of high mobility
+                        (20&emsp14;m&sol;s). As expected, long hello intervals cause degradation in
+                        performance of all schemes; however, the impact is more intense on H2DP and
+                        TDP because 2-hop neighbourhood is used. Again, the impact of hello interval
+                        is heavier in sparse networks because of the reduced path diversity. Shorter
+                        hello intervals are in favour of H2DP in both dense and sparse networks.
+                        Although all schemes improve their performance, due to more accurate
+                        neighbourhood information, the improvement in H2DP is sharper, since it is
+                        combined with reduced levels of congestion due to the minimisation of
+                        elected forwarding nodes. On the other hand, all other schemes produce more
+                        transmissions therefore part of their improvement is nullified by increased
+                        levels of collisions. This is evident in a more clear way in the case of
+                        dense networks where congestion is heavier than in sparse networks. In this
+                        case, only H2DP improves its performance for hello intervals of
+                        1&ndash;2&emsp14;s. On the contrary, all other schemes do not improve due to
+                        congestion. Finally, when the hello interval is 0.5&emsp14;s (there will be
+                        more hello messages and therefore more collisions), the performance of all
+                        schemes is degraded. It is worth mentioning that the congestion in DP is so
+                        high that shorter hello intervals have the opposite effect, that is,
+                        reduction in delivery ratio. According to the presented results, it is clear
+                        that H2DP may utilise shorter hello intervals in sparse and highly mobile
+                        environments in order to improve its performance in terms of delivery ratio.
+                        The cost of using a shorter hello interval may be compensated by the reduced
+                        packet redundancy witnessed in Figs.&nbsp;<xref ref-type="fig"
+                            rid="COM20110419F5">5</xref> and <xref ref-type="fig"
+                            rid="COM20110419F6">6</xref>.</p>
+                </sec>
+            </sec>
+            <sec id="s5b">
+                <label>5.2</label>
+                <title>Performance under congestion</title>
+                <p>In this section we evaluate the performance under conditions of increased
+                    congestion. Such conditions are frequently present in MANETs due to the limited
+                    bandwidth. In Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F7">7</xref>, the
+                    performance of all algorithms is presented against the broadcast rate. As
+                    expected, all schemes are heavily affected. As far as the delivery ratio is
+                    concerned (Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F7"
+                        >7</xref><italic>a</italic>), DP rapidly collapses, especially in dense
+                    networks since the increased network connectivity aggravates congestion. H2DP
+                    produces less duplicate packets and therefore is able to cope with congestion
+                    more effectively. As a result, H2DP achieves an improvement of &sim;3.5&percnt;
+                    in the sparse and &sim;6.5&percnt; in the dense network compared to TDP, which
+                    is the second performer. The improvement compared to DP reaches up to
+                    &sim;13.5&percnt; in the dense network and &sim;6&percnt; in the sparse. A
+                    confirmation of congestion is the mean delay, presented in Fig.&nbsp;<xref
+                        ref-type="fig" rid="COM20110419F7">7</xref><italic>b</italic>. When
+                    broadcast rate is above 1&emsp14;pkt&sol;s, delay rapidly increases because
+                    longer queues are formed and frequent activity in the medium increases access
+                    delay. When the network is heavily congested (2&emsp14;pkt&sol;s) only H2DP
+                    achieves an acceptable delay (&sim;160&emsp14;ms) and at the same time exhibits
+                    the best delivery ratio (Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F7"
+                        >7</xref><italic>a</italic>).</p>
+                <fig id="COM20110419F7">
+                    <label>Figure 7</label>
+                    <caption>
+                        <p><italic>Performance against broadcast rate (1&emsp14;m&sol;s, 100 nodes,
+                                    t<sub>H</sub>&equals;2&emsp14;s)</italic>#<italic>a</italic>
+                            Delivery ratio</p>
+                        <p><italic>b</italic> Mean delay</p>
+                    </caption>
+                    <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM2011041907"/>
+                </fig>
+            </sec>
+        </sec>
+        <sec id="s6">
+            <label>6</label>
+            <title>History-based DP</title>
+            <p>The performance evaluation of H2DP has brought to light its reduced resilience to
+                highly mobile (&gt;20&emsp14;m&sol;s) and sparse networks. This behaviour stems from
+                the fact that H2DP, when building
+                    <italic>H</italic><sup><italic>v</italic></sup>(<italic>p</italic>) in node
+                    <italic>v</italic>, makes the optimistic assumption that every node in
+                    <italic>N</italic>(<italic>N</italic>(<italic>v</italic>)) has already or will
+                receive <italic>p</italic>. However, stale neighbourhood information, which is
+                frequent in highly mobile environments, may invalidate the aforementioned
+                assumption. To overcome this shortcoming, we propose to use only
+                    <italic>N</italic>(<italic>v</italic>) in forming the packet history, that is
+                    <disp-formula id="COM20110419M10">
+                    <tex-math notation="TeX"
+                        ><![CDATA[$$H^v \lpar p\rpar =\bigcup\limits_{\forall w \in P^v \lpar p\rpar } N\lpar w\rpar \eqno(10)$$]]></tex-math>
+                    <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM20110419M10"
+                    />
+                </disp-formula></p>
+            <p>The intuition is that resilience to mobility will be increased since
+                    <italic>N</italic>(<italic>v</italic>) has a smaller invalidation rate compared
+                to <italic>N</italic>(<italic>N</italic>(<italic>v</italic>)). We call the resulting
+                DP scheme, HDP. HDP takes a more conservative approach compared to H2DP. It only
+                makes the assumption that all nodes in <italic>N</italic>(<italic>w</italic>),
+                    &forall;<italic>w</italic>&isin;<italic>H</italic><sup><italic>v</italic></sup>(<italic>p</italic>)
+                have already received <italic>p</italic>. Clearly, the approach of HDP is to
+                tradeoff reduction of forward nodes for delivery efficiency. This can also be
+                verified by (2), (10) and (7); the history of HDP is smaller than that of H2DP;
+                therefore <italic>U</italic>(<italic>v</italic>) is bigger in HDP. As a result, the
+                approximation factor is worse than that of H2DP.</p>
+            <p>Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F8">8</xref><italic>a</italic>
+                illustrates the delivery ratio and the number of forward nodes for HDP with respect
+                to node mobility, whereas Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F8"
+                    >8</xref><italic>b</italic> presents the same performance metrics against the
+                hello interval when mobility is fixed to 20&emsp14;m&sol;s. Both experiments are
+                carried out in sparse networks. HDP is compared with H2DP and DP, which presents the
+                best resilience to highly mobile and sparse networks. The approach of HDP is proved
+                to be effective since it outperforms DP with respect to delivery ratio even for the
+                highest mobility. Moreover, this is accomplished in parallel to a reduction of the
+                number of forward nodes that ranges in &sim;13.5&ndash;15.5&percnt; for all mobility
+                levels. This result confirms the tradeoff that HDP introduces, since its performance
+                lies between that of DP and H2DP. The resilience of HDP to mobility is also
+                confirmed by Fig.&nbsp;<xref ref-type="fig" rid="COM20110419F8"
+                    >8</xref><italic>b</italic>, where the impact of hello interval is illustrated.
+                Even for long intervals HDP preserves its superiority over both DP and H2DP. At the
+                same time, even though HDP produces more forward nodes compared to H2DP, it still
+                manages an impressive reduction that reaches up to 18.5&percnt; compared to DP.</p>
+            <fig id="COM20110419F8">
+                <label>Figure 8</label>
+                <caption>
+                    <p><italic>Delivery ratio against maximum node speed and hello
+                            interval</italic>#<italic>a</italic> Maximum node speed
+                            (<italic>t</italic><sub><italic>H</italic></sub>&equals;2&emsp14;s)</p>
+                    <p><italic>b</italic> Hello interval (20&emsp14;m&sol;s) for the sparse topology
+                        scenario (100 nodes)</p>
+                </caption>
+                <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="COM2011041908"/>
+            </fig>
+        </sec>
+        <sec id="s7">
+            <label>7</label>
+            <title>Conclusions</title>
+            <p>In this paper a new approach to DP, called H2DP, has been proposed for minimising the
+                redundant transmissions during broadcasting. H2DP makes the observation that the
+                history of a packet may be used for minimising the set of forwarding nodes in
+                DP-based schemes. The analysis of H2DP as well as its extensive simulation study
+                have confirmed its improved performance compared to existing DP schemes with respect
+                not only to the minimisation of broadcasting cost but also to the ability to deliver
+                a broadcast message. Furthermore, an optimisation of H2DP, tailored for highly
+                mobile and sparse networks, has been proposed and proved to be effective in
+                increasing the resilience to mobility.</p>
+        </sec>
+    </body>
+    <back>
+        <ref-list>
+            <label>8</label>
+            <title>References</title>
+            <ref id="COM20110419C1">
+                <label>1</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Royer</surname><given-names>E.M.</given-names></string-name><string-name><surname>Toh</surname><given-names>C.-K.</given-names></string-name>:
+                        &lsquo;<article-title>A review of current routing protocols for ad hoc
+                        mobile wireless networks</article-title>&rsquo;, <source>IEEE Pers.
+                        Commun.</source>, <year>1999</year>, <volume>6</volume>, (<issue>2</issue>),
+                    pp. <fpage>46</fpage>&ndash;<lpage>55</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C2">
+                <label>2</label>
+                <mixed-citation publication-type="journal"><string-name><surname>de Morais
+                            Cordeiro</surname><given-names>C.</given-names></string-name><string-name><surname>Gossain</surname><given-names>H.</given-names></string-name><string-name><surname>Agrawal</surname><given-names>D.P.</given-names></string-name>:
+                        &lsquo;<article-title>Multicast over wireless mobile ad hoc networks:
+                        present and future directions</article-title>&rsquo;, <source>IEEE
+                        Network</source>, <year>2003</year>, <volume>17</volume>,
+                    (<issue>1</issue>)</mixed-citation>
+            </ref>
+            <ref id="COM20110419C3">
+                <label>3</label>
+                <mixed-citation publication-type="paper"
+                            ><string-name><surname>Ni</surname><given-names>S.Y.</given-names></string-name><string-name><surname>Tseng</surname><given-names>Y.C.</given-names></string-name><string-name><surname>Chen</surname><given-names>Y.S.</given-names></string-name><string-name><surname>Sheu</surname><given-names>J.P.</given-names></string-name>:
+                        &lsquo;<article-title>The broadcast storm problem in a mobile ad hoc
+                        network</article-title>&rsquo;. <conf-name>MobiCom</conf-name>,
+                        <conf-date>August 1999</conf-date>, pp.
+                        <fpage>151</fpage>&ndash;<lpage>162</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C4">
+                <label>4</label>
+                <mixed-citation publication-type="paper"><string-name><surname>Bani
+                            Yassein</surname><given-names>M.</given-names></string-name><string-name><surname>Ould-Khaoua</surname><given-names>M.</given-names></string-name><string-name><surname>Mackenzie</surname><given-names>L.</given-names></string-name><string-name><surname>Papanastasiou</surname><given-names>S.</given-names></string-name>:
+                        &lsquo;<article-title>Improving the performance of probabilistic flooding in
+                        MANETs</article-title>&rsquo;. <conf-name>Proc. Int. Workshop on Wireless Ad
+                        hoc Networks</conf-name>, <conf-date>May 2005</conf-date></mixed-citation>
+            </ref>
+            <ref id="COM20110419C5">
+                <label>5</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Zhang</surname><given-names>Q.</given-names></string-name><string-name><surname>Agrawal</surname><given-names>D.P.</given-names></string-name>:
+                        &lsquo;<article-title>Dynamic probabilistic broadcasting in
+                        MANETs</article-title>&rsquo;, <source>J. Parallel Distrib.
+                    Comput.</source>, <year>2005</year>, <volume>65</volume>, pp.
+                        <fpage>220</fpage>&ndash;<lpage>233</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C6">
+                <label>6</label>
+                <mixed-citation publication-type="paper"
+                            ><string-name><surname>Tseng</surname><given-names>Y.</given-names></string-name><string-name><surname>Ni</surname><given-names>S.</given-names></string-name><string-name><surname>Shih</surname><given-names>E.Y.</given-names></string-name>:
+                        &lsquo;<article-title>Adaptive approaches to relieving broadcast storms in a
+                        wireless multihop mobile ad hoc networks</article-title>&rsquo;.
+                        <conf-name>Proc. ICDCS&rsquo;01</conf-name>, <year>2001</year>, pp.
+                        <fpage>481</fpage>&ndash;<lpage>488</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C7">
+                <label>7</label>
+                <mixed-citation publication-type="paper"><string-name><surname>al
+                            Humoud</surname><given-names>S.O.</given-names></string-name><string-name><surname>Mackenzie</surname><given-names>L.M.</given-names></string-name><string-name><surname>Abdulai</surname><given-names>J.</given-names></string-name>:
+                        &lsquo;<article-title>Neighbourhood-aware counter-based broadcast scheme for
+                        wireless ad hoc networks</article-title>&rsquo;. <conf-name>2008 IEEE
+                        GLOBECOM Workshops</conf-name>, <conf-date>December 2008</conf-date>, pp.
+                        <fpage>1</fpage>&ndash;<lpage>6</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C8">
+                <label>8</label>
+                <mixed-citation publication-type="paper"
+                            ><string-name><surname>Woon</surname><given-names>W.</given-names></string-name><string-name><surname>Yeung</surname><given-names>K.L.</given-names></string-name>:
+                        &lsquo;<article-title>Self-pruning broadcasting for mobile ad hoc
+                        networks</article-title>&rsquo;. <conf-name>IEEE Global Telecommunications
+                        Conference, 2009, GLOBECOM 2009</conf-name>, <conf-date>December
+                        2009</conf-date>, pp.
+                    <fpage>1</fpage>&ndash;<lpage>6</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C9">
+                <label>9</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Tonguz</surname><given-names>O.</given-names></string-name><string-name><surname>Wisitpongphan</surname><given-names>N.</given-names></string-name><string-name><surname>Bai</surname><given-names>F.</given-names></string-name><string-name><surname>Mudalige</surname><given-names>P.</given-names></string-name><string-name><surname>Sadekar</surname><given-names>V.</given-names></string-name>:
+                        &lsquo;<article-title>Broadcasting in VANET</article-title>&rsquo;,
+                        <source>Mobile Netw. Veh. Environ.</source>, <year>2007</year>, pp.
+                        <fpage>7</fpage>&ndash;<lpage>12</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C10">
+                <label>10</label>
+                <mixed-citation publication-type="paper"
+                            ><string-name><surname>Pleisch</surname><given-names>S.</given-names></string-name><string-name><surname>Balakrishnan</surname><given-names>M.</given-names></string-name><string-name><surname>Birman</surname><given-names>K.</given-names></string-name><string-name><surname>van
+                            Renesse</surname><given-names>R.</given-names></string-name>:
+                        &lsquo;<article-title>Mistral: efficient flooding in mobile ad-hoc
+                        networks</article-title>&rsquo;. <conf-name>Proceedings of the seventh ACM
+                        international symposium on Mobile ad hoc networking and
+                        computing</conf-name>, <conf-date>May 2006</conf-date>, pp.
+                        <fpage>7</fpage>&ndash;<lpage>14</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C11">
+                <label>11</label>
+                <mixed-citation publication-type="paper"
+                            ><string-name><surname>Yi</surname><given-names>Y.</given-names></string-name><string-name><surname>Gerla</surname><given-names>M.</given-names></string-name><string-name><surname>Kwon</surname><given-names>T.</given-names></string-name>:
+                        &lsquo;<article-title>Efficient flooding in ad hoc networks using on-demand
+                        (passive) cluster formation</article-title>&rsquo;. <conf-name>2nd Annual
+                        Mediterranean Ad Hoc Networking Workshop (Med-hoc-Net 2003)</conf-name>,
+                        <year>2003</year></mixed-citation>
+            </ref>
+            <ref id="COM20110419C12">
+                <label>12</label>
+                <mixed-citation publication-type="other"
+                            ><string-name><surname>Adjih</surname><given-names>C.</given-names></string-name><string-name><surname>Jacquet</surname><given-names>P.</given-names></string-name><string-name><surname>Viennot</surname><given-names>L.</given-names></string-name>:
+                        &lsquo;<article-title>Computing connected dominated sets with multipoint
+                        relays</article-title>&rsquo;. <gov>Technical Report 4597</gov>,
+                        <day>October 2002</day></mixed-citation>
+            </ref>
+            <ref id="COM20110419C13">
+                <label>13</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Stojmenovic</surname><given-names>I.</given-names></string-name><string-name><surname>Seddigh</surname><given-names>M.</given-names></string-name><string-name><surname>Zunic</surname><given-names>J.</given-names></string-name>:
+                        &lsquo;<article-title>Dominating sets and neighbor elimination based
+                        broadcasting algorithms in wireless networks</article-title>&rsquo;,
+                        <source>IEEE Trans. Parallel Distrib. Syst.</source>, <year>2002</year>,
+                        <volume>13</volume>, (<issue>1</issue>), pp.
+                        <fpage>14</fpage>&ndash;<lpage>25</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C14">
+                <label>14</label>
+                <mixed-citation publication-type="paper"
+                            ><string-name><surname>Wu</surname><given-names>J.</given-names></string-name><string-name><surname>Li</surname><given-names>H.</given-names></string-name>:
+                        &lsquo;<article-title>On calculating connected dominating set for efficient
+                        routing in ad hoc wireless networks</article-title>&rsquo;. <conf-name>Proc.
+                        Third Int. Workshop on Discrete Algorithms and Methods for Mobile Computing
+                        and Communications</conf-name>, <conf-date>August 1999</conf-date>, pp.
+                        <fpage>7</fpage>&ndash;<lpage>14</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C15">
+                <label>15</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Wu</surname><given-names>J.</given-names></string-name><string-name><surname>Lou</surname><given-names>W.</given-names></string-name>:
+                        &lsquo;<article-title>Extended multipoint relays to determine connected
+                        dominating sets in MANETs</article-title>&rsquo;, <comment>October
+                        2004</comment>, pp.
+                    <fpage>621</fpage>&ndash;<lpage>630</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C16">
+                <label>16</label>
+                <mixed-citation publication-type="journal"><string-name><surname>Aurelio
+                            Spohn</surname><given-names>M.</given-names></string-name><string-name><surname>Garcia-Luna-Aceves</surname><given-names>J.J.</given-names></string-name>:
+                        &lsquo;<article-title>Improving route discovery in on-demand routing
+                        protocols using two-hop connected dominating sets</article-title>&rsquo;,
+                        <source>Ad Hoc Netw.</source>, <year>2006</year>, <volume>4</volume>,
+                        (<issue>4</issue>), pp.
+                    <fpage>509</fpage>&ndash;<lpage>531</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C17">
+                <label>17</label>
+                <mixed-citation publication-type="paper"
+                            ><string-name><surname>Almahorg</surname><given-names>K.A.M.</given-names></string-name><string-name><surname>Naik</surname><given-names>S.</given-names></string-name><string-name><surname>Shen</surname><given-names>X.</given-names></string-name>:
+                        &lsquo;<article-title>Efficient localized protocols to compute connected
+                        dominating sets for ad hoc networks</article-title>&rsquo;. <conf-name>2010
+                        IEEE Global Telecommunications Conference, GLOBECOM 2010</conf-name>,
+                        <month>December</month>
+                    <year>2010</year>, pp. <fpage>1</fpage>&ndash;<lpage>5</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C18">
+                <label>18</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Wu</surname><given-names>J.</given-names></string-name><string-name><surname>Lou</surname><given-names>W.</given-names></string-name><string-name><surname>Dai</surname><given-names>F.</given-names></string-name>:
+                        &lsquo;<article-title>Extended multipoint relays to determine connected
+                        dominating sets in MANETs</article-title>&rsquo;, <source>IEEE Trans.
+                        Comput.</source>, <year>2006</year>, <volume>55</volume>,
+                    (<issue>3</issue>), pp.
+                    <fpage>334</fpage>&ndash;<lpage>347</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C19">
+                <label>19</label>
+                <mixed-citation publication-type="paper"
+                            ><string-name><surname>Peng</surname><given-names>W.</given-names></string-name><string-name><surname>Lu</surname><given-names>X.-C.</given-names></string-name>:
+                        &lsquo;<article-title>On the reduction of broadcast redundancy in mobile ad
+                        hoc networks</article-title>&rsquo;. <conf-name>Proc.
+                        Mobihoc&rsquo;00</conf-name>, <month>August</month>
+                    <year>2000</year></mixed-citation>
+            </ref>
+            <ref id="COM20110419C20">
+                <label>20</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Lim</surname><given-names>H.</given-names></string-name><string-name><surname>Kim</surname><given-names>C.</given-names></string-name>:
+                        &lsquo;<article-title>Flooding in wireless ad hoc
+                    networks</article-title>&rsquo;, <source>Comput. Commun. J.</source>,
+                        <year>2001</year>, <volume>24</volume>, (<issue>3&ndash;4</issue>), pp.
+                        <fpage>353</fpage>&ndash;<lpage>363</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C21">
+                <label>21</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Lou</surname><given-names>W.</given-names></string-name><string-name><surname>Wu</surname><given-names>J.</given-names></string-name>:
+                        &lsquo;<article-title>On reducing broadcast redundancy in ad hoc wireless
+                        networks</article-title>&rsquo;, <source>IEEE Trans. Mobile
+                    Comput.</source>, <year>2002</year>, <volume>1</volume>, (<issue>2</issue>), pp.
+                        <fpage>111</fpage>&ndash;<lpage>123</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C22">
+                <label>22</label>
+                <mixed-citation publication-type="paper"><string-name><surname>Al
+                            Amin</surname><given-names>M.T.</given-names></string-name><string-name><surname>Barua</surname><given-names>S.</given-names></string-name><string-name><surname>Vhaduri</surname><given-names>S.</given-names></string-name><string-name><surname>Rahman</surname><given-names>A.</given-names></string-name>:
+                        &lsquo;<article-title>Load aware broadcast in mobile ad hoc
+                        networks</article-title>&rsquo;. <conf-name>IEEE Int. Conf. Communications,
+                        ICC &rsquo;09</conf-name>, <month>June</month>
+                    <year>2009</year>, pp. <fpage>1</fpage>&ndash;<lpage>5</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C23">
+                <label>23</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Khabbazian</surname><given-names>M.</given-names></string-name><string-name><surname>Bhargava</surname><given-names>V.K.</given-names></string-name>:
+                        &lsquo;<article-title>Localized broadcasting with guaranteed delivery and
+                        bounded transmission redundancy</article-title>&rsquo;, <source>IEEE Trans.
+                        Comput.</source>, <year>2008</year>, <volume>57</volume>,
+                    (<issue>8</issue>), pp.
+                    <fpage>1072</fpage>&ndash;<lpage>1086</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C24">
+                <label>24</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Khabbazian</surname><given-names>M.</given-names></string-name><string-name><surname>Bhargava</surname><given-names>V.K.</given-names></string-name>:
+                        &lsquo;<article-title>Efficient broadcasting in mobile ad hoc
+                        networks</article-title>&rsquo;, <source>IEEE Trans. Mobile
+                    Comput.</source>, <year>2009</year>, <volume>8</volume>, (<issue>2</issue>), pp.
+                        <fpage>231</fpage>&ndash;<lpage>245</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C25">
+                <label>25</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Liu</surname><given-names>H.</given-names></string-name><string-name><surname>Jia</surname><given-names>X.</given-names></string-name><string-name><surname>Wan</surname><given-names>P.-J.</given-names></string-name><string-name><surname>Liu</surname><given-names>X.</given-names></string-name><string-name><surname>Yao</surname><given-names>F.F.</given-names></string-name>:
+                        &lsquo;<article-title>A distributed and efficient flooding scheme using
+                        1-hop information in mobile ad hoc networks</article-title>&rsquo;,
+                        <source>IEEE Trans. Parallel Distrib. Syst.</source>, <year>2007</year>,
+                        <volume>18</volume>, (<issue>5</issue>), pp.
+                        <fpage>658</fpage>&ndash;<lpage>671</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C26">
+                <label>26</label>
+                <mixed-citation publication-type="paper"
+                            ><string-name><surname>Pongthawornkamol</surname><given-names>T.</given-names></string-name><string-name><surname>Nahrstedt</surname><given-names>K.</given-names></string-name><string-name><surname>Wang</surname><given-names>G.</given-names></string-name>:
+                        &lsquo;<article-title>Hybridcast: a hybrid probabilistic&sol;deterministic
+                        approach for adjustable broadcast reliability in mobile wireless ad hoc
+                        networks</article-title>&rsquo;. <conf-name>2009 IEEE Int. Conf.
+                        Communications, ICC &rsquo;09</conf-name>, <month>June</month>
+                    <year>2009</year>, pp. <fpage>1</fpage>&ndash;<lpage>6</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C27">
+                <label>27</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Li</surname><given-names>L.</given-names></string-name><string-name><surname>Ramjee</surname><given-names>R.</given-names></string-name><string-name><surname>Buddhikot</surname><given-names>M.</given-names></string-name><string-name><surname>Miller</surname><given-names>S.</given-names></string-name>:
+                        &lsquo;<article-title>Network coding-based broadcast in mobile ad-hoc
+                        networks</article-title>&rsquo;, <comment>May 2007</comment>, pp.
+                        <fpage>1739</fpage>&ndash;<lpage>1747</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C28">
+                <label>28</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Yang</surname><given-names>S.</given-names></string-name><string-name><surname>Wu</surname><given-names>J.</given-names></string-name><string-name><surname>Cardei</surname><given-names>M.</given-names></string-name>:
+                        &lsquo;<article-title>Efficient broadcast in MANETs using network coding and
+                        directional antennas</article-title>&rsquo;, <comment>April 2008</comment>,
+                    pp. <fpage>1499</fpage>&ndash;<lpage>1507</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C29">
+                <label>29</label>
+                <mixed-citation publication-type="paper"
+                            ><string-name><surname>Williams</surname><given-names>B.</given-names></string-name><string-name><surname>Camp</surname><given-names>T.</given-names></string-name>:
+                        &lsquo;<article-title>Comparison of broadcasting techniques for mobile ad
+                        hoc networks</article-title>&rsquo;. <conf-name>Proc. MobiHoc&rsquo;
+                        02</conf-name>, <year>2002</year>, pp.
+                        <fpage>194</fpage>&ndash;<lpage>205</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C30">
+                <label>30</label>
+                <mixed-citation publication-type="book"
+                            ><string-name><surname>Cormen</surname><given-names>T.H.</given-names></string-name><string-name><surname>Stein</surname><given-names>C.</given-names></string-name><string-name><surname>Rivest</surname><given-names>R.L.</given-names></string-name><string-name><surname>Leiserson</surname><given-names>C.E.</given-names></string-name>:
+                        &lsquo;<chapter-title>Introduction to algorithms</chapter-title>&rsquo;
+                        (<publisher-name>McGraw-Hill Higher Education</publisher-name>,
+                        <year>2001</year>)</mixed-citation>
+            </ref>
+            <ref id="COM20110419C31">
+                <label>31</label>
+                <mixed-citation publication-type="book"
+                            ><string-name><surname>Skiena</surname><given-names>S.S.</given-names></string-name>:
+                        &lsquo;<chapter-title>The algorithm design manual</chapter-title>&rsquo;
+                        (<publisher-name>Springer</publisher-name>, <publisher-loc>New York, NY,
+                        USA</publisher-loc>, <year>1998</year>)</mixed-citation>
+            </ref>
+            <ref id="COM20110419C32">
+                <label>32</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Dai</surname><given-names>F.</given-names></string-name><string-name><surname>Wu</surname><given-names>J.</given-names></string-name>:
+                        &lsquo;<article-title>Performance analysis of broadcast protocols in ad hoc
+                        networks based on self-pruning</article-title>&rsquo;, <source>IEEE Trans.
+                        Parallel Distrib. Syst.</source>, <year>2004</year>, <volume>15</volume>,
+                        (<issue>11</issue>), pp.
+                    <fpage>1027</fpage>&ndash;<lpage>1040</lpage>.</mixed-citation>
+            </ref>
+            <ref id="COM20110419C33">
+                <label>33</label>
+                <mixed-citation publication-type="book"
+                            ><string-name><surname>Fall</surname><given-names>K.</given-names></string-name><string-name><surname>Varadhan</surname><given-names>K.</given-names></string-name>:
+                        &lsquo;<chapter-title>The ns manual</chapter-title>&rsquo;
+                        (<publisher-name>VINT Project, University of California</publisher-name>,
+                        <publisher-loc>Berkeley, CA</publisher-loc>,
+                    <year>2001</year>)</mixed-citation>
+            </ref>
+            <ref id="COM20110419C34">
+                <label>34</label>
+                <mixed-citation publication-type="paper"><string-name><surname>Le
+                            Boudec</surname><given-names>J.-Y.</given-names></string-name><string-name><surname>Vojnovic</surname><given-names>M.</given-names></string-name>:
+                        &lsquo;<article-title>Perfect simulation and stationarity of a class of
+                        mobility models</article-title>&rsquo;. <conf-name>IEEE INFOCOM &lsquo;05:
+                        Proc. 24th Annual Joint Conference of the IEEE Computer and Communications
+                        Societies</conf-name>., <year>2005</year></mixed-citation>
+            </ref>
+            <ref id="COM20110419C35">
+                <label>35</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Bettstetter</surname><given-names>C.</given-names></string-name><string-name><surname>Resta</surname><given-names>G.</given-names></string-name><string-name><surname>Santi</surname><given-names>P.</given-names></string-name>:
+                        &lsquo;<article-title>The node distribution of the random waypoint mobility
+                        model for wireless ad hoc networks</article-title>&rsquo;, <source>IEEE
+                        Trans. Mobile Comput.</source>, <year>2003</year>, <volume>2</volume>,
+                        (<issue>3</issue>), pp.
+                    <fpage>257</fpage>&ndash;<lpage>269</lpage></mixed-citation>
+            </ref>
+            <ref id="COM20110419C36">
+                <label>36</label>
+                <mixed-citation publication-type="journal"
+                            ><string-name><surname>Bettstetter</surname><given-names>C.</given-names></string-name>:
+                        &lsquo;<article-title>Topology properties of ad hoc networks with random
+                        waypoint mobility</article-title>&rsquo;, <source>SIGMOBILE Mob. Comput.
+                        Commun. Rev.</source>, <year>2003</year>, <volume>7</volume>,
+                        (<issue>3</issue>), pp.
+                    <fpage>50</fpage>&ndash;<lpage>52</lpage></mixed-citation>
+            </ref>
+        </ref-list>
+    </back>
+</article>

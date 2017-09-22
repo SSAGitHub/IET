@@ -82,10 +82,10 @@ public class TestZipHelperTest implements BooksConstans {
          ZipInputStream zip = new ZipInputStream(input);
          ZipEntry entry = zip.getNextEntry();
          System.out.println(entry.getName());
-         Assert.assertEquals("/test/", entry.getName());
+         Assert.assertEquals("test/", entry.getName());
          entry = zip.getNextEntry();
          System.out.println(entry.getName());
-         Assert.assertEquals("/test(1)/", entry.getName());
+         Assert.assertEquals("test(1)/", entry.getName());
 	}
 	
 }

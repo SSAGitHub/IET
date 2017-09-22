@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article-meta
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article-meta xmlns:r="http://www.rsuitecms.com/rsuite/ns/metadata" xmlns:xlink="http://www.w3.org/1999/xlink" r:rsuiteId="665901">
+      <article-id pub-id-type="doi">10.1049/iet-com.2012.0348</article-id>
+      <article-id pub-id-type="publisher-id">COM.2012.0348.R2</article-id>
+      
+      <kwd-group kwd-group-type="Inspec">
+        <kwd>channel estimation</kwd>
+        <kwd>maximum likelihood estimation</kwd>
+        <kwd>mobile radio</kwd>
+        <kwd>OFDM modulation</kwd>
+        <kwd>radio transceivers</kwd>
+        <kwd>telecommunication services</kwd>
+        <kwd>wireless LAN</kwd>
+      </kwd-group>
+      <kwd-group kwd-group-type="uncontrolled">
+        <kwd>comprehensive computer simulations</kwd>
+        <kwd>TD CE technique</kwd>
+        <kwd>maximum likelihood estimation</kwd>
+        <kwd>transmission quality</kwd>
+        <kwd>TDS-OFDM</kwd>
+        <kwd>time-domain-synchronous OFDM</kwd>
+        <kwd>pseudorandom-postfix OFDM</kwd>
+        <kwd>DA-OFDM</kwd>
+        <kwd>signal-overlapping areas</kwd>
+        <kwd>handover</kwd>
+        <kwd>frequency offset compensation</kwd>
+        <kwd>IEEE 802.11 standards</kwd>
+        <kwd>nonideal channel estimation</kwd>
+        <kwd>RSU service</kwd>
+        <kwd>seamless road side unit service</kwd>
+        <kwd>vehicular communications</kwd>
+        <kwd>data-aided orthogonal frequency-division multiplexing</kwd>
+        <kwd>physical-layer transceiving techniques</kwd>
+      </kwd-group>
+      <kwd-group kwd-group-type="Inspec-class">
+        <compound-kwd>
+          <compound-kwd-part content-type="code">B0240Z</compound-kwd-part>
+          <compound-kwd-part content-type="text">Other topics in statistics</compound-kwd-part>
+        </compound-kwd>
+        <compound-kwd>
+          <compound-kwd-part content-type="code">B6120</compound-kwd-part>
+          <compound-kwd-part content-type="text">Modulation and coding methods</compound-kwd-part>
+        </compound-kwd>
+        <compound-kwd>
+          <compound-kwd-part content-type="code">B6150D</compound-kwd-part>
+          <compound-kwd-part content-type="text">Communication channel equalisation and identification</compound-kwd-part>
+        </compound-kwd>
+        <compound-kwd>
+          <compound-kwd-part content-type="code">B6250F</compound-kwd-part>
+          <compound-kwd-part content-type="text">Mobile radio systems</compound-kwd-part>
+        </compound-kwd>
+      </kwd-group>
+    </article-meta>

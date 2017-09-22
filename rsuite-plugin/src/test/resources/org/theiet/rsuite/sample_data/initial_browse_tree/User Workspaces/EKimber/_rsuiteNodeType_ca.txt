@@ -1,0 +1,9 @@
+lmd {
+  caType = "resources"
+}
+ACL {
+  roles {
+    any="list,view"
+    ekimber="list,view,edit,delete,copy,reuse,admin"
+  }
+}
