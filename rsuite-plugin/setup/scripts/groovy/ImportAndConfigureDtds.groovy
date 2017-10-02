@@ -8,9 +8,9 @@ import com.rsicms.groovy.utils.*
 
 def util = new DeployDTDUtils(rsuite, importerFactory);
 
-def projectDir = new File(scriptFile.absolutePath).parentFile.parentFile.parentFile
-def doctypesDir = new File(projectDir, "doctypes");
-def srcDir = new File(projectDir, "src");
+def projectDir = new File("src");
+def doctypesDir = new File("setup/doctypes");
+def srcDir = new File(projectDir, "main/resources/webcontent");
 def xsltDir = new File(srcDir, "xslt");
 def File catalogFile = new File(doctypesDir, "catalog.xml");
 def catalog = catalogFile.getAbsolutePath();

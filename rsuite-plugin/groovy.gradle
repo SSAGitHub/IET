@@ -1,0 +1,13 @@
+apply plugin: 'groovy'
+
+dependencies {
+	compile 'org.codehaus.groovy:groovy-all:1.5.4'
+	compile 'com.rsicms:rsuite-client2:4.0.7'
+}
+
+task compileGroovyHelper(type: GroovyCompile)  {
+	description 'Compiles helper classes used in RSuite deployment groovy scripts'
+	source = 'setup/scripts/groovy/helper'
+	destinationDir = file('build/groovyHelperClasses')
+	classpath = configurations.compile
+}

@@ -7,7 +7,7 @@ import com.rsicms.groovy.utils.*
 
 def util = new DeployDTDUtils(rsuite, importerFactory);
 
-def projectDir = new File(scriptFile.absolutePath).parentFile.parentFile.parentFile
+def projectDir = new File("setup");
 def doctypesDir = new File(projectDir, "doctypes");
 def srcDir = new File(projectDir, "src");
 def xsltDir = new File(srcDir, "xslt");
