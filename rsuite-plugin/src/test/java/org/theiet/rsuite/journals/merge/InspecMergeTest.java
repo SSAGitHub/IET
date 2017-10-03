@@ -44,7 +44,10 @@ public class InspecMergeTest {
 
 		//inspecFile
 	
-		XPathFactory factory = XPathFactory.newInstance();
+		XPathFactory factory =  XPathFactory.newInstance(
+				  XPathFactory.DEFAULT_OBJECT_MODEL_URI,
+				  "net.sf.saxon.xpath.XPathFactoryImpl",
+				  ClassLoader.getSystemClassLoader());
 		XPath xpath = factory.newXPath();
 		XPathExpression expr2 = xpath.compile("/*/front/article-meta");
 		
@@ -81,8 +84,8 @@ public class InspecMergeTest {
 			public InputSource resolveEntity(String publicId, String systemId)
 					throws SAXException, IOException {
 				
-				//systemId = systemId.replace(dataFolderPath, jatsDtdFolderPath);
-				return new InputSource(jatsDtdFolderPath);
+				systemId = systemId.replace(dataFolderPath, jatsDtdFolderPath);
+				return new InputSource(systemId);
 			}
 		});
 		return dBuilder;
