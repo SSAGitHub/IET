@@ -97,16 +97,11 @@ dependencies {
 	compile 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-api:RS4.0.7_oxy15.2-v1.5.15qa7'
 	compile 'com.oxygenxml:oxygen:15.2'
 
-
-
-
 	compile 'commons-logging:commons-logging:1.1'
 	compile 'commons-net:commons-net:1.4.1'
 	compile 'hibernate:hibernate:3'
 
 	compile 'joda-time:joda-time:2.1'
-	compile 'net.sourceforge.jeuclid:jeuclid-fop:3.1.9'
-	compile 'net.sourceforge.jeuclid:jeuclid-core:3.1.9'
 
 	pluginJars 'joda-time:joda-time:2.1'
 
