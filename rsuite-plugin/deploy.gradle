@@ -32,9 +32,36 @@ repositories {
 		}
 	}
 }
+
+configurations {
+	ditaOT
+	ditaOTPlugins
+	ditaOtFopJars
+	jeuclid
+}
 	
 dependencies {
 	rsuiteGroovy 'rsi:rsuite-admin-client-extension:0.1.2'
+	
+	ditaOT 'dita-ot.org:dita-ot:1.6.3'
+	
+    ditaOTPlugins 'com.rsicms:rsuite-toolkit-plugins:4.0.0'
+	ditaOTPlugins 'com.rsicms.dita4publishers:dita4publishers-toolkit-plugins:0.9.19RC12Issue139'
+	
+	ditaOtFopJars 'net.sourceforge.jeuclid:jeuclid-fop:3.1.9'
+	ditaOtFopJars 'net.sourceforge.jeuclid:jeuclid-core:3.1.9'
+	
+	jeuclid 'org.apache.xmlgraphics:batik-anim:1.9.1'
+//	jeuclid 'org.apache.xmlgraphics:batik-transcoder:1.7'
+	jeuclid 'org.apache.xmlgraphics:batik-bridge:1.7'
+	jeuclid 'org.apache.xmlgraphics:batik-svggen:1.7'
+    jeuclid 'batik:pdf-transcoder:1.7'
+	jeuclid 'org.freehep:freehep-io:2.0.5'
+	jeuclid 'org.freehep:freehep-graphicsio-pdf:2.1.3'
+    jeuclid 'net.sourceforge.jeuclid:jeuclid-core:3.1.9'
+	
+
+	
 }
 
 
@@ -116,3 +143,65 @@ task('deployXqueryModules', type: Copy) {
 tasks.deployXqueryModules.dependsOn(removeCustomXqueryModules)
 tasks.deployRSuitePlugins.dependsOn(deployXqueryModules)
 tasks.developmentDeployPluginJarOnly.dependsOn(deployXqueryModules)
+
+/* Dita-ot plugin and integrator*/
+
+def integrationHome = "${project.ext.get('rsuite.home')}/integration"
+def ditaOTPluginHome = "${integrationHome}/DITA-OT${getDitaOTVersion()}"
+def jeuclidHome = "${project.ext.get('rsuite.home')}/jeuclid1"
+
+def getDitaOTVersion(){
+	
+	return configurations.ditaOT.resolvedConfiguration.firstLevelModuleDependencies.findAll { e ->
+			return e
+	}[0].moduleVersion
+}
+
+task clearDitaOTPlugin(type: Delete) {
+	delete "${ditaOTPluginHome}"
+	
+}
+
+task clearJeuclid(type: Delete) {
+	delete "${jeuclidHome}"
+	
+}
+
+task deployDitaOT(type: Copy, dependsOn: 'clearDitaOTPlugin') {
+	from {
+		configurations.ditaOT.collect { zipTree(it) }
+	}
+	into(integrationHome)
+	
+}
+
+
+task deployDitaOTPlugin(type: Copy, dependsOn: 'deployDitaOT') {
+	
+	from "setup/toolkitDitaplugins" into "${ditaOTPluginHome}/plugins"
+	
+	from {
+		configurations.ditaOTPlugins.collect { zipTree(it) } } into "${ditaOTPluginHome}/plugins"		
+	
+}
+
+task deployDitaIETPlugin(type: Copy, dependsOn: 'deployDitaOTPlugin') {
+	from (configurations.ditaOtFopJars) into "${ditaOTPluginHome}/plugins/org.dita.pdf2/fop/lib"
+}
+
+
+task deployJeuclid(type: Copy, dependsOn: 'clearJeuclid') {
+	
+	from (configurations.jeuclid) into "${jeuclidHome}"
+			
+}
+
+
+task runDitaOTIntegrator(dependsOn: 'deployDitaOTPlugins') {
+	doLast{
+		ant.ant antfile: "${ditaOTHome}/integrator.xml", dir: "${ditaOTHome}"
+	}
+}
+
+
+
