@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+<!--    <import file="build_pdf-reg_template.xml"/>-->
+	<import file="build_pdf-GN_template.xml"/>
+</project>
