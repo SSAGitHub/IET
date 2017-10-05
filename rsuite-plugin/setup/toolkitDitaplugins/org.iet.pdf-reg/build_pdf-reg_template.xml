@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="org.iet.pdf-reg" default="dita2pdf-reg">
+    <property name="transtype" value="pdf-reg"/>
+    <target name="dita2pdf-reg"
+        xmlns:dita="http://dita-ot.sourceforge.net"
+        dita:extension="depends org.dita.dost.platform.InsertDependsAction">
+        <property name="customization.dir"
+            location="${dita.plugin.org.iet.pdf-reg.dir}/cfg"/>
+        <antcall target="dita2pdf2">
+          <!-- Set the output directory so that it is not affected by 
+               any relative pathing used in the temp copies.
+            -->
+          <param name="dita.map.output.dir" value="${output.dir}"/>
+        </antcall>
+    </target>
+</project>

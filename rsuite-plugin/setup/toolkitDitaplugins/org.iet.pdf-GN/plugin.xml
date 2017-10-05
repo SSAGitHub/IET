@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="org.iet.pdf-GN">
+    <require plugin="org.dita.pdf2"/>
+    <feature extension="dita.conductor.transtype.check" value="pdf-GN"/>
+    <feature extension="dita.transtype.print" value="pdf-GN"/>
+    <feature extension="dita.conductor.target.relative" file="build.xml"/>
+</plugin>
