@@ -5,4 +5,5 @@
 **/.classpath
 **/.gradle
 **/.metadata
+**/gradle.properties
 .recommenders

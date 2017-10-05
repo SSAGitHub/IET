@@ -64,6 +64,10 @@ dependencies {
 	
 }
 
+def integrationHome = "${project.ext.get('rsuite.home')}/integration"
+def ditaOTHome = "${integrationHome}/DITA-OT${getDitaOTVersion()}"
+def ditaOTPluginHome = "${ditaOTHome}/plugins"
+def jeuclidHome = "${project.ext.get('rsuite.home')}/jeuclid"
 
 rsuiteDeployment{
 
@@ -75,7 +79,7 @@ rsuiteDeployment{
 		common 'BooksDeployAll.groovy'
 		common 'JournalsDeployAll.groovy'
 	//	common 'DeployRSuitePluginsIET.groovy' -- This script is not needed 
-		common "StandardsLoadDitaDtds.groovy;-Dditaot=${ditaotdir}"
+		common "StandardsLoadDitaDtds.groovy;-Dditaot=${ditaOTHome}"
 		common 'StandardsConfigureRoles.groovy'
 		common 'StandardsCaTypes.groovy'
 		common 'StandardsConfigureRoles.groovy'
@@ -146,9 +150,6 @@ tasks.developmentDeployPluginJarOnly.dependsOn(deployXqueryModules)
 
 /* Dita-ot plugin and integrator*/
 
-def integrationHome = "${project.ext.get('rsuite.home')}/integration"
-def ditaOTPluginHome = "${integrationHome}/DITA-OT${getDitaOTVersion()}"
-def jeuclidHome = "${project.ext.get('rsuite.home')}/jeuclid1"
 
 def getDitaOTVersion(){
 	
@@ -157,8 +158,8 @@ def getDitaOTVersion(){
 	}[0].moduleVersion
 }
 
-task clearDitaOTPlugin(type: Delete) {
-	delete "${ditaOTPluginHome}"
+task clearDitaOT(type: Delete) {
+	delete "${ditaOTHome}"
 	
 }
 
@@ -167,7 +168,7 @@ task clearJeuclid(type: Delete) {
 	
 }
 
-task deployDitaOT(type: Copy, dependsOn: 'clearDitaOTPlugin') {
+task deployDitaOT(type: Copy, dependsOn: 'clearDitaOT') {
 	from {
 		configurations.ditaOT.collect { zipTree(it) }
 	}
@@ -176,17 +177,17 @@ task deployDitaOT(type: Copy, dependsOn: 'clearDitaOTPlugin') {
 }
 
 
-task deployDitaOTPlugin(type: Copy, dependsOn: 'deployDitaOT') {
+task deployDitaOTPlugins(type: Copy, dependsOn: 'deployDitaOT') {
 	
-	from "setup/toolkitDitaplugins" into "${ditaOTPluginHome}/plugins"
+	from "setup/toolkitDitaplugins" into "${ditaOTPluginHome}"
 	
 	from {
-		configurations.ditaOTPlugins.collect { zipTree(it) } } into "${ditaOTPluginHome}/plugins"		
+		configurations.ditaOTPlugins.collect { zipTree(it) } } into "${ditaOTPluginHome}"		
 	
 }
 
-task deployDitaIETPlugin(type: Copy, dependsOn: 'deployDitaOTPlugin') {
-	from (configurations.ditaOtFopJars) into "${ditaOTPluginHome}/plugins/org.dita.pdf2/fop/lib"
+task deployDitaFopJars(type: Copy, dependsOn: 'deployDitaOTPlugins') {
+	from (configurations.ditaOtFopJars) into "${ditaOTPluginHome}/org.dita.pdf2/fop/lib"
 }
 
 
