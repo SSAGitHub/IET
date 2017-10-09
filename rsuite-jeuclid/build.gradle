@@ -1,6 +1,7 @@
-apply plugin: 'java-library'
+apply plugin: 'java'
+apply plugin: 'maven-publish'
 apply plugin: 'eclipse'
-apply plugin: 'maven'
+
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -23,19 +24,53 @@ dependencies {
 }
 
 targetCompatibility = 1.7
-version = "1.0.0"
+version = "1.1.0"
 
-uploadArchives {
+
+
+publishing {
+	publications {
+		mavenClassesJar(MavenPublication) {
+			groupId 'org.iet'
+			
+			from components.java
+
+			pom.withXml {
+				def root = asNode().dependencies
+
+				def Set artifactsToSkip = [
+					"rsuite-plugin",
+					"rsuite-api"
+				]
+
+				asNode().dependencies.'*'.findAll() {
+
+					if ( artifactsToSkip.contains(it.artifactId.text()) ) {
+						it.parent().remove(it)
+					}
+				}
+			}
+		}
+	}
+
+
 	repositories {
-		mavenDeployer {
-			repository(url: "http://nexus.theiet.org/nexus/content/repositories/releases") {
-				authentication(userName: ietMavenUser, password: ietMavenPassword)
+		maven {
+			credentials {
+				username ietMavenUser
+				password ietMavenPassword
 			}
 
-			snapshotRepository(url: 'http://nexus.theiet.org/nexus/content/repositories/snapshots') {
-				authentication(userName: ietMavenUser, password: ietMavenPassword);
+
+			if(project.version.endsWith('-SNAPSHOT')) {
+				url 'http://nexus.theiet.org/nexus/content/repositories/snapshots'
+			} else {
+				url 'http://nexus.theiet.org/nexus/content/repositories/releases'
 			}
-			pom.groupId = "org.iet"
 		}
 	}
 }
+
+
+
+

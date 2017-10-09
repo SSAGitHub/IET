@@ -51,19 +51,18 @@ dependencies {
 	ditaOtFopJars 'net.sourceforge.jeuclid:jeuclid-fop:3.1.9'
 	ditaOtFopJars 'net.sourceforge.jeuclid:jeuclid-core:3.1.9'
 	
-	jeuclid 'org.apache.xmlgraphics:batik-anim:1.9.1'
-//	jeuclid 'org.apache.xmlgraphics:batik-transcoder:1.7'
-	jeuclid 'org.apache.xmlgraphics:batik-bridge:1.7'
-	jeuclid 'org.apache.xmlgraphics:batik-svggen:1.7'
-    jeuclid 'batik:pdf-transcoder:1.7'
-	jeuclid 'org.freehep:freehep-io:2.0.5'
-	jeuclid 'org.freehep:freehep-graphicsio-pdf:2.1.3'
-    jeuclid 'net.sourceforge.jeuclid:jeuclid-core:3.1.9'
+	jeuclid ('org.iet:rsuite-jeuclid:1.1.0') {
+		exclude group: 'commons-logging'
+	}
 	
 
 	
 }
 
+def integrationHome = "${project.ext.get('rsuite.home')}/integration"
+def ditaOTHome = "${integrationHome}/DITA-OT${getDitaOTVersion()}"
+def ditaOTPluginHome = "${ditaOTHome}/plugins"
+def jeuclidHome = "${project.ext.get('rsuite.home')}/jeuclid"
 
 rsuiteDeployment{
 
@@ -75,7 +74,7 @@ rsuiteDeployment{
 		common 'BooksDeployAll.groovy'
 		common 'JournalsDeployAll.groovy'
 	//	common 'DeployRSuitePluginsIET.groovy' -- This script is not needed 
-		common "StandardsLoadDitaDtds.groovy;-Dditaot=${ditaotdir}"
+		common "StandardsLoadDitaDtds.groovy;-Dditaot=${ditaOTHome}"
 		common 'StandardsConfigureRoles.groovy'
 		common 'StandardsCaTypes.groovy'
 		common 'StandardsConfigureRoles.groovy'
@@ -146,9 +145,6 @@ tasks.developmentDeployPluginJarOnly.dependsOn(deployXqueryModules)
 
 /* Dita-ot plugin and integrator*/
 
-def integrationHome = "${project.ext.get('rsuite.home')}/integration"
-def ditaOTPluginHome = "${integrationHome}/DITA-OT${getDitaOTVersion()}"
-def jeuclidHome = "${project.ext.get('rsuite.home')}/jeuclid1"
 
 def getDitaOTVersion(){
 	
@@ -157,8 +153,8 @@ def getDitaOTVersion(){
 	}[0].moduleVersion
 }
 
-task clearDitaOTPlugin(type: Delete) {
-	delete "${ditaOTPluginHome}"
+task clearDitaOT(type: Delete) {
+	delete "${ditaOTHome}"
 	
 }
 
@@ -167,7 +163,7 @@ task clearJeuclid(type: Delete) {
 	
 }
 
-task deployDitaOT(type: Copy, dependsOn: 'clearDitaOTPlugin') {
+task deployDitaOT(type: Copy, dependsOn: 'clearDitaOT') {
 	from {
 		configurations.ditaOT.collect { zipTree(it) }
 	}
@@ -176,17 +172,17 @@ task deployDitaOT(type: Copy, dependsOn: 'clearDitaOTPlugin') {
 }
 
 
-task deployDitaOTPlugin(type: Copy, dependsOn: 'deployDitaOT') {
+task deployDitaOTPlugins(type: Copy, dependsOn: 'deployDitaOT') {
 	
-	from "setup/toolkitDitaplugins" into "${ditaOTPluginHome}/plugins"
+	from "setup/toolkitDitaplugins" into "${ditaOTPluginHome}"
 	
 	from {
-		configurations.ditaOTPlugins.collect { zipTree(it) } } into "${ditaOTPluginHome}/plugins"		
+		configurations.ditaOTPlugins.collect { zipTree(it) } } into "${ditaOTPluginHome}"		
 	
 }
 
-task deployDitaIETPlugin(type: Copy, dependsOn: 'deployDitaOTPlugin') {
-	from (configurations.ditaOtFopJars) into "${ditaOTPluginHome}/plugins/org.dita.pdf2/fop/lib"
+task deployDitaFopJars(type: Copy, dependsOn: 'deployDitaOTPlugins') {
+	from (configurations.ditaOtFopJars) into "${ditaOTPluginHome}/org.dita.pdf2/fop/lib"
 }
 
 
