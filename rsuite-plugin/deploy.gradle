@@ -53,9 +53,19 @@ dependencies {
 	
 	jeuclid ('org.iet:rsuite-jeuclid:1.1.0') {
 		exclude group: 'commons-logging'
+		exclude group: 'batik-constants'
+		exclude group: 'org.apache.xmlgraphics' , module : 'batik-extension'
 	}
 	
-
+    jeuclid ('org.freehep:freehep-graphics2d:2.1.3'){
+        exclude group:'org.apache.xmlgraphics', module:'fop'
+		exclude group:'net.sourceforge.jeuclid', module:'jeuclid-fop'
+    } 
+    
+    jeuclid ('org.freehep:freehep-graphicsio-pdf:2.1.3'){
+        exclude group: 'org.freehep' , module : 'freehep-graphicsio-tests'
+    } 
+     
 	
 }
 
@@ -138,10 +148,10 @@ task('deployXqueryModules', type: Copy) {
   into(modulesHome)
 }
 
-
 tasks.deployXqueryModules.dependsOn(removeCustomXqueryModules)
 tasks.deployRSuitePlugins.dependsOn(deployXqueryModules)
 tasks.developmentDeployPluginJarOnly.dependsOn(deployXqueryModules)
+
 
 /* Dita-ot plugin and integrator*/
 
@@ -200,4 +210,7 @@ task runDitaOTIntegrator(dependsOn: 'deployDitaOTPlugins') {
 }
 
 
+tasks.developmentDeployPluginJarOnly.dependsOn(deployDitaFopJars)
+tasks.developmentDeployPluginJarOnly.dependsOn(deployJeuclid)
+tasks.developmentDeployPluginJarOnly.dependsOn(runDitaOTIntegrator)
 
