@@ -119,7 +119,7 @@ rsuiteDeployment{
         plugin 'com.rsicms:rsuite-zip-downloader-plugin:1.1'
         plugin 'com.rsicms:rsuite-dita-support-plugin:1.2-qa1'
         plugin 'com.rsicms.dita4publishers:dita4publishers-rsuite-plugin:0.9.19RC12Issue139'
-        plugin 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-plugin:RS4.0.7_oxy15.2-v1.5.15qa7.1'
+        plugin 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-plugin:4.0.7_oxy15.2_v1.5.15qa7.1'
         plugin 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-dita-plugin:4.0.7_oxy_15.2_o2_plugin_v1.5.15qa1.1'
         plugin 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-onix-plugin:4.0.0_oxy_14.2_v1.0.1'
         plugin 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-jats-plugin:4.0.16_oxy_15.2_v1.1.1'

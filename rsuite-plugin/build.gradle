@@ -94,7 +94,7 @@ dependencies {
 	compile 'net.sf.saxon:saxon9-xpath:9.1.0.7'
 	compile 'net.sf.saxon:saxon9-dom:9.1.0.7'
 
-	compile 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-api:RS4.0.7_oxy15.2-v1.5.15qa7'
+	compile 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-api:4.0.7_oxy15.2_v1.5.15qa7'
 	compile 'com.oxygenxml:oxygen:15.2'
 
 	compile 'commons-logging:commons-logging:1.1'
