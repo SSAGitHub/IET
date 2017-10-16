@@ -210,7 +210,7 @@ task runDitaOTIntegrator(dependsOn: 'deployDitaOTPlugins') {
 }
 
 
-tasks.developmentDeployPluginJarOnly.dependsOn(deployDitaFopJars)
-tasks.developmentDeployPluginJarOnly.dependsOn(deployJeuclid)
-tasks.developmentDeployPluginJarOnly.dependsOn(runDitaOTIntegrator)
+tasks.runAllGroovyScripts.dependsOn(deployDitaFopJars)
+tasks.runAllGroovyScripts.dependsOn(deployJeuclid)
+tasks.runAllGroovyScripts.dependsOn(runDitaOTIntegrator)
 
