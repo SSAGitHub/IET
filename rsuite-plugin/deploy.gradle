@@ -35,8 +35,8 @@ repositories {
 
 configurations {
 	ditaOT
-	ditaOTPlugins
-	ditaOtFopJars
+	ditaOTPlugins 
+	ditaOtFopJars {transitive = false}
 	jeuclid
 }
 	
@@ -192,7 +192,8 @@ task deployDitaOTPlugins(type: Copy, dependsOn: 'deployDitaOT') {
 }
 
 task deployDitaFopJars(type: Copy, dependsOn: 'deployDitaOTPlugins') {
-	from (configurations.ditaOtFopJars) into "${ditaOTPluginHome}/org.dita.pdf2/fop/lib"
+	from (configurations.ditaOtFopJars)
+	into "${ditaOTPluginHome}/org.dita.pdf2/fop/lib"
 }
 
 
