@@ -1,0 +1,66 @@
+//import org.apache.tools.ant.filters.*
+//import com.github.zafarkhaja.semver.Version
+//import java.util.regex.Matcher
+//import static String.format
+
+buildscript {
+	repositories { mavenCentral()        }
+
+//	dependencies { classpath 'net.saliman:gradle-cobertura-plugin:2.2.4' }
+}
+
+//plugins {
+//	id 'pl.allegro.tech.build.axion-release' version '1.5.0'
+//}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+
+repositories {
+	mavenCentral()
+
+
+	maven {
+		url "http://nexus.theiet.org/nexus/content/groups/public"
+		credentials {
+			username ietMavenUser
+			password ietMavenPassword
+		}
+	}
+}
+
+configurations 
+{
+	all {resolutionStrategy.cacheChangingModulesFor 0, 'seconds'}
+	compile
+}
+
+dependencies 
+{
+	compile 'log4j:log4j:1.2.17'
+	compile 'commons-lang:commons-lang:2.4'
+	compile 'commons-configuration:commons-configuration:1.9'
+	compile 'commons-logging:commons-logging:1.1'
+	compile 'joda-time:joda-time:2.1'
+	compile 'commons-io:commons-io:1.4'
+}
+
+jar 
+{
+    archiveName = "WorkFlowCleanUp.jar"
+
+    from 
+	{
+		configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    manifest 
+	{
+        attributes 'Main-Class': 'com.rsicms.batch.WorkFlowCleanUp'
+    }
+
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
+}

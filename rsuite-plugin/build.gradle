@@ -1,4 +1,4 @@
-import org.apache.tools.ant.filters.*
+	import org.apache.tools.ant.filters.*
 import com.github.zafarkhaja.semver.Version
 import java.util.regex.Matcher
 import static String.format
