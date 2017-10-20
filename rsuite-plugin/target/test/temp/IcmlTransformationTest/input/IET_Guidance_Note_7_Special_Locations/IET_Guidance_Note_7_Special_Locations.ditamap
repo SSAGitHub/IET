@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE guide_notemap
+  PUBLIC "urn:pubid:org.iet:doctypes:dita:guide_notemap" "guide_notemap.dtd">
+<guide_notemap>
+    <pubtitle>
+        <mainpubtitle>Guidance Note 7</mainpubtitle>
+        <subtitle>Special Locations</subtitle>
+    </pubtitle>
+    <pubmeta>
+        <metadata>
+            <keywords>
+                <indexterm/>
+            </keywords>
+        </metadata>
+    </pubmeta>
+    <publication collection-type="sequence">
+        <covers collection-type="sequence"> </covers>
+        <frontmatter collection-type="sequence">
+            <topicref href="topics/IET_Guidance_Note_7_Acknowledgements.dita"/>
+            <topicref href="topics/IET_Guidance_Note_7_Preface.dita"/>
+            <topicref href="topics/IET_Guidance_Note_7_Introduction.dita"/>
+        </frontmatter>
+        <pubbody collection-type="sequence">
+            <topicref href="topics/IET_Guidance_Note_7_Chapter_1.dita"/>
+            <topicref href="topics/IET_Guidance_Note_7_Chapter_2.dita"/>
+            <topicref href="topics/IET_Guidance_Note_7_Chapter_3.dita"/>
+            <topicref href="topics/IET_Guidance_Note_7_Chapter_4.dita"/>
+            <topicref href="topics/IET_Guidance_Note_7_Chapter_5.dita"/>
+            <topicref href="topics/IET_Guidance_Note_7_Chapter_6.dita"/>
+        </pubbody>
+        <backmatter collection-type="sequence"/>
+    </publication>
+</guide_notemap>

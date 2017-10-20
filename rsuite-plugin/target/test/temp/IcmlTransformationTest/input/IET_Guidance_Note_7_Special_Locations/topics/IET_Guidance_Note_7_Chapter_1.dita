@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+  PUBLIC "urn:pubid:org.iet:doctypes:dita:chapter" "chapter.dtd">
+<chapter id="chapter-id">
+  <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1</d4pSimpleEnumerator> Locations containing a bath or shower</title>
+  <division id="division-1">
+    <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.1</d4pSimpleEnumerator> Introduction</title>
+    <division id="division-1.1a">
+      <title>Introduction to Amendment No 1 to the 17th Edition</title>
+      <body>
+        <bodydiv>
+          <cite_margin name="cite_margin">Sect 701</cite_margin>
+          <p status="changed">Section 701 of Amendment No 1 to BS 7671:2008
+            includes two notable changes.</p>
+          <p status="new">Regulation 701.1 (Scope) now includes a fixed
+            birthing pool.</p>
+        </bodydiv>
+        <bodydiv>
+          <cite_margin name="cite_margin"><xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.3" scope="external">701.411.3.3</xref></cite_margin>
+          <cite_margin name="cite_margin">415.1.1</cite_margin>
+          <p><xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.3" scope="external">Regulation 701.411.3.3</xref> now states: Additional protection shall be
+            provided for all low voltage circuits of the location, by the use of one or more RCDs
+            having the characteristics specified in Regulation 415.1.1. This is a significant
+            change; previously <xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.3" scope="external">Regulation 701.411.3.3</xref> required additional protection to be
+            provided for all circuits of the location.</p>
+          <p>The main changes introduced by the 17th Edition (BS 7671:2008) when it was published in
+            January 2008 are described below for information.</p>
+        </bodydiv>
+      </body>
+    </division>
+    <division id="division-1.1b">
+      <title>Introduction to the 17th Edition</title>
+      <body>
+        <bodydiv>
+          <cite_margin name="cite_margin">Sect 701</cite_margin>
+          <p>Section 701 of the 17th Edition includes a
+            number of notable changes.</p>
+        </bodydiv>
+        <bodydiv>
+          <cite_margin name="cite_margin"><xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.3" scope="external">701.411.3.3</xref></cite_margin>
+          <p><xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.3" scope="external">Regulation 701.411.3.3</xref> now requires that additional protection
+            shall be provided for all circuits of the location, by the use of one or more RCDs
+            having the characteristics specified in Regulation 415.1.1. This is a significant
+            change. Previously, only fixed currentusing equipment (other than electric showers)
+            located in zone 1 and current-using equipment (other than fixed current-using equipment
+            such as a washing machine, if suitable for use in a bathroom, connected through a fused
+            connection unit) located in zone 3 required 30 mA RCD protection. The updated <xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.3" scope="external">Regulation 701.411.3.3</xref> means that all circuits, including
+            lighting, electric showers, heated towel rails, etc., will require 30 mA RCD protection.
+            Zone 3 has now been removed.</p>
+        </bodydiv>
+        <bodydiv>
+          <cite_margin name="cite_margin">415.1.1</cite_margin>
+          <p>Regulation 415.1.1 specifies the use of RCDs
+            with a rated residual operating current (I<sub>Δn</sub>) not exceeding 30 mA and an
+            operating time not exceeding 40 ms at a residual current of 5 I<sub>Δn</sub>.</p>
+        </bodydiv>
+        <bodydiv>
+          <cite_margin name="cite_margin">701.512.3</cite_margin>
+          <p>Another significant change is introduced by Regulation 701.512.3. This now permits 230 V socket-outlets to be installed in
+            a room containing a bath or shower provided that they are installed at least 3 m
+            horizontally from the boundary of zone 1. This change removes the ambiguity that existed
+            previously between locations containing a bath or shower and a bedroom containing a
+            shower.</p>
+        </bodydiv>
+        <bodydiv>
+          <cite_margin name="cite_margin">701.415.2</cite_margin>
+          <cite_margin name="cite_margin"><xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.1.2" scope="external">411.3.1.2</xref></cite_margin>
+          <p>Regulation 701.415.2 introduces a further significant change regarding supplementary
+            equipotential bonding. The regulation states that where the location containing a bath
+            or shower is in a building with a protective equipotential bonding system in accordance
+            with <xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.1.2" scope="external">Regulation 411.3.1.2,</xref> supplementary equipotential bonding may be
+            omitted, provided that certain requirements are fulfilled.</p>
+        </bodydiv>
+      </body>
+    </division>
+  </division>
+  <division id="division-1.2">
+    <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.2</d4pSimpleEnumerator> Scope</title>
+    <body>
+      <bodydiv>
+        <cite_margin name="cite_margin">701.1</cite_margin>
+        <p>The particular requirements of Section 701 apply
+          to locations containing a fixed bath (bath tub, birthing pool) or shower and to the
+          surrounding zones as described in the regulations. The requirements do not apply to
+          emergency facilities in industrial areas or laboratories, on the presumption that they
+          will only be used in an emergency. Where they are used with any regularity the
+          requirements of the section would apply.</p>
+      </bodydiv>
+    </body>
+  </division>
+  <division id="division-1.3">
+    <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.3</d4pSimpleEnumerator> The Risks</title>
+    <body>
+      <p>The following information is provided to give a better understanding of why particular
+        requirements are necessary for bathrooms and other wet locations.</p>
+      <p>See <xref format="dita" href="#division-1.5" scope="external">Section 5</xref> for prevention of conductive
+        electric shock.</p>
+      <p>Persons in bathrooms are particularly at risk due to:</p>
+      <ol>
+        <li>lack of clothing, particularly footwear</li>
+        <li>presence of water reducing contact resistance</li>
+        <li>immersion in water, reducing total body resistance</li>
+        <li>ready availability of earthed metalwork</li>
+        <li>increased contact area.</li>
+      </ol>
+      <section>
+        <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.3.1</d4pSimpleEnumerator> Clothing</title>
+        <p>Clothing, particularly footwear such as shoes or boots, can greatly increase the total
+          body resistance.</p>
+      </section>
+      <section>
+        <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.3.2</d4pSimpleEnumerator> Body impedance</title>
+        <p>IEC publication DD IEC/TS 60479-1 <i>Effects of current on human beings and livestock</i>
+          provides information on body impedance. Body impedance varies from person to person. The
+          value of impedance depends on a number of factors, in particular on current path, touch
+          voltage, duration of current flow, frequency, degree of moisture of the skin, surface area
+          of contact, pressure exerted and temperature. The IEC document provides information on
+          different total body impedances hand-to-hand for small, medium and large surface areas of
+          contact in dry, water-wet and saltwaterwet conditions. For bathrooms and showers, Table
+          1.1 shows the varying total body impedance for a current path hand-to-hand, for large
+          surface areas (10000 mm<sup>2</sup>) in contact with dry and water-wet conditions for
+          different touch voltages. Large surface areas of contact have the lowest impedances, with
+          medium surface area contact (1000 mm<sup>2</sup>) and small surface areas of contact (100
+            mm<sup>2</sup>) having impedances of progressively higher magnitudes.</p>
+      </section>
+      <section>
+        <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.3.3</d4pSimpleEnumerator> Immersion</title>
+        <p>Immersion of a body in bath water produces large areas of contact of water and as Table
+          1.1 shows, this will reduce the total body impedance.</p>
+        <p>This reduction in body impedance coupled with a location that has earthed metalwork from
+          pipes etc. makes a bathroom particularly hazardous and therefore require special
+          precautions to be taken.</p>
+      </section>
+    </body>
+  </division>
+  <division id="division-1.4">
+    <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.4</d4pSimpleEnumerator> Zones</title>
+    <body>
+      <bodydiv>
+        <cite_margin name="cite_margin">701.32.2</cite_margin>
+        <cite_margin name="cite_margin">701.32.3</cite_margin>
+        <cite_margin name="cite_margin">701.32.4</cite_margin>
+        <p>Zones 0, 1 and 2 provide a very practical method of specifying requirements for
+          protection of equipment against the ingress of water and protection against electric
+          shock, etc. in a specific and unambiguous way. Equipment is either in a zone or outside a
+          zone and this can be determined by measurement.</p>
+      </bodydiv>
+      <bodydiv>
+        <p>Figures 1.1a, b and g show the zones in relation to a bath tub.</p>
+        <p>Figures 1.1c, d and h show the zones in relation to a shower.</p>
+        <p>Figures 1.1e and f show the zones in relation to a shower without a basin from a fixed
+          water outlet (shower head). Demountable shower heads are not considered and therefore do
+          not alter the extent of the zone.</p>
+        <p>Horizontal or inclined ceilings, walls with or without windows, doors, floors and fixed
+          partitions may be taken into account where these effectively limit the extent of locations
+          containing a bath or shower as well as their zones.</p>
+        <p>Examples of the zones for a bath or shower are shown in Figures 1.1a–h.</p>
+        <table frame="none" id="table_mqx_b55_vk">
+          <tgroup cols="3">
+            <tbody>
+              <row>
+                <entry>
+                  <fig>
+                    <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.1a</d4pSimpleEnumerator> Zones for a bath in
+                      elevation view</title>
+                    <image href="../images/GN_1a.png" placement="break"/>
+                  </fig>
+                </entry>
+                <entry/>
+                <entry>
+                  <fig>
+                    <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.1b</d4pSimpleEnumerator> Zones for a bath in plan
+                      view</title>
+                    <image href="../images/GN_1b.png" placement="break"/>
+                  </fig>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  <fig>
+                    <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.1c</d4pSimpleEnumerator> Zones for a shower in
+                      elevation view</title>
+                    <image href="../images/GN_1c.png" placement="break"/>
+                  </fig>
+                </entry>
+                <entry/>
+                <entry>
+                  <fig>
+                    <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.1d</d4pSimpleEnumerator> Zones for a shower in
+                      plan view</title>
+                    <image href="../images/GN_1d.png" placement="break"/>
+                  </fig>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </bodydiv>
+    </body>
+  </division>
+  <division id="division-1.5">
+    <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.5</d4pSimpleEnumerator> Protection against electric shock</title>
+    <body>
+      <section>
+        <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.5.1 Locations containing a bath or
+            shower</d4pSimpleEnumerator></title>
+        <p>Section 701 includes the following requirements:</p>
+        <sectiondiv>
+          <cite_margin name="cite_margin"><xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.3" scope="external">701.411.3.3</xref></cite_margin>
+          <ul>
+            <li>Additional protection shall be provided for all low voltage circuits of the
+              location, by the use of one or more RCDs having the characteristics specified in Regulation 415.1.1.</li>
+          </ul>
+        </sectiondiv>
+        <sectiondiv>
+          <cite_margin name="cite_margin">701.512.3</cite_margin>
+          <cite_margin name="cite_margin">BS EN 61558-2-5</cite_margin>
+          <ul>
+            <li>Except for SELV socket-outlets complying with Section 414 and shaver supply units
+              complying with BS EN 61558-2-5,
+              socket-outlets are prohibited within a distance of 3 m horizontally from the boundary
+              of zone 1.</li>
+          </ul>
+        </sectiondiv>
+        <sectiondiv>
+          <cite_margin name="cite_margin">701.410.3.5</cite_margin>
+          <p>The protective measures of obstacles and placing out of reach (Section 417) are not
+            permitted.</p>
+        </sectiondiv>
+        <sectiondiv>
+          <cite_margin name="cite_margin">701.410.3.6</cite_margin>
+          <p>The protective measures of non-conducting location (Regulation 418.1) and earth-free local equipotential bonding (Regulation 418.2) are not permitted.</p>
+        </sectiondiv>
+      </section>
+      <section>
+        <title><d4pSimpleEnumerator name="d4pSimpleEnumerator">1.5.2</d4pSimpleEnumerator> Supplementary equipotential
+          bonding</title>
+        <sectiondiv>
+          <cite_margin name="cite_margin">701.415.2</cite_margin>
+          <cite_margin name="cite_margin"><xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.1.2" scope="external">411.3.1.2</xref></cite_margin>
+          <p>Supplementary equipotential bonding is required to be established in all areas within a
+            room containing a bath tub or shower basin, by Regulation 418.2 (refer to Figure 1.2).
+            However, the last paragraph of the regulation allows this bonding to be omitted where
+            the location containing a bath or shower is in a building with a protective
+            equipotential bonding system in accordance with <xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.1.2" scope="external">Regulation 411.3.1.2</xref> and provided all of the following conditions
+            are met: (Note: Amendment No 1 renumbers the indents below.)</p>
+        </sectiondiv>
+        <sectiondiv>
+          <cite_margin name="cite_margin"><xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.2" scope="external">411.3.2</xref></cite_margin>
+          <ol>
+            <li>All final circuits of the location comply with the requirements for automatic
+              disconnection according to <xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.2" scope="external">Regulation 411.3.2</xref></li>
+            <li>All final circuits of the location comply with the requirements for automatic
+              disconnection according to Regulation <xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.3" scope="external">701.411.3.3</xref></li>
+            <li>All final circuits of the location comply with the requirements for automatic
+              disconnection according to Regulation <xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.1.2" scope="external">411.3.1.2</xref>.</li>
+          </ol>
+          <p>This means the designer/installer needs to establish that all
+            extraneous-conductiveparts of the location are effectively connected to the protective
+            equipotential bonding according to <xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.1.2" scope="external">Regulation 411.3.1.2</xref>.</p>
+        </sectiondiv>
+        <sectiondiv>
+          <cite_margin name="cite_margin">415.2.2</cite_margin>
+          <note type="note"> The effectiveness of the connection of extraneous-conductive-parts in
+            the location to the main earthing terminal may be assessed, where necessary, by the
+            application of Regulation 415.2.2. </note>
+        </sectiondiv>
+        <lq>
+          <p><xref format="dita" href="../Wiring_Regulations/IET_Wiring_Regulation_Cha_41.dita#r411.3.1.2" scope="external"><b>411.3.1.2</b></xref> Where doubt exists regarding the effectiveness
+            of supplementary equipotential bonding, it shall be confirmed that the resistance R
+            between simultaneously accessible exposed-conductive-parts and
+            extraneous-conductiveparts fulfils the following condition:</p>
+          <p>R &lt; 50 V/I<sub>a</sub> in a.c. systems</p>
+          <p>R &lt; 120 V/I<sub>a</sub> in d.c. systems</p>
+          <p>where:</p>
+          <p>I<sub>a</sub> is the operating current in amperes of the protective device –</p>
+          <p>for RCDs, IDn</p>
+          <p>for overcurrent devices, the current causing automatic operation in 5 s.</p>
+        </lq>
+      </section>
+    </body>
+  </division>
+</chapter>
