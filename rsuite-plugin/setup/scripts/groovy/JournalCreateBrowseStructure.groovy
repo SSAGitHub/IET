@@ -4,8 +4,8 @@ import com.reallysi.rsuite.remote.api.*
 
  
 //def projectDir = new File(scriptFile.absolutePath).parentFile.parentFile.parentFile
-def projectDir = new File("/src/test/resources/org/theiet/rsuite")
-
+//def projectDir = new File("/src/test/resources/org/theiet/rsuite")
+def projectDir = new File("/setup")
 
 def resarchJournalsMap = [
 	"Biometrics" : "BMT",
