@@ -200,7 +200,7 @@ task deployDitaFopJars(type: Copy, dependsOn: 'deployDitaOTPlugins') {
 }
 
 task deployDitaDoctypes(type: Copy, dependsOn: 'deployDitaFopJars') {
-      from "setup/doctypes/dita" into "${ditaOTPluginHome}/org.iet.doctypes/dita"
+      from "setup/doctypes/dita" into "${ditaOTPluginHome}/org.iet.doctypes/doctypes"
 }
 
 task deployJeuclid(type: Copy, dependsOn: 'clearJeuclid') {
