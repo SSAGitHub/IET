@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.io.File;
 
+import org.apache.commons.io.FilenameUtils;
 import org.junit.Test;
 
 public class ProjectFileUtilsTest {
@@ -17,9 +18,7 @@ public class ProjectFileUtilsTest {
         String relativePath = ProjectFileUtils.computeRelativePath(contextPath, exportPath);
         
         String expected = "../images/InlineReaderImage/wreg_fig557.2_am3_1.png";
-        expected = expected.replaceAll("/", File.separator);
-        
-        assertEquals(expected, relativePath);
+        assertEquals(expected, FilenameUtils.separatorsToUnix(relativePath));
     }
 
 }

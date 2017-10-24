@@ -171,13 +171,14 @@ public class IcmlTransformationTest {
 
 		final String ditaOtHome = props.getProperty("dita.ot.home");
 
+
 		File ditaOtHomeFile = new File(ditaOtHome);
 
 		if (!ditaOtHomeFile.exists()) {
 			throw new Exception("This test requires DITA OT");
 		}
 
-		File tempTestFolder = new File("target/test/temp");
+		File tempTestFolder = new File("build/test/temp");
 		tempTestFolder.mkdirs();
 
 		File xsltTransformationTest = new File(tempTestFolder,
@@ -269,7 +270,7 @@ public class IcmlTransformationTest {
 			public XMLReader createXMLReader()
 					throws SAXNotRecognizedException, SAXNotSupportedException {
 				String[] catalogs = { "file://" + ditaOtHome
-						+ "catalog-dita.xml" };
+						+ "/catalog-dita.xml" };
 
 				// Create catalog resolver and set a catalog list.
 				XMLCatalogResolver resolver = new XMLCatalogResolver();

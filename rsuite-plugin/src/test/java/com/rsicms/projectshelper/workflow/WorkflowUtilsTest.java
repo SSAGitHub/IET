@@ -31,11 +31,9 @@ public class WorkflowUtilsTest {
 		when(context.getWorkflowJobContext()).thenReturn(jobContext);		
 		when(context.getConfigurationProperties()).thenReturn(configurationProperties );
 		
-		File mainWorkflowFolder = WorkflowUtils.getMainWorkflowFolder(context);
+		File mainWorkflowFolder = WorkflowUtils.getMainWorkflowFolder(context);		
 		
-		
-		
-		assertEquals("/test/workflowBase/workflowFolder", mainWorkflowFolder.getAbsolutePath());
+		assertEquals(new File("/test/workflowBase/workflowFolder").getAbsolutePath(), mainWorkflowFolder.getAbsolutePath());
 	}
 
 }
