@@ -1,0 +1,21 @@
+//apply plugin: 'java'
+//apply plugin: 'eclipse'
+//apply plugin: 'maven'
+
+
+task clearWorkFlowCleanUp(type: Delete) {
+
+	delete "${rSuiteBatchFolder}/WorkFlowCleanUp"
+	
+}
+
+task deployWorkFlowCleanUp(type: Copy, dependsOn: 'clearWorkFlowCleanUp') { 
+
+      from 'build/libs/WorkFlowCleanUp.jar'
+        into "${rSuiteBatchFolder}/WorkFlowCleanUp"
+ 
+
+      from 'setup/config/WorkFlowCleanUp.properties'
+        into "${rSuiteBatchFolder}/WorkFlowCleanUp"
+	
+}
