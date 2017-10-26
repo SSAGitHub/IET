@@ -7,6 +7,7 @@ import static org.mockito.Mockito.when;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.util.Collection;
 import java.util.Properties;
@@ -130,9 +131,10 @@ public class XsltTransformationTest {
 			}
 
 			public XMLReader createXMLReader()
-					throws SAXNotRecognizedException, SAXNotSupportedException {
-				String[] catalogs =   {"file://" + ditaOtHome + "catalog-dita.xml"};
-
+					throws SAXNotRecognizedException, SAXNotSupportedException, IOException {
+				File file = new File(ditaOtHome, "catalog-dita.xml");
+				String[] catalogs =   {file.toURI().toURL().toString()};
+				
 				// Create catalog resolver and set a catalog list.
 				XMLCatalogResolver resolver = new XMLCatalogResolver();
 				resolver.setPreferPublic(true);
