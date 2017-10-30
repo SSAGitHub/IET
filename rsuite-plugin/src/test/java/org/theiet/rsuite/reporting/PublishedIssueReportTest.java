@@ -98,7 +98,7 @@ public class PublishedIssueReportTest implements JournalConstants {
 			        doc.getDocumentElement(), XPathConstants.STRING);
 
 		Assert.assertEquals("5.8", percentOfPublishedWithin12Months);
-		Assert.assertEquals("4.7", months);
+		Assert.assertEquals("11.5", months);
 			
 	}
 
