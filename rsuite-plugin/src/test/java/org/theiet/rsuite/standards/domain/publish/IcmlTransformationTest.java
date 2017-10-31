@@ -120,6 +120,7 @@ public class IcmlTransformationTest {
 		
 		Map<String, String> variables = new HashMap<String, String>();
 		variables.put(ICML_XSLT_URI.getVariableName(), XSLT_URI_REG_2_ICML_WREG);
+		variables.put(MATHML_SIZE.getVariableName(), "1");
 		
 		generator.initialize(context, log, variables);
 
@@ -314,7 +315,7 @@ public class IcmlTransformationTest {
 					if (href.startsWith(("rsuite:/res/plugin/iet"))) {
 
 						href = href.replace("rsuite:/res/plugin/iet",
-								"src/main");
+								"src/main/resources/WebContent");
 						SAXSource saxSource = new SAXSource(new InputSource(
 								href));
 						return saxSource;
