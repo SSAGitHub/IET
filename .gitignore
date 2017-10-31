@@ -7,3 +7,4 @@
 **/.metadata
 **/gradle.properties
 .recommenders
+**/rsuite-batch-utils/logs
