@@ -5,9 +5,7 @@ import static org.mockito.Mockito.when;
 import static org.theiet.rsuite.standards.StandardsBooksConstans.XSLT_URI_REG_2_ICML_WREG;
 import static org.theiet.rsuite.standards.domain.publish.datatype.StandardsPublishWorkflowVariables.*;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.*;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,8 +25,7 @@ import net.sf.saxon.s9api.XsltCompiler;
 import net.sf.saxon.s9api.XsltExecutable;
 import net.sf.saxon.s9api.XsltTransformer;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.*;
 import org.apache.commons.logging.Log;
 import org.apache.xerces.parsers.SAXParser;
 import org.apache.xerces.util.XMLCatalogResolver;
@@ -335,18 +332,22 @@ public class IcmlTransformationTest {
 						String pluginId = newHref.substring(0, index);
 						String resourcePath = newHref.substring(index);
 
-						byte[] bytes = JarUtils.getResourceFromExternaPlugin(
-								pluginId, resourcePath, new File("java/lib"));
+						 InputStream resourceAsStream = getClass().getResourceAsStream("/WebContent/" + resourcePath);
+						 System.out.println(IOUtils.toString(resourceAsStream));
+						 InputStream stream = getClass().getResourceAsStream("includes-catalog.xml");
+						 System.out.println(stream);
+//						byte[] bytes = JarUtils.getResourceFromExternaPlugin(
+//								pluginId, resourcePath, new File("java/lib"));
 
-						if (bytes != null) {
-							InputSource is = new InputSource(
-									new ByteArrayInputStream(bytes));
-							is.setSystemId(href);
-							SAXSource source = new SAXSource(is);
-							source.setSystemId(href);
-
-							return source;
-						}
+//						if (bytes != null) {
+//							InputSource is = new InputSource(
+//									new ByteArrayInputStream(bytes));
+//							is.setSystemId(href);
+//							SAXSource source = new SAXSource(is);
+//							source.setSystemId(href);
+//
+//							return source;
+//						}
 
 					}
 
