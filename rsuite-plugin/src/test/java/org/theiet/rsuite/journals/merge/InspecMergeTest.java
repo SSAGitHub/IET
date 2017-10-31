@@ -12,6 +12,8 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.junit.Assert;
 import org.junit.Test;
 import org.theiet.rsuite.journals.transforms.InspecClassificationMerge;
@@ -83,8 +85,7 @@ public class InspecMergeTest {
 			@Override
 			public InputSource resolveEntity(String publicId, String systemId)
 					throws SAXException, IOException {
-				
-				systemId = systemId.replace(dataFolderPath, jatsDtdFolderPath);
+				systemId = systemId.replace(FilenameUtils.separatorsToUnix(dataFolderPath), jatsDtdFolderPath);
 				return new InputSource(systemId);
 			}
 		});
