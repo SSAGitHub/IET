@@ -80,9 +80,9 @@ public class WorkFlowCleanUp {
 				if (FilesInDirectory.length == 0) {
 					if (deleteFiles) {
 						FileUtils.deleteDirectory(fYearFolder);
-						logger.info("Year Directory " + fYearFolder.getName() + " is empty and will be deleted");
+						logger.info("Year Directory " + fYearFolder.getAbsolutePath() + " is empty and will be deleted");
 					} else {
-						logger.info("** SIMULATION MODE ** Directory would be deleted");
+						logger.info("** SIMULATION MODE ** Year Directory " + fYearFolder.getAbsolutePath() + " is empty and will be deleted");
 					}
 				}
 			}
@@ -99,7 +99,7 @@ public class WorkFlowCleanUp {
 	}
 
 	private void processMonthFolder(File fMonthFolder) throws IOException {
-		logger.info("Processing Month:" + fMonthFolder.getName());
+		logger.info("Processing Month :" + fMonthFolder.getName());
 		listFilesForDay(fMonthFolder);
 
 		// month directory empty - remove it
@@ -111,9 +111,9 @@ public class WorkFlowCleanUp {
 		if (FilesInDirectory.length == 0) {
 			if (deleteFiles) {
 				FileUtils.deleteDirectory(fMonthFolder);
-				logger.info("Month Directory " + fMonthFolder.getName() + " is empty and will be deleted");
+				logger.info("Month Directory " + fMonthFolder.getAbsolutePath() + " is empty and will be deleted");
 			} else {
-				logger.info("** SIMULATION MODE ** Directory would be deleted");
+				logger.info("** SIMULATION MODE ** Month Directory " + fMonthFolder.getAbsolutePath() + " is empty and will be deleted");
 			}
 		}
 	}
@@ -131,15 +131,14 @@ public class WorkFlowCleanUp {
 
 					// construct localdate from directory name
 					DateTime dtDirectory = new DateTime(iYear, iMonth, iDay, 0, 0, 0);
-					int age = Days.daysBetween(dtDirectory.withTimeAtStartOfDay(), dtNow.withTimeAtStartOfDay())
-							.getDays();
+					int age = Days.daysBetween(dtDirectory.withTimeAtStartOfDay(), dtNow.withTimeAtStartOfDay()).getDays();
 
 					if (age > daysToKeep) {
 						if (deleteFiles) {
-							logger.info("Day Directory is " + age + " days old and will be deleted");
+							logger.info("Day Directory ("+ fDayFolder.getAbsolutePath() + ") is " + age + " days old and will be deleted");
 							FileUtils.deleteDirectory(fDayFolder);
 						} else {
-							logger.info("** SIMULATION MODE ** Directory would be deleted");
+							logger.info("** SIMULATION MODE ** Day Directory ("+ fDayFolder.getAbsolutePath() + ") is " + age + " days old and will be deleted");
 						}
 					}
 				} catch (Exception ex) {
