@@ -30,6 +30,7 @@ import org.apache.commons.logging.Log;
 import org.apache.xerces.parsers.SAXParser;
 import org.apache.xerces.util.XMLCatalogResolver;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
@@ -50,6 +51,8 @@ import com.reallysi.rsuite.service.AuthorizationService;
 import com.reallysi.rsuite.service.ReportManager;
 import com.reallysi.rsuite.service.XmlApiManager;
 
+import org.junit.rules.TemporaryFolder;
+
 public class IcmlTransformationTest {
 
 	private static final String RSUITE_PLUGIN_PROTOCOL = "rsuite:/res/plugin/";
@@ -59,6 +62,9 @@ public class IcmlTransformationTest {
 	private File testOutPutFolder;
 
 	private ExecutionContext context;
+
+	@Rule
+	public TemporaryFolder testFolder = new TemporaryFolder();
 
 	
 	
@@ -176,7 +182,7 @@ public class IcmlTransformationTest {
 			throw new Exception("This test requires DITA OT");
 		}
 
-		File tempTestFolder = new File("build/test/temp");
+		File tempTestFolder = testFolder.newFolder("test");
 		tempTestFolder.mkdirs();
 
 		File xsltTransformationTest = new File(tempTestFolder,
@@ -332,14 +338,14 @@ public class IcmlTransformationTest {
 						String pluginId = newHref.substring(0, index);
 						String resourcePath = newHref.substring(index);
 
-						 InputStream resourceAsStream = getClass().getResourceAsStream("/WebContent/" + resourcePath);
+						 InputStream resourceAsStream = getClass().getResourceAsStream("/WebContent"+resourcePath);
 						 System.out.println(IOUtils.toString(resourceAsStream));
-						 InputStream stream = getClass().getResourceAsStream("includes-catalog.xml");
+						 InputStream stream = getClass().getResourceAsStream("/includes-catalog.xml");
 						 System.out.println(stream);
-//						byte[] bytes = JarUtils.getResourceFromExternaPlugin(
-//								pluginId, resourcePath, new File("java/lib"));
+						//byte[] bytes = JarUtils.getResourceFromExternaPlugin(
+							//	pluginId, resourcePath, new File("java/lib"));
 
-//						if (bytes != null) {
+//						if (bytes != null) { 
 //							InputSource is = new InputSource(
 //									new ByteArrayInputStream(bytes));
 //							is.setSystemId(href);
