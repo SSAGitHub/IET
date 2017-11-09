@@ -88,7 +88,8 @@ public class XsltTransformationTest {
 		testOutPutFolder = new File(xsltTransformationTest, "output");
 		testInputFolder.mkdirs();
 		
-		File inputZipFile = new File("src/test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
+		File inputZipFile = new File("../rsuite-plugin/src/test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
+		
 		ZipUtils.unzip(inputZipFile, testInputFolder);
 		
 		context = Mockito.mock(ExecutionContext.class);
@@ -216,7 +217,7 @@ public class XsltTransformationTest {
 			@Override
 			public Source resolve(String href, String base) throws TransformerException {
 				if (href.startsWith("rsuite:/")){
-				href = href.replace("rsuite:/res/plugin/iet", "src/main/resources/WebContent");
+				href = href.replace("rsuite:/res/plugin/iet", "../rsuite-plugin/src/main/resources/WebContent");
 					return new SAXSource(new InputSource(href));
 				}
 				return null;

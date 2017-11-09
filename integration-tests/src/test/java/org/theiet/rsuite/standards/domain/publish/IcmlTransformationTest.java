@@ -83,7 +83,7 @@ public class IcmlTransformationTest {
 		moFolder.mkdirs();
 
 		File inputZipFile = new File(
-				"src/test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
+				"rsuite-plugin/src/test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
 		ZipUtils.unzip(inputZipFile, moFolder);
 
 		
@@ -135,7 +135,7 @@ public class IcmlTransformationTest {
 		moFolder.mkdirs();
 
 		File inputZipFile = new File(
-				"src/test/resources/org/theiet/rsuite/standards/index.zip");
+				"../rsuite-plugin/src/test/resources/org/theiet/rsuite/standards/index.zip");
 		ZipUtils.unzip(inputZipFile, moFolder);
 
 		
@@ -163,7 +163,7 @@ public class IcmlTransformationTest {
 					
 		}
 		
-		Assert.assertEquals(9, icmlCount);
+		Assert.assertEquals(1, icmlCount);
 
 	}
 	
@@ -196,7 +196,7 @@ public class IcmlTransformationTest {
 		testInputFolder.mkdirs();
 
 		File inputZipFile = new File(
-				"src/test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
+				"../rsuite-plugin/src/test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
 		ZipUtils.unzip(inputZipFile, testInputFolder);
 
 		context = Mockito.mock(ExecutionContext.class);
@@ -318,7 +318,7 @@ public class IcmlTransformationTest {
 					if (href.startsWith(("rsuite:/res/plugin/iet"))) {
 
 						href = href.replace("rsuite:/res/plugin/iet",
-								"src/main/resources/WebContent");
+								"../rsuite-plugin/src/main/resources/WebContent");
 						SAXSource saxSource = new SAXSource(new InputSource(
 								href));
 						return saxSource;
@@ -339,21 +339,16 @@ public class IcmlTransformationTest {
 						String resourcePath = newHref.substring(index);
 
 						 InputStream resourceAsStream = getClass().getResourceAsStream("/WebContent"+resourcePath);
-						 System.out.println(IOUtils.toString(resourceAsStream));
-						 InputStream stream = getClass().getResourceAsStream("/includes-catalog.xml");
-						 System.out.println(stream);
-						//byte[] bytes = JarUtils.getResourceFromExternaPlugin(
-							//	pluginId, resourcePath, new File("java/lib"));
 
-//						if (bytes != null) { 
-//							InputSource is = new InputSource(
-//									new ByteArrayInputStream(bytes));
-//							is.setSystemId(href);
-//							SAXSource source = new SAXSource(is);
-//							source.setSystemId(href);
-//
-//							return source;
-//						}
+						if (resourceAsStream != null) { 
+							InputSource is = new InputSource(
+									resourceAsStream);
+							is.setSystemId(href);
+						SAXSource source = new SAXSource(is);
+							source.setSystemId(href);
+
+						return source;
+						}
 
 					}
 

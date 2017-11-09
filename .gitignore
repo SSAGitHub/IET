@@ -6,4 +6,4 @@
 **/.gradle
 **/.metadata
 .recommenders
-test.properties
+**/rsuite-plugin/test.properties
