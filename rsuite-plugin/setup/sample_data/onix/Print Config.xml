@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><ONIXMessage xmlns="http://ns.editeur.org/onix/3.0/reference" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" release="3.0" xsi:noNamespaceSchemaLocation="ONIX_BookProduct_3.0_reference_IET_Config.xsd">
+    <Header>
+        <Sender>
+            <SenderIdentifier>
+                <SenderIDType>02</SenderIDType>
+                <IDTypeName>Customer Z Config</IDTypeName>
+                <IDValue>Customer Z Config</IDValue>
+            </SenderIdentifier>
+        </Sender>
+        <Addressee>
+            <AddresseeName>Customer Z Config</AddresseeName>
+        </Addressee>
+        <SentDateTime>20120202</SentDateTime>
+    </Header>
+    <Product>
+        <RecordReference>Print Config</RecordReference>
+        <NotificationType>02</NotificationType>
+        <RecordSourceType>01</RecordSourceType>
+        <RecordSourceName>IET</RecordSourceName>
+        <ProductIdentifier>
+            <ProductIDType>03</ProductIDType>
+            <IDValue>Customer Z Config</IDValue>
+        </ProductIdentifier>
+        <DescriptiveDetail>
+            <ProductComposition>00</ProductComposition>
+            <ProductForm>BB</ProductForm>
+            <ProductFormDetail>E107</ProductFormDetail>
+            <ProductFormFeature>
+                <ProductFormFeatureType>05</ProductFormFeatureType>
+            </ProductFormFeature>
+            <ProductPackaging>09</ProductPackaging>
+            <ProductFormDescription>iiiiiiiii</ProductFormDescription>
+            <TradeCategory>07</TradeCategory>
+            <PrimaryContentType>10</PrimaryContentType>            
+            <Measure>
+                <MeasureType>01</MeasureType>
+                <Measurement>4</Measurement>
+                <MeasureUnitCode>mm</MeasureUnitCode>
+            </Measure>
+            <CountryOfManufacture>AD</CountryOfManufacture>
+            <EpubTechnicalProtection>00</EpubTechnicalProtection>
+            <EpubUsageConstraint>
+                <EpubUsageType>07</EpubUsageType>
+                <EpubUsageStatus>02</EpubUsageStatus>
+            </EpubUsageConstraint>
+            <MapScale>4</MapScale>
+            <ProductClassification>
+                <ProductClassificationType>03</ProductClassificationType>
+                <ProductClassificationCode>ttttt</ProductClassificationCode>
+            </ProductClassification>
+            <ProductPart>
+                <ProductForm>BB</ProductForm>
+                <ProductFormDescription>kkkkkk</ProductFormDescription>
+                <NumberOfCopies>2</NumberOfCopies>
+                <CountryOfManufacture>AD</CountryOfManufacture>
+            </ProductPart>
+            <Collection>
+                <CollectionType>10</CollectionType>
+            </Collection>
+            <TitleDetail>
+                <TitleType>01</TitleType>
+                <TitleElement>
+                    <SequenceNumber>2</SequenceNumber>
+                    <TitleElementLevel>01</TitleElementLevel>
+                    <TitleText>Control Engineering</TitleText>
+                </TitleElement>
+                <TitleStatement/>
+            </TitleDetail>
+            <ThesisType>01</ThesisType>
+            <ThesisPresentedTo>ddddd</ThesisPresentedTo>
+            <ThesisYear>wwww</ThesisYear>
+            <Contributor>
+                <SequenceNumber>8</SequenceNumber>
+                <ContributorRole>A01</ContributorRole>
+                <NameIdentifier>
+                    <NameIDType>01</NameIDType>
+                    <IDValue>kl</IDValue>
+                </NameIdentifier>
+                <NamesBeforeKey>Zhengtao</NamesBeforeKey>
+                <KeyNames>Ding</KeyNames>
+                <ProfessionalAffiliation>
+                    <ProfessionalPosition>Senior Lecturer</ProfessionalPosition>
+                    <Affiliation>Control Systems Centre, School of Electrical and Electronic Engineering, The University of Manchester, UK</Affiliation>
+                </ProfessionalAffiliation>
+                <BiographicalNote textformat="05"><p>Zhengtao Ding is a Senior Lecturer in Control Engineering and Director for MSc in Advanced
+                    Control and Systems Engineering at the Control Systems Centre, School of
+                    Electrical and Electronic Engineering, The University of Manchester, UK. His
+                    research interests focus on nonlinear and adaptive control design. He
+                    pioneered research in asymptotic rejection of general periodic disturbances
+                    in nonlinear systems and produced a series of results to systematically
+                    solve this problem in various situations. He also made significant
+                    contributions in output regulation and adaptive control of nonlinear systems
+                    with some more recent results on observer design and output feedback control
+                    as well. Dr Ding has been teaching <i>Nonlinear and Adaptive Control
+                        Systems</i> to MSc students for 9 years, and he has accumulated
+                    tremendous experiences in explaining difficult control concepts to
+                    students.</p></BiographicalNote>
+            </Contributor>
+            <ContributorStatement>www</ContributorStatement>
+            <Conference>
+                <ConferenceName>eeeee</ConferenceName>
+            </Conference>
+            <EditionType>ABR</EditionType>
+            <EditionNumber>2</EditionNumber>
+            <EditionVersionNumber>eee</EditionVersionNumber>
+            <EditionStatement>aaaaaaaaaa</EditionStatement>
+            <Language>
+                <LanguageRole>01</LanguageRole>
+                <LanguageCode>eng</LanguageCode>
+                <CountryCode/>
+                <ScriptCode>Ugar</ScriptCode>
+            </Language>          
+            <Extent>
+                <ExtentType>11</ExtentType>
+                <ExtentValue>12</ExtentValue>
+                <ExtentUnit>03</ExtentUnit>
+            </Extent>
+            <Illustrated>01</Illustrated>
+            <NumberOfIllustrations>9</NumberOfIllustrations>
+            <IllustrationsNote>ttt</IllustrationsNote>
+            <AncillaryContent>
+                <AncillaryContentType>02</AncillaryContentType>
+            </AncillaryContent>
+            <Subject>
+                <SubjectSchemeIdentifier>12</SubjectSchemeIdentifier>
+                <SubjectSchemeName>kkkkk</SubjectSchemeName>
+                <SubjectCode>rrrrr</SubjectCode>
+            </Subject>
+            <NameAsSubject>
+                <NameIdentifier>
+                    <NameIDType>17</NameIDType>
+                    <IDValue>fffffffff</IDValue>
+                </NameIdentifier>
+            </NameAsSubject>
+            <AudienceCode>05</AudienceCode>
+            <Audience>
+                <AudienceCodeType>01</AudienceCodeType>
+                <AudienceCodeValue>05</AudienceCodeValue>
+            </Audience>
+            <AudienceRange>
+                <AudienceRangeQualifier>16</AudienceRangeQualifier>
+                <AudienceRangePrecision>01</AudienceRangePrecision>
+                <AudienceRangeValue>fffff</AudienceRangeValue>
+            </AudienceRange>
+            <AudienceDescription>
+            </AudienceDescription>
+            <Complexity>
+                <ComplexitySchemeIdentifier>01</ComplexitySchemeIdentifier>
+                <ComplexityCode>rrrrrrrr</ComplexityCode>
+            </Complexity>
+        </DescriptiveDetail>
+    </Product> 
+</ONIXMessage>
