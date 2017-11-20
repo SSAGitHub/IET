@@ -5,5 +5,7 @@
 **/.classpath
 **/.gradle
 **/.metadata
+**/gradle.properties
 .recommenders
 **/rsuite-plugin/test.properties
+**/rsuite-batch-utils/logs

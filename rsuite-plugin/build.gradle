@@ -1,4 +1,4 @@
-import org.apache.tools.ant.filters.*
+	import org.apache.tools.ant.filters.*
 import com.github.zafarkhaja.semver.Version
 import java.util.regex.Matcher
 import static String.format
@@ -94,19 +94,14 @@ dependencies {
 	compile 'net.sf.saxon:saxon9-xpath:9.1.0.7'
 	compile 'net.sf.saxon:saxon9-dom:9.1.0.7'
 
-	compile 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-api:RS4.0.7_oxy15.2-v1.5.15qa7'
+	compile 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-api:4.0.7_oxy15.2_v1.5.15qa7'
 	compile 'com.oxygenxml:oxygen:15.2'
-
-
-
 
 	compile 'commons-logging:commons-logging:1.1'
 	compile 'commons-net:commons-net:1.4.1'
 	compile 'hibernate:hibernate:3'
 
 	compile 'joda-time:joda-time:2.1'
-	compile 'net.sourceforge.jeuclid:jeuclid-fop:3.1.9'
-	compile 'net.sourceforge.jeuclid:jeuclid-core:3.1.9'
 
 	pluginJars 'joda-time:joda-time:2.1'
 

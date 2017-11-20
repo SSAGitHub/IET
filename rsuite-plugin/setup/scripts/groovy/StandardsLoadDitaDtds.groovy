@@ -27,12 +27,12 @@ println "catalog=\"" + catalog + "\"";
 projectDir = new File("src");			
 doctypesDir = new File(otDir, "plugins/org.iet.doctypes/doctypes");
 
-def File xsltDir = new File(projectDir, "main\resources\WebContent\xslt");
+def File xsltDir = new File(projectDir, "main/resources/WebContent/xslt");
 println "doctypesDir is " + doctypesDir.getAbsolutePath();
 
 baseTopicTypePubId = "urn:pubid:org.iet:doctypes:dita:";
 baseMapTypePubId   = "urn:pubid:org.iet:doctypes:dita:";
-previewXslFile = new File(projectDir, "src/xslt/preview/dita-preview-shell.xsl");
+previewXslFile = new File(xsltDir, "preview/dita-preview-shell.xsl");
 
 def loadAndConfigureTopicDtd(dtdFile, dtdPublicId, topicTypes, otherMoTypes, previewXslFile, catalog)
 {
