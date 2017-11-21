@@ -204,7 +204,7 @@ public class StandardsBookTest implements OnixConstants, StandardsBooksConstans 
 				.thenReturn(LMD_VALUE_TEMPLATE);
 
 		File onixTemplateFile = new File(
-				"src/test/resources/org/theiet/rsuite/sample_data/onix/theiet-onix-template.xml");
+				"src/test/resources/org/theiet/rsuite/standards/domain/theiet-onix-template.xml");
 
 		when(templateOnixMo.getInputStream()).thenReturn(
 				new FileInputStream(onixTemplateFile),

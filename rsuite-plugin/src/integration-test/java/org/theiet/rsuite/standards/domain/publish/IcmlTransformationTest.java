@@ -5,9 +5,7 @@ import static org.mockito.Mockito.when;
 import static org.theiet.rsuite.standards.StandardsBooksConstans.XSLT_URI_REG_2_ICML_WREG;
 import static org.theiet.rsuite.standards.domain.publish.datatype.StandardsPublishWorkflowVariables.*;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.*;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,12 +25,12 @@ import net.sf.saxon.s9api.XsltCompiler;
 import net.sf.saxon.s9api.XsltExecutable;
 import net.sf.saxon.s9api.XsltTransformer;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.*;
 import org.apache.commons.logging.Log;
 import org.apache.xerces.parsers.SAXParser;
 import org.apache.xerces.util.XMLCatalogResolver;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
@@ -53,6 +51,8 @@ import com.reallysi.rsuite.service.AuthorizationService;
 import com.reallysi.rsuite.service.ReportManager;
 import com.reallysi.rsuite.service.XmlApiManager;
 
+import org.junit.rules.TemporaryFolder;
+
 public class IcmlTransformationTest {
 
 	private static final String RSUITE_PLUGIN_PROTOCOL = "rsuite:/res/plugin/";
@@ -62,6 +62,9 @@ public class IcmlTransformationTest {
 	private File testOutPutFolder;
 
 	private ExecutionContext context;
+
+	@Rule
+	public TemporaryFolder testFolder = new TemporaryFolder();
 
 	
 	
@@ -80,7 +83,7 @@ public class IcmlTransformationTest {
 		moFolder.mkdirs();
 
 		File inputZipFile = new File(
-				"src/test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
+				"src/integration-test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
 		ZipUtils.unzip(inputZipFile, moFolder);
 
 		
@@ -120,6 +123,7 @@ public class IcmlTransformationTest {
 		
 		Map<String, String> variables = new HashMap<String, String>();
 		variables.put(ICML_XSLT_URI.getVariableName(), XSLT_URI_REG_2_ICML_WREG);
+		variables.put(MATHML_SIZE.getVariableName(), "1");
 		
 		generator.initialize(context, log, variables);
 
@@ -131,7 +135,7 @@ public class IcmlTransformationTest {
 		moFolder.mkdirs();
 
 		File inputZipFile = new File(
-				"src/test/resources/org/theiet/rsuite/standards/index.zip");
+				"src/integration-test/resources/org/theiet/rsuite/standards/index.zip");
 		ZipUtils.unzip(inputZipFile, moFolder);
 
 		
@@ -159,7 +163,7 @@ public class IcmlTransformationTest {
 					
 		}
 		
-		Assert.assertEquals(9, icmlCount);
+		Assert.assertEquals(1, icmlCount);
 
 	}
 	
@@ -171,13 +175,14 @@ public class IcmlTransformationTest {
 
 		final String ditaOtHome = props.getProperty("dita.ot.home");
 
+
 		File ditaOtHomeFile = new File(ditaOtHome);
 
 		if (!ditaOtHomeFile.exists()) {
 			throw new Exception("This test requires DITA OT");
 		}
 
-		File tempTestFolder = new File("target/test/temp");
+		File tempTestFolder = testFolder.newFolder("test");
 		tempTestFolder.mkdirs();
 
 		File xsltTransformationTest = new File(tempTestFolder,
@@ -191,7 +196,8 @@ public class IcmlTransformationTest {
 		testInputFolder.mkdirs();
 
 		File inputZipFile = new File(
-				"src/test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
+				"src/integration-test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
+		System.out.println(inputZipFile.getAbsolutePath());
 		ZipUtils.unzip(inputZipFile, testInputFolder);
 
 		context = Mockito.mock(ExecutionContext.class);
@@ -269,7 +275,7 @@ public class IcmlTransformationTest {
 			public XMLReader createXMLReader()
 					throws SAXNotRecognizedException, SAXNotSupportedException {
 				String[] catalogs = { "file://" + ditaOtHome
-						+ "catalog-dita.xml" };
+						+ "/catalog-dita.xml" };
 
 				// Create catalog resolver and set a catalog list.
 				XMLCatalogResolver resolver = new XMLCatalogResolver();
@@ -313,7 +319,7 @@ public class IcmlTransformationTest {
 					if (href.startsWith(("rsuite:/res/plugin/iet"))) {
 
 						href = href.replace("rsuite:/res/plugin/iet",
-								"src/main");
+								"../rsuite-plugin/src/main/resources/WebContent");
 						SAXSource saxSource = new SAXSource(new InputSource(
 								href));
 						return saxSource;
@@ -333,17 +339,16 @@ public class IcmlTransformationTest {
 						String pluginId = newHref.substring(0, index);
 						String resourcePath = newHref.substring(index);
 
-						byte[] bytes = JarUtils.getResourceFromExternaPlugin(
-								pluginId, resourcePath, new File("java/lib"));
+						 InputStream resourceAsStream = getClass().getResourceAsStream("/WebContent"+resourcePath);
 
-						if (bytes != null) {
+						if (resourceAsStream != null) { 
 							InputSource is = new InputSource(
-									new ByteArrayInputStream(bytes));
+									resourceAsStream);
 							is.setSystemId(href);
-							SAXSource source = new SAXSource(is);
+						SAXSource source = new SAXSource(is);
 							source.setSystemId(href);
 
-							return source;
+						return source;
 						}
 
 					}

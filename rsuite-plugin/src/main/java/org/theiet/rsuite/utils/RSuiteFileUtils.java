@@ -6,6 +6,7 @@ import java.util.Set;
 
 import org.apache.commons.io.FilenameUtils;
 
+
 public final class RSuiteFileUtils {
 
 	private static final Set<String> XML_FILE_EXTENSIONS = new HashSet<String>();
@@ -23,6 +24,17 @@ public final class RSuiteFileUtils {
 		String file1path = file1.getAbsolutePath();
 		String file2path = file2.getAbsolutePath();
 		
+		String file1Prefix = FilenameUtils.getPrefix(file1path);
+		String file2Prefix = FilenameUtils.getPrefix(file1path);
+		
+		if (!org.apache.commons.lang.StringUtils.equals(file1Prefix, file2Prefix)) {
+			return null;
+		}
+		
+		file1path = getPathWithoutPrefix(file1path);
+		file2path = getPathWithoutPrefix(file2path);
+		
+		
 		file1path = FilenameUtils.separatorsToUnix(file1path);
 		file2path = FilenameUtils.separatorsToUnix(file2path);
 		
@@ -33,6 +45,8 @@ public final class RSuiteFileUtils {
 		
 		for (int i = 0; i < file1PathParts.length; i++){
 			String file1PathPart = file1PathParts[i];
+			
+			//System.out.println(file1PathPart);
 			
 			if (StringUtils.isBlank(file1PathPart)){
 				continue;
@@ -46,12 +60,27 @@ public final class RSuiteFileUtils {
 		}
 		
 		if (commonPath.length() > 0){
+			
+			if (org.apache.commons.lang.StringUtils.isNotBlank(file1Prefix)) {
+				commonPath.insert(0, file1Prefix);
+			}
 			return new File(commonPath.toString());
 		}
+		
+		
 		
 		return null;
 	}
 	
+	private static String getPathWithoutPrefix(String path) {
+		
+		String prefix = FilenameUtils.getPrefix(path);
+		
+		if (org.apache.commons.lang.StringUtils.isNotBlank(prefix)) {
+			return path.substring(prefix.length());	
+		}
+		return path;
+	}
 	
 	public static boolean isXmlFile(File file){
 		

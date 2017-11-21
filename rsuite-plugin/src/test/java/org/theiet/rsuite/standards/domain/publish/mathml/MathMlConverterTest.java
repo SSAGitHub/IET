@@ -12,6 +12,7 @@ import org.theiet.rsuite.standards.StandardsBooksConstans;
 import org.theiet.rsuite.standards.constans.PublishWorkflowContans;
 
 import com.reallysi.rsuite.api.RSuiteException;
+import org.xmlunit.matchers.CompareMatcher;
 
 public class MathMlConverterTest implements StandardsBooksConstans, PublishWorkflowContans {
 
@@ -103,7 +104,7 @@ public class MathMlConverterTest implements StandardsBooksConstans, PublishWorkf
 
 		String expectedXML = getResultFileConent("test_mathml_inline_convert_result.xml");
 
-		assertEquals(expectedXML, convertedXML);
+		assertThat(expectedXML, CompareMatcher.isSimilarTo(convertedXML).ignoreWhitespace());
 	}
 	
 	@Test

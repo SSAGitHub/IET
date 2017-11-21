@@ -7,6 +7,7 @@ import static org.mockito.Mockito.when;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.util.Collection;
 import java.util.Properties;
@@ -29,8 +30,8 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.xerces.parsers.SAXParser;
 import org.apache.xerces.util.XMLCatalogResolver;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
+import org.junit.rules.TemporaryFolder;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
@@ -59,6 +60,10 @@ public class XsltTransformationTest {
 	
 	private XsltTransformation transformation;
 	
+	@Rule
+	public TemporaryFolder tempFolder= new TemporaryFolder();
+
+	
 	
 	@Before
 	public void before() throws Exception{
@@ -75,7 +80,7 @@ public class XsltTransformationTest {
 		}
 		
 		
-		File tempTestFolder = new File("target/test/temp");
+		File tempTestFolder = tempFolder.newFolder();
 		tempTestFolder.mkdirs();
 		
 		File xsltTransformationTest = new File(tempTestFolder, "XsltTransformationTest");
@@ -87,7 +92,8 @@ public class XsltTransformationTest {
 		testOutPutFolder = new File(xsltTransformationTest, "output");
 		testInputFolder.mkdirs();
 		
-		File inputZipFile = new File("src/test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
+		File inputZipFile = new File("src/integration-test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
+		
 		ZipUtils.unzip(inputZipFile, testInputFolder);
 		
 		context = Mockito.mock(ExecutionContext.class);
@@ -130,9 +136,15 @@ public class XsltTransformationTest {
 			}
 
 			public XMLReader createXMLReader()
-					throws SAXNotRecognizedException, SAXNotSupportedException {
-				String[] catalogs =   {"file://" + ditaOtHome + "catalog-dita.xml"};
-
+					throws SAXNotRecognizedException, SAXNotSupportedException, IOException {
+				File file = new File(ditaOtHome, "catalog-dita.xml");
+				
+				if (!file.exists()) {
+					throw new RuntimeException("File " + file.getAbsolutePath() + " please check the path");
+				}
+				
+				String[] catalogs =   {file.toURI().toURL().toString()};
+				
 				// Create catalog resolver and set a catalog list.
 				XMLCatalogResolver resolver = new XMLCatalogResolver();
 				resolver.setPreferPublic(true);
@@ -214,7 +226,7 @@ public class XsltTransformationTest {
 			@Override
 			public Source resolve(String href, String base) throws TransformerException {
 				if (href.startsWith("rsuite:/")){
-				href = href.replace("rsuite:/res/plugin/iet", "src/main");
+				href = href.replace("rsuite:/res/plugin/iet", "src/main/resources/WebContent");
 					return new SAXSource(new InputSource(href));
 				}
 				return null;
