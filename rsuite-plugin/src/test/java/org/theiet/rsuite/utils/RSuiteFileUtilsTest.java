@@ -8,7 +8,6 @@ import org.junit.Test;
 
 public class RSuiteFileUtilsTest {
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void testCommonFolders() {
 
@@ -27,8 +26,7 @@ public class RSuiteFileUtilsTest {
 		File file2 = new File("/opt/test/test2/input/nextFolder/test/file.txt");
 
 		File commonFolder = RSuiteFileUtils.getCommonFolder(file1, file2);
-		assertEquals("", commonFolder.toString().
-				substring(commonFolder.toString().lastIndexOf(":") + 1));
+		assertEquals(null, commonFolder);
 	}
 
 }

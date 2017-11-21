@@ -83,7 +83,7 @@ public class IcmlTransformationTest {
 		moFolder.mkdirs();
 
 		File inputZipFile = new File(
-				"rsuite-plugin/src/test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
+				"src/integration-test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
 		ZipUtils.unzip(inputZipFile, moFolder);
 
 		
@@ -135,7 +135,7 @@ public class IcmlTransformationTest {
 		moFolder.mkdirs();
 
 		File inputZipFile = new File(
-				"../rsuite-plugin/src/test/resources/org/theiet/rsuite/standards/index.zip");
+				"src/integration-test/resources/org/theiet/rsuite/standards/index.zip");
 		ZipUtils.unzip(inputZipFile, moFolder);
 
 		
@@ -196,7 +196,8 @@ public class IcmlTransformationTest {
 		testInputFolder.mkdirs();
 
 		File inputZipFile = new File(
-				"../rsuite-plugin/src/test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
+				"src/integration-test/resources/org/theiet/rsuite/standards/Guidance_Note_7.zip");
+		System.out.println(inputZipFile.getAbsolutePath());
 		ZipUtils.unzip(inputZipFile, testInputFolder);
 
 		context = Mockito.mock(ExecutionContext.class);
