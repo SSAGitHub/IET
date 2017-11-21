@@ -48,7 +48,7 @@ public class BookMetadataSenderTest implements BooksConstans {
 	@Before
 	public void before() throws IOException{
 		final File f = new File(ProjectPluginProperties.class.getProtectionDomain().getCodeSource().getLocation().getPath());
-		FileUtils.copyDirectoryToDirectory( new File("WebContent"), f);
+		FileUtils.copyDirectoryToDirectory( new File("src/main/resources/WebContent"), f);
 		ProjectPluginProperties.reloadProperties();
 	}
 
@@ -57,6 +57,8 @@ public class BookMetadataSenderTest implements BooksConstans {
         
 		
 		createTransformer(new URI("rsuite:/res/plugin/iet/xslt/books/SendBookMetadata.xsl"));
+		
+	
 		ExecutionContext context = Mockito.mock(ExecutionContext.class);
 
 		ConfigurationProperties configurationMock = Mockito.mock(ConfigurationProperties.class);
@@ -158,7 +160,7 @@ public class BookMetadataSenderTest implements BooksConstans {
 			@Override
 			public Source resolve(String href, String base) throws TransformerException {
 				if (href.startsWith("rsuite:/")){
-				href = href.replace("rsuite:/res/plugin/iet", "src/main");
+				href = href.replace("rsuite:/res/plugin/iet", "src/main/resources/WebContent");
 					return new SAXSource(new InputSource(href));
 				}
 				return null;

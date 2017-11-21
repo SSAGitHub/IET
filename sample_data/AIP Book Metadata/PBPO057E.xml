@@ -1,0 +1,1982 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE ebook PUBLIC "-//AIP//DTD XML Book Setup Module 1.0//EN" "AIPbookxml1.dtd">
+<ebook xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <book-metadata>
+    <book-identifiers>
+      <bookid>PBPO057E</bookid>
+      <doi>10.1049/PBPO057E</doi>
+      <isbn13>9781849190138</isbn13>
+      <isbn-eb>9781849191012</isbn-eb>
+      <customerid>
+        <identifier-name>IET</identifier-name>
+        <identifier-value>PBPO0570</identifier-value>
+      </customerid>
+      <iet-subs>PO</iet-subs>
+    </book-identifiers>
+    <titlegrp>
+      <title>Control Techniques Drives and Controls Handbook</title>
+      <search-title>Control Techniques Drives and Controls Handbook</search-title>
+    </titlegrp>
+    <pubinfo>
+      <edition>2nd Edition</edition>
+      <numpages>768</numpages>
+      <publication-date day="01" month="01" year="2009"></publication-date>
+      <publisher-group>
+        <ownerid>IET</ownerid>
+        <publisher>Institution of Engineering and Technology</publisher>
+      </publisher-group>
+      <cpyrt>
+        <cpyrtdate date="2009"/>
+        <cpyrtholder>Institution of Engineering and Technology</cpyrtholder>
+        <cpyrtstmt>All rights reserved. No part of this publication may be reproduced or distributed in any form or by any means without written permission of the  publisher</cpyrtstmt>
+      </cpyrt>
+      <price-model type="book-chapter"/>
+    </pubinfo>
+    <authgrp>
+      <author>
+        <fname>Bill</fname><surname>Drury</surname>
+        <fullname>Bill Drury</fullname>
+      </author>
+      <aff>
+        <orgname>Emerson Control Techniques</orgname>, <country>UK</country>
+      </aff>
+    </authgrp>
+    <pubdesc>
+      <p>This book contains a great deal of practical information for drives and industrial engineers who use motors and drives. It is a comprehensive guide to the technology underlying drives and motors. It contains sufficient theory to give both user and student an insight into the design of these components and thereby the constraints and opportunities that exist. It has been radically revised and expanded from the previous edition to contain much new information.</p>
+    </pubdesc>
+    <abstract>
+      <p>Variable speed drives and the associated electrical motors play a central role in industry as well as the buildings in which one lives, work and are entertained. They are arguably the most potent tool in the quest to save energy and thereby reduce our carbon footprint. Their rate of development has been rapid and today's product is in many ways unrecognisable from its ancestors of even twenty years ago. Development continues for the components used in the products, the products themselves and the ways in which the products are used. This book contains a great deal of practical information for drives and industrial engineers who use motors and drives. It is a comprehensive guide to the technology underlying drives and motors. It contains sufficient theory to give both user and student an insight into the design of these components and thereby the constraints and opportunities that exist. It has been radically revised and expanded from the previous edition to contain much new information. The practical grounding of this book makes it a reference work that has a place on the shelf of students as well as practising engineers.</p>
+    </abstract>
+    <vocabs>
+      <classification-codes source="Inspec-class">
+        <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+      </classification-codes>
+      <keywords source="Inspec">
+        <keyword source="Inspec">energy conservation</keyword>
+        <keyword source="Inspec">electric drives</keyword>
+        <keyword source="Inspec">variable speed drives</keyword>
+      </keywords>
+      <keywords source="uncontrolled">
+        <keyword source="uncontrolled">control techniques drives</keyword>
+        <keyword source="uncontrolled">controls handbook</keyword>
+        <keyword source="uncontrolled">variable speed drives</keyword>
+        <keyword source="uncontrolled">electrical motor</keyword>
+        <keyword source="uncontrolled">potent tool</keyword>
+        <keyword source="uncontrolled">energy saving</keyword>
+        <keyword source="uncontrolled">carbon footprint</keyword>
+        <keyword source="uncontrolled">industrial engineer</keyword>
+      </keywords>
+      <tia>energy conservation, electric drives, variable speed drives</tia>
+      <booktype>Power and Energy</booktype>
+    </vocabs>
+  </book-metadata>
+  <body>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_frontmatter</content-item-id>
+          <doi>10.1049/PBPO057E_fm</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Front Matter</title>
+          <search-title>Front Matter</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>front matter</content-item-type>
+          <bookseq>1</bookseq>
+          <section-head level="1">Preface</section-head>
+          <section-head level="1">Acknowledgements</section-head>
+        </content-item-pubinfo>
+        <funding-grp><access type="free"/></funding-grp>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_cha1</content-item-id>
+          <doi>10.1049/PBPO057E_cha1</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Industrial motors</title>
+          <search-title>Industrial motors</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>2</bookseq>
+          <item-num>A1</item-num>
+          <supertitle1>Part A: Drive types and core technology </supertitle1>
+          <section-head level="1">A1.1 Introduction and basic electromagnetic principles</section-head>
+          <section-head level="2">A1.1.1 Magnetic circuits</section-head>
+          <section-head level="2">A1.1.2 Electromechanical energy conversion</section-head>
+          <section-head level="3">A1.1.2.1 The alignment of magnetic force/flux lines</section-head>
+          <section-head level="3">A1.1.2.2 The interaction between a magnetic field and a current-carrying conductor</section-head>
+          <section-head level="1">A1.2 D.C. motors</section-head>
+          <section-head level="2">A1.2.1 General</section-head>
+          <section-head level="2">A1.2.2 Operating principles</section-head>
+          <section-head level="2">A1.2.3 Fundamental equations of steady-state performance</section-head>
+          <section-head level="3">A1.2.3.1 The separately excited d.c. motor</section-head>
+          <section-head level="3">A1.2.3.2 The series d.c. motor</section-head>
+          <section-head level="3">A1.2.3.3 The shunt d.c. motor</section-head>
+          <section-head level="3">A1.2.3.4 The compound d.c. motor</section-head>
+          <section-head level="2">A1.2.4 Permanent magnet d.c. motor</section-head>
+          <section-head level="2">A1.2.5 Construction of the d.c. motor</section-head>
+          <section-head level="3">A1.2.5.1 D.C. motor frame</section-head>
+          <section-head level="3">A1.2.5.2 D.C. motor armature</section-head>
+          <section-head level="3">A1.2.5.3 Brush gear</section-head>
+          <section-head level="3">A1.2.5.4 Degree of protection and mounting</section-head>
+          <section-head level="3">A1.2.5.5 DCPM design</section-head>
+          <section-head level="1">A1.3 A.C. induction motors</section-head>
+          <section-head level="2">A1.3.1 General</section-head>
+          <section-head level="2">A1.3.2 Operating principles</section-head>
+          <section-head level="3">A1.3.2.1 Rotating magnetic field</section-head>
+          <section-head level="3">A1.3.2.2 Torque production</section-head>
+          <section-head level="2">A1.3.3 Fundamental equations of steady-state performance</section-head>
+          <section-head level="3">A1.3.3.1 Direct on line (DOL) starting current and torque</section-head>
+          <section-head level="3">A1.3.3.2 Starting current and torque when the motor is connected to a variable-frequency and/or variable-voltage supply</section-head>
+          <section-head level="2">A1.3.4 Voltage-frequency relationship</section-head>
+          <section-head level="2">A1.3.5 Slip-ring induction motor</section-head>
+          <section-head level="2">A1.3.6 Speed-changing motors</section-head>
+          <section-head level="2">A1.3.7 A.C. induction motor construction</section-head>
+          <section-head level="1">A1.4 A.C. synchronous motors</section-head>
+          <section-head level="2">A1.4.1 General</section-head>
+          <section-head level="2">A1.4.2 Operating principles</section-head>
+          <section-head level="2">A1.4.3 Fundamental equations of steady-state performance</section-head>
+          <section-head level="3">A1.4.3.1 General</section-head>
+          <section-head level="3">A1.4.3.2 Brushless PM servo motor</section-head>
+          <section-head level="2">A1.4.4 Limits of operation</section-head>
+          <section-head level="2">A1.4.5 Synchronous motor construction</section-head>
+          <section-head level="3">A1.4.5.1 Permanent-magnet servo motors</section-head>
+          <section-head level="3">A1.4.5.2 Permanent-magnet industrial motors</section-head>
+          <section-head level="3">A1.4.5.3 Wound-rotor synchronous motors</section-head>
+          <section-head level="2">A1.4.6 Starting of synchronous motors</section-head>
+          <section-head level="1">A1.5 Reluctance motors</section-head>
+          <section-head level="1">A1.6 A.C. commutator motors</section-head>
+          <section-head level="1">A1.7 Motors for special applications</section-head>
+          <section-head level="2">A1.7.1 Geared motors</section-head>
+          <section-head level="2">A1.7.2 Brake motors</section-head>
+          <section-head level="2">A1.7.3 Torque motors</section-head>
+          <section-head level="1">A1.8 Motors for hazardous locations</section-head>
+          <section-head level="2">A1.8.1 General</section-head>
+          <section-head level="2">A1.8.2 CENELEC</section-head>
+          <section-head level="2">A1.8.3 North American standards</section-head>
+          <section-head level="2">A1.8.4 Testing authorities</section-head>
+          <fpage>11</fpage>
+          <lpage>70</lpage>
+          <numpages>60</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>All electric machines comprise coupled electric and magnetic circuits that convert electrical energy to and/or from mechanical energy. The term electric motor tends to be used to describe the machine used in an industrial drive, regardless of whether it is converting electrical energy to mechanical motion as a motor or if it is producing electrical energy from mechanical energy as a generator. Alternative designs of motor exist, but before considering these it is helpful to consider a few basic principles of magnetic circuits and electromechanical energy conversion.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8310</compound-classification-code-part><compound-classification-code-part type="text">a.c. machines</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">electric machines</keyword>
+            <keyword source="Inspec">electric motors</keyword>
+            <keyword source="Inspec">magnetic circuits</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">industrial motors</keyword>
+            <keyword source="uncontrolled">electric machines</keyword>
+            <keyword source="uncontrolled">magnetic circuits</keyword>
+            <keyword source="uncontrolled">electric circuits</keyword>
+            <keyword source="uncontrolled">electrical energy</keyword>
+            <keyword source="uncontrolled">mechanical energy</keyword>
+            <keyword source="uncontrolled">mechanical motion</keyword>
+            <keyword source="uncontrolled">generator</keyword>
+            <keyword source="uncontrolled">electromechanical energy conversion</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_cha2</content-item-id>
+          <doi>10.1049/PBPO057E_cha2</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Drive converter circuit topologies</title>
+          <search-title>Drive converter circuit topologies</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>3</bookseq>
+          <item-num>A2</item-num>
+          <supertitle1>Part A: Drive types and core technology </supertitle1>
+          <section-head level="1">A2.1 Introduction</section-head>
+          <section-head level="1">A2.2 A.C. to d.c. power conversion</section-head>
+          <section-head level="2">A2.2.1 General</section-head>
+          <section-head level="2">A2.2.2 Converters for connection to a single-phase supply</section-head>
+          <section-head level="3">A2.2.2.1 Uncontrolled converters</section-head>
+          <section-head level="3">A2.2.2.2 Controlled converters</section-head>
+          <section-head level="3">A2.2.2.3 Sine-wave input converters</section-head>
+          <section-head level="3">A2.2.2.4 Summary of characteristics</section-head>
+          <section-head level="2">A2.2.3 Converters for connection to a three-phase supply</section-head>
+          <section-head level="3">A2.2.3.1 Uncontrolled converters</section-head>
+          <section-head level="3">A2.2.3.2 Controlled converters</section-head>
+          <section-head level="3">A2.2.3.3 Summary of characteristics</section-head>
+          <section-head level="2">A2.2.4 Converters for d.c. motor drive systems</section-head>
+          <section-head level="3">A2.2.4.1 Single-converter drives</section-head>
+          <section-head level="3">A2.2.4.2 Dual-converter drives</section-head>
+          <section-head level="3">A2.2.4.3 Field control</section-head>
+          <section-head level="1">A2.3 D.C. to d.c. power conversion</section-head>
+          <section-head level="2">A2.3.1 General</section-head>
+          <section-head level="2">A2.3.2 Step down d.c. to d.c. converters</section-head>
+          <section-head level="3">A2.3.2.1 Single-quadrant d.c. to d.c. converter</section-head>
+          <section-head level="3">A2.3.2.2 Two-quadrant d.c. to d.c. converter</section-head>
+          <section-head level="3">A2.3.2.3 Four-quadrant d.c. to d.c. converter</section-head>
+          <section-head level="2">A2.3.3 Step-up d.c. to d.c. converters</section-head>
+          <section-head level="1">A2.4 A.C. to a.c. power converters with intermediate d.c. link</section-head>
+          <section-head level="2">A2.4.1 General</section-head>
+          <section-head level="2">A2.4.2 Voltage source inverters</section-head>
+          <section-head level="3">A2.4.2.1 General characteristics</section-head>
+          <section-head level="3">A2.4.2.2 Six-step/quasi-square-wave inverter</section-head>
+          <section-head level="3">A2.4.2.3 Pulse-width modulated inverter</section-head>
+          <section-head level="3">A2.4.2.4 Multi-level inverter</section-head>
+          <section-head level="2">A2.4.3 Current source inverters</section-head>
+          <section-head level="3">A2.4.3.1 General characteristics</section-head>
+          <section-head level="3">A2.4.3.2 Converter-fed synchronous machine (LCI)</section-head>
+          <section-head level="3">A2.4.3.3 Converter-fed induction motor drive</section-head>
+          <section-head level="3">A2.4.3.4 Forced commutated induction motor drive</section-head>
+          <section-head level="3">A2.4.3.5 Static Kramer drive</section-head>
+          <section-head level="1">A2.5 Direct a.c. to a.c. power converters</section-head>
+          <section-head level="2">A2.5.1 General</section-head>
+          <section-head level="2">A2.5.2 Soft starter/voltage regulator</section-head>
+          <section-head level="2">A2.5.3 Cycloconverter</section-head>
+          <section-head level="2">A2.5.4 Matrix converter</section-head>
+          <section-head level="2">A2.5.5 Static Scherbius drive</section-head>
+          <fpage>71</fpage>
+          <lpage>107</lpage>
+          <numpages>37</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>The essence of any power electronics drive is the conversion of electrical energy from one voltage and frequency to another. Many circuit topologies exist to meet different requirements. Some of the topologies are specifically associated with the control of particular motor types, while others can be used to control various forms of electrical machine. Some topologies are associated with particular applications or speed ranges.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">machine control</keyword>
+            <keyword source="Inspec">motor drives</keyword>
+            <keyword source="Inspec">power electronics</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">drive converter circuit topology</keyword>
+            <keyword source="uncontrolled">power electronics drive</keyword>
+            <keyword source="uncontrolled">motor control</keyword>
+            <keyword source="uncontrolled">electrical machine control</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_cha3</content-item-id>
+          <doi>10.1049/PBPO057E_cha3</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Power semiconductor devices</title>
+          <search-title>Power semiconductor devices</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>4</bookseq>
+          <item-num>A3</item-num>
+          <supertitle1>Part A: Drive types and core technology </supertitle1>
+          <section-head level="1">A3.1 General</section-head>
+          <section-head level="1">A3.2 Diode</section-head>
+          <section-head level="2">A3.2.1 PN diode</section-head>
+          <section-head level="2">A3.2.2 PIN diode</section-head>
+          <section-head level="2">A3.2.3 Transient processes (reverse and forward recovery)</section-head>
+          <section-head level="3">A3.2.3.1 Reverse recovery</section-head>
+          <section-head level="3">A3.2.3.2 Forward recovery</section-head>
+          <section-head level="2">A3.2.4 Diode types</section-head>
+          <section-head level="1">A3.3 Thyristor (SCR)</section-head>
+          <section-head level="2">A3.3.1 Device description</section-head>
+          <section-head level="2">A3.3.2 Transient processes</section-head>
+          <section-head level="3">A3.3.2.1 Turn-on</section-head>
+          <section-head level="3">A3.3.2.2 Turn-off</section-head>
+          <section-head level="2">A3.3.3 Thyristor gating requirements</section-head>
+          <section-head level="2">A3.3.4 Thyristor types</section-head>
+          <section-head level="1">A3.4 Triac</section-head>
+          <section-head level="1">A3.5 Gate turn-off thyristor (GTO)</section-head>
+          <section-head level="2">A3.5.1 Device description</section-head>
+          <section-head level="2">A3.5.2 Switching characteristics and gate drive</section-head>
+          <section-head level="3">A3.5.2.1 Turn-on</section-head>
+          <section-head level="3">A3.5.2.2 Turn-off</section-head>
+          <section-head level="2">A3.5.3 Voltage and current ratings</section-head>
+          <section-head level="1">A3.6 Integrated gate commutated thyristor (IGCT)</section-head>
+          <section-head level="2">A3.6.1 Device description</section-head>
+          <section-head level="2">A3.6.2 Switching behaviour and gate drive</section-head>
+          <section-head level="2">A3.6.3 Voltage and current ratings</section-head>
+          <section-head level="1">A3.7 MOSFET</section-head>
+          <section-head level="2">A3.7.1 Device description</section-head>
+          <section-head level="2">A3.7.2 Principal features and applications</section-head>
+          <section-head level="2">A3.7.3 D.C. characteristics</section-head>
+          <section-head level="2">A3.7.4 Switching performance</section-head>
+          <section-head level="2">A3.7.5 Transient characteristics</section-head>
+          <section-head level="3">A3.7.5.1 Switching waveforms</section-head>
+          <section-head level="3">A3.7.5.2 Turn-on</section-head>
+          <section-head level="3">A3.7.5.3 Turn-off</section-head>
+          <section-head level="2">A3.7.6 Safe operating area (SOA)</section-head>
+          <section-head level="3">A3.7.6.1 Forward-bias safe operating area (FBSOA)</section-head>
+          <section-head level="3">A3.7.6.2 Reverse-bias safe operating area (RBSOA)</section-head>
+          <section-head level="2">A3.7.7 Parasitic diode</section-head>
+          <section-head level="2">A3.7.8 MOSFET gate drive requirements</section-head>
+          <section-head level="3">A3.7.8.1 Speed limitations</section-head>
+          <section-head level="3">A3.7.8.2 Driving paralleled MOSFETs</section-head>
+          <section-head level="2">A3.7.9 Voltage and current ratings</section-head>
+          <section-head level="1">A3.8 Insulated gate bipolar transistor (IGBT)</section-head>
+          <section-head level="2">A3.8.1 Device description</section-head>
+          <section-head level="2">A3.8.2 Principal features and applications</section-head>
+          <section-head level="2">A3.8.3 D.C. characteristics</section-head>
+          <section-head level="2">A3.8.4 Punch-through versus non-punch-through structures (PT and NPT)</section-head>
+          <section-head level="2">A3.8.5 Switching performance</section-head>
+          <section-head level="2">A3.8.6 Transient characteristics</section-head>
+          <section-head level="3">A3.8.6.1 Switching waveforms</section-head>
+          <section-head level="3">A3.8.6.2 Turn-on</section-head>
+          <section-head level="3">A3.8.6.3 Turn-off</section-head>
+          <section-head level="2">A3.8.7 Safe operating area (SOA)</section-head>
+          <section-head level="3">A3.8.7.1 Forward-bias safe operating area (FBSOA)</section-head>
+          <section-head level="3">A3.8.7.2 Reverse-bias safe operating area (RBSOA)</section-head>
+          <section-head level="2">A3.8.8 Parasitic thyristor</section-head>
+          <section-head level="2">A3.8.9 IGBT gate drive requirements</section-head>
+          <section-head level="3">A3.8.9.1 IGBT switching speed limitations</section-head>
+          <section-head level="3">A3.8.9.2 Series and parallel operation</section-head>
+          <section-head level="3">A3.8.9.3 IGBT short-circuit performance</section-head>
+          <section-head level="2">A3.8.10 oltage and current ratings</section-head>
+          <section-head level="1">A3.9 Bipolar junction transistor (BJT)</section-head>
+          <section-head level="1">A3.10 ther power devices and materials</section-head>
+          <section-head level="2">A3.10.1 MOS controlled thyristor (MCT)</section-head>
+          <section-head level="2">A3.10.2 MOS turn-off thyristor</section-head>
+          <section-head level="2">A3.10.3 Junction field-effect transistors (JFETs)</section-head>
+          <section-head level="1">A3.11 Materials</section-head>
+          <section-head level="1">A3.12 Power device packaging</section-head>
+          <section-head level="2">A3.12.1 General</section-head>
+          <section-head level="2">A3.12.2 Pressure contact packages</section-head>
+          <section-head level="3">A3.12.2.1 Construction</section-head>
+          <section-head level="3">A3.12.2.2 Features</section-head>
+          <section-head level="2">A3.12.3 Large wire-bonded packages for power modules</section-head>
+          <section-head level="3">A3.12.3.1 Construction</section-head>
+          <section-head level="3">A3.12.3.2 Package types</section-head>
+          <section-head level="3">A3.12.3.3 Features</section-head>
+          <section-head level="2">A3.12.4 Small wire-bonded packages for discrete devices</section-head>
+          <section-head level="3">A3.12.4.1 Construction</section-head>
+          <section-head level="3">A3.12.4.2 Package types</section-head>
+          <section-head level="3">A3.12.4.3 Features</section-head>
+          <fpage>109</fpage>
+          <lpage>169</lpage>
+          <numpages>61</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>All a.c. and d.c. drives use power semiconductor devices to convert and control electrical power. This section reviews important characteristics of the most conventional power devices in drives applications. It is common to operate semiconductor devices in switched mode operation. This mode of operation implies that the device is either fully on or fully off, and power dissipation is therefore low compared to that encountered in the linear mode of operation. It is this feature that makes switched mode operation the key to achieving high efficiency. The practically important power semiconductor devices in relation to motor drives are diodes, thyristors (also called the silicon controlled rectifier, SCR), the triode thyristors (Triac), the gate turn-off thyristors (GTO), the integrated gate commutated thyristors (IGCT), the metal-oxide semiconductor field-effect transistors (MOSFET), the insulated gate bipolar transistors (IGBT), and the bipolar junction transistors (BJT) (although this device has largely been superseded by the other devices ). Power switching devices require electronic 'gate drive' circuits for turning the device on and off. These, called 'driver circuits', are in general complex and also include protection features such as over-current protection. For this reason, details of these circuits have for the most been part limited to a description of the requirements to gate the devices.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B2560P</compound-classification-code-part><compound-classification-code-part type="text">Power semiconductor devices</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">AC motor drives</keyword>
+            <keyword source="Inspec">bipolar transistors</keyword>
+            <keyword source="Inspec">DC motor drives</keyword>
+            <keyword source="Inspec">driver circuits</keyword>
+            <keyword source="Inspec">insulated gate bipolar transistors</keyword>
+            <keyword source="Inspec">MOSFET</keyword>
+            <keyword source="Inspec">overcurrent protection</keyword>
+            <keyword source="Inspec">power semiconductor diodes</keyword>
+            <keyword source="Inspec">power transistors</keyword>
+            <keyword source="Inspec">switched mode power supplies</keyword>
+            <keyword source="Inspec">thyristors</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">power semiconductor device</keyword>
+            <keyword source="uncontrolled">DC motor drive</keyword>
+            <keyword source="uncontrolled">AC motor drive</keyword>
+            <keyword source="uncontrolled">switched mode operation</keyword>
+            <keyword source="uncontrolled">power dissipation</keyword>
+            <keyword source="uncontrolled">linear mode operation</keyword>
+            <keyword source="uncontrolled">diode</keyword>
+            <keyword source="uncontrolled">silicon controlled rectifier</keyword>
+            <keyword source="uncontrolled">SCR</keyword>
+            <keyword source="uncontrolled">triode thyristor</keyword>
+            <keyword source="uncontrolled">gate turn-off thyristor</keyword>
+            <keyword source="uncontrolled">GTO</keyword>
+            <keyword source="uncontrolled">integrated gate commutated thyristor</keyword>
+            <keyword source="uncontrolled">IGCT</keyword>
+            <keyword source="uncontrolled">metal-oxide semiconductor field-effect transistor</keyword>
+            <keyword source="uncontrolled">MOSFET</keyword>
+            <keyword source="uncontrolled">insulated gate bipolar transistor</keyword>
+            <keyword source="uncontrolled">IGBT</keyword>
+            <keyword source="uncontrolled">bipolar junction transistor</keyword>
+            <keyword source="uncontrolled">BJT</keyword>
+            <keyword source="uncontrolled">power switching device</keyword>
+            <keyword source="uncontrolled">electronic gate drive circuit</keyword>
+            <keyword source="uncontrolled">overcurrent protection</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_cha4</content-item-id>
+          <doi>10.1049/PBPO057E_cha4</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Torque, speed and position control</title>
+          <search-title>Torque, speed and position control</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>5</bookseq>
+          <item-num>A4</item-num>
+          <supertitle1>Part A: Drive types and core technology </supertitle1>
+          <section-head level="1">A4.1 General principles</section-head>
+          <section-head level="2">A4.1.1 The ideal control system</section-head>
+          <section-head level="2">A4.1.2 Open-loop control</section-head>
+          <section-head level="2">A4.1.3 Closed-loop control</section-head>
+          <section-head level="2">A4.1.4 Criteria for assessing performance</section-head>
+          <section-head level="1">A4.2 Controllers in a drive</section-head>
+          <section-head level="2">A4.2.1 General</section-head>
+          <section-head level="2">A4.2.2 Torque control</section-head>
+          <section-head level="2">A4.2.3 Flux control</section-head>
+          <section-head level="2">A4.2.4 Speed control</section-head>
+          <section-head level="3">A4.2.4.1 Basic speed control</section-head>
+          <section-head level="3">A4.2.4.2 Setting speed controller gains</section-head>
+          <section-head level="3">A4.2.4.3 Speed control with torque feed-forward</section-head>
+          <section-head level="2">A4.2.5 Position control</section-head>
+          <section-head level="3">A4.2.5.1 Basic position control</section-head>
+          <section-head level="3">A4.2.5.2 Position control with speed feed-forward</section-head>
+          <section-head level="1">A4.3 D.C. motor drives</section-head>
+          <section-head level="2">A4.3.1 General</section-head>
+          <section-head level="2">A4.3.2 Torque control</section-head>
+          <section-head level="2">A4.3.3 Flux control</section-head>
+          <section-head level="1">A4.4 A.C. motor drives</section-head>
+          <section-head level="2">A4.4.1 Torque and flux control</section-head>
+          <section-head level="3">A4.4.1.1 Introduction</section-head>
+          <section-head level="3">A4.4.1.2 D.C. motor torque and flux control</section-head>
+          <section-head level="3">A4.4.1.3 Permanent magnet motor torque and flux control</section-head>
+          <section-head level="3">A4.4.1.4 Induction motor torque and flux control</section-head>
+          <section-head level="3">A4.4.1.5 Open-loop induction motor drive</section-head>
+          <section-head level="2">A4.4.2 Direct torque control</section-head>
+          <section-head level="2">A4.4.3 Performance summary</section-head>
+          <section-head level="3">A4.4.3.1 Permanent-magnet motor drives</section-head>
+          <section-head level="3">A4.4.3.2 Induction motor drives with closed-loop current control</section-head>
+          <section-head level="3">A4.4.3.3 Open-loop induction motor drives</section-head>
+          <fpage>171</fpage>
+          <lpage>210</lpage>
+          <numpages>40</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>Many applications exist where something has to be controlled to follow a reference quantity. For example, the speed of a large motor may be set from a low-power control signal. This can be achieved using a variable-speed drive. Ideally, the relationship between the reference and the motor speed should be linear, and the speed should change instantly with changes in the reference. Any control system, with an input reference signal, a transfer function F and an output. For the system to be ideal, the transfer function F would be a simple constant, so that the output would be proportional to the reference with no delay.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">electric motors</keyword>
+            <keyword source="Inspec">position control</keyword>
+            <keyword source="Inspec">torque control</keyword>
+            <keyword source="Inspec">variable speed drives</keyword>
+            <keyword source="Inspec">velocity control</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">torque control</keyword>
+            <keyword source="uncontrolled">speed control</keyword>
+            <keyword source="uncontrolled">position control</keyword>
+            <keyword source="uncontrolled">low-power control signal</keyword>
+            <keyword source="uncontrolled">variable-speed drive</keyword>
+            <keyword source="uncontrolled">motor speed</keyword>
+            <keyword source="uncontrolled">control system</keyword>
+            <keyword source="uncontrolled">transfer function</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_cha5</content-item-id>
+          <doi>10.1049/PBPO057E_cha5</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Position and speed feedback</title>
+          <search-title>Position and speed feedback</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>6</bookseq>
+          <item-num>A5</item-num>
+          <supertitle1>Part A: Drive types and core technology </supertitle1>
+          <section-head level="1">A5.1 General</section-head>
+          <section-head level="2">A5.1.1 Feedback quantity required</section-head>
+          <section-head level="2">A5.1.2 Absolute position feedback range</section-head>
+          <section-head level="2">A5.1.3 Position resolution</section-head>
+          <section-head level="2">A5.1.4 Position accuracy</section-head>
+          <section-head level="2">A5.1.5 Speed resolution</section-head>
+          <section-head level="2">A5.1.6 Speed accuracy</section-head>
+          <section-head level="2">A5.1.7 Environment</section-head>
+          <section-head level="2">A5.1.8 Maximum speed</section-head>
+          <section-head level="2">A5.1.9 Electrical noise immunity</section-head>
+          <section-head level="2">A5.1.10 Distance between the feedback device and the drive</section-head>
+          <section-head level="2">A5.1.11 Additional features</section-head>
+          <section-head level="1">A5.2 Speed feedback sensors</section-head>
+          <section-head level="2">A5.2.1 D.C. tacho-generator</section-head>
+          <section-head level="1">A5.3 Position feedback sensors</section-head>
+          <section-head level="2">A5.3.1 Resolver</section-head>
+          <section-head level="2">A5.3.2 Incremental encoder</section-head>
+          <section-head level="2">A5.3.3 Incremental encoder with commutation signals</section-head>
+          <section-head level="2">A5.3.4 Incremental encoder with commutation signals only</section-head>
+          <section-head level="2">A5.3.5 SINCOS encoder</section-head>
+          <section-head level="2">A5.3.6 Absolute SINCOS encoder</section-head>
+          <section-head level="2">A5.3.7 Absolute encoders</section-head>
+          <section-head level="2">A5.3.8 SINCOS encoders with serial communications</section-head>
+          <section-head level="3">A5.3.8.1 EnDat</section-head>
+          <section-head level="3">A5.3.8.2 Hiperface</section-head>
+          <section-head level="3">A5.3.8.3 SSI</section-head>
+          <section-head level="3">A5.3.8.4 Summary</section-head>
+          <section-head level="2">A5.3.9 Serial communications encoders</section-head>
+          <section-head level="3">A5.3.9.1 Biss</section-head>
+          <section-head level="3">A5.3.9.2 EnDat</section-head>
+          <section-head level="2">A5.3.10 Wireless encoders</section-head>
+          <fpage>211</fpage>
+          <lpage>231</lpage>
+          <numpages>21</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>Different feedback devices have different features, and these should be considered when designing a system. There is often poor understanding of the characteristics of speed and position sensors and so these features are described in some detail in the following paragraphs.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8310</compound-classification-code-part><compound-classification-code-part type="text">a.c. machines</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">machine control</keyword>
+            <keyword source="Inspec">sensors</keyword>
+            <keyword source="Inspec">velocity control</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">speed feedback</keyword>
+            <keyword source="uncontrolled">control techniques drives</keyword>
+            <keyword source="uncontrolled">controls handbook</keyword>
+            <keyword source="uncontrolled">feedback devices</keyword>
+            <keyword source="uncontrolled">designing a system</keyword>
+            <keyword source="uncontrolled">speed sensors</keyword>
+            <keyword source="uncontrolled">position sensors</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_cha6</content-item-id>
+          <doi>10.1049/PBPO057E_cha6</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Motion control</title>
+          <search-title>Motion control</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>7</bookseq>
+          <item-num>A6</item-num>
+          <supertitle1>Part A: Drive types and core technology </supertitle1>
+          <section-head level="1">A6.1 General</section-head>
+          <section-head level="2">A6.1.1 Position, speed, acceleration and jerk</section-head>
+          <section-head level="3">A6.1.1.1 Speed</section-head>
+          <section-head level="3">A6.1.1.2 Acceleration</section-head>
+          <section-head level="3">A6.1.1.3 Jerk</section-head>
+          <section-head level="2">A6.1.2 Possible configurations</section-head>
+          <section-head level="1">A6.2 Time-based profile</section-head>
+          <section-head level="1">A6.3 CAM profile</section-head>
+          <section-head level="1">A6.4 Electronic gearbox</section-head>
+          <section-head level="1">A6.5 Practical systems</section-head>
+          <section-head level="2">A6.5.1 Control Techniques' Advanced Position Controller</section-head>
+          <section-head level="2">A6.5.2 Control Techniques' Indexer</section-head>
+          <fpage>233</fpage>
+          <lpage>251</lpage>
+          <numpages>19</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>The aim of many applications using variable-speed drives is to control motion. This may be simple rotary speed control of a single motor or the movement of an object through a complex profile in three dimensions involving the coordinated movement of several motors. This section focuses on the profiler and its use in single- and multi-axis systems. Rotary motion control will be used as an example unless otherwise stated, but all the principles discussed apply equally to linear motion. The function of the profiler is to take the required motion and provide appropriate speed and position references for the axis.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">angular velocity control</keyword>
+            <keyword source="Inspec">machine control</keyword>
+            <keyword source="Inspec">motion control</keyword>
+            <keyword source="Inspec">motor drives</keyword>
+            <keyword source="Inspec">variable speed drives</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">control techniques drive</keyword>
+            <keyword source="uncontrolled">control handbook</keyword>
+            <keyword source="uncontrolled">variable-speed drive</keyword>
+            <keyword source="uncontrolled">rotary speed control</keyword>
+            <keyword source="uncontrolled">profiler</keyword>
+            <keyword source="uncontrolled">single-axis system</keyword>
+            <keyword source="uncontrolled">multiaxis system</keyword>
+            <keyword source="uncontrolled">rotary motion control</keyword>
+            <keyword source="uncontrolled">linear motion</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_cha7</content-item-id>
+          <doi>10.1049/PBPO057E_cha7</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Voltage source inverter: four-quadrant operation</title>
+          <search-title>Voltage source inverter: four-quadrant operation</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>8</bookseq>
+          <item-num>A7</item-num>
+          <supertitle1>Part A: Drive types and core technology </supertitle1>
+          <section-head level="1">A7.1 General</section-head>
+          <section-head level="1">A7.2 Controlled deceleration</section-head>
+          <section-head level="2">A7.2.1 Performance and applications</section-head>
+          <section-head level="3">A7.2.1.1 Advantages</section-head>
+          <section-head level="3">A7.2.1.2 Disadvantages</section-head>
+          <section-head level="1">A7.3 Braking resistor</section-head>
+          <section-head level="2">A7.3.1 Performance and applications</section-head>
+          <section-head level="3">A7.3.1.1 Advantages</section-head>
+          <section-head level="3">A7.3.1.2 Disadvantages</section-head>
+          <section-head level="1">A7.4 Active rectifier</section-head>
+          <section-head level="2">A7.4.1 Performance and applications</section-head>
+          <section-head level="3">A7.4.1.1 Advantages</section-head>
+          <section-head level="3">A7.4.1.2 Disadvantages</section-head>
+          <fpage>253</fpage>
+          <lpage>260</lpage>
+          <numpages>8</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This section describes two ways in which this form of a.c. motor drive can decelerate a motor and its load with a simple rectifier input stage. Also described is an alternative active rectifier stage that can be used in conjunction with a voltage-source inverter to facilitate full four-quadrant operation.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">AC motor drives</keyword>
+            <keyword source="Inspec">invertors</keyword>
+            <keyword source="Inspec">rectifiers</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">voltage source inverter</keyword>
+            <keyword source="uncontrolled">four quadrant operation</keyword>
+            <keyword source="uncontrolled">control techniques</keyword>
+            <keyword source="uncontrolled">drives</keyword>
+            <keyword source="uncontrolled">active rectifier stage</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_cha8</content-item-id>
+          <doi>10.1049/PBPO057E_cha8</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Switched reluctance and stepper motor drives</title>
+          <search-title>Switched reluctance and stepper motor drives</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>9</bookseq>
+          <item-num>A8</item-num>
+          <supertitle1>Part A: Drive types and core technology </supertitle1>
+          <section-head level="1">A8.1 General</section-head>
+          <section-head level="1">A8.2 Switched reluctance motors and controllers</section-head>
+          <section-head level="2">A8.2.1 Basic principle of the switched reluctance motor</section-head>
+          <section-head level="3">A8.2.1.1 Operation as a motor</section-head>
+          <section-head level="3">A8.2.1.2 Operation as a brake or generator</section-head>
+          <section-head level="3">A8.2.1.3 Summary so far</section-head>
+          <section-head level="3">A8.2.1.4 Relationship between torque polarity and motoring and generating</section-head>
+          <section-head level="2">A8.2.2 Control of the machine in practice</section-head>
+          <section-head level="3">A8.2.2.1 Low-speed operation</section-head>
+          <section-head level="3">A8.2.2.2 What happens as speed is increased?</section-head>
+          <section-head level="3">A8.2.2.3 Medium-speed operation</section-head>
+          <section-head level="3">A8.2.2.4 How is performance maintained as speed increases?</section-head>
+          <section-head level="3">A8.2.2.5 High-speed operation</section-head>
+          <section-head level="3">A8.2.2.6 Summary of typical/practical control</section-head>
+          <section-head level="3">A8.2.2.7 Control of speed and position</section-head>
+          <section-head level="2">A8.2.3 Polyphase switched reluctance machines</section-head>
+          <section-head level="2">A8.2.4 Losses in the switched reluctance motor</section-head>
+          <section-head level="2">A8.2.5 Excitation frequency</section-head>
+          <section-head level="2">A8.2.6 Power electronics for the switched reluctance motor</section-head>
+          <section-head level="3">A8.2.6.1 Power supply and 'front end' bridge</section-head>
+          <section-head level="3">A8.2.6.2 Power switching stage</section-head>
+          <section-head level="3">A8.2.6.3 Single-switch-per-phase circuits</section-head>
+          <section-head level="3">A8.2.6.4 Multiple-phase operation</section-head>
+          <section-head level="3">A8.2.6.5 Single-switch circuit using bifilar winding</section-head>
+          <section-head level="3">A8.2.6.6 Two-switch asymmetrical bridge</section-head>
+          <section-head level="2">A8.2.7 Advantages of the switched reluctance system</section-head>
+          <section-head level="3">A8.2.7.1 Rotor construction</section-head>
+          <section-head level="3">A8.2.7.2 Stator construction</section-head>
+          <section-head level="3">A8.2.7.3 Electronics and system-level benefits</section-head>
+          <section-head level="2">A8.2.8 Disadvantages of the switched reluctance system</section-head>
+          <section-head level="3">A8.2.8.1 Torque ripple</section-head>
+          <section-head level="3">A8.2.8.2 Acoustic noise</section-head>
+          <section-head level="1">A8.3 Stepper motor drives</section-head>
+          <section-head level="2">A8.3.1 Stepping motor principles</section-head>
+          <section-head level="3">A8.3.1.1 The permanent-magnet motor</section-head>
+          <section-head level="3">A8.3.1.2 The VR motor</section-head>
+          <section-head level="3">A8.3.1.3 The hybrid motor</section-head>
+          <section-head level="2">A8.3.2 Stepping motor drive circuits and logic modes</section-head>
+          <section-head level="3">A8.3.2.1 General</section-head>
+          <section-head level="3">A8.3.2.3 Unipolar switching</section-head>
+          <section-head level="3">A8.3.2.3 Bipolar switching</section-head>
+          <section-head level="3">A8.3.2.4 High-speed stepping: L/R drives</section-head>
+          <section-head level="3">A8.3.2.5 Chopper drives</section-head>
+          <section-head level="3">A8.3.2.6 Bilevel drives</section-head>
+          <section-head level="2">A8.3.3 Application notes</section-head>
+          <section-head level="3">A8.3.3.1 Effect of inertia</section-head>
+          <section-head level="3">A8.3.3.2 Resonance</section-head>
+          <section-head level="3">A8.3.3.3 Stepper/encoders</section-head>
+          <fpage>261</fpage>
+          <lpage>294</lpage>
+          <numpages>34</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>Switched reluctance drive systems are of importance in some applications where high, low-speed torque is required, and less importance is placed on smoothness of rotation. Although considerable advances have been made in improving the noise characteristics of this drive, it can still be a limiting factor where a broad operating speed range is required. Stepper motors systems are somewhat in decline and would rarely be described as a general industrial drive. Their operating characteristic of being controlled by 'a computer' pulse train is now a common feature of many modern servo drives. Also, where rapid settling times are required, stepper drives, which are inherently 'open loop', are not ideal in both fundamental performance and in the respect that varying mechanical friction has a significant impact. This variability can make stepper drives unacceptable in applications where the transient performance is important.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">machine control</keyword>
+            <keyword source="Inspec">reluctance motor drives</keyword>
+            <keyword source="Inspec">stepping motors</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">switched reluctance motor</keyword>
+            <keyword source="uncontrolled">stepper motor drive</keyword>
+            <keyword source="uncontrolled">control technique drives</keyword>
+            <keyword source="uncontrolled">controls handbook 2nd edition</keyword>
+            <keyword source="uncontrolled">low-speed torque</keyword>
+            <keyword source="uncontrolled">industrial drive</keyword>
+            <keyword source="uncontrolled">computer pulse train</keyword>
+            <keyword source="uncontrolled">servo drives</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chb1</content-item-id>
+          <doi>10.1049/PBPO057E_chb1</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>The a.c. supply</title>
+          <search-title>The a.c. supply</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>10</bookseq>
+          <item-num>B1</item-num>
+          <supertitle1>Part B: The drive in its environment</supertitle1>
+          <section-head level="1">B1.1 General</section-head>
+          <section-head level="1">B1.2 Supply harmonics and other low-frequency disturbances</section-head>
+          <section-head level="2">B1.2.1 Overview</section-head>
+          <section-head level="2">B1.2.2 Regulations</section-head>
+          <section-head level="3">B1.2.2.1 Regulations for installations</section-head>
+          <section-head level="3">B1.2.2.2 Regulations and standards for equipment</section-head>
+          <section-head level="2">B1.2.3 Harmonic generation within variable-speed drives</section-head>
+          <section-head level="3">B1.2.3.1 A.C. drives</section-head>
+          <section-head level="3">B1.2.3.2 D.C. drives</section-head>
+          <section-head level="2">B1.2.4 The effects of harmonics</section-head>
+          <section-head level="2">B1.2.5 Calculation of harmonics</section-head>
+          <section-head level="3">B1.2.5.1 Individual drives: d.c.</section-head>
+          <section-head level="3">B1.2.5.2 Individual drives: a.c.</section-head>
+          <section-head level="3">B1.2.5.3 Systems</section-head>
+          <section-head level="3">B1.2.5.4 Isolated generators</section-head>
+          <section-head level="2">B1.2.6 Remedial techniques</section-head>
+          <section-head level="3">B1.2.6.1 Connect the equipment to a point with a high fault level (low impedance)</section-head>
+          <section-head level="3">B1.2.6.2 Use three-phase drives where possible</section-head>
+          <section-head level="3">B1.2.6.3 Use additional inductance</section-head>
+          <section-head level="3">B1.2.6.4 Use a lower value of d.c. smoothing capacitance</section-head>
+          <section-head level="3">B1.2.6.5 Use a higher pulse number (12 pulse or higher)</section-head>
+          <section-head level="3">B1.2.6.6 Use a drive with an active input converter</section-head>
+          <section-head level="3">B1.2.6.7 Use a harmonic filter</section-head>
+          <section-head level="2">B1.2.7 Typical harmonic current levels for a.c. drive arrangements</section-head>
+          <section-head level="2">B1.2.8 Additional notes on the application of harmonic standards</section-head>
+          <section-head level="3">B1.2.8.1 The effect of load</section-head>
+          <section-head level="3">B1.2.8.2 Choice of reference current: application of IEEE Std 519-1992</section-head>
+          <section-head level="2">B1.2.9 Interharmonics and emissions up to 9 kHz</section-head>
+          <section-head level="2">B1.2.10 Voltage notching</section-head>
+          <section-head level="2">B1.2.11 Voltage dips and flicker</section-head>
+          <section-head level="1">B1.3 Power factor</section-head>
+          <section-head level="1">B1.4 Supply imperfections</section-head>
+          <section-head level="2">B1.4.1 General</section-head>
+          <section-head level="2">B1.4.2 Frequency variation</section-head>
+          <section-head level="2">B1.4.3 Voltage variation</section-head>
+          <section-head level="2">B1.4.4 Temporary and transient over-voltages between live conductors and earth</section-head>
+          <section-head level="2">B1.4.5 Voltage unbalance</section-head>
+          <section-head level="2">B1.4.6 Harmonic voltage</section-head>
+          <section-head level="2">B1.4.7 Supply voltage dips and short interruptions</section-head>
+          <section-head level="2">B1.4.8 Interharmonics and mains signalling</section-head>
+          <section-head level="2">B1.4.9 Voltage notching</section-head>
+          <section-head level="2">B1.4.10 EMC standards</section-head>
+          <fpage>299</fpage>
+          <lpage>333</lpage>
+          <numpages>35</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>In this section the impact drives have on the a.c. supply is considered as well as how imperfections in the supply affect the operation of drives. We shall consider power factor and explore how the use of drives requires greater precision in some of the definitions and language that have historically been used in power systems.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">AC motor drives</keyword>
+            <keyword source="Inspec">power factor</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">A.C. supply</keyword>
+            <keyword source="uncontrolled">drives. operation</keyword>
+            <keyword source="uncontrolled">power factor</keyword>
+            <keyword source="uncontrolled">power systems</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chb2</content-item-id>
+          <doi>10.1049/PBPO057E_chb2</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Interaction between drives and motors</title>
+          <search-title>Interaction between drives and motors</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>11</bookseq>
+          <item-num>B2</item-num>
+          <supertitle1>Part B: The drive in its environment</supertitle1>
+          <section-head level="1">B2.1 General</section-head>
+          <section-head level="1">B2.2 Drive converter effects upon d.c. machines</section-head>
+          <section-head level="1">B2.3 Drive converter effects upon a.c. machines</section-head>
+          <section-head level="2">B2.3.1 Introduction</section-head>
+          <section-head level="2">B2.3.2 Machine rating: thermal effects</section-head>
+          <section-head level="2">B2.3.3 Machine insulation</section-head>
+          <section-head level="3">B2.3.3.1 Current source inverters</section-head>
+          <section-head level="3">B2.3.3.2 Voltage source inverters</section-head>
+          <section-head level="2">B2.3.4 Bearing currents</section-head>
+          <section-head level="3">B2.3.4.1 Root causes of bearing currents</section-head>
+          <section-head level="3">B2.3.4.2 Good practices to reduce the risk of bearing currents</section-head>
+          <section-head level="2">B2.3.5 Overspeed</section-head>
+          <section-head level="1">B2.4 Motors for hazardous (potentially flammable or explosive) locations</section-head>
+          <fpage>335</fpage>
+          <lpage>353</lpage>
+          <numpages>19</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>The control of electric motors by means of power electronic converters has a number of significant side-effects. These are primarily due to the introduction of additional frequency components into the voltage and current waveforms applied to the motor. In the case of a.c. machines, which are originally intended to operate at fixed speed, there are additional implications that need to be considered, including mechanical speed limits and the possible presence of critical speeds within the operating speed range.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">machine control</keyword>
+            <keyword source="Inspec">motor drives</keyword>
+            <keyword source="Inspec">power convertors</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">control technique drives</keyword>
+            <keyword source="uncontrolled">electric motors control</keyword>
+            <keyword source="uncontrolled">power electronic converter</keyword>
+            <keyword source="uncontrolled">A.C. machine</keyword>
+            <keyword source="uncontrolled">mechanical speed limits</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chb3</content-item-id>
+          <doi>10.1049/PBPO057E_chb3</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Physical environment</title>
+          <search-title>Physical environment</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>12</bookseq>
+          <item-num>B3</item-num>
+          <supertitle1>Part B: The drive in its environment</supertitle1>
+          <section-head level="1">B3.1 Introduction</section-head>
+          <section-head level="1">B3.2 Enclosure degree of protection</section-head>
+          <section-head level="2">B3.2.1 General</section-head>
+          <section-head level="2">B3.2.2 Motor</section-head>
+          <section-head level="3">B3.2.2.1 General</section-head>
+          <section-head level="3">B3.2.2.2 US practice</section-head>
+          <section-head level="2">B3.2.3 Drive</section-head>
+          <section-head level="1">B3.3 Mounting arrangements</section-head>
+          <section-head level="2">B3.3.1 Motor</section-head>
+          <section-head level="3">B3.3.1.1 General</section-head>
+          <section-head level="3">B3.3.1.2 IEC 60034-7 standard enclosures</section-head>
+          <section-head level="3">B3.3.1.3 NEMA standard enclosures</section-head>
+          <section-head level="2">B3.3.2 Drive</section-head>
+          <section-head level="2">B3.3.3 Integrated motor drive</section-head>
+          <section-head level="1">B3.4 Terminal markings and direction of rotation</section-head>
+          <section-head level="2">B3.4.1 Motor</section-head>
+          <section-head level="3">B3.4.1.1 General</section-head>
+          <section-head level="3">B3.4.1.2 IEC 60034-8/EN 60034-8</section-head>
+          <section-head level="3">B3.4.1.3 NEMA</section-head>
+          <section-head level="2">B3.4.2 Drive</section-head>
+          <section-head level="1">B3.5 Ambient temperature</section-head>
+          <section-head level="2">B3.5.1 Motor</section-head>
+          <section-head level="2">B3.5.2 Drive</section-head>
+          <section-head level="3">B3.5.2.1 Maximum operating temperature</section-head>
+          <section-head level="3">B3.5.2.2 Minimum operating temperature</section-head>
+          <section-head level="1">B3.6 Humidity and condensation</section-head>
+          <section-head level="2">B3.6.1 Motor</section-head>
+          <section-head level="2">B3.6.2 Drive</section-head>
+          <section-head level="1">B3.7 Noise</section-head>
+          <section-head level="2">B3.7.1 Motor</section-head>
+          <section-head level="2">B3.7.2 Drive</section-head>
+          <section-head level="2">B3.7.3 Motor noise when fed from a drive converter</section-head>
+          <section-head level="1">B3.8 Vibration</section-head>
+          <section-head level="2">B3.8.1 Motor</section-head>
+          <section-head level="2">B3.8.2 Drive</section-head>
+          <section-head level="1">B3.9 Altitude</section-head>
+          <section-head level="1">B3.10 Corrosive gases</section-head>
+          <section-head level="2">B3.10.1 Motors</section-head>
+          <section-head level="2">B3.10.2 Drives</section-head>
+          <fpage>355</fpage>
+          <lpage>381</lpage>
+          <numpages>27</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This section looks at the environmental requirements, conditions and impacts that motors and drives have to operate within. Particular focus will be placed upon enclosure and the protection it affords, mounting arrangements and standards, terminal markings and direction of rotation, operating temperature, humidity and condensation, noise, vibration, altitude, storage, and corrosive gases.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">motor drives</keyword>
+            <keyword source="Inspec">motor protection</keyword>
+            <keyword source="Inspec">mountings</keyword>
+            <keyword source="Inspec">packaging</keyword>
+            <keyword source="Inspec">vibrations</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">physical environment requirement</keyword>
+            <keyword source="uncontrolled">motor</keyword>
+            <keyword source="uncontrolled">drive</keyword>
+            <keyword source="uncontrolled">mounting arrangement</keyword>
+            <keyword source="uncontrolled">protection</keyword>
+            <keyword source="uncontrolled">enclosure</keyword>
+            <keyword source="uncontrolled">terminal marking</keyword>
+            <keyword source="uncontrolled">rotation direction</keyword>
+            <keyword source="uncontrolled">operating temperature</keyword>
+            <keyword source="uncontrolled">humidity</keyword>
+            <keyword source="uncontrolled">condensation</keyword>
+            <keyword source="uncontrolled">noise</keyword>
+            <keyword source="uncontrolled">vibration</keyword>
+            <keyword source="uncontrolled">altitude</keyword>
+            <keyword source="uncontrolled">corrosive gas</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chb4</content-item-id>
+          <doi>10.1049/PBPO057E_chb4</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Thermal management</title>
+          <search-title>Thermal management</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>13</bookseq>
+          <item-num>B4</item-num>
+          <supertitle1>Part B: The drive in its environment</supertitle1>
+          <section-head level="1">B4.1 Introduction</section-head>
+          <section-head level="1">B4.2 Motor cooling</section-head>
+          <section-head level="2">B4.2.1 General</section-head>
+          <section-head level="2">B4.2.2 D.C. motors</section-head>
+          <section-head level="3">B4.2.2.1 Air filters</section-head>
+          <section-head level="2">B4.2.3 A.C. industrial motors</section-head>
+          <section-head level="2">B4.2.4 High-performance/servo motors</section-head>
+          <section-head level="3">B4.2.4.1 Intermittent/peak torque limit</section-head>
+          <section-head level="3">B4.2.4.2 Forced-air (fan) cooling</section-head>
+          <section-head level="1">B4.3 Drive cooling: the thermal design of enclosures</section-head>
+          <section-head level="2">B4.3.1 General</section-head>
+          <section-head level="2">B4.3.2 Calculating the size of a sealed enclosure</section-head>
+          <section-head level="2">B4.3.3 Calculating the air-flow in a ventilated enclosure</section-head>
+          <section-head level="2">B4.3.4 Through-panel mounting of drives</section-head>
+          <fpage>383</fpage>
+          <lpage>392</lpage>
+          <numpages>10</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>Motor and drives are both, in general, highly efficient power conversion devices, but when dealing with high powers, even with high efficiency there are significant losses to be dealt with. Motor and drive designers know that thermal management is one of their most significant challenges, and significant technology is brought to bear in this area. Motor and drive designers rely on advanced thermal simulation packages in order to optimise their designs. These designs are, however, based upon defined conditions in which the equipment is expected to function. This section describes the typically available cooling arrangements for motors and the design criteria for designing drive modules into cubicles.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">motor drives</keyword>
+            <keyword source="Inspec">power conversion</keyword>
+            <keyword source="Inspec">thermal management (packaging)</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">thermal management</keyword>
+            <keyword source="uncontrolled">control technique drives</keyword>
+            <keyword source="uncontrolled">motor drive</keyword>
+            <keyword source="uncontrolled">power conversion device</keyword>
+            <keyword source="uncontrolled">thermal simulation package</keyword>
+            <keyword source="uncontrolled">cooling arrangements</keyword>
+            <keyword source="uncontrolled">cubicle</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chb5</content-item-id>
+          <doi>10.1049/PBPO057E_chb5</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Drive system power management: common d.c. bus topologies</title>
+          <search-title>Drive system power management: common d.c. bus topologies</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>14</bookseq>
+          <item-num>B5</item-num>
+          <supertitle1>Part B: The drive in its environment</supertitle1>
+          <section-head level="1">B5.1 Introduction</section-head>
+          <section-head level="1">B5.2 Power circuit topology variations</section-head>
+          <section-head level="2">B5.2.1 General</section-head>
+          <section-head level="2">B5.2.2 Simple bulk uncontrolled external rectifier</section-head>
+          <section-head level="2">B5.2.3 A.C. input and d.c. bus paralleled</section-head>
+          <section-head level="2">B5.2.4 One host drive supplying d.c. bus to slave drives</section-head>
+          <section-head level="2">B5.2.5 A bulk four-quadrant controlled rectifier feeding the d.c. bus</section-head>
+          <section-head level="2">B5.2.6 Active bulk rectifier</section-head>
+          <section-head level="1">B5.3 Fusing policy</section-head>
+          <section-head level="1">B5.4 Practical systems</section-head>
+          <section-head level="2">B5.4.1 Introduction</section-head>
+          <section-head level="2">B5.4.2 Variations in standard drive topology</section-head>
+          <section-head level="2">B5.4.3 Inrush/charging current</section-head>
+          <section-head level="2">B5.4.4 Continuous current</section-head>
+          <section-head level="2">B5.4.5 Implementation: essential knowledge</section-head>
+          <section-head level="3">B5.4.5.1 A.C. and d.c. terminals connected: drives of the same current rating only</section-head>
+          <section-head level="3">B5.4.5.2 A.C. and d.c. terminals connected: drives of different current ratings</section-head>
+          <section-head level="3">B5.4.5.3 One host drive supplying d.c. bus to slave drives</section-head>
+          <section-head level="3">B5.4.5.4 Simple bulk uncontrolled external rectifier</section-head>
+          <section-head level="2">B5.4.6 Practical examples</section-head>
+          <section-head level="3">B5.4.6.1 Winder/unwinder sharing energy via the d.c. bus</section-head>
+          <section-head level="3">B5.4.6.2 Four identical drives with a single dynamic braking circuit</section-head>
+          <section-head level="2">B5.4.7 Note on EMC filters for common d.c. bus systems</section-head>
+          <fpage>393</fpage>
+          <lpage>409</lpage>
+          <numpages>17</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>In applications where regenerative energy is present for significant periods of time on one or more drives it is possible to recycle this energy via the d.c. bus to another drive that is in the motoring condition.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">DC motor drives</keyword>
+            <keyword source="Inspec">network topology</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">drive system power management</keyword>
+            <keyword source="uncontrolled">dc bus topologies</keyword>
+            <keyword source="uncontrolled">control techniques drives</keyword>
+            <keyword source="uncontrolled">controls handbook</keyword>
+            <keyword source="uncontrolled">regenerative energy</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chb6</content-item-id>
+          <doi>10.1049/PBPO057E_chb6</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Electromagnetic compatibility (EMC)</title>
+          <search-title>Electromagnetic compatibility (EMC)</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>15</bookseq>
+          <item-num>B6</item-num>
+          <supertitle1>Part B: The drive in its environment</supertitle1>
+          <section-head level="1">B6.1 Introduction</section-head>
+          <section-head level="2">B6.1.1 General</section-head>
+          <section-head level="2">B6.1.2 Principles of EMC</section-head>
+          <section-head level="2">B6.1.3 EMC regulations</section-head>
+          <section-head level="1">B6.2 Regulations and standards</section-head>
+          <section-head level="2">B6.2.1 Regulations and their application to drive modules</section-head>
+          <section-head level="2">B6.2.2 Standards</section-head>
+          <section-head level="1">B6.3 EMC behaviour of variable-speed drives</section-head>
+          <section-head level="2">B6.3.1 Immunity</section-head>
+          <section-head level="2">B6.3.2 Low-frequency emission</section-head>
+          <section-head level="2">B6.3.3 High-frequency emission</section-head>
+          <section-head level="1">B6.4 Installation rules</section-head>
+          <section-head level="2">B6.4.1 EMC risk assessment</section-head>
+          <section-head level="2">B6.4.2 Basic rules</section-head>
+          <section-head level="3">B6.4.2.1 Cable segregation</section-head>
+          <section-head level="3">B6.4.2.2 Control of return paths, minimising loop areas</section-head>
+          <section-head level="3">B6.4.2.3 Earthing</section-head>
+          <section-head level="2">B6.4.3 Simple precautions and 'fixes'</section-head>
+          <section-head level="2">B6.4.4 Full precautions</section-head>
+          <section-head level="1">B6.5 Theoretical background</section-head>
+          <section-head level="2">B6.5.1 Emission modes</section-head>
+          <section-head level="2">B6.5.2 Principles of input filters</section-head>
+          <section-head level="2">B6.5.3 Screened motor cables</section-head>
+          <section-head level="2">B6.5.4 Ferrite ring suppressors</section-head>
+          <section-head level="2">B6.5.5 Filter earth leakage current</section-head>
+          <section-head level="2">B6.5.6 Filter magnetic saturation</section-head>
+          <section-head level="1">B6.6 Additional guidance on cable screening for sensitive circuits</section-head>
+          <section-head level="2">B6.6.1 Cable screening action</section-head>
+          <section-head level="2">B6.6.2 Cable screen connections</section-head>
+          <section-head level="2">B6.6.3 Recommended cable arrangements</section-head>
+          <fpage>411</fpage>
+          <lpage>431</lpage>
+          <numpages>21</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>The purpose of this section is to set out the necessary considerations for system designers and others when incorporating electronic variable-speed drives into complete machines and systems without encountering problems with electromagnetic interference, and in compliance with relevant regulations. Of necessity, only general guidelines have been provided, but because real installations have a wide variety of detailed requirements, explanation of the underlying principles is given, in order to allow the designer to cope with specific situations.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">electric machines</keyword>
+            <keyword source="Inspec">electromagnetic compatibility</keyword>
+            <keyword source="Inspec">electromagnetic interference</keyword>
+            <keyword source="Inspec">variable speed drives</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">control technique drive</keyword>
+            <keyword source="uncontrolled">control handbook</keyword>
+            <keyword source="uncontrolled">electromagnetic compatibility</keyword>
+            <keyword source="uncontrolled">EMC</keyword>
+            <keyword source="uncontrolled">electronic variable-speed drive</keyword>
+            <keyword source="uncontrolled">machine</keyword>
+            <keyword source="uncontrolled">electromagnetic interference</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chb7</content-item-id>
+          <doi>10.1049/PBPO057E_chb7</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Protection</title>
+          <search-title>Protection</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>16</bookseq>
+          <item-num>B7</item-num>
+          <supertitle1>Part B: The drive in its environment</supertitle1>
+          <section-head level="1">B7.1 Protection of the drive system and power supply infrastructure</section-head>
+          <section-head level="2">B7.1.1 General</section-head>
+          <section-head level="2">B7.1.2 Fuse types</section-head>
+          <section-head level="2">B7.1.3 Application of fuses to drive systems</section-head>
+          <section-head level="2">B7.1.4 Earth faults</section-head>
+          <section-head level="2">B7.1.5 IT supplies</section-head>
+          <section-head level="2">B7.1.6 Voltage transients</section-head>
+          <section-head level="1">B7.2 Motor thermal protection</section-head>
+          <section-head level="2">B7.2.1 General</section-head>
+          <section-head level="2">B7.2.2 Protection of line-connected motor</section-head>
+          <section-head level="2">B7.2.3 Protection of inverter-driven motor</section-head>
+          <section-head level="2">B7.2.4 Multiple motors</section-head>
+          <section-head level="2">B7.2.5 Servo motors</section-head>
+          <fpage>433</fpage>
+          <lpage>440</lpage>
+          <numpages>8</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This section considers the requirements for protection of the complete drive and motor system from the effects of faults and voltage transients. As in other chapters, much of the underlying philosophy is common to all electrical power installations and it is not the purpose to repeat it here. There are some special considerations in relation to drive systems, and these are addressed. The most common form of circuit protection is the fuse, followed by various forms of circuit breaker. Standard industrial fuses and circuit breakers are designed to protect the distribution circuits from the effects both of long-term overloads and of short circuits. In the case of a circuit breaker there are separate actuators (thermal and magnetic) for these two functions, whereas the thermal design of the fuse is adjusted to effectively model the thermal behaviour of the cable in both respects. In all cases the device must also carry predictable safe peak currents such as the starting current of direct-on-line (DOL) motors without undue deterioration. It is difficult to protect semiconductor devices from damage caused by a short circuit using a circuit breaker, as the response time needs to be very rapid, so the following account refers primarily to fuses. It should be understood, however, that in some cases, especially at the lower power levels, a circuit breaker may be able to fulfil the function equally well.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">circuit breakers</keyword>
+            <keyword source="Inspec">electric fuses</keyword>
+            <keyword source="Inspec">machine protection</keyword>
+            <keyword source="Inspec">motor drives</keyword>
+            <keyword source="Inspec">short-circuit currents</keyword>
+            <keyword source="Inspec">transients</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">drive system protection</keyword>
+            <keyword source="uncontrolled">power supply infrastructure</keyword>
+            <keyword source="uncontrolled">motor system protection</keyword>
+            <keyword source="uncontrolled">voltage transient</keyword>
+            <keyword source="uncontrolled">faults</keyword>
+            <keyword source="uncontrolled">electrical power installation</keyword>
+            <keyword source="uncontrolled">circuit breaker</keyword>
+            <keyword source="uncontrolled">industrial fuse</keyword>
+            <keyword source="uncontrolled">distribution circuit protection</keyword>
+            <keyword source="uncontrolled">safe peak current</keyword>
+            <keyword source="uncontrolled">direct-on-line motor starting current</keyword>
+            <keyword source="uncontrolled">DOL motor starting current</keyword>
+            <keyword source="uncontrolled">semiconductor device protection</keyword>
+            <keyword source="uncontrolled">short circuit protection</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chb8</content-item-id>
+          <doi>10.1049/PBPO057E_chb8</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Mechanical vibration, critical speed and torsional dynamics</title>
+          <search-title>Mechanical vibration, critical speed and torsional dynamics</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>17</bookseq>
+          <item-num>B8</item-num>
+          <supertitle1>Part B: The drive in its environment</supertitle1>
+          <section-head level="1">B8.1 General</section-head>
+          <section-head level="1">B8.2 Causes of shaft vibrations independent of variable-speed drives</section-head>
+          <section-head level="2">B8.2.1 Sub-synchronous vibrations</section-head>
+          <section-head level="2">B8.2.2 Synchronous vibrations</section-head>
+          <section-head level="2">B8.2.3 Super-synchronous vibrations</section-head>
+          <section-head level="2">B8.2.4 Critical speeds</section-head>
+          <section-head level="1">B8.3 Applications where torque ripple excites a resonance in the mechanical system</section-head>
+          <section-head level="1">B8.4 High-performance closed-loop applications</section-head>
+          <section-head level="2">B8.4.1 Limits to dynamic performance</section-head>
+          <section-head level="2">B8.4.2 System control loop instability</section-head>
+          <section-head level="1">B8.5 Measures for reducing vibration</section-head>
+          <fpage>441</fpage>
+          <lpage>447</lpage>
+          <numpages>7</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>Many mechanical drive trains, both fixed-speed and variable-speed, experience vibration. As operating speeds and controller performance continue to increase and motor mass and inertia fall, the danger of resonance problems increases. This subject area is complex and this description will be limited to an overview of the principles and identification of the key sources of excitation of mechanical resonances.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">machine control</keyword>
+            <keyword source="Inspec">motor drives</keyword>
+            <keyword source="Inspec">velocity control</keyword>
+            <keyword source="Inspec">vibrations</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">mechanical vibration</keyword>
+            <keyword source="uncontrolled">critical speed</keyword>
+            <keyword source="uncontrolled">torsional dynamics</keyword>
+            <keyword source="uncontrolled">control techniques drives</keyword>
+            <keyword source="uncontrolled">mechanical drive trains</keyword>
+            <keyword source="uncontrolled">fixed speed control</keyword>
+            <keyword source="uncontrolled">variable speed control</keyword>
+            <keyword source="uncontrolled">mechanical resonances</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chb9</content-item-id>
+          <doi>10.1049/PBPO057E_chb9</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Installation and maintenance of standard motors and drives</title>
+          <search-title>Installation and maintenance of standard motors and drives</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>18</bookseq>
+          <item-num>B9</item-num>
+          <supertitle1>Part B: The drive in its environment</supertitle1>
+          <section-head level="1">B9.1 Motors</section-head>
+          <section-head level="2">B9.1.1 General</section-head>
+          <section-head level="2">B9.1.2 Storage</section-head>
+          <section-head level="2">B9.1.3 Installation</section-head>
+          <section-head level="2">B9.1.4 Maintenance guide</section-head>
+          <section-head level="2">B9.1.5 Brush gear maintenance</section-head>
+          <section-head level="1">B9.2 Electronic equipment</section-head>
+          <section-head level="2">B9.2.1 General</section-head>
+          <section-head level="2">B9.2.2 Location of equipment</section-head>
+          <section-head level="2">B9.2.3 Ventilation systems and filters</section-head>
+          <section-head level="2">B9.2.4 Condensation and humidity</section-head>
+          <section-head level="2">B9.2.5 Fuses</section-head>
+          <fpage>449</fpage>
+          <lpage>456</lpage>
+          <numpages>8</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>The installation, commissioning and maintenance of industrial power drive equipment requires careful regard to the relevant safety legislation. Industrial power supply voltages and high-speed high-torque drive systems, unless handled properly, can represent a serious safety hazard. All equipment must be used in accordance with the duty, rating and conditions for which it is designed, and particularly the power supply must be in accordance with that shown on rating plates, subject to standard tolerances. The loading and speed of the motors must not exceed those of their rating plates or any overload ratings agreed for mally with the manufacturer. No attempt should be made to open inspection apertures or similar openings, unless the motor is known to be fully isolated from the power supply and the motor cannot be rotated from the load side. All safety and protection guards and covers should be in place before motors are started.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">installation</keyword>
+            <keyword source="Inspec">maintenance engineering</keyword>
+            <keyword source="Inspec">motor drives</keyword>
+            <keyword source="Inspec">power apparatus</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">standard motor drive</keyword>
+            <keyword source="uncontrolled">maintenance</keyword>
+            <keyword source="uncontrolled">installation</keyword>
+            <keyword source="uncontrolled">industrial power drive equipment</keyword>
+            <keyword source="uncontrolled">safety legislation</keyword>
+            <keyword source="uncontrolled">Industrial power supply voltages</keyword>
+            <keyword source="uncontrolled">high-speed high-torque drive system</keyword>
+            <keyword source="uncontrolled">inspection apertures</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chc1</content-item-id>
+          <doi>10.1049/PBPO057E_chc1</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Application and drive characteristics</title>
+          <search-title>Application and drive characteristics</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>19</bookseq>
+          <item-num>C1</item-num>
+          <supertitle1>Part C: Practical applications </supertitle1>
+          <section-head level="1">C1.1 General</section-head>
+          <section-head level="1">C1.2 Typical load characteristics and ratings</section-head>
+          <section-head level="1">C1.3 Drive characteristics</section-head>
+          <section-head level="2">C1.3.1 General</section-head>
+          <fpage>461</fpage>
+          <lpage>476</lpage>
+          <numpages>16</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>It is not practical to describe all the characteristics for every application and/or every electrical variable-speed drive. This chapter aims to provide an insight into some of the possibilities/opportunities. Typical characteristics are covered. In order to successfully select and apply the optimum drive system, it is necessary to understand the essential features of both the alternative drive technologies and the load to be driven.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">variable speed drives</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">electrical variable-speed drive</keyword>
+            <keyword source="uncontrolled">optimum drive system</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chc2</content-item-id>
+          <doi>10.1049/PBPO057E_chc2</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Duty cycles</title>
+          <search-title>Duty cycles</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>20</bookseq>
+          <item-num>C2</item-num>
+          <supertitle1>Part C: Practical applications </supertitle1>
+          <section-head level="1">C2.1 Introduction</section-head>
+          <section-head level="1">C2.2 Continuous duty: S1</section-head>
+          <section-head level="1">C2.3 Short-time duty: S2</section-head>
+          <section-head level="1">C2.4 Intermittent duty: S3</section-head>
+          <section-head level="1">C2.5 Intermittent duty with starting: S4</section-head>
+          <section-head level="1">C2.6 Intermittent duty with starting and electric braking: S5</section-head>
+          <section-head level="1">C2.7 Continuous operation periodic duty: S6</section-head>
+          <section-head level="1">C2.8 Continuous operation periodic duty with electric braking: S7</section-head>
+          <section-head level="1">C2.9 Continuous operation periodic duty with related load speed changes: S8</section-head>
+          <section-head level="1">C2.10 Duty with non-periodic load and speed variations: S9</section-head>
+          <section-head level="1">C2.11 Duty with discrete constant loads: S10</section-head>
+          <fpage>477</fpage>
+          <lpage>483</lpage>
+          <numpages>7</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>The rating of an electrical machine is usually determined by a temperature limitation, and therefore the duty cycle of the application can significantly affect the rating. There are other limits to motor capacity such as the commutation limit in a d.c. motor, and so duty cycle is not the only determinant of rating; however, if the most cost-effective motor solution is to be obtained it is always good practice to consider the duty cycle with care. IEC 60034-1 defines duty cycles and these are described in the following with a selective interpretation of their application.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8320</compound-classification-code-part><compound-classification-code-part type="text">d.c. machines</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">DC motors</keyword>
+            <keyword source="Inspec">IEC standards</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">electrical machine</keyword>
+            <keyword source="uncontrolled">d.c. motor</keyword>
+            <keyword source="uncontrolled">IEC 60034-1</keyword>
+            <keyword source="uncontrolled">commutation limit</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chc3</content-item-id>
+          <doi>10.1049/PBPO057E_chc3</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Interfaces, communications and PC tools</title>
+          <search-title>Interfaces, communications and PC tools</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>21</bookseq>
+          <item-num>C3</item-num>
+          <supertitle1>Part C: Practical applications </supertitle1>
+          <section-head level="1">C3.1 Introduction</section-head>
+          <section-head level="1">C3.2 Overview of interface types</section-head>
+          <section-head level="1">C3.3 Analogue signal circuits</section-head>
+          <section-head level="2">C3.3.1 General</section-head>
+          <section-head level="2">C3.3.2 Hardware implementations and wiring advice</section-head>
+          <section-head level="3">C3.3.2.1 General guidance on connecting analogue signal circuits</section-head>
+          <section-head level="3">C3.3.2.2 Single-ended circuits</section-head>
+          <section-head level="3">C3.3.2.3 Differential circuits</section-head>
+          <section-head level="3">C3.3.2.4 The case for 4-20 mA and other current loop circuits</section-head>
+          <section-head level="3">C3.3.2.5 The use of capacitors for connecting cable screens</section-head>
+          <section-head level="2">C3.3.3 Typical specifications for analogue inputs and outputs</section-head>
+          <section-head level="1">C3.4 Digital signal circuits</section-head>
+          <section-head level="2">C3.4.1 Positive and negative logic</section-head>
+          <section-head level="2">C3.4.2 Digital input</section-head>
+          <section-head level="2">C3.4.3 Digital output</section-head>
+          <section-head level="2">C3.4.4 Relay contacts</section-head>
+          <section-head level="1">C3.5 Digital serial communications</section-head>
+          <section-head level="2">C3.5.1 Introduction</section-head>
+          <section-head level="2">C3.5.2 Serial network basics</section-head>
+          <section-head level="3">C3.5.2.1 Physical layer</section-head>
+          <section-head level="3">C3.5.2.2 Data link layer</section-head>
+          <section-head level="3">C3.5.2.3 Application layer</section-head>
+          <section-head level="3">C3.5.2.4 Device profile</section-head>
+          <section-head level="2">C3.5.3 RS-232/RS-485 Modbus: A simple Fieldbus system</section-head>
+          <section-head level="1">C3.6 Fieldbus systems</section-head>
+          <section-head level="2">C3.6.1 Introduction to Fieldbus</section-head>
+          <section-head level="2">C3.6.2 Centralised versus distributed control networks</section-head>
+          <section-head level="3">C3.6.2.1 Centralised network</section-head>
+          <section-head level="3">C3.6.2.2 Distributed network</section-head>
+          <section-head level="3">C3.6.2.3 Hybrid networks</section-head>
+          <section-head level="2">C3.6.3 Open and proprietary Fieldbus systems</section-head>
+          <section-head level="3">C3.6.3.1 Open networks</section-head>
+          <section-head level="3">C3.6.3.2 Proprietary networks</section-head>
+          <section-head level="2">C3.6.4 OPC technology</section-head>
+          <section-head level="2">C3.6.5 Industrial Fieldbus systems (non Ethernet)</section-head>
+          <section-head level="3">C3.6.5.1 Profibus DP</section-head>
+          <section-head level="3">C3.6.5.2 DeviceNet</section-head>
+          <section-head level="3">C3.6.5.3 CANopen</section-head>
+          <section-head level="3">C3.6.5.4 Interbus</section-head>
+          <section-head level="3">C3.6.5.5 LonWorks</section-head>
+          <section-head level="3">C3.6.5.6 BACnet</section-head>
+          <section-head level="3">C3.6.5.7 SERCOS II</section-head>
+          <section-head level="2">C3.6.6 Ethernet-based Fieldbuses</section-head>
+          <section-head level="3">C3.6.6.1 General</section-head>
+          <section-head level="3">C3.6.6.2 Modbus TCP/IP</section-head>
+          <section-head level="3">C3.6.6.3 EtherNet IP</section-head>
+          <section-head level="3">C3.6.6.4 PROFINET</section-head>
+          <section-head level="3">C3.6.6.5 EtherCAT</section-head>
+          <section-head level="3">C3.6.6.6 Powerlink</section-head>
+          <section-head level="2">C3.6.7 Company-specific Fieldbuses</section-head>
+          <section-head level="3">C3.6.7.1 CTNet</section-head>
+          <section-head level="3">C3.6.7.2 CTSync</section-head>
+          <section-head level="2">C3.6.8 Gateways</section-head>
+          <section-head level="1">C3.7 PC tools</section-head>
+          <section-head level="2">C3.7.1 Engineering design tools</section-head>
+          <section-head level="2">C3.7.2 Drive commissioning and setup tools</section-head>
+          <section-head level="2">C3.7.3 Application configuration and setup tools</section-head>
+          <section-head level="2">C3.7.4 System configuration and setup tools</section-head>
+          <section-head level="2">C3.7.5 Monitoring tools</section-head>
+          <fpage>485</fpage>
+          <lpage>531</lpage>
+          <numpages>47</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>The modern drive incorporates a large number of functions that were historically located in separate controllers. This trend is continuing apace with the result that there is an ever growing number of interfaces needed to the drive. It is also a sobering thought that the greatest cause of problems in many industrial plants is in the interconnecting wiring. There is clear need therefore to understand the interface types on a modern drive and how they should be used in order to ensure that the design of the system is correct. Furthermore, by understanding the different types of interface it is possible to simplify the physical interfaces by, for example, the use of a Fieldbus, and here the limitations and characteristics of such a digital communications system need to be understood if a system design is to be optimised. Finally, the growing complexity of drive functionality, including the opportunity for users to write their own functions in a drive, has led to the development of advanced PC tools for the configuration and commissioning of individual drives and drive systems as well as data logging and fault-finding capabilities. An understanding of such tools and what benefits they can bring is important to getting the most out of a modern drive.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">electric drives</keyword>
+            <keyword source="Inspec">peripheral interfaces</keyword>
+            <keyword source="Inspec">power engineering computing</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">PC tools</keyword>
+            <keyword source="uncontrolled">industrial plants</keyword>
+            <keyword source="uncontrolled">interconnecting wiring</keyword>
+            <keyword source="uncontrolled">physical interfaces</keyword>
+            <keyword source="uncontrolled">digital communication system</keyword>
+            <keyword source="uncontrolled">individual drive system</keyword>
+            <keyword source="uncontrolled">data logging</keyword>
+            <keyword source="uncontrolled">fault-finding capability</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chc4</content-item-id>
+          <doi>10.1049/PBPO057E_chc4</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Typical drive functions</title>
+          <search-title>Typical drive functions</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>22</bookseq>
+          <item-num>C4</item-num>
+          <supertitle1>Part C: Practical applications </supertitle1>
+          <section-head level="1">C4.1 Introduction</section-head>
+          <section-head level="1">C4.2 Speed or frequency reference/demand</section-head>
+          <section-head level="1">C4.3 Ramps</section-head>
+          <section-head level="1">C4.4 Frequency slaving</section-head>
+          <section-head level="1">C4.5 Speed control</section-head>
+          <section-head level="1">C4.6 Torque and current control</section-head>
+          <section-head level="2">C4.6.1 Open loop with scalar V/f control</section-head>
+          <section-head level="2">C4.6.2 Closed-loop and high-performance open loop</section-head>
+          <section-head level="1">C4.7 Automatic tuning</section-head>
+          <section-head level="1">C4.8 Second parameter sets</section-head>
+          <section-head level="1">C4.9 Sequencer and clock</section-head>
+          <section-head level="1">C4.10 Analogue and digital inputs and outputs</section-head>
+          <section-head level="1">C4.11 Programmable logic</section-head>
+          <section-head level="1">C4.12 Status and trips</section-head>
+          <section-head level="1">C4.13 Intelligent drive programming: user-defined functionality</section-head>
+          <section-head level="1">C4.14 Functional safety</section-head>
+          <section-head level="2">C4.14.1 Principles</section-head>
+          <section-head level="2">C4.14.2 Technical standards</section-head>
+          <section-head level="2">C4.14.3 Possible safety functions for drives</section-head>
+          <section-head level="3">C4.14.3.1 Safe torque off (STO)</section-head>
+          <section-head level="3">C4.14.3.2 Advanced drive-specific functions</section-head>
+          <section-head level="3">C4.14.3.3 Other machinery safety functions</section-head>
+          <section-head level="3">C4.14.3.4 Safety bus interfaces</section-head>
+          <section-head level="3">C4.14.3.5 Integration into a machine</section-head>
+          <section-head level="1">C4.15 Summary</section-head>
+          <fpage>533</fpage>
+          <lpage>549</lpage>
+          <numpages>17</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>The functions available on a modern digital drive are so numerous that only the most studious of users will be aware of the capabilities of the drive. Although many of the functions will be common across all manufacturers, some will be unique and others subtly different. Intelligent drives offer the user the opportunity to write their own specific functions that will then run on the drive. Input and output terminals on many drives will also be configurable, that is to say that the function controlled by or driving the terminals can be set by the user. It is important to note, however, that a well-designed drive will leave the factory with a default configuration that will cater for a large proportion of basic applications without the need for the user to make many or any changes to operate. Software tools are also available to guide the user through the configuration of their drive. The objective of this section is to describe in general terms the sort of functions the user may expect to find on a typical industrial drive, and what they do. In demanding applications care needs to be taken about issues such as the sample/update times of given inputs and outputs (also relevant for data communicated through serial buses). The user should consider the cost benefit of utilising such functions that exist within the drive. Less obvious is the potential improvement in performance obtained by using a function within the drive because communication time to the control loops is likely to be quicker than using an external controller. Sample and update rates must be taken into account for demanding applications. For convenience the functions have been grouped in order to illustrate the types of functions that are available and to allow the reader to readily find specific functions. The list is not exhaustive.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">motor drives</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">typical intelligent drive function</keyword>
+            <keyword source="uncontrolled">control technique drive</keyword>
+            <keyword source="uncontrolled">control handbook</keyword>
+            <keyword source="uncontrolled">software tool</keyword>
+            <keyword source="uncontrolled">industrial drive</keyword>
+            <keyword source="uncontrolled">control loop</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chc5</content-item-id>
+          <doi>10.1049/PBPO057E_chc5</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Common techniques</title>
+          <search-title>Common techniques</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>23</bookseq>
+          <item-num>C5</item-num>
+          <supertitle1>Part C: Practical applications </supertitle1>
+          <section-head level="1">C5.1 General</section-head>
+          <section-head level="1">C5.2 Speed control with particular reference to linear motion</section-head>
+          <section-head level="2">C5.2.1 Linear to rotary speed reference conversion</section-head>
+          <section-head level="1">C5.3 Torque feed-forward</section-head>
+          <section-head level="1">C5.4 Virtual master and sectional control</section-head>
+          <section-head level="1">C5.5 Registration</section-head>
+          <section-head level="1">C5.6 Load torque sharing</section-head>
+          <section-head level="2">C5.6.1 General</section-head>
+          <section-head level="2">C5.6.2 Open-loop systems</section-head>
+          <section-head level="2">C5.6.3 Paired d.c. motors</section-head>
+          <section-head level="2">C5.6.4 Paired a.c. motors</section-head>
+          <section-head level="3">C5.6.4.1 Parallel motors</section-head>
+          <section-head level="3">C5.6.4.2 Frequency slaving</section-head>
+          <section-head level="3">C5.6.4.3 Current slaving</section-head>
+          <section-head level="2">C5.6.5 Torque slaving systems</section-head>
+          <section-head level="2">C5.6.6 Speed-controlled helper with fixed torque</section-head>
+          <section-head level="2">C5.6.7 Speed-controlled helper with shared torque</section-head>
+          <section-head level="2">C5.6.8 Full closed-loop systems</section-head>
+          <section-head level="1">C5.7 Tension control</section-head>
+          <section-head level="1">C5.8 Sectional control</section-head>
+          <section-head level="1">C5.9 Winding</section-head>
+          <section-head level="2">C5.9.1 General</section-head>
+          <section-head level="2">C5.9.2 Drum winders</section-head>
+          <section-head level="2">C5.9.3 Centre-driven winders</section-head>
+          <section-head level="1">C5.10 High-frequency inverters</section-head>
+          <section-head level="2">C5.10.1 General</section-head>
+          <section-head level="2">C5.10.2 Frequency control of a.c. induction motors</section-head>
+          <section-head level="2">C5.10.3 Purpose-designed high frequency motors</section-head>
+          <section-head level="2">C5.10.4 High-frequency inverters</section-head>
+          <section-head level="2">C5.10.5 High-frequency applications</section-head>
+          <section-head level="1">C5.11 Special d.c. loads</section-head>
+          <section-head level="2">C5.11.1 Traction motor field control</section-head>
+          <section-head level="2">C5.11.2 Battery charging</section-head>
+          <section-head level="2">C5.11.3 Electrolytic processes</section-head>
+          <section-head level="2">C5.11.4 Electric heating and temperature control</section-head>
+          <fpage>551</fpage>
+          <lpage>597</lpage>
+          <numpages>47</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>The core technology of motors and drives has been described in some depth. This section describes techniques that are commonly used in applications and systems in order to achieve specific system functionality such as load sharing between several motors and even tension in materials within process machinery. The functions described in this section are not specific to individual applications but find application in a broad range of applications.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">machine control</keyword>
+            <keyword source="Inspec">motor drives</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">common techniques</keyword>
+            <keyword source="uncontrolled">ontrol techniques drives</keyword>
+            <keyword source="uncontrolled">controls handbook</keyword>
+            <keyword source="uncontrolled">motor drives</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_chc6</content-item-id>
+          <doi>10.1049/PBPO057E_chc6</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Industrial application examples</title>
+          <search-title>Industrial application examples</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>24</bookseq>
+          <item-num>C6</item-num>
+          <supertitle1>Part C: Practical applications </supertitle1>
+          <section-head level="1">C6.1 Introduction</section-head>
+          <section-head level="1">C6.2 Centrifugal pumps</section-head>
+          <section-head level="2">C6.2.1 Single-pump systems</section-head>
+          <section-head level="2">C6.2.2 Multiple pump systems (duty-assist control)</section-head>
+          <section-head level="3">C6.2.2.1 Note on parallel operation of pumps</section-head>
+          <section-head level="1">C6.3 Centrifugal fans and compressors</section-head>
+          <section-head level="1">C6.4 Heating, ventilation, air conditioning and refrigeration (HVAC/R)</section-head>
+          <section-head level="2">C6.4.1 Introduction</section-head>
+          <section-head level="2">C6.4.2 Commercial buildings</section-head>
+          <section-head level="3">C6.4.2.1 Building automation systems</section-head>
+          <section-head level="3">C6.4.2.2 HVAC applications</section-head>
+          <section-head level="2">C6.4.3 Retail facilities</section-head>
+          <section-head level="3">C6.4.3.1 Refrigeration applications</section-head>
+          <section-head level="2">C6.4.4 Original equipment manufacturers</section-head>
+          <section-head level="1">C6.5 Cranes and hoists</section-head>
+          <section-head level="2">C6.5.1 General</section-head>
+          <section-head level="2">C6.5.2 Overhead cranes</section-head>
+          <section-head level="2">C6.5.3 Port cranes</section-head>
+          <section-head level="3">C6.5.3.1 Ship-to-shore container cranes: grab ship unloaders</section-head>
+          <section-head level="3">C6.5.3.2 Rubber-tyred gantry cranes</section-head>
+          <section-head level="3">C6.5.3.3 Rail-mounted gantry cranes</section-head>
+          <section-head level="2">C6.5.4 Automated warehousing</section-head>
+          <section-head level="2">C6.5.5 Notes on crane control characteristics</section-head>
+          <section-head level="3">C6.5.5.1 Hoisting control</section-head>
+          <section-head level="3">C6.5.5.2 Slewing control</section-head>
+          <section-head level="2">C6.5.6 Retrofit applications</section-head>
+          <section-head level="1">C6.6 Elevators and lifts</section-head>
+          <section-head level="2">C6.6.1 Lift system description</section-head>
+          <section-head level="2">C6.6.2 Speed profile generation</section-head>
+          <section-head level="2">C6.6.3 Load weighing devices</section-head>
+          <section-head level="2">C6.6.4 Block diagram of lift electrical system</section-head>
+          <section-head level="1">C6.7 Metals and metal forming</section-head>
+          <section-head level="2">C6.7.1 Introduction</section-head>
+          <section-head level="2">C6.7.2 Steel</section-head>
+          <section-head level="3">C6.7.2.1 Main mill drives</section-head>
+          <section-head level="3">C6.7.2.2 Auxiliary drives</section-head>
+          <section-head level="3">C6.7.2.3 Strip rolling mills</section-head>
+          <section-head level="3">C6.7.2.4 Continuous casting</section-head>
+          <section-head level="2">C6.7.3 Wire and cable manufacture</section-head>
+          <section-head level="3">C6.7.3.1 Wire drawing machine</section-head>
+          <section-head level="3">C6.7.3.2 Twin carriage armourer</section-head>
+          <section-head level="1">C6.8 Paper making</section-head>
+          <section-head level="2">C6.8.1 General</section-head>
+          <section-head level="2">C6.8.2 Sectional drives</section-head>
+          <section-head level="2">C6.8.3 Loads and load sharing</section-head>
+          <section-head level="2">C6.8.4 Control and instrumentation</section-head>
+          <section-head level="2">C6.8.5 Winder drives</section-head>
+          <section-head level="2">C6.8.6 Brake generator power and energy</section-head>
+          <section-head level="2">C6.8.7 Unwind brake generator control</section-head>
+          <section-head level="2">C6.8.8 Coating machines</section-head>
+          <section-head level="1">C6.9 Plastics extrusion</section-head>
+          <section-head level="2">C6.9.1 General</section-head>
+          <section-head level="2">C6.9.2 Basic extruder components</section-head>
+          <section-head level="2">C6.9.3 Overall extruder performance</section-head>
+          <section-head level="2">C6.9.4 Energy considerations</section-head>
+          <section-head level="2">C6.9.5 Motors and controls</section-head>
+          <section-head level="1">C6.10 Stage scenery: film and theatre</section-head>
+          <section-head level="2">C6.10.1 The Control Techniques orchestra</section-head>
+          <fpage>599</fpage>
+          <lpage>659</lpage>
+          <numpages>61</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>Providing examples of all industrial applications of drives would be an impossible task, and provide the reader with little benefit. This section is therefore a glimpse into a small area of the drives world. Some of the most common applications have been selected, as well as some that show how drives have brought considerable benefit. Emphasis has been placed upon drive functionality and how that has an impact on the application. It is also intended to show that required functionality and indeed the vocabulary of many applications is very specialised. A good knowledge of drives is not sufficient background to be able to design a good system. Experience helps, but the optimum design results when a drives engineer who knows what a drive can do works together with a customer who knows what functionality and performance is required and what problems he would like to see solved.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">motor drives</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">control technique drive</keyword>
+            <keyword source="uncontrolled">control handbook</keyword>
+            <keyword source="uncontrolled">industrial application</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_appendixd1</content-item-id>
+          <doi>10.1049/PBPO057E_appendixd1</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Appendix D1: Symbols and formulae</title>
+          <search-title>Appendix D1: Symbols and formulae</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>appendix</content-item-type>
+          <bookseq>25</bookseq>
+          <item-num> </item-num>
+          <supertitle1>Part D: Appendices </supertitle1>
+          <section-head level="1">D1.1 SI units and symbols</section-head>
+          <section-head level="2">D1.1.1 SI base units</section-head>
+          <section-head level="2">D1.1.2 Derived units</section-head>
+          <section-head level="1">D1.2 Electrical formulae</section-head>
+          <section-head level="2">D1.2.1 Electrical quantities</section-head>
+          <section-head level="2">D1.2.2 A.C. three-phase (assuming balanced symmetrical waveform)</section-head>
+          <section-head level="2">D1.2.3 A.C. single-phase</section-head>
+          <section-head level="2">D1.2.4 Three-phase induction motors</section-head>
+          <section-head level="2">D1.2.5 Loads (phase values)</section-head>
+          <section-head level="2">D1.2.6 Impedance</section-head>
+          <section-head level="2">D1.2.7 A.C. vector and impedance diagrams</section-head>
+          <section-head level="2">D1.2.8 Emf energy transfer</section-head>
+          <section-head level="2">D1.2.9 Mean and rms values, waveform</section-head>
+          <section-head level="3">D1.2.9.1 Principles</section-head>
+          <section-head level="3">D1.2.9.2 Mean d.c. value</section-head>
+          <section-head level="3">D1.2.9.3 rms value</section-head>
+          <section-head level="3">D1.2.9.4 Form factor</section-head>
+          <section-head level="1">D1.3 Mechanical formulae</section-head>
+          <section-head level="2">D1.3.1 Laws of motion</section-head>
+          <section-head level="3">D1.3.1.1 Linear motion</section-head>
+          <section-head level="3">D1.3.1.2 Rotational or angular motion</section-head>
+          <section-head level="3">D1.3.1.3 Relationship between linear and angular motion</section-head>
+          <section-head level="3">D1.3.1.4 The effect of gearing</section-head>
+          <section-head level="3">D1.3.1.5 Linear to rotary speed reference conversion</section-head>
+          <section-head level="3">D1.3.1.6 Friction and losses</section-head>
+          <section-head level="3">D1.3.1.7 Fluid flow</section-head>
+          <section-head level="1">D1.4 Worked examples of typical mechanical loads</section-head>
+          <section-head level="2">D1.4.1 Conveyor</section-head>
+          <section-head level="2">D1.4.2 Inclined conveyor</section-head>
+          <section-head level="2">D1.4.3 Hoist</section-head>
+          <section-head level="2">D1.4.4 Screw-feed loads</section-head>
+          <fpage>663</fpage>
+          <lpage>694</lpage>
+          <numpages>32</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>The following formulae are based on the International System of Units, known as SI (Systeme Internationale d'Unites), which is used throughout this book. SI was adopted in February 1969 by a resolution of the CGPM (Conference Generale de Poids et Mesures) as ISO Recommendation R1000. A base unit exists for each of the dimensionally independent physical quantities: length, mass, time, electric current, thermodynamic temperature and luminous inten sity. The SI unit of any other quantity may be derived by appropriate simple multipli cation or division of the base units without the introduction of numerical factors. The system is independent of the effects of gravity, making a clear distinction between the mass of a body (unit of mass = kilogram) and its weight, i.e. the force due to gravity (unit of force = newton).</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">A0620F</compound-classification-code-part><compound-classification-code-part type="text">Measurement units</compound-classification-code-part></compound-classification-code>
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">measurement standards</keyword>
+            <keyword source="Inspec">units (measurement)</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">SI unit</keyword>
+            <keyword source="uncontrolled">International System of Units</keyword>
+            <keyword source="uncontrolled">CGPM</keyword>
+            <keyword source="uncontrolled">ISO Recommendation R1000</keyword>
+            <keyword source="uncontrolled">dimensionally independent physical quantity</keyword>
+            <keyword source="uncontrolled">thermodynamic temperature</keyword>
+            <keyword source="uncontrolled">luminous intensity</keyword>
+            <keyword source="uncontrolled">numerical factor</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_appendixd2</content-item-id>
+          <doi>10.1049/PBPO057E_appendixd2</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Appendix D2: Conversion tables</title>
+          <search-title>Appendix D2: Conversion tables</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>appendix</content-item-type>
+          <bookseq>26</bookseq>
+          <item-num> </item-num>
+          <supertitle1>Part D: Appendices </supertitle1>
+          <section-head level="1">D2.1 Mechanical conversion tables</section-head>
+          <section-head level="1">D2.2 General conversion tables</section-head>
+          <section-head level="1">D2.3 Power/torque/speed nomogram</section-head>
+          <fpage>695</fpage>
+          <lpage>706</lpage>
+          <numpages>12</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>Provides various unit conversion tables under the headings of 'Mechanical conversion tables' and 'General conversion tables', as well as a power/torque/speed nomogram.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">A0620F</compound-classification-code-part><compound-classification-code-part type="text">Measurement units</compound-classification-code-part></compound-classification-code>
+            <compound-classification-code><compound-classification-code-part type="code">B8510</compound-classification-code-part><compound-classification-code-part type="text">Drives</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">units (measurement)</keyword>
+            <keyword source="Inspec">electric drives</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">conversion tables</keyword>
+            <keyword source="uncontrolled">mechanical conversion tables</keyword>
+            <keyword source="uncontrolled">power/torque/speed nomogram</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_appendixd3</content-item-id>
+          <doi>10.1049/PBPO057E_appendixd3</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Appendix D3: World industrial electricity supplies (&lt;1 kV)</title>
+          <search-title>Appendix D3: World industrial electricity supplies (&lt;1 kV)</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>appendix</content-item-type>
+          <bookseq>27</bookseq>
+          <item-num> </item-num>
+          <supertitle1>Part D: Appendices </supertitle1>
+          <fpage>707</fpage>
+          <lpage>713</lpage>
+          <numpages>7</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>Data for world industrial electricity supplies are shown in a table which list the industrial three-phase supply voltages below 1 000 V and the supply frequency for various countries</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B8110</compound-classification-code-part><compound-classification-code-part type="text">Power systems</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">electricity supply industry</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">world industrial electricity supplies</keyword>
+            <keyword source="uncontrolled">supply frequency</keyword>
+            <keyword source="uncontrolled">various countries</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBPO057E_backmatter</content-item-id>
+          <doi>10.1049/PBPO057E_bm</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Back Matter</title>
+          <search-title>Back Matter</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>back matter</content-item-type>
+          <bookseq>28</bookseq>
+          <section-head level="1">Bibliography</section-head>
+          <section-head level="1">Index</section-head>
+          <fpage>715</fpage>
+        </content-item-pubinfo>
+        <funding-grp><access type="free"/></funding-grp>
+      </content-item-metadata>
+    </content-item>
+  </body>
+</ebook>

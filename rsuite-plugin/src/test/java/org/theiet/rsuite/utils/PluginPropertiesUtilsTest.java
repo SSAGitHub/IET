@@ -17,7 +17,7 @@ public class PluginPropertiesUtilsTest {
 	@Before
 	public void before() throws IOException{
 		final File f = new File(ProjectPluginProperties.class.getProtectionDomain().getCodeSource().getLocation().getPath());
-		FileUtils.copyDirectoryToDirectory( new File("WebContent"), f);
+		FileUtils.copyDirectoryToDirectory( new File("src/main/resources/WebContent"), f);
 		ProjectPluginProperties.reloadProperties();
 	}
 	

@@ -168,7 +168,7 @@ public class MockUtils {
 			public Source resolve(String href, String base)
 					throws TransformerException {
 				if (href.startsWith("rsuite:/")) {
-					href = href.replace("rsuite:/res/plugin/iet", "src/main");
+					href = href.replace("rsuite:/res/plugin/iet", "src/main/resources/WebContent");
 					return new SAXSource(new InputSource(href));
 				}
 				return null;

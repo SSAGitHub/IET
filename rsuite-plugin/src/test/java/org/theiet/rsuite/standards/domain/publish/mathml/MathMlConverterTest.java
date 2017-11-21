@@ -12,6 +12,7 @@ import org.theiet.rsuite.standards.StandardsBooksConstans;
 import org.theiet.rsuite.standards.constans.PublishWorkflowContans;
 
 import com.reallysi.rsuite.api.RSuiteException;
+import org.xmlunit.matchers.CompareMatcher;
 
 public class MathMlConverterTest implements StandardsBooksConstans, PublishWorkflowContans {
 
@@ -90,22 +91,21 @@ public class MathMlConverterTest implements StandardsBooksConstans, PublishWorkf
     }
 	
 	@Test
-    public void test_convertMathMlInXMLContent_InlineMathMl() throws Exception {
-        
-        MathMlImageGeneratorTestable imageGeneratorMock = new MathMlImageGeneratorTestable(null, getMathMlEntryProcessorParameters());       
-        MathMlConventer mathMlConventer = new MathMlConventer(imageGeneratorMock);
+	public void test_convertMathMlInXMLContent_InlineMathMl() throws Exception {
 
-        String testFileName = "test_mathml_inline.xml";
-        
-        String convertedXML = convertTestFile(mathMlConventer, testFileName);
+		MathMlImageGeneratorTestable imageGeneratorMock = new MathMlImageGeneratorTestable(
+				null, getMathMlEntryProcessorParameters());
+		MathMlConventer mathMlConventer = new MathMlConventer(
+				imageGeneratorMock);
 
-        String expectedXML = getResultFileConent("test_mathml_inline_convert_result.xml");
+		String testFileName = "test_mathml_inline.xml";
 
-      
-        assertEquals(
-                expectedXML,
-                convertedXML);
-    }
+		String convertedXML = convertTestFile(mathMlConventer, testFileName);
+
+		String expectedXML = getResultFileConent("test_mathml_inline_convert_result.xml");
+
+		assertThat(expectedXML, CompareMatcher.isSimilarTo(convertedXML).ignoreWhitespace());
+	}
 	
 	@Test
     public void test_convertMathMlInXMLContent_twoEquationsInOneD4pDisplayEquation() throws Exception {

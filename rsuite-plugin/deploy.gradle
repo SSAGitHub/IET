@@ -1,0 +1,231 @@
+buildscript {
+	repositories {
+		mavenCentral()
+
+		maven {
+			url "http://nexus.theiet.org/nexus/content/groups/public"
+			credentials {
+				username ietMavenUser
+				password ietMavenPassword
+			}
+		}
+
+	}
+	dependencies { classpath 'com.rsicms:rsuite-projects-deploy-gradle-plugin:0.0.8' }
+}
+
+
+apply plugin: 'com.rsicms.rsuite.projects.deploy'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'groovy'
+
+
+// this is for the deploy.gradle 
+repositories {
+	
+	maven {
+		url "http://nexus.theiet.org/nexus/content/groups/public"
+		credentials {
+			username ietMavenUser
+			password ietMavenPassword
+		}
+	}
+}
+
+configurations {
+	ditaOT
+	ditaOTPlugins 
+	ditaOtFopJars {transitive = false}
+	jeuclid
+}
+	
+dependencies {
+	rsuiteGroovy 'rsi:rsuite-admin-client-extension:0.1.2'
+	
+	ditaOT 'dita-ot.org:dita-ot:1.6.3'
+	
+    ditaOTPlugins 'com.rsicms:rsuite-toolkit-plugins:4.0.0'
+	ditaOTPlugins 'com.rsicms.dita4publishers:dita4publishers-toolkit-plugins:0.9.19RC12Issue139'
+	
+	ditaOtFopJars 'net.sourceforge.jeuclid:jeuclid-fop:3.1.9'
+	ditaOtFopJars 'net.sourceforge.jeuclid:jeuclid-core:3.1.9'
+	
+	jeuclid ('org.iet:rsuite-jeuclid:1.1.0') {
+		exclude group: 'commons-logging'
+		exclude group: 'org.apache.xmlgraphics' , module : 'batik-extension'
+		
+	
+	jeuclid 'org.freehep:freehep-graphicsbase:2.1.3'
+	
+	}
+	
+    jeuclid ('org.freehep:freehep-graphics2d:2.1.3'){
+     //   exclude group:'org.apache.xmlgraphics', module:'fop'
+	//	exclude group:'net.sourceforge.jeuclid', module:'jeuclid-fop'
+    } 
+    
+    jeuclid ('org.freehep:freehep-graphicsio-pdf:2.1.3'){
+        exclude group: 'org.freehep' , module : 'freehep-graphicsio-tests'
+    }     
+	
+}
+
+def integrationHome = "${project.ext.get('rsuite.home')}/integration"
+def ditaOTHome = "${integrationHome}/DITA-OT${getDitaOTVersion()}"
+def ditaOTPluginHome = "${ditaOTHome}/plugins"
+def jeuclidHome = "${project.ext.get('rsuite.home')}/jeuclid"
+
+rsuiteDeployment{
+
+  //  setDefaultPropertyValue("inspecBaseHotfolderPath", "")
+	// setDefaultPropertyValue("inspecClear", "false")
+
+	rsuiteGroovy{
+	
+		common 'BooksDeployAll.groovy'
+		common 'JournalsDeployAll.groovy'
+	//	common 'DeployRSuitePluginsIET.groovy' -- This script is not needed 
+		common "StandardsLoadDitaDtds.groovy;-Dditaot=${ditaOTHome}"
+		common 'StandardsConfigureRoles.groovy'
+		common 'StandardsCaTypes.groovy'
+		common 'StandardsConfigureRoles.groovy'
+		common 'StandardsLayeredMetadata.groovy'
+		common 'StandardsCreateBrowseStructure.groovy'
+		common "StandardsCreateHotFolder.groovy;-DbaseDir=${rSuiteHotfoldersDir}"
+		common "StandardsLoadInitialContent.groovy;-DhotfoldersBasePath=${rSuiteHotfoldersDir}"
+		common 'OnixConfigureRoles.groovy'
+		common 'OnixSchemas.groovy'
+		common 'OnixLayeredMetadata.groovy'
+		common 'OnixCaTypes.groovy'
+		common 'OnixCreateBrowseStructure.groovy'
+		common 'OnixLoadInitialContent.groovy'
+		common 'IETtvLayeredMetadata.groovy'
+		common 'IETtvSchemas.groovy'
+		common 'IETtvCaTypes.groovy'
+		common 'IETtvConfigureRoles.groovy'
+		common 'IETtvCreateBrowseStructure.groovy'
+		common "IETtvCreateHotFolder.groovy;-DbaseDir=${rSuiteHotfoldersDir}"
+		
+		development "CreateHotFolder.groovy;-DbaseDir=${rSuiteHotfoldersDir}"
+		development 'ConfigureLocalUsers.groovy'
+		development 'JournalConfigureLocalUsers.groovy'
+		development 'StandardsConfigureLocalUsers.groovy'
+		development 'OnixConfigureLocalUsers.groovy'
+		development 'IETtvConfigureDevelopmentLocalUsers.groovy'
+	}
+
+	rsuitePlugins{ 
+		plugin 'com.rsicms:rsuite-lmd-editor-plugin:4.0.0.qa161_v1_20130927'
+		plugin 'com.rsicms:rsuite-zip-uploader-plugin:1.1'
+        plugin 'com.rsicms:rsuite-zip-downloader-plugin:1.1'
+        plugin 'com.rsicms:rsuite-dita-support-plugin:1.2-qa1'
+        plugin 'com.rsicms.dita4publishers:dita4publishers-rsuite-plugin:0.9.19RC12Issue139'
+        plugin 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-plugin:4.0.7_oxy15.2_v1.5.15qa7.1'
+        plugin 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-dita-plugin:4.0.7_oxy_15.2_o2_plugin_v1.5.15qa1.1'
+        plugin 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-onix-plugin:4.0.0_oxy_14.2_v1.0.1'
+        plugin 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-jats-plugin:4.0.16_oxy_15.2_v1.1.1'
+    }
+			 
+}
+
+
+def modulesHome = "${project.ext.get('rsuite.home')}/modules_1_0"
+
+if (project.hasProperty("rsuite.modules.home"))
+  modulesHome = "${project.ext.get('rsuite.modules.home')}"
+
+println "Modules home: " + modulesHome
+  
+task('removeCustomXqueryModules', type: Delete){
+  delete fileTree(modulesHome) {
+    include '**/iet-*.xqy'
+  }
+}
+
+task('deployXqueryModules', type: Copy) {
+  from('setup/xquery_modules') {
+    include '**/*'
+  }
+  into(modulesHome)
+}
+
+tasks.deployXqueryModules.dependsOn(removeCustomXqueryModules)
+tasks.deployRSuitePlugins.dependsOn(deployXqueryModules)
+tasks.developmentDeployPluginJarOnly.dependsOn(deployXqueryModules)
+
+
+/* Dita-ot plugin and integrator*/
+
+
+def getDitaOTVersion(){
+	
+	return configurations.ditaOT.resolvedConfiguration.firstLevelModuleDependencies.findAll { e ->
+			return e
+	}[0].moduleVersion
+}
+
+task clearDitaOT(type: Delete) {
+	delete "${ditaOTHome}"	
+}
+
+task clearJeuclid(type: Delete) {
+	delete "${jeuclidHome}"	
+}
+
+task deployDitaOT(type: Copy, dependsOn: 'clearDitaOT') {
+	from {
+		configurations.ditaOT.collect { zipTree(it) }
+	}
+	into(integrationHome)
+	
+}
+
+
+task deployDitaOTPlugins(type: Copy, dependsOn: 'deployDitaOT') {
+	
+	from "setup/toolkitDitaplugins" into "${ditaOTPluginHome}"
+	
+	from {
+		configurations.ditaOTPlugins.collect { zipTree(it) } } into "${ditaOTPluginHome}"		
+	
+}
+
+task deployDitaFopJars(type: Copy, dependsOn: 'deployDitaOTPlugins') {
+	from (configurations.ditaOtFopJars)
+	into "${ditaOTPluginHome}/org.dita.pdf2/fop/lib"	
+	rename { fileName ->
+      stripVersion(fileName)
+	}	
+}
+
+task deployDitaDoctypes(type: Copy, dependsOn: 'deployDitaFopJars') {
+      from "setup/doctypes/dita" into "${ditaOTPluginHome}/org.iet.doctypes/doctypes"
+}
+
+task deployJeuclid(type: Copy, dependsOn: 'clearJeuclid') {
+	
+	from (configurations.jeuclid) into "${jeuclidHome}"
+	 rename { fileName ->
+      stripVersion(fileName)
+	}		
+}
+
+String stripVersion(String fileNameWithVersion) {
+  String ext = fileNameWithVersion.substring(fileNameWithVersion.lastIndexOf("."),fileNameWithVersion.length())
+  int end = fileNameWithVersion.lastIndexOf("-"); 
+  String fileNameWithoutVersion = fileNameWithVersion.substring(0, end) + ext
+   return fileNameWithoutVersion
+}
+
+task runDitaOTIntegrator(dependsOn: 'deployDitaOTPlugins') {
+	doLast{
+		ant.ant antfile: "${ditaOTHome}/integrator.xml", dir: "${ditaOTHome}"
+	}
+}
+
+
+tasks.runAllGroovyScripts.dependsOn(deployDitaDoctypes)
+tasks.runAllGroovyScripts.dependsOn(deployJeuclid)
+tasks.runAllGroovyScripts.dependsOn(runDitaOTIntegrator)
+

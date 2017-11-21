@@ -1,0 +1,1662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE ebook PUBLIC "-//AIP//DTD XML Book Setup Module 1.0//EN" "AIPbookxml1.dtd">
+<ebook xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <book-metadata>
+    <book-identifiers>
+      <bookid>PBRA016E</bookid>
+      <doi>10.1049/PBRA016E</doi>
+      <isbn13>9780863413599</isbn13>
+      <isbn-eb>9781849190824</isbn-eb>
+      <customerid>
+        <identifier-name>IET</identifier-name>
+        <identifier-value>PBRA0160</identifier-value>
+      </customerid>
+      <iet-subs>RA</iet-subs>
+    </book-identifiers>
+    <titlegrp>
+      <title>Target Detection by Marine Radar</title>
+      <search-title>Target Detection by Marine Radar</search-title>
+    </titlegrp>
+    <pubinfo>
+      <numpages>700</numpages>
+      <publication-date day="01" month="01" year="2004"></publication-date>
+      <publisher-group>
+        <ownerid>IET</ownerid>
+        <publisher>Institution of Engineering and Technology</publisher>
+      </publisher-group>
+      <cpyrt>
+        <cpyrtdate date="2004"/>
+        <cpyrtholder>Institution of Engineering and Technology</cpyrtholder>
+        <cpyrtstmt>All rights reserved. No part of this publication may be reproduced or distributed in any form or by any means without written permission of the  publisher</cpyrtstmt>
+      </cpyrt>
+      <price-model type="book-chapter"/>
+    </pubinfo>
+    <authgrp>
+      <author>
+        <fname>John</fname><middlename>N.</middlename><surname>Briggs</surname>
+        <fullname>John N. Briggs</fullname>
+      </author>
+    </authgrp>
+    <pubdesc>
+      <p>This book covers the various international regulations governing marine radar, a brief historical background is given to modern day practice and the book closes with a discussion of ways in which marine radar may develop to meet future challenges.</p>
+    </pubdesc>
+    <abstract>
+      <p>Radar is a legal necessity for the safe navigation of merchant ships, and with in the vessel traffic services is indispensable to the operation of major ports and harbors. Target detection by marine radar concentrates solely on civil marine operations and explains how marine surveillance radars detect their targets. The book is fully illustrated and contains work examples to help the reader understand the principle underlaying radar operation an to quantify the importance of factors such as the technical features of specific equipment, the weather, the target reflection properties, and the ability of the operator. The precision with which the targets are positioned on the radar screen and with which their progress is tracked or predicted depends on how definitely they have been detected, therefore a whole chapter has been devoted to the issue of accuracy. the various international regulations governing marine radar are examined, a brief historical background is given to modern day practice and the book closes with a discussion of the ways in which marine radar may develop to meet future challenges.</p>
+    </abstract>
+    <vocabs>
+      <classification-codes source="Inspec-class">
+        <compound-classification-code><compound-classification-code-part type="code">B0100</compound-classification-code-part><compound-classification-code-part type="text">General electrical engineering topics</compound-classification-code-part></compound-classification-code>
+      </classification-codes>
+      <keywords source="Inspec">
+        <keyword source="Inspec">electromagnetic wave reflection</keyword>
+        <keyword source="Inspec">government policies</keyword>
+        <keyword source="Inspec">human factors</keyword>
+        <keyword source="Inspec">marine radar</keyword>
+        <keyword source="Inspec">object detection</keyword>
+        <keyword source="Inspec">radar signal processing</keyword>
+        <keyword source="Inspec">search radar</keyword>
+        <keyword source="Inspec">target tracking</keyword>
+      </keywords>
+      <keywords source="uncontrolled">
+        <keyword source="uncontrolled">target detection</keyword>
+        <keyword source="uncontrolled">marine radar</keyword>
+        <keyword source="uncontrolled">merchant ship</keyword>
+        <keyword source="uncontrolled">vessel traffic service</keyword>
+        <keyword source="uncontrolled">civil marine operation</keyword>
+        <keyword source="uncontrolled">marine surveillance radar</keyword>
+        <keyword source="uncontrolled">target reflection</keyword>
+        <keyword source="uncontrolled">operator ability</keyword>
+        <keyword source="uncontrolled">radar screen</keyword>
+        <keyword source="uncontrolled">international regulations</keyword>
+      </keywords>
+      <tia>electromagnetic wave reflection, government policies, human factors, marine radar, object detection, radar signal processing, search radar, target tracking</tia>
+      <booktype>Radar, Sonar, Navigation and Avionics</booktype>
+    </vocabs>
+  </book-metadata>
+  <body>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_frontmatter</content-item-id>
+          <doi>10.1049/PBRA016E_fm</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Front Matter</title>
+          <search-title>Front Matter</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>front matter</content-item-type>
+          <bookseq>1</bookseq>
+          <section-head level="1">Foreword</section-head>
+          <section-head level="1">Preface</section-head>
+        </content-item-pubinfo>
+        <funding-grp><access type="free"/></funding-grp>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch1</content-item-id>
+          <doi>10.1049/PBRA016E_ch1</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Introduction</title>
+          <search-title>Introduction</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>2</bookseq>
+          <item-num>1</item-num>
+          <section-head level="1">1.1 Purpose and scope</section-head>
+          <section-head level="2">1.1.1 Purpose</section-head>
+          <section-head level="2">1.1.2 Scope</section-head>
+          <section-head level="1">1.2 Radar users and uses</section-head>
+          <section-head level="2">1.2.1 Merchant ships</section-head>
+          <section-head level="2">1.2.2 Leisure craft</section-head>
+          <section-head level="2">1.2.3 Fishing vessels and small commercial vessels</section-head>
+          <section-head level="2">1.2.4 High speed craft</section-head>
+          <section-head level="2">1.2.5 Vessel traffic services</section-head>
+          <section-head level="2">1.2.6 Military applications</section-head>
+          <section-head level="1">1.3 The past and future</section-head>
+          <section-head level="2">1.3.1 The history of marine radar</section-head>
+          <section-head level="2">1.3.2 Secondary radars</section-head>
+          <section-head level="2">1.3.3 VTS</section-head>
+          <section-head level="2">1.3.4 The current generation of radars</section-head>
+          <section-head level="2">1.3.5 Future possibilities</section-head>
+          <section-head level="1">1.4 The regulators</section-head>
+          <section-head level="2">1.4.1 Overview</section-head>
+          <section-head level="2">1.4.2 UNCLOS</section-head>
+          <section-head level="2">1.4.3 IMO</section-head>
+          <section-head level="2">1.4.4 National consultations</section-head>
+          <section-head level="2">1.4.5 SOLAS and the Colregs</section-head>
+          <section-head level="2">1.4.6 IALA</section-head>
+          <section-head level="2">1.4.7 Enforcement</section-head>
+          <section-head level="2">1.4.8 ISO</section-head>
+          <section-head level="2">1.4.9 IEC</section-head>
+          <section-head level="2">1.4.10 ITU</section-head>
+          <section-head level="2">1.4.11 National regulations</section-head>
+          <section-head level="2">1.4.12 National and supra-national groups; the European Community</section-head>
+          <section-head level="2">1.4.13 The courts</section-head>
+          <section-head level="1">1.5 The regulations</section-head>
+          <section-head level="2">1.5.1 Radar for ships within SOLAS</section-head>
+          <section-head level="2">1.5.2 Radar for craft outside SOLAS</section-head>
+          <section-head level="1">1.6 Theory and calculations</section-head>
+          <section-head level="2">1.6.1 Sources</section-head>
+          <section-head level="2">1.6.2 Mathematics and units</section-head>
+          <section-head level="2">1.6.3 Basis of performance calculations</section-head>
+          <section-head level="2">1.6.4 Spreadsheet calculation</section-head>
+          <section-head level="2">1.6.5 Approximate methods</section-head>
+          <section-head level="1">1.7 The layout of this book</section-head>
+          <section-head level="1">1.8 References</section-head>
+          <fpage>1</fpage>
+          <lpage>30</lpage>
+          <numpages>30</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This introductory chapter explains the book's aims and methods, introduces the persons who operate radar, gives a brief historical background and outlines the regulatory framework under which marine radar is used.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">marine radar</keyword>
+            <keyword source="Inspec">object detection</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">target detection</keyword>
+            <keyword source="uncontrolled">marine radar</keyword>
+            <keyword source="uncontrolled">regulatory framework</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch2</content-item-id>
+          <doi>10.1049/PBRA016E_ch2</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>The system and the transmitter</title>
+          <search-title>The system and the transmitter</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>3</bookseq>
+          <item-num>2</item-num>
+          <section-head level="1">2.1 The operator and the system</section-head>
+          <section-head level="2">2.1.1 Scope of chapter</section-head>
+          <section-head level="2">2.1.2 Operators afloat</section-head>
+          <section-head level="2">2.1.3 Integrated bridge systems</section-head>
+          <section-head level="2">2.1.4 Operators ashore</section-head>
+          <section-head level="2">2.1.5 Basic radar operation</section-head>
+          <section-head level="2">2.1.6 Target detectability</section-head>
+          <section-head level="2">2.1.7 Radar construction</section-head>
+          <section-head level="2">2.1.8 Decibels</section-head>
+          <section-head level="1">2.2 Components of the radar</section-head>
+          <section-head level="2">2.2.1 Transmission</section-head>
+          <section-head level="2">2.2.2 Reception</section-head>
+          <section-head level="2">2.2.3 Non-coherent system</section-head>
+          <section-head level="2">2.2.4 Coherent-on-receive system</section-head>
+          <section-head level="2">2.2.5 Fully coherent system</section-head>
+          <section-head level="2">2.2.6 Ambiguity; image frequency, prf constraints</section-head>
+          <section-head level="2">2.2.7 Typical station configuration</section-head>
+          <section-head level="1">2.3 Transmitter</section-head>
+          <section-head level="2">2.3.1 Overview</section-head>
+          <section-head level="2">2.3.2 Magnetron power source</section-head>
+          <section-head level="2">2.3.3 Modulator</section-head>
+          <section-head level="2">2.3.4 Influence of transmitter on system</section-head>
+          <section-head level="2">2.3.5 Spectrum problems</section-head>
+          <section-head level="1">2.4 Transmitted frequency</section-head>
+          <section-head level="2">2.4.1 Frequency and wavelength</section-head>
+          <section-head level="2">2.4.2 Choice of band</section-head>
+          <section-head level="1">2.5 Choice of other parameters</section-head>
+          <section-head level="1">2.6 Feeder</section-head>
+          <section-head level="2">2.6.1 Waveguide</section-head>
+          <section-head level="2">2.6.2 Mismatch</section-head>
+          <section-head level="2">2.6.3 Feeder losses</section-head>
+          <section-head level="2">2.6.4 Ringing</section-head>
+          <section-head level="1">2.7 Scanner, qualitative description</section-head>
+          <section-head level="2">2.7.1 Plane and circularly polarised rays</section-head>
+          <section-head level="2">2.7.2 Directional radiation</section-head>
+          <section-head level="2">2.7.3 Beam characteristics</section-head>
+          <section-head level="2">2.7.4 Rotation</section-head>
+          <section-head level="2">2.7.5 Size and beamwidth</section-head>
+          <section-head level="2">2.7.6 Marine radar scanners</section-head>
+          <section-head level="2">2.7.7 Radiation patterns</section-head>
+          <section-head level="2">2.7.8 Recent developments</section-head>
+          <section-head level="2">2.7.9 Obstructions</section-head>
+          <section-head level="2">2.7.10 Sidelobes</section-head>
+          <section-head level="2">2.7.11 VTS reflector scanners</section-head>
+          <section-head level="2">2.7.12 Elevation performance; inverse cosecant squared reflectors</section-head>
+          <section-head level="2">2.7.13 Polarisation</section-head>
+          <section-head level="2">2.7.14 Surface tolerance loss</section-head>
+          <section-head level="2">2.7.15 Beamshape and scanning losses</section-head>
+          <section-head level="2">2.7.16 Summary of scanner losses</section-head>
+          <section-head level="2">2.7.17 Testing antennas</section-head>
+          <section-head level="1">2.8 Quantitative scanner analysis</section-head>
+          <section-head level="2">2.8.1 Elevation performance, marine and VTS slotted arrays</section-head>
+          <section-head level="2">2.8.2 Inverse cosecant squared VTS scanners</section-head>
+          <section-head level="2">2.8.3 Azimuth radiation pattern</section-head>
+          <section-head level="1">2.9 References</section-head>
+          <fpage>31</fpage>
+          <lpage>94</lpage>
+          <numpages>64</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This chapter outlines radar operation in general terms, and then describes the transmission systems of the relatively large radars used in deep-sea ships, vessel traffic service (VTS) systems and firing-range surveillance.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">marine radar</keyword>
+            <keyword source="Inspec">radar detection</keyword>
+            <keyword source="Inspec">radar transmitters</keyword>
+            <keyword source="Inspec">search radar</keyword>
+            <keyword source="Inspec">ships</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">radar system</keyword>
+            <keyword source="uncontrolled">radar transmitter</keyword>
+            <keyword source="uncontrolled">target detection</keyword>
+            <keyword source="uncontrolled">marine radar</keyword>
+            <keyword source="uncontrolled">radar operation</keyword>
+            <keyword source="uncontrolled">transmission systems</keyword>
+            <keyword source="uncontrolled">deep-sea ships</keyword>
+            <keyword source="uncontrolled">vessel traffic service systems</keyword>
+            <keyword source="uncontrolled">VTS systems</keyword>
+            <keyword source="uncontrolled">firing-range surveillance</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch3</content-item-id>
+          <doi>10.1049/PBRA016E_ch3</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Radar receiver</title>
+          <search-title>Radar receiver</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>4</bookseq>
+          <item-num>3</item-num>
+          <section-head level="1">3.1 Scanner - receiving</section-head>
+          <section-head level="1">3.2 Receiver input</section-head>
+          <section-head level="2">3.2.1 Rotating joint or sliprings</section-head>
+          <section-head level="2">3.2.2 Receiver protection</section-head>
+          <section-head level="2">3.2.3 Duplexer</section-head>
+          <section-head level="1">3.3 Receiver and filter</section-head>
+          <section-head level="2">3.3.1 Overview</section-head>
+          <section-head level="2">3.3.2 Receiver noise</section-head>
+          <section-head level="1">3.4 Superhet receiver and mixing</section-head>
+          <section-head level="2">3.4.1 Superheterodyne principle</section-head>
+          <section-head level="2">3.4.2 Mixing</section-head>
+          <section-head level="2">3.4.3 Local oscillator</section-head>
+          <section-head level="1">3.5 IF amplifier, demodulator and video sections</section-head>
+          <section-head level="2">3.5.1 IF section</section-head>
+          <section-head level="2">3.5.2 Filter</section-head>
+          <section-head level="2">3.5.3 Linear and square-law demodulators</section-head>
+          <section-head level="2">3.5.4 Factors affecting detection</section-head>
+          <section-head level="2">3.5.5 Detection cells</section-head>
+          <section-head level="2">3.5.6 Effect of range scale selection</section-head>
+          <section-head level="2">3.5.7 Video amplifier</section-head>
+          <section-head level="2">3.5.8 Fast time constant, differentiator</section-head>
+          <section-head level="1">3.6 Signal processing basics</section-head>
+          <section-head level="2">3.6.1 The task</section-head>
+          <section-head level="2">3.6.2 <emph type="italic">P</emph><emph type="inferior">D</emph> and <emph type="italic">P</emph><emph type="inferior">FA</emph> for target perception</section-head>
+          <section-head level="2">3.6.3 Digital conversion, detection cells</section-head>
+          <section-head level="2">3.6.4 Logical process of target detection</section-head>
+          <section-head level="2">3.6.5 Machine detection</section-head>
+          <section-head level="2">3.6.6 Clutter map</section-head>
+          <section-head level="2">3.6.7 Detection decision process</section-head>
+          <section-head level="1">3.7 Additional features</section-head>
+          <section-head level="2">3.7.1 Within single radar</section-head>
+          <section-head level="2">3.7.2 Multiple sensors, track combiners</section-head>
+          <section-head level="1">3.8 Display principles</section-head>
+          <section-head level="2">3.8.1 Display format</section-head>
+          <section-head level="2">3.8.2 Cathode ray tube</section-head>
+          <section-head level="2">3.8.3 Other display devices</section-head>
+          <section-head level="1">3.9 Raster scan display</section-head>
+          <section-head level="1">3.10 Cursive display</section-head>
+          <section-head level="2">3.10.1 Raw radar</section-head>
+          <section-head level="2">3.10.2 Cursive display problems</section-head>
+          <section-head level="2">3.10.3 Detection performance</section-head>
+          <section-head level="1">3.11 Plots on the screen</section-head>
+          <section-head level="1">3.12 Radars for special purposes</section-head>
+          <section-head level="2">3.12.1 High speed craft</section-head>
+          <section-head level="2">3.12.2 Warships</section-head>
+          <section-head level="1">3.13 Calibration</section-head>
+          <section-head level="1">3.14 References</section-head>
+          <fpage>95</fpage>
+          <lpage>136</lpage>
+          <numpages>42</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>As reciprocal devices, scanners receive incoming signals from the same volume of space illuminated on transmission. The receive and transmit gains, radiation patterns, sidelobes and polarisation are identical. Gain benefits both the transmit and receive legs, so increased gain is doubly beneficial to detection of weak targets. Most marine radars use linear polarisation in which the electric field exists in one plane, sometimes vertical but usually horizontal. Antennas can always efficiently receive the polarisation which they transmitted. Passage through the atmosphere does not significantly affect ray polarisation; most targets and sea clutter also more or less preserve the incident polarisation when they reflect. Any depolarisation to plane polarised signals is allowed for by a reduction of the nominal radar cross section (RCS) of the target or clutter. Targets and sea clutter are therefore received by plane polarised scanners without ostensible polarisation loss.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">antenna radiation patterns</keyword>
+            <keyword source="Inspec">clutter</keyword>
+            <keyword source="Inspec">marine radar</keyword>
+            <keyword source="Inspec">radar receivers</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">radar receiver</keyword>
+            <keyword source="uncontrolled">target detection</keyword>
+            <keyword source="uncontrolled">marine radar</keyword>
+            <keyword source="uncontrolled">reciprocal device</keyword>
+            <keyword source="uncontrolled">radiation pattern</keyword>
+            <keyword source="uncontrolled">linear polarisation</keyword>
+            <keyword source="uncontrolled">antenna</keyword>
+            <keyword source="uncontrolled">sea clutter</keyword>
+            <keyword source="uncontrolled">depolarisation</keyword>
+            <keyword source="uncontrolled">plane polarised signal</keyword>
+            <keyword source="uncontrolled">nominal radar cross section</keyword>
+            <keyword source="uncontrolled">plane polarised scanner</keyword>
+            <keyword source="uncontrolled">ostensible polarisation loss</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch4</content-item-id>
+          <doi>10.1049/PBRA016E_ch4</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Echo strength in free space</title>
+          <search-title>Echo strength in free space</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>5</bookseq>
+          <item-num>4</item-num>
+          <section-head level="1">4.1 Introduction</section-head>
+          <section-head level="1">4.2 Radiated power density</section-head>
+          <section-head level="1">4.3 Passive reflector; radar cross section, radar range equation</section-head>
+          <section-head level="2">4.3.1 Radar cross section</section-head>
+          <section-head level="2">4.3.2 Two-way free space radar range equation</section-head>
+          <section-head level="1">4.4 Active target</section-head>
+          <section-head level="1">4.5 Range equations in practical form</section-head>
+          <section-head level="2">4.5.1 Extensions for practical environment</section-head>
+          <section-head level="2">4.5.2 Full radar range equation, dB</section-head>
+          <section-head level="2">4.5.3 Reduced equations</section-head>
+          <section-head level="1">4.6 Calculations and graphs</section-head>
+          <section-head level="2">4.6.1 Fixed range example</section-head>
+          <section-head level="2">4.6.2 Graphs</section-head>
+          <section-head level="2">4.6.3 Computer spreadsheet and charting</section-head>
+          <section-head level="1">4.7 Limitations of free space formulae</section-head>
+          <fpage>137</fpage>
+          <lpage>150</lpage>
+          <numpages>14</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This chapter considers transmission between radar and target in an unbounded vacuum. In this hypothetical free space, environmental effects are ignored; there is no atmosphere, weather, Earth surface or other tiresome practicality. We shall derive basic forms of equations, the radar range equations, describing the energy reaching the target on the transmit leg and echoing back to the radar on the receive leg of its journey, on which later chapters will build when examining practical con ditions including the environment. Application of free space equations directly to the real world without allowance for environmental effects often leads to gross errors, especially when range is long so rays traverse a lot of atmosphere. Throughout this chapter we assume the target remains of constant electrical size and is physically small enough to behave like a geometrical point.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">marine radar</keyword>
+            <keyword source="Inspec">radar cross-sections</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">echo strength</keyword>
+            <keyword source="uncontrolled">radar transmission</keyword>
+            <keyword source="uncontrolled">target transmission</keyword>
+            <keyword source="uncontrolled">vacuum</keyword>
+            <keyword source="uncontrolled">radar range equation</keyword>
+            <keyword source="uncontrolled">transmit leg</keyword>
+            <keyword source="uncontrolled">receive leg</keyword>
+            <keyword source="uncontrolled">free space equation</keyword>
+            <keyword source="uncontrolled">radar cross section</keyword>
+            <keyword source="uncontrolled">marine radar</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch5</content-item-id>
+          <doi>10.1049/PBRA016E_ch5</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Environmental effects on propagation</title>
+          <search-title>Environmental effects on propagation</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>6</bookseq>
+          <item-num>5</item-num>
+          <section-head level="1">5.1 Scope of chapter</section-head>
+          <section-head level="1">5.2 Atmospheric refraction</section-head>
+          <section-head level="2">5.2.1 The problem</section-head>
+          <section-head level="2">5.2.2 Equivalent geometries</section-head>
+          <section-head level="2">5.2.3 Calculation of refraction factor from meteorological parameters</section-head>
+          <section-head level="2">5.2.4 Standard atmosphere; four-thirds Earth approximation</section-head>
+          <section-head level="2">5.2.5 Anaprop</section-head>
+          <section-head level="2">5.2.6 Super-refraction; high <emph type="italic">k</emph>; super-standard surface layer</section-head>
+          <section-head level="2">5.2.7 Negative <emph type="italic">k</emph></section-head>
+          <section-head level="2">5.2.8 Sub-refraction; low <emph type="italic">k</emph>; sub-standard surface layer</section-head>
+          <section-head level="2">5.2.9 Ducts</section-head>
+          <section-head level="2">5.2.10 Conditions causing anaprop</section-head>
+          <section-head level="1">5.3 Measurement of refraction factor</section-head>
+          <section-head level="1">5.4 Ray geometry; geometrical optics</section-head>
+          <section-head level="2">5.4.1 Introduction</section-head>
+          <section-head level="2">5.4.2 Importance of <emph type="italic">k</emph> depends on range</section-head>
+          <section-head level="1">5.5 Geometrical analysis, curved Earth</section-head>
+          <section-head level="2">5.5.1 Ray paths</section-head>
+          <section-head level="2">5.5.2 Range</section-head>
+          <section-head level="2">5.5.3 Path difference of indirect ray</section-head>
+          <section-head level="2">5.5.4 Useful angles</section-head>
+          <section-head level="2">5.5.5 Divergence factor</section-head>
+          <section-head level="2">5.5.6 Variation of geometrical parameters with range</section-head>
+          <section-head level="2">5.5.7 Horizon</section-head>
+          <section-head level="2">5.5.8 Multipath peak and null ranges</section-head>
+          <section-head level="2">5.5.9 Effect on detection range</section-head>
+          <section-head level="1">5.6 Flat-Earth approximation</section-head>
+          <section-head level="2">5.6.1 Geometrical analysis</section-head>
+          <section-head level="2">5.6.2 Approximate multipath ranges</section-head>
+          <section-head level="2">5.6.3 Tailoring null ranges</section-head>
+          <section-head level="2">5.6.4 Vertical lobe structure</section-head>
+          <section-head level="2">5.6.5 Dispersion</section-head>
+          <section-head level="1">5.7 The sea</section-head>
+          <section-head level="2">5.7.1 Capillary and gravity waves</section-head>
+          <section-head level="2">5.7.2 Radar reflection, capillaries alone</section-head>
+          <section-head level="2">5.7.3 Radar reflection, gravity waves</section-head>
+          <section-head level="2">5.7.4 Wave height</section-head>
+          <section-head level="2">5.7.5 Sea state</section-head>
+          <section-head level="1">5.8 Forward reflection from the grazing point</section-head>
+          <section-head level="2">5.8.1 Reflection coefficient amplitude</section-head>
+          <section-head level="2">5.8.2 Reflection coefficient, <emph type="italic">p</emph><emph type="inferior">0</emph>, of smooth plane surface</section-head>
+          <section-head level="2">5.8.3 Reflection coefficient variation</section-head>
+          <section-head level="2">5.8.4 Reflection coefficient, <emph type="italic">p</emph><emph type="inferior">s</emph>, of surface roughness</section-head>
+          <section-head level="2">5.8.5 Values of <emph type="italic">p</emph><emph type="inferior">s</emph></section-head>
+          <section-head level="2">5.8.6 Values of <emph type="italic">p</emph></section-head>
+          <section-head level="1">5.9 Atmospheric and precipitation losses</section-head>
+          <section-head level="2">5.9.1 Causes of loss</section-head>
+          <section-head level="2">5.9.2 Rain</section-head>
+          <section-head level="2">5.9.3 Snow and hail</section-head>
+          <section-head level="2">5.9.4 Fog, low cloud and sandstorms</section-head>
+          <section-head level="2">5.9.5 Clear air attenuation</section-head>
+          <section-head level="2">5.9.6 Spray</section-head>
+          <section-head level="2">5.9.7 Total atmospheric attenuation</section-head>
+          <section-head level="2">5.9.8 Foliage</section-head>
+          <section-head level="1">5.10 References</section-head>
+          <fpage>151</fpage>
+          <lpage>206</lpage>
+          <numpages>56</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This chapter equips us to develop multipath factors <emph type="italic">M</emph> to describe the differences from free space propagation other than atmospheric loss for point targets and for extended targets. Insertion of atmospheric loss and multipath factor convert the radar range equation from free space to real conditions, allowing echo strength at all ranges to be calculated as accurately as our knowledge of the environmental conditions permits.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">A9260V</compound-classification-code-part><compound-classification-code-part type="text">Electromagnetic wave propagation and interactions in the lower atmosphere</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">atmospheric electromagnetic wave propagation</keyword>
+            <keyword source="Inspec">radar cross-sections</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">environmental effect</keyword>
+            <keyword source="uncontrolled">free space propagation</keyword>
+            <keyword source="uncontrolled">atmospheric loss</keyword>
+            <keyword source="uncontrolled">multipath factor</keyword>
+            <keyword source="uncontrolled">radar range equation</keyword>
+            <keyword source="uncontrolled">echo strength</keyword>
+            <keyword source="uncontrolled">environmental condition</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch6</content-item-id>
+          <doi>10.1049/PBRA016E_ch6</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Multipath of point targets</title>
+          <search-title>Multipath of point targets</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>7</bookseq>
+          <item-num>6</item-num>
+          <section-head level="1">6.1 Introduction</section-head>
+          <section-head level="2">6.1.1 The problem</section-head>
+          <section-head level="2">6.1.2 Definition of multipath factor</section-head>
+          <section-head level="2">6.1.3 Correction for scanner elevation beamwidth</section-head>
+          <section-head level="2">6.1.4 Chapter layout</section-head>
+          <section-head level="1">6.2 Effective scanner gain</section-head>
+          <section-head level="1">6.3 Multipath regions</section-head>
+          <section-head level="2">6.3.1 Regions</section-head>
+          <section-head level="2">6.3.2 Boundaries</section-head>
+          <section-head level="2">6.3.3 Transition and diffraction boundary ranges</section-head>
+          <section-head level="1">6.4 Interference region</section-head>
+          <section-head level="2">6.4.1 Value of multipath factor</section-head>
+          <section-head level="2">6.4.2 Average value of multipath factor</section-head>
+          <section-head level="2">6.4.3 Narrow pulses</section-head>
+          <section-head level="2">6.4.4 Diversity</section-head>
+          <section-head level="1">6.5 Diffraction region</section-head>
+          <section-head level="2">6.5.1 The nature of diffraction</section-head>
+          <section-head level="2">6.5.2 Calculation of diffraction</section-head>
+          <section-head level="2">6.5.3 Change of multipath factor with range</section-head>
+          <section-head level="2">6.5.4 Effect of height</section-head>
+          <section-head level="1">6.6 Transition region</section-head>
+          <section-head level="2">6.6.1 Approach</section-head>
+          <section-head level="2">6.6.2 Solution of multipath equation</section-head>
+          <section-head level="1">6.7 Overall multipath factor</section-head>
+          <section-head level="2">6.7.1 Full method</section-head>
+          <section-head level="2">6.7.2 Flat-Earth approximation</section-head>
+          <section-head level="1">6.8 Two-zone method</section-head>
+          <section-head level="2">6.8.1 General form of multipath/range relationship</section-head>
+          <section-head level="2">6.8.2 Rate of change of multipath factor at <emph type="italic">R</emph><emph type="inferior">A</emph>,calm sea</section-head>
+          <section-head level="2">6.8.3 Approximation for multipath factor in near transition region</section-head>
+          <section-head level="2">6.8.4 Approximate multipath factor near horizon</section-head>
+          <section-head level="2">6.8.5 Very low scanner or target</section-head>
+          <section-head level="1">6.9 Sketching echo strength</section-head>
+          <section-head level="2">6.9.1 Use of sketches</section-head>
+          <section-head level="2">6.9.2 Scales</section-head>
+          <section-head level="2">6.9.3 Sketching echo, fair weather</section-head>
+          <section-head level="2">6.9.4 Sketching echo, rough sea</section-head>
+          <section-head level="2">6.9.5 Really rough sketch</section-head>
+          <section-head level="2">6.9.6 Accuracy</section-head>
+          <section-head level="1">6.10 References</section-head>
+          <fpage>207</fpage>
+          <lpage>236</lpage>
+          <numpages>30</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This chapter discusses the multipath of point targets. Multipath and diffraction, which are both reciprocal and work on both transmission and reception legs, have great practical effect on signal strength and target maximum detectable range. Ordinarily <emph type="italic">M</emph> has the same value on both transmit and receive legs, giving an <emph type="italic">M</emph><emph type="superior">2</emph> term in the range equation for passive echoes.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">echo</keyword>
+            <keyword source="Inspec">electromagnetic wave diffraction</keyword>
+            <keyword source="Inspec">target tracking</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">multipath lobe</keyword>
+            <keyword source="uncontrolled">diffraction</keyword>
+            <keyword source="uncontrolled">transmission leg</keyword>
+            <keyword source="uncontrolled">reception leg</keyword>
+            <keyword source="uncontrolled">signal strength</keyword>
+            <keyword source="uncontrolled">target maximum detectable range</keyword>
+            <keyword source="uncontrolled">range equation</keyword>
+            <keyword source="uncontrolled">passive echo</keyword>
+            <keyword source="uncontrolled">atmospheric attenuation</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch7</content-item-id>
+          <doi>10.1049/PBRA016E_ch7</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Passive point targets</title>
+          <search-title>Passive point targets</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>8</bookseq>
+          <item-num>7</item-num>
+          <section-head level="1">7.1 Introduction</section-head>
+          <section-head level="2">7.1.1 Structure of RCS discussions</section-head>
+          <section-head level="2">7.1.2 Applications of point passive reflectors</section-head>
+          <section-head level="2">7.1.3 Meanings</section-head>
+          <section-head level="1">7.2 Reflection from insulators</section-head>
+          <section-head level="2">7.2.1 Basic process</section-head>
+          <section-head level="2">7.2.2 Secondary reflections</section-head>
+          <section-head level="2">7.2.3 Materials</section-head>
+          <section-head level="2">7.2.4 Reflecting shapes</section-head>
+          <section-head level="1">7.3 Reflection from conductors</section-head>
+          <section-head level="2">7.3.1 Principles</section-head>
+          <section-head level="2">7.3.2 Target dimensions very many wavelengths</section-head>
+          <section-head level="1">7.4 Reflection from basic metal shapes</section-head>
+          <section-head level="2">7.4.1 Introduction</section-head>
+          <section-head level="2">7.4.2 Calculation of RCS; definitions</section-head>
+          <section-head level="2">7.4.3 Sphere</section-head>
+          <section-head level="2">7.4.4 Disc and flat plate</section-head>
+          <section-head level="2">7.4.5 Macro- and micro-geometry; distorted plate</section-head>
+          <section-head level="2">7.4.6 Dihedral corner reflector</section-head>
+          <section-head level="2">7.4.7 Distorted corner</section-head>
+          <section-head level="2">7.4.8 Practical effects of micro-geometry</section-head>
+          <section-head level="2">7.4.9 Edges and rods</section-head>
+          <section-head level="2">7.4.10 Circular polarisation</section-head>
+          <section-head level="1">7.5 Other geometric shapes</section-head>
+          <section-head level="2">7.5.1 Cylinder, metal wire</section-head>
+          <section-head level="2">7.5.2 Circular cone</section-head>
+          <section-head level="2">7.5.3 Frequency effects</section-head>
+          <section-head level="1">7.6 Requirements for practical reflectors</section-head>
+          <section-head level="2">7.6.1 Legal requirements, specifications</section-head>
+          <section-head level="2">7.6.2 Measurement of point aids</section-head>
+          <section-head level="2">7.6.3 Commercial reflectors</section-head>
+          <section-head level="2">7.6.4 Problems with reflectors</section-head>
+          <section-head level="1">7.7 Practical reflectors</section-head>
+          <section-head level="2">7.7.1 Trihedral</section-head>
+          <section-head level="2">7.7.2 Octahedral</section-head>
+          <section-head level="2">7.7.3 Trihedral clusters</section-head>
+          <section-head level="2">7.7.4 Luneberg lens</section-head>
+          <section-head level="2">7.7.5 Helispherical reflector</section-head>
+          <section-head level="2">7.7.6 Lens reflectors</section-head>
+          <section-head level="2">7.7.7 Chaff</section-head>
+          <section-head level="2">7.7.8 Phased patch array reflectors</section-head>
+          <section-head level="1">7.8 Miscellaneous point targets</section-head>
+          <section-head level="2">7.8.1 Aircraft</section-head>
+          <section-head level="2">7.8.2 Helicopters</section-head>
+          <section-head level="2">7.8.3 Buoys and lighthouses</section-head>
+          <section-head level="2">7.8.4 Birds</section-head>
+          <section-head level="2">7.8.5 Man</section-head>
+          <section-head level="2">7.8.6 Scanners</section-head>
+          <section-head level="2">7.8.7 Flotsam</section-head>
+          <section-head level="1">7.9 Tilting a point target aid</section-head>
+          <section-head level="2">7.9.1 Introduction</section-head>
+          <section-head level="2">7.9.2 Radar in roll plane</section-head>
+          <section-head level="2">7.9.3 Radar normal to roll plane</section-head>
+          <section-head level="1">7.10 Combination of point targets</section-head>
+          <section-head level="2">7.10.1 The problem</section-head>
+          <section-head level="2">7.10.2 Assumptions and notation</section-head>
+          <section-head level="2">7.10.3 Resultant performance of pair</section-head>
+          <section-head level="2">7.10.4 Examples</section-head>
+          <section-head level="2">7.10.5 Response in other plane; TPM</section-head>
+          <section-head level="2">7.10.6 RCS fluctuation</section-head>
+          <section-head level="2">7.10.7 Tilt</section-head>
+          <section-head level="2">7.10.8 Practical performance</section-head>
+          <section-head level="1">7.11 References</section-head>
+          <fpage>237</fpage>
+          <lpage>284</lpage>
+          <numpages>48</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This chapter examines the mechanisms causing insulators and metallic shapes to reflect and goes on to discuss the reflection to be expected of point objects. It draws on material previously published by the author and by others who are acknowledged in the text.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">marine radar</keyword>
+            <keyword source="Inspec">object detection</keyword>
+            <keyword source="Inspec">radar cross-sections</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">passive point targets</keyword>
+            <keyword source="uncontrolled">target detection</keyword>
+            <keyword source="uncontrolled">marine radar</keyword>
+            <keyword source="uncontrolled">insulators</keyword>
+            <keyword source="uncontrolled">metallic shapes</keyword>
+            <keyword source="uncontrolled">point objects</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch8</content-item-id>
+          <doi>10.1049/PBRA016E_ch8</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Active targets</title>
+          <search-title>Active targets</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>9</bookseq>
+          <item-num>8</item-num>
+          <section-head level="1">8.1 Introduction</section-head>
+          <section-head level="2">8.1.1 Passive and active reflectors</section-head>
+          <section-head level="2">8.1.2 Historical</section-head>
+          <section-head level="2">8.1.3 Features of active devices</section-head>
+          <section-head level="2">8.1.4 Overload</section-head>
+          <section-head level="2">8.1.5 Interference</section-head>
+          <section-head level="2">8.1.6 Response law; effective RCS</section-head>
+          <section-head level="2">8.1.7 Specifications and legal requirements</section-head>
+          <section-head level="2">8.1.8 Structure of chapter</section-head>
+          <section-head level="2">8.1.9 Polarisation compatibility</section-head>
+          <section-head level="2">8.2 Description of conventional racons</section-head>
+          <section-head level="2">8.2.1 Function</section-head>
+          <section-head level="2">8.2.2 Swept frequency and agile types</section-head>
+          <section-head level="2">8.2.3 Traffic capacity</section-head>
+          <section-head level="2">8.2.4 Interference</section-head>
+          <section-head level="2">8.2.5 Detection at the racon</section-head>
+          <section-head level="2">8.2.6 Swept frequency racon response</section-head>
+          <section-head level="2">8.2.7 Frequency agile racon response</section-head>
+          <section-head level="2">8.2.8 Functional description</section-head>
+          <section-head level="2">8.2.9 Sidelobe suppression</section-head>
+          <section-head level="2">8.2.10 Target pattern map</section-head>
+          <section-head level="2">8.2.11 Low pass filter</section-head>
+          <section-head level="2">8.2.12 Idling</section-head>
+          <section-head level="2">8.2.13 Self test</section-head>
+          <section-head level="1">8.3 Racon problems</section-head>
+          <section-head level="2">8.3.1 Effect of swept gain</section-head>
+          <section-head level="2">8.3.2 Tuning errors</section-head>
+          <section-head level="2">8.3.3 Chirp</section-head>
+          <section-head level="1">8.4 Racon performance analysis</section-head>
+          <section-head level="2">8.4.1 Notation</section-head>
+          <section-head level="2">8.4.2 Interrogation received at racon</section-head>
+          <section-head level="2">8.4.3 Probability of detection</section-head>
+          <section-head level="2">8.4.4 Response on axis</section-head>
+          <section-head level="2">8.4.5 Equivalent RCS</section-head>
+          <section-head level="2">8.4.6 Sidelobes</section-head>
+          <section-head level="2">8.4.7 Example</section-head>
+          <section-head level="2">8.4.8 Balance between legs</section-head>
+          <section-head level="2">8.4.9 Interaction</section-head>
+          <section-head level="1">8.5 User-selectable racons</section-head>
+          <section-head level="2">8.5.1 The problem</section-head>
+          <section-head level="2">8.5.2 Fixed frequency and fixed offset frequency racons</section-head>
+          <section-head level="2">8.5.3 ITOFAR</section-head>
+          <section-head level="2">8.5.4 USIFAR</section-head>
+          <section-head level="1">8.6 Miscellaneous in-band racons</section-head>
+          <section-head level="2">8.6.1 Step-sweep racons</section-head>
+          <section-head level="2">8.6.2 Fast-sweep racons</section-head>
+          <section-head level="2">8.6.3 High power racons</section-head>
+          <section-head level="1">8.7 Cross-band racons and transponders</section-head>
+          <section-head level="2">8.7.1 Radar/radio systems</section-head>
+          <section-head level="2">8.7.2 Radar automatic identification system</section-head>
+          <section-head level="1">8.8 SARTs</section-head>
+          <section-head level="2">8.8.1 Purpose</section-head>
+          <section-head level="2">8.8.2 Sweep regime</section-head>
+          <section-head level="2">8.8.3 Display on radar</section-head>
+          <section-head level="2">8.8.4 Performance equations - sweep loss</section-head>
+          <section-head level="1">8.9 Ramarks</section-head>
+          <section-head level="1">8.10 Radar target enhancers</section-head>
+          <section-head level="2">8.10.1 Principle</section-head>
+          <section-head level="2">8.10.2 Basic description</section-head>
+          <section-head level="2">8.10.3 Ancillary facilities</section-head>
+          <section-head level="2">8.10.4 Specification</section-head>
+          <section-head level="2">8.10.5 Radar cross section</section-head>
+          <section-head level="2">8.10.6 RTE response on axis</section-head>
+          <section-head level="2">8.10.7 Unsaturated RCS</section-head>
+          <section-head level="2">8.10.8 Saturated RCS, saturation range</section-head>
+          <section-head level="2">8.10.9 Sidelobes</section-head>
+          <section-head level="2">8.10.10 Target pattern map</section-head>
+          <section-head level="2">8.10.11 Noise power output</section-head>
+          <section-head level="2">8.10.12 Example of RTE noise</section-head>
+          <section-head level="2">8.10.13 Example of RTE performance</section-head>
+          <section-head level="2">8.10.14 Interaction</section-head>
+          <section-head level="2">8.10.15 Problems and opportunities</section-head>
+          <section-head level="1">8.11 Miscellaneous devices</section-head>
+          <section-head level="2">8.11.1 Scanner RCS</section-head>
+          <section-head level="2">8.11.2 Modulated reflectors</section-head>
+          <section-head level="1">8.12 Target tilted in radar/target plane</section-head>
+          <section-head level="2">8.12.1 General</section-head>
+          <section-head level="2">8.12.2 Racons and SARTs</section-head>
+          <section-head level="2">8.12.3 Unsaturated RTEs</section-head>
+          <section-head level="2">8.12.4 Saturated RTEs</section-head>
+          <section-head level="1">8.13 Target tilted normal to radar-target plane</section-head>
+          <section-head level="2">8.13.1 General</section-head>
+          <section-head level="2">8.13.2 Horizontally polarised racons, SARTs and saturated RTEs; linearly polarised scanner</section-head>
+          <section-head level="2">8.13.3 Circularly polarised 3 GHz band racons</section-head>
+          <section-head level="2">8.13.4 Unsaturated RTEs, slant polarised antennas, linearly polarised scanner</section-head>
+          <section-head level="2">8.13.5 Saturated RTEs, slant polarisation, linearly polarised scanner</section-head>
+          <section-head level="2">8.13.6 Slant polarised RTEs, circularly polarised scanner</section-head>
+          <section-head level="2">8.13.7 Unsaturated RTE without slant polarisation</section-head>
+          <section-head level="1">8.14 Target tilted oblique to radar-target plane</section-head>
+          <section-head level="1">8.15 RTE plus passive point target in free space</section-head>
+          <section-head level="2">8.15.1 Introduction</section-head>
+          <section-head level="2">8.15.2 RTE below reflector</section-head>
+          <section-head level="2">8.15.3 Passive reflector surrounding RTE</section-head>
+          <section-head level="2">8.15.4 Delayed RTE</section-head>
+          <section-head level="2">8.15.5 Practical conditions, RTE/reflector pair</section-head>
+          <section-head level="2">8.15.6 Practical conditions, racons, SARTs and ramarks</section-head>
+          <section-head level="1">8.16 References</section-head>
+          <fpage>285</fpage>
+          <lpage>348</lpage>
+          <numpages>64</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>As point devices, all active targets are subject to multipath interference as described for passive point targets. Most of them respond to an interrogation pulse from primary radar and so can be classed as secondary radars. They are also occasionally classed as radar transponders, although it is doubtful whether the term is properly applicable to RTEs. Most work in-band, the response being within the interrogation frequency band, usually at radar frequency.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">marine radar</keyword>
+            <keyword source="Inspec">radar detection</keyword>
+            <keyword source="Inspec">radar interference</keyword>
+            <keyword source="Inspec">transponders</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">active targets</keyword>
+            <keyword source="uncontrolled">target detection</keyword>
+            <keyword source="uncontrolled">marine radar</keyword>
+            <keyword source="uncontrolled">multipath interference</keyword>
+            <keyword source="uncontrolled">passive point targets</keyword>
+            <keyword source="uncontrolled">interrogation pulse</keyword>
+            <keyword source="uncontrolled">primary radar</keyword>
+            <keyword source="uncontrolled">secondary radars</keyword>
+            <keyword source="uncontrolled">radar transponders</keyword>
+            <keyword source="uncontrolled">RTE</keyword>
+            <keyword source="uncontrolled">interrogation frequency band</keyword>
+            <keyword source="uncontrolled">radar frequency</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch9</content-item-id>
+          <doi>10.1049/PBRA016E_ch9</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Multipath factor of extended targets</title>
+          <search-title>Multipath factor of extended targets</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>10</bookseq>
+          <item-num>9</item-num>
+          <section-head level="1">9.1 Introduction</section-head>
+          <section-head level="2">9.1.1 The problem</section-head>
+          <section-head level="2">9.1.2 Target echo</section-head>
+          <section-head level="1">9.2 Multipath of extended target, summation method</section-head>
+          <section-head level="2">9.2.1 Summation of element echoes</section-head>
+          <section-head level="2">9.2.2 Uniform RCS distribution; critical range</section-head>
+          <section-head level="2">9.2.3 Multipath factor</section-head>
+          <section-head level="1">9.3 Diffraction and transition regions</section-head>
+          <section-head level="2">9.3.1 Echo variation with element height</section-head>
+          <section-head level="2">9.3.2 Integration, uniform target; height factor</section-head>
+          <section-head level="2">9.3.3 Non-uniform target</section-head>
+          <section-head level="2">9.3.4 Choice of target height factor</section-head>
+          <section-head level="1">9.4 Interference region</section-head>
+          <section-head level="2">9.4.1 Ray geometry, cylindrical target</section-head>
+          <section-head level="2">9.4.2 Element multipath factor, flat Earth</section-head>
+          <section-head level="2">9.4.3 Target multipath factor</section-head>
+          <section-head level="2">9.4.4 Curved Earth</section-head>
+          <section-head level="2">9.4.5 Multipath factor up to critical range</section-head>
+          <section-head level="1">9.5 Approximate multipath factor into transition region</section-head>
+          <section-head level="2">9.5.1 Critical range</section-head>
+          <section-head level="2">9.5.2 Moderate sea condition</section-head>
+          <section-head level="2">9.5.3 High scanner or target</section-head>
+          <section-head level="1">9.6 Complete multipath expression</section-head>
+          <section-head level="2">9.6.1 Multipath factor</section-head>
+          <section-head level="2">9.6.2 Variation of echo with range</section-head>
+          <section-head level="2">9.6.3 Non-uniform targets</section-head>
+          <section-head level="2">9.6.4 Sketching echo strength</section-head>
+          <fpage>349</fpage>
+          <lpage>368</lpage>
+          <numpages>20</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>Previous chapters considered point targets so physically small that only single pairs of direct and indirect rays exist, giving definite multipath structures within the interference region. Point targets also usually have well-defined and broad (often omnidirectional) spatial target pattern maps (TPM) or radiation patterns, so their RCS does not vary much as they tilt. Although sea-waves may modulate their multipath factor, received signal is reasonably steady. In this chapter we consider how multipath affects vertically extended targets, such as ships and coastlines, whose structure extends over a wide height bracket. Atmospheric and precipitation attenuations do not affect the arguments deployed in this chapter and will be ignored.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">interference suppression</keyword>
+            <keyword source="Inspec">object detection</keyword>
+            <keyword source="Inspec">radar cross-sections</keyword>
+            <keyword source="Inspec">radar interference</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">extended point target multipath factor</keyword>
+            <keyword source="uncontrolled">indirect ray</keyword>
+            <keyword source="uncontrolled">direct ray</keyword>
+            <keyword source="uncontrolled">spatial target pattern map</keyword>
+            <keyword source="uncontrolled">spatial TPM</keyword>
+            <keyword source="uncontrolled">radiation pattern</keyword>
+            <keyword source="uncontrolled">RCS</keyword>
+            <keyword source="uncontrolled">atmospheric attenuation</keyword>
+            <keyword source="uncontrolled">precipitation attenuation</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch10</content-item-id>
+          <doi>10.1049/PBRA016E_ch10</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Extended target reflections; ships and coasts</title>
+          <search-title>Extended target reflections; ships and coasts</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>11</bookseq>
+          <item-num>10</item-num>
+          <section-head level="1">10.1 The problem</section-head>
+          <section-head level="2">10.1.1 Target parameters affecting detection</section-head>
+          <section-head level="2">10.1.2 Difficulty of finding RCS</section-head>
+          <section-head level="2">10.1.3 Factors affecting RCS seen by interrogator</section-head>
+          <section-head level="2">10.1.4 Estimation of effective height</section-head>
+          <section-head level="2">10.1.5 Our approach</section-head>
+          <section-head level="1">10.2 Ship size</section-head>
+          <section-head level="1">10.3 Experimental determination of RCS and effective height</section-head>
+          <section-head level="2">10.3.1 Military methods</section-head>
+          <section-head level="2">10.3.2 Radar measurement of typical ship RCS</section-head>
+          <section-head level="2">10.3.3 Alternative measurement strategies</section-head>
+          <section-head level="2">10.3.4 RCS of specific vessel</section-head>
+          <section-head level="2">10.3.5 Effective target height</section-head>
+          <section-head level="1">10.4 Reported RCS values</section-head>
+          <section-head level="2">10.4.1 Limitations</section-head>
+          <section-head level="2">10.4.2 Williams <emph type="italic">et al</emph>.</section-head>
+          <section-head level="2">10.4.3 IALA VTS manual</section-head>
+          <section-head level="2">10.4.4 Skolnik</section-head>
+          <section-head level="2">10.4.5 Warships</section-head>
+          <section-head level="2">10.4.6 A rule of thumb</section-head>
+          <section-head level="2">10.4.7 Radar Technology Encyclopedia</section-head>
+          <section-head level="2">10.4.8 Angle of depression</section-head>
+          <section-head level="2">10.4.9 Suggested formula for merchant ships</section-head>
+          <section-head level="1">10.5 Theoretical basis for RCS</section-head>
+          <section-head level="2">10.5.1 Approach</section-head>
+          <section-head level="2">10.5.2 Tonnage and linear dimensions</section-head>
+          <section-head level="2">10.5.3 Micro-geometric approach; baseline RCS</section-head>
+          <section-head level="2">10.5.4 TPM smoothness</section-head>
+          <section-head level="2">10.5.5 RCS/tonnage by micro-geometry</section-head>
+          <section-head level="2">10.5.6 RCS/tonnage by macro-geometry</section-head>
+          <section-head level="2">10.5.7 Reconciliation with reported results</section-head>
+          <section-head level="1">10.6 Features contributing to ships' RCS</section-head>
+          <section-head level="2">10.6.1 Long-range detectability</section-head>
+          <section-head level="2">10.6.2 Mega-geometry factors</section-head>
+          <section-head level="2">10.6.3 Macro-geometry factors</section-head>
+          <section-head level="2">10.6.4 Micro-geometry factors</section-head>
+          <section-head level="2">10.6.5 Stealthed vessels</section-head>
+          <section-head level="1">10.7 Detection cell overflow</section-head>
+          <section-head level="2">10.7.1 Azimuth overflow</section-head>
+          <section-head level="2">10.7.2 Range overflow</section-head>
+          <section-head level="2">10.7.3 Glint</section-head>
+          <section-head level="2">10.7.4 Straddling</section-head>
+          <section-head level="1">10.8 The RCS to use for ships</section-head>
+          <section-head level="1">10.9 RCS of small craft</section-head>
+          <section-head level="2">10.9.1 The problem</section-head>
+          <section-head level="2">10.9.2 Reflecting elements</section-head>
+          <section-head level="2">10.9.3 Displaced water</section-head>
+          <section-head level="1">10.10 Fast craft</section-head>
+          <section-head level="2">10.10.1 High speed craft</section-head>
+          <section-head level="2">10.10.2 Large motor yachts</section-head>
+          <section-head level="2">10.10.3 Wing in ground (WIG) craft (ekranoplanes)</section-head>
+          <section-head level="1">10.11 Lobe spacing, yaw and roll</section-head>
+          <section-head level="1">10.12 Land and shoreside features</section-head>
+          <section-head level="2">10.12.1 Introduction</section-head>
+          <section-head level="2">10.12.2 Coastline and rivers</section-head>
+          <section-head level="2">10.12.3 Shoals</section-head>
+          <section-head level="2">10.12.4 Bridges</section-head>
+          <section-head level="2">10.12.5 Overhead obstructions</section-head>
+          <section-head level="2">10.12.6 False echoes</section-head>
+          <section-head level="2">10.12.7 Fluctuation characteristics</section-head>
+          <section-head level="1">10.13 Ice</section-head>
+          <section-head level="2">10.13.1 Introduction</section-head>
+          <section-head level="2">10.13.2 Ice formed in the water</section-head>
+          <section-head level="2">10.13.3 Bergs and growlers</section-head>
+          <section-head level="2">10.13.4 Pack and fast ice</section-head>
+          <section-head level="2">10.13.5 Icebergs calved from glaciers</section-head>
+          <section-head level="2">10.13.6 Optimum radar bands</section-head>
+          <section-head level="1">10.14 Echo strength from extended targets; sketches</section-head>
+          <section-head level="1">10.15 References</section-head>
+          <fpage>369</fpage>
+          <lpage>414</lpage>
+          <numpages>46</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This chapter examines reported radar cross sections of many kinds of vessel and attempts a broad theoretical justification of those values, although too many factors are in play to expect precision. The techniques and problems of RCS measurement in ships are discussed. An analytical method of assessing RCS from published data on ship size is offered.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">radar cross-sections</keyword>
+            <keyword source="Inspec">radar target recognition</keyword>
+            <keyword source="Inspec">ships</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">extended target reflection</keyword>
+            <keyword source="uncontrolled">ship target reflection</keyword>
+            <keyword source="uncontrolled">coast target reflection</keyword>
+            <keyword source="uncontrolled">radar cross sections</keyword>
+            <keyword source="uncontrolled">RCS measurement</keyword>
+            <keyword source="uncontrolled">ship size</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch11</content-item-id>
+          <doi>10.1049/PBRA016E_ch11</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Noise, clutter and interference</title>
+          <search-title>Noise, clutter and interference</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>12</bookseq>
+          <item-num>11</item-num>
+          <section-head level="1">11.1 The importance of noise and clutter to detection of targets</section-head>
+          <section-head level="1">11.2 Mean noise</section-head>
+          <section-head level="2">11.2.1 Noise power</section-head>
+          <section-head level="2">11.2.2 Receiver input stage noise contribution</section-head>
+          <section-head level="2">11.2.3 Noise factor</section-head>
+          <section-head level="2">11.2.4 Noise temperature</section-head>
+          <section-head level="2">11.2.5 Bandwidth</section-head>
+          <section-head level="2">11.2.6 Environmental noise sources</section-head>
+          <section-head level="2">11.2.7 Atmosphere and line attenuation noise</section-head>
+          <section-head level="2">11.2.8 System noise</section-head>
+          <section-head level="1">11.3 Noise fluctuation</section-head>
+          <section-head level="2">11.3.1 Prediction of random events</section-head>
+          <section-head level="2">11.3.2 Individual noise contributors do not cancel</section-head>
+          <section-head level="2">11.3.3 Amplitude distribution of noise</section-head>
+          <section-head level="2">11.3.4 Noise bandwidth</section-head>
+          <section-head level="2">11.3.5 Amplification</section-head>
+          <section-head level="2">11.3.6 Event rate</section-head>
+          <section-head level="2">11.3.7 Amplitude and power conventions</section-head>
+          <section-head level="2">11.3.8 Distribution and probability density, unmodulated white noise</section-head>
+          <section-head level="2">11.3.9 Effect of atmospheric and feeder noise on signals</section-head>
+          <section-head level="1">11.4 Mean precipitation clutter</section-head>
+          <section-head level="2">11.4.1 Clutter mechanism</section-head>
+          <section-head level="2">11.4.2 Mean reflectivity</section-head>
+          <section-head level="2">11.4.3 Polarisation</section-head>
+          <section-head level="2">11.4.4 Mean received clutter power</section-head>
+          <section-head level="1">11.5 Precipitation clutter fluctuation</section-head>
+          <section-head level="1">11.6 Mean sea clutter</section-head>
+          <section-head level="2">11.6.1 Reflection mechanism</section-head>
+          <section-head level="2">11.6.2 Clutter per unit area, &#x03C3;<emph type="inferior">S0</emph></section-head>
+          <section-head level="2">11.6.3 Wave height relation to wind speed</section-head>
+          <section-head level="2">11.6.4 Sea clutter mean power</section-head>
+          <section-head level="2">11.6.5 Effect of scanner height</section-head>
+          <section-head level="2">11.6.6 Abnormal waves</section-head>
+          <section-head level="1">11.7 Sea clutter fluctuation</section-head>
+          <section-head level="2">11.7.1 Sea clutter, low sea state</section-head>
+          <section-head level="2">11.7.2 Sea clutter, high sea state</section-head>
+          <section-head level="2">11.7.3 Log-normal distribution</section-head>
+          <section-head level="2">11.7.4 Weibull distribution</section-head>
+          <section-head level="1">11.8 Short-range ringing clutter</section-head>
+          <section-head level="2">11.8.1 Feeder ringing</section-head>
+          <section-head level="2">11.8.2 Example</section-head>
+          <section-head level="2">11.8.3 Ghost axial echoes</section-head>
+          <section-head level="2">11.8.4 Receiver oscillation</section-head>
+          <section-head level="1">11.9 Man-made interference</section-head>
+          <section-head level="2">11.9.1 Other radars</section-head>
+          <section-head level="2">11.9.2 Own ship</section-head>
+          <section-head level="1">11.10 References</section-head>
+          <fpage>415</fpage>
+          <lpage>452</lpage>
+          <numpages>38</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>Preceding chapters enable the echo strength reaching the radar from passive or active targets to be calculated in presence of precipitation and in the various sea conditions. In this chapter we examine the noise and clutter which reach the detection system, competing with and perhaps masking the wanted target echoes. The competitors comprise thermal noise generated in the receiver and elsewhere, back-scatter from precipitation, sea-waves, ice or land, and possibly short-range internal feeder mismatch reflections. Their quantification prepares us to examine the signal to noise and clutter ratios necessary for calculation of target detectability in Chapter 12. Noise and clutter, by competing with wanted echoes at the radar, set a limit to the smallest detectable echo. Some aspects of precipitation and the sea were described in Chapter 5. The special characteristics of land and ice clutter were discussed in Chapter 10, Sections 10.12 and 10.13, respectively.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">clutter</keyword>
+            <keyword source="Inspec">marine radar</keyword>
+            <keyword source="Inspec">thermal noise</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">interference</keyword>
+            <keyword source="uncontrolled">target detection system</keyword>
+            <keyword source="uncontrolled">marine radar</keyword>
+            <keyword source="uncontrolled">echo strength</keyword>
+            <keyword source="uncontrolled">thermal noise</keyword>
+            <keyword source="uncontrolled">land clutter</keyword>
+            <keyword source="uncontrolled">ice clutter</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch12</content-item-id>
+          <doi>10.1049/PBRA016E_ch12</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Detection</title>
+          <search-title>Detection</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>13</bookseq>
+          <item-num>12</item-num>
+          <section-head level="1">12.1 Outline</section-head>
+          <section-head level="2">12.1.1 What we mean by detection</section-head>
+          <section-head level="2">12.1.2 Echo fluctuations</section-head>
+          <section-head level="2">12.1.3 Noise and clutter fluctuations</section-head>
+          <section-head level="2">12.1.4 Detection in random noise or clutter</section-head>
+          <section-head level="2">12.1.5 Assumptions</section-head>
+          <section-head level="2">12.1.6 The detection problem</section-head>
+          <section-head level="2">12.1.7 Rigour</section-head>
+          <section-head level="2">12.1.8 Effect of receiver type</section-head>
+          <section-head level="2">12.1.9 Chapter layout</section-head>
+          <section-head level="1">12.2 Direct detection of single pulse in noise</section-head>
+          <section-head level="2">12.2.1 Detection threshold, unmodulated noise</section-head>
+          <section-head level="2">12.2.2 Detection of sinusoidal signal</section-head>
+          <section-head level="2">12.2.3 Variation of <emph type="italic">P</emph><emph type="inferior">D</emph> with SNR</section-head>
+          <section-head level="1">12.3 Envelope detection of echo pulse in noise</section-head>
+          <section-head level="2">12.3.1 Detection in non-coherent receiver</section-head>
+          <section-head level="2">12.3.2 Equivalent envelope detector</section-head>
+          <section-head level="2">12.3.3 Noise distribution</section-head>
+          <section-head level="2">12.3.4 Noisy signal distribution</section-head>
+          <section-head level="2">12.3.5 Approximations for <emph type="italic">P</emph><emph type="inferior">D</emph> calculation</section-head>
+          <section-head level="2">12.3.6 Accuracy</section-head>
+          <section-head level="1">12.4 Single pulse detection in clutter</section-head>
+          <section-head level="2">12.4.1 Noise and precipitation clutter</section-head>
+          <section-head level="2">12.4.2 Clutter withWeibull distribution</section-head>
+          <section-head level="2">12.4.3 Equivalent sea, land and ice clutter</section-head>
+          <section-head level="1">12.5 Target fluctuation</section-head>
+          <section-head level="2">12.5.1 The problem</section-head>
+          <section-head level="2">12.5.2 Swerling fluctuation cases</section-head>
+          <section-head level="2">12.5.3 Case 0 (Case 5) non-fluctuating target</section-head>
+          <section-head level="2">12.5.4 Fluctuating targets</section-head>
+          <section-head level="2">12.5.5 Swerling Case 1</section-head>
+          <section-head level="2">12.5.6 Swerling Case 2</section-head>
+          <section-head level="2">12.5.7 Swerling Case 3a</section-head>
+          <section-head level="2">12.5.8 Comparison of fluctuation cases</section-head>
+          <section-head level="1">12.6 Multiple observations</section-head>
+          <section-head level="2">12.6.1 Addition of returns</section-head>
+          <section-head level="2">12.6.2 Coherent and non-coherent integration</section-head>
+          <section-head level="2">12.6.3 Integration gain or loss</section-head>
+          <section-head level="2">12.6.4 Swerling Case 2 targets</section-head>
+          <section-head level="2">12.6.5 <emph type="italic">M</emph> out of <emph type="italic">N</emph> integrators</section-head>
+          <section-head level="2">12.6.6 Performance margin</section-head>
+          <section-head level="2">12.6.7 Cursive displays</section-head>
+          <section-head level="2">12.6.8 Analog integration</section-head>
+          <section-head level="2">12.6.9 Mitigation of losses in small scanners and wide bandwidth</section-head>
+          <section-head level="2">12.6.10 Logarithmic receiver loss</section-head>
+          <section-head level="2">12.6.11 Detection at short range with ringing</section-head>
+          <section-head level="1">12.7 Setting the threshold</section-head>
+          <section-head level="2">12.7.1 Interchangeability of receiver gain and threshold voltage</section-head>
+          <section-head level="2">12.7.2 Inbuilt swept gain</section-head>
+          <section-head level="2">12.7.3 Adaptive threshold</section-head>
+          <section-head level="2">12.7.4 Operator's gain control</section-head>
+          <section-head level="1">12.8 Radar diversity</section-head>
+          <section-head level="2">12.8.1 Principles</section-head>
+          <section-head level="2">12.8.2 Criterion for polar diagram decorrelation</section-head>
+          <section-head level="2">12.8.3 Criterion for precipitation clutter decorrelation</section-head>
+          <section-head level="2">12.8.4 Space diversity</section-head>
+          <section-head level="2">12.8.5 Swerling Case 3b; Case 1 target observed by dual-diversity</section-head>
+          <section-head level="2">12.8.6 Receiver combinations</section-head>
+          <section-head level="2">12.8.7 Combination performance</section-head>
+          <section-head level="2">12.8.8 Practical problems</section-head>
+          <section-head level="1">12.9 Detection of active targets</section-head>
+          <section-head level="2">12.9.1 RTEs and superhet racons</section-head>
+          <section-head level="2">12.9.2 Racons, etc., with crystal-video receivers</section-head>
+          <section-head level="1">12.10 Practicalities</section-head>
+          <section-head level="2">12.10.1 Sidelobes and axial ghost echoes</section-head>
+          <section-head level="2">12.10.2 Roll and pitch</section-head>
+          <section-head level="2">12.10.3 Wave screening</section-head>
+          <section-head level="2">12.10.4 Actual target fluctuation</section-head>
+          <section-head level="2">12.10.5 Losses</section-head>
+          <section-head level="2">12.10.6 Anomalous performance with small targets</section-head>
+          <section-head level="1">12.11 Summary</section-head>
+          <section-head level="2">12.11.1 Targets</section-head>
+          <section-head level="2">12.11.2 Noise</section-head>
+          <section-head level="2">12.11.3 Precipitation</section-head>
+          <section-head level="2">12.11.4 Sea-waves</section-head>
+          <section-head level="2">12.11.5 Detection strategy</section-head>
+          <section-head level="2">12.11.6 Display accuracy</section-head>
+          <section-head level="2">12.11.7 System integration - diversity</section-head>
+          <section-head level="1">12.12 References</section-head>
+          <fpage>453</fpage>
+          <lpage>522</lpage>
+          <numpages>70</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>Signal processing leading to target detection was discussed in general terms in Chapter 3, Section 3.6. We now quantify the detection process. Appendix A2 expands on some matters of detail. This chapter, which owes much to expert guidance from Professor E. D. R. Shearman, enables P&#x03B3;&gt; to be predicted. Although long, we will only scratch the surface of detection theory. For a taster of the extensive mathematics necessary for rigorous treatment, see for example, Rohan [1], Chapter 3. Theoretical work is ongoing, driven by the needs of telecommunications, and is leading to introduction of refinements in radar data handling software. The next chapter will discuss the errors in measurement and calculation arising from the uncertainties surrounding radar operation.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">marine radar</keyword>
+            <keyword source="Inspec">radar detection</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">target detection</keyword>
+            <keyword source="uncontrolled">signal processing</keyword>
+            <keyword source="uncontrolled">detection process quantification</keyword>
+            <keyword source="uncontrolled">detection theory</keyword>
+            <keyword source="uncontrolled">radar operation</keyword>
+            <keyword source="uncontrolled">marine radar</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch13</content-item-id>
+          <doi>10.1049/PBRA016E_ch13</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Accuracy of position and track</title>
+          <search-title>Accuracy of position and track</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>14</bookseq>
+          <item-num>13</item-num>
+          <section-head level="1">13.1 Introduction</section-head>
+          <section-head level="2">13.1.1 The need to consider accuracy</section-head>
+          <section-head level="2">13.1.2 Display of target information</section-head>
+          <section-head level="2">13.1.3 Sources of error</section-head>
+          <section-head level="1">13.2 Forms of error</section-head>
+          <section-head level="2">13.2.1 Absolute and relative error</section-head>
+          <section-head level="2">13.2.2 Systematic error</section-head>
+          <section-head level="2">13.2.3 Random error</section-head>
+          <section-head level="2">13.2.4 Latency</section-head>
+          <section-head level="2">13.2.5 Quasi-random error</section-head>
+          <section-head level="1">13.3 Errors in terms within radar performance calculations</section-head>
+          <section-head level="2">13.3.1 Introduction</section-head>
+          <section-head level="2">13.3.2 Transmitter hardware losses</section-head>
+          <section-head level="2">13.3.3 Service loss</section-head>
+          <section-head level="2">13.3.4 Receiver hardware losses</section-head>
+          <section-head level="2">13.3.5 System processing losses</section-head>
+          <section-head level="2">13.3.6 Point target responses</section-head>
+          <section-head level="2">13.3.7 Extended target RCS</section-head>
+          <section-head level="2">13.3.8 Scanner rotation</section-head>
+          <section-head level="2">13.3.9 Environmental conditions</section-head>
+          <section-head level="1">13.4 Accuracy of calculations leading to SNR or <emph type="italic">P</emph><emph type="inferior">D</emph></section-head>
+          <section-head level="2">13.4.1 Approximations within calculations</section-head>
+          <section-head level="2">13.4.2 Radar comparisons</section-head>
+          <section-head level="2">13.4.3 Mounting heights</section-head>
+          <section-head level="1">13.5 Plot and track accuracy</section-head>
+          <section-head level="2">13.5.1 Instrument errors</section-head>
+          <section-head level="2">13.5.2 Ship motions</section-head>
+          <section-head level="2">13.5.3 Scan plane tilt errors</section-head>
+          <section-head level="2">13.5.4 Effects of SNR and bandwidth on plot accuracy</section-head>
+          <section-head level="2">13.5.5 Plotting aid prediction accuracy</section-head>
+          <section-head level="2">13.5.6 Manoeuvres</section-head>
+          <section-head level="2">13.5.7 Identity swap</section-head>
+          <section-head level="1">13.6 Combining data from multiple sensors</section-head>
+          <section-head level="2">13.6.1 Shipborne radars</section-head>
+          <section-head level="2">13.6.2 Coastal surveillance and VTS - simple system</section-head>
+          <section-head level="2">13.6.3 Autonomous radar heads with track-formers</section-head>
+          <section-head level="2">13.6.4 Central track-former or plot extractor</section-head>
+          <section-head level="1">13.7 References</section-head>
+          <fpage>523</fpage>
+          <lpage>556</lpage>
+          <numpages>34</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>Catastrophic marine accidents are rare. Of those collisions and standings which do occur, many start as quite routine navigational situations; just another night, just another watch, just another target. Something then goes awry perhaps the radar fails to display an islet or a target's calculated closest point of approach (CPA) is erroneous jeopardising the crew, ship, cargo, passengers, other shipping or the environment, with losses running to a hundred million pounds. All significant targets have to be displayed to scale on the screen, often nowadays with chart features superimposed. We need to look in detail at the validity or accuracy of the plotted positions, for this accuracy, or lack of it, should always inform the navigators judgement of the situation and the prudent action to take. So far, we have concentrated on the process of detecting targets. Detection, although necessary, is not sufficient the navigator would give little thanks to be told that there was another target somewhere or other within busy Tokyo Bay (Chapter 5, Figure 5.14). We have looked at how plots of target current positions are laid down on the display, showing where targets and coastal features are relative to own ship at the present time. This basic information is a useful start and must contain little error, but the navigator needs more: are targets moving or manoeuvring? What have they been doing? Are they hazardously close? Will they approach to close quarters? Where? When? Most of these questions involve movement, which is the rate of change of position with time, necessitating data collection during two scans at the very least. Movement is represented as a track, which is the target velocity vector either relative to own ship (relative motion display) or to the ground or the slowly moving water mass.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">marine radar</keyword>
+            <keyword source="Inspec">object tracking</keyword>
+            <keyword source="Inspec">radar detection</keyword>
+            <keyword source="Inspec">radar tracking</keyword>
+            <keyword source="Inspec">ships</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">catastrophic marine accidents</keyword>
+            <keyword source="uncontrolled">target detection</keyword>
+            <keyword source="uncontrolled">ship</keyword>
+            <keyword source="uncontrolled">data collection</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch14</content-item-id>
+          <doi>10.1049/PBRA016E_ch14</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Spreadsheet calculations</title>
+          <search-title>Spreadsheet calculations</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>15</bookseq>
+          <item-num>14</item-num>
+          <section-head level="1">14.1 Introduction</section-head>
+          <section-head level="1">14.2 Passive point targets: page 1</section-head>
+          <section-head level="2">14.2.1 General arrangement</section-head>
+          <section-head level="2">14.2.2 Title panel</section-head>
+          <section-head level="2">14.2.3 Transceiver panel</section-head>
+          <section-head level="2">14.2.4 Scanner and feeder panel, and Table S2</section-head>
+          <section-head level="2">14.2.5 Range bracket panel</section-head>
+          <section-head level="2">14.2.6 Target panel</section-head>
+          <section-head level="2">14.2.7 Operator panel and Table S1</section-head>
+          <section-head level="2">14.2.8 Environment panel</section-head>
+          <section-head level="2">14.2.9 Results and user panels</section-head>
+          <section-head level="1">14.3 Geometry panel</section-head>
+          <section-head level="2">14.3.1 Layout</section-head>
+          <section-head level="2">14.3.2 Establishment of &#x03B1; and R series</section-head>
+          <section-head level="2">14.3.3 Scanner and target heights</section-head>
+          <section-head level="2">14.3.4 Angles and effective scanner gain</section-head>
+          <section-head level="1">14.4 Environmental effects</section-head>
+          <section-head level="2">14.4.1 Diffraction region</section-head>
+          <section-head level="2">14.4.2 Interference region multipath</section-head>
+          <section-head level="2">14.4.3 Transition region multipath</section-head>
+          <section-head level="2">14.4.4 Overall multipath factor</section-head>
+          <section-head level="2">14.4.5 Atmospheric loss</section-head>
+          <section-head level="1">14.5 Signals at the radar receiver, single pulse</section-head>
+          <section-head level="2">14.5.1 Effective mode</section-head>
+          <section-head level="2">14.5.2 Noise and swept gain floor</section-head>
+          <section-head level="2">14.5.3 Precipitation clutter</section-head>
+          <section-head level="2">14.5.4 Sea clutter</section-head>
+          <section-head level="2">14.5.5 Total noise and clutter</section-head>
+          <section-head level="2">14.5.6 Echo</section-head>
+          <section-head level="1">14.6 Main beam detection, multiple pulses</section-head>
+          <section-head level="2">14.6.1 Pulses integrated</section-head>
+          <section-head level="2">14.6.2 Integration gain</section-head>
+          <section-head level="2">14.6.3 Swerling Case 0 571</section-head>
+          <section-head level="2">14.6.4 Swerling Case 1</section-head>
+          <section-head level="2">14.6.5 Swerling Case 3a</section-head>
+          <section-head level="2">14.6.6 Chosen case performance</section-head>
+          <section-head level="2">14.6.7 Event labels</section-head>
+          <section-head level="2">14.6.8 Results panel</section-head>
+          <section-head level="1">14.7 Sidelobes</section-head>
+          <section-head level="1">14.8 Graphs</section-head>
+          <section-head level="2">14.8.1 Chart construction</section-head>
+          <section-head level="2">14.8.2 Chart 1, detectability</section-head>
+          <section-head level="2">14.8.3 Chart 2, geometry</section-head>
+          <section-head level="1">14.9 Extended passive targets</section-head>
+          <section-head level="2">14.9.1 Spreadsheet page 1</section-head>
+          <section-head level="2">14.9.2 Remainder of spreadsheet</section-head>
+          <section-head level="1">14.10 Active point targets</section-head>
+          <section-head level="2">14.10.1 Target types</section-head>
+          <section-head level="2">14.10.2 Radar auxiliary racon channel</section-head>
+          <section-head level="2">14.10.3 Device antenna</section-head>
+          <section-head level="2">14.10.4 Device characteristics</section-head>
+          <section-head level="2">14.10.5 Device interrogation panel</section-head>
+          <section-head level="2">14.10.6 Device response panel</section-head>
+          <section-head level="2">14.10.7 Remaining matrix panels</section-head>
+          <section-head level="2">14.10.8 Results panel</section-head>
+          <section-head level="2">14.10.9 Charts</section-head>
+          <section-head level="1">14.11 References</section-head>
+          <fpage>557</fpage>
+          <lpage>584</lpage>
+          <numpages>28</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>There are several well-known aids to calculation of surveillance radar performance. Blake's Worksheet uses a pre-computer iterative pencil and paper approach. The CARPET program runs on a PC. Both are slanted towards military and aviation applications and are not particularly straightforward to apply to civil marine problems. To assist readers to compute the performance of their own systems, this chapter outlines a new family of spreadsheets for point passive, point active and extended passive targets, respectively. In this explanatory chapter, we assume basic familiarity with Microsoft Works spreadsheet operation as well as the earlier chapters of this book. No programming skill is required; the user merely inserts the relevant system parameters and follows simple drills set out below. Results are presented numerically and can be charted (graphed) to several alternative bases.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">calculation</keyword>
+            <keyword source="Inspec">radar computing</keyword>
+            <keyword source="Inspec">search radar</keyword>
+            <keyword source="Inspec">spreadsheet programs</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">spreadsheet calculation</keyword>
+            <keyword source="uncontrolled">surveillance radar performance</keyword>
+            <keyword source="uncontrolled">Blake worksheet</keyword>
+            <keyword source="uncontrolled">precomputer iterative pencil approach</keyword>
+            <keyword source="uncontrolled">precomputer iterative paper approach</keyword>
+            <keyword source="uncontrolled">CARPET program</keyword>
+            <keyword source="uncontrolled">PC</keyword>
+            <keyword source="uncontrolled">military application</keyword>
+            <keyword source="uncontrolled">aviation application</keyword>
+            <keyword source="uncontrolled">civil marine problem</keyword>
+            <keyword source="uncontrolled">point passive</keyword>
+            <keyword source="uncontrolled">point active</keyword>
+            <keyword source="uncontrolled">extended passive target</keyword>
+            <keyword source="uncontrolled">Microsoft Works spreadsheet operation</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch15</content-item-id>
+          <doi>10.1049/PBRA016E_ch15</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Worked examples</title>
+          <search-title>Worked examples</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>16</bookseq>
+          <item-num>15</item-num>
+          <section-head level="1">15.1 Deep-sea ship viewing ships</section-head>
+          <section-head level="2">15.1.1 Nine gigahertz band, small craft target</section-head>
+          <section-head level="2">15.1.2 Three gigahertz band, small craft target</section-head>
+          <section-head level="1">15.2 VTS installation</section-head>
+          <section-head level="2">15.2.1 Scenario</section-head>
+          <section-head level="2">15.2.2 <emph type="italic">P</emph><emph type="inferior">D</emph> variation with range; effect of scanner height</section-head>
+          <section-head level="2">15.2.3 Scanner aperture</section-head>
+          <section-head level="2">15.2.4 Feeder</section-head>
+          <section-head level="2">15.2.5 Atmospheric refraction</section-head>
+          <section-head level="2">15.2.6 Coaster</section-head>
+          <section-head level="2">15.2.7 Sidelobes</section-head>
+          <section-head level="2">15.2.8 Purchase specification</section-head>
+          <section-head level="2">15.2.9 Site acceptance tests</section-head>
+          <section-head level="1">15.3 Small craft radar</section-head>
+          <section-head level="2">15.3.1 Detection of cliffs</section-head>
+          <section-head level="2">15.3.2 Cliff height</section-head>
+          <section-head level="2">15.3.3 Encounter with a coaster</section-head>
+          <section-head level="1">15.4 Active targets</section-head>
+          <section-head level="2">15.4.1 Detecting a buoy racon</section-head>
+          <section-head level="2">15.4.2 Detecting a radar target enhancer</section-head>
+          <fpage>585</fpage>
+          <lpage>614</lpage>
+          <numpages>30</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This chapter presents hypothetical case studies of radar system detectability, using the spreadsheets of Chapter 14 to illustrate some of the factors meriting consideration when designing, specifying or analysing the detection aspects of typical systems. Likely importance of the major factors in play are indicated, but, rather than relying on the chapter's results as a rule of thumb, readers should take the plunge and run the spreadsheets for their specific systems. For brevity, this chapter excludes some of the re-iterations and alternatives necessary to real-life situations. None of the equipment represents any particular make or model.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">marine radar</keyword>
+            <keyword source="Inspec">radar detection</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">target detection</keyword>
+            <keyword source="uncontrolled">marine radar</keyword>
+            <keyword source="uncontrolled">radar system detectability</keyword>
+            <keyword source="uncontrolled">spreadsheets</keyword>
+            <keyword source="uncontrolled">detection aspects</keyword>
+            <keyword source="uncontrolled">typical systems</keyword>
+            <keyword source="uncontrolled">real-life situations</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_ch16</content-item-id>
+          <doi>10.1049/PBRA016E_ch16</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Future possibilities</title>
+          <search-title>Future possibilities</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>chapter</content-item-type>
+          <bookseq>17</bookseq>
+          <item-num>16</item-num>
+          <section-head level="1">16.1 Introduction</section-head>
+          <section-head level="1">16.2 The drivers for change</section-head>
+          <section-head level="2">16.2.1 Customer requirements</section-head>
+          <section-head level="2">16.2.2 Regulatory change</section-head>
+          <section-head level="2">16.2.3 Cost effectiveness</section-head>
+          <section-head level="2">16.2.4 Environment</section-head>
+          <section-head level="2">16.2.5 Technology</section-head>
+          <section-head level="1">16.3 Hardware developments</section-head>
+          <section-head level="2">16.3.1 Transmitters</section-head>
+          <section-head level="2">16.3.2 Scanners</section-head>
+          <section-head level="2">16.3.3 Digitisation</section-head>
+          <section-head level="1">16.4 processing enhancements</section-head>
+          <section-head level="2">16.4.1 Moving target indication</section-head>
+          <section-head level="2">16.4.2 Long pulses</section-head>
+          <section-head level="2">16.4.3 Pulse compression</section-head>
+          <section-head level="2">16.4.4 Continuous wave transmission</section-head>
+          <section-head level="2">16.4.5 Target profiling</section-head>
+          <section-head level="2">16.4.6 Monopulse</section-head>
+          <section-head level="1">16.5 Integrated systems</section-head>
+          <section-head level="1">16.6 Infrastructure and implementation</section-head>
+          <section-head level="1">16.7 Other uses of radar for commercial and leisure shipping</section-head>
+          <section-head level="1">16.8 In conclusion</section-head>
+          <fpage>615</fpage>
+          <lpage>636</lpage>
+          <numpages>22</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This chapter reviews a number of potential future developments that may lead to changes in civil marine radar system design. As ever, changes are likely to arise from alterations to the conditions that currently prevail. These may be factors internal to the marine radar industry such as technology improvements, or they may be external factors such as regulatory and legislative alterations. It is always impossible to predict the future with a high degree of confidence, but a look back at recent history does tell us that one thing is certain, change will occur. Indeed it is a trend in the World today for change to occur increasingly rapidly. At first sight civil marine radar has not altered greatly since its inception. Closer inspection reveals that (a) regulatory legislation has imposed certain performance demands while somewhat inhibiting variation in design. Additionally (b) there has always been strong competition in the market place which has resulted in much emphasis on price as a discriminator between systems. Consequently, new technology developments that do not reduce system costs have not always been adopted unless prescribed by legislative changes. As a result, the design of marine radar systems has not hugely altered from the original adaptations of military technology developed during the Second World War. These are well described in the early chapters of The Use of Radar at Sea, first published 1952, while Chapter 2 of this book describes current practice. It might be argued, therefore, that the time is long overdue for marine radar to be subject to quite radical change. However, before speculating whether and how civil marine and VTS radar may develop, we need first to examine the developing requirements that would drive such changes. Some may be evolutionary and continue trends already in place. Others, if they materialise, could be called revolutionary and may call forth major changes in system design and implementation.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">marine radar</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">civil marine radar</keyword>
+            <keyword source="uncontrolled">radar industry</keyword>
+            <keyword source="uncontrolled">regulatory legislation</keyword>
+            <keyword source="uncontrolled">VTS radar</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_appendix1</content-item-id>
+          <doi>10.1049/PBRA016E_appendix1</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Appendix 1: Glossary</title>
+          <search-title>Appendix 1: Glossary</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>appendix</content-item-type>
+          <bookseq>18</bookseq>
+          <fpage>637</fpage>
+          <lpage>646</lpage>
+          <numpages>10</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This glossary gives the meanings usually borne in the text of the main technical terms, especially the less self-evident. Shades of meaning might differ in other radar contexts, for example, air traffic control.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">B6320</compound-classification-code-part><compound-classification-code-part type="text">Radar equipment, systems and applications</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">air traffic control</keyword>
+            <keyword source="Inspec">glossaries</keyword>
+            <keyword source="Inspec">marine radar</keyword>
+            <keyword source="Inspec">radar detection</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">glossary</keyword>
+            <keyword source="uncontrolled">target detection</keyword>
+            <keyword source="uncontrolled">marine radar</keyword>
+            <keyword source="uncontrolled">radar contexts</keyword>
+            <keyword source="uncontrolled">air traffic control</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_appendix2</content-item-id>
+          <doi>10.1049/PBRA016E_appendix2</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Appendix 2: Statistics details</title>
+          <search-title>Appendix 2: Statistics details</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>appendix</content-item-type>
+          <bookseq>19</bookseq>
+          <section-head level="1">A2.1 Log-normal distribution</section-head>
+          <section-head level="1">A2.2 Rayleigh distribution</section-head>
+          <section-head level="1">A2.3 Ricean distribution</section-head>
+          <section-head level="2">A2.3.1 Noise</section-head>
+          <section-head level="2">A2.3.2 Signal</section-head>
+          <section-head level="1">A2.4 Solution of Eq. (12.8)</section-head>
+          <section-head level="1">A2.5 Weibull distribution</section-head>
+          <section-head level="1">A2.6 References</section-head>
+          <fpage>647</fpage>
+          <lpage>652</lpage>
+          <numpages>6</numpages>
+        </content-item-pubinfo>
+        <abstract>
+          <p>This appendix expands on statistics details that pertains to lognormal distribution, Rayleigh distribution, Ricean distribution, and Weibull distribution.</p>
+        </abstract>
+        <vocabs>
+          <classification-codes source="Inspec-class">
+            <compound-classification-code><compound-classification-code-part type="code">A0250</compound-classification-code-part><compound-classification-code-part type="text">Probability theory, stochastic processes, and statistics</compound-classification-code-part></compound-classification-code>
+          </classification-codes>
+          <keywords source="Inspec">
+            <keyword source="Inspec">log normal distribution</keyword>
+            <keyword source="Inspec">Weibull distribution</keyword>
+          </keywords>
+          <keywords source="uncontrolled">
+            <keyword source="uncontrolled">statistics details</keyword>
+            <keyword source="uncontrolled">lognormal distribution</keyword>
+            <keyword source="uncontrolled">Rayleigh distribution</keyword>
+            <keyword source="uncontrolled">Ricean distribution</keyword>
+            <keyword source="uncontrolled">Weibull distribution</keyword>
+          </keywords>
+        </vocabs>
+      </content-item-metadata>
+    </content-item>
+    <content-item>
+      <content-item-metadata>
+        <content-item-identifiers>
+          <content-item-id>PBRA016E_backmatter</content-item-id>
+          <doi>10.1049/PBRA016E_bm</doi>
+        </content-item-identifiers>
+        <titlegrp>
+          <title>Back Matter</title>
+          <search-title>Back Matter</search-title>
+        </titlegrp>
+        <content-item-pubinfo>
+          <content-item-type>back matter</content-item-type>
+          <bookseq>20</bookseq>
+          <section-head level="1">Index</section-head>
+          <fpage>653</fpage>
+        </content-item-pubinfo>
+        <funding-grp><access type="free"/></funding-grp>
+      </content-item-metadata>
+    </content-item>
+  </body>
+</ebook>

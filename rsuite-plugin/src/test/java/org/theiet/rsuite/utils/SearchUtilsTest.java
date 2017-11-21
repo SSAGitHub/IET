@@ -27,7 +27,7 @@ public class SearchUtilsTest {
 		values.add("first");
 		
 		String actualQuery = SearchUtils.generateSearchCaBasedOnLmdQuery(lmdName, values);
-		assertEquals("/rs_ca_map/rs_ca[rmd:get-lmd-value(., 'product_code') = ('first')]", actualQuery);
+		assertEquals("/rs_ca_map/rs_ca[rmd:get-lmd-value(., 'product_code') = 'first']", actualQuery);
 	}
 	
 	@Test

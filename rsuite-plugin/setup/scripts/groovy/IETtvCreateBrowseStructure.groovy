@@ -10,16 +10,18 @@ def channels = ["Communications", "Control", "Electronics", "IT", "Management", 
 
 
 
-folderId = createContainerIfNotExist("/", "IET.tv", "iettv");
+folderId = createContainerIfNotExist("/", null, "IET.tv", "iettv");
+println folderId
+channels.each() {channel -> createContainerIfNotExist("/IET.tv", folderId, channel, "iettv_channel") }; 
 
-channels.each() {channel -> createContainerIfNotExist("/IET.tv", channel, "iettv_channel") }; 
-
-def createContainerIfNotExist(parentPath, containerName, containerType){
+def createContainerIfNotExist(parentPath, parentFolderId, containerName, containerType){
     def containerPath = parentPath + containerName;
     def folderId = null;
     infos = rsuite.findObjectForPath(containerPath);
     
-    if (parentPath != "/"){
+	if (parentFolderId != null) {
+		parentId = parentFolderId
+	}else if (parentPath != "/"){
         pranetInfos = rsuite.findObjectForPath(parentPath);
         parentId = pranetInfos["moid"]
     }else{

@@ -4,7 +4,7 @@ import com.reallysi.rsuite.admin.importer.*
 import com.reallysi.rsuite.client.api.*
 
 // -----------------------------------------------------------------------
-
+println("ditaot=  ${ditaot}");
 def otHome = "";
 try {
     otHome = "${ditaot}";
@@ -18,21 +18,21 @@ if (otHome == "") {
     println "e.g. -Dditaot=/opt/rsuite-data/DITA-OT"
     return;
 }
-println "ditaot is " + otHome
+println "ditaot is " + otHome + "!";
 def File otDir = new File(otHome);
 def File catalogFile = new File(otDir, "catalog-dita.xml");
 def catalog = catalogFile.getAbsolutePath();
 println "catalog=\"" + catalog + "\"";
 
-projectDir = new File(scriptFile.absolutePath).parentFile.parentFile.parentFile;
+projectDir = new File("src");			
 doctypesDir = new File(otDir, "plugins/org.iet.doctypes/doctypes");
 
-def File xsltDir = new File(projectDir, "src/xslt");
+def File xsltDir = new File(projectDir, "main/resources/WebContent/xslt");
 println "doctypesDir is " + doctypesDir.getAbsolutePath();
 
 baseTopicTypePubId = "urn:pubid:org.iet:doctypes:dita:";
 baseMapTypePubId   = "urn:pubid:org.iet:doctypes:dita:";
-previewXslFile = new File(projectDir, "src/xslt/preview/dita-preview-shell.xsl");
+previewXslFile = new File(xsltDir, "preview/dita-preview-shell.xsl");
 
 def loadAndConfigureTopicDtd(dtdFile, dtdPublicId, topicTypes, otherMoTypes, previewXslFile, catalog)
 {
