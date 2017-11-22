@@ -224,4 +224,4 @@ task integrationTest(type: Test) {
 
 defaultTasks 'deploy'
 
-task wrapper(type: Wrapper) { gradleVersion = '2.5' }
+task wrapper(type: Wrapper) { gradleVersion = '4.1' }
