@@ -23,7 +23,7 @@ public class DitaLinkTargetParserTest {
 		DitaLinkTargetParser linkTargetParser = new DitaLinkTargetParser();
 		Set<String> targetValues = linkTargetParser.parseTargetValues(document.getDocumentElement());
 		
-		assertThat(targetValues, contains("topic1/para1", "topic1" ));
+		assertThat(targetValues, containsInAnyOrder("topic1/para1", "topic1" ));
 	}
 
 	public static Document createSampleDitaDocument()
