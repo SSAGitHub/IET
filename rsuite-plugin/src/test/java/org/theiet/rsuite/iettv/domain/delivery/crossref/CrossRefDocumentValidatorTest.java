@@ -35,7 +35,7 @@ public class CrossRefDocumentValidatorTest {
 		CrossRefDocumentValidationResult result = CrossRefDocumentValidator.validateCrossRefDocument(document,
 				entityResolver);		
 		
-		System.out.println(result.getValidationErrorMessages());
+		
 		Assert.assertTrue(result.isValid());
 	}
 

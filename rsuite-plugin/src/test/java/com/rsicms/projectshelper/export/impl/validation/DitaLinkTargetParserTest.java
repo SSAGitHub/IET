@@ -25,6 +25,7 @@ public class DitaLinkTargetParserTest {
 		
 		String[] expected = {"topic1/para1", "topic1" };
 		String[] actual = targetValues.toArray(new String[targetValues.size()]);
+		System.out.println("tgt " + targetValues);
 		assertArrayEquals(expected, 	 actual);
 	}
 
