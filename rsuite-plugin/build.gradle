@@ -163,7 +163,7 @@ jar {
 } 
 
 task buildPluginPackage(dependsOn: [	
-	'build'
+	'test', 'jar'
 ], type: Zip) {
 
 	baseName = rootProject.name
