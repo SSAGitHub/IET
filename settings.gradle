@@ -1,4 +1,4 @@
-rootProject.name = iet-dam-rsuite-plugin=
+rootProject.name=iet-dam-rsuite-plugin
 include 'rsuite-plugin'
 include 'oxygen-integration'
 include 'oxygen-framework-dita'
