@@ -131,11 +131,11 @@
 					<xsl:attribute name="status">new</xsl:attribute>
 				</xsl:when>
 				<!-- when this is a changed element with newly inserted content (this condition is separate from and preceds deleted content) -->
-				<xsl:when test="child::processing-instruction('oxy_insert_start') and not(self::title or self::entry or self::br)">
+				<xsl:when test="child::processing-instruction('oxy_insert_start') and not(self::title or self::entry or self::br or self::d4pSimpleEnumerator)">
 					<xsl:attribute name="status">changed</xsl:attribute>
 				</xsl:when>
 				<!-- when this is a changed element with (only) deleted content -->
-				<xsl:when test="child::processing-instruction('oxy_delete') and not(self::title or self::entry or self::br)">
+				<xsl:when test="child::processing-instruction('oxy_delete') and not(self::title or self::entry or self::br or self::d4pSimpleEnumerator)">
 					<!-- whether to mark the element as changed depends upon the parameter settings -->
 					<xsl:choose>
 						<xsl:when test="$mark_deleted_content_parent_paragraph = 'true'">
@@ -240,6 +240,11 @@
 			</xsl:choose>
 		</xsl:variable>
 		<xsl:choose>
+			<xsl:when test="$determine_insert = 'insert' and ancestor::d4pSimpleEnumerator">
+				<text status="new">
+					<xsl:value-of select="."/>
+				</text>
+			</xsl:when>
 			<xsl:when test="$determine_insert = 'insert'">
 				<ph outputclass="change_wrapper" status="new">
 					<xsl:value-of select="."/>
@@ -485,6 +490,13 @@
 			<!-- when deleted content does not contain elements -->
 			<xsl:otherwise>
 				<xsl:choose>
+					<xsl:when test="$wrap_content = 'true' and ancestor::d4pSimpleEnumerator">
+						<xsl:element name="text">
+							<!--<xsl:attribute name="outputclass">change_wrapper_4</xsl:attribute>-->							
+							<xsl:attribute name="status">deleted</xsl:attribute>
+							<xsl:value-of select="$initial_string"/>
+						</xsl:element>						
+					</xsl:when>
 					<xsl:when test="$wrap_content = 'true'">
 						<xsl:element name="{$change_mark_element}">
 							<xsl:attribute name="outputclass">change_wrapper</xsl:attribute>							

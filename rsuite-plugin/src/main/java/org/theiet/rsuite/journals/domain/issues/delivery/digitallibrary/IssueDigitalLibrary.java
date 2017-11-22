@@ -147,7 +147,7 @@ public class IssueDigitalLibrary {
 				+ "transfer complete, setting metadata and updating pubtrack");
 	}
 
-	private String createIssueArchiveFileName(Issue issue)
+	String createIssueArchiveFileName(Issue issue)
 			throws RSuiteException {
 
 		IssueMetadata issueMetadata = issue.getIssueMetadata();

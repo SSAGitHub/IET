@@ -27,4 +27,33 @@
 		</fo:inline>
 	</xsl:template>
 
+	<xsl:template match="text()[ancestor::*[@status='new']]">
+		<xsl:choose>
+			<xsl:when test="normalize-space(.) = ''">
+				<xsl:value-of select="."/>
+			</xsl:when>
+			<xsl:otherwise>
+				<fo:inline color="green" font-weight="bold">
+					<xsl:value-of select="."/>
+				</fo:inline>    
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template match="text()[ancestor::*[@status='deleted']]">
+		<xsl:choose>
+			<xsl:when test="normalize-space(.) = ''">
+				<xsl:value-of select="."/>
+			</xsl:when>
+			<xsl:otherwise>
+				<fo:inline color="red" font-weight="bold" text-decoration="line-through">
+					<xsl:value-of select="."/>
+				</fo:inline>    
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<xsl:template match="comment()"/>
+		
+	
 </xsl:stylesheet>
