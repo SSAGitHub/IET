@@ -105,6 +105,7 @@ addOrReplaceLMDDefinition("category_code",  assemblyTypes, null);
 addOrReplaceLMDDefinition("journal_worflow_type",  assemblyTypes, null);
 addOrReplaceLMDDefinition("journal_generation_type",  assemblyTypes, null);
 addOrReplaceLMDDefinition("add_prefix_digital_library_delivery",  assemblyTypes, null);
+addOrReplaceLMDDefinition("prefix_digital_library_delivery",  assemblyTypes, null);
 addOrReplaceLMDDefinition("journal_issue_printer",  assemblyTypes, null);
 
 addOrReplaceLMDDefinition("submission_type",  assemblyTypes, ['Transfer', 'Direct']);
