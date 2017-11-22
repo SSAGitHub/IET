@@ -163,7 +163,7 @@ jar {
 } 
 
 task buildPluginPackage(dependsOn: [	
-	'jar'
+	'build'
 ], type: Zip) {
 
 	baseName = rootProject.name
@@ -210,8 +210,8 @@ task integrationTest(type: Test) {
 	binResultsDir = file("$buildDir/integration-test-results/binary/integTest")
 
 	reports {
-		html.destination = "$buildDir/reports/integration-test"
-		junitXml.destination = "$buildDir/integration-test-results"
+		html.destination = file("$buildDir/reports/integration-test")
+		junitXml.destination = file("$buildDir/integration-test-results")
 	}
 
 	mustRunAfter tasks.test

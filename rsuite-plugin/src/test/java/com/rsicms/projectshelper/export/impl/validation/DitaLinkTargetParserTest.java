@@ -1,21 +1,21 @@
 package com.rsicms.projectshelper.export.impl.validation;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.Matchers.*;
 
-import java.io.IOException;
 import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 public class DitaLinkTargetParserTest {
 
+	
+	
 	@Test
 	public void test_parseTargetValues() throws Exception {
 		Document document = createSampleDitaDocument();
@@ -23,10 +23,7 @@ public class DitaLinkTargetParserTest {
 		DitaLinkTargetParser linkTargetParser = new DitaLinkTargetParser();
 		Set<String> targetValues = linkTargetParser.parseTargetValues(document.getDocumentElement());
 		
-		String[] expected = {"topic1/para1", "topic1" };
-		String[] actual = targetValues.toArray(new String[targetValues.size()]);
-		System.out.println("tgt " + targetValues);
-		assertArrayEquals(expected, 	 actual);
+		assertThat(targetValues, contains("topic1/para1", "topic1" ));
 	}
 
 	public static Document createSampleDitaDocument()
