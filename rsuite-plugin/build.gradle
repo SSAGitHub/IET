@@ -209,7 +209,7 @@ task integrationTest(type: Test) {
 
 	maxHeapSize = '1024m'
 
-	testClassesDir = sourceSets.integrationTest.output.classesDir
+	testClassesDir = sourceSets.integrationTest.output.getClassesDir()
 	classpath = sourceSets.integrationTest.runtimeClasspath
 
 	binResultsDir = file("$buildDir/integration-test-results/binary/integTest")
