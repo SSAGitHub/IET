@@ -171,6 +171,11 @@ task buildPluginPackage(dependsOn: [
 		include '**/*'
 		into('setup')
 	}
+	
+	from('src') {
+		include 'main/resources/WebContent/xslt/*'
+		into('src')
+	}
 
 	from(configurations.runtime.allArtifacts.files) { into('plugin') }
 
