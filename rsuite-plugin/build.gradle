@@ -173,7 +173,7 @@ task buildPluginPackage(dependsOn: [
 	}
 	
 	from('src') {
-		include 'main/resources/WebContent/xslt/*'
+		include 'main/resources/WebContent/xslt/**/*'
 		into('src')
 	}
 
