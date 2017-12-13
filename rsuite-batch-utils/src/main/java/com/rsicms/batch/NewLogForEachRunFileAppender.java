@@ -48,10 +48,8 @@ public class NewLogForEachRunFileAppender extends FileAppender {
 		File logFile = new File(fileName);
 		String fileName = logFile.getName();
 	
-		int dotIndex = fileName.indexOf(".");
-	
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-kkmmss");
-		String newFileName = fileName.substring(0, dotIndex) + "-" + dateFormat.format(new Date()) + "." + "log";
+		String newFileName = fileName +  "-" + dateFormat.format(new Date()) + "." + "log";
 	
 		return logFile.getParent() +  File.separator +  newFileName;
 	}

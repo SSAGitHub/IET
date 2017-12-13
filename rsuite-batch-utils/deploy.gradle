@@ -1,6 +1,6 @@
-//apply plugin: 'java'
-//apply plugin: 'eclipse'
-//apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
 
 
 task clearWorkFlowCleanUp(type: Delete) {
@@ -11,11 +11,16 @@ task clearWorkFlowCleanUp(type: Delete) {
 
 task deployWorkFlowCleanUp(type: Copy, dependsOn: 'clearWorkFlowCleanUp') { 
 
-      from 'build/libs/WorkFlowCleanUp.jar'
-        into "${rSuiteBatchFolder}/WorkFlowCleanUp"
+    from 'build/libs/WorkFlowCleanUp.jar'
+		into "${rSuiteBatchFolder}/WorkFlowCleanUp"
  
 
-      from 'setup/config/WorkFlowCleanUp.properties'
+    from 'setup/config/WorkFlowCleanUp.properties'
         into "${rSuiteBatchFolder}/WorkFlowCleanUp"
-	
+		
+    from 'setup/config/WorkFlowPendingDeleteCleanUp.properties'
+        into "${rSuiteBatchFolder}/WorkFlowCleanUp" 
+		
+	from 'setup/config/RetroWorkFlowCleanUp.properties'
+        into "${rSuiteBatchFolder}/WorkFlowCleanUp"
 }
