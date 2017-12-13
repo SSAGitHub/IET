@@ -60,10 +60,12 @@
     <transition name="" to="Clear Ftp exception" />
   </task-node>
   <end-state name="EndNode">
+	<!--
   	<event type="node-enter">
 			<action
 				class="com.rsicms.projectshelper.workflow.actionhandlers.WorkflowCleanUpActionHandler" />
 		</event>
+	-->
   </end-state>
   <node name="Clear Ftp exception">
     <action class="com.reallysi.rsuite.system.workflow.actions.ClearExceptionStatus" />

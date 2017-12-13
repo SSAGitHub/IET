@@ -72,7 +72,6 @@ repositories {
 	all {resolutionStrategy.cacheChangingModulesFor 0, 'seconds'}
 	rsuitePlugin
 	pluginJars{ transitive = false }
-
 	testCompile
 }
 
