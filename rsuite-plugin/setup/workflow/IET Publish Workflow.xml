@@ -69,10 +69,12 @@
 	</task-node>
 	
 	<end-state name="EndNode">
+		<!--
 		<event type="node-enter">
 			<action
 				class="com.rsicms.projectshelper.publish.workflow.actionhandlers.PublishWorkflowCleanUpActionHandler" />
 		</event>
+		-->
 	</end-state>
 
 
