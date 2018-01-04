@@ -1,4 +1,4 @@
-package com.rsicms.batch;
+package 	;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -144,8 +144,12 @@ public class RetroWorkFlowCleanUp {
 	    			}
 	    		}
 	    		catch (Exception e) {
-	    			logger.info(e.toString());
+	    			logger.error(e.toString(), e);
 	    		}	
+	    	}
+	    	else
+	    	{
+	    		logger.info("Workflow root " + WorkFlowRootDir.getPath() + " not found");
 	    	}
 	    }
     }

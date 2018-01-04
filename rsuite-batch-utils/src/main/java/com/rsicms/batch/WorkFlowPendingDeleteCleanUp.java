@@ -86,14 +86,14 @@ public class WorkFlowPendingDeleteCleanUp {
 						logger.info("Simulation mode " + WorkFlowFolder.getName() + " is flagged for removal and would be removed" );
 					}
 					else {
-						deleteWorkFlowDirtectory(WorkFlowFolder);
+						deleteWorkFlowDirectory(WorkFlowFolder);
 					}
 				}
 			}
 		}
 	}
 	
-	private void deleteWorkFlowDirtectory(File WorkFlowFolder) {
+	private void deleteWorkFlowDirectory(File WorkFlowFolder) {
 		
 		try {
 			FileUtils.deleteDirectory(WorkFlowFolder);
