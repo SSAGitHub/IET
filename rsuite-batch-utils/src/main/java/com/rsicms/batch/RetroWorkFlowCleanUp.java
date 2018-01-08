@@ -1,4 +1,4 @@
-package 	;
+package 	com.rsicms.batch;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

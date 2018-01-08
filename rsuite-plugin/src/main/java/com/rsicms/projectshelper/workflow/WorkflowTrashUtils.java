@@ -14,22 +14,19 @@ public class WorkflowTrashUtils {
 	public static String ROOT_WORKFLOW_TRASH_DIR = "workflowTrash/";
 	public static String FILE_TO_BE_REMOVED = "toRemove";
 	
-	public File moveFolderToTrash(File TempFolder, String ProcessId, File FolderToRemove) throws IOException{
+	public void moveFolderToTrash(File tempFolder, String processId, File folderToRemove) throws IOException{
 		
 		
-		if (FolderToRemove != null){
-			File TrashFolder = createWorkflowTrashFolder(TempFolder, ProcessId);
+		if (folderToRemove != null){
+			File trashFolder = createWorkflowTrashFolder(tempFolder, processId);
 			try {
-				moveDirectory(FolderToRemove, TrashFolder);
-				return new File(TrashFolder, FolderToRemove.getName());
+				moveDirectory(folderToRemove, trashFolder);
 			}
 			catch (IOException e) {
-				File markerFile = new File(FolderToRemove, FILE_TO_BE_REMOVED);
+				File markerFile = new File(folderToRemove, FILE_TO_BE_REMOVED);
 				markerFile.createNewFile();
 			}
 		}
-		
-		return null;
 	}
 
 
