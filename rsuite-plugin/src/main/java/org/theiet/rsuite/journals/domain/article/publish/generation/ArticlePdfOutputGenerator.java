@@ -110,11 +110,11 @@ public class ArticlePdfOutputGenerator extends WorkflowAntennaHouseAreaTreePdfOu
 			parameters.put(XSLT_PARAM_SECTION, PASS_ALL);
 			
 			foFile = createFoUsingAreaFile(exportFolder, inputFile, areaFile);
-			formattingEngine.generateAreaTreeFileFromFo(logger, foFile,
-					areaFile);
-			
-			parameters.remove(XSLT_PARAM_SECTION);
-			foFile = createFoUsingAreaFile(exportFolder, inputFile, areaFile);
+//			formattingEngine.generateAreaTreeFileFromFo(logger, foFile,
+//					areaFile);
+//			
+//			parameters.remove(XSLT_PARAM_SECTION);
+//			foFile = createFoUsingAreaFile(exportFolder, inputFile, areaFile);
 			
 			
 			formattingEngine.generatePDFFromFo(logger, foFile, outputFile);

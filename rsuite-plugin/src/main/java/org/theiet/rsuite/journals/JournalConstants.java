@@ -106,6 +106,8 @@ public interface JournalConstants extends IetConstants {
 	String LMD_FIELD_JOURNAL_WORFLOW_TYPE = "journal_worflow_type";
 	
 	String LMD_FIELD_ADD_PREFIX_DIGITAL_LIBRARY_DELIVERY = "add_prefix_digital_library_delivery";
+	
+	String LMD_FIELD_PREFIX_DIGITAL_LIBRARY_DELIVERY = "prefix_digital_library_delivery";
 
 	String PROP_PDF_PROOF_MAIL_TITLE = "iet.journals.pdf.proof.mail.title";
 	

@@ -7,7 +7,8 @@
     import com.reallysi.rsuite.client.api.*
     import com.reallysi.rsuite.remote.api.*
 
-def projectDir = new File(scriptFile.absolutePath).parentFile.parentFile.parentFile
+//def projectDir = new File(scriptFile.absolutePath).parentFile.parentFile.parentFile
+def projectDir = new File("setup");
 def sampleDataDir = new File(projectDir, 'sample_data');
 def initialBrowseTreeDir = new File(sampleDataDir, 'initial_browse_tree');
 

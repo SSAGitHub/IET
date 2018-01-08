@@ -112,20 +112,6 @@ public class BookMetadataSenderTest implements BooksConstans {
 			}
 		}).when(mailSvc).send(any(MailMessageBean.class));
 		
-//		Mockito.when(mailSvc.send(any(MailMessageBean.class))).
-		
-//		Mockito.when(context.getMailService().send(any(MailMessageBean.class))).then(new Answer<Transformer>() {
-//
-//			@Override
-//			public Transformer answer(InvocationOnMock invocation)
-//					throws Throwable {
-//
-//				 Object[] args = invocation.getArguments();
-//				return x((URI)args[0]);
-//			}
-//			
-//		});
-		
 		ContentAssembly ca = caSvcMock.createContentAssembly(null, "111", "Sample book edition", null);
 		
 		IetBookPublication publication = new IetBookPublication(ca);
@@ -134,18 +120,12 @@ public class BookMetadataSenderTest implements BooksConstans {
 		context.getManagedObjectService().setMetaDataEntry(null, ca.getId(), new MetaDataItem("e_product_code", "1234"));
 		
 		
-		System.out.println(context.getAuthorizationService());
-		
 		String additionalText = "Sample text";
 		
 		BookMetadaSender sender = new BookMetadaSender();
 		sender.sendBookMetadata(context, publication, additionalText);
 		
 		MailMessageBean result = mailToVerifyList.get(0);
-		System.out.println(result.getTo());
-		System.out.println(result);
-		
-		System.out.println(result.getFileNames());
 		
 	}
 	

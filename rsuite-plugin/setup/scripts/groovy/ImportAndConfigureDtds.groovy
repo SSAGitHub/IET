@@ -10,7 +10,7 @@ def util = new DeployDTDUtils(rsuite, importerFactory);
 
 def projectDir = new File("src");
 def doctypesDir = new File("setup/doctypes");
-def srcDir = new File(projectDir, "main/resources/webcontent");
+def srcDir = new File(projectDir, "main/resources/WebContent");
 def xsltDir = new File(srcDir, "xslt");
 def File catalogFile = new File(doctypesDir, "catalog.xml");
 def catalog = catalogFile.getAbsolutePath();

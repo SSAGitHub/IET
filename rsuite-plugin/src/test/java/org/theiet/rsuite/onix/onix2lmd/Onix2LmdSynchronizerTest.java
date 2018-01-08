@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.invocation.InvocationOnMock;
@@ -40,6 +41,7 @@ import com.reallysi.rsuite.api.control.ObjectMetaDataSetOptions;
 import com.reallysi.rsuite.api.extensions.ExecutionContext;
 import com.reallysi.rsuite.service.ContentAssemblyService;
 
+
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ Onix2LmdMapping.class })
 public class Onix2LmdSynchronizerTest implements StandardsBooksConstans, BooksConstans {
@@ -63,6 +65,12 @@ public class Onix2LmdSynchronizerTest implements StandardsBooksConstans, BooksCo
 		addedLmdMapBookNotPublished = runSynchronizationWithCorporate(TEST_ONIX_XML_BOOK_NOT_PUBLISHED);
 		addedLmdMapBookPublished = runSynchronizationWithCorporate(TEST_ONIX_XML_BOOK_PUBLISHED);
 	}
+	
+	@BeforeClass
+	  public static void setUpClass() {
+	    System.setProperty("javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom",
+	        "com.sun.org.apache.xpath.internal.jaxp.XPathFactoryImpl");
+	  }
 	
 	@Test
 	public void onix2lmd_corporateAuthorName_addedCorporateLmd() {

@@ -8,6 +8,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 import org.apache.commons.io.*;
+import org.apache.commons.lang.StringUtils;
 import org.theiet.rsuite.journals.domain.article.Article;
 import org.theiet.rsuite.journals.domain.article.ArticleTypesetterContainer;
 import org.theiet.rsuite.journals.domain.journal.Journal;
@@ -275,6 +276,11 @@ public class ArticleDigitalLibraryPackageBuilder {
 		if (journal.requiresPrefixForDigitaLibrary()) {
 			journalCode = "IET-" + journalCode;
 		}
+		
+		String customPrefix = journal.getPrefixForDigitaLibrary();
+		if (StringUtils.isNotBlank(customPrefix)) {
+			journalCode = customPrefix;
+		}
 
 		return journalCode + remainder + "." + ext;
 	}
@@ -282,6 +288,7 @@ public class ArticleDigitalLibraryPackageBuilder {
 	public static String getFixedJournalName(Journal journal) throws RSuiteException {
 		
 		String journalCode = journal.getJournalCode();
+		String customPrefix =  journal.getPrefixForDigitaLibrary();
 		
 		if (journalCode.equals("ELL")) {
 			return "EL";
@@ -289,6 +296,8 @@ public class ArticleDigitalLibraryPackageBuilder {
 		
 		if (!journal.requiresPrefixForDigitaLibrary()) {
 			return journalCode;
+		}else if (StringUtils.isNotBlank(customPrefix)) {
+			return journal.getPrefixForDigitaLibrary();
 		}
 		else {
 			return "IET-" + journalCode;

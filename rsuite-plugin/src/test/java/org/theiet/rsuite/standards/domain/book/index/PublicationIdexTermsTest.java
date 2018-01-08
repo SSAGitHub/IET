@@ -74,7 +74,7 @@ public class PublicationIdexTermsTest {
         List<IndexTerm> termsForElement = termsForFile.getIndexTermsForElement(elementId);
         
         IndexTerm actualIndexTerm = termsForElement.get(0);
-        System.out.println(actualIndexTerm.getSubIndexTerms());
+        
         assertEquals(2, actualIndexTerm.getSubIndexTerms().size());
         assertEquals("subTerm1", actualIndexTerm.getSubIndexTerms().get(0).getIndexTerm());
         assertEquals("subTerm2", actualIndexTerm.getSubIndexTerms().get(1).getIndexTerm());

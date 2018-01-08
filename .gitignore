@@ -6,5 +6,7 @@
 **/.gradle
 **/.metadata
 **/gradle.properties
+**/test.properties
 .recommenders
+**/rsuite-plugin/test.properties
 **/rsuite-batch-utils/logs

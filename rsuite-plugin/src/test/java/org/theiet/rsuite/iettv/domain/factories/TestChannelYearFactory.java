@@ -14,6 +14,7 @@ import java.util.concurrent.CyclicBarrier;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.powermock.api.mockito.PowerMockito;
@@ -29,18 +30,28 @@ import com.reallysi.rsuite.api.ContentAssembly;
 import com.reallysi.rsuite.api.RSuiteException;
 import com.reallysi.rsuite.api.User;
 import com.reallysi.rsuite.api.extensions.ExecutionContext;
+import com.reallysi.rsuite.service.AuthorizationService;
+import com.reallysi.rsuite.service.ManagedObjectService;
+import com.rsicms.projectshelper.datatype.RSuiteCaType;
 import com.rsicms.projectshelper.utils.ProjectContentAssemblyUtils;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({IetTvFinder.class, IetUtils.class})
+@PrepareForTest({IetTvFinder.class, IetUtils.class, ProjectContentAssemblyUtils.class})
 public class TestChannelYearFactory {
 
     @Test
     public void test_getOrCreateChannelYearContainer_checkIfCreated() throws RSuiteException {
         PowerMockito.mockStatic(IetTvFinder.class);
         PowerMockito.mockStatic(IetUtils.class);
+        PowerMockito.mockStatic(ProjectContentAssemblyUtils.class);
 
         ExecutionContext context = mock(ExecutionContext.class);
+        
+        AuthorizationService authorizationServiceStub = mock(AuthorizationService.class);
+		when(context.getAuthorizationService()).thenReturn(authorizationServiceStub);
+		
+		ManagedObjectService moServiceStub = mock(ManagedObjectService.class);
+		when(context.getManagedObjectService()).thenReturn(moServiceStub);
 
         final IetTvXmlDatabaseStub dbStub = new IetTvXmlDatabaseStub();
 
@@ -67,8 +78,15 @@ public class TestChannelYearFactory {
             throws Exception {
         PowerMockito.mockStatic(IetTvFinder.class);
         PowerMockito.mockStatic(IetUtils.class);
+        PowerMockito.mockStatic(ProjectContentAssemblyUtils.class);
 
         final ExecutionContext context = mock(ExecutionContext.class);
+        
+        AuthorizationService authorizationServiceStub = mock(AuthorizationService.class);
+		when(context.getAuthorizationService()).thenReturn(authorizationServiceStub);
+		
+		ManagedObjectService moServiceStub = mock(ManagedObjectService.class);
+		when(context.getManagedObjectService()).thenReturn(moServiceStub);
 
         final IetTvXmlDatabaseStub dbStub = new IetTvXmlDatabaseStub();
 
@@ -119,14 +137,14 @@ public class TestChannelYearFactory {
                     @Override
                     public ContentAssembly answer(InvocationOnMock invocation) throws Throwable {
                         Object[] arguments = invocation.getArguments();
-                        VideoChannel channel = (VideoChannel) arguments[0];
+                        VideoChannel channel = (VideoChannel) arguments[2];
 
                         ContentAssembly channelCa = dbStub.getCa(channel.getName());
 
                         if (channelCa == null) {
                             channelCa = mock(ContentAssembly.class);
                             when(channelCa.getId()).thenReturn(channel.getName());
-                            dbStub.addCa(channelCa);
+                            //dbStub.addCa(channelCa);
                         }
 
                         return channelCa;
@@ -138,7 +156,7 @@ public class TestChannelYearFactory {
             throws RSuiteException {
         PowerMockito.when(
                 ProjectContentAssemblyUtils.createContentAssembly(any(ExecutionContext.class), anyString(),
-                        anyString(), anyString())).thenAnswer(new Answer<ContentAssembly>() {
+                        anyString(), Mockito.any(RSuiteCaType.class))).thenAnswer(new Answer<ContentAssembly>() {
 
             @Override
             public ContentAssembly answer(InvocationOnMock invocation) throws Throwable {
@@ -162,9 +180,9 @@ public class TestChannelYearFactory {
                     @Override
                     public ContentAssembly answer(InvocationOnMock invocation) throws Throwable {
                         Object[] arguments = invocation.getArguments();
-                        VideoChannel channel = (VideoChannel) arguments[0];
+                        VideoChannel channel = (VideoChannel) arguments[2];
 
-                        return dbStub.getCa(channel.getName() + "_" + arguments[1]);
+                        return dbStub.getCa(channel.getName() + "_" + arguments[3]);
                     }
                 });
     }
