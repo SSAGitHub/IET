@@ -12,8 +12,7 @@ import org.apache.commons.logging.Log;
 import org.theiet.rsuite.journals.JournalConstants;
 import org.theiet.rsuite.journals.domain.article.Article;
 import org.theiet.rsuite.journals.domain.article.create.ArticleContainerCreateor;
-import org.theiet.rsuite.journals.domain.article.manuscript.ManifestDocument;
-import org.theiet.rsuite.journals.domain.article.manuscript.ManuscriptPackage;
+import org.theiet.rsuite.journals.domain.article.manuscript.*;
 import org.theiet.rsuite.journals.domain.article.manuscript.acceptance.PublishOnAcceptance;
 import org.theiet.rsuite.journals.domain.article.metadata.ArticleMetadataUpdater;
 import org.theiet.rsuite.journals.domain.article.pubtrack.ArticlePubtrackManager;
@@ -51,6 +50,7 @@ public class ManuscriptCentralIngestion extends AbstractActionHandler implements
 		
 		File manifestFile = manuscriptPackage.getMetadataFile();
 		
+		//TODO parse manifest document
 		ManifestDocument manifestDocument = obtainManifestDocument(context,
 				manifestFile);
 		
@@ -87,9 +87,8 @@ public class ManuscriptCentralIngestion extends AbstractActionHandler implements
 	private ManifestDocument obtainManifestDocument(
 			WorkflowExecutionContext context, File manifestFile)
 			throws RSuiteException {
-		XmlApiManager xmlApiMgr = context.getXmlApiManager();
-		ManifestDocument manifestDocument = new ManifestDocument(xmlApiMgr, manifestFile);
-		return manifestDocument;
+		ManifestFileParser fileParser = new ManifestFileParser();
+		return fileParser.parseManifestDocument(context.getXmlApiManager(), manifestFile);
 	}
 
 	private Journal obtainJournal(WorkflowExecutionContext context, User user,
