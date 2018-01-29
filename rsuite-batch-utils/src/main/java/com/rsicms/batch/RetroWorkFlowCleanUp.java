@@ -1,4 +1,4 @@
-package 	;
+package com.rsicms.batch;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,46 +21,44 @@ import java.sql.Statement;
 public class RetroWorkFlowCleanUp {
 	
 	private static Logger logger;
-	private String WorkflowDataDir;
-	private boolean SimulationMode;
-	private String MySQLconnectionString;
+	private String workflowDataDir;
+	private boolean simulationMode;
+	private String mySQLconnectionString;
+	private static String FILE_TO_BE_REMOVED = "toRemove";
 
 	//MySQL stuff
 	private Connection connect = null;
     private PreparedStatement preparedStatement = null;
 
-
-	private static String FILE_TO_BE_REMOVED = "toRemove";
-	
-	
+    
 	public static void main(String args[]) throws Exception, SQLException {
 
 		PropertiesConfiguration config = new PropertiesConfiguration("RetroWorkFlowCleanUp.properties");
 		logger = Logger.getLogger(RetroWorkFlowCleanUp.class);
 
 		
-		String WorkflowDataDir = (String) config.getString("WorkFlowDataDirectory");
-		boolean SimulationMode = config.getBoolean("SimulationMode");
-		String MySQLconnectionString = (String) config.getString("MySQLconnectionString");
+		String workflowDataDir = (String) config.getString("WorkFlowDataDirectory");
+		boolean simulationMode = config.getBoolean("SimulationMode");
+		String mySQLconnectionString = (String) config.getString("MySQLconnectionString");
 		
-		RetroWorkFlowCleanUp RetroWorkFlowCleanUp = new RetroWorkFlowCleanUp(WorkflowDataDir,SimulationMode,MySQLconnectionString );
+		RetroWorkFlowCleanUp RetroWorkFlowCleanUp = new RetroWorkFlowCleanUp(workflowDataDir,simulationMode,mySQLconnectionString );
 		RetroWorkFlowCleanUp.processRetroWorkFlowCleanUp();
 
 	}
 	
-	public RetroWorkFlowCleanUp(String WorkflowDataDir,boolean SimulationMode, String MySQLconnectionString) {
+	public RetroWorkFlowCleanUp(String workflowDataDir,boolean simulationMode, String mySQLconnectionString) {
 		
-		this.WorkflowDataDir = WorkflowDataDir;
-		this.SimulationMode = SimulationMode;
-		this.MySQLconnectionString = MySQLconnectionString;
+		this.workflowDataDir = workflowDataDir;
+		this.simulationMode = simulationMode;
+		this.mySQLconnectionString = mySQLconnectionString;
 	}
 
-	public RetroWorkFlowCleanUp(Logger logger,String WorkflowDataDir,boolean SimulationMode, String MySQLconnectionString) {
+	public RetroWorkFlowCleanUp(Logger logger,String workflowDataDir,boolean simulationMode, String mySQLconnectionString) {
 		
-		this.WorkflowDataDir = WorkflowDataDir;
-		this.SimulationMode = SimulationMode;
+		this.workflowDataDir = workflowDataDir;
+		this.simulationMode = simulationMode;
 		this.logger = logger;
-		this.MySQLconnectionString = MySQLconnectionString;
+		this.mySQLconnectionString = mySQLconnectionString;
 	}
 
 	public void processRetroWorkFlowCleanUp() {
@@ -75,7 +73,7 @@ public class RetroWorkFlowCleanUp {
 		
 			Class.forName("com.mysql.jdbc.Driver");
 	        // Setup the connection with the DB
-	        connect = DriverManager.getConnection(MySQLconnectionString);
+	        connect = DriverManager.getConnection(this.mySQLconnectionString);
 
 	        Statement statement = connect.createStatement();
 	        ResultSet resultSet = statement.executeQuery("select ID_ from jbpm_processinstance WHERE END_ is not null");
@@ -85,14 +83,10 @@ public class RetroWorkFlowCleanUp {
 		
 		}
 		catch (ClassNotFoundException e) {
-			logger.info(e.toString());
+			logger.error(e, e);
 		}
 		catch (Exception e) {
-			logger.info(e.toString());
-			
-			StringWriter sw = new StringWriter();
-			e.printStackTrace(new PrintWriter(sw));
-			logger.info(sw.toString());
+			logger.error(e, e);
 		}
 
 		logger.info("RetroWorkFlowCleanUp ended :" + dateFormat.format(new Date()));
@@ -119,37 +113,37 @@ public class RetroWorkFlowCleanUp {
 		
         while (rsWorkFileRootName.next()) {
         	
-            String WorkFlowFileLocationStr = rsWorkFileRootName.getString("STRINGVALUE_");
-            logger.info("rsuiteWorkingFolderPath=" + WorkFlowFileLocationStr);
+            String workFlowFileLocationStr = rsWorkFileRootName.getString("STRINGVALUE_");
+            logger.info("rsuiteWorkingFolderPath=" + workFlowFileLocationStr);
             
-	    	int start = WorkflowDataDir.concat(File.separator).length(); 
+	    	int start = workflowDataDir.concat(File.separator).length(); 
 	     	// find the next file separator which will be the absolute path to the workflow root directory
-	    	int end = WorkFlowFileLocationStr.indexOf(File.separator, start);
+	    	int end = workFlowFileLocationStr.indexOf(File.separator, start);
 
 	    	//chop the chunk out that represents the workflow root directory
-	    	String WorkFlowRootDirStr = WorkFlowFileLocationStr.substring(0, end);
+	    	String workFlowRootDirStr = workFlowFileLocationStr.substring(0, end);
 
-	    	File WorkFlowRootDir = new File(WorkFlowRootDirStr);
+	    	File workFlowRootDir = new File(workFlowRootDirStr);
 	    	
-	    	if (WorkFlowRootDir.exists()) {
+	    	if (workFlowRootDir.exists()) {
 	    		try {
-	    			if (SimulationMode) {
-		                logger.info("SIMULATION MODE  -creating marker file in " + WorkFlowRootDir.getAbsolutePath());
+	    			if (this.simulationMode) {
+		                logger.info("SIMULATION MODE  -creating marker file in " + workFlowRootDir.getAbsolutePath());
 	    			}
 	    			else {
-	    				logger.info("creating marker file in " + WorkFlowRootDir.getAbsolutePath());
+	    				logger.info("creating marker file in " + workFlowRootDir.getAbsolutePath());
 
-	    				File markerFile = new File(WorkFlowRootDir, FILE_TO_BE_REMOVED);
+	    				File markerFile = new File(workFlowRootDir, FILE_TO_BE_REMOVED);
 	    				markerFile.createNewFile();
 	    			}
 	    		}
 	    		catch (Exception e) {
-	    			logger.error(e.toString(), e);
+	    			logger.error(e, e);
 	    		}	
 	    	}
 	    	else
 	    	{
-	    		logger.info("Workflow root " + WorkFlowRootDir.getPath() + " not found");
+	    		logger.info("Workflow root " + workFlowRootDir.getPath() + " not found");
 	    	}
 	    }
     }
