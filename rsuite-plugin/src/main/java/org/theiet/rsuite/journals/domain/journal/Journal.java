@@ -41,6 +41,8 @@ public class Journal {
     
     private static final String LMD_FIELD_ADD_PREFIX_DIGITAL_LIBRARY_DELIVERY = "add_prefix_digital_library_delivery";
     
+    private static final String LMD_FIELD_PREFIX_DIGITAL_LIBRARY_DELIVERY = "prefix_digital_library_delivery";
+    
     private static final String LMD_FIELD_JOURNAL_WORFLOW_TYPE = "journal_worflow_type";
     
     private static final String LMD_FIELD_JOURNAL_GENERATION_TYPE = "journal_generation_type";
@@ -268,6 +270,13 @@ public class Journal {
 		
 		return true;
 	}
+	
+	public String getPrefixForDigitaLibrary() throws RSuiteException {
+		
+		return journalCa.getLayeredMetadataValue(LMD_FIELD_PREFIX_DIGITAL_LIBRARY_DELIVERY);
+	}
+	
+	
 
 	public String getJournalCode() {
 		return journalCode;

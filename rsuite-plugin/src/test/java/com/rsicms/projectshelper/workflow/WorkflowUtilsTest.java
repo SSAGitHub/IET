@@ -22,14 +22,18 @@ public class WorkflowUtilsTest {
 		WorkflowJobContext jobContext = mock(WorkflowJobContext.class);
 		ConfigurationProperties configurationProperties = mock(ConfigurationProperties.class);
 		
-		when(configurationProperties.getProperty(anyString(), anyString())).thenReturn("/test/workflowBase");
-		when(jobContext.getWorkFolderPath()).thenReturn("/test/workflowBase/workflowFolder/test/work");
+		File workflowBaseFolder = new File("/test/workflowBase");
+		
+		File workflowWorkFolder = new File("/test/workflowBase/workflowFolder/test/work");
+		
+		when(configurationProperties.getProperty(anyString(), anyString())).thenReturn(workflowBaseFolder.getAbsolutePath());
+		when(jobContext.getWorkFolderPath()).thenReturn(workflowWorkFolder.getAbsolutePath());
 		when(context.getWorkflowJobContext()).thenReturn(jobContext);		
 		when(context.getConfigurationProperties()).thenReturn(configurationProperties );
 		
-		File mainWorkflowFolder = WorkflowUtils.getMainWorkflowFolder(context);
+		File mainWorkflowFolder = WorkflowUtils.getMainWorkflowFolder(context);		
 		
-		assertEquals(new File("C:/").getAbsolutePath(), mainWorkflowFolder.getAbsolutePath());
+		assertEquals(new File("/test/workflowBase/workflowFolder").getAbsolutePath(), mainWorkflowFolder.getAbsolutePath());
 	}
 
 }

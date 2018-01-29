@@ -165,15 +165,9 @@ public class ContentDisplayAdvisorTest implements StandardsBooksConstans,
 
 			IetContentDisplayAdvisor advisor = new IetContentDisplayAdvisor();
 			// given
-			long start = System.currentTimeMillis();
 			ContentAdvisorContext context = mock(ContentAdvisorContext.class);
-			long end = System.currentTimeMillis();
-			System.out.println(end - start);
 
-			start = System.currentTimeMillis();
 			MockUtils.enrichExecutionContextMock(context);
-			end = System.currentTimeMillis();
-			System.out.println(end - start);
 
 			ManagedObject sampleMo = createMoMock(context);
 

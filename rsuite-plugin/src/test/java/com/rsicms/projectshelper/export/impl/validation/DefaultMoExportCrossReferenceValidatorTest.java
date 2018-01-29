@@ -1,13 +1,13 @@
 package com.rsicms.projectshelper.export.impl.validation;
 
 import static org.mockito.Mockito.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.Matchers.*;
 
 import java.io.Serializable;
 import java.util.Set;
 
 import org.junit.Test;
-import org.mockito.Mockito;
 import org.w3c.dom.Document;
 
 import com.reallysi.rsuite.api.ManagedObject;
@@ -19,7 +19,7 @@ public class DefaultMoExportCrossReferenceValidatorTest {
 		DefaultMoExportCrossReferenceValidator validator = createCrossReferenceValidator();
 		Serializable actual = validator.getTargetValueFromLink("#r2-definitions/Fuse_link");
 		
-		assertEquals("r2-definitions/Fuse_link", actual);
+		assertThat(actual.toString(), is("r2-definitions/Fuse_link"));
 	}
 
 	@Test
@@ -27,7 +27,7 @@ public class DefaultMoExportCrossReferenceValidatorTest {
 		DefaultMoExportCrossReferenceValidator validator = createCrossReferenceValidator();
 		Serializable actual = validator.getTargetValueFromLink("#");
 		
-		assertEquals("", actual);
+		assertThat(actual.toString(), isEmptyString());
 	}
 	
 	@Test
@@ -35,7 +35,7 @@ public class DefaultMoExportCrossReferenceValidatorTest {
 		DefaultMoExportCrossReferenceValidator validator = createCrossReferenceValidator();
 		Serializable actual = validator.getTargetValueFromLink("test.dita#r2-definitions/Fuse_link");
 		
-		assertEquals("r2-definitions/Fuse_link", actual);
+		assertThat(actual.toString(), is("r2-definitions/Fuse_link"));
 	}
 	
 	@Test
@@ -50,7 +50,8 @@ public class DefaultMoExportCrossReferenceValidatorTest {
 		
 		String[] expected = {"para1", "topic1" };
 		String[] actual = referenceTargets.toArray(new String[referenceTargets.size()]);
-		assertArrayEquals(expected, 	 actual);
+		
+		assertThat(actual, is(arrayContainingInAnyOrder(expected)));
 	}
 
 	public DefaultMoExportCrossReferenceValidator createCrossReferenceValidator() {

@@ -36,10 +36,10 @@ public class WorkFlowCompletionEventHandlerTest {
 
 	@Rule
 	public TemporaryFolder testFolder = new TemporaryFolder();
-	public File WorkFlowTempDir;
-	public File WorkFlowDir;
-	public File WorkflowTrashDir;
-	public File WorkflowUnableToMoveFile;
+	public File workFlowTempDir;
+	public File workFlowDir;
+	public File workflowTrashDir;
+	public File workflowUnableToMoveFile;
 	
 	public static final String WORKFLOWINSTANCE = "123456";
 	public static String FILE_TO_BE_REMOVED = "toRemove";
@@ -51,23 +51,23 @@ public class WorkFlowCompletionEventHandlerTest {
 	@Before
 	public void prepareSampleFolderStructure() throws IOException {
 		
-		WorkFlowTempDir = testFolder.newFolder("workflowTempfolder");
-		WorkFlowDir = new File(WorkFlowTempDir, WORKFLOWINSTANCE);
-		WorkflowTrashDir = new File(WorkFlowTempDir, ROOT_WORKFLOW_TRASH_DIR  + dateFormat.format(new Date()) + "/def_id_" + WORKFLOWINSTANCE + "/");
+		workFlowTempDir = testFolder.newFolder("workflowTempfolder");
+		workFlowDir = new File(workFlowTempDir, WORKFLOWINSTANCE);
+		workflowTrashDir = new File(workFlowTempDir, ROOT_WORKFLOW_TRASH_DIR  + dateFormat.format(new Date()) + "/def_id_" + WORKFLOWINSTANCE + "/");
 		
-		WorkFlowTempDir.mkdirs();
-		WorkFlowDir.mkdirs();	
-		WorkflowUnableToMoveFile = new File(WorkFlowDir, FILE_TO_BE_REMOVED);
+		workFlowTempDir.mkdirs();
+		workFlowDir.mkdirs();	
+		workflowUnableToMoveFile = new File(workFlowDir, FILE_TO_BE_REMOVED);
 	}
 	
 	@Test
 	public void test_file_gets_moved() throws Exception {
 	
 		WorkFlowCompletionEventHandler eventHandler = new WorkFlowCompletionEventHandler();
-		eventHandler.processWorkFlowFile(WorkFlowTempDir,WORKFLOWINSTANCE, WorkFlowDir );
+		eventHandler.processWorkFlowFile(workFlowTempDir,WORKFLOWINSTANCE, workFlowDir );
 		
-		assertEquals(false, WorkFlowDir.exists());
-		assertEquals(true, WorkflowTrashDir.exists());
+		assertEquals(false, workFlowDir.exists());
+		assertEquals(true, workflowTrashDir.exists());
 
 	}
 
@@ -84,11 +84,11 @@ public class WorkFlowCompletionEventHandlerTest {
 
 		doThrow(new IOException()).when(WorkflowTrashUtilsSpy).moveDirectory(Mockito.any(File.class),  Mockito.any(File.class));
 
-		eventHandlerSpy.processWorkFlowFile(WorkFlowTempDir, WORKFLOWINSTANCE, WorkFlowDir);
+		eventHandlerSpy.processWorkFlowFile(workFlowTempDir, WORKFLOWINSTANCE, workFlowDir);
 		
-		assertEquals(true, WorkFlowDir.exists());
-		assertEquals(true, WorkflowTrashDir.exists());
-		assertEquals(true, WorkflowUnableToMoveFile.exists());
+		assertEquals(true, workFlowDir.exists());
+		assertEquals(true, workflowTrashDir.exists());
+		assertEquals(true, workflowUnableToMoveFile.exists());
   
 	}
 
@@ -106,11 +106,11 @@ public class WorkFlowCompletionEventHandlerTest {
 
 		doThrow(new IOException()).when(WorkflowTrashUtilsSpy).moveFolderToTrash(Mockito.any(File.class), anyString(),  Mockito.any(File.class));
 
-		eventHandlerSpy.processWorkFlowFile(WorkFlowTempDir, WORKFLOWINSTANCE, WorkFlowDir);
+		eventHandlerSpy.processWorkFlowFile(workFlowTempDir, WORKFLOWINSTANCE, workFlowDir);
 		
-		assertEquals(true, WorkFlowDir.exists());
-		assertEquals(true, WorkflowTrashDir.exists());
-		assertEquals(false, WorkflowUnableToMoveFile.exists());
+		assertEquals(true, workFlowDir.exists());
+		assertEquals(true, workflowTrashDir.exists());
+		assertEquals(false, workflowUnableToMoveFile.exists());
 	
 	}	
 	

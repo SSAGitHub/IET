@@ -20,7 +20,7 @@ public class JournalAvailableArticlesTest {
 		JournalAvailableArticles availableArticles = new JournalAvailableArticles(getTestArticles());
 		
 		String jsonString = availableArticles.serializeToJSON();
-		System.out.println(jsonString);
+		
 		Assert.assertTrue(jsonString.contains("COM 1234"));
 	}
 

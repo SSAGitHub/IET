@@ -12,6 +12,8 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.junit.Assert;
 import org.junit.Test;
 import org.theiet.rsuite.journals.transforms.InspecClassificationMerge;
@@ -44,7 +46,10 @@ public class InspecMergeTest {
 
 		//inspecFile
 	
-		XPathFactory factory = XPathFactory.newInstance();
+		XPathFactory factory =  XPathFactory.newInstance(
+				  XPathFactory.DEFAULT_OBJECT_MODEL_URI,
+				  "net.sf.saxon.xpath.XPathFactoryImpl",
+				  ClassLoader.getSystemClassLoader());
 		XPath xpath = factory.newXPath();
 		XPathExpression expr2 = xpath.compile("/*/front/article-meta");
 		
@@ -80,9 +85,8 @@ public class InspecMergeTest {
 			@Override
 			public InputSource resolveEntity(String publicId, String systemId)
 					throws SAXException, IOException {
-				
-				//systemId = systemId.replace(dataFolderPath, jatsDtdFolderPath);
-				return new InputSource(jatsDtdFolderPath);
+				systemId = systemId.replace(FilenameUtils.separatorsToUnix(dataFolderPath), jatsDtdFolderPath);
+				return new InputSource(systemId);
 			}
 		});
 		return dBuilder;

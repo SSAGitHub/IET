@@ -167,14 +167,14 @@ public class IssuePdfOutputGenerator extends
 			formattingEngine.generateAreaTreeFileFromFo(logger, foFile,
 					areaFile);
 			
-			archiveFoFile(exportFolder, foFile, PASS_ALL);
-			
-			
-			xsltParameters.remove(XSLT_PARAM_SECTION);
-			
-			foFile = createFoUsingAreaFile(exportFolder, inputFile, areaFile);
-			formattingEngine.generateAreaTreeFileFromFo(logger, foFile,
-					areaFile);
+//			archiveFoFile(exportFolder, foFile, PASS_ALL);
+//			
+//			
+//			xsltParameters.remove(XSLT_PARAM_SECTION);
+//			
+//			foFile = createFoUsingAreaFile(exportFolder, inputFile, areaFile);
+//			formattingEngine.generateAreaTreeFileFromFo(logger, foFile,
+//					areaFile);
 			
 			
 			processIssueFoFile(foFile, areaFile);
