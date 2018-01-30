@@ -50,7 +50,6 @@ public class ManuscriptCentralIngestion extends AbstractActionHandler implements
 		
 		File manifestFile = manuscriptPackage.getMetadataFile();
 		
-		//TODO parse manifest document
 		ManifestDocument manifestDocument = obtainManifestDocument(context,
 				manifestFile);
 		

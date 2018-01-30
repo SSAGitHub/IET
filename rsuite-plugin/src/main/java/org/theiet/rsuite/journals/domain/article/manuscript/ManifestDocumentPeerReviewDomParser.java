@@ -3,6 +3,7 @@ package org.theiet.rsuite.journals.domain.article.manuscript;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.WordUtils;
 import org.theiet.rsuite.journals.domain.article.datype.ArticleAuthor;
 import org.theiet.rsuite.journals.domain.article.manuscript.ManifestDocument.Builder;
 import org.w3c.dom.Node;
@@ -32,6 +33,11 @@ public class ManifestDocumentPeerReviewDomParser implements ManifestDocumentDomP
 		parseArticleAuthor(manifestBuilder);
 
 		String manuscriptType = manifestXPath.getValueFromManifestDocument("/article/@article-type");
+		
+		manuscriptType = mapArticleTypeManuscriptCentral(manuscriptType);
+			
+		
+		
 		manifestBuilder.manuscriptType(manuscriptType);
 
 		String category = manifestXPath
@@ -76,6 +82,19 @@ public class ManifestDocumentPeerReviewDomParser implements ManifestDocumentDomP
 		manifestBuilder.submissionType(submissionType);
 
 		return manifestBuilder.build();
+	}
+
+	private String mapArticleTypeManuscriptCentral(String manuscriptType) {
+		String mapping = manuscriptType;
+		if ("research-article".equals(manuscriptType)) {
+			mapping = "Research Paper";
+		}else if ("news-item".equals(manuscriptType)) {
+			mapping = "News Items";
+		}else {
+			mapping = manuscriptType.replace("-", " ");
+			mapping = WordUtils.capitalizeFully(mapping);
+		}
+		return mapping;
 	}
 
 	private void parseExportDate(Builder manifestBuilder) throws RSuiteException {
