@@ -79,6 +79,7 @@ sourceSets {
 	all {resolutionStrategy.cacheChangingModulesFor 0, 'seconds'}
 	rsuitePlugin
 	pluginJars{ transitive = false }
+
 	testCompile
 	
 	integrationTestCompile.extendsFrom testCompile
