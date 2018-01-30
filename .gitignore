@@ -10,3 +10,4 @@
 .recommenders
 **/rsuite-plugin/test.properties
 **/rsuite-batch-utils/logs
+**/rsuite-batch-utils/setup/config/*.properties
