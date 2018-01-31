@@ -21,41 +21,32 @@ task deployJar(type: Copy, dependsOn: 'clearWorkFlowCleanUp') {
 
 task deployWorkFlowCleanUp(type: Copy, dependsOn: 'deployJar') { 
   
-    from 'setup/config/WorkFlowCleanUp.properties.template'
+    from 'setup/config/WorkFlowCleanUp.properties'
         into "${rSuiteBatchFolder}/WorkFlowCleanUp"
 
 	from 'setup/cmd/WorkFlowCleanUp.cmd'
         into "${rSuiteBatchFolder}/WorkFlowCleanUp"
 
-	rename ('WorkFlowCleanUp.properties.template', 'WorkFlowCleanUp.properties')
-	
-	println '\n\nWorkFlowCleanUp.properties file needs to be configured before execution\n'
-
  }
 
 task deployWorkFlowPendingDeleteCleanUp(type: Copy, dependsOn: 'deployWorkFlowCleanUp') { 
 
-     from 'setup/config/WorkFlowPendingDeleteCleanUp.properties.template'
+     from 'setup/config/WorkFlowPendingDeleteCleanUp.properties'
         into "${rSuiteBatchFolder}/WorkFlowPendingDeleteCleanUp"
 		
 	from 'setup/cmd/WorkFlowPendingDeleteCleanUp.cmd'
         into "${rSuiteBatchFolder}/WorkFlowPendingDeleteCleanUp"
 		
-	rename ('WorkFlowPendingDeleteCleanUp.properties.template', 'WorkFlowPendingDeleteCleanUp.properties')
-	
-	println 'WorkFlowPendingDeleteCleanUp.properties file needs to be configured before execution\n'
 }
 
 task deployRetroWorkFlowCleanUp(type: Copy, dependsOn: 'deployWorkFlowPendingDeleteCleanUp') { 
 
-     from 'setup/config/RetroWorkFlowCleanUp.properties.template'
+     from 'setup/config/RetroWorkFlowCleanUp.properties'
         into "${rSuiteBatchFolder}/RetroWorkFlowCleanUp"
 
      from 'setup/cmd/RetroWorkFlowCleanUp.cmd'
         into "${rSuiteBatchFolder}/RetroWorkFlowCleanUp"
 
-	rename ('RetroWorkFlowCleanUp.properties.template', 'RetroWorkFlowCleanUp.properties')
-	println 'RetroWorkFlowCleanUp.properties file needs to be configured before execution\n'
 }
 
 task deployBatch(type: Copy, dependsOn: 'deployRetroWorkFlowCleanUp') { 
