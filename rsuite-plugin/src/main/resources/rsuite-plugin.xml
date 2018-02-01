@@ -1,4 +1,4 @@
-<rsuite-plugin id="iet" version="@VERSION@">
+<rsuite-plugin id="iet-dam-rsuite-plugin" version="@VERSION@">
   <lifecycleListener type="org.theiet.rsuite.PluginActivator" />
   <extensionProvider id="rsuite.WebService">
     <staticWebService root="/iet" path="/WebContent" />
@@ -2654,6 +2654,7 @@
     <!--  eventHandler type="org.theiet.rsuite.eventhandlers.ContainerPermissionManagerEventHandler"/  -->
     <eventHandler type="org.theiet.rsuite.onix.eventhandlers.OnixLmdSyncEventHandler"/>
     <eventHandler type="org.theiet.rsuite.eventhandlers.ContentDisplayHandler"/>
+    <eventHandler type="org.theiet.rsuite.eventhandlers.WorkFlowCompletionEventHandler"/>
   </extensionProvider>
   <extensionProvider id="rsuite.ManagedObjectAdvisor">
     <managedObjectAdvisor type="org.theiet.rsuite.advisors.AliasSettingManagedObjectAdvisor" />

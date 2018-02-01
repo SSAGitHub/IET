@@ -38,9 +38,11 @@
 		<transition to="EndNode" name="End workflow" />
 	</node>
 	<end-state name="EndNode">
+		<!--
 		<event type="node-enter">
 			<action
 				class="com.rsicms.projectshelper.workflow.actionhandlers.WorkflowCleanUpActionHandler" />
 		</event>
+		-->
 	</end-state>
 </process-definition>
