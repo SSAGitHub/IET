@@ -54,6 +54,9 @@ scmVersion {
 }
 
 project.version = scmVersion.version
+sourceCompatibility = "1.7";
+targetCompatibility = "1.7";
+
 
 repositories {
 	mavenCentral()
