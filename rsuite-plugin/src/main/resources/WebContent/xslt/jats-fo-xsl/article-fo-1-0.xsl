@@ -255,15 +255,26 @@ No.  Reason/Occasion                       (who) vx.x (yyyymmdd)
 
             <fo:flow flow-name="body">
                 <fo:block id="{concat('startarticle_', $articleID)}"/>
-                
+                <!--fo:block space-before="0pt"
+                space-after="0pt"
+                margin-top="0pt"
+                margin-bottom="0pt"
+                line-stacking-strategy="font-height"
+                line-height-shift-adjustment="disregard-shifts"-->
 
                 <!-- set the article opener, body, and backmatter -->
                 <xsl:call-template name="set-article-opener"/>
                 <xsl:call-template name="set-article-body"/>
-              <fo:block id="{concat('endbodyarticle_', $articleID)}"/>
                 <!--/fo:block-->
 
-                
+                <!-- an id of 0 height on last article page, 
+           for use in page headers -->
+                <!--fo:block id="last-article-page"
+                space-before="0pt"
+                space-after="0pt"
+                margin-top="0pt"
+                margin-bottom="0pt"
+                line-height="0pt"/-->
                 <xsl:call-template name="set-article-back">
                     <xsl:with-param name="pass">first</xsl:with-param>
                 </xsl:call-template>
@@ -560,9 +571,6 @@ No.  Reason/Occasion                       (who) vx.x (yyyymmdd)
                     <fo:float xmlns:local="http://www.localFuntion"
                       xmlns:AHtree="http://www.antennahouse.com/names/XSL/AreaTree"
                       axf:float-x="start" axf:float-y="top">
-                        <xsl:if test=".//back/app-group">
-                            <xsl:attribute name="axf:float-reference" select="'multicol'"/>
-                        </xsl:if>
                       <fo:block id="{$endArticleId}"/>
                     </fo:float>
                   </xsl:when>

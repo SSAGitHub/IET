@@ -271,15 +271,12 @@ PERFORMANCE OF THIS SOFTWARE.
     </xsl:variable>
     
     <xsl:variable name="curID" select="@id"/>
-    <xsl:variable name="articleID" select="translate(/article/front/article-meta/article-id[@pub-id-type='doi'], './-', '')"/>
-    <xsl:variable name="endbodyId" select="concat('endbodyarticle_', $articleID)"/>
-    
     <xsl:variable name="float-y">
       <xsl:choose>
         <xsl:when test="contains(@content-type, 'top')">
           <xsl:text>top</xsl:text>
         </xsl:when>
-        <xsl:when test="$areaTree//AHtree:BlockArea[@id=$curID]/ancestor::AHtree:PageViewportArea//AHtree:BlockArea[@id  = $endbodyId]">
+        <xsl:when test="$areaTree//AHtree:BlockArea[@id=$curID]/ancestor::AHtree:PageViewportArea/@is-last='true'">
           <xsl:text>top</xsl:text>
         </xsl:when>
         <xsl:when test="ancestor::app">

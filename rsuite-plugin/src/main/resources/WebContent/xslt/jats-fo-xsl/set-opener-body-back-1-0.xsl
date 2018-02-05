@@ -313,8 +313,16 @@ No.  Reason/Occasion                       (who) vx.x (yyyymmdd)
                         <fo:table-cell>
                             <fo:block line-height="9pt" font-size="7pt" text-align="left"
                                 font-family="Arial" padding-top="8pt">
-                                <xsl:text>ISSN </xsl:text>
-                                <xsl:value-of select="//issn[@pub-type='ppub']"/>
+                                <xsl:choose>
+                                    <xsl:when test="//issn[@pub-type='ppub']!=''">
+                                        <xsl:text>ISSN </xsl:text>
+                                        <xsl:value-of select="//issn[@pub-type='ppub']"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text>eISSN </xsl:text>
+                                        <xsl:value-of select="//issn[@pub-type='epub']"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </fo:block>
 
                             <xsl:call-template name="printDateEntry">
@@ -552,6 +560,8 @@ No.  Reason/Occasion                       (who) vx.x (yyyymmdd)
                     <xsl:choose>
                         <xsl:when test="$affiliations-have-xrefs and xref[@ref-type='aff']">
                             <xsl:apply-templates select="xref[@ref-type='aff']"
+                                mode="affiliation-number"/>
+                            <xsl:apply-templates select="xref[@ref-type='fn']"
                                 mode="affiliation-number"/>
                             <xsl:apply-templates select="xref[@ref-type='author-notes']"
                                 mode="affiliation-number"/>

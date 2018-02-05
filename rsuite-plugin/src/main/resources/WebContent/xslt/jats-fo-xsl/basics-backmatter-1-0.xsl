@@ -106,56 +106,35 @@ No.  Reason/Occasion                       (who) vx.x (yyyymmdd)
 
     <xsl:template match="comment()">
         <xsl:if test="$type=$proof_type">
-            <fo:table-and-caption span="all">
-                <fo:table>
-                    <fo:table-column column-width="170mm"/>
-                    <fo:table-column column-width="10mm"/>
-                    <fo:table-body keep-together.within-column="always">
-                        <fo:table-row>
-                            <fo:table-cell>
-                                <fo:block font-size="14pt" span="all" space-after="10pt">
-                                    <xsl:value-of
-                                        select="translate(/article//article-id[@pub-id-type='publisher-id'], '.', '')"
-                                    />
+            <fo:block break-before="page"/>
+            <fo:block font-size="14pt" span="all" space-after="10pt">
+                <xsl:value-of
+                    select="translate(/article//article-id[@pub-id-type='publisher-id'], '.', '')"/>
+            </fo:block>
+            <fo:block font-size="9pt" font-style="italic" span="all" space-after="10pt">
+                <xsl:text>Author Queries</xsl:text>
+            </fo:block>
+            <xsl:variable name="tokenizedQueries" select="tokenize(.,'&lt;')"/>
+            <xsl:for-each select="$tokenizedQueries">
+                <xsl:if test="contains(., 'aq id')">
+                    <xsl:variable name="qValue"
+                        select="substring-before(substring-after(.,'id=&quot;'), '&quot;')"/>
+                    <fo:list-block id="{$qValue}" span="all">
+                        <fo:list-item>
+                            <fo:list-item-label>
+                                <fo:block color="blue">
+                                    <xsl:value-of select="$qValue"/>
                                 </fo:block>
-                                <fo:block font-size="9pt" font-style="italic" span="all"
-                                    space-after="10pt">
-                                    <xsl:text>Author Queries</xsl:text>
+                            </fo:list-item-label>
+                            <fo:list-item-body start-indent="4em">
+                                <fo:block>
+                                    <xsl:value-of select="substring-after(.,'>')"/>
                                 </fo:block>
-                                <fo:block-container overflow="visible">
-                                    <xsl:variable name="tokenizedQueries" select="tokenize(.,'&lt;')"/>
-                                    <xsl:for-each select="$tokenizedQueries">
-                                        <xsl:if test="contains(., 'aq id')">
-                                            <xsl:variable name="qValue"
-                                                select="substring-before(substring-after(.,'id=&quot;'), '&quot;')"/>
-                                            
-                                            <fo:list-block id="{$qValue}" span="all">
-                                                <fo:list-item>
-                                                    <fo:list-item-label>
-                                                        <fo:block color="blue">
-                                                            <xsl:value-of select="$qValue"/>
-                                                        </fo:block>
-                                                    </fo:list-item-label>
-                                                    <fo:list-item-body start-indent="4em">
-                                                        <fo:block>
-                                                            <xsl:value-of select="substring-after(.,'>')"/>
-                                                        </fo:block>
-                                                    </fo:list-item-body>
-                                                </fo:list-item>
-                                            </fo:list-block>
-                                        </xsl:if>
-                                    </xsl:for-each>
-                                </fo:block-container>
-                            </fo:table-cell>
-                            <fo:table-cell>
-                                <fo:block line-height="9pt" font-size="7pt" text-align="left" font-family="Arial"
-                                    padding-top="8pt">&#xa0;</fo:block>
-                            </fo:table-cell>
-                        </fo:table-row>
-                    </fo:table-body>
-                </fo:table>
-            </fo:table-and-caption>
-
+                            </fo:list-item-body>
+                        </fo:list-item>
+                    </fo:list-block>
+                </xsl:if>
+            </xsl:for-each>
         </xsl:if>
     </xsl:template>
     <!-- ============================================================= -->
