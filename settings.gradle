@@ -1,5 +1,4 @@
 rootProject.name='iet-dam-rsuite-plugin'
-targetCompatibility = 1.7
 include 'rsuite-plugin'
 include 'oxygen-integration'
 include 'oxygen-framework-dita'
