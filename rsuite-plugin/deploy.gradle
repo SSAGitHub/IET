@@ -1,7 +1,5 @@
 buildscript {
 	repositories {
-		mavenCentral()
-
 		maven {
 			url "http://nexus.theiet.org/nexus/content/groups/public"
 			credentials {

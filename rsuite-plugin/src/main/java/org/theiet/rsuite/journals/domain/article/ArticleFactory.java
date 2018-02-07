@@ -27,7 +27,7 @@ import com.rsicms.projectshelper.utils.browse.ProjectBrowserUtils;
 
 public final class ArticleFactory {
 
-	private static XPathFactory xPathFactory = XPathFactory.newInstance();
+	private static XPathFactory xPathFactory = new net.sf.saxon.xpath.XPathFactoryImpl();
 
 	private ArticleFactory() {
 	}
