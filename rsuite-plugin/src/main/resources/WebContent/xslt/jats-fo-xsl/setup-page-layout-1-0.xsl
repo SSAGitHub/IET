@@ -209,7 +209,8 @@ No.  Reason/Occasion                       (who) vx.x (yyyymmdd)
     <xsl:template name="define-headers">
 
         <xsl:param name="is-diagnostics-page"/>
-
+        <xsl:param name="start-page-variable" tunnel="yes"/>
+        
         <!-- SA00 don't need first header -->
         <!--fo:static-content flow-name="first-header">
        <fo:block line-height="12pt" font-weight="bold">
@@ -225,10 +226,16 @@ No.  Reason/Occasion                       (who) vx.x (yyyymmdd)
         <!-- SA00:footer -->
         <fo:static-content flow-name="first-footer">
             <fo:block-container position="absolute" text-align="left">
+                <xsl:if test="($start-page-variable mod 2) = 0">
+                    <xsl:attribute name="text-align">right</xsl:attribute>    
+                </xsl:if>
                 <xsl:call-template name="createFooterSectionJournalTitle"/>
             </fo:block-container>
 
             <fo:block-container position="absolute" text-align="right">
+                <xsl:if test="($start-page-variable mod 2) = 0">
+                    <xsl:attribute name="text-align">left</xsl:attribute>    
+                </xsl:if>
                 <xsl:call-template name="createFooterSectionPageNumber"/>
             </fo:block-container>
         </fo:static-content>
