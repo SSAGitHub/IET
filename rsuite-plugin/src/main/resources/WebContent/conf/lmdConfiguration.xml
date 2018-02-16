@@ -232,6 +232,11 @@
       <col>1</col>
       <read-only value="true"/>
     </lmd-configuration>
+     <lmd-configuration name="vs_product_code">
+      <displayName>VS Product Code</displayName>
+      <col>1</col>
+      <read-only value="true"/>
+    </lmd-configuration>
     <lmd-configuration name="isbn">
       <displayName>ISBN</displayName>
       <col>1</col>
@@ -239,6 +244,11 @@
     </lmd-configuration>
     <lmd-configuration name="e_isbn">
       <displayName>E-ISBN</displayName>
+      <col>1</col>
+      <read-only value="true"/>
+    </lmd-configuration>
+     <lmd-configuration name="vs_isbn">
+      <displayName>VS ISBN</displayName>
       <col>1</col>
       <read-only value="true"/>
     </lmd-configuration>
