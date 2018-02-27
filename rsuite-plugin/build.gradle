@@ -124,7 +124,7 @@ dependencies {
 	pluginJars 'joda-time:joda-time:2.1'
 
 	compile 'org.json:org.json:2.0'
-	compile 'org.apache.pdfbox:pdfbox:1.8.0'
+	compile 'org.apache.pdfbox:pdfbox:2.0.8'
 	compile 'commons-fileupload:commons-fileupload:1.2.1'
 
 	testCompile 'junit:junit:4.11'
