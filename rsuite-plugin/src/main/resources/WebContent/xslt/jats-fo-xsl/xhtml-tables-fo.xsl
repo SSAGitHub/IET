@@ -387,7 +387,7 @@ PERFORMANCE OF THIS SOFTWARE.
       <!-- Finally: table-wrap-foot comes AFTER table is done.
          If present it probably contains table footnotes. -->
       <xsl:if test=".//fn-group/fn">
-      <fo:block font-size="7pt">
+        <fo:block font-size="7pt" text-indent="0pt">
         <xsl:apply-templates select=".//fn-group/fn" mode="pseudo-footnote"/>
       </fo:block>
       </xsl:if>
