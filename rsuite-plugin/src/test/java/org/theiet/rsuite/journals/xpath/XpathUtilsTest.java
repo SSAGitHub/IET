@@ -40,17 +40,9 @@ public class XpathUtilsTest {
 	private void testXpath(String xpath, String expected){		
 		String newXpath = XpathUtils.resolveRSuiteFunctionsInXPath(xpath);
 		
-		print(expected, newXpath);
 		Assert.assertEquals(expected, newXpath);
 	}
 	
-	public void print(String expected, String newXpath) {
-		
-		System.out.println("==========");
-		System.out.println(expected);
-		System.out.println(newXpath);
-		
-	}
 
 
 }

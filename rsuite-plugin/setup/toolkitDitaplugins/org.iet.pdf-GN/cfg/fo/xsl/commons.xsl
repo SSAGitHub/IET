@@ -42,6 +42,14 @@ See the accompanying license.txt file for applicable licenses.
     exclude-result-prefixes="opentopic exsl opentopic-index exslf opentopic-func dita2xslfo xs"
     version="2.0">
 
+    <xsl:attribute-set name="fig.title" use-attribute-sets="base-font common.title">
+        <xsl:attribute name="font-weight">bold</xsl:attribute>
+        <xsl:attribute name="space-before">5pt</xsl:attribute>
+        <xsl:attribute name="space-after">10pt</xsl:attribute>
+        <xsl:attribute name="keep-with-previous.within-page">never</xsl:attribute>
+    </xsl:attribute-set>
+    
+    
     <xsl:template
         match="*[contains(@class, ' topic/body ')]/*[contains(@class, ' cite_margin-d/cite_margin ')]"
         priority="20"/>
@@ -373,7 +381,7 @@ See the accompanying license.txt file for applicable licenses.
     </xsl:template>
 
     <xsl:template match="*[contains(@class, ' topic/fig ')]">
-        <fo:block xsl:use-attribute-sets="fig" keep-together="always">
+        <fo:block xsl:use-attribute-sets="fig" keep-together.within-column="always">
             <xsl:call-template name="commonattributes"/>
             <xsl:if test="not(@id)">
                 <xsl:attribute name="id">

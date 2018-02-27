@@ -23,7 +23,7 @@ configurations {   extraLibs }
 dependencies {
 	compile 'com.oxygenxml:oxygen:15.2'
 	compile 'log4j:log4j:1.2.14'
-	compile 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-api:RS4.0.7_oxy15.2-v1.5.15qa7'
+	compile 'com.rsicms.oxygen:rsuite-oxygen-applet-integration-api:4.0.7_oxy15.2_v1.5.15qa7'
 
 
 	extraLibs 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-jats:4.0.16_oxy_15.2_v1.1'

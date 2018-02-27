@@ -1,0 +1,1 @@
+"C:\Program Files\Java\jre7\bin\java.exe" -cp ../bin/WorkFlowCleanUp.jar com.rsicms.batch.WorkFlowCleanUp

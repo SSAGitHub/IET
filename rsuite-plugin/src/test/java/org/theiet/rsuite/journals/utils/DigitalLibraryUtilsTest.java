@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 import org.theiet.rsuite.journals.domain.article.delivery.digitallibrary.ArticleDigitalLibraryPackageBuilder;
 import org.theiet.rsuite.journals.domain.journal.Journal;
@@ -103,6 +104,32 @@ public class DigitalLibraryUtilsTest {
 		String fileName = ArticleDigitalLibraryPackageBuilder.getFixedJournalName(journalMock);
 		assertEquals("EL", fileName);
 	}
+	
+	@Test
+	public void test_getDlFinalFileName_code_conference_prefix_required()
+			throws RSuiteException {
+		String articleId = "CIR-2017-0044";
+		String ext = "pdf";
+		String fileName = getDigitalLibraryFilename(articleId, ext, null, "OAP-CIRED");
+		assertEquals("OAP-CIRED.2017.0044.pdf", fileName);
+	}
+	
+	@Test
+	public void test_getFixedJournalName_code_conference_prefix_required()
+			throws RSuiteException {
+		ExecutionContext context = stubExecutionContext(null, "OAP-CIRED");
+		Journal journalMock = new Journal(context, "CIR");
+		String fileName = ArticleDigitalLibraryPackageBuilder.getFixedJournalName(journalMock);
+		assertEquals("OAP-CIRED", fileName);
+	}
+	
+	public String getDigitalLibraryFilename(String articleId, String ext,
+			String addPrefixLmdValue, String prefixLmdValue) throws RSuiteException {
+
+		ExecutionContext context = stubExecutionContext(addPrefixLmdValue, prefixLmdValue);
+
+		return ArticleDigitalLibraryPackageBuilder.createDigitalLibraryFinalFileName(context, articleId, ext);
+	}
 
 	public String getDigitalLibraryFilename(String articleId, String ext,
 			String addPrefixLmdValue) throws RSuiteException {
@@ -112,7 +139,11 @@ public class DigitalLibraryUtilsTest {
 		return ArticleDigitalLibraryPackageBuilder.createDigitalLibraryFinalFileName(context, articleId, ext);
 	}
 
-	public ExecutionContext stubExecutionContext(String addPrefixLmdValue)
+	public ExecutionContext stubExecutionContext(String addPrefixLmdValue) throws RSuiteException {
+		return stubExecutionContext(addPrefixLmdValue, null);
+	}
+	
+	public ExecutionContext stubExecutionContext(String addPrefixLmdValue, String prefixLmdValue)
 			throws RSuiteException {
 		ExecutionContext context = mock(ExecutionContext.class);
 		SearchService searchSvc = mock(SearchService.class);
@@ -137,6 +168,13 @@ public class DigitalLibraryUtilsTest {
 				journalCa
 						.getLayeredMetadataValue(LMD_FIELD_ADD_PREFIX_DIGITAL_LIBRARY_DELIVERY))
 				.thenReturn(addPrefixLmdValue);
+		
+		if (StringUtils.isNotBlank(prefixLmdValue)) {
+			when(
+					journalCa
+							.getLayeredMetadataValue(LMD_FIELD_PREFIX_DIGITAL_LIBRARY_DELIVERY))
+					.thenReturn(prefixLmdValue);
+		}
 
 		when(caSvc.getContentAssembly(any(User.class), anyString()))
 				.thenReturn(journalCa);

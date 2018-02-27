@@ -1,21 +1,54 @@
-//apply plugin: 'java'
-//apply plugin: 'eclipse'
-//apply plugin: 'maven'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
 
+defaultTasks 'deployBatch'
 
 task clearWorkFlowCleanUp(type: Delete) {
 
 	delete "${rSuiteBatchFolder}/WorkFlowCleanUp"
+	delete "${rSuiteBatchFolder}/WorkFlowPendingDeleteCleanUp"
+	delete "${rSuiteBatchFolder}/RetroWorkFlowCleanUp"
+	delete "${rSuiteBatchFolder}/bin"
 	
 }
 
-task deployWorkFlowCleanUp(type: Copy, dependsOn: 'clearWorkFlowCleanUp') { 
+task deployJar(type: Copy, dependsOn: 'clearWorkFlowCleanUp') { 
 
-      from 'build/libs/WorkFlowCleanUp.jar'
-        into "${rSuiteBatchFolder}/WorkFlowCleanUp"
- 
+    from 'build/libs/WorkFlowCleanUp.jar'
+		into "${rSuiteBatchFolder}/bin"
+}
 
-      from 'setup/config/WorkFlowCleanUp.properties'
+task deployWorkFlowCleanUp(type: Copy, dependsOn: 'deployJar') { 
+  
+    from 'setup/config/WorkFlowCleanUp.properties'
         into "${rSuiteBatchFolder}/WorkFlowCleanUp"
-	
+
+	from 'setup/cmd/WorkFlowCleanUp.cmd'
+        into "${rSuiteBatchFolder}/WorkFlowCleanUp"
+
+ }
+
+task deployWorkFlowPendingDeleteCleanUp(type: Copy, dependsOn: 'deployWorkFlowCleanUp') { 
+
+     from 'setup/config/WorkFlowPendingDeleteCleanUp.properties'
+        into "${rSuiteBatchFolder}/WorkFlowPendingDeleteCleanUp"
+		
+	from 'setup/cmd/WorkFlowPendingDeleteCleanUp.cmd'
+        into "${rSuiteBatchFolder}/WorkFlowPendingDeleteCleanUp"
+		
+}
+
+task deployRetroWorkFlowCleanUp(type: Copy, dependsOn: 'deployWorkFlowPendingDeleteCleanUp') { 
+
+     from 'setup/config/RetroWorkFlowCleanUp.properties'
+        into "${rSuiteBatchFolder}/RetroWorkFlowCleanUp"
+
+     from 'setup/cmd/RetroWorkFlowCleanUp.cmd'
+        into "${rSuiteBatchFolder}/RetroWorkFlowCleanUp"
+
+}
+
+task deployBatch(type: Copy, dependsOn: 'deployRetroWorkFlowCleanUp') { 
+  
 }
