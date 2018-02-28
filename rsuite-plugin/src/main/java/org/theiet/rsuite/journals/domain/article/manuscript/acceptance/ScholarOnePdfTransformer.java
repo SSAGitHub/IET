@@ -40,7 +40,7 @@ public class ScholarOnePdfTransformer {
 
 	@SuppressWarnings("deprecation")
 	private void addDisclaimerText(PDDocument doc, PDPage page) throws IOException {
-		PDPageContentStream contentStream = new PDPageContentStream(doc, page, true,true);
+		PDPageContentStream contentStream = new PDPageContentStream(doc, page, true,false);
 		
 		PDRectangle mediabox = page.getMediaBox();
 	    float verticalMargin = 140;
