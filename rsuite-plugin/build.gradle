@@ -82,7 +82,7 @@ sourceSets {
 	all {resolutionStrategy.cacheChangingModulesFor 0, 'seconds'}
 	rsuitePlugin
 	pluginJars{ transitive = false }
-
+    pluginJarswithDependencies
 	testCompile
 	
 	integrationTestCompile.extendsFrom testCompile
@@ -122,7 +122,10 @@ dependencies {
 	compile 'joda-time:joda-time:2.1'
 
 	pluginJars 'joda-time:joda-time:2.1'
+	pluginJars 'org.apache.pdfbox:pdfbox:2.0.8'
 
+    pluginJars 'org.apache.pdfbox:fontbox:2.0.8'
+    
 	compile 'org.json:org.json:2.0'
 	compile 'org.apache.pdfbox:pdfbox:2.0.8'
 	compile 'commons-fileupload:commons-fileupload:1.2.1'
@@ -159,6 +162,7 @@ jar {
 	}
 
 	from(configurations.pluginJars) { into '/' }
+	from(configurations.pluginJarswithDependencies) { into '/' }
 	
 	from (project(':oxygen-integration').createOxygenIntegration.outputs.files) { into('/WebContent/oxygen') }
 	from (project(':oxygen-framework-dita').createFramework.outputs.files)  { into('/WebContent/oxygen') }
