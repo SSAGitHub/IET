@@ -6,8 +6,9 @@ defaultTasks 'deployBatch'
 
 task clearWorkFlowCleanUp(type: Delete) {
 
-	delete "${rSuiteBatchFolder}/WorkFlowCleanUp"
-	delete "${rSuiteBatchFolder}/WorkFlowPendingDeleteCleanUp"
+	delete "${rSuiteBatchFolder}/WorkFlowPendingCleanUp"
+	delete "${rSuiteBatchFolder}/CleanTrashFolder"
+	delete "${rSuiteBatchFolder}/TempFolderPendingCleanUp"
 	delete "${rSuiteBatchFolder}/RetroWorkFlowCleanUp"
 	delete "${rSuiteBatchFolder}/bin"
 	
@@ -15,36 +16,57 @@ task clearWorkFlowCleanUp(type: Delete) {
 
 task deployJar(type: Copy, dependsOn: 'clearWorkFlowCleanUp') { 
 
-    from 'build/libs/WorkFlowCleanUp.jar'
+    from 'build/libs/WorkFlowUtils.jar'
 		into "${rSuiteBatchFolder}/bin"
 }
 
-task deployWorkFlowCleanUp(type: Copy, dependsOn: 'deployJar') { 
+task deployWorkFlowPendingCleanUp(type: Copy, dependsOn: 'deployJar') { 
   
-    from 'setup/config/WorkFlowCleanUp.properties'
-        into "${rSuiteBatchFolder}/WorkFlowCleanUp"
+	from 'setup/config/WorkFlowPendingCleanUp.properties.template'
+        into "${rSuiteBatchFolder}/WorkFlowPendingCleanUp"
 
-	from 'setup/cmd/WorkFlowCleanUp.cmd'
-        into "${rSuiteBatchFolder}/WorkFlowCleanUp"
+	from 'setup/cmd/WorkFlowPendingCleanUp.cmd.template'
+        into "${rSuiteBatchFolder}/WorkFlowPendingCleanUp"
+
+	from 'setup/cmd/Read.Me'
+		into "${rSuiteBatchFolder}/WorkFlowPendingCleanUp"
 
  }
 
-task deployWorkFlowPendingDeleteCleanUp(type: Copy, dependsOn: 'deployWorkFlowCleanUp') { 
+task deployCleanTrashFolder(type: Copy, dependsOn: 'deployWorkFlowPendingCleanUp') { 
 
-     from 'setup/config/WorkFlowPendingDeleteCleanUp.properties'
-        into "${rSuiteBatchFolder}/WorkFlowPendingDeleteCleanUp"
+     from 'setup/config/CleanTrashFolder.properties.template'
+        into "${rSuiteBatchFolder}/CleanTrashFolder"
 		
-	from 'setup/cmd/WorkFlowPendingDeleteCleanUp.cmd'
-        into "${rSuiteBatchFolder}/WorkFlowPendingDeleteCleanUp"
+	from 'setup/cmd/CleanTrashFolder.cmd.template'
+        into "${rSuiteBatchFolder}/CleanTrashFolder"
+
+	from 'setup/cmd/Read.Me'
+        into "${rSuiteBatchFolder}/CleanTrashFolder"
 		
 }
 
-task deployRetroWorkFlowCleanUp(type: Copy, dependsOn: 'deployWorkFlowPendingDeleteCleanUp') { 
+task deployTempFolderCleanUp(type: Copy, dependsOn: 'deployCleanTrashFolder') { 
 
-     from 'setup/config/RetroWorkFlowCleanUp.properties'
+     from 'setup/config/TempFolderPendingCleanUp.properties.template'
+        into "${rSuiteBatchFolder}/TempFolderPendingCleanUp"
+		
+	from 'setup/cmd/TempFolderPendingCleanUp.cmd.template'
+        into "${rSuiteBatchFolder}/TempFolderPendingCleanUp"
+
+	from 'setup/cmd/Read.Me'
+        into "${rSuiteBatchFolder}/TempFolderPendingCleanUp"
+		
+}
+task deployRetroWorkFlowCleanUp(type: Copy, dependsOn: 'deployTempFolderCleanUp') { 
+
+     from 'setup/config/RetroWorkFlowCleanUp.properties.template'
         into "${rSuiteBatchFolder}/RetroWorkFlowCleanUp"
 
-     from 'setup/cmd/RetroWorkFlowCleanUp.cmd'
+     from 'setup/cmd/RetroWorkFlowCleanUp.cmd.template'
+        into "${rSuiteBatchFolder}/RetroWorkFlowCleanUp"
+
+	from 'setup/cmd/Read.Me'
         into "${rSuiteBatchFolder}/RetroWorkFlowCleanUp"
 
 }

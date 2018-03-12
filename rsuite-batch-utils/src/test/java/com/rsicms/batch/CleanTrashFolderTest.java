@@ -16,17 +16,13 @@ import org.joda.time.DateTime;
 import org.junit.*;
 import org.junit.rules.TemporaryFolder;
 
-public class WorkFlowCleanUpTest {
+public class CleanTrashFolderTest {
 
 	@Rule
 	public TemporaryFolder testFolder = new TemporaryFolder();
-
 	private File todayFolder;
-
 	private File oldFolder;
-
 	private File trashFolder;
-
 	private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 
 	@Before
@@ -39,7 +35,6 @@ public class WorkFlowCleanUpTest {
 
 		DateTime oldDate = today.minusDays(30);
 		oldFolder = createDayFolder(trashFolder, oldDate);
-
 	}
 
 	private File createDayFolder(File trashFolder, DateTime date) throws IOException {
@@ -53,8 +48,8 @@ public class WorkFlowCleanUpTest {
 	public void do_not_remove_folder_in_dry_run_mode() throws IOException {
 		Logger logger = mock(Logger.class);
 
-		WorkFlowCleanUp workFlowCleanUp = new WorkFlowCleanUp(logger, trashFolder.getAbsolutePath(), 14, false);
-		workFlowCleanUp.cleanUpWorkflowFolders();
+		CleanTrashFolder cleanTrashFolder = new CleanTrashFolder(logger, trashFolder.getAbsolutePath(), 14, false);
+		cleanTrashFolder.cleanUpTrashFolder();
 
 
 		verify(logger, times(1)).info(eq("** SIMULATION MODE ** Directory would be deleted"));
@@ -64,14 +59,12 @@ public class WorkFlowCleanUpTest {
 	public void remove_folder_in_run_mode() throws IOException {
 		Logger logger = mock(Logger.class);
 
-		WorkFlowCleanUp workFlowCleanUp = new WorkFlowCleanUp(logger, trashFolder.getAbsolutePath(), 14, true);
-		workFlowCleanUp.cleanUpWorkflowFolders();
+		CleanTrashFolder cleanTrashFolder = new CleanTrashFolder(logger, trashFolder.getAbsolutePath(), 14, true);
+		cleanTrashFolder.cleanUpTrashFolder();
 		
 		assertEquals(false, oldFolder.exists());
 		assertEquals(true, todayFolder.exists());
 		
 		verify(logger, times(1)).info("Day Directory is 30 days old and will be deleted");
-
 	}
-
 }

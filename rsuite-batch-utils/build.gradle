@@ -46,7 +46,7 @@ dependencies
 
 jar 
 {
-    archiveName = "WorkFlowCleanUp.jar"
+    archiveName = "WorkFlowUtils.jar"
 
     from 
 	{

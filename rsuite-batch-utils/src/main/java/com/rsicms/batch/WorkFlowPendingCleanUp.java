@@ -1,73 +1,62 @@
 package com.rsicms.batch;
 
 import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 
 
-
-public class WorkFlowPendingDeleteCleanUp {
+public class WorkFlowPendingCleanUp {
 	
 	private static Logger logger;
-
 	private String WorkflowDataDir;
-	private boolean SimulationMode;
-	private DateTime dtNow = new DateTime();
-
+	private boolean delete_files;
 	private static String FILE_TO_BE_REMOVED = "toRemove";
 	
 	
 	public static void main(String args[]) throws Exception {
 
-		PropertiesConfiguration config = new PropertiesConfiguration("WorkFlowPendingDeleteCleanUp.properties");
-		logger = Logger.getLogger(WorkFlowPendingDeleteCleanUp.class);
-
+		PropertiesConfiguration config = new PropertiesConfiguration("WorkFlowPendingCleanUp.properties");
+		logger = Logger.getLogger(WorkFlowPendingCleanUp.class);
 		
 		String WorkflowDataDir = (String) config.getString("WorkFlowDataDirectory");
-		boolean SimulationMode = config.getBoolean("SimulationMode");
+		boolean delete_files = config.getBoolean("delete_files");
 
-		WorkFlowPendingDeleteCleanUp WorkFlowPendingDeleteCleanUp = new WorkFlowPendingDeleteCleanUp(WorkflowDataDir,SimulationMode);
-		WorkFlowPendingDeleteCleanUp.completeWorkFlowCleanUp();
-
+		WorkFlowPendingCleanUp WorkFlowPendingCleanUp = new WorkFlowPendingCleanUp(WorkflowDataDir,delete_files);
+		WorkFlowPendingCleanUp.completeWorkFlowCleanUp();
 	}
 	
-	public WorkFlowPendingDeleteCleanUp(String WorkflowDataDir,boolean SimulationMode) {
+	public WorkFlowPendingCleanUp(String WorkflowDataDir,boolean delete_files) {
 		
 		this.WorkflowDataDir = WorkflowDataDir;
-		this.SimulationMode = SimulationMode;
+		this.delete_files = delete_files;
 		
 		completeWorkFlowCleanUp();
-		
 	}
 
-	public WorkFlowPendingDeleteCleanUp(Logger logger,String WorkflowDataDir,boolean SimulationMode) {
+	public WorkFlowPendingCleanUp(Logger logger,String WorkflowDataDir,boolean delete_files) {
 		
 		this.WorkflowDataDir = WorkflowDataDir;
-		this.SimulationMode = SimulationMode;
+		this.delete_files = delete_files;
 		this.logger = logger;
 		completeWorkFlowCleanUp();
 		
 	}
 
 	public void completeWorkFlowCleanUp() {
-
 		 	
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hhmmss");
-		logger.info("WorkFlowPendingDeleteCleanUp Starting :" + dateFormat.format(new Date()));
 
+		logger.info("WorkFlowPendingCLeanUp Starting :" + dateFormat.format(new Date()));
 		logger.info("WorkflowDataDir=" + WorkflowDataDir);
-		logger.info("SimulationMode=" + SimulationMode);
+		logger.info("delete_files=" + delete_files);
 		
 		processWorkFlowDirectories();
 		
-		DateTime dtEnd = new DateTime();
-		logger.info("WorkFlowPendingDeleteCleanUp Completed :" + dateFormat.format(new Date()));
+		logger.info("WorkFlowPendingCLeanUp Completed :" + dateFormat.format(new Date()));
 	}
 
 
@@ -82,11 +71,11 @@ public class WorkFlowPendingDeleteCleanUp {
 				// check for workflow folder to be removed
 				File WorkFlowFolderToRemove = new File(WorkFlowFolder, 	FILE_TO_BE_REMOVED);
 				if (WorkFlowFolderToRemove.exists()) {
-					if (SimulationMode) {
-						logger.info("Simulation mode " + WorkFlowFolder.getName() + " is flagged for removal and would be removed" );
+					if (delete_files) {
+						deleteWorkFlowDirectory(WorkFlowFolder);
 					}
 					else {
-						deleteWorkFlowDirectory(WorkFlowFolder);
+						logger.info("Simulation mode " + WorkFlowFolder.getName() + " is flagged for removal and would be removed" );
 					}
 				}
 			}
