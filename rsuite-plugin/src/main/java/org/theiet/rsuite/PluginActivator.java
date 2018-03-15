@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.theiet.rsuite.journals.domain.article.manuscript.acceptance.CustomLibraryFactory;
 import org.theiet.rsuite.onix.onix2lmd.Onix2LmdMapping;
 import org.theiet.rsuite.standards.domain.publish.mathml.mathmlToImage.MathMlToImageConventerFactory;
 
@@ -24,7 +25,9 @@ public class PluginActivator implements PluginLifecycleListener {
 			ProjectPluginProperties.reloadProperties();
 			Onix2LmdMapping.reload();			
 			File libraryFolder = new File(context.getRSuiteServerConfiguration().getHomeDir(), "jeuclid");
+			File libraryFolderForCustomLibrary = new File(context.getRSuiteServerConfiguration().getHomeDir(), "customLibrary");
 			MathMlToImageConventerFactory.reloadFactory(plugin.getClassLoader(), libraryFolder);
+			CustomLibraryFactory.reloadFactory(plugin.getClassLoader(), libraryFolderForCustomLibrary);
 		} catch (RSuiteException e) {
 			log.error("Error during plugin start " + e.getMessage(), e);	
 		}

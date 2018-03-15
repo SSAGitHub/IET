@@ -19,8 +19,6 @@ public class PublishOnAcceptance {
 
 	private static final String XSLT_URI_MANUSCRIPT_METADATA_TO_ARTICLE = "rsuite:/res/plugin/iet/xslt/journals/manuscript/manuscript-metadata-to-jats-article.xsl";
 
-	private ScholarOnePdfTransformer pdfTransformer = new ScholarOnePdfTransformer();
-
 	private ExecutionContext context;
 
 	private User user;
@@ -59,7 +57,7 @@ public class PublishOnAcceptance {
 	private InitialArticlePdf createInitialPDF(Article article, ManuscriptPackage manuscriptPackge) throws RSuiteException {
 		File outputPdfFile = new File(manuscriptPackge.getPackageFolder(), article.getShortArticleId() + "-PROOF.pdf");
 		File scholarOnePdf = manuscriptPackge.getScholarOnePdf();
-		int numberOfPages = pdfTransformer.createPdfForPublishOnAcceptance(scholarOnePdf, outputPdfFile);
+		int numberOfPages = CustomLibraryFactory.getInstance().createPdfForPublishOnAcceptance(scholarOnePdf, outputPdfFile);
 		return new InitialArticlePdf(outputPdfFile, numberOfPages);
 	}
 }
