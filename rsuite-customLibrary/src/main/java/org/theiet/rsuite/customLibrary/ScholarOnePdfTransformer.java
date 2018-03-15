@@ -1,16 +1,18 @@
-package org.theiet.rsuite.journals.domain.article.manuscript.acceptance;
+package org.theiet.rsuite.customLibrary;
 
 import java.awt.Color;
 import java.io.*;
+
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.PDPageTree;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDTrueTypeFont;
+import org.theiet.rsuite.journals.domain.article.manuscript.acceptance.IScholarOnePdfTransformer;
 import com.reallysi.rsuite.api.RSuiteException;
 
-public class ScholarOnePdfTransformer {
+public class ScholarOnePdfTransformer implements IScholarOnePdfTransformer {
 
 	private static final String PATH_TO_FONT = "/WebContent/fonts/TimesBold.ttf";
 
