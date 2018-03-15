@@ -2,15 +2,12 @@ package org.theiet.rsuite.journals.domain.article.manuscript.acceptance;
 
 import java.awt.Color;
 import java.io.*;
-import java.util.List;
-
-import org.apache.pdfbox.exceptions.COSVisitorException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.PDPageTree;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
-import org.apache.pdfbox.pdmodel.edit.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.font.*;
-
+import org.apache.pdfbox.pdmodel.font.PDTrueTypeFont;
 import com.reallysi.rsuite.api.RSuiteException;
 
 public class ScholarOnePdfTransformer {
@@ -25,9 +22,9 @@ public class ScholarOnePdfTransformer {
 		try (FileOutputStream resultFileOutputStream = new FileOutputStream(outputPdfFile)) {
 			pdfDocument = PDDocument.load(scholarOnePdf);
 
-			List allPages = pdfDocument.getDocumentCatalog().getAllPages();
+			PDPageTree allPages =  pdfDocument.getPages();
 
-			for (int i = 0; i < allPages.size(); i++) {
+			for (int i = 0; i < allPages.getCount(); i++) {
 				PDPage page = (PDPage) allPages.get(i);
 				addDisclaimerText(pdfDocument, page);
 			}
@@ -36,15 +33,16 @@ public class ScholarOnePdfTransformer {
 			pdfDocument.save(resultFileOutputStream);
 
 			return pdfDocument.getNumberOfPages();
-		} catch (IOException | COSVisitorException e) {
+		} catch (IOException e) {
 			throw new RSuiteException(0, e.getMessage(), e);
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	private void addDisclaimerText(PDDocument doc, PDPage page) throws IOException {
-		PDPageContentStream contentStream = new PDPageContentStream(doc, page, true, false);
+		PDPageContentStream contentStream = new PDPageContentStream(doc, page, true,false);
 		
-		PDRectangle mediabox = page.findMediaBox();
+		PDRectangle mediabox = page.getMediaBox();
 	    float verticalMargin = 140;
 	    float horizontalMargin = 34;
 	    float startX = mediabox.getLowerLeftX() + verticalMargin;

@@ -12,7 +12,7 @@ import com.reallysi.rsuite.api.xml.XPathEvaluator;
 
 public class XPathEvalutorForTest implements XPathEvaluator {
 
-	private XPath xpath = XPathFactory.newInstance().newXPath();
+	private XPath xpath = new net.sf.saxon.xpath.XPathFactoryImpl().newXPath();
 	
 	@Override
 	public void addNamespaceDeclaration(Namespace arg0) throws RSuiteException {
