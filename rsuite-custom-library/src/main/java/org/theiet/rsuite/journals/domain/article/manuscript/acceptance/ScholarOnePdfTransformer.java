@@ -1,4 +1,4 @@
-package org.theiet.rsuite.customLibrary;
+package org.theiet.rsuite.journals.domain.article.manuscript.acceptance;
 
 import java.awt.Color;
 import java.io.*;

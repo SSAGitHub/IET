@@ -22,7 +22,7 @@ public class CustomLibraryFactory {
 
 	private static CustomLibraryFactory factory;
 
-	private static String CLASS_NAME = "org.theiet.rsuite.customLibrary.ScholarOnePdfTransformer";
+	private static String CLASS_NAME = "org.theiet.rsuite.journals.domain.article.manuscript.acceptance.ScholarOnePdfTransformer";
 
 	CustomLibraryFactory(IScholarOnePdfTransformer instance) {
 		this.instance = instance;

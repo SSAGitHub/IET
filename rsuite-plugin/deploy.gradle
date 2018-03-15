@@ -69,7 +69,7 @@ dependencies {
     }    
     
     customLibrary 'org.apache.pdfbox:pdfbox:2.0.8' 
-    customLibrary 'org.iet:rsuite-customLibrary:1.1.1'
+    customLibrary 'org.iet:rsuite-custom-library:1.0.0-SNAPSHOT'
      
 	
 }

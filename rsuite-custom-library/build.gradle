@@ -22,7 +22,7 @@ dependencies {
 }
 
 targetCompatibility = 1.7
-version = "1.1.1"
+version = "1.0.0-SNAPSHOT"
 
 
 
