@@ -35,7 +35,6 @@ configurations {
 	ditaOT
 	ditaOTPlugins 
 	ditaOtFopJars {transitive = false}
-	jeuclid
 	customLibrary
 }
 	
@@ -50,34 +49,28 @@ dependencies {
 	ditaOtFopJars 'net.sourceforge.jeuclid:jeuclid-fop:3.1.9'
 	ditaOtFopJars 'net.sourceforge.jeuclid:jeuclid-core:3.1.9'
 	
-	jeuclid ('org.iet:rsuite-jeuclid:1.1.0') {
+	customLibrary ('org.iet:rsuite-custom-library:1.0.0') {
 		exclude group: 'commons-logging'
 		exclude group: 'org.apache.xmlgraphics' , module : 'batik-extension'
 		
 	
-	jeuclid 'org.freehep:freehep-graphicsbase:2.1.3'
+	customLibrary 'org.freehep:freehep-graphicsbase:2.1.3'
 	
 	}
 	
-    jeuclid ('org.freehep:freehep-graphics2d:2.1.3'){
-     //   exclude group:'org.apache.xmlgraphics', module:'fop'
-	//	exclude group:'net.sourceforge.jeuclid', module:'jeuclid-fop'
-    } 
+    customLibrary 'org.freehep:freehep-graphics2d:2.1.3'
     
-    jeuclid ('org.freehep:freehep-graphicsio-pdf:2.1.3'){
+    customLibrary ('org.freehep:freehep-graphicsio-pdf:2.1.3'){
         exclude group: 'org.freehep' , module : 'freehep-graphicsio-tests'
     }    
     
     customLibrary 'org.apache.pdfbox:pdfbox:2.0.8' 
-    customLibrary 'org.iet:rsuite-custom-library:1.0.0-SNAPSHOT'
-     
 	
 }
 
 def integrationHome = "${project.ext.get('rsuite.home')}/integration"
 def ditaOTHome = "${integrationHome}/DITA-OT${getDitaOTVersion()}"
 def ditaOTPluginHome = "${ditaOTHome}/plugins"
-def jeuclidHome = "${project.ext.get('rsuite.home')}/jeuclid"
 def customLibraryHome = "${project.ext.get('rsuite.home')}/customLibrary"
 
 rsuiteDeployment{
@@ -173,10 +166,6 @@ task clearDitaOT(type: Delete) {
 	delete "${ditaOTHome}"	
 }
 
-task clearJeuclid(type: Delete) {
-	delete "${jeuclidHome}"	
-}
-
 task clearCustomLibrary(type: Delete) {
 	delete "${customLibraryHome}"	
 }
@@ -211,14 +200,6 @@ task deployDitaDoctypes(type: Copy, dependsOn: 'deployDitaFopJars') {
       from "setup/doctypes/dita" into "${ditaOTPluginHome}/org.iet.doctypes/doctypes"
 }
 
-task deployJeuclid(type: Copy, dependsOn: 'clearJeuclid') {
-	
-	from (configurations.jeuclid) into "${jeuclidHome}"
-	 rename { fileName ->
-      stripVersion(fileName)
-	}		
-}
-
 String stripVersion(String fileNameWithVersion) {
   String ext = fileNameWithVersion.substring(fileNameWithVersion.lastIndexOf("."),fileNameWithVersion.length())
   int end = fileNameWithVersion.lastIndexOf("-"); 
@@ -238,7 +219,6 @@ task deployCustomLibrary(type: Copy, dependsOn: 'clearCustomLibrary') {
 
 
 tasks.runAllGroovyScripts.dependsOn(deployDitaDoctypes)
-tasks.runAllGroovyScripts.dependsOn(deployJeuclid)
 tasks.runAllGroovyScripts.dependsOn(runDitaOTIntegrator)
 tasks.runAllGroovyScripts.dependsOn(deployCustomLibrary)	
 

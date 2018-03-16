@@ -57,7 +57,7 @@ public class PublishOnAcceptance {
 	private InitialArticlePdf createInitialPDF(Article article, ManuscriptPackage manuscriptPackge) throws RSuiteException {
 		File outputPdfFile = new File(manuscriptPackge.getPackageFolder(), article.getShortArticleId() + "-PROOF.pdf");
 		File scholarOnePdf = manuscriptPackge.getScholarOnePdf();
-		int numberOfPages = CustomLibraryFactory.getInstance().createPdfForPublishOnAcceptance(scholarOnePdf, outputPdfFile);
+		int numberOfPages = JournalCustomLibraryFactory.getInstance().createPdfForPublishOnAcceptance(scholarOnePdf, outputPdfFile);
 		return new InitialArticlePdf(outputPdfFile, numberOfPages);
 	}
 }

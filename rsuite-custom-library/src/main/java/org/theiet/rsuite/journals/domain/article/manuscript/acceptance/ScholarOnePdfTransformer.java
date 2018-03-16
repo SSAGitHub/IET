@@ -16,7 +16,6 @@ public class ScholarOnePdfTransformer implements IScholarOnePdfTransformer {
 
 	private static final String PATH_TO_FONT = "/WebContent/fonts/TimesBold.ttf";
 
-	@SuppressWarnings("rawtypes")
 	public int createPdfForPublishOnAcceptance(File scholarOnePdf, File outputPdfFile) throws RSuiteException {
 
 		PDDocument pdfDocument = null;
