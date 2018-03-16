@@ -80,6 +80,8 @@ addOrReplaceLMDDefinition("e_product_code", false, false, assemblyTypes, null)
 addOrReplaceLMDDefinition("contract_signed_date", false, false, assemblyTypes, null)
 addOrReplaceLMDDefinition("book_metadata_sent", false, false, assemblyTypes, null)
 
+addOrReplaceLMDDefinition("vs_isbn", false, false, assemblyTypes, null)
+addOrReplaceLMDDefinition("vs_product_code", false, false, assemblyTypes, null)
 
 addOrReplaceLMDDefinition("doi", false, false, assemblyTypes, null)
 addOrReplaceLMDDefinition("price_pound", false, false, assemblyTypes, null)

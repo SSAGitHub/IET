@@ -1952,6 +1952,12 @@
           <validation required="true"
           errorMessage="This input field is required." />
         </param>
+         <param>
+          <col>1</col>
+          <name>lmd_vs_product_code</name>
+          <label>VS Product Code:</label>
+          <formControlType>text</formControlType>
+        </param>
         <param>
           <col>1</col>
           <name>lmd_isbn</name>
@@ -1962,6 +1968,12 @@
           <col>1</col>
           <name>lmd_e_isbn</name>
           <label>E-ISBN:</label>
+          <formControlType>text</formControlType>
+        </param>
+        <param>
+          <col>1</col>
+          <name>lmd_vs_isbn</name>
+          <label>VS ISBN:</label>
           <formControlType>text</formControlType>
         </param>
         <param>
