@@ -18,13 +18,14 @@ repositories {
 dependencies {
 	compile project(':rsuite-plugin')
 	compile 'com.rsicms:rsuite-api:4.1.17'
+	compile 'org.apache.pdfbox:pdfbox:2.0.8'
 	compile 'commons-io:commons-io:1.4'
 	compile 'net.sourceforge.jeuclid:jeuclid-fop:3.1.9'
 	compile 'net.sourceforge.jeuclid:jeuclid-core:3.1.9'
 }
 
 targetCompatibility = 1.7
-version = "1.1.0"
+version = "1.0.0"
 
 
 
