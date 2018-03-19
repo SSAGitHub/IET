@@ -10,6 +10,13 @@ def roles = "editor,EditorialAssistant,ProductionController"
 def pass = "test"
 def email = "test.the.iet@gmail.com"
 
+println("baseDir=  ${baseDir}");
+def baseDir = "";
+try {
+    baseDir = "${baseDir}";
+} catch (e) {
+    baseDir = System.getenv("RSUITE_FTP_DIR");
+}
 
 def setUpFtpProperties(userId, targetFolder){
 	def properties = ["ftp.host" :"us5.rsuitecms.com", 
@@ -20,7 +27,7 @@ def setUpFtpProperties(userId, targetFolder){
 
 def setUpESPDeliveryUser(util, pass, email){
 	def userId = "ESPStandardsBook";
-	def properties = ["deliveryPath" :'$rsuiteTempFolder/espDelivery'];
+	def properties = ["deliveryPath" :baseDir + "/ESPDelivery"];
 	util.upsertUser(userId, pass, userId, email, "ESPDelivery");
 	rsuite.setUserProperties(userId, false, properties);
 }

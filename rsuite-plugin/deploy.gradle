@@ -106,11 +106,11 @@ rsuiteDeployment{
 		common "IETtvCreateHotFolder.groovy;-DbaseDir=${rSuiteHotfoldersDir}"
 		
 		development "CreateHotFolder.groovy;-DbaseDir=${rSuiteHotfoldersDir}"
-		development 'ConfigureLocalUsers.groovy'
-		development 'JournalConfigureLocalUsers.groovy'
-		development 'StandardsConfigureLocalUsers.groovy'
-		development 'OnixConfigureLocalUsers.groovy'
-		development 'IETtvConfigureDevelopmentLocalUsers.groovy'
+		development "ConfigureLocalUsers.groovy;-DbaseDir=${rsuiteLocalFtpDir}"
+		development "JournalConfigureLocalUsers.groovy;-DbaseDir=${rsuiteLocalFtpDir}"
+		development "StandardsConfigureLocalUsers.groovy;-DbaseDir=${rsuiteLocalFtpDir}"
+		development "OnixConfigureLocalUsers.groovy;-DbaseDir=${rsuiteLocalFtpDir}"
+		development "IETtvConfigureDevelopmentLocalUsers.groovy;-DbaseDir=${rsuiteLocalFtpDir}"
 	}
 
 	rsuitePlugins{ 

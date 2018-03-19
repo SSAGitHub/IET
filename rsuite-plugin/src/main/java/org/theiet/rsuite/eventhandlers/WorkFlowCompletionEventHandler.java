@@ -20,7 +20,8 @@ public class WorkFlowCompletionEventHandler extends DefaultEventHandler {
 	private static final String EVENT_WORKFLOW_KILLED = "workflow.process.aborted";
 	private static final String EVENT_WORKFLOW_COMPLETED = "workflow.process.completed";
 	public WorkflowTrashUtils WORKFLOW_TRASH_UTILS = new WorkflowTrashUtils();
-	private static final String REQUIRED_VARIABLE_NAME = "rsuiteWorkingFolderPath";
+	private static final String RSUITEWORKINGFOLDERPATH = "rsuiteWorkingFolderPath";
+	private static final String TEMPFOLDER = "tempFolder";
 	private Log logger = LogFactoryImpl.getLog(getClass());
 
 	@Override
@@ -28,37 +29,44 @@ public class WorkFlowCompletionEventHandler extends DefaultEventHandler {
 
 		String eventType = event.getType();
 
-		logger.info("WorkFlowCompletionEventHandler started  handleEvent eventType = " + eventType);
+		logger.info("**** WorkFlowCompletionEventHandler started  handleEvent eventType = " + eventType + "****");
 
 		if (EVENT_WORKFLOW_COMPLETED.equals(eventType) || EVENT_WORKFLOW_KILLED.equals(eventType)) {
 			WorkflowEventData workflowEventData = (WorkflowEventData) event.getUserData();
 
+
+			String workFlowDataTempStr = context.getConfigurationProperties().getProperty("rsuite.temp.dir", "");
+			File workFlowDataTempDir = new File(workFlowDataTempStr);
+
+			// Look for working folder path variable - this is the out of the box workflow work folder 
 			String processInstanceId = workflowEventData.getProcessInstanceId();
-			String workFlowFileLocationStr = getWorkflowFileLocation(context, processInstanceId,
-					REQUIRED_VARIABLE_NAME);
+			String workFlowFileLocationStr = (String) getWorkflowVariable(context, processInstanceId,RSUITEWORKINGFOLDERPATH);
 
 			if (workFlowFileLocationStr != null) {
 
-				String workFlowDataTempStr = context.getConfigurationProperties().getProperty("rsuite.temp.dir", "");
-				String workFlowBaseStr = context.getConfigurationProperties()
-						.getProperty("rsuite.workflow.baseworkfolder", "");
+				String workFlowBaseStr = context.getConfigurationProperties().getProperty("rsuite.workflow.baseworkfolder", "");
 
-				// get the length of the workflow base directory + the file separator from the
-				// config.
+				// get the length of the workflow base directory + the file separator from the config.
 				int start = workFlowBaseStr.concat(File.separator).length();
-				// find the next file separator which will be the absolute path to the workflow
-				// root directory
+				// find the next file separator which will be the absolute path to the workflow root directory
 				int end = workFlowFileLocationStr.indexOf(File.separator, start);
 
 				// chop the chunk out that represents the workflow root directory
 				String workFlowRootDirStr = workFlowFileLocationStr.substring(0, end);
 
-				File workFlowDataTempDir = new File(workFlowDataTempStr);
 				File workFlowRootDir = new File(workFlowRootDirStr);
 
 				processWorkFlowFile(workFlowDataTempDir, processInstanceId, workFlowRootDir);
 
 			}
+			
+			// Look for the tempFolder variable - used in some workflows
+			File tempFolderLocation = (File) getWorkflowVariable(context, processInstanceId,TEMPFOLDER);
+
+			if (tempFolderLocation != null) {
+				processWorkFlowFile(workFlowDataTempDir, processInstanceId, tempFolderLocation);
+			}
+			
 		}
 
 		super.handleEvent(context, event, handback);
@@ -69,7 +77,7 @@ public class WorkFlowCompletionEventHandler extends DefaultEventHandler {
 	}
 
 	@SuppressWarnings("unchecked")
-	protected String getWorkflowFileLocation(ExecutionContext context, String processInstanceId,
+	protected Object getWorkflowVariable(ExecutionContext context, String processInstanceId,
 			String requiredVariableName) throws RSuiteException {
 
 		com.reallysi.rsuite.api.User user = context.getAuthorizationService().getSystemUser();
@@ -79,8 +87,9 @@ public class WorkFlowCompletionEventHandler extends DefaultEventHandler {
 		List<VariableInfo> variables = processInstance.getVariables();
 
 		for (VariableInfo variable : variables) {
+			
 			if (requiredVariableName.equals(variable.getName())) {
-				return (String) variable.getValue();
+				return  variable.getValue();
 			}
 		}
 
