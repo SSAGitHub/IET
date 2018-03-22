@@ -43,9 +43,9 @@ try {
 //	setUpFtpProperties("DigitalLibraryIssue", ["ftp.folder.issue" :"test/DigitalLibraryIssue"]);
 //	setUpFtpProperties("JournalIssuePrinter", ["ftp.folder.main" :"test/JournalIssuePrinter"]);
 	
-	setUpLocalProperties("ietTypesetterManuScript","/BookTypesetter/test");
-	setUpLocalProperties("ietTypesetterArticle","/BookTypesetter/test/updates");
-	setUpLocalProperties("ietTypesetterIssue","/BookTypesetter/test/issues");
+//	setUpLocalProperties("ietTypesetterManuScript","/BookTypesetter/test");
+//	setUpLocalProperties("ietTypesetterArticle","/BookTypesetter/test/updates");
+//	setUpLocalProperties("ietTypesetterIssue","/BookTypesetter/test/issues");
 	setUpLocalProperties("ietClassifier","/Inspec/test");
 	setUpLocalProperties("DigitalLibraryArticle","/DigitalLibrary/Article");
 	setUpLocalProperties("DigitalLibraryIssue","/DigitalLibrary/Issue");

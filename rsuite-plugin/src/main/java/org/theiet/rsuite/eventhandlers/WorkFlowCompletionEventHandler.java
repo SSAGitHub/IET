@@ -22,6 +22,8 @@ public class WorkFlowCompletionEventHandler extends DefaultEventHandler {
 	public WorkflowTrashUtils WORKFLOW_TRASH_UTILS = new WorkflowTrashUtils();
 	private static final String RSUITEWORKINGFOLDERPATH = "rsuiteWorkingFolderPath";
 	private static final String TEMPFOLDER = "tempFolder";
+	private static final String RSUITETEMPDIR = "rsuite.temp.dir";
+	private static final String RSUITEWORKFLOWBASEWORKFOLDER = "rsuite.workflow.baseworkfolder";
 	private Log logger = LogFactoryImpl.getLog(getClass());
 
 	@Override
@@ -35,7 +37,7 @@ public class WorkFlowCompletionEventHandler extends DefaultEventHandler {
 			WorkflowEventData workflowEventData = (WorkflowEventData) event.getUserData();
 
 
-			String workFlowDataTempStr = context.getConfigurationProperties().getProperty("rsuite.temp.dir", "");
+			String workFlowDataTempStr = context.getConfigurationProperties().getProperty(RSUITETEMPDIR, "");
 			File workFlowDataTempDir = new File(workFlowDataTempStr);
 
 			// Look for working folder path variable - this is the out of the box workflow work folder 
@@ -44,33 +46,22 @@ public class WorkFlowCompletionEventHandler extends DefaultEventHandler {
 
 			if (workFlowFileLocationStr != null) {
 
-				String workFlowBaseStr = context.getConfigurationProperties().getProperty("rsuite.workflow.baseworkfolder", "");
-
-				// get the length of the workflow base directory + the file separator from the config.
-				int start = workFlowBaseStr.concat(File.separator).length();
-				// find the next file separator which will be the absolute path to the workflow root directory
-				int end = workFlowFileLocationStr.indexOf(File.separator, start);
-
-				// chop the chunk out that represents the workflow root directory
-				String workFlowRootDirStr = workFlowFileLocationStr.substring(0, end);
-
-				File workFlowRootDir = new File(workFlowRootDirStr);
-
-				processWorkFlowFile(workFlowDataTempDir, processInstanceId, workFlowRootDir);
-
+				File workFlowRootDir = getCurrentWorkFlowRootFolder(context, workFlowFileLocationStr); 
+				moveWorkFlowFolderToTrash(workFlowDataTempDir, processInstanceId, workFlowRootDir);
 			}
 			
 			// Look for the tempFolder variable - used in some workflows
 			File tempFolderLocation = (File) getWorkflowVariable(context, processInstanceId,TEMPFOLDER);
 
 			if (tempFolderLocation != null) {
-				processWorkFlowFile(workFlowDataTempDir, processInstanceId, tempFolderLocation);
+
+				moveWorkFlowFolderToTrash(workFlowDataTempDir, processInstanceId, tempFolderLocation);
 			}
 			
 		}
 
-		super.handleEvent(context, event, handback);
 	}
+
 
 	protected WorkflowTrashUtils getWorkflowTrashUtils() {
 		return WORKFLOW_TRASH_UTILS;
@@ -78,17 +69,16 @@ public class WorkFlowCompletionEventHandler extends DefaultEventHandler {
 
 	@SuppressWarnings("unchecked")
 	protected Object getWorkflowVariable(ExecutionContext context, String processInstanceId,
-			String requiredVariableName) throws RSuiteException {
+			String variableToFind) throws RSuiteException {
 
 		com.reallysi.rsuite.api.User user = context.getAuthorizationService().getSystemUser();
-		ProcessInstanceInfo processInstance = context.getProcessInstanceService().getProcessInstance(user,
-				processInstanceId);
+		ProcessInstanceInfo processInstance = context.getProcessInstanceService().getProcessInstance(user,processInstanceId);
 
 		List<VariableInfo> variables = processInstance.getVariables();
 
 		for (VariableInfo variable : variables) {
 			
-			if (requiredVariableName.equals(variable.getName())) {
+			if (variableToFind.equals(variable.getName())) {
 				return  variable.getValue();
 			}
 		}
@@ -96,7 +86,18 @@ public class WorkFlowCompletionEventHandler extends DefaultEventHandler {
 		return null;
 	}
 
-	protected void processWorkFlowFile(File workFlowDataTempDir, String processId, File workFlowRootDir)
+	protected File getCurrentWorkFlowRootFolder(ExecutionContext context, String workFlowFileLocationStr) {
+		
+		String workFlowBaseStr = context.getConfigurationProperties().getProperty(RSUITEWORKFLOWBASEWORKFOLDER, "");
+
+		int lengthOfBaseWorkFlowFolder = workFlowBaseStr.concat(File.separator).length();
+		int endOfworkFlowRootFolder = workFlowFileLocationStr.indexOf(File.separator, lengthOfBaseWorkFlowFolder);
+		String workFlowRootDirStr = workFlowFileLocationStr.substring(0, endOfworkFlowRootFolder);
+
+		return new File(workFlowRootDirStr);
+	}
+
+	protected void moveWorkFlowFolderToTrash(File workFlowDataTempDir, String processId, File workFlowRootDir)
 			throws RSuiteException {
 
 		try {
