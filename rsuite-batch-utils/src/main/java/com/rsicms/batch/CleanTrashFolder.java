@@ -69,23 +69,27 @@ public class CleanTrashFolder {
 		for (File fYearFolder : fWorkFlowTrashFolder.listFiles()) {
 			if (fYearFolder.isDirectory()) {
 				logger.info("Processing Year:" + fYearFolder.getName());
+
 				listFilesForMonth(fYearFolder);
-
-				// year directory empty - remove it
-				File[] FilesInDirectory = fYearFolder.listFiles();
-
-				if (FilesInDirectory.length == 0) {
-					if (deleteFiles) {
-						FileUtils.deleteDirectory(fYearFolder);
-						logger.info("Year Directory " + fYearFolder.getName() + " is empty and will be deleted");
-					} else {
-						logger.info("** SIMULATION MODE ** Directory would be deleted");
-					}
-				}
+				deleteYearFolderIfEmpty(fYearFolder);
 			}
 		}
 	}
 
+	private void deleteYearFolderIfEmpty(File fYearFolder) throws IOException {
+
+		File[] FilesInDirectory = fYearFolder.listFiles();
+
+		if (FilesInDirectory.length == 0) {
+			if (deleteFiles) {
+				FileUtils.deleteDirectory(fYearFolder);
+				logger.info("Year Directory " + fYearFolder.getName() + " is empty and will be deleted");
+			} else {
+				logger.info("** SIMULATION MODE ** Directory would be deleted");
+			}
+		}
+	}
+	
 	public void listFilesForMonth(File fYearFolder) throws IOException {
 
 		for (File fMonthFolder : fYearFolder.listFiles()) {
@@ -97,14 +101,15 @@ public class CleanTrashFolder {
 
 	private void processMonthFolder(File fMonthFolder) throws IOException {
 		logger.info("Processing Month:" + fMonthFolder.getName());
-		listFilesForDay(fMonthFolder);
 
-		// month directory empty - remove it
-		File[] FilesInDirectory = fMonthFolder.listFiles();
-		deleteMonthFolder(fMonthFolder, FilesInDirectory);
+		listFilesForDay(fMonthFolder);
+		deleteMonthFolderIfEmpty(fMonthFolder);
 	}
 
-	private void deleteMonthFolder(File fMonthFolder, File[] FilesInDirectory) throws IOException {
+	private void deleteMonthFolderIfEmpty(File fMonthFolder) throws IOException {
+		
+		File[] FilesInDirectory = fMonthFolder.listFiles();
+
 		if (FilesInDirectory.length == 0) {
 			if (deleteFiles) {
 				FileUtils.deleteDirectory(fMonthFolder);
@@ -122,12 +127,8 @@ public class CleanTrashFolder {
 				logger.info("Processing Day Directories:" + fDayFolder.getName());
 
 				try {
-					int iYear = Integer.parseInt(fDayFolder.getParentFile().getParentFile().getName());
-					int iMonth = Integer.parseInt(fDayFolder.getParentFile().getName());
-					int iDay = Integer.parseInt(fDayFolder.getName());
 
-					// construct local date from directory name
-					DateTime dtDirectory = new DateTime(iYear, iMonth, iDay, 0, 0, 0);
+					DateTime dtDirectory = constructDateFromLocalFolder(fDayFolder);
 					int age = Days.daysBetween(dtDirectory.withTimeAtStartOfDay(), dtNow.withTimeAtStartOfDay())
 							.getDays();
 
@@ -145,5 +146,14 @@ public class CleanTrashFolder {
 
 			}
 		}
+	}
+	
+	private DateTime constructDateFromLocalFolder(File fDayFolder) {
+		
+		int iYear = Integer.parseInt(fDayFolder.getParentFile().getParentFile().getName());
+		int iMonth = Integer.parseInt(fDayFolder.getParentFile().getName());
+		int iDay = Integer.parseInt(fDayFolder.getName());
+
+		return new DateTime(iYear, iMonth, iDay, 0, 0, 0);
 	}
 }
