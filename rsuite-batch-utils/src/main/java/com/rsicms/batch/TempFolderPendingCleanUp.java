@@ -53,7 +53,7 @@ public class TempFolderPendingCleanUp {
 		try {
 			logger.info("temp Directory=" + this.temp_folder_dir);
 			logger.info("delete files=" + deleteFiles);
-
+			
 			listFilesForYear();
 		} catch (Exception ex) {
 			logger.error(ex.toString());
@@ -68,20 +68,26 @@ public class TempFolderPendingCleanUp {
 
 		for (File fYearFolder : temp_folder_dir.listFiles()) {
 			if (fYearFolder.isDirectory()) {
-				logger.info("Processing Year:" + fYearFolder.getName());
+				
+				logger.info("Processing Year:" + fYearFolder.getAbsolutePath());
 				listFilesForMonth(fYearFolder);
+				deleteYearFolderIfEmpty(fYearFolder);
+			}
+		}
+	}
 
-				// year directory empty - remove it
-				File[] FilesInDirectory = fYearFolder.listFiles();
-
-				if (FilesInDirectory.length == 0) {
-					if (deleteFiles) {
-						FileUtils.deleteDirectory(fYearFolder);
-						logger.info("Year Directory " + fYearFolder.getName() + " is empty and will be deleted");
-					} else {
-						logger.info("** SIMULATION MODE **  Year Directory " + fYearFolder.getName() + " is empty and will be deleted");
-					}
-				}
+	private void deleteYearFolderIfEmpty(File fYearFolder) throws IOException {
+		
+		File[] FilesInDirectory = fYearFolder.listFiles();
+		
+		if (FilesInDirectory.length == 0) {
+			
+			if (deleteFiles) {
+				
+				FileUtils.deleteDirectory(fYearFolder);
+				logger.info("Year Directory " + fYearFolder.getName() + " is empty and will be deleted");
+			} else {
+				logger.info("** SIMULATION MODE ** Year Directory " + fYearFolder.getName() + " is empty and will be deleted");
 			}
 		}
 	}
@@ -90,23 +96,22 @@ public class TempFolderPendingCleanUp {
 
 		for (File fMonthFolder : fYearFolder.listFiles()) {
 			if (fMonthFolder.isDirectory()) {
-				processMonthFolder(fMonthFolder);
+				
+				processDayFoldersInMonth(fMonthFolder);
+				deleteMonthFolderIfEmpty(fMonthFolder);
 			}
 		}
 	}
 
-	private void processMonthFolder(File fMonthFolder) throws IOException {
-		logger.info("Processing Month:" + fMonthFolder.getName());
-		processDayFolder(fMonthFolder);
 
-		// month directory empty - remove it
+	private void deleteMonthFolderIfEmpty(File fMonthFolder) throws IOException {
+		
 		File[] FilesInDirectory = fMonthFolder.listFiles();
-		deleteMonthFolder(fMonthFolder, FilesInDirectory);
-	}
-
-	private void deleteMonthFolder(File fMonthFolder, File[] FilesInDirectory) throws IOException {
+		
 		if (FilesInDirectory.length == 0) {
+			
 			if (deleteFiles) {
+				
 				FileUtils.deleteDirectory(fMonthFolder);
 				logger.info("Month Directory " + fMonthFolder.getName() + " is empty and will be deleted");
 			} else {
@@ -115,25 +120,32 @@ public class TempFolderPendingCleanUp {
 		}
 	}
 
-	private void processDayFolder(File fMonthFolder) throws IOException {
+	private void processDayFoldersInMonth(File fMonthFolder) throws IOException {
 
 		for (File fDayFolder : fMonthFolder.listFiles()) {
+			
 			if (fDayFolder.isDirectory()) {
-				logger.info("Processing Day Directories:" + fDayFolder.getName());
+				
+				logger.info("Processing Day Directories:" + fDayFolder.getAbsolutePath());
 				
 				processFilesForDay(fDayFolder);
+				deleteDayFolderIfEmpty(fDayFolder);
+			}
+		}
+	}
+	
+	private void deleteDayFolderIfEmpty(File fDayFolder) throws IOException {
+		
+		File[] FilesInDirectory = fDayFolder.listFiles();
 
-				// month directory empty - remove it
-				File[] FilesInDirectory = fDayFolder.listFiles();
-
-				if (FilesInDirectory.length == 0) {
-					if (deleteFiles) {
-						FileUtils.deleteDirectory(fDayFolder);
-						logger.info("Day Directory " + fMonthFolder.getName() + " is empty and will be deleted");
-					} else {
-						logger.info("** SIMULATION MODE ** Day Directory " + fMonthFolder.getName() + " is empty and will be deleted");
-					}
-				}
+		if (FilesInDirectory.length == 0) {
+			
+			if (deleteFiles) {
+				
+				FileUtils.deleteDirectory(fDayFolder);
+				logger.info("Day Directory " + fDayFolder.getName() + " is empty and will be deleted");
+			} else {
+				logger.info("** SIMULATION MODE ** Day Directory " + fDayFolder.getName() + " is empty and will be deleted");
 			}
 		}
 	}
@@ -152,10 +164,10 @@ public class TempFolderPendingCleanUp {
 					if (WorkFlowFolderToRemove.exists()) {
 
 						if (deleteFiles) {
-							logger.info("WorkFlow Directory is flagged for deletion and will be deleted");
+							logger.info("WorkFlow Directory " + fWorkFlowFolder.getAbsolutePath() + " is flagged for deletion and will be deleted");
 							FileUtils.deleteDirectory(fWorkFlowFolder);
 						} else {
-							logger.info("** SIMULATION MODE ** WorkFlow Directory is flagged for deletion and will be deleted");
+							logger.info("** SIMULATION MODE ** WorkFlow Directory " + fWorkFlowFolder.getAbsolutePath() + " is flagged for deletion and will be deleted");
 						}
 					}
 				}

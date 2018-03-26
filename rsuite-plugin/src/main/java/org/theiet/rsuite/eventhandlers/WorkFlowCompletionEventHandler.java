@@ -84,7 +84,7 @@ public class WorkFlowCompletionEventHandler extends DefaultEventHandler {
 		}
 
 		return null;
-	}
+	} 
 
 	protected File getCurrentWorkFlowRootFolder(ExecutionContext context, String workFlowFileLocationStr) {
 		

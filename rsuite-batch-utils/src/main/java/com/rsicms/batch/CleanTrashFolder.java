@@ -145,7 +145,7 @@ public class CleanTrashFolder {
 				}
 
 			}
-		}
+		} 
 	}
 	
 	private DateTime constructDateFromLocalFolder(File fDayFolder) {
