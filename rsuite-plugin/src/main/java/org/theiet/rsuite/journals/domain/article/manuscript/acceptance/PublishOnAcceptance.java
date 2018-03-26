@@ -9,6 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.theiet.rsuite.journals.domain.article.Article;
 import org.theiet.rsuite.journals.domain.article.delivery.digitallibrary.ArticleDigitalLibrary;
 import org.theiet.rsuite.journals.domain.article.manuscript.ManuscriptPackage;
+import org.theiet.rsuite.journals.domain.journal.Journal;
 
 import com.reallysi.rsuite.api.RSuiteException;
 import com.reallysi.rsuite.api.User;
@@ -43,8 +44,12 @@ public class PublishOnAcceptance {
 	}
 
 	private File createInitialArticle(Article article, ManuscriptPackage manuscriptPackage, int numberOfPagesInPdf) throws RSuiteException {
+	Journal journal = article.getJournal();
+		
 		Map<String, String> parameters = new HashMap<>();
 		parameters.put("page-count", String.valueOf(numberOfPagesInPdf));
+		parameters.put("should-add-iet-prefix", String.valueOf(journal.requiresPrefixForDigitaLibrary()));
+		parameters.put("iet-prefix", journal.getPrefixForDigitaLibrary());
 		
 		String articleCode = article.getShortArticleId().replace("-", "");
 		File articleFile = new File(manuscriptPackage.getPackageFolder(), articleCode + ".xml");

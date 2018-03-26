@@ -7,6 +7,8 @@
         doctype-system="JATS-journalpublishing1.dtd" indent="yes"/>
 
     <xsl:param name="page-count" select="0"></xsl:param>
+    <xsl:param name="should-add-iet-prefix"></xsl:param>
+    <xsl:param name="iet-prefix"></xsl:param> 
     <xsl:variable name="journalAbbreviation" select="normalize-space(/article_set/article/journal/journal_abbreviation)"/>
     <xsl:variable name="journalCode" select="replace($journalAbbreviation, 'IET([ -]+)', '')"/>
     <xsl:variable name="orignalArticleId" select="/article_set/article/@ms_no"/>
@@ -79,14 +81,20 @@
         <entry key="WSS" prefix="yes">IET Wirel. Sens. Syst.</entry>
         <entry key="HVE" prefix="no">High Volt.</entry>
     </xsl:variable>
+
+	<xsl:variable name="prefix">
+		<xsl:if test="$should-add-iet-prefix = 'true'">
+			<xsl:choose>
+				<xsl:when test="$iet-prefix = ''">
+					<xsl:text>IET-</xsl:text>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="$iet-prefix" />
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
+	</xsl:variable>
     
-    
-    <xsl:variable name="should-add-iet-prefix" select="$journal-mapping/entry[@key=$journalCode]/@prefix"/>
-    <xsl:variable name="iet-prefix">
-        <xsl:if test="$should-add-iet-prefix = 'yes'">
-            <xsl:text>IET-</xsl:text>
-        </xsl:if>
-    </xsl:variable>
     
     <xsl:function name="iet:hasNonEmptyResubmittedDate" as="xs:boolean">
         <xsl:param name="historyElement"/>
@@ -169,9 +177,8 @@
         </article>
     </xsl:template>
 
-    <xsl:template match="journal">
-
-        <journal-id journal-id-type="publisher-id"><xsl:value-of select="concat($iet-prefix, $journalCode)"
+    <xsl:template match="journal">           
+        <journal-id journal-id-type="publisher-id"><xsl:value-of select="concat($prefix, $journalCode)"
             /></journal-id>
         <journal-title-group>
             <journal-title>
@@ -212,7 +219,7 @@
     
     <xsl:template name="create-artilce-ids">
         <xsl:variable name="normalizedArticleId" select="replace($articleId, '\-', '.')"/>
-        <xsl:variable name="publisherIdInitial" select="concat($iet-prefix, replace($shortArticleId, '\-', '.'))"/>
+        <xsl:variable name="publisherIdInitial" select="concat($prefix, replace($shortArticleId, '\-', '.'))"/>
         <xsl:variable name="publisherId" select="replace($publisherIdInitial,'\.SI', '' )"/>
         
         
