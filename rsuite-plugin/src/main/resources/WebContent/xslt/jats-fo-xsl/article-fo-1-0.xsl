@@ -224,7 +224,7 @@ No.  Reason/Occasion                       (who) vx.x (yyyymmdd)
 
         <xsl:param name="start-page-param"/>
 
-        <xsl:variable name="start-page-variable">
+        <xsl:variable name="start-page-variable" as="xs:integer">
             <xsl:choose>
                 <xsl:when test="$issue-mode = 'final-issue-article'">
                     <xsl:value-of select="/article/front/article-meta/fpage"/>
@@ -242,10 +242,14 @@ No.  Reason/Occasion                       (who) vx.x (yyyymmdd)
         <!-- Populate the content sequence -->
         <fo:page-sequence master-reference="seq-content" initial-page-number="1">
             <xsl:attribute name="initial-page-number">
-                <xsl:value-of select="normalize-space($start-page-variable)"/>
+                <xsl:value-of select="$start-page-variable"/>
             </xsl:attribute>
 
-            <xsl:call-template name="define-headers"/>
+            <xsl:call-template name="define-headers">
+                <xsl:with-param name="start-page-variable" tunnel="yes">
+                    <xsl:value-of select="$start-page-variable"/>
+                </xsl:with-param>
+            </xsl:call-template>
             <xsl:call-template name="define-before-float-separator"/>
             <xsl:call-template name="define-footnote-separator"/>
 
