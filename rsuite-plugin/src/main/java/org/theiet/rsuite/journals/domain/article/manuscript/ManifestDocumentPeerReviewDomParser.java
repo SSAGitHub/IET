@@ -47,7 +47,7 @@ public class ManifestDocumentPeerReviewDomParser implements ManifestDocumentDomP
 		parseSpecialIssue(manifestBuilder);
 
 		boolean openAcessCheckList = manifestXPath.getBooleanValueFromManifestDocument(
-				createConfigurableDataXpath("Did the author select an open access licence type?"));
+				createConfigurableDataXpath("open-access"));
 		manifestBuilder.openAcessCheckList(openAcessCheckList);
 
 		List<String> classifications = manifestXPath
@@ -66,8 +66,11 @@ public class ManifestDocumentPeerReviewDomParser implements ManifestDocumentDomP
 		String decisionDate = manifestXPath.getValueFromManifestDocument(
 				createDateXpath("/article/article-meta/history/date[@date-type = \"accepted\"]"));
 		manifestBuilder.decisionDate(decisionDate);
-
-		parseExportDate(manifestBuilder);
+		
+		
+		String exportDate = manifestXPath.getValueFromManifestDocument(
+				createDateXpath("/article/article-meta/history/date[@date-type = \"exported\"]"));
+		manifestBuilder.exportDate(exportDate);
 
 		String licenseType = manifestXPath
 				.getValueFromManifestDocument("/article/article-meta/permissions/license/license-p");
@@ -97,20 +100,9 @@ public class ManifestDocumentPeerReviewDomParser implements ManifestDocumentDomP
 		return mapping;
 	}
 
-	private void parseExportDate(Builder manifestBuilder) throws RSuiteException {
-		String exportDate = manifestXPath.getValueFromManifestDocument("/article_set/article/@export_date");
-//TODO
-//		int spaceIndex = exportDate.indexOf(' ');
-//		if (spaceIndex > -1) {
-//			exportDate = exportDate.substring(0, spaceIndex);
-//		}
-//
-		manifestBuilder.exportDate(exportDate);
-	}
-
 	private void parseSpecialIssue(Builder manifestBuilder) throws RSuiteException {
 		String specialIssueFlag = manifestXPath
-				.getValueFromManifestDocument(createConfigurableDataXpath("Is this paper for a Special Issue?"));
+				.getValueFromManifestDocument(createConfigurableDataXpath("special-issue"));
 		boolean isSpecialIssue = manifestXPath.convertYesNoToBoolean(specialIssueFlag);
 		manifestBuilder.isSpecialIssue(isSpecialIssue);
 
