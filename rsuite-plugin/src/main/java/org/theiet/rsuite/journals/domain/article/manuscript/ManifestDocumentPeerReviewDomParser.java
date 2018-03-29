@@ -41,7 +41,7 @@ public class ManifestDocumentPeerReviewDomParser implements ManifestDocumentDomP
 		manifestBuilder.manuscriptType(manuscriptType);
 
 		String category = manifestXPath
-				.getValueFromManifestDocument(createConfigurableDataXpath("Category Selections"));
+				.getValueFromManifestDocument(createConfigurableDataXpath("el-category-code"));
 		manifestBuilder.category(category);
 
 		parseSpecialIssue(manifestBuilder);
@@ -51,7 +51,7 @@ public class ManifestDocumentPeerReviewDomParser implements ManifestDocumentDomP
 		manifestBuilder.openAcessCheckList(openAcessCheckList);
 
 		List<String> classifications = manifestXPath
-				.getMultiValueFromManifestDocument(createConfigurableDataXpath("Categories"));
+				.getMultiValueFromManifestDocument(createConfigurableDataXpath("joe-category-code"));
 		manifestBuilder.classifications(classifications);
 
 		if (classifications != null) {
@@ -77,11 +77,11 @@ public class ManifestDocumentPeerReviewDomParser implements ManifestDocumentDomP
 		manifestBuilder.licenseType(licenseType);
 
 		boolean supplementaryMaterials = manifestXPath.getBooleanValueFromManifestDocument(
-				createConfigurableDataXpath("Are you including supplementary material with your submission?"));
+				createConfigurableDataXpath("supplementary-material"));
 		manifestBuilder.supplementaryMaterials(supplementaryMaterials);
 
 		String submissionType = manifestXPath.getValueFromManifestDocument(
-				createConfigurableDataXpath("Was this a direct submission or a transfer?"));
+				createConfigurableDataXpath("joe-direct-transfer"));
 		manifestBuilder.submissionType(submissionType);
 
 		return manifestBuilder.build();
@@ -108,7 +108,7 @@ public class ManifestDocumentPeerReviewDomParser implements ManifestDocumentDomP
 
 		if (isSpecialIssue) {
 			String specialIssueTitle = manifestXPath.getValueFromManifestDocument(
-					createConfigurableDataXpath("Please enter the title of the Special Issue:"));
+					createConfigurableDataXpath("special-issue-title"));
 			manifestBuilder.specialIssueTitle(specialIssueTitle);
 		}
 	}
