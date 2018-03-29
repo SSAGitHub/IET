@@ -45,8 +45,6 @@ public class TempFolderPendingCleanUp {
 	}
 
 	public void completeTempFolderCleanUp() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hhmmss");
-		System.setProperty("current.date", dateFormat.format(new Date()));
 
 		logger.info("TempFolderPendingCleanUp Starting :" + dtNow.toString());
 

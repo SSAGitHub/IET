@@ -44,9 +44,7 @@ public class CleanTrashFolder {
 	}
 
 	public void cleanUpTrashFolder() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hhmmss");
-		System.setProperty("current.date", dateFormat.format(new Date()));
-
+	
 		logger.info("CleanTrashFolder Starting :" + dtNow.toString());
 
 		try {
