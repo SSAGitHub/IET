@@ -63,7 +63,7 @@ public class ArticleMetadataFields {
     
     static final String LMD_FIELD_DISPLAY_ARTICLE_NOTES_ICON = "display_article_notes_icon";
     
-    static final String LMD_FIELD_CATEGORY_CODE = "category_code";
+    static final String LMD_FIELD_CATEGORY_CODE = "	";
     
     static final String LMD_FIELD_JOURNAL_CODE = "journal_code";
     

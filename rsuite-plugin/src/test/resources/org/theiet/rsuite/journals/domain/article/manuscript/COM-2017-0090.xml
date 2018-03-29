@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance" article-type="additional-item"
+  dtd-version="1.0" xml:lang="en">
+  <journal-meta>
+    <journal_id journal-id-type="publisher-id">IET-com</journal_id>
+    <journal-title-group>
+      <journal-title>IET Communications</journal-title>
+      <abbrev-journal-title>com</abbrev-journal-title>
+    </journal-title-group>
+    <issn pub-type="epub">1751-8636</issn>
+    <publisher>
+      <publisher-name>The Institution of Engineering and Technology</publisher-name>
+    </publisher>
+  </journal-meta>
+  <article-meta>
+    <article-id pub-id-type="doi">10.1049/iet-com-2017-0090</article-id>
+    <article-id pub-id-type="publisher-id">IET-COM-2017-0090</article-id>
+    <article-id pub-id-type="manuscript">COM-2017-0090</article-id>
+    <title-group>
+      <article-title>Test2- RC- May 11th</article-title>
+    </title-group>
+    <contrib-group>
+      <contrib contrib-type="author" corresp="yes">
+        <name name-style="western">
+          <surname>Lane</surname>
+          <given-name>Lauren (au2)</given-name>
+        </name>
+        <email>lane@iet-review.rivervalleytechnologies.com</email>
+        <aff id="af1">
+          <institution>riv</institution>
+          <ringgold_id/>
+          <addr-line>2324</addr-line>
+          <country>American Samoa</country>
+        </aff>
+      </contrib>
+    </contrib-group>
+    <history>
+      <date date-type="received">
+        <day>11</day>
+        <month>05</month>
+        <year>2017</year>
+      </date>
+      <date date-type="accepted">
+        <day>03</day>
+        <month>11</month>
+        <year>2017</year>
+      </date>
+    </history>
+    <permissions>
+      <license license-type="open-access">
+        <license-p>CC-BY</license-p>
+      </license>
+    </permissions>
+    <abstract>
+      <p>Test2- RC- May 11th</p>
+    </abstract>
+    <funding-group>
+      <award-group>
+        <funding-source/>
+        <award-id/>
+      </award-group>
+    </funding-group>
+    <configurable_data_fields>
+      <custom_fields cd_code="Additional info"
+        cd_name="Has your paper previously been rejected from another journal?" cd_value="No"/>
+      <custom_fields cd_code="Additional info"
+        cd_name="Is this paper currently under consideration in another journal?" cd_value="No"/>
+      <custom_fields cd_code="Additional info"
+        cd_name="Is your paper an expansion of a conference paper?" cd_value="No"/>
+      <custom_fields cd_code="Check list" cd_name="Plagarism report" cd_value="Checked"/>
+      <custom_fields cd_code="Check list" cd_name="Author details sufficient" cd_value="Checked"/>
+      <custom_fields cd_code="Check list"
+        cd_name="Article length, formatting and English sufficient " cd_value="Checked"/>
+      <custom_fields cd_code="Check list" cd_name="Attachments included are appropriate"
+        cd_value="Checked"/>
+      <custom_fields cd_code="Check list" cd_name="Additional info included is appropriate"
+        cd_value="Checked"/>
+      <custom_fields cd_code="Check list" cd_name="Cover letter questions" cd_value="Checked"/>
+      <custom_fields cd_code="Check list" cd_name="Article type correct" cd_value="Checked"/>
+      <custom_fields cd_code="Check list" cd_name="Does the article need unsubmitting" cd_value="No"/>
+      <custom_fields cd_code="Check list" cd_name="Was this a direct submission or a transfer?"
+        cd_value="Direct"/>
+      <custom_fields cd_code="Editor Prescreening"
+        cd_name="Is the paper within the scope of the journal?" cd_value="Yes"/>
+      <custom_fields cd_code="Editor Prescreening"
+        cd_name="Is the paper of sufficient quality to be sent for peer review?" cd_value="Yes"/>
+      <custom_fields cd_code="AE Prescreening"
+        cd_name="Is the paper within the scope of the journal?" cd_value="Yes"/>
+      <custom_fields cd_code="AE Prescreening"
+        cd_name="Is the paper of sufficient quality to be sent for peer review?" cd_value="Yes"/>
+      <custom_fields cd_code="AE Recommendation" cd_name="Recommendation*" cd_value="Accept"/>
+      <custom_fields cd_code="AE Recommendation" cd_name="Comment to the editor" cd_value=""/>
+      <custom_fields cd_code="AE Recommendation" cd_name="Comments to the author*" cd_value=""/>
+      <custom_fields cd_code="AE Recommendation" cd_name="Recommendation*" cd_value="Accept"/>
+      <custom_fields cd_code="AE Recommendation" cd_name="Comment to the editor" cd_value=""/>
+      <custom_fields cd_code="AE Recommendation" cd_name="Comments to the author*" cd_value=""/>
+      <custom_fields cd_code="Editor Decision" cd_name="Decision:" cd_value="Accept"/>
+      <custom_fields cd_code="Editor Decision" cd_name="Comments to the author"
+        cd_value="the paper can be accepted as it stands"/>
+      <custom_fields cd_code="Editor Decision"
+        cd_name="This paper should be considered for the annual IET Premium Award for best paper in this journal"
+        cd_value="Yes"/>
+      <custom_fields cd_code="Accept" cd_name="Instructions to production" cd_value=""/>
+      <custom_fields cd_code="License Check"
+        cd_name="Did the author select an open access licence type?" cd_value="Yes"/>
+      <custom_fields cd_code="License Check" cd_name="Which type of CC-BY Licence was chosen?"
+        cd_value="CC-BY"/>
+      <custom_fields cd_code="Production" cd_name="Source Files" cd_value="Checked"/>
+      <custom_fields cd_code="Production" cd_name="ReView PDF" cd_value="Checked"/>
+    </configurable_data_fields>
+  </article-meta>
+</article>
