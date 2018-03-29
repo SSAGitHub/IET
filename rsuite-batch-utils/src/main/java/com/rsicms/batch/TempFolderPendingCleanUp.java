@@ -9,7 +9,6 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
-import org.joda.time.Days;
 
 
 
@@ -156,18 +155,8 @@ public class TempFolderPendingCleanUp {
 
 				if (fWorkFlowFolder.isDirectory()) {
 					logger.info("Processing WorkFlow Directory:" + fWorkFlowFolder.getName());
-
-				
-					File WorkFlowFolderToRemove = new File(fWorkFlowFolder,	FILE_TO_BE_REMOVED);
-					if (WorkFlowFolderToRemove.exists()) {
-
-						if (deleteFiles) {
-							logger.info("WorkFlow Directory " + fWorkFlowFolder.getAbsolutePath() + " is flagged for deletion and will be deleted");
-							FileUtils.deleteDirectory(fWorkFlowFolder);
-						} else {
-							logger.info("** SIMULATION MODE ** WorkFlow Directory " + fWorkFlowFolder.getAbsolutePath() + " is flagged for deletion and will be deleted");
-						}
-					}
+					File workFlowFolderToRemove = new File(fWorkFlowFolder,	FILE_TO_BE_REMOVED);
+					removeFolderIfExist(fWorkFlowFolder, workFlowFolderToRemove);
 				}
 			}
 		} 
@@ -175,6 +164,18 @@ public class TempFolderPendingCleanUp {
 			logger.error(ex.toString());
 		}
 
+	}
+
+	private void removeFolderIfExist(File fWorkFlowFolder, File WorkFlowFolderToRemove) throws IOException {
+		if (WorkFlowFolderToRemove.exists()) {
+
+			if (deleteFiles) {
+				logger.info("WorkFlow Directory " + fWorkFlowFolder.getAbsolutePath() + " is flagged for deletion and will be deleted");
+				FileUtils.deleteDirectory(fWorkFlowFolder);
+			} else {
+				logger.info("** SIMULATION MODE ** WorkFlow Directory " + fWorkFlowFolder.getAbsolutePath() + " is flagged for deletion and will be deleted");
+			}
+		}
 	}
 
 }

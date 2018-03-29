@@ -553,6 +553,6 @@ public final class WorkflowUtils implements IetConstants{
 			}
 		}
 		
-		return "";
+		return null;
 	}
 }
