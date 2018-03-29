@@ -10,6 +10,14 @@ def roles = "editor,EditorialAssistant,ProductionController"
 def pass = "test"
 def email = "test.the.iet@gmail.com"
 
+println("baseDir=  ${baseDir}");
+def baseDir = "";
+try {
+    baseDir = "${baseDir}";
+} catch (e) {
+    baseDir = System.getenv("RSUITE_FTP_DIR");
+}
+
 
 def setUpFtpProperties(userId, targetFolder){
 	def properties = [
@@ -25,7 +33,7 @@ def setUpFtpProperties(userId, targetFolder){
 
 def setUpLocalProperties(userId, targetFolder){    
     def properties = [
-        "deliveryPath" :targetFolder,
+        "deliveryPath" :baseDir + targetFolder,
         "contact.first.name" : "Esteban",
         "type" : "local"
     ];
@@ -41,9 +49,10 @@ rsuite.login();
     util.upsertUser("IetTvProductionUser", pass, "IetTv Production User", email, "IetTvProduction");
     util.upsertUser("IetTvCrossRefUser", pass, "IetTv CrossRef User", email, "IetTvCrossRef");
     
-    setUpFtpProperties("IetTvInspecUser", "test/iettv_inspec");
-    setUpLocalProperties("IetTvProductionUser", "/tmp/iettv_production")
-    setUpLocalProperties("IetTvCrossRefUser", "/tmp/iettv_crossref")
+//    setUpFtpProperties("IetTvInspecUser", "test/iettv_inspec");
+    setUpLocalProperties("IetTvInspecUser", "/IETtv/iettv_inspec");
+    setUpLocalProperties("IetTvProductionUser", "/IETtv/iettv_production")
+    setUpLocalProperties("IetTvCrossRefUser", "/IETtv/iettv_crossref")
 
 rsuite.logout();
 

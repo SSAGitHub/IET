@@ -7,7 +7,10 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.sql.Connection;
@@ -28,7 +31,6 @@ public class RetroWorkFlowCleanUp {
 
 	//MySQL stuff
 	private Connection connect = null;
-    private PreparedStatement preparedStatement = null;
 
     
 	public static void main(String args[]) throws Exception, SQLException {
@@ -78,8 +80,9 @@ public class RetroWorkFlowCleanUp {
 	        Statement statement = connect.createStatement();
 	        ResultSet resultSet = statement.executeQuery("select ID_ from jbpm_processinstance WHERE END_ is not null");
             processCompleteWorkFlowInstances(resultSet);
-
-
+            
+            resultSet.close();
+            statement.close();
 		
 		}
 		catch (ClassNotFoundException e) {
@@ -100,12 +103,26 @@ public class RetroWorkFlowCleanUp {
             String ID_ = resultSet.getString("ID_");
             logger.info("ID_: " + ID_);
         
-            preparedStatement = connect.prepareStatement("select STRINGVALUE_ from jbpm_variableinstance where PROCESSINSTANCE_= ? and NAME_ = 'rsuiteWorkingFolderPath' ");
-            preparedStatement.setString(1,ID_ );
-            ResultSet rsWorkFileRootName = preparedStatement.executeQuery();
+            PreparedStatement preparedStatement1 = connect.prepareStatement("select STRINGVALUE_ from jbpm_variableinstance where PROCESSINSTANCE_= ? and NAME_ = 'rsuiteWorkingFolderPath' ");
+            preparedStatement1.setString(1,ID_ );
+            ResultSet rsWorkFileRootName = preparedStatement1.executeQuery();
 
             processCompletedWorkFlowFile(rsWorkFileRootName);
             
+            rsWorkFileRootName.close();
+            preparedStatement1.close();
+
+            logger.info("Processing tempfolder");
+
+            PreparedStatement preparedStatement2 = connect.prepareStatement("select BYTEARRAYVALUE_ from jbpm_variableinstance where PROCESSINSTANCE_= ? and NAME_ = 'tempFolder' ");
+            preparedStatement2.setString(1,ID_ );
+            ResultSet rsByteArray = preparedStatement2.executeQuery();
+            
+            processCompletedWorkFlowFileTempFolder(rsByteArray);
+            
+            rsByteArray.close();
+            preparedStatement2.close();
+                       
         }
     }
 
@@ -117,9 +134,9 @@ public class RetroWorkFlowCleanUp {
             logger.info("rsuiteWorkingFolderPath=" + workFlowFileLocationStr);
             
 	    	int start = workflowDataDir.concat(File.separator).length(); 
+	    	start++;
 	     	// find the next file separator which will be the absolute path to the workflow root directory
-	    	int end = workFlowFileLocationStr.indexOf(File.separator, start);
-
+	    	int end = workFlowFileLocationStr.indexOf(File.separator, ++start);
 	    	//chop the chunk out that represents the workflow root directory
 	    	String workFlowRootDirStr = workFlowFileLocationStr.substring(0, end);
 
@@ -147,5 +164,67 @@ public class RetroWorkFlowCleanUp {
 	    	}
 	    }
     }
+	
+	private void processCompletedWorkFlowFileTempFolder(ResultSet rsByteArrayValue) throws SQLException {
+		
+		logger.info("starting processCompletedWorkFlowFileTempFolder"); 
+		
+        while (rsByteArrayValue.next()) {
+        	
+            int byteArrayValue = rsByteArrayValue.getInt("BYTEARRAYVALUE_");
+            
+            logger.info("we have a byteArrayValue=" + byteArrayValue);
+            PreparedStatement preparedStatement = connect.prepareStatement("select BYTES_ from jbpm_byteblock where PROCESSFILE_=?");
+            preparedStatement.setInt(1,byteArrayValue );
+            ResultSet rsBlob = preparedStatement.executeQuery();
+
+            while (rsBlob.next())
+            {
+	            java.sql.Blob Blob = rsBlob.getBlob("BYTES_");
+	            
+	            int blobLength = (int) Blob.length();  
+	            byte[] blobAsBytes = Blob.getBytes(1, blobLength);
+	            Blob.free();
+	            
+	            File workFlowFile=null;
+	            
+	            try
+	            {
+	                ByteArrayInputStream bis = new ByteArrayInputStream(blobAsBytes);
+	                ObjectInput in = new ObjectInputStream(bis);
+	                workFlowFile = (File) in.readObject();
+	                
+	                logger.info("Found workflow file " + workFlowFile.getAbsolutePath());
+	                
+	                if (workFlowFile.exists()) {
+	   	    			if (this.simulationMode) {
+	   		                logger.info("SIMULATION MODE  -creating marker file in " + workFlowFile.getAbsolutePath());
+	   	    			}
+	   	    			else {
+	   	    				logger.info("creating marker file in " + workFlowFile.getAbsolutePath());
+
+	   	    				File markerFile = new File(workFlowFile, FILE_TO_BE_REMOVED);
+	   	    				markerFile.createNewFile();
+	   	    			}
+	                }
+	                else
+	                {
+   	    				logger.info("serialised file " + workFlowFile.getAbsolutePath() + " not found");
+	                }
+	                
+	            }   	
+	            catch (Exception ex)
+	            {
+	    			logger.error(ex, ex);
+	            }
+	            
+
+            }
+            
+            rsBlob.close();
+            preparedStatement.close();
+	    }
+    }
+
 }
 	

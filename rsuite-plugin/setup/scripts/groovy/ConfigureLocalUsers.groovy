@@ -2,6 +2,13 @@ import com.reallysi.rsuite.client.api.*
 import com.rsicms.groovy.utils.*
 
 // -----------------------------------------------------------------------
+println("baseDir=  ${baseDir}");
+def baseDir = "";
+try {
+    baseDir = "${baseDir}";
+} catch (e) {
+    baseDir = System.getenv("RSUITE_FTP_DIR");
+}
 
 def util = new DeployUserRolesUtils(rsuite);
 
@@ -18,6 +25,15 @@ def setUpFtpProperties(userId, targetFolder){
 	rsuite.setUserProperties(userId, false, properties);
 }	
 
+def setUpLocalProperties(userId, targetFolder){    
+    def properties = [
+        "deliveryPath" :baseDir + targetFolder,
+        "contact.first.name" : "Mark",
+        "type" : "local"
+    ];
+	rsuite.setUserProperties(userId, false, properties);
+}
+
 rsuite.login();
 	util.upsertUser("BookEditorialAssistant", pass, "Book Editorial Assistant", email, "BookEditorialAssistant");
 	util.upsertUser("BookProductionController", pass, "Book Production Controller", email, "BookProductionController");	
@@ -28,8 +44,12 @@ rsuite.login();
 	util.upsertUser("BookPrinter", pass, "Book Printer", email, "BookPrinter");	
 	
 	util.upsertUser("salesGuest", "sales2014", "Sales Guest", email, "RSuiteAdministrator");
-	setUpFtpProperties("BookTypesetter", "test/book");
-	setUpFtpProperties("BookPrinter", "test/book_printer");
+
+//	setUpFtpProperties("BookTypesetter", "test/book");
+//	setUpFtpProperties("BookPrinter", "test/book_printer");
+	
+	setUpLocalProperties("BookTypesetter", "/BookTypesetter");
+	setUpLocalProperties("BookPrinter", "/BookPrinter");
 	
 rsuite.logout();
 

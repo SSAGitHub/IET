@@ -11,23 +11,20 @@ import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 
-public class WorkFlowCleanUp {
-	private Logger logger = Logger.getLogger(WorkFlowCleanUp.class);
+public class CleanTrashFolder {
 
+	private Logger logger = Logger.getLogger(CleanTrashFolder.class);
 	private int daysToKeep;
-	
 	private boolean deleteFiles;
-
 	private File fWorkFlowTrashFolder;
-
 	private DateTime dtNow = new DateTime();
 
-	public WorkFlowCleanUp(Logger logger, String fWorkFlowTrashFolder, int daysToKeep, boolean deleteFiles) {
+	public CleanTrashFolder(Logger logger, String fWorkFlowTrashFolder, int daysToKeep, boolean deleteFiles) {
 		this(fWorkFlowTrashFolder, daysToKeep, deleteFiles);
 		this.logger = logger;
 	}
 
-	public WorkFlowCleanUp(String fWorkFlowTrashFolder, int daysToKeep, boolean deleteFiles) {
+	public CleanTrashFolder(String fWorkFlowTrashFolder, int daysToKeep, boolean deleteFiles) {
 		this.fWorkFlowTrashFolder = new File(fWorkFlowTrashFolder);
 		this.daysToKeep = daysToKeep;
 		this.deleteFiles = deleteFiles;
@@ -35,26 +32,24 @@ public class WorkFlowCleanUp {
 
 	public static void main(String args[]) throws Exception {
 
-		PropertiesConfiguration config = new PropertiesConfiguration("WorkFlowCleanUp.properties");
+		PropertiesConfiguration config = new PropertiesConfiguration("CleanTrashFolder.properties");
 
 		int daysToKeep = config.getInt("days_to_keep");
-		String workflowDir = (String) config.getString("workflow_dir");
+		String workFlowTrashFolder = (String) config.getString("trashfolder_dir");
 		boolean deleteFiles = config.getBoolean("delete_files");
 
-		WorkFlowCleanUp workFlowCleanUp = new WorkFlowCleanUp(workflowDir, daysToKeep, deleteFiles);
-		workFlowCleanUp.cleanUpWorkflowFolders();
+		CleanTrashFolder cleanTrashFolder = new CleanTrashFolder(workFlowTrashFolder, daysToKeep, deleteFiles);
+		cleanTrashFolder.cleanUpTrashFolder();
 
 	}
 
-	public void cleanUpWorkflowFolders() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hhmmss");
-		System.setProperty("current.date", dateFormat.format(new Date()));
-
-		logger.info("WorkFlowCleanUp Starting :" + dtNow.toString());
+	public void cleanUpTrashFolder() {
+	
+		logger.info("CleanTrashFolder Starting :" + dtNow.toString());
 
 		try {
 			logger.info("Days to keep=" + daysToKeep);
-			logger.info("Workflow Directory=" + fWorkFlowTrashFolder);
+			logger.info("Workflow Trash Directory=" + fWorkFlowTrashFolder);
 			logger.info("delete files=" + deleteFiles);
 
 			listFilesForYear();
@@ -64,7 +59,7 @@ public class WorkFlowCleanUp {
 		}
 
 		DateTime dtEnd = new DateTime();
-		logger.info("WorkFlowCleanUp Completed :" + dtEnd.toString());
+		logger.info("CleanTrashFolder Completed :" + dtEnd.toString());
 	}
 
 	public void listFilesForYear() throws IOException {
@@ -72,23 +67,27 @@ public class WorkFlowCleanUp {
 		for (File fYearFolder : fWorkFlowTrashFolder.listFiles()) {
 			if (fYearFolder.isDirectory()) {
 				logger.info("Processing Year:" + fYearFolder.getName());
+
 				listFilesForMonth(fYearFolder);
-
-				// year directory empty - remove it
-				File[] FilesInDirectory = fYearFolder.listFiles();
-
-				if (FilesInDirectory.length == 0) {
-					if (deleteFiles) {
-						FileUtils.deleteDirectory(fYearFolder);
-						logger.info("Year Directory " + fYearFolder.getName() + " is empty and will be deleted");
-					} else {
-						logger.info("** SIMULATION MODE ** Directory would be deleted");
-					}
-				}
+				deleteYearFolderIfEmpty(fYearFolder);
 			}
 		}
 	}
 
+	private void deleteYearFolderIfEmpty(File fYearFolder) throws IOException {
+
+		File[] FilesInDirectory = fYearFolder.listFiles();
+
+		if (FilesInDirectory.length == 0) {
+			if (deleteFiles) {
+				FileUtils.deleteDirectory(fYearFolder);
+				logger.info("Year Directory " + fYearFolder.getName() + " is empty and will be deleted");
+			} else {
+				logger.info("** SIMULATION MODE ** Directory would be deleted");
+			}
+		}
+	}
+	
 	public void listFilesForMonth(File fYearFolder) throws IOException {
 
 		for (File fMonthFolder : fYearFolder.listFiles()) {
@@ -100,14 +99,15 @@ public class WorkFlowCleanUp {
 
 	private void processMonthFolder(File fMonthFolder) throws IOException {
 		logger.info("Processing Month:" + fMonthFolder.getName());
-		listFilesForDay(fMonthFolder);
 
-		// month directory empty - remove it
-		File[] FilesInDirectory = fMonthFolder.listFiles();
-		deleteMonthFolder(fMonthFolder, FilesInDirectory);
+		listFilesForDay(fMonthFolder);
+		deleteMonthFolderIfEmpty(fMonthFolder);
 	}
 
-	private void deleteMonthFolder(File fMonthFolder, File[] FilesInDirectory) throws IOException {
+	private void deleteMonthFolderIfEmpty(File fMonthFolder) throws IOException {
+		
+		File[] FilesInDirectory = fMonthFolder.listFiles();
+
 		if (FilesInDirectory.length == 0) {
 			if (deleteFiles) {
 				FileUtils.deleteDirectory(fMonthFolder);
@@ -125,12 +125,8 @@ public class WorkFlowCleanUp {
 				logger.info("Processing Day Directories:" + fDayFolder.getName());
 
 				try {
-					int iYear = Integer.parseInt(fDayFolder.getParentFile().getParentFile().getName());
-					int iMonth = Integer.parseInt(fDayFolder.getParentFile().getName());
-					int iDay = Integer.parseInt(fDayFolder.getName());
 
-					// construct localdate from directory name
-					DateTime dtDirectory = new DateTime(iYear, iMonth, iDay, 0, 0, 0);
+					DateTime dtDirectory = constructDateFromLocalFolder(fDayFolder);
 					int age = Days.daysBetween(dtDirectory.withTimeAtStartOfDay(), dtNow.withTimeAtStartOfDay())
 							.getDays();
 
@@ -147,6 +143,15 @@ public class WorkFlowCleanUp {
 				}
 
 			}
-		}
+		} 
+	}
+	
+	private DateTime constructDateFromLocalFolder(File fDayFolder) {
+		
+		int iYear = Integer.parseInt(fDayFolder.getParentFile().getParentFile().getName());
+		int iMonth = Integer.parseInt(fDayFolder.getParentFile().getName());
+		int iDay = Integer.parseInt(fDayFolder.getName());
+
+		return new DateTime(iYear, iMonth, iDay, 0, 0, 0);
 	}
 }

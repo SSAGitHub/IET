@@ -10,6 +10,13 @@ def roles = "editor,EditorialAssistant,ProductionController"
 def pass = "test"
 def email = "test.the.iet@gmail.com"
 
+println("baseDir=  ${baseDir}");
+def baseDir = "";
+try {
+    baseDir = "${baseDir}";
+} catch (e) {
+    baseDir = System.getenv("RSUITE_FTP_DIR");
+}
 
 def setUpFtpProperties(userId, targetFolder){
 	def properties = [
@@ -23,12 +30,23 @@ def setUpFtpProperties(userId, targetFolder){
 	rsuite.setUserProperties(userId, false, properties);
 }	
 
+def setUpLocalProperties(userId, targetFolder){    
+    def properties = [
+        "deliveryPath" :baseDir + targetFolder,
+        "contact.first.name" : "Mark",
+        "type" : "local"
+    ];
+	rsuite.setUserProperties(userId, false, properties);
+}
+
 rsuite.login();
 
 	util.upsertUser("OnixAdministrator", pass, "Onix Administrator", email, "OnixAdministrator");
 	util.upsertUser("testOnixFtpUser", pass, "Onix Book Vendor", email, "OnixBookVendor");
 	
-	setUpFtpProperties("testOnixFtpUser", "test/onix");
+//	setUpFtpProperties("testOnixFtpUser", "/onix");
+	setUpLocalProperties("testOnixFtpUser", "/onix");
+	
 rsuite.logout();
 
 //===========================================================================

@@ -12,3 +12,4 @@
 **/rsuite-batch-utils/logs
 **/rsuite-batch-utils/setup/config/*.properties
 **/rsuite-batch-utils/setup/cmd/*.cmd
+**/rsuite-plugin/rsuite-git.token

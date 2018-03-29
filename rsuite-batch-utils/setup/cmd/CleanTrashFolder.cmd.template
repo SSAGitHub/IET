@@ -1,0 +1,1 @@
+"C:\Program Files\Java\jre7\bin\java.exe" -cp ../bin/WorkFlowUtils.jar com.rsicms.batch.CleanTrashFolder

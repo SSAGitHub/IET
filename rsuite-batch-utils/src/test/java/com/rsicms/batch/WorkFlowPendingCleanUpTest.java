@@ -2,23 +2,20 @@ package com.rsicms.batch;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.eq;
-//import static junit.framework.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.junit.*;
 import org.junit.rules.TemporaryFolder;
 
-public class WorkFlowPendingDeleteCleanUpTest {
+public class WorkFlowPendingCleanUpTest {
 
 
 	@Rule
@@ -51,18 +48,16 @@ public class WorkFlowPendingDeleteCleanUpTest {
 		
 		File markerFile = new File(WorkflowFolderToBeRemoved, FILE_TO_BE_REMOVED);
 		markerFile.createNewFile();
-
 	}
  
-	
 	@Test
 	public void do_not_remove_folder_in_simulation_mode() throws IOException {
 		
 		Logger logger = mock(Logger.class);
-		boolean simulationMode = true;
+		boolean delete_files = false;
 
-		WorkFlowPendingDeleteCleanUp WorkFlowPendingDeleteCleanUp = new WorkFlowPendingDeleteCleanUp(logger, TrashFolder.getAbsolutePath(),simulationMode);
-		WorkFlowPendingDeleteCleanUp.completeWorkFlowCleanUp();
+		WorkFlowPendingCleanUp workFlowCLeanUp = new WorkFlowPendingCleanUp(logger, TrashFolder.getAbsolutePath(),delete_files);
+		workFlowCLeanUp.completeWorkFlowCleanUp();
 
 		assertEquals(true, WorkflowFolderToBeRemoved.exists());
 		assertEquals(true, WorkflowFolderNotToBeRemoved.exists());
@@ -74,21 +69,14 @@ public class WorkFlowPendingDeleteCleanUpTest {
 	public void do_remove_folder_in_live_mode() throws IOException {
 		
 		Logger logger = mock(Logger.class);
-		boolean simulationMode = false;
+		boolean delete_files = true;
 
-		WorkFlowPendingDeleteCleanUp WorkFlowPendingDeleteCleanUp = new WorkFlowPendingDeleteCleanUp(logger, TrashFolder.getAbsolutePath(),simulationMode);
-		WorkFlowPendingDeleteCleanUp.completeWorkFlowCleanUp();
+		WorkFlowPendingCleanUp workFlowCLeanUp = new WorkFlowPendingCleanUp(logger, TrashFolder.getAbsolutePath(),delete_files);
+		workFlowCLeanUp.completeWorkFlowCleanUp();
 
 		assertEquals(false, WorkflowFolderToBeRemoved.exists());
 		assertEquals(true, WorkflowFolderNotToBeRemoved.exists());
 
 //		verify(logger, times(1)).info(eq("Simulation mode " + WorkflowFolderToBeRemoved + " is flagged for removal and would be removed"));
 	}
-
-	
-	
-	
-	
-	
-	
 }
