@@ -24,7 +24,6 @@ import org.theiet.rsuite.utils.IetUtils;
 
 import com.reallysi.rsuite.api.*;
 import com.reallysi.rsuite.api.workflow.WorkflowExecutionContext;
-import com.reallysi.rsuite.service.XmlApiManager;
 import com.rsicms.projectshelper.workflow.actionhandlers.AbstractActionHandler;
 import com.rsicms.rsuite.helpers.upload.*;
 
@@ -40,8 +39,8 @@ public class ManuscriptCentralIngestion extends AbstractActionHandler implements
 		User user = getSystemUser();
 		
 		String pId = context.getProcessInstanceId();
-				
-		File rootFolder = context.getFileWorkflowObject().getFile().listFiles()[0];
+		File workflowFolder =  context.getFileWorkflowObject().getFile();
+		File rootFolder = getArticleIngestionRootFolder(context, workflowFolder);
 		
 		log.info("execute: Processing folder:  " + rootFolder.getAbsolutePath());
 		
@@ -52,6 +51,8 @@ public class ManuscriptCentralIngestion extends AbstractActionHandler implements
 		
 		ManifestDocument manifestDocument = obtainManifestDocument(context,
 				manifestFile);
+		
+		log.info("Manifest type: " + manifestDocument.getManifestType());
 		
 		String articleId = obtainArticleIdFromManifest(context,
 				manifestDocument);
@@ -72,6 +73,15 @@ public class ManuscriptCentralIngestion extends AbstractActionHandler implements
 		log.info("Deliver to Digital Library");
 		PublishOnAcceptance publishOnAcceptance = new PublishOnAcceptance(context, user);
 		publishOnAcceptance.publishOnAcceptance(article, manuscriptPackage);
+	}
+
+	private File getArticleIngestionRootFolder(WorkflowExecutionContext context, File workflowFolder) {
+		
+		if (workflowFolder.list().length > 0 && workflowFolder.getName().equals(workflowFolder.list()[0])) {
+			return workflowFolder.listFiles()[0];
+		}
+		
+		return workflowFolder;
 	}
 
 	private String obtainArticleIdFromManifest(
@@ -122,11 +132,13 @@ public class ManuscriptCentralIngestion extends AbstractActionHandler implements
 	private void validateWorkflowTempFolderStructure(WorkflowExecutionContext context, File rootFolder)
 			throws RSuiteException {
 		String zipFileName = context.getVariable("rsuiteSourceFilePath");
-		File tempDir = new File(rootFolder.getParentFile().getParentFile().getParent(), "temp");
+		File workflowRootFolder = rootFolder.getParentFile().getParentFile().getParentFile();
+		File tempDir = new File(workflowRootFolder, "temp");
 		
-		File submittedZipFile = new File(tempDir, zipFileName);
-		if (!submittedZipFile.exists()) {
-			throw new RSuiteException("File " + submittedZipFile.getAbsolutePath() + " not found");			
+		File submittedZipFileS1 = new File(tempDir, zipFileName);
+		File submittedZipFileRV = new File(workflowRootFolder, zipFileName);
+		if (!submittedZipFileS1.exists() && !submittedZipFileRV.exists()) {
+			throw new RSuiteException("File " + submittedZipFileS1.getAbsolutePath() + " not found");			
 		}
 	}
 

@@ -20,7 +20,7 @@ public class ManifestDocumentPeerReviewDomParser implements ManifestDocumentDomP
 
 	@Override
 	public ManifestDocument parseManifestDOM() throws RSuiteException {
-		ManifestDocument.Builder manifestBuilder = new ManifestDocument.Builder();
+		ManifestDocument.Builder manifestBuilder = new ManifestDocument.Builder(ManifestType.RV_VIEW);
 
 		String articleId = manifestXPath
 				.getValueFromManifestDocument("/article/article-meta/article-id[@pub-id-type = \"manuscript\"]");

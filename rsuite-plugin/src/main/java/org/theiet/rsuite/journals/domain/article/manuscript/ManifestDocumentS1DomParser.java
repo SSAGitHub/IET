@@ -19,7 +19,7 @@ public class ManifestDocumentS1DomParser implements ManifestDocumentDomParser {
 
 	@Override
 	public ManifestDocument parseManifestDOM() throws RSuiteException {
-		ManifestDocument.Builder manifestBuilder = new ManifestDocument.Builder();
+		ManifestDocument.Builder manifestBuilder = new ManifestDocument.Builder(ManifestType.S1);
 
 		String articleId = manifestXPath.getValueFromManifestDocument("/article_set/article/@ms_no");
 		manifestBuilder.articleId(articleId);

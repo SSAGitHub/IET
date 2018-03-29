@@ -37,6 +37,8 @@ public class ManifestDocument {
 	private String submissionType;
 
 	private String categoryCodes;
+	
+	private ManifestType manifestType;
 
 	public String getArticleTitle() {
 		return articleTitle;
@@ -108,6 +110,14 @@ public class ManifestDocument {
 	public String getCategoryCodes() {
 		return categoryCodes;
 	}
+	
+	
+
+	public ManifestType getManifestType() {
+		return manifestType;
+	}
+
+
 
 	public static class Builder {
 		private String articleId;
@@ -126,6 +136,11 @@ public class ManifestDocument {
 		private String licenseType;
 		private String submissionType;
 		private String categoryCodes;
+		private ManifestType manifestType;
+		
+		public Builder(ManifestType manifestType) {
+			this.manifestType = manifestType;
+		}
 
 		public Builder articleId(String articleId) {
 			this.articleId = articleId;
@@ -169,6 +184,11 @@ public class ManifestDocument {
 
 		public Builder category(String category) {
 			this.category = category;
+			return this;
+		}
+		
+		public Builder manifestType(ManifestType manifestType) {
+			this.manifestType = manifestType;
 			return this;
 		}
 
@@ -229,5 +249,6 @@ public class ManifestDocument {
 		this.licenseType = builder.licenseType;
 		this.submissionType = builder.submissionType;
 		this.categoryCodes = builder.categoryCodes;
+		this.manifestType = builder.manifestType;
 	}
 }
