@@ -177,8 +177,27 @@
         </article>
     </xsl:template>
 
+   <xsl:variable name="journalC">
+	<xsl:choose>
+		<xsl:when test="$should-add-iet-prefix = 'true'">
+			<xsl:choose>
+				<xsl:when test="$iet-prefix = ''">
+					<xsl:value-of select="$journalCode" />
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text></xsl:text>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:value-of select="$journalCode" />
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:variable>
+    
+
     <xsl:template match="journal">           
-        <journal-id journal-id-type="publisher-id"><xsl:value-of select="concat($prefix, $journalCode)"
+        <journal-id journal-id-type="publisher-id"><xsl:value-of select="concat($prefix, $journalC)"
             /></journal-id>
         <journal-title-group>
             <journal-title>
@@ -221,10 +240,27 @@
         <xsl:variable name="normalizedArticleId" select="replace($articleId, '\-', '.')"/>
         <xsl:variable name="publisherIdInitial" select="concat($prefix, replace($shortArticleId, '\-', '.'))"/>
         <xsl:variable name="publisherId" select="replace($publisherIdInitial,'\.SI', '' )"/>
+
+	<xsl:variable name="publisher">
+		<xsl:choose>
+			<xsl:when test="$should-add-iet-prefix = 'true'">
+				<xsl:choose>
+					<xsl:when test="$iet-prefix = ''">
+						<xsl:value-of select="$publisherId" />
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="replace($publisherId, $journalCode, '')" />
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$publisherId" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
         
-        
-        <article-id pub-id-type="doi">10.1049/<xsl:value-of select="lower-case($publisherId)"/></article-id>
-        <article-id pub-id-type="publisher-id"><xsl:value-of select="$publisherId"/></article-id>
+        <article-id pub-id-type="doi">10.1049/<xsl:value-of select="lower-case($publisher)"/></article-id>
+        <article-id pub-id-type="publisher-id"><xsl:value-of select="$publisher"/></article-id>
         <article-id pub-id-type="manuscript"><xsl:value-of select="$normalizedArticleId"/></article-id>
     </xsl:template>
     
