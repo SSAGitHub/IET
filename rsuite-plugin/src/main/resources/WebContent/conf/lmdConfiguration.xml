@@ -434,7 +434,10 @@
       <displayName>Workflow Generation Type</displayName>
       <input-type>select</input-type>
       <data-type>journalGenerationTypeDataType</data-type>
-    </lmd-configuration>      
+    </lmd-configuration> 
+    <lmd-configuration name="journal_abbrv_title">
+      <displayName>Journal Abbreviated Title</displayName>
+    </lmd-configuration>     
   </lmd-group>
   <lmd-group name="article" columns="3" sort="no">
     <lmd-configuration name="article_title">

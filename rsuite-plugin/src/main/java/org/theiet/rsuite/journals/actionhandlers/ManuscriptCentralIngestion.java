@@ -71,7 +71,7 @@ public class ManuscriptCentralIngestion extends AbstractActionHandler implements
 		
 		ArticlePubtrackManager.createArticleProcess(context, user, log, article);
 		log.info("Deliver to Digital Library");
-		PublishOnAcceptance publishOnAcceptance = new PublishOnAcceptance(context, user);
+		PublishOnAcceptance publishOnAcceptance = new PublishOnAcceptance(context, user, log, manifestDocument.getManifestType());
 		publishOnAcceptance.publishOnAcceptance(article, manuscriptPackage);
 	}
 

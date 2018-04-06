@@ -7,9 +7,11 @@ buildscript {
 				password ietMavenPassword
 			}
 		}
+		
+		jcenter()
 
 	}
-	dependencies { classpath 'com.rsicms:rsuite-projects-deploy-gradle-plugin:0.0.8' }
+	dependencies { classpath 'org.iet:rsuite-projects-deploy-gradle-plugin:0.0.17' }
 }
 
 
@@ -82,7 +84,6 @@ rsuiteDeployment{
 	
 		common 'BooksDeployAll.groovy'
 		common 'JournalsDeployAll.groovy'
-	//	common 'DeployRSuitePluginsIET.groovy' -- This script is not needed 
 		common "StandardsLoadDitaDtds.groovy;-Dditaot=${ditaOTHome}"
 		common 'StandardsConfigureRoles.groovy'
 		common 'StandardsCaTypes.groovy'
@@ -123,34 +124,12 @@ rsuiteDeployment{
         plugin 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-onix-plugin:4.0.0_oxy_14.2_v1.0.1'
         plugin 'com.rsicms.oxygen.frameworks:rsuite-o2-framework-jats-plugin:4.0.16_oxy_15.2_v1.1.1'
     }
-			 
+	
+	rsuiteXqueryModules{
+		modulesPattern '**/iet-*.*'
+		sourceDir 'setup/xquery_modules'
+	}
 }
-
-
-def modulesHome = "${project.ext.get('rsuite.home')}/modules_1_0"
-
-if (project.hasProperty("rsuite.modules.home"))
-  modulesHome = "${project.ext.get('rsuite.modules.home')}"
-
-println "Modules home: " + modulesHome
-  
-task('removeCustomXqueryModules', type: Delete){
-  delete fileTree(modulesHome) {
-    include '**/iet-*.xqy'
-  }
-}
-
-task('deployXqueryModules', type: Copy) {
-  from('setup/xquery_modules') {
-    include '**/*'
-  }
-  into(modulesHome)
-}
-
-tasks.deployXqueryModules.dependsOn(removeCustomXqueryModules)
-tasks.deployRSuitePlugins.dependsOn(deployXqueryModules)
-tasks.developmentDeployPluginJarOnly.dependsOn(deployXqueryModules)
-
 
 /* Dita-ot plugin and integrator*/
 

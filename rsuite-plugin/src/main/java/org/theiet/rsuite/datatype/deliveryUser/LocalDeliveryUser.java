@@ -78,4 +78,9 @@ class LocalDeliveryUser implements DeliveryUser {
         return userId;
     }
 
+	@Override
+	public String getLocationInfo() {
+		return "Local drive " + mainTargetPath;
+	}
+
 }

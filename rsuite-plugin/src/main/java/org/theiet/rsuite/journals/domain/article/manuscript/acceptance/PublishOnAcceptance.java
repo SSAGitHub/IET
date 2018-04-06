@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.theiet.rsuite.journals.domain.article.Article;
 import org.theiet.rsuite.journals.domain.article.delivery.digitallibrary.ArticleDigitalLibrary;
+import org.theiet.rsuite.journals.domain.article.manuscript.ManifestType;
 import org.theiet.rsuite.journals.domain.article.manuscript.ManuscriptPackage;
 import org.theiet.rsuite.journals.domain.journal.Journal;
 
@@ -19,16 +19,22 @@ import com.rsicms.projectshelper.utils.ProjectTransformationUtils;
 public class PublishOnAcceptance {
 
 	private static final String XSLT_URI_MANUSCRIPT_METADATA_TO_ARTICLE = "rsuite:/res/plugin/iet/xslt/journals/manuscript/manuscript-metadata-to-jats-article.xsl";
+	
+	private static final String XSLT_URI_MANUSCRIPT_RV_METADATA_TO_ARTICLE = "rsuite:/res/plugin/iet/xslt/journals/manuscript/manuscript-rv-metadata-to-jats-article.xsl";
 
 	private ExecutionContext context;
 
 	private User user;
 	
-	private Log logger = LogFactory.getLog(getClass());
+	private Log logger;
+	
+	private String xsltTransformPath;
 
-	public PublishOnAcceptance(ExecutionContext context, User user) {
+	public PublishOnAcceptance(ExecutionContext context, User user, Log logger, ManifestType manifestType) {
 		this.context = context;
 		this.user = user;
+		this.logger = logger;
+		xsltTransformPath = manifestType == ManifestType.S1 ? XSLT_URI_MANUSCRIPT_METADATA_TO_ARTICLE :XSLT_URI_MANUSCRIPT_RV_METADATA_TO_ARTICLE;
 	}
 
 	public void publishOnAcceptance(Article article, ManuscriptPackage manuscriptPackage) throws RSuiteException {
@@ -50,11 +56,12 @@ public class PublishOnAcceptance {
 		parameters.put("page-count", String.valueOf(numberOfPagesInPdf));
 		parameters.put("should-add-iet-prefix", String.valueOf(journal.requiresPrefixForDigitaLibrary()));
 		parameters.put("iet-prefix", journal.getPrefixForDigitaLibrary());
+		parameters.put("journal-abbrv-title", journal.getAbbreviatedTitle());
 		
 		String articleCode = article.getShortArticleId().replace("-", "");
 		File articleFile = new File(manuscriptPackage.getPackageFolder(), articleCode + ".xml");
 		ProjectTransformationUtils.transformDocument(context, manuscriptPackage.getMetadataFile(),
-				XSLT_URI_MANUSCRIPT_METADATA_TO_ARTICLE, articleFile, parameters);
+				xsltTransformPath, articleFile, parameters);
 		return articleFile;
 	}
 
