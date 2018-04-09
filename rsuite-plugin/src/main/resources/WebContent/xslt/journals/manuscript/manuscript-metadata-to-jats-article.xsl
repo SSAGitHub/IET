@@ -7,9 +7,11 @@
         doctype-system="JATS-journalpublishing1.dtd" indent="yes"/>
 
     <xsl:param name="page-count" select="0"></xsl:param>
-    <xsl:param name="should-add-iet-prefix"></xsl:param>
-    <xsl:param name="iet-prefix"></xsl:param> 
-    <xsl:variable name="journalAbbreviation" select="normalize-space(/article_set/article/journal/journal_abbreviation)"/>
+    <xsl:param name="iet-prefix" select="''"/>
+    <xsl:param name="should-add-iet-prefix" select="false()"/>
+    <xsl:param name="journal-abbrv-title" select="''"/>
+    
+    <xsl:variable name="journalAbbreviation" select="normalize-space(/article_set/article/journal/abbrev-journal-title)"/>
     <xsl:variable name="journalCode" select="replace($journalAbbreviation, 'IET([ -]+)', '')"/>
     <xsl:variable name="orignalArticleId" select="/article_set/article/@ms_no"/>
     <xsl:variable name="articleId" select="replace($orignalArticleId, 'ELL-', 'EL-')"/>
@@ -177,33 +179,37 @@
         </article>
     </xsl:template>
 
-   <xsl:variable name="journalC">
-	<xsl:choose>
-		<xsl:when test="$should-add-iet-prefix = 'true'">
-			<xsl:choose>
-				<xsl:when test="$iet-prefix = ''">
-					<xsl:value-of select="$journalCode" />
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:text></xsl:text>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:value-of select="$journalCode" />
-		</xsl:otherwise>
-	</xsl:choose>
-</xsl:variable>
-    
+	<xsl:variable name="journalC">
+		<xsl:choose>
+			<xsl:when test="$should-add-iet-prefix = 'true'">
+				<xsl:choose>
+					<xsl:when test="$iet-prefix = ''">
+						<xsl:value-of select="$journalCode" />
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:text></xsl:text>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$journalCode" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
 
-    <xsl:template match="journal">           
-        <journal-id journal-id-type="publisher-id"><xsl:value-of select="concat($prefix, $journalC)"
-            /></journal-id>
-        <journal-title-group>
-            <journal-title>
-                <xsl:value-of select="full_journal_title"/>
-            </journal-title>
-            <abbrev-journal-title><xsl:value-of select="$journal-mapping/entry[@key=$journalCode]"/></abbrev-journal-title>
+	<xsl:template match="journal">
+		<journal-id journal-id-type="publisher-id">
+			<xsl:value-of select="concat($prefix, $journalC)" />
+		</journal-id>
+		<journal-title-group>
+			<journal-title>
+				<xsl:value-of select="full_journal_title" />
+			</journal-title>
+		
+		<abbrev-journal-title>
+			<xsl:value-of select="$journal-abbrv-title" />
+		</abbrev-journal-title>
+	    
         </journal-title-group>
 
         <xsl:call-template name="create-issn-element">
