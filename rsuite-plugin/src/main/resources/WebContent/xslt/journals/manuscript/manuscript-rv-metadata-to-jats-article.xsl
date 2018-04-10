@@ -8,20 +8,11 @@
 		doctype-system="JATS-journalpublishing1.dtd" indent="yes" />
 
 	<xsl:param name="page-count" select="0" />
-	<xsl:param name="iet-prefix" select="''" />
-	<xsl:param name="should-add-iet-prefix" select="false()" />
 	<xsl:param name="journal-abbrv-title" select="''" />
+  
+  <xsl:param name="journal-id" select="''" />
+  <xsl:param name="article-id-publisher" select="''" />
 
-	<xsl:variable name="journalAbbreviation"
-		select="upper-case(normalize-space(/article/journal-meta/journal-title-group/abbrev-journal-title))" />
-	<xsl:variable name="journalCode"
-		select="replace($journalAbbreviation, 'IET([ -]+)', '')" />
-	<xsl:variable name="orignalArticleId"
-		select="/article/article-meta/article-id[@pub-id-type = 'manuscript']" />
-	<xsl:variable name="articleId"
-		select="replace($orignalArticleId, 'ELL-', 'EL-')" />
-	<xsl:variable name="shortArticleId"
-		select="replace($articleId, '\.[A-Z0-9]+$', '')" />
 	<xsl:variable name="currentDate" as="xs:date" select="current-date()" />
 
 	<xsl:variable name="openAccess"
@@ -56,40 +47,10 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:variable name="prefix">
-		<xsl:if test="$should-add-iet-prefix = 'true'">
-			<xsl:choose>
-				<xsl:when test="$iet-prefix = ''">
-					<xsl:text>IET-</xsl:text>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:value-of select="$iet-prefix" />
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:if>
-	</xsl:variable>
-
-	<xsl:variable name="journalC">
-		<xsl:choose>
-			<xsl:when test="$should-add-iet-prefix = 'true'">
-				<xsl:choose>
-					<xsl:when test="$iet-prefix = ''">
-						<xsl:value-of select="$journalCode" />
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:text></xsl:text>
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:value-of select="$journalCode" />
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:variable>
 
 	<xsl:template match="journal_id">
 		<journal-id journal-id-type="publisher-id">
-			<xsl:value-of select="concat($prefix, $journalC)" />
+			<xsl:value-of select="$journal-id" />
 		</journal-id>
 	</xsl:template>
 
@@ -101,37 +62,19 @@
 
 
 	<xsl:template name="create-artilce-ids">
-		<xsl:variable name="normalizedArticleId" select="replace($articleId, '\-', '.')" />
-		<xsl:variable name="publisherIdInitial"
-			select="concat($prefix, replace($shortArticleId, '\-', '.'))" />
-		<xsl:variable name="publisherId"
-			select="replace($publisherIdInitial, '\.SI', '')" />
+	  <xsl:variable name="orignalArticleId"
+	    select="/article/article-meta/article-id[@pub-id-type = 'manuscript']" />
+	  <xsl:variable name="normalizedArticleId" select="replace(replace($orignalArticleId, '\-', '.'), 'ELL-', 'EL-')" />
+		
 
-		<xsl:variable name="publisher">
-			<xsl:choose>
-				<xsl:when test="$should-add-iet-prefix = 'true'">
-					<xsl:choose>
-						<xsl:when test="$iet-prefix = ''">
-							<xsl:value-of select="$publisherId" />
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:value-of select="replace($publisherId, $journalCode, '')" />
-						</xsl:otherwise>
-					</xsl:choose>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:value-of select="$publisherId" />
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
-
+	  <xsl:variable name="publisherId" select="replace($article-id-publisher, '\.SI', '')" />
+			
 
 		<article-id pub-id-type="doi">
-			10.1049/
-			<xsl:value-of select="lower-case($publisher)" />
+		  10.1049/<xsl:value-of select="lower-case($publisherId)" />		  
 		</article-id>
 		<article-id pub-id-type="publisher-id">
-			<xsl:value-of select="$publisher" />
+		  <xsl:value-of select="$publisherId" />
 		</article-id>
 		<article-id pub-id-type="manuscript">
 			<xsl:value-of select="$normalizedArticleId" />

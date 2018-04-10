@@ -75,7 +75,7 @@ public class ArticleDigitalLibrary {
 		DeliveryUser deliveryUser = DeliveryUserFactory.createDeliveryUser(
 				context, digitalLibraryUser.getUserId());
 		
-		String ftpFileName = ArticleDigitalLibraryPackageBuilder.createDigitalLibraryFinalFileName(context, article.getArticleId(), "zip");
+		String ftpFileName = ArticleDigitalLibraryNameUtils.createDigitalLibraryFinalFileName(context, article.getArticleId(), "zip");
 
 		String targetFolder = deliveryUser
 				.getProperty(PROP_DIGITAL_LIBRARY_FTP_FOLDER_ARTICLE);

@@ -54,6 +54,10 @@ results.each {
 	def journalCode = getJournalCode(mapList)
 	def journalAbbrvTitle = journalMapping[journalCode]
 
+	if (journalCode == "ELL") {
+		rsuite.addMetaData(it.id, "prefix_digital_library_delivery", "EL");
+	}
+	
 	if (journalAbbrvTitle != null) {
 		println "Setting lmd val: " +journalAbbrvTitle
 		rsuite.addMetaData(it.id, "journal_abbrv_title", journalAbbrvTitle);

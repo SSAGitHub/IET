@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.theiet.rsuite.journals.domain.article.Article;
-import org.theiet.rsuite.journals.domain.article.delivery.digitallibrary.ArticleDigitalLibrary;
+import org.theiet.rsuite.journals.domain.article.delivery.digitallibrary.*;
 import org.theiet.rsuite.journals.domain.article.manuscript.ManifestType;
 import org.theiet.rsuite.journals.domain.article.manuscript.ManuscriptPackage;
 import org.theiet.rsuite.journals.domain.journal.Journal;
@@ -56,9 +56,10 @@ public class PublishOnAcceptance {
 
 		Map<String, String> parameters = new HashMap<>();
 		parameters.put("page-count", String.valueOf(numberOfPagesInPdf));
-		parameters.put("should-add-iet-prefix", String.valueOf(journal.requiresPrefixForDigitaLibrary()));
-		parameters.put("iet-prefix", journal.getPrefixForDigitaLibrary());
 		parameters.put("journal-abbrv-title", journal.getAbbreviatedTitle());
+		parameters.put("journal-id", ArticleDigitalLibraryNameUtils.getFixedJournalName(journal));
+		parameters.put("article-id-publisher", ArticleDigitalLibraryNameUtils.createDigitalLibraryBaseName(journal, article.getShortArticleId()));
+		
 
 		String articleCode = article.getShortArticleId().replace("-", "");
 		File articleFile = new File(manuscriptPackage.getPackageFolder(), articleCode + ".xml");
