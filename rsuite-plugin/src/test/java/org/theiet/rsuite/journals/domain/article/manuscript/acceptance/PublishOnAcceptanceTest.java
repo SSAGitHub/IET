@@ -14,9 +14,10 @@ import javax.xml.transform.Source;
 import org.apache.commons.io.FileUtils;
 import org.junit.*;
 import org.junit.rules.TemporaryFolder;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mockito;
 import org.theiet.rsuite.journals.domain.article.Article;
 import org.theiet.rsuite.journals.domain.article.delivery.digitallibrary.ArticleDigitalLibrary;
-import org.theiet.rsuite.journals.domain.article.delivery.digitallibrary.ArticleDigitalLibraryNameUtils;
 import org.theiet.rsuite.journals.domain.article.manuscript.ManifestType;
 import org.theiet.rsuite.journals.domain.article.manuscript.ManuscriptPackage;
 import org.theiet.rsuite.journals.domain.journal.Journal;
@@ -53,10 +54,11 @@ public class PublishOnAcceptanceTest {
 	@Test
 	public void create_initial_jats_for_article_without_prefix_manuscript_s1() throws RSuiteException, IOException {
 
-		ArticleDigitalLibrary digitalLibrary = mock(ArticleDigitalLibrary.class);
+		ArticleDigitalLibrary digitalLibraryMock = mock(ArticleDigitalLibrary.class);
+		
 		XmlApiManager xmlApiManager = MockUtils.createXmlApiManagerMock();
 
-		PublishOnAcceptance publish = new PublishOnAcceptance(xmlApiManager, digitalLibrary, ManifestType.S1);
+		PublishOnAcceptance publish = new PublishOnAcceptanceTestable(xmlApiManager, digitalLibraryMock, ManifestType.S1);
 
 		ManuscriptPackage manuscriptPackage = stubManuscriptPackage("cps-2017-0066-metadata.xml");
 
@@ -67,14 +69,23 @@ public class PublishOnAcceptanceTest {
 		when(article.getJournal()).thenReturn(journal);
 		when(article.getShortArticleId()).thenReturn("CPS-2017-0066");
 
-		String digitalLibraryArticleId = ArticleDigitalLibraryNameUtils.createDigitalLibraryBaseName(journal, article.getShortArticleId());
-		File articleFile = publish.createInitialArticle(journal, digitalLibraryArticleId, manuscriptPackage, 4);
+		publish.publishOnAcceptance(article, manuscriptPackage);
+
+		ArgumentCaptor<File> articleXMLCapture = ArgumentCaptor.forClass(File.class);
+		ArgumentCaptor<File> articlePDFCapture = ArgumentCaptor.forClass(File.class);
 		
-		Source articleSource = Input.fromFile(articleFile).build();
-		Document xmlToTest = Convert.toDocument(articleSource, builderFactory);
-	    
-		assertThat(articleFile.getName(), is("CPS.2017.0066.xml"));
+		verify(digitalLibraryMock).deliverArticleOnPublishAcceptance(Mockito.any(Article.class), articlePDFCapture.capture(), articleXMLCapture.capture());
+		
+		File articleXML = articleXMLCapture.getValue();
+		
+		
+		Source articleSource = Input.fromFile(articleXML).build();
+		Document xmlToTest = Convert.toDocument(articleSource, builderFactory);	    
+		assertThat(articleXML.getName(), is("CPS.2017.0066.xml"));
 	    assertThat(xmlToTest, EvaluateXPathMatcher.hasXPath("/article/front/journal-meta/journal-id/text()", equalTo("CPS")));
+	    
+	    File articlePDF = articlePDFCapture.getValue();
+	    assertThat(articlePDF.getName(), is("CPS.2017.0066-PROOF.pdf"));
 
 	}
 

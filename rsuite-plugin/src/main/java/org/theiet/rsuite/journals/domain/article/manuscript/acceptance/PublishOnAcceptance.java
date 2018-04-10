@@ -49,7 +49,7 @@ public class PublishOnAcceptance {
 
 	}
 
-	public File createInitialArticle(Journal journal, String digitalLibraryArticleId, ManuscriptPackage manuscriptPackage, int numberOfPagesInPdf)
+	private File createInitialArticle(Journal journal, String digitalLibraryArticleId, ManuscriptPackage manuscriptPackage, int numberOfPagesInPdf)
 			throws RSuiteException {
 		
 		
@@ -57,7 +57,7 @@ public class PublishOnAcceptance {
 		parameters.put("page-count", String.valueOf(numberOfPagesInPdf));
 		parameters.put("journal-abbrv-title", journal.getAbbreviatedTitle());
 		parameters.put("journal-id", ArticleDigitalLibraryNameUtils.getFixedJournalName(journal));
-		parameters.put("article-id-publisher", digitalLibraryArticleId);
+		parameters.put("article-id-publięsher", digitalLibraryArticleId);
 		
 
 		File articleFile = new File(manuscriptPackage.getPackageFolder(), digitalLibraryArticleId + ".xml");
@@ -70,8 +70,13 @@ public class PublishOnAcceptance {
 			throws RSuiteException {
 		File outputPdfFile = new File(manuscriptPackge.getPackageFolder(), digitalLibraryArticleId + "-PROOF.pdf");
 		File scholarOnePdf = manuscriptPackge.getScholarOnePdf();
-		int numberOfPages = JournalCustomLibraryFactory.getInstance().createPdfForPublishOnAcceptance(scholarOnePdf,
+		int numberOfPages = createJournalCustomLibraryFactory().createPdfForPublishOnAcceptance(scholarOnePdf,
 				outputPdfFile);
 		return new InitialArticlePdf(outputPdfFile, numberOfPages);
+	}
+
+
+	protected IScholarOnePdfTransformer createJournalCustomLibraryFactory() throws RSuiteException {
+		return JournalCustomLibraryFactory.getInstance();
 	}
 }
