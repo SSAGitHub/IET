@@ -88,11 +88,11 @@ public class ArticleDigitalLibraryPackageBuilder {
 			ArticleTypesetterContainer typesetterContainer)
 			throws RSuiteException {
 		ByteArrayOutputStream articleDLArchiveStream = new ByteArrayOutputStream();
-		ZipOutputStream zipStream = new ZipOutputStream(articleDLArchiveStream);
+		
 
 		File imageConversionFolder = ProjectFileUtils.getTmpSubDir(context, "imgConvertion", new Date(), true);
 		
-		try {
+		try(ZipOutputStream zipStream = new ZipOutputStream(articleDLArchiveStream)) {
 			addFinalPdfToArchive(context, user, article, zipStream,
 					typesetterContainer.getFinalPdfMO());
 
@@ -102,12 +102,11 @@ public class ArticleDigitalLibraryPackageBuilder {
 			addImagesToArchive(context, zipStream,
 					typesetterContainer.getImagesCA(), imageConversionFolder);
 
-		} catch (RSuiteException e) {
+		} catch (RSuiteException | IOException e) {
 			throw new RSuiteException(0, "Problem with creating archive for "
 					+ article, e);
 		}finally {
 			FileUtils.deleteQuietly(imageConversionFolder);
-			IOUtils.closeQuietly(zipStream);	
 		}
 
 		
