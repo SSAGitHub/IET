@@ -52,7 +52,7 @@ public class ArticleDigitalLibrary {
 	}
 	
 	public void deliverArticleOnPublishAcceptance(Article article, File pdfFile, File articleFile) throws RSuiteException {
-		ByteArrayOutputStream articleArchive = ArticleDigitalLibraryPackageBuilder.createPublishOnAcceptanceLibraryArchive(context, article, pdfFile, articleFile);
+		ByteArrayOutputStream articleArchive = ArticleDigitalLibraryPackageBuilder.createPublishOnAcceptanceLibraryArchive(article, pdfFile, articleFile);
 		sendArticleArchiveToDigitalLibrary(article, articleArchive);		
 		
 		setPrePublishDate(article);

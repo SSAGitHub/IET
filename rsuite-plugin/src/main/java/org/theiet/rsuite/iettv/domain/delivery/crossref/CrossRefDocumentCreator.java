@@ -35,7 +35,7 @@ public class CrossRefDocumentCreator {
 
 		Map<String, String> parameters = createParameters(context, user, videoRecord);
 
-		ProjectTransformationUtils.transformMo(context, videoMetadataMo,
+		ProjectTransformationUtils.transformMo(context.getXmlApiManager(), videoMetadataMo,
 				XSLT_URI_IET_TV_VIDEO_TO_CROSSREF, writer, parameters);
 
 		return createStringFromOutputStream(crossRefOutputStream);

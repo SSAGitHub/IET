@@ -42,20 +42,15 @@ public class ArticleDigitalLibraryPackageBuilder {
 		return buildArticleArchive(context, user, article, typesetterContainer);
 	}
 	
-	public static ByteArrayOutputStream createPublishOnAcceptanceLibraryArchive(ExecutionContext context, Article article, File pdfFile, File articleFile) throws RSuiteException{
+	public static ByteArrayOutputStream createPublishOnAcceptanceLibraryArchive(Article article, File pdfFile, File articleFile) throws RSuiteException{
 		ByteArrayOutputStream articleDLArchiveStream = new ByteArrayOutputStream();
 		ZipHelper zipHelper = new ZipHelper(articleDLArchiveStream);
 
 		try (InputStream pdfStream = new FileInputStream(pdfFile);
 			 InputStream articleStream = new FileInputStream(articleFile)) {
-			String finalPDFFileName = createDigitalLibraryFinalFileName(context,
-					article.getArticleId(), "pdf");
 			
-			zipHelper.addZipEntry(finalPDFFileName, pdfStream);
-			
-			String xmlFileName = createDigitalLibraryFinalFileName(context,
-					article.getArticleId(), "xml");
-			zipHelper.addZipEntry(xmlFileName, articleStream);
+			zipHelper.addZipEntry(articleFile.getName(), pdfStream);
+			zipHelper.addZipEntry(articleFile.getName(), articleStream);
 			
 		} catch (RSuiteException  | IOException e) {
 			throw new RSuiteException(0, "Problem with creating archive for "

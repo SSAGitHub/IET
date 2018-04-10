@@ -20,6 +20,7 @@ import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.theiet.rsuite.mocks.api.service.ContentAssemblyServiceMock;
+import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 
 import com.reallysi.rsuite.api.ManagedObject;
@@ -138,9 +139,13 @@ public class MockUtils {
 
 		
 		
-		XmlApiManager xmlApiMgr = Mockito.mock(XmlApiManager.class);
+		XmlApiManager xmlApiMgr = createXmlApiManagerMock();
 		Mockito.when(contextMock.getXmlApiManager()).thenReturn(xmlApiMgr);
+	}
 
+	public static XmlApiManager createXmlApiManagerMock() throws RSuiteException {
+		XmlApiManager xmlApiMgr = Mockito.mock(XmlApiManager.class);
+		
 		when(xmlApiMgr.getTransformer(any(URI.class))).then(
 				new Answer<Transformer>() {
 
@@ -156,6 +161,7 @@ public class MockUtils {
 
 		XPathFactory xpathFactory = new net.sf.saxon.xpath.XPathFactoryImpl();
 		when(xmlApiMgr.getXPathFactory()).thenReturn(xpathFactory);
+		return xmlApiMgr;
 	}
 
 	private static Transformer createTransformer(URI xsltUri) throws Exception {
