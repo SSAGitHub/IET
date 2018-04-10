@@ -49,6 +49,8 @@ public class PublishOnAcceptanceTest {
 		builderFactory.setFeature(
 		       "http://apache.org/xml/features/nonvalidating/load-external-dtd",
 		       false);
+		System.setProperty("javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom",
+		        "com.sun.org.apache.xpath.internal.jaxp.XPathFactoryImpl");
 	}
 
 	@Test
