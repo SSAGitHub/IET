@@ -88,9 +88,10 @@ public class PublishOnAcceptanceTest {
 
 		Source articleSource = Input.fromFile(articleXML).build();
 		Document xmlToTest = Convert.toDocument(articleSource, builderFactory);
-		
+
 		assertAll(articlePDFCapture, articleXML, xmlToTest,
-				"CPS.2017.0066.xml", "CPS", "CPS.2017.0066-PROOF.pdf");
+				"CPS.2017.0066.xml", "CPS", "CPS.2017.0066-PROOF.pdf",
+				"10.1049/cps.2017.0066", "CPS.2017.0066", "CPS.2017.0066.R2");
 
 	}
 
@@ -127,7 +128,8 @@ public class PublishOnAcceptanceTest {
 
 		assertAll(articlePDFCapture, articleXML, xmlToTest,
 				"IET-CPS.2017.0066.xml", "IET-CPS",
-				"IET-CPS.2017.0066-PROOF.pdf");
+				"IET-CPS.2017.0066-PROOF.pdf", "10.1049/iet-cps.2017.0066",
+				"IET-CPS.2017.0066", "CPS.2017.0066.R2");
 
 	}
 
@@ -163,7 +165,8 @@ public class PublishOnAcceptanceTest {
 		Document xmlToTest = Convert.toDocument(articleSource, builderFactory);
 
 		assertAll(articlePDFCapture, articleXML, xmlToTest,
-				"PRE.2017.0066.xml", "PRE", "PRE.2017.0066-PROOF.pdf");
+				"PRE.2017.0066.xml", "PRE", "PRE.2017.0066-PROOF.pdf",
+				"10.1049/pre.2017.0066", "PRE.2017.0066", "CPS.2017.0066.R2");
 
 	}
 
@@ -204,7 +207,7 @@ public class PublishOnAcceptanceTest {
 		when(journal.getPrefixForDigitaLibrary()).thenReturn(customPrefix);
 		return journal;
 	}
-	
+
 	private void verifyAll(ArticleDigitalLibrary digitalLibraryMock,
 			ArgumentCaptor<File> articleXMLCapture,
 			ArgumentCaptor<File> articlePDFCapture) throws RSuiteException {
@@ -215,11 +218,22 @@ public class PublishOnAcceptanceTest {
 
 	private void assertAll(ArgumentCaptor<File> articlePDFCapture,
 			File articleXML, Document xmlToTest, String expectedArticleXMLName,
-			String expectedXPath, String expectedArticlePDFName) {
+			String expectedXPath, String expectedArticlePDFName,
+			String expectedDOI, String expectedPublisherId,
+			String expectedManuscript) {
 		assertThat(articleXML.getName(), is(expectedArticleXMLName));
 		assertThat(xmlToTest, EvaluateXPathMatcher.hasXPath(
 				"/article/front/journal-meta/journal-id/text()",
 				equalTo(expectedXPath)));
+		assertThat(xmlToTest, EvaluateXPathMatcher.hasXPath(
+				"/article/front/article-meta/article-id[1]/text()",
+				equalTo(expectedDOI)));
+		assertThat(xmlToTest, EvaluateXPathMatcher.hasXPath(
+				"/article/front/article-meta/article-id[2]/text()",
+				equalTo(expectedPublisherId)));
+		assertThat(xmlToTest, EvaluateXPathMatcher.hasXPath(
+				"/article/front/article-meta/article-id[3]/text()",
+				equalTo(expectedManuscript)));
 
 		File articlePDF = articlePDFCapture.getValue();
 		assertThat(articlePDF.getName(), is(expectedArticlePDFName));

@@ -57,7 +57,7 @@ public class PublishOnAcceptance {
 		parameters.put("page-count", String.valueOf(numberOfPagesInPdf));
 		parameters.put("journal-abbrv-title", journal.getAbbreviatedTitle());
 		parameters.put("journal-id", ArticleDigitalLibraryNameUtils.getFixedJournalName(journal));
-		parameters.put("article-id-publięsher", digitalLibraryArticleId);
+		parameters.put("article-id-publisher", digitalLibraryArticleId);
 		
 
 		File articleFile = new File(manuscriptPackage.getPackageFolder(), digitalLibraryArticleId + ".xml");
