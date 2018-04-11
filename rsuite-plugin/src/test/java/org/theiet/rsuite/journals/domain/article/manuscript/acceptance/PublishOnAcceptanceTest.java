@@ -88,6 +88,7 @@ public class PublishOnAcceptanceTest {
 
 		Source articleSource = Input.fromFile(articleXML).build();
 		Document xmlToTest = Convert.toDocument(articleSource, builderFactory);
+		
 		assertAll(articlePDFCapture, articleXML, xmlToTest,
 				"CPS.2017.0066.xml", "CPS", "CPS.2017.0066-PROOF.pdf");
 
