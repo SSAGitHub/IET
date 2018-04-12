@@ -15,5 +15,7 @@ public interface DeliveryUser {
     String getContactFirstName();
 
     String userId();
+    
+    String getLocationInfo();
 
 }

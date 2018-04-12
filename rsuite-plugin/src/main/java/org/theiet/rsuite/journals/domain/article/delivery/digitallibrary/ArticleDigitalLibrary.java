@@ -46,14 +46,14 @@ public class ArticleDigitalLibrary {
 		
 		setArticleLmd(article);
 		ByteArrayOutputStream articleArchive = ArticleDigitalLibraryPackageBuilder.createArticleDigitalLibraryArchive(context, user, article);
-		sentArticleArchiveToDigitalLibrary(article, articleArchive);
+		sendArticleArchiveToDigitalLibrary(article, articleArchive);
 		makeArticleAvailableForIssueAssigment(article);
 		logEventToPubtrack(user, context, completePubtrack, article);
 	}
 	
 	public void deliverArticleOnPublishAcceptance(Article article, File pdfFile, File articleFile) throws RSuiteException {
-		ByteArrayOutputStream articleArchive = ArticleDigitalLibraryPackageBuilder.createPublishOnAcceptanceLibraryArchive(context, article, pdfFile, articleFile);
-		sentArticleArchiveToDigitalLibrary(article, articleArchive);		
+		ByteArrayOutputStream articleArchive = ArticleDigitalLibraryPackageBuilder.createPublishOnAcceptanceLibraryArchive(article, pdfFile, articleFile);
+		sendArticleArchiveToDigitalLibrary(article, articleArchive);		
 		
 		setPrePublishDate(article);
 		ArticlePubtrackManager.logInitialSendToDigitalLibrary(context, user, article);
@@ -65,7 +65,7 @@ public class ArticleDigitalLibrary {
 		articleMetadataUpdater.updateMetadata();
 	}
 
-	private void sentArticleArchiveToDigitalLibrary(Article article,
+	private void sendArticleArchiveToDigitalLibrary(Article article,
 			ByteArrayOutputStream articleArchive) throws RSuiteException {
 		byte[] bytes = articleArchive.toByteArray();
 		ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
@@ -75,10 +75,13 @@ public class ArticleDigitalLibrary {
 		DeliveryUser deliveryUser = DeliveryUserFactory.createDeliveryUser(
 				context, digitalLibraryUser.getUserId());
 		
-		String ftpFileName = ArticleDigitalLibraryPackageBuilder.createDigitalLibraryFinalFileName(context, article.getArticleId(), "zip");
+		String ftpFileName = ArticleDigitalLibraryNameUtils.createDigitalLibraryFinalFileName(context, article.getArticleId(), "zip");
 
 		String targetFolder = deliveryUser
 				.getProperty(PROP_DIGITAL_LIBRARY_FTP_FOLDER_ARTICLE);
+		
+		logger.info("Sending article: " + deliveryUser.getLocationInfo());
+		
 		deliveryUser.deliverToDestination(bais, ftpFileName, targetFolder);
 		logger.info("deliverArticle: transfer complete" + article);
 	}

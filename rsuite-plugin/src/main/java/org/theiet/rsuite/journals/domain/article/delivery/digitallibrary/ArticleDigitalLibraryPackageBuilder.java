@@ -1,5 +1,7 @@
 package org.theiet.rsuite.journals.domain.article.delivery.digitallibrary;
 
+import static org.theiet.rsuite.journals.domain.article.delivery.digitallibrary.ArticleDigitalLibraryNameUtils.*;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -8,10 +10,8 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 import org.apache.commons.io.*;
-import org.apache.commons.lang.StringUtils;
 import org.theiet.rsuite.journals.domain.article.Article;
 import org.theiet.rsuite.journals.domain.article.ArticleTypesetterContainer;
-import org.theiet.rsuite.journals.domain.journal.Journal;
 import org.theiet.rsuite.utils.ImageMagickUtils;
 
 import com.reallysi.rsuite.api.ContentAssembly;
@@ -31,8 +31,6 @@ public class ArticleDigitalLibraryPackageBuilder {
 	private ArticleDigitalLibraryPackageBuilder() {
 	}
 
-	private static final int JOURNAL_CODE_LENGTH = 3;
-
 	public static ByteArrayOutputStream createArticleDigitalLibraryArchive(
 			ExecutionContext context, User user, Article article)
 			throws RSuiteException {
@@ -44,20 +42,15 @@ public class ArticleDigitalLibraryPackageBuilder {
 		return buildArticleArchive(context, user, article, typesetterContainer);
 	}
 	
-	public static ByteArrayOutputStream createPublishOnAcceptanceLibraryArchive(ExecutionContext context, Article article, File pdfFile, File articleFile) throws RSuiteException{
+	public static ByteArrayOutputStream createPublishOnAcceptanceLibraryArchive(Article article, File pdfFile, File articleFile) throws RSuiteException{
 		ByteArrayOutputStream articleDLArchiveStream = new ByteArrayOutputStream();
 		ZipHelper zipHelper = new ZipHelper(articleDLArchiveStream);
 
 		try (InputStream pdfStream = new FileInputStream(pdfFile);
 			 InputStream articleStream = new FileInputStream(articleFile)) {
-			String finalPDFFileName = createDigitalLibraryFinalFileName(context,
-					article.getArticleId(), "pdf");
 			
-			zipHelper.addZipEntry(finalPDFFileName, pdfStream);
-			
-			String xmlFileName = createDigitalLibraryFinalFileName(context,
-					article.getArticleId(), "xml");
-			zipHelper.addZipEntry(xmlFileName, articleStream);
+			zipHelper.addZipEntry(articleFile.getName(), pdfStream);
+			zipHelper.addZipEntry(articleFile.getName(), articleStream);
 			
 		} catch (RSuiteException  | IOException e) {
 			throw new RSuiteException(0, "Problem with creating archive for "
@@ -90,9 +83,11 @@ public class ArticleDigitalLibraryPackageBuilder {
 			ArticleTypesetterContainer typesetterContainer)
 			throws RSuiteException {
 		ByteArrayOutputStream articleDLArchiveStream = new ByteArrayOutputStream();
-		ZipOutputStream zipStream = new ZipOutputStream(articleDLArchiveStream);
+		
 
-		try {
+		File imageConversionFolder = ProjectFileUtils.getTmpSubDir(context, "imgConvertion", new Date(), true);
+		
+		try(ZipOutputStream zipStream = new ZipOutputStream(articleDLArchiveStream)) {
 			addFinalPdfToArchive(context, user, article, zipStream,
 					typesetterContainer.getFinalPdfMO());
 
@@ -100,25 +95,29 @@ public class ArticleDigitalLibraryPackageBuilder {
 					typesetterContainer.getArticleXMLMO());
 
 			addImagesToArchive(context, zipStream,
-					typesetterContainer.getImagesCA());
+					typesetterContainer.getImagesCA(), imageConversionFolder);
 
-		} catch (RSuiteException e) {
+		} catch (RSuiteException | IOException e) {
 			throw new RSuiteException(0, "Problem with creating archive for "
 					+ article, e);
+		}finally {
+			FileUtils.deleteQuietly(imageConversionFolder);
 		}
 
-		IOUtils.closeQuietly(zipStream);
+		
 
 		return articleDLArchiveStream;
 	}
 
 	private static void addImagesToArchive(ExecutionContext context,
-			ZipOutputStream zipStream, ContentAssembly imagesCA)
+			ZipOutputStream zipStream, ContentAssembly imagesCA, File imageConversionFolder)
 			throws RSuiteException {
 
 		if (imagesCA == null) {
 			return;
 		}
+		
+		ImageMagickUtils imageMagickUtils = ImageMagickUtils.getInstance(context);
 
 		for (ContentAssemblyItem child : imagesCA.getChildrenObjects()) {
 			if (isImageMoReference(child)) {
@@ -126,7 +125,7 @@ public class ArticleDigitalLibraryPackageBuilder {
 						child.getId());
 				String fileExtension = FilenameUtils.getExtension(imageMo.getDisplayName());
 				if (!fileExtension.equalsIgnoreCase("gif")) {
-					addFileToZip(reduceImgDPI(context, imageMo), imageMo.getDisplayName(), zipStream);
+					addFileToZip(reduceImgDPI(imageMagickUtils, imageConversionFolder, imageMo), imageMo.getDisplayName(), zipStream);
 				} else {
 					addMoToZip(imageMo, imageMo.getDisplayName(), zipStream);
 				}				
@@ -134,12 +133,12 @@ public class ArticleDigitalLibraryPackageBuilder {
 		}
 	}
 
-	private static File reduceImgDPI(ExecutionContext context,
+	private static File reduceImgDPI(ImageMagickUtils imageMagickUtils, File imageConversionFolder,
 			ManagedObject imageMo) throws RSuiteException {
-		File imageConversionFolder = ProjectFileUtils.getTmpSubDir(context, "imgConvertion", new Date(), true);
 		
-		File imgFile = new File(imageConversionFolder, imageMo.getDisplayName());
-		writeFile(imageMo.getInputStream(), imgFile);
+		
+		File imgFile = writeImageMOtoDrive(imageConversionFolder, imageMo);
+		
 		
 		File outputImgFolder = new File(imageConversionFolder, "output");
 		outputImgFolder.mkdirs();
@@ -150,45 +149,22 @@ public class ArticleDigitalLibraryPackageBuilder {
 		parameters.add("-resample");
 		parameters.add("300");
 
-		ImageMagickUtils imageMagickUtils = ImageMagickUtils.getInstance(context);
+		
 		imageMagickUtils.convertImage(imgFile, parameters, outputImg, null);
 
-		//FileUtils.deleteQuietly(imageConversionFolder);
-		
 		return outputImg;
 	}
 
-	private static void writeFile (InputStream inputStream, File outputFile) throws RSuiteException {
-		OutputStream outputStream = null;
-
+	private static File writeImageMOtoDrive(File imageConversionFolder, ManagedObject imageMo)
+			throws RSuiteException {
+		File imgFile = new File(imageConversionFolder, imageMo.getDisplayName());
 		try {
-			outputStream = new FileOutputStream(outputFile);
-
-			int read = 0;
-			byte[] bytes = new byte[1024];
-
-			while ((read = inputStream.read(bytes)) != -1) {
-				outputStream.write(bytes, 0, read);
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			if (inputStream != null) {
-				try {
-					inputStream.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-			if (outputStream != null) {
-				try {
-					outputStream.close();
-				} catch (IOException e) {
-					throw new RSuiteException(0, "Problem writing file to disk for file: " + outputFile.getName(), e);
-				}
-
-			}
+			FileUtils.writeByteArrayToFile(imgFile, IOUtils.toByteArray(imageMo.getInputStream()));
+			return imgFile;	
+		}catch (IOException e) {
+			throw new RSuiteException(RSuiteException.ERROR_INTERNAL_ERROR, "Unable to write: " + imgFile, e);
 		}
+		
 	}
 	
 	private static boolean isImageMoReference(ContentAssemblyItem imageRef) {
@@ -220,8 +196,7 @@ public class ArticleDigitalLibraryPackageBuilder {
 
 	public static void addFileToZip(File file, String entryName,
 			ZipOutputStream zos) throws RSuiteException {
-		try {
-			FileInputStream fis = new FileInputStream(file);
+		try (FileInputStream fis = new FileInputStream(file)){
 			addItemToZip(fis, entryName, zos);
 		} catch (IOException e) {
 			throw new RSuiteException(0, "Unable to create zip entry for file "
@@ -255,53 +230,6 @@ public class ArticleDigitalLibraryPackageBuilder {
 		IOUtils.copy(is, zos);
 		zos.closeEntry();
 		is.close();
-	}
-
-	public static String createDigitalLibraryFinalFileName(
-			ExecutionContext context, String articleId, String ext)
-			throws RSuiteException {
-
-		String journalCode = articleId.substring(0, JOURNAL_CODE_LENGTH);
-
-		Journal journal = new Journal(context, journalCode);
-
-		String remainder = articleId.substring(JOURNAL_CODE_LENGTH)
-				.replaceFirst(".R\\d+$", "").replaceFirst("SI-", "")
-				.replaceAll("-", ".");
-
-		if (journalCode.equals("ELL")) {
-			journalCode = "EL";
-		}
-
-		if (journal.requiresPrefixForDigitaLibrary()) {
-			journalCode = "IET-" + journalCode;
-		}
-		
-		String customPrefix = journal.getPrefixForDigitaLibrary();
-		if (StringUtils.isNotBlank(customPrefix)) {
-			journalCode = customPrefix;
-		}
-
-		return journalCode + remainder + "." + ext;
-	}
-
-	public static String getFixedJournalName(Journal journal) throws RSuiteException {
-		
-		String journalCode = journal.getJournalCode();
-		String customPrefix =  journal.getPrefixForDigitaLibrary();
-		
-		if (journalCode.equals("ELL")) {
-			return "EL";
-		}
-		
-		if (!journal.requiresPrefixForDigitaLibrary()) {
-			return journalCode;
-		}else if (StringUtils.isNotBlank(customPrefix)) {
-			return journal.getPrefixForDigitaLibrary();
-		}
-		else {
-			return "IET-" + journalCode;
-		}
 	}
 
 }

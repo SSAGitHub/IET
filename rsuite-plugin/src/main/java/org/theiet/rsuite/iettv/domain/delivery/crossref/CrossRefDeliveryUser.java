@@ -15,9 +15,12 @@ public class CrossRefDeliveryUser extends BaseDeliveryUser{
 
     private Log logger;
 	
-	public CrossRefDeliveryUser(Log logger, String userId, Map<String, String> userProperties) {
+    private String url;
+    
+	public CrossRefDeliveryUser(Log logger, String userId, Map<String, String> userProperties) throws RSuiteException {
 		super(userId, userProperties);
-		this.logger = logger;				
+		this.logger = logger;
+		url = getProperty("http.url");
 	}
 
 	@Override
@@ -54,6 +57,11 @@ public class CrossRefDeliveryUser extends BaseDeliveryUser{
 	public void deliverToDestination(InputStream inputStream, String fileName,
 			String path) throws RSuiteException {		
 		
+	}
+
+	@Override
+	public String getLocationInfo() {
+		return url;
 	}
 
 }

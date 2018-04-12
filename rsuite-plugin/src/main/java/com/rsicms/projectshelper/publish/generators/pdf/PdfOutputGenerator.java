@@ -69,7 +69,7 @@ public abstract class PdfOutputGenerator implements OutputGenerator {
 
         try {
             FileWriter writer = new FileWriter(foFile);
-            ProjectTransformationUtils.transformDocument(context, new FileInputStream(xmlFile),
+            ProjectTransformationUtils.transformDocument(context.getXmlApiManager(), new FileInputStream(xmlFile),
                     getXml2FoXsltUri(), writer, getXml2FoXslParameters());
         } catch (IOException e) {
             throw new RSuiteException(0, "Unable to create writer for " + foFile.getAbsolutePath());

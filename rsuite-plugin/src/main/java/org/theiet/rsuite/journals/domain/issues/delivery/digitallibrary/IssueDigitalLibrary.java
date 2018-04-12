@@ -16,6 +16,7 @@ import org.theiet.rsuite.datatype.deliveryUser.DeliveryUserFactory;
 import org.theiet.rsuite.domain.date.IetDate;
 import org.theiet.rsuite.domain.user.UserUtils;
 import org.theiet.rsuite.journals.domain.article.Article;
+import org.theiet.rsuite.journals.domain.article.delivery.digitallibrary.ArticleDigitalLibraryNameUtils;
 import org.theiet.rsuite.journals.domain.article.delivery.digitallibrary.ArticleDigitalLibraryPackageBuilder;
 import org.theiet.rsuite.journals.domain.issues.datatype.Issue;
 import org.theiet.rsuite.journals.domain.issues.datatype.IssueArticles;
@@ -106,7 +107,7 @@ public class IssueDigitalLibrary {
 		ByteArrayOutputStream articleDLArchive = ArticleDigitalLibraryPackageBuilder
 				.createArticleDigitalLibraryArchive(context, user, article);
 
-		String articleZipFileName = ArticleDigitalLibraryPackageBuilder
+		String articleZipFileName = ArticleDigitalLibraryNameUtils
 				.createDigitalLibraryFinalFileName(context,
 						article.getArticleId(), "zip");
 
@@ -153,7 +154,7 @@ public class IssueDigitalLibrary {
 		IssueMetadata issueMetadata = issue.getIssueMetadata();
 		String issueCode = issueMetadata.getIssueCode();
 		Journal journal = new Journal(context, issue.getJournalCa());
-		String fixedJournalCode = ArticleDigitalLibraryPackageBuilder
+		String fixedJournalCode = ArticleDigitalLibraryNameUtils
 				.getFixedJournalName(journal);
 		String ftpFileName = issueCode.replaceFirst(journal.getJournalCode(),
 				fixedJournalCode) + ".zip";

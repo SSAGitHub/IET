@@ -7,11 +7,11 @@ import java.util.Map;
 
 import com.reallysi.rsuite.api.RSuiteException;
 
-public class BaseDeliveryUser implements DeliveryUser {
+public abstract class BaseDeliveryUser implements DeliveryUser {
 
-    private Map<String, String> userProperties;
+	private Map<String, String> userProperties;
 
-    private String userId;
+	private String userId;
 
 	public BaseDeliveryUser(String userId, Map<String, String> userProperties) {
 		super();
@@ -20,29 +20,26 @@ public class BaseDeliveryUser implements DeliveryUser {
 	}
 
 	@Override
-	public void deliverToMainDestination(InputStream inputStream,
-			String fileName) throws RSuiteException {
+	public void deliverToMainDestination(InputStream inputStream, String fileName) throws RSuiteException {
 	}
 
 	@Override
-	public void deliverToDestination(InputStream inputStream, String fileName,
-			String path) throws RSuiteException {
+	public void deliverToDestination(InputStream inputStream, String fileName, String path) throws RSuiteException {
 	}
 
-	   @Override
-	    public String getProperty(String propertyName) throws RSuiteException {
-	        return userProperties.get(propertyName);
-	    }
+	@Override
+	public String getProperty(String propertyName) throws RSuiteException {
+		return userProperties.get(propertyName);
+	}
 
-	    @Override
-	    public String getContactFirstName() {
-	        return getContactFirstNameValue(userProperties);
-	    }
+	@Override
+	public String getContactFirstName() {
+		return getContactFirstNameValue(userProperties);
+	}
 
-	    @Override
-	    public String userId() {
-	        return userId;
-	    }
-    
-    
+	@Override
+	public String userId() {
+		return userId;
+	}
+
 }

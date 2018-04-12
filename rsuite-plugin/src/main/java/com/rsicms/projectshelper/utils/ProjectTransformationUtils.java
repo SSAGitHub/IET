@@ -37,9 +37,6 @@ import com.reallysi.rsuite.service.XmlApiManager;
 
 public class ProjectTransformationUtils {
 
-//	private static Log logger = LogFactory
-//			.getLog(ProjectTransformationUtils.class);
-
 	private ProjectTransformationUtils() {
 	}
 
@@ -65,8 +62,14 @@ public class ProjectTransformationUtils {
 		}
 		return template;
 	}
-
+	
 	public static void transformDocument(ExecutionContext context,
+			File inputFile, String xslURI, File outputFile,
+			Map<String, String> paramters) throws RSuiteException {
+		transformDocument(context.getXmlApiManager(), inputFile, xslURI, outputFile, paramters);
+	}
+
+	public static void transformDocument(XmlApiManager xmlManager,
 			File inputFile, String xslURI, File outputFile,
 			Map<String, String> paramters) throws RSuiteException {
 
@@ -74,7 +77,7 @@ public class ProjectTransformationUtils {
 
 		try {
 			fileWriter = new FileWriter(outputFile);
-			transformDocument(context, inputFile, xslURI, fileWriter, paramters);
+			transformDocument(xmlManager, inputFile, xslURI, fileWriter, paramters);
 		} catch (IOException e) {
 			throw new RSuiteException(0, e.getLocalizedMessage(), e);
 		} finally {
@@ -83,40 +86,45 @@ public class ProjectTransformationUtils {
 
 	}
 
-	public static void transformMo(ExecutionContext context, ManagedObject mo,
+	public static void transformMo(XmlApiManager xmlManager, ManagedObject mo,
 			String xslURI, Writer writer, Map<String, String> parameters)
 			throws RSuiteException {
 		
 		DOMSource domSource = new DOMSource(mo.getElement());
-		transformDocument(context, domSource, xslURI, writer, parameters);
+		transformDocument(xmlManager, domSource, xslURI, writer, parameters);
+	}
+	
+	public static void transformDocument(ExecutionContext context,
+			File inputFile, String xslURI, Writer writer,
+			Map<String, String> paramters) throws RSuiteException {
+		transformDocument(context.getXmlApiManager(), inputFile, xslURI, writer, paramters);	
 	}
 
-	public static void transformDocument(ExecutionContext context,
+	public static void transformDocument(XmlApiManager xmlManager,
 			File inputFile, String xslURI, Writer writer,
 			Map<String, String> paramters) throws RSuiteException {
 
 		InputSource inputSource = new InputSource(inputFile.toURI().toString());
-		Source transformSource = createSourceForTransform(context, inputSource);
-		transformDocument(context, transformSource, xslURI, writer, paramters);
+		Source transformSource = createSourceForTransform(xmlManager, inputSource);
+		transformDocument(xmlManager, transformSource, xslURI, writer, paramters);
 	}
 
-	public static void transformDocument(ExecutionContext context,
+	public static void transformDocument(XmlApiManager xmlManager,
 			InputStream contentToTransform, String xslURI, Writer writer,
 			Map<String, String> paramters) throws RSuiteException {
 		try {
 			InputSource inputSource = new InputSource(contentToTransform);
-			Source transformSource = createSourceForTransform(context, inputSource);
-			transformDocument(context, transformSource, xslURI, writer, paramters);
+			Source transformSource = createSourceForTransform(xmlManager, inputSource);
+			transformDocument(xmlManager, transformSource, xslURI, writer, paramters);
 		} finally {
 			IOUtils.closeQuietly(contentToTransform);
 		}
 	}
 
-	private static Source createSourceForTransform(ExecutionContext context,
+	private static Source createSourceForTransform(XmlApiManager xmlManager,
 			InputSource inputSource) throws RSuiteException {
 
 		try{
-			XmlApiManager xmlManager = context.getXmlApiManager();
 			XMLReader xmlReader = XMLReaderFactory.createXMLReader();
 			xmlReader.setEntityResolver(xmlManager.getRSuiteAwareEntityResolver());
 
@@ -128,12 +136,10 @@ public class ProjectTransformationUtils {
 
 	}
 
-	public static void transformDocument(ExecutionContext context,
+	public static void transformDocument(XmlApiManager xmlManager,
 			Source inputSource, String xslURI, Writer writer,
 			Map<String, String> paramters) throws RSuiteException {
 		try {
-
-			XmlApiManager xmlManager = context.getXmlApiManager();
 
 			Transformer transformer = xmlManager.getTransformer(new URI(
 					xslURI));

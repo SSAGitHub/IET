@@ -9,6 +9,7 @@
 **/test.properties
 .recommenders
 **/rsuite-plugin/test.properties
+**/.DS_Store
 **/rsuite-batch-utils/logs
 **/rsuite-batch-utils/setup/config/*.properties
 **/rsuite-batch-utils/setup/cmd/*.cmd

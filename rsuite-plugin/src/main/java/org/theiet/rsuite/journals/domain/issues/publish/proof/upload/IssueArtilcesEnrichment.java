@@ -69,7 +69,7 @@ public class IssueArtilcesEnrichment {
 		ByteArrayOutputStream resultStream = new ByteArrayOutputStream();
 		Writer writer = new OutputStreamWriter(resultStream);
 
-		ProjectTransformationUtils.transformMo(context, articleMo,
+		ProjectTransformationUtils.transformMo(context.getXmlApiManager(), articleMo,
 				XSLT_URI_ISSUE_ARTICLE_ENRICHMENT, writer, parameters);
 
 		updateArticleMo(articleMo, resultStream.toByteArray());

@@ -1,0 +1,1124 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+Submission and peer-review metadata for articles processed in the ScholarOne Manuscripts system for more information go to www.scholarone.com
+-->
+
+<!--  ScholarOne DTD
+rev 4.22
+- - added publons_optIn to <review>
+- - added external_id to <article>
+rev 4.21
+- - no DTD modifications made in the ScholarOne Manuscripts v4.21 release
+rev 4.20
+- - no DTD modifications made in the ScholarOne Manuscripts v4.20 release
+rev 4.19
+- - added OA Publication Type (element named publication_model due to naming conflict)
+rev 4.18
+- - added received_date_resub (optional) for US-001433.
+- -  added orcid_token_type (optional) orcid_token_scope (optional) orcid_token_expires_in (optional) to in the author_list and user_list entities
+rev 4.17
+- - Added institution_id (optional) to affil_details (for Ringgold ID). Blank if no Ringgold ID entered.  
+rev 4.16
+- - no DTD modifications made in the ScholarOne Manuscripts v4.16 release
+rev 4.15
+- - no_funders
+- - added support for multiple grant #'s
+rev 4.14
+- - added orcid_id_validation element in the author_list and user_list entities.
+rev 4.13
+- - new country codes added
+- - removed inf tag and added sub tag
+- - added fundref_information with sub-elements in article element group
+rev 4.12
+- - no DTD modifications made in the ScholarOne Manuscripts v4.12 release
+rev 4.11
+- - no DTD modifications made in the ScholarOne Manuscripts v4.11 release
+rev 4.10
+- - added orcid element to person_basic entity
+rev 4.9
+- - (Also see ScholarOne Manuscripts v4.9 DTD Updates notification) 
+- - added the full hierarchical path for attributes for both manuscripts and users 
+- - added attr_type_id, attribute_id, with optional elements parent_id, selected 
+- - added optional entry, reviewer_list, reviewer element with required attributes role, user_id, invite_history, response element with required attributes response_name, response_type, response_history, required child element rating 
+- - added optional entry, task under ms_id with required attributes type, name, task_id, and optional status child element with required attributes status_task_id, user_id, s1_staff, user_role, event_date; optional child element assigned and invited with optional attribute user_id and required attributes role, date; optional child element recommendation with required attributes recommendation_type, recommendation_name and optional child element comment; optional child element review with required attribute user_id and optional child elements of recommendation with required attributes recommendation_type and recommendation_name, score with optional child elements custom_fields, review_file with required attribute file_id, comment with required attribute to_role, to_name 
+- - added optional entry, email_list with optional child elements email_sent with required attribute doc_task_id, cc with optional attribute user_id, and file; also a required child element send_date, to with optional attribute user_id, subject, and body 
+- - added optional entry, user_list, user element following the current editor element structure with the attributes role and decided removed, with attributes submitter, submitting agent and contact added
+
+rev 4.8
+- added most_recent_decision_date,  transmission_date to ms_id
+
+rev 4.7
+- - no DTD modifications made in the ScholarOne Manuscripts v4.7 release
+
+rev 4.5
+- - added researcher_id element to person_basic entity
+
+rev 4.3a
+- - Allow empty <forms/> element in output (100420-0151476)
+
+rev 4.3
+- - Add forms element and sub-elements
+- - Change iso3166 enumeration to match countries in system
+
+rev 4.2.1a
+- - updated 'referenced_articles' to precede 'lte_text_area'
+- - updated 'referenced_article' child declaration in 'referenced_articles' to 'reference_article'
+- - added 'reference_article' element
+
+rev 4.2.1
+- - Added hour, minute, second, time_zone element to date
+- - Added flags element to person
+
+rev 4.2
+- - new optional child elements named issue_journal_id, issue_journal_issn, issue_journal_isbn, issue_journal_eisbn, issue_end_page, issue_print_run in issue_assignment
+- - included a "topic_group" element
+- - "topic_group" element now included a �topic� element
+- - the "ms_id" element within the "history" element was be modified
+- - the "ms_id" element contained child elements "stub_created_date" and "author_assigned_date"
+rev 4.1.2
+- - added addr3 to affiliation (address) 
+
+rev 4.1.1
+- - new country codes added and all the country codes are made UPPERCASE now
+
+rev 4.1
+- - new optional child elements named transferred_date, issue_journal_name, issue_start_page in issue_assignment
+
+rev 4.01
+- - September 2007 (Noah Merritt)
+- - Added NLM reference structure
+- - Relaxed required element structure to accomodate reference xml partial metadata
+- - companion paper changed to "zero or more" from "zero or one"
+- - added pub-id-types ut to identify WoS id values
+
+rev 3.6 
+- - Feb 14 2007 (Nick Menon)
+- -	Added custom_report_fields? 
+- -	Added custom_report_field* as a child of custom_report_fields
+
+rev 3.5.1
+- - Added client data?
+- - Added article_sub_title?
+
+rev 2.4 		20 March 2006 (Ganesh)
+- - removed published_date? , publish_before_print_date? , print_scheduled_date? from ms_id
+
+rev 2.4 	  	6 March 2006 (Ganesh)
+- - copied "publish_before_print_date", "published_date" and "print_scheduled_date" in to issue_assignment_block (intent to populate in issue_assignment_block and *not* in history block)
+- - added "dtd_version" as an attribute to the article_set element (required)
+- - added the values "grayscale" and "undefined" to the list of enumerated values for the "file_colorspace" attribute
+- - added "image_resolution" attribute to the file element (optional)
+- - added "image_height" attribute to the file element (optional)
+- - added "image_width" attribute to the file element (optional)
+- - added "dx_result attribute to the file element (optional)
+- - added "profile_affiliation" element - content made of %affil_details entity, and the "profile_affiliation" element will be part of the %person_detail entity (optional)
+- - added "current_profile_affiliation" element - content made of %affil_details entity, and the "current_profile_affiliation" element will be part of the %person_detail entity (optional)
+- - eliminated "doi" element
+- - added "doi" to the list of enumerated values for the "id_type" attribute
+- - eliminated "fax" and "phone" elements from the %person_detail entity - they now are only part of the %affil_details entity
+- - changed "ms_id" to be required and repeatable within the context of a "companion_paper" block
+- - eliminated "specialty" attribute from the "editor" element
+- - added "person_title" to the %affil_details entity (optional)
+- - eliminated the "full_name" element
+- - moved "degree," "email," "attribute" and "comments" elements from the %person_detail entity to the %person_basic entity
+- - eliminated "season" element
+- - added "total_pdf_pages" as element in the "content" block (optional)
+- - added author_returned_date as element in the ms_id block (optional)
+
+
+rev 2.4			16 Feb 2006 (Senthil)
+- - removed "cd_text" attribute from custom_fields element 
+- - added current_profile_affiliation to person_basic
+
+rev 2.3.1      	28 September 2004 (EJK)
+
+- - add volume_page_actual attribute (attribute to volume)
+- - add bw_image_count_issue   (attribute for issue)
+- - added color_image_count_issue (attribute for issue)
+- - changed num_issue_pages to issue_page_actual  (attribute)
+- - added issue_page_budget (attribute to issue)
+
+rev 2.3 		24 August 2004 (EJK)
+
+- - added "phone" and "fax" to affiliation details so that each department can have its own (both type text)
+- - added "room" to affiliation (address) details to collect room/suite number (type text)
+- - added "issn_type" attribute to issn element:  attribute value required (enumerated)
+- - changed "issn" so that it is now optional and repeatable
+- - added "issue_description" as an issue identifier (type text)
+- - added "issue_assignment" element block:  issue_assignment is optional and repeatable (element block)
+- - moved volume, issue, issue_description, issue_date and line_up_number into issue_assignment block.  
+- - added "current_issue" attribute (as a flag) to issue_assignment element (type string)
+- - added "companion_paper" element block to article:  optional and repeatable (element block)
+- - added "building" and "post_office_box" to affil_details (both type text)
+- - added "total_pages_calc," "total_pages_actual," "total_tables," "num_color_figures," "num_bw_figures" and "total_figures" to content block: (all type text)
+- - added "num_pages_calc" and "num_pages_actual" to file block:  (type text)
+- - added "volume_page_budget" attribute to volume element (type string)
+- - added "num_issue_pages" attribute to issue element (type string)
+- - added "ms_no" attribute to "ms_id" element (attribute required)
+
+rev. 2.2.3  17 August 2004 (EJK)
+
+- - Updated ISO3166 codes
+
+rev. 2.2.3  13 April 2004 (EJK)
+
+- -  Added journal_abbreviation element (optional)
+
+rev. 2.2.2  22 March 2004 (EJK/JS)
+
+- -  Made country_code optional
+- -  Added DOI element - type text
+
+rev. 2.2.1  12 March 2004 (EJK)
+
+- -  Repurposed "comments" as an attribute for author, editor and office_contact (as part of person_details element)
+
+rev. 2.2  29 February  2004 (EJK)
+
+- -  Made <issue_date> optional
+- -  Added "country_code" attribute to <country> element.
+        -  country_code enumerated to ISO 3166 set of legal values - required
+- - lang attribute now enumerated to ISO 639-1 set of legal values - default set to ENglish
+- - id_type is now required (attribute for article_id)
+- - attributes for <author> updated:
+                - -  "corr" now type boolean
+                - -  added "contact" - type boolean
+                - -  added "author_seq" - type integer
+                - -  added "user_id" - type text
+- - attributes for <editor> updated:
+                - - added "user_id" - type text
+                - - added "decided" - type boolean
+- - attributes for <office_contact> updated:
+                - - added "user_id" - type text
+- - attributes for <article_status> updated:
+                - - added "decision_status" - enumerated & required
+
+
+rev. 2.1   30 July 2003 (EJK)
+
+- - added file_tag as an element under the file element.
+
+rev. 2.0  (Changes from v. 1.0 )  1 July 2003 (EJK)
+
+ - -  Changed <keywords> tag to <attribute> tag with an "attr_name" attribute to mark whether it is a keyword or some other kind of attribute (ex. <attribute attr_name='keyword'>neuroscience</attribute>
+
+- -  Added <attribute> to % PERSON_DETAIL entity  (for individual person attributes)
+- -  Added <attribute> to FILE block  (for attributes associated with individual files)
+- -  Moved <attribute> from ARTICLE block to the CONTENT block (for attributes associated with entire manuscript)
+
+- -  created a CONTENT element block and moved FIRST_PAGE and LAST_PAGE as elements under CONTENT
+
+- -  added new tags to the FILE element block:
+       -  <file_number>
+       -  <file_extension>
+       -  <file_colorspace> with enumerated values of cmyk, rgb, bw
+       -  <file_designation>
+       -  <file_caption>
+       -  <file_originalname>
+       -  <submission_medium> with enumerated values of offline, online
+-  added new tags to HISTORY block
+       -  <publish_before_print_date>
+       -  <print_scheduled_date>
+-  added new tag to JOURNAL block
+       -  <line_up_number>
+-  added an OFFICE_LIST block that contains repeating entities:
+       -  % PERSON_BASIC
+       -  % PERSON_DETAIL
+
+-  changed <publish_before_print_date> and <print_scheduled_date> to use %date as subelements
+
+-  changed <configurable_data> element to <custom_fields>
+
+- changed attribute "cd_label" to "cd_name"
+
+- Version 3.4 additions
+	added galleyDeliveryType for author attributes. 
+	added transmission_date for a document attributes
+	
+- Added LTE information, ref articles and webPub date.
+- /*************** W-B05 ************************/
+	
+	-      added reviewer_list email_list* user_list* to the article element
+	
+	- 	   added email_list element, its attributes and child elements
+	
+	- 	   added reviewer_list element, its attributes and child elements
+	
+	- 	   added user_list element, its attributes and child elements
+	
+	- 	   added task element to ms_id
+	
+	- 	   added task element, its attributes and child elements
+-/*************** W-B05 ************************/	
+  -->
+
+<!ENTITY % person_detail "(affiliation* , profile_affiliation?, current_profile_affiliation?, galleyDeliveryType? )">
+
+<!ENTITY % person_basic "(salutation? , first_name , middle_name? , last_name , suffix?, degree* , email* , attr_type* , attribute* , comments?, flags?, researcher_id?, orcid?, orcid_id_validation?, orcid_token_type?, orcid_token_scope?, orcid_token_expires_in?)">
+
+<!ENTITY % pub.status "(received | accepted | epublish | ppublish | revised | aheadofprint | pmc | pmcr | pubmed | pubmedr | premedline | medline | medliner)">
+
+<!ENTITY % art-id-type "(doi | pii | pmcpid | pmpid | pubmed | medline | pmcid)">
+
+<!ENTITY % affil_details "(inst , (institution_id?, dept?, person_title?, room? , building? , addr1? , addr2? , addr3?, post_office_box? , city , (state | province)? , country , post_code? , phone? , fax?)*)">
+
+<!ENTITY % data "sup | sub | b | i">
+
+<!ENTITY % date "(year, month?, day?, hour?, minute?, second?, time_zone?)">
+
+<!ENTITY % submission_medium "online | offline">
+
+<!-- country codes -->
+<!ENTITY % iso3166 "(AD|AE|AF|AG|AI|AL|AM|AN|AO|AQ|AR|AS|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BL|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|
+                           CC|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CS|CU|CV|CW|CX|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FM|FO|FR|GA|
+                           GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HM|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IR|IS|IT|JE|JM|JO|JP|
+                           KE|KG|KH|KI|KM|KN|KP|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MH|MK|ML|MM|MN|MO|MP|MQ|MR|MS|
+                           MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NF|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PW|PY|QA|RE|RO|RS|
+                           RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SV|SX|SY|SZ|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TP|TR|TT|TV|TW|TZ|
+                           UA|UG|UM|US|UY|UZ|VA|VC|VE|VG|VI|VN|VU|WF|WS|YE|YT|YU|ZA|ZM|ZW)">
+
+<!--language codes-->
+<!ENTITY % iso639-1 "(AA|AB|AF|AM|AR|AS|AY|AZ|BA|BE|BG|BH|BI|BN|BO|BR|CA|CO|CS|CY|
+                           DA|DE|DZ|EL|EN|EO|ES|ET|EU|FA|FI|FJ|FO|FR|FY|GA|GD|GL|GN|GU|
+                           HA|HI|HR|HU|HY|IA|IE|IK|IN|IS|IT|IW|JA|JI|JW|KA|KK|KL|KM|KN|
+                           KO|KS|KU|KY|LA|LN|LO|LT|LV|MG|MI|MK|ML|MN|MO|MR|MS|MT|MY|NA|
+                           NE|NL|NO|OC|OM|OR|PA|PL|PS|PT|QU|RM|RN|RO|RU|RW|SA|SD|SG|SH|
+                           SI|SK|SL|SM|SN|SO|SQ|SR|SS|ST|SU|SV|SW|TA|TE|TG|TH|TI|TK|TL|
+                           TN|TO|TR|TS|TT|TW|UK|UR|UZ|VI|VO|WO|XH|YO|ZH|ZU)">
+
+<!-- This is the top level element -->
+<!ELEMENT article_set (article+)>
+<!ATTLIST article_set
+	xmlns:xlink CDATA  #IMPLIED
+	dtd_version CDATA #REQUIRED
+>
+
+<!-- Start of article group -->
+<!ELEMENT article (journal? , replaces? , article_status? , article_title? ,article_sub_title?, vernacular_title? , author_list? , author_comments? , editor_list?, reviewer_list* , publication_type? , article_id_list? , file_list? , history? , fulltext_url? , abstract? , configurable_data_fields? , topic_group*, notes? , content? , office_contact* , companion_paper*, client_data?, custom_report_fields?, referenced_articles?, lte_text_area?, email_list*, user_list*, forms?, back?, fundref_information?, publication_model?)>
+<!ATTLIST article  ms_no       CDATA  #IMPLIED
+					external_id CDATA  #IMPLIED
+                     rev         CDATA  #IMPLIED
+                     lang        %iso639-1;        "EN"
+                     export_date CDATA #IMPLIED
+                     tracking_no CDATA #IMPLIED>
+
+<!-- Start of journal group -->
+<!ELEMENT journal (publisher_name , full_journal_title , journal_abbreviation? , pubmed_abbreviation , issn+ , issue_assignment*)>
+
+<!ELEMENT publisher_name (#PCDATA)>
+
+<!ELEMENT full_journal_title (#PCDATA)>
+
+<!ELEMENT pubmed_abbreviation (#PCDATA)>
+
+<!ELEMENT issn (#PCDATA)>
+
+<!ATTLIST issn  issn_type  (print | digital )  #REQUIRED >
+<!ELEMENT volume (#PCDATA)>
+
+<!ATTLIST volume  volume_page_budget CDATA  #IMPLIED
+                    volume_page_actual CDATA  #IMPLIED >
+                    
+<!ELEMENT issue (#PCDATA)>
+                    
+<!ELEMENT client_data (client_journal_id?,client_article_id?,client_article_guid?)>
+
+<!ELEMENT client_journal_id  (#PCDATA)>
+<!ELEMENT client_article_id (#PCDATA)>
+<!ELEMENT client_article_guid (#PCDATA)>
+
+<!-- Start of custom_report_fields -->
+<!ELEMENT custom_report_fields (custom_report_field*)>
+
+<!ELEMENT custom_report_field EMPTY>
+
+<!ATTLIST custom_report_field crf_name CDATA #REQUIRED
+							   crf_value CDATA #REQUIRED >
+<!-- End of custom_report_fields -->
+
+<!-- Start of referenced_articles -->
+<!ELEMENT referenced_articles (reference_article*)>
+
+<!ELEMENT reference_article  EMPTY>
+
+<!ATTLIST reference_article refArt_name CDATA #REQUIRED >
+
+<!-- End of referenced_articles -->
+
+<!ELEMENT web_publish_date (%date;)>
+
+<!ELEMENT lte_text_area  (#PCDATA)>
+
+<!--start of email_list -->
+<!ELEMENT email_list  (email_sent*)>
+
+<!ELEMENT email_sent  (send_date, to*, cc*, subject, body, email_file*)>
+<!ATTLIST email_sent doc_task_id CDATA  #IMPLIED>
+
+<!ELEMENT send_date  (%date;)>
+
+<!ELEMENT to  (#PCDATA)>
+<!ATTLIST to user_id CDATA  #IMPLIED>
+
+<!ELEMENT user_id (#PCDATA)>
+
+<!ELEMENT cc (#PCDATA)>
+<!ATTLIST cc user_id CDATA  #IMPLIED>
+
+<!ELEMENT subject (#PCDATA)>
+
+<!ELEMENT body (#PCDATA)>
+
+<!ELEMENT email_file  (#PCDATA)>
+<!ATTLIST email_file file_originalname CDATA  #REQUIRED>
+
+<!--End of email_list  -->
+
+<!ELEMENT attribute (#PCDATA)>
+<!ATTLIST attribute attr_name CDATA  #IMPLIED>
+<!ATTLIST attribute id CDATA  #IMPLIED>
+<!ATTLIST attribute name CDATA  #IMPLIED>
+<!ATTLIST attribute parent_id CDATA  #IMPLIED>
+
+<!ELEMENT attr_type  (attribute+)>
+<!ATTLIST attr_type id CDATA  #REQUIRED>
+<!ATTLIST attr_type name CDATA  #REQUIRED>
+
+
+
+<!--start of user_list  -->
+<!ELEMENT user_list (user+)>
+
+<!ELEMENT user (%person_basic; , %person_detail;)>
+
+<!ATTLIST user is_staff CDATA  #REQUIRED>
+<!ATTLIST user user_id CDATA  #REQUIRED>
+<!ATTLIST user submitter CDATA  #REQUIRED>
+<!ATTLIST user submitting_agent CDATA  #REQUIRED>
+<!ATTLIST user contact CDATA  #REQUIRED>
+<!--End of user_list -->
+
+
+<!ELEMENT forms (form*)>
+
+<!ELEMENT form (form_submitted_date, form_submitter)>
+
+<!ELEMENT form_submitted_date (%date;)>
+
+<!ELEMENT form_submitter (%person_basic; , %person_detail;)>
+
+<!ATTLIST form form_task_name  CDATA  #REQUIRED 
+                 form_file_name CDATA #REQUIRED>
+
+<!ATTLIST issue  issue_seq               CDATA  #IMPLIED
+                   issue_page_actual       CDATA  #IMPLIED
+                   issue_page_budget       CDATA  #IMPLIED
+                   bw_image_count_issue    CDATA  #IMPLIED
+                   color_image_count_issue CDATA  #IMPLIED >
+<!ELEMENT issue_date (%date;)>
+
+<!-- End of journal group -->
+<!ELEMENT replaces (#PCDATA)>
+
+<!ELEMENT article_status (#PCDATA)>
+
+<!ATTLIST article_status  decision_status  (undecided | reject | accept | revise )  #REQUIRED >
+<!ELEMENT article_title (#PCDATA | %data;)*>
+<!ELEMENT article_sub_title (#PCDATA | %data;)*>
+
+<!ELEMENT vernacular_title (#PCDATA | %data;)*>
+
+<!ELEMENT first_page (#PCDATA)>
+
+<!ELEMENT last_page (#PCDATA)>
+
+<!-- Start of author_list -->
+<!ELEMENT author_list (author+)>
+
+<!ELEMENT author (%person_basic; , %person_detail;)>
+
+<!ATTLIST author  corr       CDATA  '0'
+                    contact    CDATA  '0'
+                    author_seq CDATA  #REQUIRED
+                    auth_URL   CDATA  #IMPLIED
+                    user_id    CDATA  #REQUIRED >
+<!--End of author group -->
+<!ELEMENT author_comments (#PCDATA)>
+
+<!-- Start of editor_list -->
+<!ELEMENT editor_list (editor+)>
+
+<!ELEMENT editor (%person_basic; , %person_detail;)>
+
+<!ATTLIST editor  role      CDATA  #IMPLIED
+                    is_staff  CDATA  '1'
+                    user_id   CDATA  #REQUIRED
+                    decided   CDATA  '0' >
+<!-- End of editor_list -->
+
+<!-- Start of reviewer_list -->
+<!ELEMENT reviewer_list (reviewer*)>
+
+<!ELEMENT reviewer (%person_basic;, %person_detail; , response* , rating)>
+<!ATTLIST reviewer role CDATA  #REQUIRED>
+<!ATTLIST reviewer user_id CDATA  #REQUIRED>
+<!ATTLIST reviewer invite_history CDATA  #REQUIRED>
+
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response response_name CDATA  #REQUIRED>
+<!ATTLIST response response_type CDATA  #REQUIRED>
+<!ATTLIST response response_history  CDATA  #REQUIRED>
+
+<!ELEMENT rating (#PCDATA)>
+
+<!-- End of reviewer_list -->
+
+
+<!ELEMENT publication_type (#PCDATA)>
+
+<!-- Start of article_id_list -->
+<!ELEMENT article_id_list (article_id*)>
+
+<!ELEMENT article_id (#PCDATA)>
+
+<!ATTLIST article_id  id_type %art-id-type; #REQUIRED                               >
+<!-- End of article_id_list -->
+
+
+
+<!-- Start of file_list -->
+<!ELEMENT file_list (file*)>
+
+<!ELEMENT file (file_designation , file_format? , file_extension , file_originalname , file_caption? , file_tag? , attr_type*, attribute* , num_pages_calc? , num_pages_actual?)>
+
+<!ATTLIST file  file_name         CDATA  #REQUIRED
+                  file_category     CDATA  #REQUIRED
+                  file_colorspace    (rgb | cmyk | bw | grayscale | undefined)  #IMPLIED
+                  submission_medium  (online | offline )  #IMPLIED 
+                  image_resolution CDATA #IMPLIED 
+				  image_width CDATA #IMPLIED 
+				  image_height CDATA #IMPLIED 
+			   	  dx_result CDATA #IMPLIED
+>
+<!-- End of file_list -->
+<!-- Start of history group -->
+<!ELEMENT history (ms_id+)>
+
+<!ELEMENT submitted_date (%date;)>
+
+<!ELEMENT received_date (%date;)>
+
+<!ELEMENT received_date_resub (%date;)>
+
+<!ELEMENT revised_date (%date;)>
+
+<!ELEMENT decision_date (%date;)>
+
+<!-- Start of 10996 -->
+
+<!ELEMENT most_recent_decision_date (%date;)>
+ 
+<!-- end of 10996 -->
+
+<!-- LH 3507 B -->
+<!ELEMENT approval_date (%date;)>
+<!-- LH 3507 E -->
+
+<!ELEMENT published_date (%date;)>
+
+<!ELEMENT stub_created_date (%date;)>
+
+<!ELEMENT author_assigned_date (%date;)>
+
+<!ATTLIST published_date  pub_status CDATA  #IMPLIED >
+<!-- End of history group -->
+<!ELEMENT fulltext_url (#PCDATA)>
+
+<!ELEMENT abstract (#PCDATA | %data;)*>
+
+<!-- Start of configurable_data_fields -->
+<!ELEMENT configurable_data_fields (custom_fields+)>
+
+<!ELEMENT custom_fields EMPTY>
+
+<!ATTLIST custom_fields  cd_value CDATA  #REQUIRED
+                           cd_code  CDATA  #REQUIRED
+                           cd_name  CDATA  #IMPLIED >
+<!-- End of configurable_data_fields -->
+<!-- Start of topic_group -->
+<!ELEMENT topic_group (topic+)>
+<!ELEMENT topic (#PCDATA)>
+<!ATTLIST topic
+topic_parent CDATA #IMPLIED
+topic_path CDATA #IMPLIED
+topic_status CDATA #REQUIRED >
+
+<!--End of topic_group-->
+<!ELEMENT notes (#PCDATA)>
+
+<!-- Start of FundRef -->
+<!ELEMENT fundref_information (no_funders,funder*)>
+<!ELEMENT no_funders (#PCDATA)>
+<!ELEMENT funder (preferred_label, concept_id, grant_number*)>
+<!ELEMENT preferred_label (#PCDATA)>
+<!ELEMENT concept_id (#PCDATA)>
+<!ELEMENT grant_number (#PCDATA)>
+<!-- End of FundRef -->
+
+<!-- End of Article group -->
+<!-- Element definitions for person_detail entity -->
+<!ELEMENT affiliation (%affil_details;)>
+
+<!ATTLIST affiliation  seq  (1 | 2 | 3 | 4 | 5 | 6 )  '1' >
+<!ELEMENT degree (#PCDATA)>
+
+<!ELEMENT email (#PCDATA)>
+
+<!ATTLIST email  addr_type  (primary | secondary )  #IMPLIED
+                   active    CDATA  '1' >
+<!ELEMENT phone (#PCDATA)>
+
+<!ELEMENT fax (#PCDATA)>
+
+<!ELEMENT comments (#PCDATA)>
+
+<!-- Element definitions for person_basic entity -->
+<!ELEMENT salutation (#PCDATA)>
+
+<!ELEMENT first_name (#PCDATA)>
+
+<!ELEMENT middle_name (#PCDATA)>
+
+<!ELEMENT last_name (#PCDATA)>
+
+<!ELEMENT suffix (#PCDATA)>
+
+<!ELEMENT galleyDeliveryType (#PCDATA)>
+
+<!ELEMENT flags (flag+)>
+
+<!ELEMENT flag (#PCDATA)>
+
+<!ATTLIST flag  color CDATA #REQUIRED>
+
+<!-- Element definitions for affil_details entity -->
+<!ELEMENT inst (#PCDATA)>
+
+<!ELEMENT dept (#PCDATA)>
+
+<!ELEMENT addr1 (#PCDATA)>
+
+<!ELEMENT addr2 (#PCDATA)>
+
+<!ELEMENT addr3 (#PCDATA)>
+
+<!ELEMENT city (#PCDATA)>
+
+<!ELEMENT state (#PCDATA)>
+
+<!ELEMENT province (#PCDATA)>
+
+<!ELEMENT country (#PCDATA)>
+
+<!ATTLIST country  country_code %iso3166; #IMPLIED                           >
+<!ELEMENT post_code (#PCDATA)>
+
+<!-- Element definitions for data entity -->
+<!ELEMENT sup (#PCDATA)>
+
+<!ELEMENT b (#PCDATA)>
+
+<!ELEMENT i (#PCDATA)>
+
+<!ELEMENT u (#PCDATA)>
+
+<!-- Element definitions for dates -->
+<!ELEMENT year (#PCDATA)>
+
+<!ELEMENT month (#PCDATA)>
+
+<!ELEMENT day (#PCDATA)>
+
+<!ELEMENT hour (#PCDATA)>
+
+<!ELEMENT minute (#PCDATA)>
+
+<!ELEMENT second (#PCDATA)>
+
+<!ELEMENT time_zone (#PCDATA)>
+
+<!ELEMENT task (status, picked*, invited*, assigned*, recommendation*, review*,decision*)>
+<!ATTLIST task type CDATA  #REQUIRED>
+<!ATTLIST task name CDATA  #REQUIRED>
+<!ATTLIST task task_id CDATA  #REQUIRED>
+
+<!ELEMENT ms_id (rev_id? , submitted_date? , received_date? , received_date_resub? , revised_date? , decision_date? , approval_date? , author_returned_date?, stub_created_date?, author_assigned_date?, most_recent_decision_date, transmission_date, web_publish_date?, task*)>
+
+<!ATTLIST ms_id ms_no CDATA  #IMPLIED tracking_no CDATA  #IMPLIED>
+<!ATTLIST picked external_id CDATA  #IMPLIED>
+
+<!--ATTLIST ms_id  ms_no CDATA  #REQUIRED -->
+
+<!ELEMENT status (#PCDATA)>
+<!ATTLIST status doc_task_id CDATA  #REQUIRED>
+<!ATTLIST status user_id CDATA  #REQUIRED>
+<!ATTLIST status s1_staff CDATA  #REQUIRED>
+<!ATTLIST status user_role CDATA  #REQUIRED>
+<!ATTLIST status  event_date CDATA  #REQUIRED>
+
+<!ELEMENT picked (#PCDATA)>
+<!ATTLIST picked user_id CDATA  #IMPLIED>
+<!ATTLIST picked role CDATA  #REQUIRED>
+<!ATTLIST picked date CDATA  #REQUIRED>
+
+<!ELEMENT invited (#PCDATA)>
+<!ATTLIST invited user_id CDATA  #IMPLIED>
+<!ATTLIST invited role CDATA  #REQUIRED>
+<!ATTLIST invited date CDATA  #REQUIRED>
+
+<!ELEMENT assigned (#PCDATA)>
+<!ATTLIST assigned user_id CDATA  #IMPLIED>
+<!ATTLIST assigned role CDATA  #REQUIRED>
+<!ATTLIST assigned date CDATA  #REQUIRED>
+
+<!ELEMENT recommendation (recommendation_comments*)>
+<!ATTLIST recommendation recommendation_type CDATA  #REQUIRED>
+<!ATTLIST recommendation recommendation_name CDATA  #REQUIRED>
+
+<!ELEMENT review (recommendation*,review_comments*,score*,review_file*,publons_optIn*)>
+<!ATTLIST review user_id CDATA  #REQUIRED>
+
+<!ELEMENT score (custom_fields+)>
+
+<!ELEMENT review_file (#PCDATA)>
+<!ATTLIST review_file file_id CDATA  #REQUIRED>
+
+<!ELEMENT decision (decision_comments*)>
+<!ATTLIST decision decision_type CDATA  #REQUIRED>
+<!ATTLIST decision decision_name CDATA  #REQUIRED>
+
+
+<!ELEMENT review_comments (comment*)>
+<!ELEMENT decision_comments (comment*)>
+<!ELEMENT recommendation_comments (comment*)>
+
+<!--End of task element  -->
+
+<!ELEMENT rev_id (#PCDATA)>
+
+<!ELEMENT content (first_page? , last_page? , attr_type*, attribute* , total_pages_calc? , total_pages_actual? , total_tables? , num_color_figures? , num_bw_figures? , total_figures?, total_pdf_pages?)>
+
+<!ELEMENT submission_medium (#PCDATA)>
+
+<!ELEMENT office_contact (%person_basic; , %person_detail;)>
+
+<!ATTLIST office_contact  user_id CDATA  #REQUIRED >
+<!ELEMENT file_designation (#PCDATA)>
+
+<!ELEMENT file_format (#PCDATA)>
+
+<!ELEMENT file_extension (#PCDATA)>
+
+<!ELEMENT file_caption (#PCDATA)>
+
+<!ELEMENT file_originalname (#PCDATA)>
+
+<!ELEMENT publish_before_print_date (%date;)>
+
+<!ELEMENT print_scheduled_date (%date;)>
+
+<!ELEMENT transferred_date (%date;)>
+
+<!ELEMENT issue_journal_name (#PCDATA)>
+
+<!ELEMENT issue_journal_id (#PCDATA)>
+
+<!ELEMENT issue_journal_issn (#PCDATA)>
+
+<!ELEMENT issue_journal_isbn (#PCDATA)>
+
+<!ELEMENT issue_journal_eisbn (#PCDATA)>
+
+<!ELEMENT issue_end_page (#PCDATA)>
+
+<!ELEMENT issue_print_run (#PCDATA)>
+
+<!ELEMENT issue_start_page (#PCDATA)>
+
+<!ELEMENT transmission_date (%date;)>
+
+<!ELEMENT line_up_number (#PCDATA)>
+
+<!ELEMENT file_colorspace (#PCDATA)>
+
+<!ELEMENT file_tag (#PCDATA)>
+
+<!ELEMENT journal_abbreviation (#PCDATA)>
+
+<!ELEMENT room (#PCDATA)>
+
+<!ELEMENT institution_id (#PCDATA)>
+<!ATTLIST institution_id  institution_id_type (Ringgold) #REQUIRED>
+
+<!ELEMENT issue_assignment (volume? , issue? , issue_description? , issue_date? , line_up_number?, published_date?, publish_before_print_date?, print_scheduled_date?, transferred_date?, issue_journal_name?, issue_start_page?, issue_journal_id?, issue_journal_issn?, issue_journal_isbn?, issue_journal_eisbn?, issue_end_page?, issue_print_run?)>
+
+<!ATTLIST issue_assignment  current_issue CDATA  #REQUIRED >
+<!ELEMENT issue_description (#PCDATA)>
+
+<!ELEMENT building (#PCDATA)>
+
+<!ELEMENT post_office_box (#PCDATA)>
+
+<!ELEMENT companion_paper (ms_id+, companion_paper_manuscript_type, companion_paper_submitting_author)>
+
+<!ELEMENT companion_paper_manuscript_type (#PCDATA)>
+
+<!ELEMENT companion_paper_submitting_author (#PCDATA)>
+
+<!ELEMENT total_pages_calc (#PCDATA)>
+
+<!ELEMENT total_pages_actual (#PCDATA)>
+
+<!ELEMENT total_tables (#PCDATA)>
+
+<!ELEMENT num_color_figures (#PCDATA)>
+
+<!ELEMENT num_bw_figures (#PCDATA)>
+
+<!ELEMENT total_figures (#PCDATA)>
+
+<!ELEMENT num_pages_calc (#PCDATA)>
+
+<!ELEMENT num_pages_actual (#PCDATA)>
+
+<!ELEMENT profile_affiliation (%affil_details;)>
+
+<!ELEMENT current_profile_affiliation (%affil_details;)>
+
+<!ELEMENT person_title (#PCDATA)>
+
+<!ELEMENT total_pdf_pages (#PCDATA)>
+
+<!ELEMENT author_returned_date (%date;)>
+
+<!--  beginning of NLM addition elements -->
+
+<!ENTITY % block-display.class
+                        "array | boxed-text | chem-struct |
+                         chem-struct-wrapper | fig | fig-group |
+                         graphic | media | preformat |
+                         supplementary-material | table-wrap |
+                         table-wrap-group"                           >
+
+<!ENTITY % block-math.class
+                        "disp-formula"                               >
+
+<!ENTITY % just-para.class
+                        "p"                                          >
+                        
+
+<!ENTITY % math.class   "tex-math | mml:math"                        > 
+ 
+ <!ENTITY % list.class   "def-list | list"                            >
+
+<!ENTITY % related-article.class
+                        "related-article"                            >
+
+<!ENTITY % rest-of-para.class
+                        "disp-quote | speech | statement |
+                         verse-group"                                >
+
+<!ENTITY % ref-list.class
+                        "ref-list"                                   >
+
+<!ENTITY % address-link.class
+                        "email | ext-link | uri"                     >
+ 
+<!ENTITY % article-link.class
+                        "inline-supplementary-material |
+                         related-article"                            > 
+ 
+<!ENTITY % emphasis.class
+                        "bold | italic | monospace | overline |
+                         sans-serif | sc | strike | underline "                   > 
+ 
+<!ENTITY % inline-display.class
+                        "inline-graphic | private-char"              > 
+ 
+<!ENTITY % inline-math.class
+                        "inline-formula"                             > 
+ 
+<!ENTITY % phrase.class "abbrev | milestone-end | milestone-start |
+                         named-content"                              > 
+ 
+<!ENTITY % simple-link.class
+                        "fn | target | xref"                         > 
+ 
+<!ENTITY % subsup.class "sub | sup"                                  > 
+ 
+<!ENTITY % name.class   "anonymous | collab | name"                  > 
+ 
+<!ENTITY % front-back.class
+                        "notes"                                      >
+
+<!ENTITY % back.class   "ack | app-group | bio | fn-group |
+                         glossary |  ref-list"                       > 
+ 
+ <!ENTITY % sec.class    "sec"                                        >
+ 
+ <!ENTITY % break.class  "break"                                      >
+
+<!ENTITY % sec-level    "%sec.class;"                                >
+
+<!ENTITY % doc-back-matter-mix
+                        "%back.class; | %front-back.class; |
+                         %sec-level;"                                >
+
+<!ENTITY % back-model   "(title*, (%doc-back-matter-mix;)* )"        >
+
+<!ELEMENT  back         %back-model;                                 >
+
+<!ENTITY % para-level   "%block-display.class; | %block-math.class; |
+                         %just-para.class; | %list.class; |
+                         %math.class; | %related-article.class; |
+                         %rest-of-para.class;"                       >
+
+
+<!ENTITY % pub-id-types  "art-access-id | coden | doaj | doi |
+                          manuscript | medline | other | pii |
+                          pmcid |  pmid | publisher-id | sici | ut"       >
+
+<!ENTITY % simple-phrase
+                        "| %address-link.class; |
+                         %article-link.class; |
+                         %emphasis.class; | %inline-display.class; |
+                         %inline-math.class; | %math.class; |
+                         %phrase.class; |
+                         %simple-link.class; | %subsup.class;"       >
+
+<!ENTITY % just-rendition
+                        " "                                          >
+
+<!ENTITY % rendition-plus
+                        "| %emphasis.class;  | %subsup.class;"       >
+                        
+
+<!ENTITY % label.class  "label"                                      >
+
+<!ENTITY % references.class
+                        "access-date | annotation | article-title |
+                         collab | comment | conf-date | conf-loc |
+                         conf-name | conf-sponsor |
+                         day | edition | email | elocation-id |
+                         etal | ext-link | fpage |  gov | isbn |
+                         institution | issn | issue | issue-id |
+                         issue-title | lpage | month | name |
+                         object-id | page-count | page-range |
+                         patent | person-group | pub-id |
+                         publisher-loc | publisher-name | role |
+                         season | series | source | std |
+                         supplement | time-stamp |
+                         trans-source | trans-title | uri |
+                         volume | volume-id | year"                  >
+
+<!ENTITY % citation-elements
+                        "| %emphasis.class; | %inline-display.class; |
+                         %inline-math.class; | %label.class; |
+                         %phrase.class; | %references.class; |
+                         %subsup.class;"                             >
+
+<!ENTITY % might-link-atts
+            "xmlns:xlink CDATA                            #FIXED
+                                     'http://www.w3.org/1999/xlink'
+             xlink:type  (simple)                   #FIXED 'simple'
+             xlink:href  CDATA                            #IMPLIED
+             xlink:role  CDATA                            #IMPLIED
+             xlink:title CDATA                            #IMPLIED
+             xlink:show  (embed | new | none | other | replace)
+                                                          #IMPLIED
+             xlink:actuate
+                         (none | onLoad | onRequest | other)
+                                                          #IMPLIED"  >
+
+<!ENTITY % citation-atts
+             "citation-type
+                        (book | commun | confproc | discussion |
+                         gov | journal | list | patent | thesis  |
+                         web  | other)                     #IMPLIED
+              id         ID                                #IMPLIED
+              %might-link-atts;"                                     >
+
+<!ENTITY % surname-elements
+                        " "                                          >
+
+<!ENTITY % given-names-elements
+                        " "                                          >
+
+<!ENTITY % title-elements
+                        "%simple-phrase; | %break.class;"            >
+  
+<!ENTITY % volume-elements
+                        " "                                          >
+
+<!ENTITY % etal-model   "EMPTY"                                      >
+
+<!ENTITY % emphasized-text
+                        "| %address-link.class; |
+                         %article-link.class; | %emphasis.class;  |
+                         %inline-display.class; |
+                         %inline-math.class; |  %math.class; |
+                         %phrase.class; | %simple-link.class; |
+                         %subsup.class;"                             >
+
+<!ELEMENT  citation     (#PCDATA %citation-elements;)*               >
+
+<!ATTLIST  citation
+             %citation-atts;                                         >
+
+<!ELEMENT  name         (surname, given-names?, prefix?, suffix?)    >
+
+<!ELEMENT  surname      (#PCDATA %surname-elements;)*                >
+
+<!ELEMENT  given-names  (#PCDATA %given-names-elements;)*            >
+
+<!ELEMENT  article-title
+                        (#PCDATA %title-elements;)*                  >
+
+<!ELEMENT  fpage        (#PCDATA)                                    >
+
+<!ELEMENT  lpage        (#PCDATA)                                    >
+
+<!ELEMENT  etal         %etal-model;                                 >
+
+<!ELEMENT  italic       (#PCDATA %emphasized-text;)*                 >
+
+<!ELEMENT  bold         (#PCDATA %emphasized-text;)*                 >
+
+<!ELEMENT  sc           (#PCDATA %emphasized-text;)*                 >
+
+<!ELEMENT  sub          (#PCDATA %emphasized-text;)*                 >
+
+<!ENTITY %  person-group-atts  
+             "person-group-type 
+                        CDATA                             #IMPLIED"  >
+
+<!ENTITY %  pub-id-atts  
+             "pub-id-type 
+                        (%pub-id-types;)                  #IMPLIED"  >
+
+<!ENTITY %  source-atts
+             "xml:lang   NMTOKEN                           #IMPLIED" > 
+
+<!ENTITY % ref-list-model
+                        "(title?, (%para-level;)*, ref*, 
+                         (%ref-list.class;)* )"                      > 
+
+<!ELEMENT  ref-list     %ref-list-model;                             >
+
+<!ENTITY % ref-model    "(label?, (citation | note)+ )"              > 
+
+<!ELEMENT  ref          %ref-model;                                  >
+
+<!ATTLIST  ref
+             id         ID                                 #IMPLIED  >
+
+<!ENTITY % note-model   "(label?, (%just-para.class;)+ )"            > 
+
+<!ELEMENT  note         %note-model;                                 > 
+
+<!ATTLIST  note
+             id         ID                                 #IMPLIED  >
+
+
+<!-- ============================================================= -->
+<!--                    BIBLIOGRAPHIC REFERENCE CLASS              -->
+<!-- ============================================================= -->
+
+<!ENTITY % access-date-elements 
+                        " "                                          >
+
+<!ELEMENT  access-date  (#PCDATA %access-date-elements;)*            >
+
+<!ENTITY % comment-elements 
+                        "%simple-phrase;"                            >
+
+<!ELEMENT  comment      (#PCDATA %comment-elements;)*                >
+<!ATTLIST comment to_name CDATA  #IMPLIED>
+<!ATTLIST comment to_role  CDATA #IMPLIED>
+
+<!ENTITY % edition-elements
+                        "%just-rendition;"                           >
+
+<!ELEMENT  edition      (#PCDATA %edition-elements;)*                >
+
+<!ENTITY % gov-elements "%rendition-plus;"                           >
+
+<!ELEMENT  gov          (#PCDATA %gov-elements;)*                    >
+
+<!ELEMENT  isbn         (#PCDATA)                                    >
+
+<!ENTITY % patent-elements 
+                        "%just-rendition;"                           >
+
+<!ELEMENT  patent       (#PCDATA %patent-elements;)*                 >
+
+<!ENTITY % person-group-model
+                        "(%name.class; | aff | etal)*"               >
+
+<!ELEMENT  person-group %person-group-model;                         >
+
+<!ATTLIST  person-group 
+             %person-group-atts;                                     >
+
+<!ELEMENT  pub-id       (#PCDATA)                                    >
+
+<!ATTLIST  pub-id  
+             %pub-id-atts;                                           >
+
+<!ENTITY % series-elements "%rendition-plus;"                        >
+
+<!ELEMENT  series       (#PCDATA %series-elements;)*                 >
+
+<!ENTITY % std-elements "%rendition-plus;"                           >
+
+<!ELEMENT  std          (#PCDATA %std-elements;)*                    >
+
+<!ENTITY % source-elements
+                        "| %emphasis.class; | %address-link.class; |
+                         %subsup.class;"                             >
+
+<!ELEMENT  source       (#PCDATA %source-elements;)*                 >
+
+<!ATTLIST  source
+             %source-atts;                                           > 
+
+<!ENTITY % time-stamp-elements
+                        " "                                          >
+
+<!ELEMENT  time-stamp   (#PCDATA %time-stamp-elements;)              >
+
+<!ELEMENT  trans-source (#PCDATA %source-elements;)*                 >
+
+<!ATTLIST  trans-source
+             %source-atts;                                           > 
+
+<!ELEMENT researcher_id (#PCDATA)>
+<!--ORCID-002 S -->
+<!ELEMENT orcid (#PCDATA)>
+<!--ORCID-002 E-->
+<!-- ORCID-P2-007 -->
+<!ELEMENT orcid_id_validation (#PCDATA)>
+<!ELEMENT orcid_token_type (#PCDATA)>
+<!ELEMENT orcid_token_scope (#PCDATA)>
+<!ELEMENT orcid_token_expires_in (#PCDATA)>
+<!-- US-001537 S -->
+<!ELEMENT publication_model (#PCDATA)>
+<!-- US-001537 E -->
+
+<!ELEMENT publons_optIn (#PCDATA)>
+
+<!-- US-002026 E -->
+
+
+
+

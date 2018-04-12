@@ -108,4 +108,9 @@ class FtpDeliveryUser implements DeliveryUser {
         return userId;
     }
 
+	@Override
+	public String getLocationInfo() {
+		return connectionInfo.toString();
+	}
+
 }

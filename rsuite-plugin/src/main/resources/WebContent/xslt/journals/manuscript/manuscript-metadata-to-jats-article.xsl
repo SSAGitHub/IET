@@ -7,11 +7,13 @@
         doctype-system="JATS-journalpublishing1.dtd" indent="yes"/>
 
     <xsl:param name="page-count" select="0"></xsl:param>
-    <xsl:variable name="journalAbbreviation" select="normalize-space(/article_set/article/journal/journal_abbreviation)"/>
-    <xsl:variable name="journalCode" select="replace($journalAbbreviation, 'IET([ -]+)', '')"/>
+    <xsl:param name="journal-abbrv-title" select="''"/>
+    <xsl:param name="journal-id" select="''" />
+    <xsl:param name="article-id-publisher" select="''" />
+    
+
     <xsl:variable name="orignalArticleId" select="/article_set/article/@ms_no"/>
-    <xsl:variable name="articleId" select="replace($orignalArticleId, 'ELL-', 'EL-')"/>
-    <xsl:variable name="shortArticleId" select="replace($articleId, '\.[A-Z0-9]+$', '')"/>
+    
     <xsl:variable name="currentDate" as="xs:date" select="current-date()"/>
     
     <xsl:variable name="openAccess" select="lower-case(/*/article/configurable_data_fields/custom_fields[@cd_code ='Open Access Checklist']/@cd_value)"/>
@@ -47,46 +49,6 @@
         <entry key="submitted_date">received</entry>                
     </xsl:variable>
     
-    <xsl:variable name="journal-mapping">
-        <entry key="EL" prefix="no">Electron. Lett.</entry>
-        <entry key="MNL" prefix="no">Micro Nano Lett.</entry>
-        <entry key="HTL" prefix="no">Healthcare Technology Letters</entry>
-        <entry key="ETR" prefix="no">Eng. Technol. Ref.</entry>
-        <entry key="JOE" prefix="no">J Eng</entry>
-        <entry key="BMT" prefix="yes">IET Biom.</entry>
-        <entry key="CDS" prefix="yes">IET Circuits Devices Syst.</entry>
-        <entry key="CDT" prefix="yes">IET Comput. Digit. Tech.</entry>
-        <entry key="COM" prefix="yes">IET Commun.</entry>
-        <entry key="CTA" prefix="yes">IET Control Theory Appl.</entry>
-        <entry key="CVI" prefix="yes">IET Comput. Vis.</entry>
-        <entry key="EPA" prefix="yes">IET Electr. Power Appl.</entry>
-        <entry key="EST" prefix="yes">IET Electr. Syst. Transp.</entry>
-        <entry key="GTD" prefix="yes">IET Gener. Transm. Distrib.</entry>
-        <entry key="IFS" prefix="yes">IET Inf. Secur.</entry>
-        <entry key="IPR" prefix="yes">IET Image Process.</entry>
-        <entry key="ITS" prefix="yes">IET Intell. Transp. Syst.</entry>
-        <entry key="MAP" prefix="yes">IET Microw. Antennas Propag.</entry>
-        <entry key="NBT" prefix="yes">IET Nanobiotechnol.</entry>
-        <entry key="NET" prefix="yes">IET Netw.</entry>
-        <entry key="OPT" prefix="yes">IET Optoelectron.</entry>
-        <entry key="PEL" prefix="yes">IET Power Electron.</entry>
-        <entry key="RPG" prefix="yes">IET Renew. Power Gener.</entry>
-        <entry key="RSN" prefix="yes">IET Radar Sonar Navig.</entry>
-        <entry key="SEN" prefix="yes">IET Soft.</entry>
-        <entry key="SMT" prefix="yes">IET Sci. Meas. Technol.</entry>
-        <entry key="SPR" prefix="yes">IET Signal Process.</entry>
-        <entry key="SYB" prefix="yes">IET Syst. Biol. </entry>
-        <entry key="WSS" prefix="yes">IET Wirel. Sens. Syst.</entry>
-        <entry key="HVE" prefix="no">High Volt.</entry>
-    </xsl:variable>
-    
-    
-    <xsl:variable name="should-add-iet-prefix" select="$journal-mapping/entry[@key=$journalCode]/@prefix"/>
-    <xsl:variable name="iet-prefix">
-        <xsl:if test="$should-add-iet-prefix = 'yes'">
-            <xsl:text>IET-</xsl:text>
-        </xsl:if>
-    </xsl:variable>
     
     <xsl:function name="iet:hasNonEmptyResubmittedDate" as="xs:boolean">
         <xsl:param name="historyElement"/>
@@ -109,7 +71,7 @@
         <xsl:variable name="elementName" select="$dateElement/local-name()"/>
         
         <xsl:choose>
-            <xsl:when test="$journalCode = 'EL'">
+            <xsl:when test="$journal-id = 'EL'">
                 <xsl:choose>
                     <xsl:when test="$elementName = 'revised_date' or $elementName = 'received_date'">
                         <xsl:sequence select="false()"/>
@@ -169,15 +131,21 @@
         </article>
     </xsl:template>
 
-    <xsl:template match="journal">
 
-        <journal-id journal-id-type="publisher-id"><xsl:value-of select="concat($iet-prefix, $journalCode)"
-            /></journal-id>
-        <journal-title-group>
-            <journal-title>
-                <xsl:value-of select="full_journal_title"/>
-            </journal-title>
-            <abbrev-journal-title><xsl:value-of select="$journal-mapping/entry[@key=$journalCode]"/></abbrev-journal-title>
+
+	<xsl:template match="journal">
+		<journal-id journal-id-type="publisher-id">
+			<xsl:value-of select="$journal-id" />
+		</journal-id>
+		<journal-title-group>
+			<journal-title>
+				<xsl:value-of select="full_journal_title" />
+			</journal-title>
+		
+		<abbrev-journal-title>
+			<xsl:value-of select="$journal-abbrv-title" />
+		</abbrev-journal-title>
+	    
         </journal-title-group>
 
         <xsl:call-template name="create-issn-element">
@@ -211,14 +179,13 @@
     </xsl:template>
     
     <xsl:template name="create-artilce-ids">
+        <xsl:variable name="articleId" select="replace($orignalArticleId, 'ELL-', 'EL-')"/>
         <xsl:variable name="normalizedArticleId" select="replace($articleId, '\-', '.')"/>
-        <xsl:variable name="publisherIdInitial" select="concat($iet-prefix, replace($shortArticleId, '\-', '.'))"/>
-        <xsl:variable name="publisherId" select="replace($publisherIdInitial,'\.SI', '' )"/>
+        <xsl:variable name="publisherId" select="replace($article-id-publisher, '\.SI', '')" />
         
-        
-        <article-id pub-id-type="doi">10.1049/<xsl:value-of select="lower-case($publisherId)"/></article-id>
-        <article-id pub-id-type="publisher-id"><xsl:value-of select="$publisherId"/></article-id>
-        <article-id pub-id-type="manuscript"><xsl:value-of select="$normalizedArticleId"/></article-id>
+      <article-id pub-id-type="doi">10.1049/<xsl:value-of select="lower-case($publisherId)"/></article-id>
+      <article-id pub-id-type="publisher-id"><xsl:value-of select="$publisherId"/></article-id>
+      <article-id pub-id-type="manuscript"><xsl:value-of select="$normalizedArticleId"/></article-id>
     </xsl:template>
     
     <xsl:template name="create-title-group">

@@ -12,6 +12,7 @@ import org.apache.commons.logging.Log;
 import org.theiet.rsuite.journals.JournalConstants;
 import org.theiet.rsuite.journals.domain.article.Article;
 import org.theiet.rsuite.journals.domain.article.create.ArticleContainerCreateor;
+import org.theiet.rsuite.journals.domain.article.delivery.digitallibrary.ArticleDigitalLibrary;
 import org.theiet.rsuite.journals.domain.article.manuscript.*;
 import org.theiet.rsuite.journals.domain.article.manuscript.acceptance.PublishOnAcceptance;
 import org.theiet.rsuite.journals.domain.article.metadata.ArticleMetadataUpdater;
@@ -71,7 +72,8 @@ public class ManuscriptCentralIngestion extends AbstractActionHandler implements
 		
 		ArticlePubtrackManager.createArticleProcess(context, user, log, article);
 		log.info("Deliver to Digital Library");
-		PublishOnAcceptance publishOnAcceptance = new PublishOnAcceptance(context, user);
+		ArticleDigitalLibrary digitalLibrary = new ArticleDigitalLibrary(context, user, log);
+		PublishOnAcceptance publishOnAcceptance = new PublishOnAcceptance(context.getXmlApiManager(), digitalLibrary, manifestDocument.getManifestType());
 		publishOnAcceptance.publishOnAcceptance(article, manuscriptPackage);
 	}
 

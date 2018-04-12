@@ -24,9 +24,7 @@ rsuite.login();
 try {
 
 	util.upsertUser("ietTypesetter", pass, "IET Typesetter", email, "JournalTypesetter");
-	util.upsertUser("ietTypesetterManuScript", pass, "IET Typesetter ManuScript", email, "JournalTypesetter");
-	util.upsertUser("ietTypesetterArticle", pass, "IET Typesetter Article", email, "JournalTypesetter");
-	util.upsertUser("ietTypesetterIssue", pass, "IET Typesetter Issue", email, "JournalTypesetter");
+	
 
 	util.upsertUser("ietClassifier", pass, "IET Inspec Classifier", email, "JournalInspecClassifier");
 	util.upsertUser("EditorialAssistant", "edAssist", "Editorial Assistant", email, "JournalEditorialAssistant");
@@ -37,15 +35,9 @@ try {
 		
 		
 		
-//	setUpFtpProperties("ietTypesetter", ["iet.typesetter.ftp.manuscriptFolder" : "test/", "iet.typesetter.ftp.articleFolder" : "test/updates", "iet.typesetter.ftp.issueFolder" : "test/issues"]);
-//	setUpFtpProperties("ietClassifier", ["iet.inspec.ftp.folder" : "test/inspec"]);
-//	setUpFtpProperties("DigitalLibraryArticle", ["ftp.folder.article" :"test/DigitalLibraryArticle"]);
-//	setUpFtpProperties("DigitalLibraryIssue", ["ftp.folder.issue" :"test/DigitalLibraryIssue"]);
-//	setUpFtpProperties("JournalIssuePrinter", ["ftp.folder.main" :"test/JournalIssuePrinter"]);
-	
-//	setUpLocalProperties("ietTypesetterManuScript","/BookTypesetter/test");
-//	setUpLocalProperties("ietTypesetterArticle","/BookTypesetter/test/updates");
-//	setUpLocalProperties("ietTypesetterIssue","/BookTypesetter/test/issues");
+	setUpFtpProperties("ietTypesetter", ["iet.typesetter.ftp.manuscriptFolder" : "test/", "iet.typesetter.ftp.articleFolder" : "test/updates", "iet.typesetter.ftp.issueFolder" : "test/issues"]);
+
+	setUpLocalProperties("ietTypesetter","/Typesetter");
 	setUpLocalProperties("ietClassifier","/Inspec/test");
 	setUpLocalProperties("DigitalLibraryArticle","/DigitalLibrary/Article");
 	setUpLocalProperties("DigitalLibraryIssue","/DigitalLibrary/Issue");

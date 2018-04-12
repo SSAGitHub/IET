@@ -95,6 +95,7 @@ addOrReplaceLMDDefinition("editorial_assistant",  assemblyTypes, null);
 addOrReplaceLMDDefinition("typesetter",  assemblyTypes, null);
 addOrReplaceLMDDefinition("inspec_classifier", assemblyTypes, null)
 addOrReplaceLMDDefinition("journal_code",  assemblyTypes, null);
+addOrReplaceLMDDefinition("journal_abbrv_title",  assemblyTypes, null);
 addOrReplaceLMDDefinition("issue_code",  assemblyTypes, null);
 addOrReplaceLMDDefinition("journal_email",  assemblyTypes, null);
 addOrReplaceLMDDefinition("open_access",  assemblyTypes, null);
