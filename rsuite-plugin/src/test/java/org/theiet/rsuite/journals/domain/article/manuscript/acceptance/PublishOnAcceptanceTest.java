@@ -226,13 +226,13 @@ public class PublishOnAcceptanceTest {
 				"/article/front/journal-meta/journal-id/text()",
 				equalTo(expectedXPath)));
 		assertThat(xmlToTest, EvaluateXPathMatcher.hasXPath(
-				"/article/front/article-meta/article-id[1]/text()",
+				"/article/front/article-meta/article-id[@pub-id-type='doi']/text()",
 				equalTo(expectedDOI)));
 		assertThat(xmlToTest, EvaluateXPathMatcher.hasXPath(
-				"/article/front/article-meta/article-id[2]/text()",
+				"/article/front/article-meta/article-id[@pub-id-type='publisher-id']/text()",
 				equalTo(expectedPublisherId)));
 		assertThat(xmlToTest, EvaluateXPathMatcher.hasXPath(
-				"/article/front/article-meta/article-id[3]/text()",
+				"/article/front/article-meta/article-id[@pub-id-type='manuscript']/text()",
 				equalTo(expectedManuscript)));
 
 		File articlePDF = articlePDFCapture.getValue();
